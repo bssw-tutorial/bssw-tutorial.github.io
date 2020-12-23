@@ -24,7 +24,7 @@ We first presented a version of this tutorial in 2016, and since then we have be
 
 ## Past Tutorials
 
-See the IDEAS Productivity [Events](https://ideas-productivity.org/events/) page for past tutorials (as well as other IDEAS events, which may also be of interest).
+See the IDEAS Productivity [Events](https://ideas-productivity.org/events/) page for past tutorials (as well as other IDEAS events, which may also be of interest).  For most past tutorials, the presentation slides have been archived and are linked from the Events page.
 
 ## Acknowledgements
 
