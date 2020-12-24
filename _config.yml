@@ -43,7 +43,7 @@ titles_from_headings:
   collections: false
 
 # By convention, we "operate" on US Eastern time
-timezone: America/New_York
+#timezone: America/New_York
 
 # Exclude from processing.
 # The following items will not be processed, by default.
