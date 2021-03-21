@@ -42,6 +42,10 @@ titles_from_headings:
   strip_title: true
   collections: false
 
+header_pages:
+  - 
+# none
+
 # By convention, we "operate" on US Eastern time
 timezone: America/New_York
 
@@ -64,3 +68,29 @@ timezone: America/New_York
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# This is needed to generate output for future webinars
+future: true
+
+collections:
+  events:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "bsswt"
+
+# Useful for debugging and quality assurance
+# Note: setting strict_variables turns out not to be so useful
+# because use of undefined variables is common (i.e., checking
+# to see if they've been defined)
+liquid:
+  error_mode: strict
+  strict_filters: true
+
+# Base URLs
+doi-resolver-url: https://doi.org
+github-url: https://github.com

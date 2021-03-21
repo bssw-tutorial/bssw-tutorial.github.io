@@ -12,21 +12,29 @@ We first presented a version of this tutorial in 2016, and since then we have be
 
 *Last update: {{ "now" | date: "%F" }}*
 
-## Planned Tutorials
-
-*These events are in the planning stage. Additional details will be provided as they become available.*
-
-* [Improving Scientific Software](https://sea.ucar.edu/conference/2021), March 2021, online
-* [Exascale Computing Project](https://www.exascaleproject.org/) [Annual Meeting](https://ecpannualmeeting.com/), April 2021, online
-* [ISC High Performance](https://www.isc-hpc.com/), June-July 2021, online
-
 ## Scheduled Tutorials
 
-*None at this time*
+*These pages provide details for tutorial participants and others interested, including the latest presentations, hands-on activities, and other resources. In most cases, participation requires registration with the hosting venue, and may require a fee.*
+
+{% assign sequence = site.events | where: "status", "scheduled" | sort: "date" %}
+{% for event in sequence %}
+
+* {% if forloop.first %}**{% endif %}{{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){% endif %}{% if forloop.first %}**{% endif %}
+{% endfor %}
+
+## Planned Tutorials
+
+*These events are in the planning stage. Dates shown are associated with the hosting venue, not the specific dates of our tutorial. Additional details will be provided as they become available.*
+
+{% assign sequence = site.events | where: "status", "planned" | sort: "date" %}
+{% for event in sequence %}
+
+* {{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){% endif %}
+{% endfor %}
 
 ## Past Tutorials
 
-See the IDEAS Productivity [Events](https://ideas-productivity.org/events/) page for past tutorials (as well as other IDEAS events, which may also be of interest).  For most past tutorials, the presentation slides have been archived and are linked from the Events page.
+See the IDEAS Productivity [Events](https://ideas-productivity.org/events/) page for tutorials prior to 2021 (as well as other IDEAS events, which may also be of interest).  For most past tutorials, the presentation slides have been archived and are linked from the Events page.
 
 ## Acknowledgements
 

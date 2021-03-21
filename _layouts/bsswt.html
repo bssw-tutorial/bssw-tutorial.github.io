@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% include upcoming-event event=page.date %}
+{% include set-date-range full-time=upcoming start=page.date end=page.end-date %}
+
+<h1 align="center">{% if page.title-url %}<a href="{{ page.title-url }}">{{ page.title }}</a>{% else %}{{ page.title }}{% endif %}</h1>
+<p align="center">a {{ page.title-type }} presented at</p>
+<h2 align="center">{% if page.venue-url %}<a href="{{ page.venue-url }}">{{ page.venue }}</a>{% else %}{{ page.venue }}{% endif %}</h2>
+<h3 align="center">on {{ date-range }}</h3>
+
+<p>This site will provide late-breaking updates and additional information and resources for participants in the tutorial.  Expect updates to this site up to, and perhaps shortly after, the date of the tutorial.</p>
+
+<em>Last update: {{ "now" | date: "%F" }}</em>
+<hr>
+{{ content }}
+
+<hr>
+<h2>Acknowledgements</h2>
+
+<p>This tutorial is produced by the <a href="https://ideas-productivity.org" >IDEAS Productivity project</a>.</p>
+
+<p>This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.</p>

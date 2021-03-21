@@ -1,0 +1,73 @@
+{% comment %}
+    format-date-range: set `date-range` string formatted based on inputs
+    arguments:
+        `full-time`: render range as date AND time or just date
+        `start`: starting date specification
+        `end`: ending date specification (time zone is IGNORED)
+    
+    Usually, `full-time` is used for upcoming dates, while for past dates
+    just the day alone is used because the time is not interesting.
+
+    `end` may not exist, in which case, render as a single time point rather
+    than as a range.
+
+    Formatting, depending on common elements of start/end time:
+    ! full-time
+        %F                                          (no end)
+        %F/%F
+    full-time
+        %A %F %l:%M%P %Z                            (no end)
+        %A %F %l:%M%P %Z through %A %F %l:%M%P %Z   (different dates)
+        %A %F %l:%M%P %Z-%l:%M%P %Z                 (different time zones)
+        %A %F %l:%M:%P-%l:%M%P %Z                   (different times)
+
+    Note that %F is ISO 8601 YYYY-MM-DD, and %l is the hour without leading zeros
+
+    Known bugs:  There is some kind of strangeness in Jekyll where the `date` frontmatter
+    element is parsed differently from (for example) `end-date`.  Specifically, it seems that
+    for the non-`date` date, the time zone specification is ignored and on parsing %Z will
+    come up empty.  For the time being, I'm leaving the logic here to handle different time
+    zones, but in practice users should ensure that the `end` is specified in the local
+    time zone.
+ {% endcomment %}
+
+{% if include.full-time %}
+    {% assign date-range = include.start | date: "%A %F %l:%M%P" %}
+    {% assign start-zone = include.start | date: " %Z" %}
+
+    {% unless include.end %}
+        {% assign date-range = date-range | append: start-zone %}
+    {% else %}
+        {% assign end-zone = include.end | date: " %Z" %}
+
+        {% if start-zone != end-zone %}
+            {% assign date-range = date-range | append: start-zone %}
+        {% endif %}
+
+        {% assign start-date = include.start | date: "%F" %}
+        {% assign end-date = include.end | date: "%F" %}
+
+        {% if start-date == end-date %}
+            {% assign start-time = include.start | date: "%l:%M%P" | strip %}
+            {% assign end-time = include.end | date: "%l:%M%P" | strip %}
+
+            {% if start-time == end-time %}
+                {% assign date-range = date-range | append: end-zone %}
+            {% else %}
+                {% assign date-range = date-range | append: "-" %}
+                {% assign formatted-end = end-time | append: end-zone %}
+            {% endif %}
+        {% else %}
+            {% assign date-range = date-range | append: " through " %}
+            {% assign formatted-end = include.end | date: "%A %F %l:%M%P %Z" %}
+        {% endif %}
+        {% assign date-range = date-range | append: formatted-end %}
+    {% endunless %}
+{% else %}
+    {% assign date-range = include.start | date: "%F" %}
+    {% if include.end %}
+        {% assign date-range = date-range | append: "/" %}
+        {% assign formatted-end = include.end | date: "%F" %}
+        {% assign date-range = date-range | append: formatted-end %}
+    {% endif %}
+{% endif %}
