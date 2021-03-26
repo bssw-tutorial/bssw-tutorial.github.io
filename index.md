@@ -4,6 +4,7 @@
 
 layout: home
 ---
+{%- assign today = 'now' | date: "%s" -%}
 # The Better Scientific Software (BSSw) Tutorial
 
 The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.
@@ -16,10 +17,12 @@ We first presented a version of this tutorial in 2016, and since then we have be
 
 *These pages provide details for tutorial participants and others interested, including the latest presentations, hands-on activities, and other resources. In most cases, participation requires registration with the hosting venue, and may require a fee.*
 
+{%- assign first = true -%}
 {% assign sequence = site.events | where: "status", "scheduled" | sort: "date" %}
 {% for event in sequence %}
-
-* {% if forloop.first %}**{% endif %}{{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){% endif %}{% if forloop.first %}**{% endif %}
+{%- assign when = event.date | date: "%s" -%}
+{% if when < today %}{% continue %}{% endif %}
+* {% if first %}**{% endif %}{{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){% endif %}{% if first %}**{%- assign first = false -%}{% endif %}
 {% endfor %}
 
 ## Planned Tutorials
@@ -33,6 +36,13 @@ We first presented a version of this tutorial in 2016, and since then we have be
 {% endfor %}
 
 ## Past Tutorials
+
+{% assign sequence = site.events | where: "status", "scheduled" | sort: "date" %}
+{% for event in sequence %}
+{%- assign when = event.date | date: "%s" -%}
+{% if when >= today %}{% continue %}{% endif %}
+* {{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){% endif %}
+{% endfor %}
 
 See the IDEAS Productivity [Events](https://ideas-productivity.org/events/) page for tutorials prior to 2021 (as well as other IDEAS events, which may also be of interest).  For most past tutorials, the presentation slides have been archived and are linked from the Events page.
 
