@@ -9,7 +9,7 @@ layout: home
 
 The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.
 
-We first presented a version of this tutorial in 2016, and since then we have been working continually to refine and expand it.  We present it most often as part of conferences, but we are open to a wide range of venues, both in person (circumstances permitting) and online.
+We first presented a version of this tutorial in 2016, and since then we have been working continually to refine and expand it.  We present it most often as part of conferences, but we are open to a wide range of venues, both in person (circumstances permitting) and online.  [Contact us](mailto:{{ site.email }}?subject=BSSw tutorial question) for more information.
 
 *Last update: {{ "now" | date: "%F" }}*
 
@@ -37,7 +37,7 @@ We first presented a version of this tutorial in 2016, and since then we have be
 
 ## Past Tutorials
 
-{% assign sequence = site.events | where: "status", "scheduled" | sort: "date" %}
+{% assign sequence = site.events | where: "status", "scheduled" | sort: "date" | reverse %}
 {% for event in sequence %}
 {%- assign when = event.date | date: "%s" -%}
 {% if when >= today %}{% continue %}{% endif %}
