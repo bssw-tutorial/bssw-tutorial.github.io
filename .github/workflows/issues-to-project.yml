@@ -1,0 +1,19 @@
+name: Auto Assign to Project(s)
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+env:
+  MY_GITHUB_TOKEN: ${{ secrets.ORGANIZATION_TOKEN }}
+
+jobs:
+  assign_to_board:
+    runs-on: ubuntu-latest
+    name: Assign to organization board
+    steps:
+    - name: Assign ISSUES to the organization-level board
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      with:
+        project: 'https://github.com/orgs/bssw-tutorial/projects/1'
