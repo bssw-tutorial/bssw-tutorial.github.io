@@ -14,14 +14,40 @@ Use Documentation-Driven Development and Test-Driven Development
 to build up a numerical solution of the heat equation.
 
 $$
-k \nabla^2 u(x,t) = \partial u(x,t) / \partial t
+\partial u(x,t) / \partial t - \nabla^2 u(x,t) = q(x,t)
 $$
+
+which solves for the local energy $$ u(x,t) $$ given
+an initial condition, $$ u(x,0) = u_0(x) $$, a source function,
+$$ q(x,t) $$, and boundary conditions $$ u'(0,t) = 0 $$, $$ u'(1,t) = 0 $$.
+
+This example sets the domain length to 1 by fixing the
+choice of length-scale $$ x = x'/L $$, and sets the conductivity
+to 1 by fixing the choice of time-scale, $$ t = \alpha t' $$.
+
+We arbitrarily chose the boundary conditions so that
+the solution should conserve energy,
+
+$$
+\int_0^1 u(x,t) \; dx = \int_0^1 u_0(x) \; dx + \int_0^t \int_0^1 q(x,t) \; dx dt
+$$
+
+Note also that the heat equation has an analytical solution,
+
+$$
+u(x,t) = \int_0^1 G(x-y,t) u_0(y) dy + \int_0^t \int_0^1 G(x-y, t-s) q(y,s) \; dy ds
+$$
+
+in terms of the some Green's function, $$G(x,t)$$, that can
+be written analytically as a sum of Gaussians.  This could
+be used to construct tests.
+
 
 ## Prerequisites
 
 * Access to a software development environment for C++ langage
   * g++
-  * cmake
+  * gnu make
   * documentation
   * python3 with sphinx
   * git
@@ -47,24 +73,13 @@ follow the "library-based" solution of the
 
 ### Starting development
 
-To start, let's use boilerplate code for a cmake project
-building with documentation and tests:
+To start, clone the project template at:
 
-    git clone https://github.com/frobnitzem/lib0
-    mv lib0 heat
-    cd heat
-    bash customize.sh heat
+   git clone https://
 
-
-Follow the first suggestion printed out by that script and create any
-copyright type you wish by writing the COPYING file
-(see https://opensource.org/licenses for cut and paste examples).
-
-
-### Writing a README.md
-
-For now, you should focus on the overall objectives of
-your project.  Something like:
+Change to this directory and create a `README.md`.
+You should focus on the overall objectives of your project.
+Something like:
 
     # Heat Equation
     
@@ -76,6 +91,14 @@ your project.  Something like:
     function as expected, and that the solution
     satisfies some key mathematical properties.
 
+Next it's a good idea to add in a COPYING file that explicitly
+states how you would like others to use (or not use) your project's
+source code.
+Since the existing COPYRIGHT is public domain, you can legally
+delete it and replace it with your own.
+There are many cut and paste examples you can use at
+[https://opensource.org/licenses](opensource.org/licenses).
+
 
 ### Starting out iteration
 
@@ -85,23 +108,17 @@ let's run an "iteration zero" by checking that it builds.
 
 1. Run a test compile and check that everything is working:
 
-    vi build.sh   # It runs cmake, then make from a build dir.
-                  # change LOCALROOT to
-                  # LOCALROOT=$PWD/inst
+    make
 
-    bash build.sh # test compile
-
-This step will only succeed if you have cmake 3.17 and above
-and a C++ compiler.
+This step will only succeed if you have mpi and a C++ compiler.
 
 
 2. Add version control
 
-Delete the `build` and `inst` directories created in the last step:
+Run make clean.  Then commit your changes to version control with:
 
-    git init
     git add .
-    git commit -am "Initial commit."
+    git commit -am "Starting new project."
 
 
 ### Planning
@@ -174,9 +191,12 @@ Add a docs/README.md with the following:
 
     src/heat.cc creates a 1D Cartesian grid
     with uniform spacing.  Each grid-cell contains
-    a single scalar field, energy.
+    a single scalar field, u, representing energy.
     The energy represents the value of the energy
     at the midpoint of the cell.
+ 
+    The implied function will be piecewise linear
+    with discrete jumps in the slope at the cell midpoints.
  
    
     Functions will be provided to compute:
@@ -206,8 +226,19 @@ Add a docs/README.md with the following:
     6. comparison of the time-dependent solution with
        an analytical result
 
-Commit these to the repository, and write test number 1.
-Check that its compilation fails.
+Commit these to the repository.  Note that test number 1
+has already been included in the starting repository:
+
+    #include <AMReX.H>
+
+    int main (int argc, char* argv[]) {
+        amrex::Initialize(argc, argv);
+
+        amrex::Finalize();
+        return 0;
+    }
+
+Enable it in the makefile and check that its completion fails.
 
 
 ### Iteration 1
@@ -228,11 +259,101 @@ Check that its compilation fails.
    Note: In a more advanced development environment, you might
    choose to `spack install amrex` instead of locally installing.
 
-2. Add that path to the cmake options in `build.sh` using
-   `-DCMAKE_PREFIX_PATH="/path/to/amrex"`.
+2. Add amrex compile options to your top-level GNUmakefile by inserting (somewhere near the top):
 
-3. Add `FindPackage(amrex)` to your `CMakeLists.txt` file,
-   and add a line, `add_libraries(heat amrex::CXX)`.
+   ```
+   AMREX_CFLAGS = $(shell PKG_CONFIG_PATH=inst/lib/pkgconfig pkg-config amrex --cflags)
+   AMREX_LDFLAGS = $(shell PKG_CONFIG_PATH=inst/lib/pkgconfig pkg-config amrex --libs)
 
-4. If all goes well, test 1 should now pass.
+   CXXFLAGS += $(AMREX_CFLAGS)
+   LDFLAGS += $(AMREX_LDFLAGS)
+   ```
+
+3. If all goes well, test 1 should now pass.
+
+### Iteration 2
+
+At this point you should look carefully at both [AMReX's tutorial documentation](https://amrex-codes.github.io/amrex/docs_html/Basics.html#example-heatequation-ex1-c) and its [implementation code](https://github.com/AMReX-Codes/amrex-tutorials/blob/main/Basic/HeatEquation_EX1_C/Source/main.cpp).
+
+Comparing agains the list of tests we had planned to do, these
+two contain all the details we need.  The task here is to
+start editing `tests/checkbox.cc` and add the appropriate
+API calls and checks to convince ourselves (and the compiler)
+that everything is working as it should.
+
+Your `tests/checkbox.cc` should test out the amrex::Box, amrex::BoxArray classes
+and their methods.  Because of the way the `tests/GNUMakefile` is set up,
+the test should indicate errors by exiting with a nonzero return code.
+
+I find it's helpful to use a macro for this.
+For example,
+
+    #define check(message, cond) if(!(cond)) { \
+            std::cout << "Failed: "; errs += 1; \
+        } else { \
+            std::cout << "Passed: "; \
+        } std::cout << message << std::endl;
+
+    int errs = 0;
+
+    ...
+
+    ba.define(domain);
+    check("Lower boundary is zero.", lbound(ba).x == 0);
+
+    ...
+
+    return errs;
+
+Continue creating macros until you are satisfied the API works as expected.
+Add the new files and commit the result.
+
+
+### Iteration 3
+
+Next we'll want to start adding features to our own code.
+In production code, we would create a library from the files
+in the `src/` directory and link it into all the tests.
+
+For the purpose of this example, we'll just add all the code
+into the `include/heat.hh` header.  This will keep the `src/heat.cc`
+code simple -- create an object and run its functions.
+
+All the important code will be present in that object
+so we can test it from the `tests/`.
+
+So, to the `include/heat.hh` file, add:
+
+    using namespace amrex;
+    class heatEq {
+      public:
+        BoxArray ba;
+        Geometry geom;
+        double energy();
+
+        template <typename F>
+        void init_u(MultiFab& u, F fn) {
+            // call the function to init the box:
+            // u(0) = fn(0.0);
+        }
+        double energy(const MultiFab& u) {
+            // sum and scale u
+            return 0.0;
+        }
+    };
+
+Then create new programs in tests to exercise these objects.
+
+
+### Conclusion
+
+Hopefully this exercise has gotten you off to a great
+start with a structured process for development.
+Adding functionality takes thoughtful planning, time and effort.
+
+Documentation provides a place to store your notes
+sketched while planning.
+Tests provide a way to document the discoveries you make about
+your own designs as you're developing.
+Doing both keeps clutter and distraction out of your finished product code.
 
