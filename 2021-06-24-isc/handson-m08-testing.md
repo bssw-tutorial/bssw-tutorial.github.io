@@ -3,7 +3,6 @@ layout: default
 title: "Testing Part 1 Exercise"
 
 date: 2021-05-20
-mathjax: true
 layout: default
 
 ---
@@ -19,139 +18,221 @@ k \nabla^2 u(x,t) = \partial u(x,t) / \partial t
 $$
 
 ## Prerequisites
-* A [GitHub](https://github.com) account
-* A fork of the [betterscientificsoftware/hello-numerical-world-sc20](https://github.com/betterscientificsoftware/hello-numerical-world-sc20) repository in your account (covered in exercise 3)
-	- The files relevant to this exercise are:
-		- Header files: `Double.H`, `heat.H`
-		- Source file: `args.C`, `crankn.C`, `exact.C`, `ftcs.C`, `heat.C`, `upwind15.C`, `utils.C`
-		- Build file: `makefile`
-* Access to a basic software development environment for C++ languge
-   - Your fork of the tutorial repository should be cloned in this working environment (covered in exercise 3)
+
+* Access to a software development environment for C++ langage
+  * g++
+  * cmake
+  * documentation
+  * python3 with sphinx
+  * git
+
 
 ## Background
-In Module 7 of the tutorial presentations, we discuss the refactoring process. In this first refactoring exercise you are given a modular, well written code that supports multiple finite-difference schemes, your task is to refactor is so that another scheme can be added without having to modify the source code in future. 
+
+Test-driven development and documentation-driven development are practices
+that emphasize the importance of understanding requirements for software
+*before writing full implementations*.
+
+Used literally, they imply that tests and/or documentation for the software
+gets written before the software.  In practice, software development is iterative.
+When using test and documentation-driven development, the tests and documentation
+are never far behind the implementation, but can be way out in-front.
+
 
 ## Instructions
 
-The code currently has three different finite-difference schemes to update the solution to the heat equation: `crankn` (Crank-Nicolson), `ftcs` (forward-time central-space), and `upwind15` (upwind).  We'd like the code to be more flexible so that other approaches can be added to update the solution without having to modify the main heat equation driver every time.  More specifically, the `update_solution` interface needs to be generalized. 
+We'll write the beginnings of a heat diffusion equation that will
+follow the "library-based" solution of the
+[BSSW heat equation tutorial](https://github.com/betterscientificsoftware/hello-heat-equation).
 
-### Baselining the Existing Application
-All refactoring exercises should begin by checking the test coverage for the part of the code you'll be working on and gathering baseline results with the original code.
+### Starting development
 
-**Step 1.** In your working copy of the repository, in the `makefile`, add the `-coverage` flag to the rules to generate object files and to link the final `heat` application.
+To start, let's use boilerplate code for a cmake project
+building with documentation and tests:
 
-```
-# Implicit rule for object files
-%.o : %.C
-	$(CXX) -coverage -c $(CXXFLAGS) $(CPPFLAGS) $< -o $@
+    git clone https://github.com/frobnitzem/lib0
+    mv lib0 heat
+    cd heat
+    bash customize.sh heat
 
-# Linking the final heat app
-heat: $(OBJ)
-	$(CXX) -coverage -o heat $(OBJ) $(LDFLAGS) -lm
-```
 
-then build the `heat` application by typing  `make`.
+Follow the first suggestion printed out by that script and create any
+copyright type you wish by writing the COPYING file
+(see https://opensource.org/licenses for cut and paste examples).
 
-**Step 2.** Run
 
-```
-./heat runame="ftcs_results"
-gcov heat.C
-cp heat.C.gcov heat-ftcs.C.gcov
-```
+### Writing a README.md
 
-and examine the resulting `heat-ftcs.C.gcov` file.  The output of gcov is a listing of the code annotated on the left with the following notations:
-- a dash indicates a non-executable line, 
-- a number indicates the number of time the line was executed, and 
-- hash marks ("#####") indicate that the line was *never* exercised.
-You'll notice that the calls to the `update_solution_upwind15` and `update_solution_crankn` routines were never exercised.
+For now, you should focus on the overall objectives of
+your project.  Something like:
 
-**Step 3.** Collect coverage and baseline results for the other update schemes.
+    # Heat Equation
+    
+    This project will carry out time integration for
+    heat conduction in 1D using the AMReX library:
+    https://amrex-codes.github.io/amrex/docs_html/Basics.html
 
-```
-./heat alg="upwind15" runame="upwind_results"
-gcov heat.C
-cp heat.C.gcov heat-upwind15.C.gcov
+    Tests will verify that the data structures
+    function as expected, and that the solution
+    satisfies some key mathematical properties.
 
-./heat alg="crankn" runame="crankn_results"
-gcov heat.C
-cp heat.C.gcov heat-crankn.C.gcov
-```
 
-Compare the three gcov output to convince yourself that between the three test cases you've run, you have good coverage for the regions of code on which you're going to work.
+### Starting out iteration
 
-### Understanding the Refactoring Task
+Source code should always have a stable, reference,
+working state.  Before making the example more complicated
+let's run an "iteration zero" by checking that it builds.
 
-In the original code, the user passes an argument to the code to select the finite-difference scheme used on that execution.  Rather than pay the overhead of the tests required to do this on each iteration of the algorithm, we want to choose the finite-difference scheme at build time (producing different executables for each scheme).
+1. Run a test compile and check that everything is working:
 
-*Note: This is admittedly a somewhat contrived scenario, but it has the virtue of being fairly localized and easy to explain.*
+    vi build.sh   # It runs cmake, then make from a build dir.
+                  # change LOCALROOT to
+                  # LOCALROOT=$PWD/inst
 
-**Step 4.** Open `heat.C` in an editor and locate the interface declarations: `update_solution_ftcs`, `update_solution_upwind15`, and `update_solution_crankn` (L64-80). Note that the three interfaces are similar, but not identical. Specifically, the Crank-Nicolson routine takes different arguments.  
+    bash build.sh # test compile
 
-In `heat.C` find the `update_solution` routine that calls the three specific routines above (L143).  Note the branches based on string comparisons (slow, in performance-sensitive situations).
+This step will only succeed if you have cmake 3.17 and above
+and a C++ compiler.
 
-If you look at the implementations of the three updaters, in the files `ftcs.C`, `upwind15.C`, and `crankn.C`, you may notice that `crankn.C` also contains a second routine, `initialize_crankn`, with no analog in the other two files.  In the `initialize` routine in `heat.C` you can identify the call site for `initialize_crankn` (L106) and verify that there is no equivalent initialization step for the other two schemes.
 
-### Carrying out the Refactoring
+2. Add version control
 
-**Step 5.** First, we need to define a new generalized interface to the updaters that will work for all of them, which we'll call, simply `update_solution`.  So replace the original interface declarations (L64-80) with a single declaration, for `update_solution` that takes the union of the arguments required by the three updaters.
+Delete the `build` and `inst` directories created in the last step:
 
-```
-extern bool
-update_solution(int n,
-	Double *curr, Double const *last,
-	Double alpha, Double dx, Double dt,
-	Double const *cn_Amat,
-	Double bc_0, Double bc_1);
-```
+    git init
+    git add .
+    git commit -am "Initial commit."
 
-and remove the old implementation of `update_solution`.
 
-**Step 6.** Next, we need to change the implementations of the updaters to use the new interface (variables in the interface which are not used in the update scheme can simply be ignored).  Since we're going to end up with the same routine name in three different files, it might be helpful to our "future selves" to add comments to identify which finite-difference scheme each one implements, in case someone changes the names of the files.
+### Planning
 
-**Step 7.** We also need to deal with `initialize_crankn`.  Since we're not going to be passing arguments in at run time to select the finite-difference scheme, we need to get rid of the `if` test that protects its invocation in `heat.C`.
+We want this example to be as simple as possible while still
+showing how to hook into feature-rich libraries and state
+of the art development tools.
 
-But now we need to ensure that the dependency is satisfied no matter which updater is linked into the application.  So we need to add null implementations of `initialize_crankn` to the `ftcs.C` and `upwind15.C` files to satisfy that dependency. It is not necessary to generalize the name, but it is probably a good idea to add comments explaining why a do-nothing routine with a name that implies association with the Crank-Nicolson method appears in the file implementing the upwind scheme, for example.
+This tutorial is about planning and the development
+process more than writing codes.  Right now, the project
+is a seed of an idea.  It sits at the center of an
+infinite graph of possibilities.  You can
+map these with a web:
 
-```
-void
-initialize_crankn(init n,
-	Double alpha, Double dx, Double dt,
-	Double **cn_Amat)
-{
-}
-```
+* increase accuracy as much as possible
+  - investigate higher-order finite elements
+  - compare mathematical frameworks
+  - investigate implicit time-stepping schemes
+  
+* increase parallel speed and efficiency
+  - investigate data structures and layouts promoting local access patterns
+  - plan for network communication steps
+  - investigate overlapping compute/communication, multi-precision, etc.
 
-**Step 8.** Finally, we need to modify the `makefile` to generate three different versions of the executable by linking against the three different updaters. *Note: this solution is not elegant, but it is functional.*
+* increase code readability and maintainability
+  - list out repeated operations and use cases
+  - define high-level operations
+  - investigate mathematical structure of the problem
 
-```
-HDR = Double.H
-SRC1 = heat.C utils.C args.C exact.C ftcs.C
-SRC2 = heat.C utils.C args.C exact.C upwind15.C
-SRC3 = heat.C utils.C args.C exact.C crankn.C
-OBJ1 = $(SRC1:.C=.o)
-OBJ2 = $(SRC2:.C=.o)
-OBJ3 = $(SRC3:.C=.o)
-GCOV1 = $(SRC1:.C=.C.gcov) $(SRC1:.C=.gcda) $(SRC1:.C=.gcno) $(HDR:.H=.H.gcov)
-GCOV2 = $(SRC2:.C=.C.gcov) $(SRC2:.C=.gcda) $(SRC2:.C=.gcno) $(HDR:.H=.H.gcov)
-GCOV3 = $(SRC3:.C=.C.gcov) $(SRC3:.C=.gcda) $(SRC3:.C=.gcno) $(HDR:.H=.H.gcov)
-EXE1 = heat1
-EXE2 = heat2
-EXE3 = heat3
-```
+* build an easy-to-use documentation system
+  - investigate documentation build systems
+  - compare effort/visual appeal
+  - add readthedocs integration, doc. build status, etc.
+  - develop examples and use cases in multiple languages
 
-and build all three versions of the application by running 
+* use the most advanced testing framework
+  - compare C++ testing libraries for syntax
+  - investigate compatible frameworks based on your upstream libraries
+  - list out all possible use cases of the scenario and plan tests extensively
 
-```
-make heat1 heat2 heat3
-```
+* demonstrate all the concepts in the AMReX library
 
-## Verifying Your Work
+* compare all mathematical, numerical, and algorithmic methods for solving this equation
 
-**Step 9.** In this case, the changes that you've made to the code should not change the computed results at all.  Verify this by running the new codes and comparing against the baseline results that you collected earlier.
+* provide the best logical cross-over between dimensions
 
-```
-./heat1 runame=“new_ftcs_results”
-./heat2 runame=“new_upwind_results”
-./heat3 runame=“new_crankn_results”
-```
+* use the heat equation as a sub-solver in a larger network of equations
+
+
+Getting this advanced is, of course, a bit silly
+for a 1D heat equation example.
+
+Obviously, we can't do all these things.
+I do not advise that you attempt to do so either.
+It absolutely wouldn't make sense.
+
+Instead of getting overwhelmed and over-worked,
+focus on what you actually need.
+
+### Planning - re-do
+
+Let's keep just a few things in each major category above.
+Documentation-driven development means we now write these into the
+documentation.
+
+Add a note in the README.md to check docs/README.md
+Add a docs/README.md with the following:
+
+    # Heat Documentation
+
+    src/heat.cc creates a 1D Cartesian grid
+    with uniform spacing.  Each grid-cell contains
+    a single scalar field, energy.
+    The energy represents the value of the energy
+    at the midpoint of the cell.
+ 
+   
+    Functions will be provided to compute:
+
+    1. the total energy on the grid
+
+    2. the value of the energy at the next timestep,
+       given the current energy
+
+    3. initialization of the grid from a function and bounds
+
+    4. creation of a grid object
+
+
+    # Tests to be included
+
+    1. tests to ensure AMReX can be called as a library
+
+    2. tests of the grid object size and storage
+
+    3. tests of the energy function
+
+    4. tests of the initialization
+
+    5. integration tests of the energy vs. time
+
+    6. comparison of the time-dependent solution with
+       an analytical result
+
+Commit these to the repository, and write test number 1.
+Check that its compilation fails.
+
+
+### Iteration 1
+
+1. Install amrex:
+
+   ```
+   PREFIX=$PWD
+   mkdir inst && cd inst
+   curl -O https://github.com/AMReX-Codes/amrex/releases/download/21.05/amrex-21.05.tar.gz
+   tar xzf amrex-21.05.tar.gz
+   cd amrex
+   ./configure --prefix=$PREFIX --dim=1
+   make -j
+   make install
+   ```
+
+   Note: In a more advanced development environment, you might
+   choose to `spack install amrex` instead of locally installing.
+
+2. Add that path to the cmake options in `build.sh` using
+   `-DCMAKE_PREFIX_PATH="/path/to/amrex"`.
+
+3. Add `FindPackage(amrex)` to your `CMakeLists.txt` file,
+   and add a line, `add_libraries(heat amrex::CXX)`.
+
+4. If all goes well, test 1 should now pass.
+
