@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Testing Part 1 Exercise"
+title: "Testing Exercise"
 
 date: 2021-05-20
 layout: default
 
 ---
 
-# Hands-On Exercise 8: Testing Part 1
+# Hands-On Exercise 8: Testing
 
 ## Goals
 Use Documentation-Driven Development and Test-Driven Development
