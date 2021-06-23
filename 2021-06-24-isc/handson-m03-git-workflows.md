@@ -16,9 +16,9 @@ To fork a repo, create a branch and make a pull request
 ## Instructions 
 *Note: The screen shots linked below show forking hello-numerical-world; for this tutorial fork hello-numerical-world-sc20 instead.*
 
-**Step 1.** Fork repository hello-numerical-world-sc20: [(fork example)](images/03-git-fork.png)  
+**Step 1.** Fork repository hello-numerical-world: [(fork example)](images/03-git-fork.png)  
   - Click on the following link bellow and hit the fork button in the upper right corner:  
-[hello-numerical-world](https://github.com/betterscientificsoftware/hello-numerical-world-sc20)
+[hello-numerical-world](https://github.com/bssw-tutorial/hello-numerical-world)
   - Choose your personal repo to fork into.  
   - Click on arrow next to code for path to clone. see [(clone example)](images/03-git-clone.png)  
   - Click on ssh.  
@@ -27,8 +27,8 @@ To fork a repo, create a branch and make a pull request
 **Step 2.** Clone the fork (on command line)  
 
 ```
-   $git clone git@github.com:<your repo name>/hello-numerical-world-sc20.git 
-Cloning into 'hello-numerical-work-sc20' ...
+   $git clone git@github.com:<your repo name>/hello-numerical-world.git 
+Cloning into 'hello-numerical-world' ...
 .
 .
 ```
@@ -36,7 +36,7 @@ Cloning into 'hello-numerical-work-sc20' ...
 **Step 3.** Create branch  
 
 ```
-   $cd hello-numerical-world-sc20
+   $cd hello-numerical-world
    $git checkout -b issue-1000
    Switched to a new branch 'issue-1000'
 ```
@@ -50,7 +50,8 @@ Cloning into 'hello-numerical-work-sc20' ...
    index 3cd1a3c..b44c57e 100644
    --- a/README.md
    +++ b/README.md
-   @@ -22,7 +22,7 @@ is known as the _Diffusion Equation_ and also the [_Heat Equation_](https://en.w
+   @@ -22,7 +22,7 @@ is known as the _Diffusion Equation_ and also the [_Heat Equation_](
+   s://en.w
     
     ### Simplifying Assumptions
     
@@ -69,8 +70,8 @@ Cloning into 'hello-numerical-work-sc20' ...
 
 ```
    $git remote -vv
-   origin	git@github.com:<your repo name>/hello-numerical-world-sc20.git (fetch)
-   origin	git@github.com:<your repo name>/hello-numerical-world-sc20.git (push)
+   origin	git@github.com:<your repo name>/hello-numerical-world.git (fetch)
+   origin	git@github.com:<your repo name>/hello-numerical-world.git (push)
 
    $git branch
    * issue-1000
@@ -90,9 +91,9 @@ Cloning into 'hello-numerical-work-sc20' ...
    remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
    remote: 
    remote: Create a pull request for 'issue-1000' on GitHub by visiting:
-   remote:      https://github.com/<your repo name>/hello-numerical-world-sc20/pull/new/issue-1000
+   remote:      https://github.com/<your repo name>/hello-numerical-world/pull/new/issue-1000
    remote: 
-   To github.com:<your repo name>/hello-numerical-world-sc20.git
+   To github.com:<your repo name>/hello-numerical-world.git
     * [new branch]      issue-1000 -> issue-1000
 ```
 
