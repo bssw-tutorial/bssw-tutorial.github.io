@@ -113,7 +113,7 @@ This file has two required elements at the top:
    As you add cmake features, you should check when cmake introduced them.
    Obviously, you should increase the required version if the features are only available in newer cmake versions.
 
-2. `project` -- setting the [`${CMAKE_PROJECT_NAME}`](https://cmake.org/cmake/help/latest/variable/CMAKE_PROJECT_NAME.html) and [`${HEAT_VERSION_MAJOR`](https://cmake.org/cmake/help/latest/variable/PROJECT-NAME_VERSION_MAJOR.html)/MINOR/PATCH variables.
+2. `project` -- setting the [`${CMAKE_PROJECT_NAME}`](https://cmake.org/cmake/help/latest/variable/CMAKE_PROJECT_NAME.html) and [`${HEAT_VERSION_MAJOR}`](https://cmake.org/cmake/help/latest/variable/PROJECT-NAME_VERSION_MAJOR.html)/MINOR/PATCH variables.
 
 The next three lines declare an executable target, `heat`, add a feature to it,
 and create a rule for installing it to `bin`.
