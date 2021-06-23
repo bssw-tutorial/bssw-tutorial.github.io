@@ -8,4 +8,4 @@ layout: page
 
 *This page is intended to facilitate content development by the tutorial team.  It is not intended to be referenced in public.  It is subject to change at any time.*
 
-* Updated [2021-06-24-isc](2021-06-24-isc/2021-06-24-isc) event page
+* ~~Updated [2021-06-24-isc](2021-06-24-isc/2021-06-24-isc) event page~~ Page has been moved to production.  See it here [2021-06-24-isc](../events/2021-06-24-isc.html)
