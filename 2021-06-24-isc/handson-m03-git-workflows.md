@@ -20,7 +20,7 @@ To fork a repo, create a branch and make a pull request
   - Click on the following link bellow and hit the fork button in the upper right corner:  
 [hello-numerical-world](https://github.com/betterscientificsoftware/hello-numerical-world-sc20)
   - Choose your personal repo to fork into.  
-  - Click on arrow next to code for path to clone. see [(find path to clone example)](images/03-git-path-to-clone.png)  
+  - Click on arrow next to code for path to clone. see [(clone example)](images/03-git-clone.png)  
   - Click on ssh.  
   - Copy path to clipboard (use path in command below).  
 
