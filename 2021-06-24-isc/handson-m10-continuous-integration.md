@@ -3,6 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+hands-on-repo-org: bssw-tutorial
+hands-on-repo-base: hello-numerical-world-2021-06-isc
 ---
 # Hands-On Exercise 8: Continuous Integration
 ## Goals
@@ -11,8 +13,8 @@ You'll establish a simple continuous integration workflow and then refine it, ad
 ## Prerequisites
 * A [GitHub](https://GitHub.com) account
     - This exercise can be done entirely within the web interface to GitHub and Codecov.
-* A fork of the [betterscientificsoftware/hello-numerical-world](https://github.com/betterscientificsoftware/hello-numerical-world) repository in your account (covered in exercise 3)
 * A [Codecov](https://codecov.io) account linked to your GitHub account
+* A fork of the [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) repository in your account (covered in Git Workflows exercise)
 
 ## Background
 
@@ -23,8 +25,8 @@ We're also going to hook this CI check up to the Codecov.io service.
 Then we'll visualize and track changes in code coverage as the code changes.
 
 A video walk-through of (most of) this exercise is available at: <https://youtu.be/QE4RFp8lGiQ>
-* This video was created by Mark Miller (LLNL) for tutorial at ATPESC 2020.  Where he refers to the repository as `hello-numerical-world-atpesc-2020`, substitute `hello-numerical-world-<...>`.
-* The original exercise used Travis CI, which requires setting up an extra account. This version uses GitHub's action service instead.
+* This video was created by Mark Miller (LLNL) for tutorial at ATPESC 2020.  Where he refers to the repository as `hello-numerical-world-atpesc-2020`, substitute `{{ page.hands-on-repo-base }}`.
+* The original exercise used Travis CI, which requires setting up an extra account. Below, we use GitHub's built-in Action service instead.
 
 
 ## Instructions

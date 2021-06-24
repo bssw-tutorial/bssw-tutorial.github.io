@@ -14,7 +14,7 @@ Use GitHub issues and project boards to setup a simple "personal kanban" board
    - This exercise can be done entirely within the web interface of GitHub.com
 
 ## Background
-In Module 2 of the tutorial presentations, we discuss some approaches to project (and personal) management based on Agile principles.  In this exercise, we want to take some of the ideas from the presentation and show how they can be implemented in the GitHub.com platform.  GitHub.com is an easily (and freely) available platform that is widely used by software development teams.  It is just one of the many environments that can support these kinds of needs, so feel free to explore others and decide what best meets your needs. (And realize that your needs may well change over time.)
+In Agile Methodologies lesson of the tutorial presentations, we discuss some approaches to project (and personal) management based on Agile principles.  In this exercise, we want to take some of the ideas from the presentation and show how they can be implemented in the GitHub.com platform.  GitHub.com is an easily (and freely) available platform that is widely used by software development teams.  It is just one of the many environments that can support these kinds of needs, so feel free to explore others and decide what best meets your needs. (And realize that your needs may well change over time.)
 
 ## Instructions 
 

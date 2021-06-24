@@ -3,19 +3,21 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+hands-on-repo-org: bssw-tutorial
+hands-on-repo-base: hello-numerical-world-2021-06-isc
 ---
-# Hands-On Exercise 7a: Agile Redux
+# Hands-On Exercise 6: Agile Redux
 
 ## Goals
 Create epic, story, and task issues for the refactoring exercises and track them on a kanban board
 
 ## Prerequisites
 * A [GitHub](https://github.com) account
-* A fork of the [betterscientificsoftware/hello-numerical-world-sc20](https://github.com/betterscientificsoftware/hello-numerical-world-sc20) repository in your account (covered in exercise 3)
+* A fork of the [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) repository in your account (covered in Git Workflows exercise)
    - This exercise can be done entirely within the web interface of GitHub.com
 
 ## Background
-In Module 7 of the tutorial presentations, we discuss the refactoring process.  In exercises 7b and 7c, your task will be to actually refactor some code you've inherited.  But before we start on the code, we're going to make a plan in the form of GitHub issues that we can use to track the plan to completion.  You may want to read through those two exercises before starting this one, to get a better feel for the assignments.  In the next two exercises, we encourage you to use the setup you'll create here (issues and project board) to track your progress.
+In the tutorial presentations, we will discuss the refactoring process.  In hands-on [exercise 11](../handson-m11-refactoring1.html), your task will be to actually refactor some code you've inherited.  But before we start on the code, we're going to make a plan in the form of GitHub issues that we can use to track the plan to completion.  You may want to read through that exercise before starting this one, to get a better feel for the assignments.  In the refactoring exercise, we encourage you to use the setup you'll create here (issues and project board) to track your progress.
 
 We're going to consider the refactoring effort to be at the level of an "epic", and break it down into several "stories", each consisting of several tasks.  In the usual definitions, epics are high-level objectives, stories should represent increments of value to the customer, and tasks are the step necessary to complete the story.
 
@@ -23,11 +25,11 @@ We're going to consider the refactoring effort to be at the level of an "epic", 
 
 ### Where to Do the Work
 
-We're going to be working with issues to manage development work on the hello-numerical-world-sc20 repository. You forked this repository (made a copy in your own GitHub account) earlier in these exercises.  But if you check the tabs for your fork, you will see that Issues is missing.  In the "default" fork-pull request model of interaction, you and your team would be working on issues in the upstream repository, where everyone can easily see and update them.  So, by default, when GitHub forks a repository, it disables the Issues on the resulting fork.
+We're going to be working with issues to manage development work on the {{ page.hands-on-repo-base }} repository. You forked this repository (made a copy in your own GitHub account) in an earlier exercise  But if you check the tabs for your fork, you will see that Issues is missing.  In the "default" fork-pull request model of interaction, you and your team would be working on issues in the upstream repository, where everyone can easily see and update them.  So, by default, when GitHub forks a repository, it disables the Issues on the resulting fork.
 
 In this case, everyone doing the exercise is doing the same tasks, which wouldn't normally happen in a coordinated project.  So to avoid the confusion of everyone using the upstream repository's issues and project boards, we recommend that in this case you do one of the following instead.
    - Use the issues-only repository you created for exercise 2 (or create another issues-only repository in your account).
-   - You can enable issues in your fork of the hello-numerical-world-sc20 repository by going into the Setting tab, scrolling down to the Features section, and checking the box next to Issues.
+   - You can enable issues in your fork of the {{ page.hands-on-repo-base }} repository by going into the Setting tab, scrolling down to the Features section, and checking the box next to Issues.
 
 ### Working with GitHub Issues
 
@@ -81,11 +83,11 @@ Unfortunately, GitHub issues don't support hierarchies of issues, such as epic-s
 
 ### Working with GitHub Project (Kanban) Boards
 
-Next, we're going to setup a simple kanban board that you can use to track the progress of your refactoring work in exercise 7b.
+Next, we're going to setup a simple kanban board that you can use to track the progress of your refactoring work in refactoring exercise.
 
 **Step 5.** Go to the Project tab in your chosen workspace and create a project.  We suggest calling it "Project Management".  Provide a description if you like.  For the Template, select "Basic Kanban".  Click "Create project".  The result should be a project board with columns labeled "To do", "In progress", and "Done".
    - The To do column starts out with three "notes", which take up a lot of space.  You may want to give them a quick read and then delete them by clicking the ellipsis (three dots) menu and selecting "Delete Note" on each.
 
 **Step 6.** Add the issues you have created to the project board by clicking the "+ Add cards" button on the top right of the project board, next to the filter widget.  The default search in the popup ("is:open") should display the issues you've created.  One by one, drag each of them to the To do column of the project board.
 
-**Step 7.** While you're working on exercise 7b, use the project board and issues to track your progress.
+**Step 7.** While you're working on the refactoring exercise, use the project board and issues to track your progress.

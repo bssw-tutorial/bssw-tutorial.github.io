@@ -1,10 +1,7 @@
 ---
-layout: default
-title: "Testing Walk-Through"
-
-date: 2021-06-20
-layout: default
-
+layout: page
+hands-on-repo-org: bssw-tutorial
+hands-on-repo-base: hello-numerical-world-2021-06-isc
 ---
 
 # Hands-On Exercise 8: Testing Walk-Through
@@ -21,7 +18,8 @@ Implement a cmake build and test process for an example project.
   * gnu make
   * cmake
   * git
-
+* A fork of the [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) repository in your account (covered in Git Workflows exercise)
+   - Your fork of the tutorial repository should be cloned where you have the software development environment above
 
 ## Background
 

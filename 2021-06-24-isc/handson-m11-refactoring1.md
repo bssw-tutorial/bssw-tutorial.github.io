@@ -3,30 +3,34 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+hands-on-repo-org: bssw-tutorial
+hands-on-repo-base: hello-numerical-world-2021-06-isc
 ---
-# Hands-On Exercise 7b: Refactoring Part 1
+# Hands-On Exercise 11: Refactoring 
 
-## Goals
+## Part 1: Add a New Integration Method
+
+### Goals
 Refactor the code to enable addition of new integration methods without having to modify the source code.
 
-## Prerequisites
+### Prerequisites
 * A [GitHub](https://github.com) account
-* A fork of the [betterscientificsoftware/hello-numerical-world-sc20](https://github.com/betterscientificsoftware/hello-numerical-world-sc20) repository in your account (covered in exercise 3)
+* A fork of the [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) repository in your account (covered in Git Workflows exercise)
 	- The files relevant to this exercise are:
 		- Header files: `Double.H`, `heat.H`
 		- Source file: `args.C`, `crankn.C`, `exact.C`, `ftcs.C`, `heat.C`, `upwind15.C`, `utils.C`
 		- Build file: `makefile`
 * Access to a basic software development environment for C++ languge
-   - Your fork of the tutorial repository should be cloned in this working environment (covered in exercise 3)
+   - Your fork of the tutorial repository should be cloned in this working environment
 
-## Background
-In Module 7 of the tutorial presentations, we discuss the refactoring process. In this first refactoring exercise you are given a modular, well written code that supports multiple finite-difference schemes, your task is to refactor is so that another scheme can be added without having to modify the source code in future. 
+### Background
+In the tutorial presentations, we discuss the refactoring process. In this first refactoring exercise you are given a modular, well written code that supports multiple finite-difference schemes, your task is to refactor is so that another scheme can be added without having to modify the source code in future. 
 
-## Instructions
+### Instructions
 
 The code currently has three different finite-difference schemes to update the solution to the heat equation: `crankn` (Crank-Nicolson), `ftcs` (forward-time central-space), and `upwind15` (upwind).  We'd like the code to be more flexible so that other approaches can be added to update the solution without having to modify the main heat equation driver every time.  More specifically, the `update_solution` interface needs to be generalized. 
 
-### Baselining the Existing Application
+#### Baselining the Existing Application
 All refactoring exercises should begin by checking the test coverage for the part of the code you'll be working on and gathering baseline results with the original code.
 
 **Step 1.** In your working copy of the repository, in the `makefile`, add the `-coverage` flag to the rules to generate object files and to link the final `heat` application.
@@ -71,7 +75,7 @@ cp heat.C.gcov heat-crankn.C.gcov
 
 Compare the three gcov output to convince yourself that between the three test cases you've run, you have good coverage for the regions of code on which you're going to work.
 
-### Understanding the Refactoring Task
+#### Understanding the Refactoring Task
 
 In the original code, the user passes an argument to the code to select the finite-difference scheme used on that execution.  Rather than pay the overhead of the tests required to do this on each iteration of the algorithm, we want to choose the finite-difference scheme at build time (producing different executables for each scheme).
 
@@ -83,7 +87,7 @@ In `heat.C` find the `update_solution` routine that calls the three specific rou
 
 If you look at the implementations of the three updaters, in the files `ftcs.C`, `upwind15.C`, and `crankn.C`, you may notice that `crankn.C` also contains a second routine, `initialize_crankn`, with no analog in the other two files.  In the `initialize` routine in `heat.C` you can identify the call site for `initialize_crankn` (L106) and verify that there is no equivalent initialization step for the other two schemes.
 
-### Carrying out the Refactoring
+#### Carrying out the Refactoring
 
 **Step 5.** First, we need to define a new generalized interface to the updaters that will work for all of them, which we'll call, simply `update_solution`.  So replace the original interface declarations (L64-80) with a single declaration, for `update_solution` that takes the union of the arguments required by the three updaters.
 
@@ -137,7 +141,7 @@ and build all three versions of the application by running
 make heat1 heat2 heat3
 ```
 
-## Verifying Your Work
+### Verifying Your Work
 
 **Step 9.** In this case, the changes that you've made to the code should not change the computed results at all.  Verify this by running the new codes and comparing against the baseline results that you collected earlier.
 
@@ -146,3 +150,43 @@ make heat1 heat2 heat3
 ./heat2 runame=“new_upwind_results”
 ./heat3 runame=“new_crankn_results”
 ```
+
+---
+
+## Part 2: Cleaning Up Code
+
+## Goals
+Refactor a poorly structured code to a cleaner, more reusable version.
+
+## Prerequisites
+
+* A [GitHub](https://github.com) account
+* A fork of the [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) repository in your account (covered in Git Workflows exercise)
+	- The files relevant to this exercise are:
+		- Header files: `Double.H`, `heat.H`
+		- Source file: `heatAll.C`
+* Access to a basic software development environment for C++ language
+   - Your fork of the tutorial repository should be cloned in this working environment
+
+### Background
+The code you worked with in [Part 1](#part-1-add-a-new-integration-method) was reasonably well structured.  But it didn't necessarily start out that way.  This exercise takes a step further back in time.  Suppose you've just inherited the code `heatAll.C` from a colleague who's left the project.  You don't even have a `makefile`! Your task is to take that original, poorly structured code into a cleaner, more reusable version.  The version of the heat equation code that you worked with in Part 1 is one possible solution to this task.  But the real point of this exercise is to go through the process yourself to decide how to restructure the code to get the results you (or your boss) want.
+
+### Instructions
+
+**Step 1.** Create a new directory and copy `heatAll.C` into it. This will be your working area. Work in tandem with Part 1 to plan and track your work.
+
+**Step 2.** Create a `makefile` to build an executable from `heatAll.C`.  If you're not that familiar with makefiles, you might want to adapt the one in the main directory.  In this case all of the code is in the single file `heatAll.C`. Add the `-coverage` flag you used in the previous exercise.
+
+**Step 3.** Run the executable with various permutations of input arguments, saving each output as a baseline for comparison until you have 100% coverage.
+
+**Step 4.** Make a decision about how many files you wish to split the code into. 
+
+A good rule of thumb is to start with a different file for each category of functions. An example would be to create an `integrate.C`, a `utils.C` and a `main.C` to which you copy from `heatAll.C` functions that belong in each category. 
+
+**Step 5.** Make a decision about which variable and constants you wish to have available globally and which you wish to keep local. Create `.H` files for global variables.
+
+**Step 6.** In each of the new `.C` file add `extern` interfaces for functions that are not in the same file, and `include` statements for any header files you might wish to include. 
+
+**Step 7.** In the `makefile` replace existing filenames with the ones you have just created. 
+
+**Step 8.** Compile and execute the refactored code in all permutations used in step 3 and verify against the corresponding baselines. If you are happy with the modularity of your refactored code you are done. If you wish to further modularize repeat steps 3-8 until you have the achieved your refactoring objectives.

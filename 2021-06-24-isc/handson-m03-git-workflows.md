@@ -3,32 +3,36 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+hands-on-repo-org: bssw-tutorial
+hands-on-repo-base: hello-numerical-world-2021-06-isc
 ---
 # Hands-On Exercise 3: Git Workflows 
+{%- capture hands-on-repo -%}{{ page.hands-on-repo-org }}/{{ page.hands-on-repo-base }}{%- endcapture -%}
 
 ## Goals
 To fork a repo, create a branch and make a pull request
 
 ## Prerequisites
 * A [GitHub](https://github.com) account
-   - This exercise can actually be completed entirely via the GitHub.com web interface (UI), but we recommend using a command-line `git` client if you're interested in doing later exercises that can't be completed through the web UI (e.g., exercises 7b and 7c)
+   - This exercise can actually be completed entirely via the GitHub.com web interface (UI), but we recommend using a command-line `git` client if you're interested in doing later exercises that can't be completed through the web UI.
 
 ## Instructions 
-*Note: The screen shots linked below show forking hello-numerical-world; for this tutorial fork hello-numerical-world-sc20 instead.*
+*Note: The screen shots and instructions below refer to the generic hello-numerical-world repository.  For this event, you will use **[{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }})** instead.*
 
-**Step 1.** Fork repository hello-numerical-world: [(fork example)](images/03-git-fork.png)  
-  - Click on the following link bellow and hit the fork button in the upper right corner:  
-[hello-numerical-world](https://github.com/bssw-tutorial/hello-numerical-world)
-  - Choose your personal repo to fork into.  
-  - Click on arrow next to code for path to clone. see [(clone example)](images/03-git-clone.png)  
-  - Click on ssh.  
-  - Copy path to clipboard (use path in command below).  
+**Step 1.** Fork the tutorial repository: [(fork example)](images/03-git-fork.png)
+  - Go to the repository that you want to fork: [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) 
+  - Hit the fork button in the upper right corner 
+  - Choose your personal account to fork into.  
 
-**Step 2.** Clone the fork (on command line)  
+The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  <your username>/{{ page.hands-on-repo-base }} .
+
+**Step 2.** Clone the fork (on command line)
+  - Click on arrow next to code for path to clone. see [(clone example)](images/03-git-clone.png)   
+  - Copy path to clipboard (use path in command below). 
 
 ```
-   $git clone git@github.com:<your repo name>/hello-numerical-world.git 
-Cloning into 'hello-numerical-world' ...
+   $git clone https://github.com/<your username>/{{ page.hands-on-repo-base }}.git
+Cloning into '{{ page.hands-on-repo-base}}' ...
 .
 .
 ```
@@ -36,7 +40,7 @@ Cloning into 'hello-numerical-world' ...
 **Step 3.** Create branch  
 
 ```
-   $cd hello-numerical-world
+   $cd {{ page.hands-on-repo-base }}
    $git checkout -b issue-1000
    Switched to a new branch 'issue-1000'
 ```
@@ -70,8 +74,8 @@ Cloning into 'hello-numerical-world' ...
 
 ```
    $git remote -vv
-   origin	git@github.com:<your repo name>/hello-numerical-world.git (fetch)
-   origin	git@github.com:<your repo name>/hello-numerical-world.git (push)
+   origin	https://github.com/<your username>/{{ page.hands-on-repo-base }}.git (fetch)
+   origin	https://github.com/<your username>/{{ page.hands-on-repo-base }}.git (push)
 
    $git branch
    * issue-1000
@@ -91,9 +95,9 @@ Cloning into 'hello-numerical-world' ...
    remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
    remote: 
    remote: Create a pull request for 'issue-1000' on GitHub by visiting:
-   remote:      https://github.com/<your repo name>/hello-numerical-world/pull/new/issue-1000
+   remote:      https://github.com/<your username>/{{ page.hands-on-repo-base }}/pull/new/issue-1000
    remote: 
-   To github.com:<your repo name>/hello-numerical-world.git
+   To github.com:<your username>/{{ page.hands-on-repo-base }}.git
     * [new branch]      issue-1000 -> issue-1000
 ```
 
