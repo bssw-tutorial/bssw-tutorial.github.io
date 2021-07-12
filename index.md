@@ -24,25 +24,36 @@ We first presented a version of this tutorial in 2016, and since then we have be
 {% if when < today %}{% continue %}{% endif %}
 * {% if first %}**{% endif %}{{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){% endif %}{% if first %}**{%- assign first = false -%}{% endif %}
 {% endfor %}
+{% if first %}
+* *No events currently scheduled.*
+{% endif %}
 
 ## Planned Tutorials
 
 *These events are in the planning stage. Dates shown are associated with the hosting venue, not the specific dates of our tutorial. Additional details will be provided as they become available.*
 
+{%- assign first = true -%}
 {% assign sequence = site.events | where: "status", "planned" | sort: "date" %}
 {% for event in sequence %}
-
-* {{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){% endif %}
+* {{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){%- assign first = false -%}{% endif %}
 {% endfor %}
+{% if first %}
+* *No events currently in planning.*
+{% endif %}
 
 ## Past Tutorials
 
+{%- assign first = true -%}
 {% assign sequence = site.events | where: "status", "scheduled" | sort: "date" | reverse %}
 {% for event in sequence %}
 {%- assign when = event.date | date: "%s" -%}
 {% if when >= today %}{% continue %}{% endif %}
-* {{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){% endif %}
+* {{ event.date | date: "%F" }}: [{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}]({{ event.url }}){%if event.location %} ({{ event.location }}){%- assign first = false -%}{% endif %}
 {% endfor %}
+{% if first %}
+* *No past events available.*
+{% endif %}
+
 
 See the IDEAS Productivity [Events](https://ideas-productivity.org/events/) page for tutorials prior to 2021 (as well as other IDEAS events, which may also be of interest).  For most past tutorials, the presentation slides have been archived and are linked from the Events page.
 
