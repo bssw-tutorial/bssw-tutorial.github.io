@@ -11,7 +11,7 @@ The BSSw tutorial focuses on issues of developer productivity, software sustaina
 
 We first presented a version of this tutorial in 2016, and since then we have been working continually to refine and expand it.  We present it most often as part of conferences, but we are open to a wide range of venues, both in person (circumstances permitting) and online.  [Contact us](mailto:{{ site.email }}?subject=BSSw tutorial question) for more information.
 
-*Last update: {{ "now" | date: "%F" }}*
+*Last updated: {{ page.last_modified_at | date: '%F' }}*
 
 ## Scheduled Tutorials
 

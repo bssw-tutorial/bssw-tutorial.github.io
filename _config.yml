@@ -37,6 +37,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-titles-from-headings
+  - jekyll-last-modified-at
 
 titles_from_headings:
   enabled:     true
@@ -46,6 +47,12 @@ titles_from_headings:
 header_pages:
   - 
 # none
+
+# Default to simple ISO date without time.
+# Note that this default does *not* affect the page.last-modified-at version.  
+# That still needs to be passed to the `date` filter for formatting.
+last-modified-at:
+    date-format: '%F'
 
 # By convention, we "operate" on US Eastern time
 timezone: America/New_York

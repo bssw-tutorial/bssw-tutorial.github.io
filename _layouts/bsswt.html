@@ -11,7 +11,7 @@ layout: default
 
 <p>This site will provide late-breaking updates and additional information and resources for participants in the tutorial.  Expect updates to this site up to, and perhaps shortly after, the date of the tutorial.</p>
 
-<em>Last update: {{ "now" | date: "%F" }}</em>
+<em>Last updated: {{ page.last_modified_at | date: '%F' }}</em>
 <hr>
 {{ content }}
 
