@@ -41,24 +41,24 @@ layout: default
     
   {{ content }}
 
-  {% assign w = site.events | where: "presenter-ids", page.github-id | sort: "event-id" | reverse %}
+  {% assign w = site.events | where: "presenter-ids", page.github-id | sort: "date" | reverse %}
   {% if w != empty %}
     <p><strong>Presenter:</strong> </p>
 
     {% for w2 in w %}
-      <p>{{ w2.event-id }}. 
-        <strong><a href="{{ site.baseurl }}{{ w2.url }}">{{ w2.title }}</a></strong> ({{ w2.date | date: "%F" }})
+      <p>
+        <a href="{{ site.baseurl }}{{ w2.url }}">{{ w2.title }}{% if w2.title-type %} {{ w2.title-type }}{% endif %} @ {{ w2.venue }}{% if w2.venue-type %} {{ w2.venue-type }}{% endif %}</a> ({{ w2.date | date: "%F" }})
       </p>
     {% endfor %}  
   {% endif %}  
 
-  {% assign w = site.events | where: "helper-ids", page.github-id | sort: "event-id" | reverse %}
+  {% assign w = site.events | where: "helper-ids", page.github-id | sort: "date" | reverse %}
   {% if w != empty %}
     <p><strong>Helper:</strong> </p>
 
     {% for w2 in w %}
-      <p>{{ w2.event-id }}. 
-        <strong><a href="{{ site.baseurl }}{{ w2.url }}">{{ w2.title }}</a></strong> ({{ w2.date | date: "%F" }})
+      <p>
+        <a href="{{ site.baseurl }}{{ w2.url }}">{{ w2.title }}{% if w2.title-type %} {{ w2.title-type }}{% endif %} @ {{ w2.venue }}{% if w2.venue-type %} {{ w2.venue-type }}{% endif %}</a> ({{ w2.date | date: "%F" }})
       </p>
     {% endfor %}  
   {% endif %}  
