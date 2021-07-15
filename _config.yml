@@ -83,6 +83,8 @@ future: true
 collections:
   events:
     output: true
+  people:
+    output: true
 
 defaults:
   - scope:
@@ -90,6 +92,11 @@ defaults:
       type: "events"
     values:
       layout: "bsswt"
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: "person"
 
 # Useful for debugging and quality assurance
 # Note: setting strict_variables turns out not to be so useful

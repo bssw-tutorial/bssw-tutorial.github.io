@@ -1,0 +1,65 @@
+---
+layout: default
+---
+<h2>Tutorial Staff Details</h2>
+
+{% assign asize = page.affiliations | size %}
+{% capture alabel %}{% include emit-plural text="Affiliation" count=asize %}{% endcapture %}
+
+{% assign pasize = page.past-affiliations | size %}
+{% capture palabel %}{% include emit-plural text="Past Affiliation" count=pasize %}{% endcapture %}
+
+<section>
+  <h3><strong>{{ page.firstname }} {{page.lastname }}</strong>
+  </h3> 
+
+  {% if page.aka %}
+    <p><strong>Also Known As:</strong> {{ page.aka }}
+    </p>
+  {% endif %}
+
+  {% if page.affiliations %}
+    <p><strong>{{ alabel }}:</strong>
+      {{ page.affiliations | array_to_sentence_string | markdownify |
+        remove: "<p>" | remove: "</p>" | lstrip | rstrip }}
+    </p>
+  {% endif %}
+
+  {% if page.past-affiliations %}
+    <p><strong>{{ palabel }}:</strong>
+      {{ page.past-affiliations | array_to_sentence_string | markdownify |
+        remove: "<p>" | remove: "</p>" | lstrip | rstrip }}
+    </p>
+  {% endif %}
+    
+  {% if page.github-id %}
+    <p><strong>GitHub ID:</strong>
+      <a href="{{ site.github-url }}{{ page.github-id }}">{{ page.github-id }}
+      </a>
+    </p>
+  {% endif %}
+    
+  {{ content }}
+
+  {% assign w = site.events | where: "presenter-ids", page.github-id | sort: "event-id" | reverse %}
+  {% if w != empty %}
+    <p><strong>Presenter:</strong> </p>
+
+    {% for w2 in w %}
+      <p>{{ w2.event-id }}. 
+        <strong><a href="{{ site.baseurl }}{{ w2.url }}">{{ w2.title }}</a></strong> ({{ w2.date | date: "%F" }})
+      </p>
+    {% endfor %}  
+  {% endif %}  
+
+  {% assign w = site.events | where: "helper-ids", page.github-id | sort: "event-id" | reverse %}
+  {% if w != empty %}
+    <p><strong>Helper:</strong> </p>
+
+    {% for w2 in w %}
+      <p>{{ w2.event-id }}. 
+        <strong><a href="{{ site.baseurl }}{{ w2.url }}">{{ w2.title }}</a></strong> ({{ w2.date | date: "%F" }})
+      </p>
+    {% endfor %}  
+  {% endif %}  
+</section>
