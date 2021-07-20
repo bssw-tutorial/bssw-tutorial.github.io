@@ -3,12 +3,6 @@ layout: default
 ---
 <h2>Tutorial Staff Details</h2>
 
-{% assign asize = page.affiliations | size %}
-{% capture alabel %}{% include emit-plural text="Affiliation" count=asize %}{% endcapture %}
-
-{% assign pasize = page.past-affiliations | size %}
-{% capture palabel %}{% include emit-plural text="Past Affiliation" count=pasize %}{% endcapture %}
-
 <section>
   <h3><strong>{{ page.firstname }} {{page.lastname }}</strong>
   </h3> 
@@ -19,14 +13,14 @@ layout: default
   {% endif %}
 
   {% if page.affiliations %}
-    <p><strong>{{ alabel }}:</strong>
+    <p><strong>{{ page.affiliations | size | pluralize: "Affiliation", "Affiliations" }}:</strong>
       {{ page.affiliations | array_to_sentence_string | markdownify |
         remove: "<p>" | remove: "</p>" | lstrip | rstrip }}
     </p>
   {% endif %}
 
   {% if page.past-affiliations %}
-    <p><strong>{{ palabel }}:</strong>
+    <p><strong>{{ page.past-affiliations | size | pluralize: "Past Affiliation", "Past Affiliations" }}:</strong>
       {{ page.past-affiliations | array_to_sentence_string | markdownify |
         remove: "<p>" | remove: "</p>" | lstrip | rstrip }}
     </p>
