@@ -14,6 +14,12 @@
     `gh-url`: base URL for GitHub repositories (optional, default: site.github-url)
     `doi-url`: URL for the DOI resolver (optional, default: site.doi.resolver-url)
 
+  notes:
+    Note that the row format uses vertical bars ("|") as separators.  Unfortunately, in a Markdown
+    document, these are interpreted as marking table cells.  In this context, they either need to be
+    escaped ("\|"), which would require modifications to this include, or need to be placed into a
+    context that forces them to be interpreted as HTML (for example, within paragraph tags ("<p></p>"))
+
   Expected data structure
     artifacts:
       - label:
