@@ -1,0 +1,24 @@
+{% comment %}
+  set-name-affiliation-array: create an array with the name and affiliation from each person's record
+
+  arguments:
+    `people`: an array of people records
+  output:
+    name_affiliation_array
+
+  Expected elements of person structure
+    lastname (string)
+    firstname (string)
+    affiliations (array)
+{% endcomment %}
+
+{%- assign name_affiliation_array = "" | split: "," -%}
+{%- for p in include.people -%}
+  {%- comment -%} If the person-id is not in people, skip it{%- endcomment -%}
+  {%- unless p[0] -%}{%- continue -%}{%- endunless -%}
+  {%- capture pafil -%}{%- include emit-name-affiliation person=p -%}{%- endcapture -%}
+  {%- assign name_affiliation_array = name_affiliation_array | push: pafil -%}
+{%- endfor -%}
+{%- comment -%}Clean up internal variables{%- endcomment -%}
+{%- assign p = nil -%}
+{%- assign pafil = nil -%}

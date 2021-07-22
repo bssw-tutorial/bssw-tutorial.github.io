@@ -1,0 +1,25 @@
+{% comment %}
+  emit-name-affiliation: emit the name and affiliation from a person's record
+    example: "firstname lastname (affiliations)"
+    where there might be multiple affiliations
+
+  arguments:
+    `person`: record containing the person's information
+
+  Expected elements of person structure
+    lastname (string)
+    firstname (string)
+    affiliations (array)
+
+  Notes: 
+  * missing elements will be silently ignored
+  * In the case where there is only a firstname or only a lastname and no affiliation
+    an extra trailing space will be included. This is a corner case, not worth
+    addressing until it becomes a problem
+
+  FIXME: why do we have to specify element 0 here?
+ {% endcomment %}
+
+{%- if include.person[0].firstname -%}{{ include.person[0].firstname | append: " " }}{%- endif -%}
+{%- if include.person[0].lastname -%}{{ include.person[0].lastname | append: " " }}{%- endif -%}
+{%- if include.person[0].affiliations -%}({{- include.person[0].affiliations | array_to_sentence_string }}){%- endif -%}

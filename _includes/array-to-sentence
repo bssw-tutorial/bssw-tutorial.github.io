@@ -1,0 +1,13 @@
+{% comment %}
+  array-to-sentence: emit a string from an array, with a default
+
+  arguments:
+    `array`: an array of strings
+    `if_empty`: alternate text to return if array is empty
+{% endcomment %}
+
+{%- if include.array and include.array != empty -%}
+  {{ include.array | array_to_sentence_string }}
+{%- elsif include.if_empty -%}
+  {{ if_empty }}
+{%- endif -%}
