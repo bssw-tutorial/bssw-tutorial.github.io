@@ -1,4 +1,4 @@
-artifacts:
+#artifacts:
   - label: Program Page
     format: SC21 Website
     url: https://sc21.supercomputing.org/presentation/?id=tut139&sess=sess214
