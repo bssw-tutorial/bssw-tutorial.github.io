@@ -1,0 +1,53 @@
+{% comment %}
+  emit-agenda-table.html: Turn a CSV data table into an agenda table
+
+  arguments:
+    `agenda`: CSV table with agenda data
+    `presentations`: associative array mapping shorthand labels for presentations to their titles
+
+  table structure requirements:
+    A column entitled `Title` containing the label of the presentation (referencing the presentations argument) 
+    A column entitled `Presenter` containing the github id of the presenter (referencing people argument)
+
+  site variables used:
+    `site.people`
+
+{% endcomment %}
+
+<table>
+  {%- for row in include.agenda -%}
+    {%- if forloop.first -%}
+      <tr>
+      {%- for pair in row -%}
+        <th>{{ pair[0] }}</th>
+        {%- if pair[0] == "Presenter" -%}{%- assign pres-col = forloop.index0 -%}{%- endif -%}
+        {%- if pair[0] == "Title" -%}{%- assign title-col = forloop.index0 -%}{%- endif -%}
+      {%- endfor -%}
+      </tr>
+    {%- endif -%}
+      <tr>
+      {%- for pair in row -%}
+        {%- if forloop.index0 == pres-col -%}
+            {%- if pair[1] -%}
+                {%- assign presenter = pair[1] -%}
+                {%- include extract-array-subset key="github-id" values=presenter source=site.people -%}
+                {%- include set-name-affiliation-array people=extract_subset_array short=true -%}
+                {%- capture pnamafil -%}{%- include array-to-sentence array=name_affiliation_array -%}{%- endcapture -%}
+                <td>{{ pnamafil }}</td>
+            {%- else -%}
+                <td></td>
+            {%- endif -%}
+        {%- elsif forloop.index0 == title-col -%}
+            {%- assign label = pair[1] -%}
+            {%- if my-presentations[label] -%}
+                <td>{{ my-presentations[label] }}</td>
+            {%- else -%}
+                <td>{{ label }}</td>
+            {%- endif -%}
+        {%- else -%}
+            <td>{{ pair[1] }}</td>
+        {%- endif -%}
+      {%- endfor -%}
+      </tr>
+  {%- endfor -%}
+</table>

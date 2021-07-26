@@ -5,11 +5,13 @@
 
   arguments:
     `person`: record containing the person's information
+    `short`: boolean indicating that short affiliation should be use (optional, default: false)
 
   Expected elements of person structure
     lastname (string)
     firstname (string)
-    affiliations (array)
+    affiliations (array) used if short==false
+    short-affils (array) used if short==true
 
   Notes: 
   * missing elements will be silently ignored
@@ -18,8 +20,14 @@
     addressing until it becomes a problem
 
   FIXME: why do we have to specify element 0 here?
- {% endcomment %}
+{% endcomment %}
+
+{%- assign short = include.short | default: false -%}
 
 {%- if include.person[0].firstname -%}{{ include.person[0].firstname | append: " " }}{%- endif -%}
 {%- if include.person[0].lastname -%}{{ include.person[0].lastname | append: " " }}{%- endif -%}
-{%- if include.person[0].affiliations -%}({{- include.person[0].affiliations | array_to_sentence_string }}){%- endif -%}
+{%- if short -%}
+  {%- if include.person[0].short-affils -%}({{- include.person[0].short-affils | array_to_sentence_string }}){%- endif -%}
+{%- else -%}
+  {%- if include.person[0].affiliations -%}({{- include.person[0].affiliations | array_to_sentence_string }}){%- endif -%}
+{%- endif -%}

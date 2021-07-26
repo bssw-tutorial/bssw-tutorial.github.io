@@ -3,20 +3,25 @@
 
   arguments:
     `people`: an array of people records
+    `short`: boolean indicating that short affiliation should be use (optional, default: false)
+
   output:
     name_affiliation_array
 
   Expected elements of person structure
     lastname (string)
     firstname (string)
-    affiliations (array)
+    affiliations (array) used if short==false
+    short-affils (array) used if short==true
 {% endcomment %}
+
+{%- assign short = include.short | default: false -%}
 
 {%- assign name_affiliation_array = "" | split: "," -%}
 {%- for p in include.people -%}
   {%- comment -%} If the person-id is not in people, skip it{%- endcomment -%}
   {%- unless p[0] -%}{%- continue -%}{%- endunless -%}
-  {%- capture pafil -%}{%- include emit-name-affiliation person=p -%}{%- endcapture -%}
+  {%- capture pafil -%}{%- include emit-name-affiliation person=p short=short -%}{%- endcapture -%}
   {%- assign name_affiliation_array = name_affiliation_array | push: pafil -%}
 {%- endfor -%}
 {%- comment -%}Clean up internal variables{%- endcomment -%}
