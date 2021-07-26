@@ -19,3 +19,4 @@ jobs:
       uses: srggrs/assign-one-project-github-action@1.2.1
       with:
         project: 'https://github.com/orgs/bssw-tutorial/projects/1'
+        column_name: 'Backlog'
