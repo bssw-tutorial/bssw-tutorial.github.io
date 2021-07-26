@@ -1,12 +1,12 @@
 name: Auto Assign to Project(s)
 
-# Unfortunately, this is not working yet.
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened]
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
 
+# GH_TOKEN must be an organization-level secret
 env:
   MY_GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
