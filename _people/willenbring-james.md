@@ -3,6 +3,6 @@ github-id: jwillenbring
 lastname: Willenbring
 firstname: James M. 
 affiliations: ["Sandia National Laboratories"]
-short-affil: ["SNL"]
+short-affils: ["SNL"]
 pronouns: "he/him"
 ---

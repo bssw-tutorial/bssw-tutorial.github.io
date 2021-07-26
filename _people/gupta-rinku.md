@@ -3,6 +3,6 @@ github-id: rinkug
 lastname: Gupta
 firstname: Rinku K.
 affiliations: ["Argonne National Laboratory"]
-short-affil: ["ANL"]
+short-affils: ["ANL"]
 pronouns: "she/her"
 ---
