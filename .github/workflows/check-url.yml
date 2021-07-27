@@ -27,4 +27,4 @@ jobs:
         retry_count: 3
 
         # choose if the force pass or not
-        force_pass : true
+        #force_pass : true
