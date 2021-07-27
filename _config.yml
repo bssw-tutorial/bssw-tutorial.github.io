@@ -39,6 +39,7 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-last-modified-at
   - jekyll-pluralize
+#  - flexible_include # We do use this, but it is not a gem
 
 titles_from_headings:
   enabled:     true
@@ -77,6 +78,9 @@ timezone: America/New_York
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+exclude:
+  - reference-files/
 
 # This is needed to generate output for future webinars
 future: true
