@@ -9,11 +9,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: urls-checker
-      uses: urlstechie/urlchecker-action@0.2.1
+      uses: urlstechie/urlchecker-action@0.2.3
       with:
         # A comma-separated list of file types to cover in the URL checks
         file_types: .md
 
+        # Need to exclude a few things
+        exclude_urls: https://en.w
+        
         # Choose whether to include file with no URLs in the prints.
         print_all: false
 
