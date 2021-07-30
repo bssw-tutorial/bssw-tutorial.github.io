@@ -57,6 +57,9 @@ header_pages:
 last-modified-at:
     date-format: '%F'
 
+# For github-metadata
+repository: bssw-tutorial/bssw-tutorial.github.io
+
 # By convention, we "operate" on US Eastern time
 timezone: America/New_York
 
