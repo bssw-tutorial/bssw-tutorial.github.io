@@ -39,6 +39,7 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-last-modified-at
   - jekyll-pluralize
+  - jekyll-github-metadata
 #  - flexible_include # We do use this, but it is not a gem
 
 titles_from_headings:
