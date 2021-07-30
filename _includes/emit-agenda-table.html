@@ -14,40 +14,65 @@
 
 {% endcomment %}
 
+{% assign column-format = "" | split: "," %}
+{% assign td-open = "" | split: "," %}
+{% assign th-open = "" | split: "," %}
 <table>
   {%- for row in include.agenda -%}
     {%- if forloop.first -%}
       <tr>
       {%- for pair in row -%}
-        <th>{{ pair[0] }}</th>
-        {%- if pair[0] == "Presenter" -%}{%- assign pres-col = forloop.index0 -%}{%- endif -%}
-        {%- if pair[0] == "Title" -%}{%- assign title-col = forloop.index0 -%}{%- endif -%}
+        {%- assign column-format = column-format | push: pair[1] -%}
+        {%- case pair[1] -%}
+          {%- when "<!--left-->" -%}
+            {%- assign td-open = td-open | push: '<td style="text-align:left">' -%}
+            {%- assign th-open = th-open | push: '<th style="text-align:left">' -%}
+          {%- when "<!--center-->" -%}
+            {%- assign td-open = td-open | push: '<td style="text-align:center">' -%}
+            {%- assign th-open = th-open | push: '<th style="text-align:center">' -%}
+          {%- when "<!--right-->" -%}
+            {%- assign td-open = td-open | push: '<td style="text-align:right">' -%}
+            {%- assign th-open = th-open | push: '<th style="text-align:right">' -%}
+          {%- else -%}
+            {%- assign td-open = td-open | push: '<td>' -%}
+            {%- assign th-open = th-open | push: '<th>' -%}
+        {%- endcase -%}
+        {%- unless column-format[forloop.index0] == "<!--skip-->" -%}
+          {{ th-open[forloop.index0] }}{{ pair[0] }}</th>
+        {%- endunless -%}
       {%- endfor -%}
       </tr>
+      {%- continue -%}
     {%- endif -%}
       <tr>
       {%- for pair in row -%}
-        {%- if forloop.index0 == pres-col -%}
+        {%- if column-format[forloop.index0] == "<!--skip-->" -%}
+          {%- continue -%}
+        {%- else -%}
+        {%- case pair[0] -%}
+          {%- when "Presenter" -%}
             {%- if pair[1] -%}
                 {%- assign presenter = pair[1] -%}
                 {%- include extract-array-subset key="github-id" values=presenter source=site.people -%}
                 {%- include set-name-affiliation-array people=extract_subset_array short=true -%}
                 {%- capture pnamafil -%}{%- include array-to-sentence array=name_affiliation_array -%}{%- endcapture -%}
-                <td>{{ pnamafil }}</td>
+                {{ td-open[forloop.index0] }}{{ pnamafil }}</td>
             {%- else -%}
-                <td></td>
+            {{ td-open[forloop.index0] }}</td>
             {%- endif -%}
-        {%- elsif forloop.index0 == title-col -%}
+          {%- when "Title" -%}
             {%- assign label = pair[1] -%}
             {%- if my-presentations[label] -%}
-                <td>{{ my-presentations[label] }}</td>
+            {{ td-open[forloop.index0] }}{{ my-presentations[label] }}</td>
             {%- else -%}
-                <td>{{ label }}</td>
+            {{ td-open[forloop.index0] }}{{ label }}</td>
             {%- endif -%}
         {%- else -%}
-            <td>{{ pair[1] }}</td>
+        {{ td-open[forloop.index0] }}{{ pair[1] }}</td>
+        {%- endcase -%}
         {%- endif -%}
       {%- endfor -%}
       </tr>
   {%- endfor -%}
 </table>
+
