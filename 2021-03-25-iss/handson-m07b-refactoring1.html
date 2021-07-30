@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Hands-On Exercise 7b: Refactoring Part 1 | Better Scientific Software Tutorial</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Hands-On Exercise 7b: Refactoring Part 1" />
+<meta name="author" content="IDEAS Productivity Project" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2021-03-25-iss/handson-m07b-refactoring1.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2021-03-25-iss/handson-m07b-refactoring1.html" />
+<meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hands-On Exercise 7b: Refactoring Part 1" />
+<script type="application/ld+json">
+{"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-03-25-iss/handson-m07b-refactoring1.html","@type":"WebPage","headline":"Hands-On Exercise 7b: Refactoring Part 1","dateModified":"2021-07-30T09:17:01-04:00","author":{"@type":"Person","name":"IDEAS Productivity Project"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+</head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Better Scientific Software Tutorial</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Hands-On Exercise 7b: Refactoring Part 1</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="goals">Goals</h2>
+<p>Refactor the code to enable addition of new integration methods without having to modify the source code.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+  <li>A <a href="https://github.com">GitHub</a> account</li>
+  <li>A fork of the <a href="https://github.com/betterscientificsoftware/hello-numerical-world-sc20">betterscientificsoftware/hello-numerical-world-sc20</a> repository in your account (covered in exercise 3)
+    <ul>
+      <li>The files relevant to this exercise are:
+        <ul>
+          <li>Header files: <code class="highlighter-rouge">Double.H</code>, <code class="highlighter-rouge">heat.H</code></li>
+          <li>Source file: <code class="highlighter-rouge">args.C</code>, <code class="highlighter-rouge">crankn.C</code>, <code class="highlighter-rouge">exact.C</code>, <code class="highlighter-rouge">ftcs.C</code>, <code class="highlighter-rouge">heat.C</code>, <code class="highlighter-rouge">upwind15.C</code>, <code class="highlighter-rouge">utils.C</code></li>
+          <li>Build file: <code class="highlighter-rouge">makefile</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Access to a basic software development environment for C++ languge
+    <ul>
+      <li>Your fork of the tutorial repository should be cloned in this working environment (covered in exercise 3)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="background">Background</h2>
+<p>In Module 7 of the tutorial presentations, we discuss the refactoring process. In this first refactoring exercise you are given a modular, well written code that supports multiple finite-difference schemes, your task is to refactor is so that another scheme can be added without having to modify the source code in future.</p>
+
+<h2 id="instructions">Instructions</h2>
+
+<p>The code currently has three different finite-difference schemes to update the solution to the heat equation: <code class="highlighter-rouge">crankn</code> (Crank-Nicolson), <code class="highlighter-rouge">ftcs</code> (forward-time central-space), and <code class="highlighter-rouge">upwind15</code> (upwind).  We’d like the code to be more flexible so that other approaches can be added to update the solution without having to modify the main heat equation driver every time.  More specifically, the <code class="highlighter-rouge">update_solution</code> interface needs to be generalized.</p>
+
+<h3 id="baselining-the-existing-application">Baselining the Existing Application</h3>
+<p>All refactoring exercises should begin by checking the test coverage for the part of the code you’ll be working on and gathering baseline results with the original code.</p>
+
+<p><strong>Step 1.</strong> In your working copy of the repository, in the <code class="highlighter-rouge">makefile</code>, add the <code class="highlighter-rouge">-coverage</code> flag to the rules to generate object files and to link the final <code class="highlighter-rouge">heat</code> application.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Implicit rule for object files
+%.o : %.C
+	$(CXX) -coverage -c $(CXXFLAGS) $(CPPFLAGS) $&lt; -o $@
+
+# Linking the final heat app
+heat: $(OBJ)
+	$(CXX) -coverage -o heat $(OBJ) $(LDFLAGS) -lm
+</code></pre></div></div>
+
+<p>then build the <code class="highlighter-rouge">heat</code> application by typing  <code class="highlighter-rouge">make</code>.</p>
+
+<p><strong>Step 2.</strong> Run</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heat runame="ftcs_results"
+gcov heat.C
+cp heat.C.gcov heat-ftcs.C.gcov
+</code></pre></div></div>
+
+<p>and examine the resulting <code class="highlighter-rouge">heat-ftcs.C.gcov</code> file.  The output of gcov is a listing of the code annotated on the left with the following notations:</p>
+<ul>
+  <li>a dash indicates a non-executable line,</li>
+  <li>a number indicates the number of time the line was executed, and</li>
+  <li>hash marks (“#####”) indicate that the line was <em>never</em> exercised.
+You’ll notice that the calls to the <code class="highlighter-rouge">update_solution_upwind15</code> and <code class="highlighter-rouge">update_solution_crankn</code> routines were never exercised.</li>
+</ul>
+
+<p><strong>Step 3.</strong> Collect coverage and baseline results for the other update schemes.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heat alg="upwind15" runame="upwind_results"
+gcov heat.C
+cp heat.C.gcov heat-upwind15.C.gcov
+
+./heat alg="crankn" runame="crankn_results"
+gcov heat.C
+cp heat.C.gcov heat-crankn.C.gcov
+</code></pre></div></div>
+
+<p>Compare the three gcov output to convince yourself that between the three test cases you’ve run, you have good coverage for the regions of code on which you’re going to work.</p>
+
+<h3 id="understanding-the-refactoring-task">Understanding the Refactoring Task</h3>
+
+<p>In the original code, the user passes an argument to the code to select the finite-difference scheme used on that execution.  Rather than pay the overhead of the tests required to do this on each iteration of the algorithm, we want to choose the finite-difference scheme at build time (producing different executables for each scheme).</p>
+
+<p><em>Note: This is admittedly a somewhat contrived scenario, but it has the virtue of being fairly localized and easy to explain.</em></p>
+
+<p><strong>Step 4.</strong> Open <code class="highlighter-rouge">heat.C</code> in an editor and locate the interface declarations: <code class="highlighter-rouge">update_solution_ftcs</code>, <code class="highlighter-rouge">update_solution_upwind15</code>, and <code class="highlighter-rouge">update_solution_crankn</code> (L64-80). Note that the three interfaces are similar, but not identical. Specifically, the Crank-Nicolson routine takes different arguments.</p>
+
+<p>In <code class="highlighter-rouge">heat.C</code> find the <code class="highlighter-rouge">update_solution</code> routine that calls the three specific routines above (L143).  Note the branches based on string comparisons (slow, in performance-sensitive situations).</p>
+
+<p>If you look at the implementations of the three updaters, in the files <code class="highlighter-rouge">ftcs.C</code>, <code class="highlighter-rouge">upwind15.C</code>, and <code class="highlighter-rouge">crankn.C</code>, you may notice that <code class="highlighter-rouge">crankn.C</code> also contains a second routine, <code class="highlighter-rouge">initialize_crankn</code>, with no analog in the other two files.  In the <code class="highlighter-rouge">initialize</code> routine in <code class="highlighter-rouge">heat.C</code> you can identify the call site for <code class="highlighter-rouge">initialize_crankn</code> (L106) and verify that there is no equivalent initialization step for the other two schemes.</p>
+
+<h3 id="carrying-out-the-refactoring">Carrying out the Refactoring</h3>
+
+<p><strong>Step 5.</strong> First, we need to define a new generalized interface to the updaters that will work for all of them, which we’ll call, simply <code class="highlighter-rouge">update_solution</code>.  So replace the original interface declarations (L64-80) with a single declaration, for <code class="highlighter-rouge">update_solution</code> that takes the union of the arguments required by the three updaters.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extern bool
+update_solution(int n,
+	Double *curr, Double const *last,
+	Double alpha, Double dx, Double dt,
+	Double const *cn_Amat,
+	Double bc_0, Double bc_1);
+</code></pre></div></div>
+
+<p>and remove the old implementation of <code class="highlighter-rouge">update_solution</code>.</p>
+
+<p><strong>Step 6.</strong> Next, we need to change the implementations of the updaters to use the new interface (variables in the interface which are not used in the update scheme can simply be ignored).  Since we’re going to end up with the same routine name in three different files, it might be helpful to our “future selves” to add comments to identify which finite-difference scheme each one implements, in case someone changes the names of the files.</p>
+
+<p><strong>Step 7.</strong> We also need to deal with <code class="highlighter-rouge">initialize_crankn</code>.  Since we’re not going to be passing arguments in at run time to select the finite-difference scheme, we need to get rid of the <code class="highlighter-rouge">if</code> test that protects its invocation in <code class="highlighter-rouge">heat.C</code>.</p>
+
+<p>But now we need to ensure that the dependency is satisfied no matter which updater is linked into the application.  So we need to add null implementations of <code class="highlighter-rouge">initialize_crankn</code> to the <code class="highlighter-rouge">ftcs.C</code> and <code class="highlighter-rouge">upwind15.C</code> files to satisfy that dependency. It is not necessary to generalize the name, but it is probably a good idea to add comments explaining why a do-nothing routine with a name that implies association with the Crank-Nicolson method appears in the file implementing the upwind scheme, for example.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void
+initialize_crankn(init n,
+	Double alpha, Double dx, Double dt,
+	Double **cn_Amat)
+{
+}
+</code></pre></div></div>
+
+<p><strong>Step 8.</strong> Finally, we need to modify the <code class="highlighter-rouge">makefile</code> to generate three different versions of the executable by linking against the three different updaters. <em>Note: this solution is not elegant, but it is functional.</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HDR = Double.H
+SRC1 = heat.C utils.C args.C exact.C ftcs.C
+SRC2 = heat.C utils.C args.C exact.C upwind15.C
+SRC3 = heat.C utils.C args.C exact.C crankn.C
+OBJ1 = $(SRC1:.C=.o)
+OBJ2 = $(SRC2:.C=.o)
+OBJ3 = $(SRC3:.C=.o)
+GCOV1 = $(SRC1:.C=.C.gcov) $(SRC1:.C=.gcda) $(SRC1:.C=.gcno) $(HDR:.H=.H.gcov)
+GCOV2 = $(SRC2:.C=.C.gcov) $(SRC2:.C=.gcda) $(SRC2:.C=.gcno) $(HDR:.H=.H.gcov)
+GCOV3 = $(SRC3:.C=.C.gcov) $(SRC3:.C=.gcda) $(SRC3:.C=.gcno) $(HDR:.H=.H.gcov)
+EXE1 = heat1
+EXE2 = heat2
+EXE3 = heat3
+</code></pre></div></div>
+
+<p>and build all three versions of the application by running</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make heat1 heat2 heat3
+</code></pre></div></div>
+
+<h2 id="verifying-your-work">Verifying Your Work</h2>
+
+<p><strong>Step 9.</strong> In this case, the changes that you’ve made to the code should not change the computed results at all.  Verify this by running the new codes and comparing against the baseline results that you collected earlier.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heat1 runame=“new_ftcs_results”
+./heat2 runame=“new_upwind_results”
+./heat3 runame=“new_crankn_results”
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Better Scientific Software Tutorial</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">IDEAS Productivity Project</li><li><a class="u-email" href="mailto:IdeasProductivity@gmail.com">IdeasProductivity@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/bssw-tutorial"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bssw-tutorial</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting  high-performance computers.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

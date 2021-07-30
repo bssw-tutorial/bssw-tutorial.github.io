@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Developing a Testing and Continuous Integration Strategy for your Team | Better Scientific Software Tutorial</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Developing a Testing and Continuous Integration Strategy for your Team" />
+<meta name="author" content="IDEAS Productivity Project" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<link rel="canonical" href="https://bssw-tutorial.github.io/events/2021-04-12-ecpam.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/events/2021-04-12-ecpam.html" />
+<meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-12T14:30:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Developing a Testing and Continuous Integration Strategy for your Team" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://bssw-tutorial.github.io/events/2021-04-12-ecpam.html"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/events/2021-04-12-ecpam.html","@type":"BlogPosting","headline":"Developing a Testing and Continuous Integration Strategy for your Team","dateModified":"2021-07-30T09:17:01-04:00","datePublished":"2021-04-12T14:30:00-04:00","author":{"@type":"Person","name":"IDEAS Productivity Project"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+</head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Better Scientific Software Tutorial</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+
+
+
+
+
+
+
+
+
+
+
+<h1 align="center">Developing a Testing and Continuous Integration Strategy for your Team</h1>
+<p align="center">a tutorial presented at</p>
+<h2 align="center"><a href="https://ecpannualmeeting.com/">Exascale Computing Project Annual Meeting</a></h2>
+<h3 align="center">on 2021-04-12/2021-04-12</h3>
+
+
+<p style="text-indent: -5em; padding-left: 5em;"">Presenters: David E. Bernholdt (Oak Ridge National Laboratory), Patricia A. Grubel (Los Alamos National Laboratory), and James M. Willenbring (Sandia National Laboratories)</p>
+
+
+
+
+<hr>
+<p>This page provides detailed information specific to the tutorial event above. Expect updates to this page up to, and perhaps shortly after, the date of the tutorial. Pages for other tutorial events can be accessed from the <a href="/">main page</a> of this site.</p>
+
+<em>Last updated: 2021-07-30</em>
+<hr>
+
+
+<h2>Quick Links</h2>
+<ul>
+    <li><a href="https://doi.org/10.6084/m9.figshare.14256257">Presentation Slides</a> (FigShare)</li>
+</ul>
+
+
+<h2 id="on-this-page">On this Page</h2>
+<ul>
+  <li><a href="#description">Description</a></li>
+  <li><a href="#agenda">Agenda</a></li>
+  <li><a href="#presentation-slides">Presentation Slides</a></li>
+  <li><a href="#how-to-participate">How to Participate</a></li>
+  <li><a href="#related-ecp-am-events">Related ECP AM Events</a></li>
+  <li><a href="#stay-in-touch">Stay in Touch</a></li>
+  <li><a href="#resources-from-presentations">Resources from Presentations</a></li>
+  <li><a href="#requested-citation">Requested Citation</a></li>
+  <li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+
+<hr />
+
+<h2 id="description">Description</h2>
+
+<p>A thorough and robust testing regime is central to the productive development, evolution, and maintenance of quality, trustworthy scientific software. Continuous integration, though much discussed, is just one element of such a testing regime. Most project teams feel that they could (and should) do a “better job” of testing. In many cases, designing and implementing a strong testing strategy can seem so daunting that it is hard to know where to start.</p>
+
+<p>In this tutorial, which is aimed at those with beginner to intermediate levels of comfort with testing and continuous integration, we will briefly review the multiple motivations for testing, and the different types of tests that address them. We’ll discuss some strategies for testing complex software systems, and how continuous integration testing fits into the larger picture. Accompanying hands-on activities, available for self-study, will demonstrate how to get started with a very simple level of CI testing.</p>
+
+<hr />
+
+<h2 id="agenda">Agenda</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Time (EDT)</th>
+      <th style="text-align: right">Module</th>
+      <th>Topic</th>
+      <th>Speaker</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">2:30pm-2:35pm</td>
+      <td style="text-align: right">00</td>
+      <td>Introduction</td>
+      <td>David E. Bernholdt, ORNL</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2:35pm-2:40pm</td>
+      <td style="text-align: right">01</td>
+      <td>Motivation and Overview</td>
+      <td>Patricia A. Grubel, LANL</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2:40pm-3:00pm</td>
+      <td style="text-align: right">02</td>
+      <td>Software Testing 1</td>
+      <td>Patricia A. Grubel, LANL</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3:00pm-3:25pm</td>
+      <td style="text-align: right">03</td>
+      <td>Software Testing 2</td>
+      <td>David E. Bernholdt, ORNL</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3:25pm-3:55pm</td>
+      <td style="text-align: right">04</td>
+      <td>Continuous Integration</td>
+      <td>James M. Willenbring, SNL</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3:55pm-4:00pm</td>
+      <td style="text-align: right">05</td>
+      <td>Summary</td>
+      <td>James M. Willenbring, SNL</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="presentation-slides">Presentation Slides</h2>
+
+<ul>
+  <li>The latest version of the slides will always be available at <strong><a href="https://doi.org/10.6084/m9.figshare.14256257">https://doi.org/10.6084/m9.figshare.14256257</a></strong>.
+    <ul>
+      <li>Note that these files may include additional slides that will not be discussed during the tutorial, but questions are welcome.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="how-to-participate">How to Participate</h2>
+
+<ul>
+  <li>
+    <p>Please remember to stay muted except when asking questions, to limit the extraneous noise.</p>
+  </li>
+  <li>
+    <p>Please use the Zoom chat to ask questions at any time.  We’ll try to respond to clarifications promptly.  As time permits, we’ll take questions at the ends of presentations through chat (including responding to earlier questions) or verbally.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="related-ecp-am-events">Related ECP AM Events</h2>
+
+<p>You may be interested in other sessions at this year’s ECP Annual Meeting related to the IDEAS project, software process improvement, testing, and continuous integration.</p>
+
+<ul>
+  <li>IDEAS Desk – informal conversations about developer productivity and software sustainability
+    <ul>
+      <li>Room 125 In the Gather.Town Side Meetings area</li>
+      <li>12:30pm-2:00pm Monday through Friday</li>
+    </ul>
+  </li>
+  <li><a href="https://whova.com/portal/webapp/ecpan_202104/Agenda/1510974">Validation, Verification and Performance Suites, Proxy Apps, and Continuous Integration for Exascale Supercomputers</a>
+    <ul>
+      <li>10:00am-11:30am Wednesday</li>
+    </ul>
+  </li>
+  <li><a href="https://whova.com/portal/webapp/ecpan_202104/Agenda/1511033">Advancing Scientific Productivity through Better Scientific Software</a>
+    <ul>
+      <li>11:30am-12:30am Wednesday</li>
+    </ul>
+  </li>
+  <li><a href="https://whova.com/portal/webapp/ecpan_202104/Agenda/1511046">Hands-on with Progress Tracking Cards: A Lightweight Method for Improving Your Software Practices</a>
+    <ul>
+      <li>1:00pm-3:30pm Wednesday</li>
+    </ul>
+  </li>
+  <li><a href="https://whova.com/portal/webapp/ecpan_202104/Agenda/1511067">Benefiting from ECP CI</a>
+    <ul>
+      <li>2:30pm-3:30pm Wednesday</li>
+    </ul>
+  </li>
+  <li><a href="https://whova.com/portal/webapp/ecpan_202104/Agenda/1511140">ECP CI Startup Tutorial</a>
+    <ul>
+      <li>2:30pm-6:00pm Friday</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="stay-in-touch">Stay in Touch</h2>
+
+<ul>
+  <li>
+    <p>After the tutorial please feel free to email questions or feedback to the BSSw tutorial team at <a href="mailto:bssw-tutorial@lists.mcs.anl.gov">bssw-tutorial@lists.mcs.anl.gov</a>.</p>
+  </li>
+  <li>
+    <p>To find out about future events organized by the IDEAS Productivity Project, you can <a href="http://eepurl.com/cQCyJ5">subscribe to our mailing list</a> (usually ~2 messages/month).</p>
+  </li>
+  <li>
+    <p>For monthly updates on the Better Scientific Software site, subscribe to our <a href="https://bssw.io/pages/receive-our-email-digest">monthly digest</a>.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="resources-from-presentations">Resources from Presentations</h2>
+<p><em>These are the links included in the tutorial presentations, included here for easier access</em></p>
+
+<ul>
+  <li>Module 0: Introduction
+    <ul>
+      <li><a href="http://ideas-productivity.org">IDEAS Productivity Project</a>
+        <ul>
+          <li><a href="http://eepurl.com/cQCyJ5">IDEAS Productivity mailing list</a></li>
+        </ul>
+      </li>
+      <li><a href="https://bssw.io">Better Scientific Software site</a>
+        <ul>
+          <li><a href="https://bssw.io/pages/receive-our-email-digest">BSSw Digest</a></li>
+          <li><a href="https://bssw.io/items.rss">RSS Feed</a></li>
+        </ul>
+      </li>
+      <li><a href="https://exascaleproject.org/better-scientific-productivity-through-better-scientific-software-the-ideas-report">The IDEAS Report</a></li>
+      <li><a href="https://submissions.supercomputing.org/?page=Submit&amp;id=TutorialEvaluation&amp;site=sc20">Tutorial Evaluation Link</a></li>
+      <li><a href="mailto:bssw-tutorial@lists.mcs.anl.gov">Write to the tutorial authors</a></li>
+    </ul>
+  </li>
+  <li>Module 1: Motivation and Overview of Best Practices in HPC Software Development
+    <ul>
+      <li><em>none</em></li>
+    </ul>
+  </li>
+  <li>Module 2: Software Testing 1
+    <ul>
+      <li>Python Build and Test Framework: <a href="https://pyscaffold.org">pyscaffold.org</a></li>
+      <li>Build-Link-Test CMake Framework: <a href="https://llnl-blt.readthedocs.io">llnl-blt.readthedocs.io</a></li>
+      <li>Static Source Analysis (C++): <a href="https://clang.llvm.org/extra/clang-tidy/">clang-tidy</a></li>
+      <li>Static Source Analysis (python): <a href="https://flake8.pycqa.org/en/latest/index.html">flake8</a> and <a href="https://www.pylint.org/">pylint</a></li>
+      <li>Code Coverage Webservices: <a href="https://about.codecov.io/">codecov</a> and <a href="https://coveralls.io/">coveralls</a></li>
+      <li>Tutorials for code coverage: <a href="https://github.com/amklinv/morpheus">Online Tutorial</a>, <a href="https://github.com/jrdoneal/infrastructure">Another example</a></li>
+      <li><a href="https://dx.doi.org/10.6084/m9.figshare.14188463.v1">Development Practices Survey Article</a></li>
+    </ul>
+  </li>
+  <li>Module 3: Software Testing 2
+    <ul>
+      <li><a href="https://ideas-productivity.org/resources/howtos/">Useful How-to resources on test and test suites on ideas-productivity.org</a></li>
+      <li>Related Articles: <a href="https://ieeexplore.ieee.org/abstract/document/8449015">1</a>, <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2220">2</a></li>
+    </ul>
+  </li>
+  <li>Module 4: Continuous Integration
+    <ul>
+      <li><a href="https://ecp-ci.gitlab.io/">Exascale Computing Project CI documentation</a></li>
+      <li><a href="https://travis-ci.com">Travis CI service</a></li>
+      <li><a href="https://codecov.io">Codecov service</a></li>
+    </ul>
+  </li>
+  <li>Module 5: Summary
+    <ul>
+      <li><a href="https://bssw.io/psip">Productivity and Sustainability Improvement Planning</a></li>
+      <li><a href="https://bssw.io/">Better Scientific Software web site</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="requested-citation">Requested Citation</h2>
+<p>The requested citation the overall tutorial is: David E. Bernholdt, Patricia A. Grubel, James. M. Willenbring, Developing a Testing and Continuous Integration Strategy for your Team tutorial, in Exascale Computing Project Annual Meeting, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14256257">10.6084/m9.figshare.14256257</a>.</p>
+
+<p>Individual modules may be cited as <em>Speaker</em>, <em>Module Title</em>, in Better Scientific Software tutorial…</p>
+
+
+<hr>
+<h2>Acknowledgements</h2>
+
+<p>This tutorial is produced by the <a href="https://ideas-productivity.org" >IDEAS Productivity project</a>.</p>
+
+<p>This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.</p>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Better Scientific Software Tutorial</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">IDEAS Productivity Project</li><li><a class="u-email" href="mailto:IdeasProductivity@gmail.com">IdeasProductivity@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/bssw-tutorial"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bssw-tutorial</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting  high-performance computers.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

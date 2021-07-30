@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Hands-On Exercise 7a: Agile Redux | Better Scientific Software Tutorial</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Hands-On Exercise 7a: Agile Redux" />
+<meta name="author" content="IDEAS Productivity Project" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2021-03-25-iss/handson-m07a-agile-redux.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2021-03-25-iss/handson-m07a-agile-redux.html" />
+<meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hands-On Exercise 7a: Agile Redux" />
+<script type="application/ld+json">
+{"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-03-25-iss/handson-m07a-agile-redux.html","@type":"WebPage","headline":"Hands-On Exercise 7a: Agile Redux","dateModified":"2021-07-30T09:17:01-04:00","author":{"@type":"Person","name":"IDEAS Productivity Project"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+</head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Better Scientific Software Tutorial</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Hands-On Exercise 7a: Agile Redux</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="goals">Goals</h2>
+<p>Create epic, story, and task issues for the refactoring exercises and track them on a kanban board</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+  <li>A <a href="https://github.com">GitHub</a> account</li>
+  <li>A fork of the <a href="https://github.com/betterscientificsoftware/hello-numerical-world-sc20">betterscientificsoftware/hello-numerical-world-sc20</a> repository in your account (covered in exercise 3)
+    <ul>
+      <li>This exercise can be done entirely within the web interface of GitHub.com</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="background">Background</h2>
+<p>In Module 7 of the tutorial presentations, we discuss the refactoring process.  In exercises 7b and 7c, your task will be to actually refactor some code you’ve inherited.  But before we start on the code, we’re going to make a plan in the form of GitHub issues that we can use to track the plan to completion.  You may want to read through those two exercises before starting this one, to get a better feel for the assignments.  In the next two exercises, we encourage you to use the setup you’ll create here (issues and project board) to track your progress.</p>
+
+<p>We’re going to consider the refactoring effort to be at the level of an “epic”, and break it down into several “stories”, each consisting of several tasks.  In the usual definitions, epics are high-level objectives, stories should represent increments of value to the customer, and tasks are the step necessary to complete the story.</p>
+
+<h2 id="instructions">Instructions</h2>
+
+<h3 id="where-to-do-the-work">Where to Do the Work</h3>
+
+<p>We’re going to be working with issues to manage development work on the hello-numerical-world-sc20 repository. You forked this repository (made a copy in your own GitHub account) earlier in these exercises.  But if you check the tabs for your fork, you will see that Issues is missing.  In the “default” fork-pull request model of interaction, you and your team would be working on issues in the upstream repository, where everyone can easily see and update them.  So, by default, when GitHub forks a repository, it disables the Issues on the resulting fork.</p>
+
+<p>In this case, everyone doing the exercise is doing the same tasks, which wouldn’t normally happen in a coordinated project.  So to avoid the confusion of everyone using the upstream repository’s issues and project boards, we recommend that in this case you do one of the following instead.</p>
+<ul>
+  <li>Use the issues-only repository you created for exercise 2 (or create another issues-only repository in your account).</li>
+  <li>You can enable issues in your fork of the hello-numerical-world-sc20 repository by going into the Setting tab, scrolling down to the Features section, and checking the box next to Issues.</li>
+</ul>
+
+<h3 id="working-with-github-issues">Working with GitHub Issues</h3>
+
+<p><strong>Step 1.</strong> In your chosen workspace, create an issue corresponding to the epic.  Feel free to enter whatever you feel is appropriate.  Here is what we used when we did this exercise ourselves.</p>
+<ul>
+  <li><strong>Title:</strong> Epic: Refactor code for enhanced modularity</li>
+  <li><strong>Description:</strong> The heat equation code needs refactoring to improve modularity. Specifically, there are utilities that could be generalized and used with for other applications. Also, the integration function is currently hard-coded. In the future, we want to use alternative integration functions, so we should generalize the interface for this function.</li>
+</ul>
+
+<p>We suggest breaking the epic into two stories, representing distinct results that the customer would find useful. Each of these stories will need its own GitHub issue.  Each issue should include a definition of done – how will we know when the work of the story is completed – and the individual tasks needed to do to the work.</p>
+
+<p><strong>Step 2.</strong> Create a GitHub issue for the first story</p>
+<ul>
+  <li><strong>Title:</strong> Story: Separate out utilities</li>
+  <li><strong>Body:</strong>
+    <ul>
+      <li>Definition of done:
+        <ul>
+          <li>Unit tests pass</li>
+          <li>Code review completed</li>
+          <li>Integration/system tests pass</li>
+          <li>Utility performance is at least 95% of pre-separation performance</li>
+          <li>Utility usability demonstrated outside of heat equation application</li>
+        </ul>
+      </li>
+      <li>Tasks required
+        <ul>
+          <li><em>define the tasks you think are required</em></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Step 3.</strong> Create a GitHub issue for the second story</p>
+<ul>
+  <li><strong>Title:</strong> Story: Separate out the integration function</li>
+  <li><strong>Body:</strong>
+    <ul>
+      <li>Definition of done: <em>define this for yourself</em></li>
+      <li>Tasks required
+        <ul>
+          <li>Task 1: Add testing for integration function to protect functionality during refactor
+            <ul>
+              <li>Needed testing should be specified</li>
+            </ul>
+          </li>
+          <li>Task 2: Generalize interface to allow alternative implementations</li>
+          <li>Task 3: Expose current integration function through the new interface &amp; run tests</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="some-tips-for-github-issues">Some Tips for GitHub Issues</h3>
+
+<ul>
+  <li>While it is natural to add comments to issues, it is also sometimes useful to <strong>edit the body of an existing issue</strong>. You can do this through the ellipsis (three dots) menu on the top right side of the box containing the body of the issue.</li>
+  <li>GitHub Flavored Markdown (the common name for the dialect of Markdown that GitHub understands) supports <strong>checklists</strong>, which are rendered with checkable boxes as the list markers.
+    <ul>
+      <li>The Markdown is <code class="highlighter-rouge">- [ ] item text</code> where the “-“ is the usual markup for an unordered list and spaces are required in the second, fourth, and sixth positions: <code class="highlighter-rouge">-2[4]6item text</code>.  The checklist can appear at any level of indentation.</li>
+      <li>When the checklist is rendered in the web user interface, items can be checked or unchecked with a click of the mouse.  Note that there is no audit trail for checklist actions (i.e. you don’t know who checked/unchecked them, or when it happened.)</li>
+    </ul>
+  </li>
+  <li>You can <strong>cross-reference</strong> issues (and pull requests) by their number, e.g., <code class="highlighter-rouge">#23</code>.  Such cross-references will be rendered as links to the item referenced, and hovering over the link will provide a preview of the item.</li>
+  <li>GitHub starts each repository with a small set of default <strong>labels</strong> that can be applied to issues (and pull requests), but it is also possible to define your own (and remove the pre-defined ones) if you want.
+    <ul>
+      <li>If you’re looking at a specific issue, you will see the Labels widget in the column of widgets to the right of the body of the issue.  Clicking on the gear opens the current list of labels and allows you to assign them to the issue you’re looking at, as appropriate.  At the bottom of the label list is an option to Edit the labels, which takes you into a new view of all of the labels in the repository and allows you to add, remove, or change them.</li>
+      <li>The other way to access this list of labels is from the listing of all issues in the repository.  Just above the list is a row with a filter widget, buttons to edit the labels and milestones for the repository, and a button to create a new issue.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Unfortunately, GitHub issues don’t support hierarchies of issues, such as epic-story-task.  If you don’t have many issues, you might be able to keep them straight.  But in a long-running project with active development and many issues it might be hard to keep track of the relationships.  There are a couple of strategies you can use, individually or in combination to help make things a little easier (you may come up with additional approaches).</p>
+<ul>
+  <li>Limit the hierarchy of issues to two levels (epic and story) by using checklists within the story to manage the individual tasks (you could also use them for the done criteria).</li>
+  <li>You can identify issues as epic or story (or task if you’re using issues at that level) using labels or by prefixing the issue titles with their level, as we’ve suggested in the instructions above.  Note that this identifies the level of the issue, but it does little to help you connect which story issues are related to which epic issues.</li>
+  <li>You can use the cross-referencing capability to add notes to the bodies of the issues to connect them.
+    <ul>
+      <li>For example, you might establish the convention that the first line of the body of a story always references the parent epic.</li>
+      <li>And in the body of the epic, you might list the stories that comprise it, with a cross-reference to the issue number followed by the issue title.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Step 4.</strong> Use cross-references, labels, and checklists to make the issues you created above better interlinked and easier to manage.  For things like this, we recommend editing the body of the issues rather than adding comments to the issues.</p>
+
+<h3 id="working-with-github-project-kanban-boards">Working with GitHub Project (Kanban) Boards</h3>
+
+<p>Next, we’re going to setup a simple kanban board that you can use to track the progress of your refactoring work in exercise 7b.</p>
+
+<p><strong>Step 5.</strong> Go to the Project tab in your chosen workspace and create a project.  We suggest calling it “Project Management”.  Provide a description if you like.  For the Template, select “Basic Kanban”.  Click “Create project”.  The result should be a project board with columns labeled “To do”, “In progress”, and “Done”.</p>
+<ul>
+  <li>The To do column starts out with three “notes”, which take up a lot of space.  You may want to give them a quick read and then delete them by clicking the ellipsis (three dots) menu and selecting “Delete Note” on each.</li>
+</ul>
+
+<p><strong>Step 6.</strong> Add the issues you have created to the project board by clicking the “+ Add cards” button on the top right of the project board, next to the filter widget.  The default search in the popup (“is:open”) should display the issues you’ve created.  One by one, drag each of them to the To do column of the project board.</p>
+
+<p><strong>Step 7.</strong> While you’re working on exercise 7b, use the project board and issues to track your progress.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Better Scientific Software Tutorial</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">IDEAS Productivity Project</li><li><a class="u-email" href="mailto:IdeasProductivity@gmail.com">IdeasProductivity@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/bssw-tutorial"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bssw-tutorial</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting  high-performance computers.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
