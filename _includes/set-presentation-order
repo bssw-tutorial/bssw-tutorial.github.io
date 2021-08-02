@@ -1,21 +1,31 @@
 {% comment %}
   set-presentation-order: set an array containing the presentation labels, in agenda order
-    Also sets a matching module-order array, for completeness
+    Also sets a matching module-order and presenter-order arrays, for completeness
 
   arguments:
     `agenda`: CSV table with agenda data
     `presentations`: associative array mapping shorthand labels for presentations to their titles
 
+  outputs:
+    `presentation-order`
+    `module-order`
+    `presenter-order`
+
   agenda table structure requirements:
     A column headed `Title` containing the label of the presentation (referencing the presentations argument) 
     A column headed `Module` containing the module number used to help keep things in order
     The `Module` column should be blank if the `Title` column contains something other than a presentation label
+    A column headed `Presenter` containing the github id of the presenter
     If a presentation is repeated in the agenda (i.e., because it is split across a break), the same module number is used for all repetitions
+    The second row of the table (after the headings) is ignored (assumed to contain formatting comments)
+
 {% endcomment %}
 
 {%- assign presentation-order = "" | split: "," -%}
 {%- assign module-order = "" | split: "," -%}
+{%- assign presenter-order = "" | split: "," -%}
 {%- for row in include.agenda -%}
+  {%- if forloop.first -%}{%- continue -%}{%- endif -%}
   {%- for pair in row -%}
     {%- assign cell = pair[1] -%}
     {%- case pair[0] -%}
@@ -26,6 +36,10 @@
       {%- when "Module" -%}
         {%- if cell -%}
           {%- assign module-order = module-order | push: cell -%}
+        {%- endif -%}
+      {%- when "Presenter" -%}
+        {%- if cell -%}
+          {%- assign presenter-order = presenter-order | push: cell -%}
         {%- endif -%}
     {%- endcase -%}
   {%- endfor -%}
