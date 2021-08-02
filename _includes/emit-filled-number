@@ -1,0 +1,15 @@
+{% comment %}
+    emit-filled-number: emit a filled numerical string
+    arguments
+        number: value to be zero-filled
+        template: string to be used as fill
+    output: filled-number
+
+    Notes: 
+    * Does not care if number is actually a number
+    * If number is longer than template, it will emit number
+ {% endcomment %}
+
+{%- capture number-length %}{{ include.number | downcase | size }}{% endcapture -%}
+{%- assign template-need = include.template | size | minus: number-length -%}
+{{- include.template | slice: 0, template-need | append: include.number | strip -}}
