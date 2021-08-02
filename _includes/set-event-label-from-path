@@ -1,0 +1,15 @@
+{% comment %}
+    set-event-label-from-path: extract the event-label from the file path
+
+    arguments:
+        `path`: page.path for page in question (optional, default: page.path)
+
+    outputs:
+        `event-label`
+    
+    assumptions:
+        Assumes that the top directory in the path is named for the event label
+ {% endcomment %}
+
+{%- assign path = include.path | default: page.path -%}
+{%- assign event-label = path | split: "/" | first -%}
