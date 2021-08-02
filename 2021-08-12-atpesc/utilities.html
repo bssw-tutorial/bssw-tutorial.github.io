@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Helpers for 2021-08-12-atpesc tutorial | Better Scientific Software Tutorial</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Helpers for 2021-08-12-atpesc tutorial" />
+<meta name="author" content="IDEAS Productivity Project" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2021-08-12-atpesc/utilities.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2021-08-12-atpesc/utilities.html" />
+<meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Helpers for 2021-08-12-atpesc tutorial" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-08-12-atpesc/utilities.html","@type":"WebPage","headline":"Helpers for 2021-08-12-atpesc tutorial","dateModified":"2021-08-02T16:46:26-04:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+</head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Better Scientific Software Tutorial</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Helpers for 2021-08-12-atpesc tutorial</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="create-issues-for-presentation-updates">Create issues for presentation updates</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to intro presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> bernhold ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to overview presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> bernhold ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to agile presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> rinkug ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/agile.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to git-workflows presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> rinkug ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/git-workflows.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to design presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> adubey64 ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/design.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to reproducibility presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> bernhold ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/reproducibility.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to agile-redux presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> rinkug ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/agile-redux.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to testing-introduction presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> frobnitzem ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-introduction.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to testing-walkthrough presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> frobnitzem ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-walkthrough.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to testing-advanced presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> frobnitzem ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-advanced.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to continuous-integration presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> frobnitzem ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/continuous-integration.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to refactoring presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> adubey64 ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/refactoring.pptx&gt; is due by 2021-08-10"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-08-12-atpesc ^
+    <span class="nt">--title</span> <span class="s2">"Updates to summary presentation due 2021-08-10"</span> ^
+    <span class="nt">--assignee</span> bernhold ^
+    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/summary.pptx&gt; is due by 2021-08-10"</span>
+</code></pre></div></div>
+
+<h2 id="renaming-presentation-pdfs-for-publication">Renaming presentation PDFs for publication</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>final-presentations/2021-08-12-atpesc
+
+<span class="nb">mv </span>intro.pdf final-presentations/2021-08-12-atpesc/00-intro.pdf
+<span class="nb">mv </span>overview.pdf final-presentations/2021-08-12-atpesc/01-overview.pdf
+<span class="nb">mv </span>agile.pdf final-presentations/2021-08-12-atpesc/02-agile.pdf
+<span class="nb">mv </span>git-workflows.pdf final-presentations/2021-08-12-atpesc/03-git-workflows.pdf
+<span class="nb">mv </span>design.pdf final-presentations/2021-08-12-atpesc/04-design.pdf
+<span class="nb">mv </span>reproducibility.pdf final-presentations/2021-08-12-atpesc/05-reproducibility.pdf
+<span class="nb">mv </span>agile-redux.pdf final-presentations/2021-08-12-atpesc/06-agile-redux.pdf
+<span class="nb">mv </span>testing-introduction.pdf final-presentations/2021-08-12-atpesc/07-testing-introduction.pdf
+<span class="nb">mv </span>testing-walkthrough.pdf final-presentations/2021-08-12-atpesc/08-testing-walkthrough.pdf
+<span class="nb">mv </span>testing-advanced.pdf final-presentations/2021-08-12-atpesc/09-testing-advanced.pdf
+<span class="nb">mv </span>continuous-integration.pdf final-presentations/2021-08-12-atpesc/10-continuous-integration.pdf
+<span class="nb">mv </span>refactoring.pdf final-presentations/2021-08-12-atpesc/11-refactoring.pdf
+<span class="nb">mv </span>summary.pdf final-presentations/2021-08-12-atpesc/12-summary.pdf
+
+<span class="nb">cd </span>final-presentations/2021-08-12-atpesc
+zip <span class="nt">--update</span> 2021-08-12-atpesc.zip <span class="k">*</span>.pdf
+<span class="c"># git commit new presentations</span>
+<span class="c"># git tag</span>
+<span class="c"># gh release upload</span>
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Better Scientific Software Tutorial</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">IDEAS Productivity Project</li><li><a class="u-email" href="mailto:IdeasProductivity@gmail.com">IdeasProductivity@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/bssw-tutorial"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bssw-tutorial</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting  high-performance computers.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
