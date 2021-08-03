@@ -15,7 +15,9 @@ jobs:
         file_types: .md
 
         # Need to exclude a few things
-        exclude_urls: https://en.w
+        # https://en.w is an incomplete snippet of output in handson-m03-git-workflows.md
+        # https://github.com/bssw-tutorial/presentations/blob/master is asigned to a variable used to build complete URLs in utilities.md
+        exclude_urls: https://en.w,https://github.com/bssw-tutorial/presentations/blob/master
         
         # Choose whether to include file with no URLs in the prints.
         print_all: false
