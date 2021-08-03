@@ -19,9 +19,9 @@ layout: page
 
 ```shell
 {% for p in presentation-order %}
-{{ gh }} ^
-    --title "Updates to {{ p }} presentation due {{ site.data.bsswt[event-label].deadlines.final-presentations }}" ^
-    --assignee {{ presenter-order[forloop.index0] }} ^
+{{ gh }} \
+    --title "Updates to {{ p }} presentation due {{ site.data.bsswt[event-label].deadlines.final-presentations }}" \
+    --assignee {{ presenter-order[forloop.index0] }} \
     --body "The final version of <{{ prepo }}/{{ p }}.pptx> is due by {{ site.data.bsswt[event-label].deadlines.final-presentations }}"
 {% endfor %}```
 
@@ -37,6 +37,11 @@ mkdir {{ dest-dir }}
 {%- capture mfill -%}{%- include emit-filled-number number=m template="00" -%}{%- endcapture -%}
 mv {{ p }}.pdf {{ dest-dir }}/{{ mfill }}-{{ p }}.pdf
 {% endfor %}
+```
+
+## Tagging and creating release of presentations
+
+```shell
 cd {{ dest-dir}}
 zip --update {{ event-label }}.zip *.pdf
 # git commit new presentations
