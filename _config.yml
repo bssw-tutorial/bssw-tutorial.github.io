@@ -63,7 +63,7 @@ repository: bssw-tutorial/bssw-tutorial.github.io
 # By convention, we "operate" on US Eastern time
 timezone: America/New_York
 
-google_analytics: 281935255
+google_analytics: G-WXBB1FTBSE
 
 # Exclude from processing.
 # The following items will not be processed, by default.
