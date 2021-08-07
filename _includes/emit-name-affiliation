@@ -6,6 +6,7 @@
   arguments:
     `person`: record containing the person's information
     `short`: boolean indicating that short affiliation should be use (optional, default: false)
+    `noaffil`: boolean indicating that only the name should be emitted (optional, default: false)
 
   Expected elements of person structure
     lastname (string)
@@ -23,11 +24,14 @@
 {% endcomment %}
 
 {%- assign short = include.short | default: false -%}
+{%- assign noaffil = include.noaffil | default: false -%}
 
 {%- if include.person[0].firstname -%}{{ include.person[0].firstname | append: " " }}{%- endif -%}
 {%- if include.person[0].lastname -%}{{ include.person[0].lastname | append: " " }}{%- endif -%}
-{%- if short -%}
-  {%- if include.person[0].short-affils -%}({{- include.person[0].short-affils | array_to_sentence_string }}){%- endif -%}
-{%- else -%}
-  {%- if include.person[0].affiliations -%}({{- include.person[0].affiliations | array_to_sentence_string }}){%- endif -%}
-{%- endif -%}
+{%- unless noaffil -%}
+  {%- if short -%}
+    {%- if include.person[0].short-affils -%}({{- include.person[0].short-affils | array_to_sentence_string }}){%- endif -%}
+  {%- else -%}
+    {%- if include.person[0].affiliations -%}({{- include.person[0].affiliations | array_to_sentence_string }}){%- endif -%}
+  {%- endif -%}
+{%- endunless -%}

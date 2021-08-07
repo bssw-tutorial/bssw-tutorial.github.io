@@ -1,15 +1,18 @@
 ---
 layout: page
 ---
-# Helpers for 2021-08-12-atpesc tutorial
+# Helpers
 
 {%- include set-event-label-from-path -%}
 
-{%- assign my-artifacts = site.data.bsswt[event-label].artifacts -%}
-{%- include key-artifact-shorthands artifacts=my-artifacts -%}
-{%- assign my-presentations = site.data.bsswt[event-label].presentations -%}
-{%- assign my-agenda = site.data.bsswt[event-label].agenda -%}
-{%- include set-presentation-order agenda=my-agenda presentations=my-presentations -%}
+{% assign my-artifacts = site.data.bsswt[event-label].artifacts %}
+{% include key-artifact-shorthands artifacts=my-artifacts %}
+{% assign my-presentations = site.data.bsswt[event-label].presentations %}
+{% assign my-agenda = site.data.bsswt[event-label].agenda %}
+{% include set-presentation-order agenda=my-agenda presentations=my-presentations %}
+{% assign my-presenters = site.data.bsswt[event-label].event.presenter-ids %}
+{% assign my-helpers = site.data.bsswt[event-label].event.helper-ids %}
+{% assign my-event = site.data.bsswt[event-label].event %}
 
 ## Create issues for presentation updates
 
@@ -38,6 +41,46 @@ mkdir {{ dest-dir }}
 mv {{ p }}.pdf {{ dest-dir }}/{{ mfill }}-{{ p }}.pdf
 {% endfor %}
 ```
+
+## Data for FigShare record
+
+Title: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.date | date: "(%Y)" }}
+
+<!-- note that we're not listing helpers here -->
+Authors:
+{% include extract-array-subset key="github-id" values=my-presenters source=site.people %}
+{% include set-name-affiliation-array people=extract_subset_array noaffil="true" %}
+{% if name_affiliation_array %}
+  {% for p in name_affiliation_array %}
+* {{ p }}
+  {%- endfor -%}
+{% endif %}
+
+Categories: Software Engineering
+
+Item type: Presentation
+
+Keywords:
+
+* software engineering
+* software productivity
+* software sustainability
+* software reliability
+* computational science and engineering software
+* scientific software
+* Better Scientific Software tutorial
+
+<!-- Should include same description as event -->
+Description: Presentations from the Software Productivity track at the 2021 Argonne Training Program for Extreme Scale Computing (ATPESC).
+
+<!-- Should be generalized to use the same ack as the event -->
+Funding: This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.
+
+<!-- this will be localhost when testing locally.  Can we make it always be
+     the production URL? -->
+References: {{ site.url }}/events/{{ event-label }}.html
+
+License: CC BY 4.0
 
 ## Tagging and creating release of presentations
 

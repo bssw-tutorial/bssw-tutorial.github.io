@@ -1,0 +1,13 @@
+#event-type: bsswt
+#directory: 2021-08-12-atpesc
+#status: scheduled
+#location: "online"
+date: 2021-08-12T00:01-0500
+#end-date: 2021-08-12T23:59
+title: "Software Productivity and Sustainability"
+title-type: "track"
+#title-url:
+venue: "Argonne Training Program on Extreme-Scale Computing"
+venue-type: "summer school"
+#venue-url: https://extremecomputingtraining.anl.gov/
+presenter-ids: [bernhold, adubey64, rinkug, frobnitzem]
