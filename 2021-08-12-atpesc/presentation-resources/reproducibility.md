@@ -19,3 +19,4 @@
      * [FigShare](https://figshare.com/)
   * [Editorial: ACM TOMS Replicated Computational Results Initiative. Michael A. Heroux. 2015](http://dx.doi.org/10.1145/2743015)
   * [Simple experiments in reproducibility and technical trust by Mike Heroux and students (work in progress)](https://betterscientificsoftware.github.io/Trust-Tools/)
+  * [What every scientist should know about floating-point arithmetic. David Goldberg.](https://doi.org/10.1145/103162.103163)
