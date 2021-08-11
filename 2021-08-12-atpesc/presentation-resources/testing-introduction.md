@@ -1,4 +1,5 @@
 <!-- testing-introduction -->
+  * [In the face of uncertainties, NNSA seeks verification and validation](https://www.energy.gov/nnsa/articles/face-uncertainties-nnsa-seeks-verification-and-validation)
   * Python Build and Test Framework: [pyscaffold.org](https://pyscaffold.org)
   * Build-Link-Test CMake Framework: [llnl-blt.readthedocs.io](https://llnl-blt.readthedocs.io)
   * Static Source Analysis (C++): [clang-tidy](https://clang.llvm.org/extra/clang-tidy/)
