@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Helpers" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-08-12-atpesc/utilities.html","@type":"WebPage","headline":"Helpers","dateModified":"2021-08-07T21:44:27-04:00","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-08-12-atpesc/utilities.html","@type":"WebPage","headline":"Helpers","dateModified":"2021-08-11T17:51:31-04:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -207,8 +207,12 @@ gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>final-presentations/2021-08-12-atpesc
 zip <span class="nt">--update</span> 2021-08-12-atpesc.zip <span class="k">*</span>.pdf
 <span class="c"># git commit new presentations</span>
-<span class="c"># git tag</span>
-<span class="c"># gh release upload</span>
+git tag <span class="nt">-a</span> 2021-08-12-atpesc <span class="nt">-m</span> <span class="s2">"Software Productivity and Sustainability track at ATPESC 2021"</span>
+<span class="c"># Should be more systematic about this comment.</span>
+git push origin <span class="nt">--tags</span>
+gh release create 2021-08-12-atpesc <span class="nt">--title</span> <span class="s2">"2021-08-12 Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing (ATPESC) summer school"</span>
+<span class="c"># Asked for release notes and whether it is a prerelease.  Need to force those.</span>
+gh release upload 2021-08-12-atpesc 2021-08-12-atpesc.zip
 </code></pre></div></div>
 
   </div>
