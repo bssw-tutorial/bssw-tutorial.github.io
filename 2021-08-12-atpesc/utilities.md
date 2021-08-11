@@ -88,6 +88,10 @@ License: CC BY 4.0
 cd {{ dest-dir}}
 zip --update {{ event-label }}.zip *.pdf
 # git commit new presentations
-# git tag
-# gh release upload
+git tag -a 2021-08-12-atpesc -m "Software Productivity and Sustainability track at ATPESC 2021"
+# Should be more systematic about this comment.
+git push origin --tags
+gh release create 2021-08-12-atpesc --title "2021-08-12 Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing (ATPESC) summer school"
+# Asked for release notes and whether it is a prerelease.  Need to force those.
+gh release upload 2021-08-12-atpesc 2021-08-12-atpesc.zip
 ```
