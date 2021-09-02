@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Helpers" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/utilities.html","@type":"WebPage","headline":"Helpers","dateModified":"2021-09-02T09:37:44-04:00","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/utilities.html","@type":"WebPage","headline":"Helpers","dateModified":"2021-09-02T16:03:01-04:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -71,68 +71,132 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
   <div class="post-content">
     
-<h2 id="create-issues-for-presentation-updates">Create issues for presentation updates</h2>
+<h2 id="create-issues-to-prepare-presentations">Create issues to prepare presentations</h2>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to intro presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"intro presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> bernhold <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to overview presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"overview presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> pagrubel <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to git-workflows presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"git-workflows presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> pagrubel <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/git-workflows.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/git-workflows.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to agile presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"agile presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> rinkug <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/agile.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/agile.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to agile-redux presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"agile-redux presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> rinkug <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/agile-redux.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/agile-redux.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to design presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"design presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> bernhold <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/design.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/design.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to reproducibility presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"reproducibility presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> bernhold <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/reproducibility.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/reproducibility.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to refactoring presentation due "</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> adubey64 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/refactoring.pptx&gt; is due by "</span>
-
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to testing-introduction2 presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"testing-introduction2 presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-introduction2.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-introduction2.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to continuous-integration presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"continuous-integration presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/continuous-integration.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/continuous-integration.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to testing-advanced presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"testing-advanced presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> adubey64 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-advanced.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-advanced.pptx&gt; is due by 2021-09-13"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Updates to summary presentation due "</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"refactoring presentation due 2021-09-13"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> adubey64 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/refactoring.pptx&gt; is due by 2021-09-13"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"summary presentation due 2021-09-13"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> bernhold <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The final version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/summary.pptx&gt; is due by "</span>
+    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/summary.pptx&gt; is due by 2021-09-13"</span>
+</code></pre></div></div>
+
+<h2 id="create-issues-to-record-presentations">Create issues to record presentations</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"intro recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> bernhold <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"overview recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> pagrubel <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"git-workflows recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> pagrubel <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/git-workflows.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"agile recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> rinkug <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/agile.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"agile-redux recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> rinkug <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/agile-redux.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"design recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> bernhold <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/design.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"reproducibility recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> bernhold <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/reproducibility.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"testing-introduction2 recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-introduction2.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"continuous-integration recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/continuous-integration.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"testing-advanced recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> adubey64 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-advanced.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"refactoring recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> adubey64 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/refactoring.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2021-11-15-sc <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"summary recording due 2021-09-15"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> bernhold <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"The recording of &lt;https://github.com/bssw-tutorial/presentations/blob/master/summary.pptx&gt; is due by 2021-09-15.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."</span>
 </code></pre></div></div>
 
 <h2 id="renaming-presentation-pdfs-for-publication">Renaming presentation PDFs for publication</h2>
@@ -146,10 +210,10 @@ gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span
 <span class="nb">mv </span>agile-redux.pdf final-presentations/2021-11-15-sc/04-agile-redux.pdf
 <span class="nb">mv </span>design.pdf final-presentations/2021-11-15-sc/05-design.pdf
 <span class="nb">mv </span>reproducibility.pdf final-presentations/2021-11-15-sc/06-reproducibility.pdf
-<span class="nb">mv </span>refactoring.pdf final-presentations/2021-11-15-sc/07-refactoring.pdf
-<span class="nb">mv </span>testing-introduction2.pdf final-presentations/2021-11-15-sc/08-testing-introduction2.pdf
-<span class="nb">mv </span>continuous-integration.pdf final-presentations/2021-11-15-sc/09-continuous-integration.pdf
-<span class="nb">mv </span>testing-advanced.pdf final-presentations/2021-11-15-sc/10-testing-advanced.pdf
+<span class="nb">mv </span>testing-introduction2.pdf final-presentations/2021-11-15-sc/07-testing-introduction2.pdf
+<span class="nb">mv </span>continuous-integration.pdf final-presentations/2021-11-15-sc/08-continuous-integration.pdf
+<span class="nb">mv </span>testing-advanced.pdf final-presentations/2021-11-15-sc/09-testing-advanced.pdf
+<span class="nb">mv </span>refactoring.pdf final-presentations/2021-11-15-sc/10-refactoring.pdf
 <span class="nb">mv </span>summary.pdf final-presentations/2021-11-15-sc/11-summary.pdf
 
 </code></pre></div></div>
