@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Hands-On Exercise 8: Testing Walk-Through | Better Scientific Software Tutorial</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Hands-On Exercise 8: Testing Walk-Through" />
+<meta name="author" content="IDEAS Productivity Project" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2021-11-15-sc/handson-m08-testing.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2021-11-15-sc/handson-m08-testing.html" />
+<meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hands-On Exercise 8: Testing Walk-Through" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m08-testing.html","@type":"WebPage","headline":"Hands-On Exercise 8: Testing Walk-Through","dateModified":"2021-09-01T21:10:55-04:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133695134-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+</head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Better Scientific Software Tutorial</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Hands-On Exercise 8: Testing Walk-Through</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="goals">Goals</h2>
+
+<p>Implement a cmake build and test process for an example project.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>Access to a software development environment for C++ language with cmake
+    <ul>
+      <li>g++</li>
+      <li>gnu make</li>
+      <li>cmake</li>
+      <li>git</li>
+    </ul>
+  </li>
+  <li>A fork of the <a href="https://github.com/"></a> repository in your account (covered in Git Workflows exercise)
+    <ul>
+      <li>Your fork of the tutorial repository should be cloned where you have the software development environment above</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="background">Background</h2>
+
+<p>Projects should start as simple, small units that build up as
+development progresses.  Makefiles are a simple solution to store
+compilation rules, but lack advanced features other than
+those available by manually setting make-variables.</p>
+
+<p>CMake enables cross-platform compatibility,
+external library detection, code generation,
+and configurable options.
+Cross-platform compatibility is achieved by
+associating attributes (e.g. <code class="highlighter-rouge">target_link_libraries</code>) with
+targets and features (e.g. <code class="highlighter-rouge">fortran_std_08</code>) with source files.
+CMake translates those attributes into
+build-flags and build programs instead of
+directly setting them.
+It also defaults to out-of-source
+compilation and has a rudimentary method
+for distributing libraries.</p>
+
+<p>When the project is large enough
+to warrant these extra features,
+developers usually adopt automake
+or cmake to handle the additional build complexity.</p>
+
+<p>The example repository we have provided is just large enough
+to warrant this change.  There are seven C-source files,
+two headers, and about 80 lines of shell and makefile
+devoted to testing.</p>
+
+<h2 id="instructions">Instructions</h2>
+
+<p><strong>Step 1.</strong> branch and confirm working build with make</p>
+
+<p>When contemplating any changes, it’s good practice to
+finish what you’re doing and start a new branch.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>If this shows changes, save them to a temporary branch.
+If not, skip these three commands:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b working
+git commit -am "stashing some works in progress"
+git checkout main
+</code></pre></div></div>
+
+<p>Now that you’re on a clean copy of the main branch, create
+a branch to write cmake changes into</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b cmake
+make check
+make clean
+git status
+</code></pre></div></div>
+<p>The last two commands should show that the repository is building
+with make, and then clean up.
+Git’s status will let you know if you have any files that aren’t under
+version control.  If so, they will show up in red, and
+you’re free to delete or leave them there and ignore them.</p>
+
+<p><strong>Step 2.</strong> create a CMakeLists.txt</p>
+
+<p>Create a <code class="highlighter-rouge">CMakeLists.txt</code> file and type in the following:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 3.8)
+
+project(heat VERSION 0.1 LANGUAGES CXX)
+
+add_executable(heat args.C
+                    crankn.C
+                    exact.C
+                    ftcs.C
+                    heat.C
+                    upwind15.C
+                    utils.C)
+target_compile_features(heat PUBLIC cxx_std_11)
+
+install(TARGETS heat DESTINATION bin)
+</code></pre></div></div>
+
+<p>This file has two required elements at the top:</p>
+
+<ol>
+  <li>
+    <p><code class="highlighter-rouge">cmake_minimum_required</code> – setting the minimum cmake version required to understand this <code class="highlighter-rouge">CMakeLists.txt</code>.
+As you add cmake features, you should check when cmake introduced them.
+Obviously, you should increase the required version if the features are only available in newer cmake versions.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">project</code> – setting the <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_PROJECT_NAME.html"><code class="highlighter-rouge">${CMAKE_PROJECT_NAME}</code></a> and <a href="https://cmake.org/cmake/help/latest/variable/PROJECT-NAME_VERSION_MAJOR.html"><code class="highlighter-rouge">${HEAT_VERSION_MAJOR}</code></a>/MINOR/PATCH variables.</p>
+  </li>
+</ol>
+
+<p>The next three lines declare an executable target, <code class="highlighter-rouge">heat</code>, add a feature to it,
+and create a rule for installing it to <code class="highlighter-rouge">bin</code>.</p>
+
+<p><strong>Step 3.</strong> build with CMakeLists.txt</p>
+
+<p>For the purpose of building, it’s helpful to maintain a <code class="highlighter-rouge">build.sh</code> script that
+does the following,</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="nv">inst</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">/inst"</span>
+
+<span class="nb">mkdir</span> <span class="nt">-p</span> build
+<span class="nb">cd </span>build
+cmake <span class="nt">-DCMAKE_INSTALL_PREFIX</span><span class="o">=</span><span class="nv">$inst</span> ..
+make <span class="nt">-j</span>
+make <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>These steps create a build subdirectory, run cmake, make, and make install from it.
+The install directory is set locally as well as <code class="highlighter-rouge">inst</code> within the source directory.
+This script lets you quickly build and install during development.</p>
+
+<p>Create and run the script above.  Try changing some of the cmake features,
+delete the <code class="highlighter-rouge">build</code> directory, re-run <code class="highlighter-rouge">build.sh</code>, and inspect the build results.</p>
+
+<p>An example of the kinds of features you can add to CMakeLists.txt
+is included in the <code class="highlighter-rouge">cmake_step1</code> subdirectory.  There, an include
+directory is added to the heat target, and a <code class="highlighter-rouge">configure_file</code>
+directive is used to make the version number accessible to the program.</p>
+
+<p>Although cmake can replace the <code class="highlighter-rouge">makefile</code>, an updated <code class="highlighter-rouge">makefile</code>
+is also provided in <code class="highlighter-rouge">cmake_step1</code> so that the version number
+is accessible to code compiled using the <code class="highlighter-rouge">makefile</code> route.
+Both compilation methods work at this point.</p>
+
+<p><strong>Step 4.</strong> adapt test script and check manually</p>
+
+<p>The <code class="highlighter-rouge">tests.mk</code> makefile runs <code class="highlighter-rouge">check.sh</code> when it tests that the
+steady-state solution to the heat equation is a straight-line.</p>
+
+<p>To understand this shell script better, we’ll re-code it in another
+language.  The file it’s looking at is output by a command like,
+<code class="highlighter-rouge">./heat runame=check outi=0 maxt=-5e-8 ic="rand(0,0.2,2)"</code>
+which creates <code class="highlighter-rouge">check/check_soln_final.curve</code>.  This file
+is formatted as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Temperature
+       0        0
+     0.1      0.1
+     0.2      0.2
+     0.3      0.3
+     0.4      0.4
+     0.5      0.5
+     0.6      0.6
+     0.7      0.7
+     0.8      0.8
+     0.9      0.9
+       1        1
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">check.sh</code> has the job of comparing the two columns
+(x and u(x)) to determine whether they match. This
+happens to work because the right-boundary condition equals
+the material length.  Extending the checks will require
+re-coding this comparison.</p>
+
+<p>Rewrite <code class="highlighter-rouge">check.sh</code> using your favorite programming language,
+and call the result from <code class="highlighter-rouge">tests/testDriver.sh</code>.
+<code class="highlighter-rouge">testDriver.sh</code> should</p>
+
+<ol>
+  <li>
+    <p>accept a two arguments, the location of the <code class="highlighter-rouge">heat</code> program, and the
+name of the algorithm to run (ftcs, crankn, or upwind15)</p>
+  </li>
+  <li>
+    <p>run the heat program (to produce the output above)</p>
+  </li>
+  <li>
+    <p>run your comparison program</p>
+
+    <p>optionally report on the status of the test</p>
+  </li>
+  <li>
+    <p>delete all outputs so the test can be re-run without false errors</p>
+  </li>
+  <li>
+    <p>complete the shell script with <code class="highlighter-rouge">exit 0</code> for passing output
+and <code class="highlighter-rouge">exit 1</code> for failing tests.</p>
+  </li>
+</ol>
+
+<p>There is a solution using the <code class="highlighter-rouge">awk</code> scripting language
+in the <code class="highlighter-rouge">cmake_step2/tests</code> folder.  In this case,
+exit is not used because the last program’s exit code
+is used as the exit code of the entire shell script.</p>
+
+<p>For your own work, you might want to save your check’s return
+code to a shell variable, like</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+
+status=0 # ok
+`dirname $0`/my_check check_$alg/check_${alg}_soln_final.curve || status=$?
+
+...
+exit $status
+</code></pre></div></div>
+
+<p>Of course, you should run your test driver manually – ensuring that
+it exits with 0 and 1 for good (and bad) output files, respectively.</p>
+
+<hr />
+<p>Digging Deeper:</p>
+
+<p>You can increase the sensitivity of the test by using a larger grid.
+This will provide more data points along the curve above.  Change
+the grid spacing and timestep to achieve a longer simulation.
+How does it affect the test accuracy?</p>
+
+<hr />
+
+<p><strong>Step 5.</strong> invoke test script during tests/CMakeLists.txt</p>
+
+<p>Now that the <code class="highlighter-rouge">testDriver.sh</code> script is working, it’s time
+to declare some tests by using <a href="https://cmake.org/cmake/help/latest/command/enable_testing.html"><code class="highlighter-rouge">enable_testing()</code></a> and <a href="https://cmake.org/cmake/help/latest/command/add_test.html"><code class="highlighter-rouge">add_test</code></a>
+targets in the <code class="highlighter-rouge">CMakeLists.txt</code>.</p>
+
+<p>Rather than put these directly into the main CMakeLists.txt,
+you can use a modular approach.  Create <code class="highlighter-rouge">tests/CMakeLists.txt</code> with the following:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enable_testing()
+
+# define a function to simplify adding tests
+# (which consist of add_executable/target_link_libraries/add_test commands)
+function(do_test alg)
+  add_test(NAME ${alg}
+           COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/testDriver.sh $&lt;TARGET_FILE:heat&gt; ${alg})
+endfunction(do_test)
+
+do_test(ftcs)
+do_test(crankn)
+do_test(upwind15)
+</code></pre></div></div>
+
+<p>This enables testing, and adds all three tests.  The cmake
+function here is doing the repetetive work of calling <code class="highlighter-rouge">add_test</code>,
+so our cmake file can call it three times without repeating
+tedious details.</p>
+
+<p>Include this new file in the main <code class="highlighter-rouge">CMakeLists.txt</code>
+by adding the line: <code class="highlighter-rouge">add_subdirectory(tests)</code>.</p>
+
+<p>All set! You can now run <code class="highlighter-rouge">ctest</code> from the <code class="highlighter-rouge">build/tests</code>
+subdirectory to run all the tests.</p>
+
+<p>In fact, you can run tests every time you build by adding those
+steps to the build.sh file:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+
+cmake -DCMAKE_INSTALL_PREFIX=$inst ..
+make -j
+(cd tests &amp;&amp; ctest)
+make install
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">cmake_step2</code> subdirectory shows how to
+add an option to disable building the tests.</p>
+
+<p><strong>Extra Credit</strong> Add an OpenMP compile flag to your build.</p>
+
+<p>First, modify <code class="highlighter-rouge">heat.C</code> to <code class="highlighter-rouge">#include &lt;omp.h&gt;</code> at the top.
+Next, have the <code class="highlighter-rouge">main</code> function print the current number
+of processors:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>printf("num_procs = %d\n", omp_get_num_procs());
+</code></pre></div></div>
+
+<p>This will only compile if the appropriate flags are passed
+during build and link steps.</p>
+
+<p>Next, modify CMakeLists.txt to use
+<a href="https://cmake.org/cmake/help/latest/module/FindOpenMP.html">FindOpenMP</a>
+by adding the line <code class="highlighter-rouge">find_package(OpenMP 3.0 REQUIRED)</code>.
+Note that the Find(…) modules are run in cmake using <code class="highlighter-rouge">find_package</code>.</p>
+
+<p>Last, show cmake that the <code class="highlighter-rouge">heat</code> target requires OpenMP by adding the line,
+<code class="highlighter-rouge">target_link_libraries(heat PUBLIC OpenMP::OpenMP_CXX)</code>.</p>
+
+<p><strong>Extra Credit</strong> Adapt the code coverage test to cmake.</p>
+
+<p>Use the example <a href="https://github.com/codecov/example-cpp11-cmake">codecov with cmake</a>
+to add codecov functionality to your CMakeLists.txt.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>There are many additional resources on how to use cmake’s features.
+Here are a few useful</p>
+
+<ul>
+  <li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake Tutorial Guide</a></li>
+  <li><a href="https://github.com/frobnitzem/lib0">Template for exporting a shared library with cmake</a></li>
+  <li><a href="https://code.ornl.gov/99R/cpp_docs">Template for Doxygen+Sphinx-Doc with cmake</a></li>
+  <li><a href="https://github.com/codecov/example-cpp11-cmake">codecov with cmake</a></li>
+  <li><a href="https://github.com/LLNL/blt/">BLT - cmake framework for build/link/test</a></li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Hopefully this exercise has shown how easy it is to convert
+an executable project over to cmake and ctest.
+We created a <code class="highlighter-rouge">CMakeLists.txt</code>
+by filling our source files and compile features.
+Then extra features like including tests
+were added one by one.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Better Scientific Software Tutorial</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">IDEAS Productivity Project</li><li><a class="u-email" href="mailto:IdeasProductivity@gmail.com">IdeasProductivity@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/bssw-tutorial"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bssw-tutorial</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting  high-performance computers.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
