@@ -14,7 +14,7 @@ layout: page
 {% assign my-helpers = site.data.bsswt[event-label].event.helper-ids %}
 {% assign my-event = site.data.bsswt[event-label].event %}
 
-## Create issues for presentation updates
+## Create issues to prepare presentations
 
 {% assign gh = "gh issue create --repo bssw-tutorial/presentations --milestone " 
     | append: event-label %}
@@ -23,10 +23,25 @@ layout: page
 ```shell
 {% for p in presentation-order %}
 {{ gh }} \
-    --title "Updates to {{ p }} presentation due {{ site.data.bsswt[event-label].deadlines.final-presentations }}" \
+    --title "{{ p }} presentation due {{ site.data.bsswt[event-label].deadlines.presentations-internal }}" \
     --assignee {{ presenter-order[forloop.index0] }} \
-    --body "The final version of <{{ prepo }}/{{ p }}.pptx> is due by {{ site.data.bsswt[event-label].deadlines.final-presentations }}"
+    --body "The updated version of <{{ prepo }}/{{ p }}.pptx> is due by {{ site.data.bsswt[event-label].deadlines.presentations-internal }}"
 {% endfor %}```
+
+## Create issues to record presentations
+
+{% assign gh = "gh issue create --repo bssw-tutorial/presentations --milestone " 
+    | append: event-label %}
+{% assign prepo = "https://github.com/bssw-tutorial/presentations/blob/master" %}
+
+```shell
+{% for p in presentation-order %}
+{{ gh }} \
+    --title "{{ p }} recording due {{ site.data.bsswt[event-label].deadlines.recordings-internal }}" \
+    --assignee {{ presenter-order[forloop.index0] }} \
+    --body "The recording of <{{ prepo }}/{{ p }}.pptx> is due by {{ site.data.bsswt[event-label].deadlines.recordings-internal }}.  Please put both the recording and the unrendered pptx file (if appropriate) in the Google Drive folder."
+{% endfor %}```
+
 
 ## Renaming presentation PDFs for publication
 
@@ -41,6 +56,8 @@ mkdir {{ dest-dir }}
 mv {{ p }}.pdf {{ dest-dir }}/{{ mfill }}-{{ p }}.pdf
 {% endfor %}
 ```
+
+
 
 ## Data for FigShare record
 
