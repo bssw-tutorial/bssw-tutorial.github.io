@@ -54,7 +54,7 @@
             {%- if pair[1] -%}
                 {%- assign presenter = pair[1] -%}
                 {%- include extract-array-subset key="github-id" values=presenter source=site.people -%}
-                {%- include set-name-affiliation-array people=extract_subset_array short=true -%}
+                {%- include set-name-affiliation-array people=extract_array_subset short=true -%}
                 {%- capture pnamafil -%}{%- include array-to-sentence array=name_affiliation_array -%}{%- endcapture -%}
                 {{ td-open[forloop.index0] }}{{ pnamafil }}</td>
             {%- else -%}

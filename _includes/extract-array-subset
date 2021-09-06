@@ -6,17 +6,17 @@
     `values`: (array) the values (of the key) to be extracted
     `source`: (array) the array to be subsetted
   output:
-    extract_subset_array (array) the subset of source where key matches values
+    extract_array_subset (array) the subset of source where key matches values
 
   Notes:
     * If the key is not present in the source objects, the result will be empty
     * Values not present in source are silently ignored
  {%- endcomment-%}
 
-{%- assign extract_subset_array = "" | split: "," -%}
+{%- assign extract_array_subset = "" | split: "," -%}
 {%- for v in include.values -%}
   {%- assign o = include.source | where: include.key, v -%}
   {%- if o[0] -%}
-    {%- assign extract_subset_array = extract_subset_array | push: o -%}
+    {%- assign extract_array_subset = extract_array_subset | push: o -%}
   {%- endif -%}
 {%- endfor -%}

@@ -7,12 +7,12 @@ layout: default
 {%- assign my-artifacts = site.data.bsswt[page.directory].artifacts -%}
 
 {% include extract-array-subset key="github-id" values=page.presenter-ids source=site.people %}
-{% include set-name-affiliation-array people=extract_subset_array %}
+{% include set-name-affiliation-array people=extract_array_subset %}
 {% capture pnamafil %}{% include array-to-sentence array=name_affiliation_array 
   if_empty="<em>to be announced</em>" %}{% endcapture %}
 
 {% include extract-array-subset key="github-id" values=page.helper-ids source=site.people %}
-{% include set-name-affiliation-array people=extract_subset_array %}
+{% include set-name-affiliation-array people=extract_array_subset %}
 {% capture hnamafil %}{% include array-to-sentence array=name_affiliation_array 
     if_empty="<em>to be announced</em>" %}{% endcapture %}
 
