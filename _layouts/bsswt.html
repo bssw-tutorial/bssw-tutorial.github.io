@@ -2,7 +2,7 @@
 layout: default
 ---
 {% include upcoming-event event=page.date %}
-{% include set-date-range full-time=upcoming start=page.date end=page.end-date %}
+{% include set-date-range full-time=false start=page.date end=page.end-date %}
 
 {%- assign my-artifacts = site.data.bsswt[page.directory].artifacts -%}
 
@@ -19,7 +19,13 @@ layout: default
 <h1 align="center">{% if page.title-url %}<a href="{{ page.title-url }}">{{ page.title }}</a>{% else %}{{ page.title }}{% endif %}</h1>
 <p align="center">a {{ page.title-type }} presented at</p>
 <h2 align="center">{% if page.venue-url %}<a href="{{ page.venue-url }}">{{ page.venue }}</a>{% else %}{{ page.venue }}{% endif %}</h2>
-<h3 align="center">on {{ date-range }}</h3>
+{% if page.date %}
+  <h3 align="center">on 
+    {% if page.time %}{{ page.time }}{% endif %}
+    {{ page.date | date: "%A %d %B %Y"}}
+    {% if page.end-date %}- {{ page.end-date | date: "%A %d %B %Y"}}{% endif %}
+  </h3>
+{% endif %}
 
 {% if page.presenter-ids %}
 <p style="text-indent: -5em; padding-left: 5em;"">{{ page.presenter-ids | size | pluralize: "Presenter:", "Presenters:" }} {{ pnamafil }}</p>
