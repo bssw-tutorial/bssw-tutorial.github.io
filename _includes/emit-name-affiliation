@@ -16,9 +16,6 @@
 
   Notes: 
   * missing elements will be silently ignored
-  * In the case where there is only a firstname or only a lastname and no affiliation
-    an extra trailing space will be included. This is a corner case, not worth
-    addressing until it becomes a problem
 
   FIXME: why do we have to specify element 0 here?
 {% endcomment %}
@@ -26,6 +23,12 @@
 {%- assign short = include.short | default: false -%}
 {%- assign noaffil = include.noaffil | default: false -%}
 
+{%- comment -%}
+  This method of construction is sloppy in that corner cases my result in leading or trailing spaces in the string.
+  So we capture it and strip off leading and trailing whitespace before emitting it.
+{%- endcomment -%}
+
+{%- capture n -%}
 {%- if include.person[0].firstname -%}{{ include.person[0].firstname | append: " " }}{%- endif -%}
 {%- if include.person[0].lastname -%}{{ include.person[0].lastname | append: " " }}{%- endif -%}
 {%- unless noaffil -%}
@@ -35,3 +38,5 @@
     {%- if include.person[0].affiliations -%}({{- include.person[0].affiliations | array_to_sentence_string }}){%- endif -%}
   {%- endif -%}
 {%- endunless -%}
+{%- endcapture -%}
+{{ n | strip }}

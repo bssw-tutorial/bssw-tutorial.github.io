@@ -29,3 +29,5 @@
 {%- comment -%}Clean up internal variables{%- endcomment -%}
 {%- assign p = nil -%}
 {%- assign pafil = nil -%}
+{%- assign short = nil -%}
+{%- assign noaffil = nil -%}

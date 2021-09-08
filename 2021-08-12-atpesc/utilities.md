@@ -49,7 +49,7 @@ Title: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }
 <!-- note that we're not listing helpers here -->
 Authors:
 {% include extract-array-subset key="github-id" values=my-presenters source=site.people %}
-{% include set-name-affiliation-array people=extract_subset_array noaffil="true" %}
+{% include set-name-affiliation-array people=extract_array_subset noaffil="true" %}
 {% if name_affiliation_array %}
   {% for p in name_affiliation_array %}
 * {{ p }}

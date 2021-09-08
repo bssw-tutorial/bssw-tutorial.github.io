@@ -1,0 +1,112 @@
+---
+layout: default
+---
+{%- assign my-event = site.data.bsswt[page.event-label].event -%}
+
+{% include upcoming-event event=my-event.date %}
+{% include set-date-range full-time=false start=my-event.date end=my-event.end-date %}
+
+{%- assign my-artifacts = site.data.bsswt[page.event-label].artifacts -%}
+{%- include key-artifact-shorthands artifacts=my-artifacts -%}
+
+{%- assign my-presentations = site.data.bsswt[page.event-label].presentations -%}
+{%- assign my-agenda = site.data.bsswt[page.event-label].agenda -%}
+{% include set-presentation-order agenda=my-agenda presentations=my-presentations %}
+
+{% include extract-array-subset key="github-id" values=my-event.presenter-ids source=site.people %}
+{% include set-name-affiliation-array people=extract_array_subset %}
+{% capture pnamafil %}{% include array-to-sentence array=name_affiliation_array 
+  if_empty="<em>to be announced</em>" %}{% endcapture %}
+
+{% include extract-array-subset key="github-id" values=my-event.helper-ids source=site.people %}
+{% include set-name-affiliation-array people=extract_array_subset %}
+{% capture hnamafil %}{% include array-to-sentence array=name_affiliation_array 
+    if_empty="<em>to be announced</em>" %}{% endcapture %}
+
+<h1 align="center">{% if my-event.title-url %}<a href="{{ my-event.title-url }}">{{ my-event.title }}</a>{% else %}{{ my-event.title }}{% endif %}</h1>
+<p align="center">a {{ my-event.title-type }} presented at</p>
+<h2 align="center">{% if my-event.venue-url %}<a href="{{ my-event.venue-url }}">{{ my-event.venue }}</a>{% else %}{{ my-event.venue }}{% endif %}</h2>
+{% if my-event.date %}
+  <h3 align="center">on 
+    {% if my-event.time %}{{ my-event.time }}{% endif %}
+    {{ my-event.date | date: "%A %d %B %Y"}}
+    {% if my-event.end-date %}- {{ my-event.end-date | date: "%A %d %B %Y"}}{% endif %}
+  </h3>
+{% endif %}
+
+{% if my-event.presenter-ids %}
+<p style="text-indent: -5em; padding-left: 5em;"">{{ my-event.presenter-ids | size | pluralize: "Presenter:", "Presenters:" }} {{ pnamafil }}</p>
+{% endif %}
+
+{% if my-event.helper-ids %}
+<p style="text-indent: -5em; padding-left: 5em;"">{{ my-event.helper-ids | size | pluralize: "Helper:", "Helpers:" }} {{ hnamafil }}</p>
+{% endif %}
+
+<hr>
+<p>This page provides detailed information specific to the tutorial event above. Expect updates to this page up to, and perhaps shortly after, the date of the tutorial. Pages for other tutorial events can be accessed from the <a href="/">main page</a> of this site.</p>
+
+<hr>
+
+{% if my-artifacts %}
+<h2>Quick Links</h2>
+<ul>
+    {% include emit-artifacts.html artifacts=my-artifacts format="li" %}
+</ul>
+{% endif %}
+
+{%- comment -%}
+  Assemble the sections of the page by including section files in the order defined in page.sections.  
+  
+  Section include files must be named "section-{{ s }}.md" where s is the element of page.sections.
+  We look for section files in the local directory ({{ page.event-label }}) and in the standard _includes directory.
+  The local version takes precedence over the _includes version.  If neither file is found an error message is emitted and the section is skipped.
+
+  Section files must push the appropriate heading text onto the variable `headings`.
+
+  Note that I originally tried to use the flexible_include plugin so that I could have just one call with the full path to the include file.  Unfortunately, I could not get
+  it to work properly.  It works fine here with hard-coded arguments.  And I've used it successfully elsewhere with variables as arguments.  But here, no matter what I tried, it seemed to think it was being passed "/.md" and failed.  Even though I could verify the variable I was passing both before and after the flexible_include call.  Sigh.
+{%- endcomment -%}
+{%- assign headings = "" | split: "," -%}
+{%- assign bodies = "" | split: "," -%}
+{%- for s in page.sections -%}
+  {%- capture f -%}section-{{ s }}.md{%- endcapture -%}
+  {% capture local %}{{ page.event-label }}/{{ f }}{% endcapture %}
+  {% capture default %}_includes/{{ f }}{% endcapture %}
+  {% capture local-exists %}{% file_exists {{ local }}  %}{% endcapture %}
+  {% capture default-exists %}{% file_exists {{ default }} %}{% endcapture %}
+  {%- if local-exists == "true" -%}
+    {%- capture c -%}{% include_relative {{ f }} %}{%- endcapture -%}
+    {% assign bodies = bodies | push: c %}
+  {%- elsif default-exists == "true" -%}
+    {%- capture c -%}{% include {{ f }} %}{%- endcapture -%}
+    {% assign bodies = bodies | push: c %}
+  {%- else -%}
+    {% capture msg %}No file found for section {{ s }}: "{{ local }}" or "{{ default }}"{% endcapture %}
+    {% include emit-error.html msg=msg  %}
+  {%- endif -%}
+{%- endfor -%}
+
+{% comment %}
+  Generate the table of contents, with links to each of the headings
+{% endcomment %}
+
+{%- if headings.size > 0 -%}
+<h2 id=on-this-page">On this Page</h2>
+
+<ul>
+{% for h in headings %}
+<li><a href="#{{ h | slugify }}">{{ h }}</a></li>
+{%- endfor -%}
+</ul>
+
+{% comment %}
+  Now emit each section. Sections start with a horizontal rule and the heading.
+  Don't forget the anchor too!
+{% endcomment %}
+
+{% for h in headings %}
+<hr>
+<h2 id="{{ h |slugify }}">{{ h }}</h2>
+{{ bodies[forloop.index0] | markdownify }}
+{%- endfor -%}
+{%- endif -%}
