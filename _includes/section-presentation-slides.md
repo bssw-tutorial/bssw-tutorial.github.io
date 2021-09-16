@@ -10,10 +10,3 @@ Note that these files may include additional slides that will not be discussed d
 {% else %}
 The presentations will be published shortly before the event.  Please check back.
 {% endif %}
-{% comment %}Clean up internal variables{% endcomment %}
-{%- assign my-artifacts = nil -%}
-{%- assign presentations-doi = nil -%}
-{%- assign presentations-url = nil -%}
-{%- assign hands-on-repo = nil -%}
-{%- assign hands-on-repo-url = nil -%}
-{%- assign hands-on-repo-link = nil -%}

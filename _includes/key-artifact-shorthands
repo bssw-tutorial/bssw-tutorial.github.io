@@ -10,6 +10,7 @@
     outputs:
         `presentations-doi`, `presentations-url`
         `hands-on-repo`, `hands-on-repo-url`, `hands-on-repo-link`
+        `hands-on-repo-org`, `hands-on-repo-dir`
 
     site variables used:
         `site.doi-resolver-url`
@@ -34,6 +35,12 @@
     {%- endfor -%}
 {%- endif -%}
 
-{%- capture presentations-url -%}{{ site.doi-resolver-url }}/{{ presentations-doi }}{%- endcapture -%}
-{%- capture hands-on-repo-url -%}{{ site.github-url }}/{{ hands-on-repo }}{%- endcapture -%}
-{%- capture hands-on-repo-link -%}[{{ hands-on-repo }}]({{ hands-on-repo-url }}){%- endcapture -%}
+{%- if presentations-doi -%}
+  {%- capture presentations-url -%}{{ site.doi-resolver-url }}/{{ presentations-doi }}{%- endcapture -%}
+{%- endif -%}
+{%- if hands-on-repo -%}
+  {%- assign hands-on-repo-org = hands-on-repo | split: "/" | first -%}
+  {%- assign hands-on-repo-dir = hands-on-repo | split: "/" | last -%}
+  {%- capture hands-on-repo-url -%}{{ site.github-url }}/{{ hands-on-repo }}{%- endcapture -%}
+  {%- capture hands-on-repo-link -%}[{{ hands-on-repo }}]({{ hands-on-repo-url }}){%- endcapture -%}
+{%- endif -%}
