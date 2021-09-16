@@ -2,6 +2,6 @@
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.15130590
-#  - label: Hands-On Code Repository
-#    format: GitHub
-#    gh-repo: bssw-tutorial/hello-numerical-world-2021-08-12-atpesc
+  - label: Hands-On Code Repository
+    format: GitHub
+    gh-repo: bssw-tutorial/hello-numerical-world-2021-08-12-atpesc
