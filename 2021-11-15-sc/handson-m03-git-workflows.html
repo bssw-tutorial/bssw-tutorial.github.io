@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Hands-On Exercise 3: Git Workflows | Better Scientific Software Tutorial</title>
+<title>Better Scientific Software Tutorial | Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.</title>
 <meta name="generator" content="Jekyll v4.0.1" />
-<meta property="og:title" content="Hands-On Exercise 3: Git Workflows" />
+<meta property="og:title" content="Better Scientific Software Tutorial" />
 <meta name="author" content="IDEAS Productivity Project" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
@@ -14,9 +14,9 @@
 <meta property="og:url" content="https://bssw-tutorial.github.io/2021-11-15-sc/handson-m03-git-workflows.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Hands-On Exercise 3: Git Workflows" />
+<meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"headline":"Hands-On Exercise 3: Git Workflows","dateModified":"2021-09-15T15:49:05-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m03-git-workflows.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"headline":"Better Scientific Software Tutorial","dateModified":"2021-09-15T22:03:48-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m03-git-workflows.html","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -66,11 +66,13 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Hands-On Exercise 3: Git Workflows</h1>
+    <h1 class="post-title"></h1>
   </header>
 
   <div class="post-content">
-    <h2 id="goals">Goals</h2>
+    <h1 id="hands-on-exercise-git-workflows">Hands-On Exercise: Git Workflows</h1>
+
+<h2 id="goals">Goals</h2>
 <p>To fork a repo, create a branch and make a pull request</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -83,16 +85,16 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 </ul>
 
 <h2 id="instructions">Instructions</h2>
-<p><em>Note: The screen shots and instructions below refer to the generic hello-numerical-world repository.  For this event, you will use <strong><a href="https://github.com/bssw-tutorial/hello-numerical-world-2021-08-12-atpesc">bssw-tutorial/hello-numerical-world-2021-08-12-atpesc</a></strong> instead.</em></p>
+<p><em>Note: The screen shots and instructions below refer to the generic hello-numerical-world repository.  For this event, you will use <strong>hands-on-repo-link (to be defined)</strong> instead.</em></p>
 
 <p><strong>Step 1.</strong> Fork the tutorial repository: <a href="images/03-git-fork.png">(fork example)</a></p>
 <ul>
-  <li>Go to the repository that you want to fork: <a href="https://github.com/bssw-tutorial/hello-numerical-world-2021-08-12-atpesc">bssw-tutorial/hello-numerical-world-2021-08-12-atpesc</a></li>
+  <li>In your browser, go to the repository that you want to fork: hands-on-repo-link (to be defined)</li>
   <li>Hit the fork button in the upper right corner</li>
   <li>Choose your personal account to fork into.</li>
 </ul>
 
-<p>The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  <your username="">/hello-numerical-world-2021-08-12-atpesc .</your></p>
+<p>The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  <your username="">/hands-on-repo-dir (to be defined) .</your></p>
 
 <p><strong>Step 2.</strong> Clone the fork (on command line)</p>
 <ul>
@@ -100,15 +102,15 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   <li>Copy path to clipboard (use path in command below).</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git clone https://github.com/&lt;your username&gt;/hello-numerical-world-2021-08-12-atpesc.git
-Cloning into 'hello-numerical-world-2021-08-12-atpesc' ...
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git clone https://github.com/&lt;your username&gt;/hands-on-repo-dir (to be defined).git
+Cloning into 'hands-on-repo-dir (to be defined)' ...
 .
 .
 </code></pre></div></div>
 
 <p><strong>Step 3.</strong> Create branch</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $cd hello-numerical-world-2021-08-12-atpesc
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $cd hands-on-repo-dir (to be defined)
    $git checkout -b issue-1000
    Switched to a new branch 'issue-1000'
 </code></pre></div></div>
@@ -139,8 +141,8 @@ Cloning into 'hello-numerical-world-2021-08-12-atpesc' ...
 <p><strong>Step 5.</strong> Useful git commands to check repo</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git remote -vv
-   origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2021-08-12-atpesc.git (fetch)
-   origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2021-08-12-atpesc.git (push)
+   origin	https://github.com/&lt;your username&gt;/hands-on-repo-dir (to be defined).git (fetch)
+   origin	https://github.com/&lt;your username&gt;/hands-on-repo-dir (to be defined).git (push)
 
    $git branch
    * issue-1000
@@ -159,9 +161,9 @@ Cloning into 'hello-numerical-world-2021-08-12-atpesc' ...
    remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
    remote: 
    remote: Create a pull request for 'issue-1000' on GitHub by visiting:
-   remote:      https://github.com/&lt;your username&gt;/hello-numerical-world-2021-08-12-atpesc/pull/new/issue-1000
+   remote:      https://github.com/&lt;your username&gt;/hands-on-repo-dir (to be defined)/pull/new/issue-1000
    remote: 
-   To github.com:&lt;your username&gt;/hello-numerical-world-2021-08-12-atpesc.git
+   To github.com:&lt;your username&gt;/hands-on-repo-dir (to be defined).git
     * [new branch]      issue-1000 -&gt; issue-1000
 </code></pre></div></div>
 
