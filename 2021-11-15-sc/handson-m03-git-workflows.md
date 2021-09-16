@@ -1,13 +1,15 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
-hands-on-repo-org: bssw-tutorial
-hands-on-repo-base: hello-numerical-world-2021-08-12-atpesc
 ---
-# Hands-On Exercise 3: Git Workflows 
-{%- capture hands-on-repo -%}{{ page.hands-on-repo-org }}/{{ page.hands-on-repo-base }}{%- endcapture -%}
+{%- include set-event-label-from-path -%}
+{%- assign my-artifacts = site.data.bsswt[event-label].artifacts -%}
+{%- include key-artifact-shorthands artifacts=my-artifacts -%}
+
+{%- unless hands-on-repo-link -%}{%- assign hands-on-repo-link = "hands-on-repo-link (to be defined)" -%}{%- endunless -%}
+{%- unless hands-on-repo-org -%}{%- assign hands-on-repo-org = "hands-on-repo-org (to be defined)" -%}{%- endunless -%}
+{%- unless hands-on-repo-dir -%}{%- assign hands-on-repo-dir = "hands-on-repo-dir (to be defined)" -%}{%- endunless -%}
+
+# Hands-On Exercise: Git Workflows 
 
 ## Goals
 To fork a repo, create a branch and make a pull request
@@ -17,22 +19,22 @@ To fork a repo, create a branch and make a pull request
    - This exercise can actually be completed entirely via the GitHub.com web interface (UI), but we recommend using a command-line `git` client if you're interested in doing later exercises that can't be completed through the web UI.
 
 ## Instructions 
-*Note: The screen shots and instructions below refer to the generic hello-numerical-world repository.  For this event, you will use **[{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }})** instead.*
+*Note: The screen shots and instructions below refer to the generic hello-numerical-world repository.  For this event, you will use **{{ hands-on-repo-link }}** instead.*
 
 **Step 1.** Fork the tutorial repository: [(fork example)](images/03-git-fork.png)
-  - Go to the repository that you want to fork: [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) 
+  - In your browser, go to the repository that you want to fork: {{ hands-on-repo-link }} 
   - Hit the fork button in the upper right corner 
   - Choose your personal account to fork into.  
 
-The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  <your username>/{{ page.hands-on-repo-base }} .
+The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  <your username>/{{ hands-on-repo-dir }} .
 
 **Step 2.** Clone the fork (on command line)
   - Click on arrow next to code for path to clone. see [(clone example)](images/03-git-clone.png)   
   - Copy path to clipboard (use path in command below). 
 
 ```
-   $git clone https://github.com/<your username>/{{ page.hands-on-repo-base }}.git
-Cloning into '{{ page.hands-on-repo-base}}' ...
+   $git clone https://github.com/<your username>/{{ hands-on-repo-dir }}.git
+Cloning into '{{ hands-on-repo-dir}}' ...
 .
 .
 ```
@@ -40,7 +42,7 @@ Cloning into '{{ page.hands-on-repo-base}}' ...
 **Step 3.** Create branch  
 
 ```
-   $cd {{ page.hands-on-repo-base }}
+   $cd {{ hands-on-repo-dir }}
    $git checkout -b issue-1000
    Switched to a new branch 'issue-1000'
 ```
@@ -74,8 +76,8 @@ Cloning into '{{ page.hands-on-repo-base}}' ...
 
 ```
    $git remote -vv
-   origin	https://github.com/<your username>/{{ page.hands-on-repo-base }}.git (fetch)
-   origin	https://github.com/<your username>/{{ page.hands-on-repo-base }}.git (push)
+   origin	https://github.com/<your username>/{{ hands-on-repo-dir }}.git (fetch)
+   origin	https://github.com/<your username>/{{ hands-on-repo-dir }}.git (push)
 
    $git branch
    * issue-1000
@@ -95,9 +97,9 @@ Cloning into '{{ page.hands-on-repo-base}}' ...
    remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
    remote: 
    remote: Create a pull request for 'issue-1000' on GitHub by visiting:
-   remote:      https://github.com/<your username>/{{ page.hands-on-repo-base }}/pull/new/issue-1000
+   remote:      https://github.com/<your username>/{{ hands-on-repo-dir }}/pull/new/issue-1000
    remote: 
-   To github.com:<your username>/{{ page.hands-on-repo-base }}.git
+   To github.com:<your username>/{{ hands-on-repo-dir }}.git
     * [new branch]      issue-1000 -> issue-1000
 ```
 

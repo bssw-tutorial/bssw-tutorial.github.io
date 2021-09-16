@@ -1,10 +1,7 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
 ---
-# Hands-On Exercise 0: Setting up the Prerequisites 
+# Hands-On Exercise: Setting up the Prerequisites 
 
 1. If you don't have a **GitHub** account already, please set one up (used starting in **exercise 2, agile**)
    - Go to <https://github.com>

@@ -1,10 +1,13 @@
 ---
 layout: page
-hands-on-repo-org: bssw-tutorial
-hands-on-repo-base: hello-numerical-world-2021-08-12-atpesc
 ---
+{%- include set-event-label-from-path -%}
+{%- assign my-artifacts = site.data.bsswt[event-label].artifacts -%}
+{%- include key-artifact-shorthands artifacts=my-artifacts -%}
 
-# Hands-On Exercise 8: Testing Walk-Through
+{%- unless hands-on-repo-link -%}{%- assign hands-on-repo-link = "hands-on-repo-link (to be defined)" -%}{%- endunless -%}
+
+# Hands-On Exercise: Testing Walk-Through
 
 ## Goals
 
@@ -18,7 +21,7 @@ Implement a cmake build and test process for an example project.
   * gnu make
   * cmake
   * git
-* A fork of the [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) repository in your account (covered in Git Workflows exercise)
+* A fork of the {{ hands-on-repo-link }} repository in your account (covered in Git Workflows exercise)
    - Your fork of the tutorial repository should be cloned where you have the software development environment above
 
 ## Background

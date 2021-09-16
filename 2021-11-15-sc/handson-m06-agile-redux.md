@@ -1,19 +1,21 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
-hands-on-repo-org: bssw-tutorial
-hands-on-repo-base: hello-numerical-world-2021-08-12-atpesc
 ---
-# Hands-On Exercise 6: Agile Redux
+{%- include set-event-label-from-path -%}
+{%- assign my-artifacts = site.data.bsswt[event-label].artifacts -%}
+{%- include key-artifact-shorthands artifacts=my-artifacts -%}
+
+{%- unless hands-on-repo-link -%}{%- assign hands-on-repo-link = "hands-on-repo-link (to be defined)" -%}{%- endunless -%}
+{%- unless hands-on-repo-dir -%}{%- assign hands-on-repo-dir = "hands-on-repo-dir (to be defined)" -%}{%- endunless -%}
+
+# Hands-On Exercise: Agile Redux
 
 ## Goals
 Create epic, story, and task issues for the refactoring exercises and track them on a kanban board
 
 ## Prerequisites
 * A [GitHub](https://github.com) account
-* A fork of the [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) repository in your account (covered in Git Workflows exercise)
+* A fork of the {{ hands-on-repo-link }} repository in your account (covered in Git Workflows exercise)
    - This exercise can be done entirely within the web interface of GitHub.com
 
 ## Background
@@ -25,11 +27,11 @@ We're going to consider the refactoring effort to be at the level of an "epic", 
 
 ### Where to Do the Work
 
-We're going to be working with issues to manage development work on the {{ page.hands-on-repo-base }} repository. You forked this repository (made a copy in your own GitHub account) in an earlier exercise  But if you check the tabs for your fork, you will see that Issues is missing.  In the "default" fork-pull request model of interaction, you and your team would be working on issues in the upstream repository, where everyone can easily see and update them.  So, by default, when GitHub forks a repository, it disables the Issues on the resulting fork.
+We're going to be working with issues to manage development work on the {{ hands-on-repo-dir }} repository. You forked this repository (made a copy in your own GitHub account) in an earlier exercise  But if you check the tabs for your fork, you will see that Issues is missing.  In the "default" fork-pull request model of interaction, you and your team would be working on issues in the upstream repository, where everyone can easily see and update them.  So, by default, when GitHub forks a repository, it disables the Issues on the resulting fork.
 
 In this case, everyone doing the exercise is doing the same tasks, which wouldn't normally happen in a coordinated project.  So to avoid the confusion of everyone using the upstream repository's issues and project boards, we recommend that in this case you do one of the following instead.
    - Use the issues-only repository you created for exercise 2 (or create another issues-only repository in your account).
-   - You can enable issues in your fork of the {{ page.hands-on-repo-base }} repository by going into the Setting tab, scrolling down to the Features section, and checking the box next to Issues.
+   - You can enable issues in your fork of the {{ hands-on-repo-dir }} repository by going into the Setting tab, scrolling down to the Features section, and checking the box next to Issues.
 
 ### Working with GitHub Issues
 

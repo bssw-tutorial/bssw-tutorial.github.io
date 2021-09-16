@@ -1,10 +1,7 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
 ---
-# Hands-On Exercise 2: Agile Methodologies
+# Hands-On Exercise: Agile Methodologies
 
 ## Goals
 Use GitHub issues and project boards to setup a simple "personal kanban" board

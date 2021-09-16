@@ -1,12 +1,14 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
-hands-on-repo-org: bssw-tutorial
-hands-on-repo-base: hello-numerical-world-2021-08-12-atpesc
 ---
-# Hands-On Exercise 8: Continuous Integration
+{%- include set-event-label-from-path -%}
+{%- assign my-artifacts = site.data.bsswt[event-label].artifacts -%}
+{%- include key-artifact-shorthands artifacts=my-artifacts -%}
+
+{%- unless hands-on-repo-link -%}{%- assign hands-on-repo-link = "hands-on-repo-link (to be defined)" -%}{%- endunless -%}
+{%- unless hands-on-repo-dir -%}{%- assign hands-on-repo-dir = "hands-on-repo-dir (to be defined)" -%}{%- endunless -%}
+
+# Hands-On Exercise: Continuous Integration
 ## Goals
 You'll establish a simple continuous integration workflow and then refine it, adding code coverage assessment.
 
@@ -25,7 +27,7 @@ We're also going to hook this CI check up to the Codecov.io service.
 Then we'll visualize and track changes in code coverage as the code changes.
 
 A video walk-through of (most of) this exercise is available at: <https://youtu.be/QE4RFp8lGiQ>
-* This video was created by Mark Miller (LLNL) for tutorial at ATPESC 2020.  Where he refers to the repository as `hello-numerical-world-atpesc-2020`, substitute `{{ page.hands-on-repo-base }}`.
+* This video was created by Mark Miller (LLNL) for tutorial at ATPESC 2020.  Where he refers to the repository as `hello-numerical-world-atpesc-2020`, substitute `{{ hands-on-repo-dir }}`.
 * The original exercise used Travis CI, which requires setting up an extra account. Below, we use GitHub's built-in Action service instead.
 
 

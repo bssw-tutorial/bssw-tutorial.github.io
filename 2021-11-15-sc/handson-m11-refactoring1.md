@@ -1,12 +1,13 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
-hands-on-repo-org: bssw-tutorial
-hands-on-repo-base: hello-numerical-world-2021-08-12-atpesc
 ---
-# Hands-On Exercise 11: Refactoring 
+{%- include set-event-label-from-path -%}
+{%- assign my-artifacts = site.data.bsswt[event-label].artifacts -%}
+{%- include key-artifact-shorthands artifacts=my-artifacts -%}
+
+{%- unless hands-on-repo-link -%}{%- assign hands-on-repo-link = "hands-on-repo-link (to be defined)" -%}{%- endunless -%}
+
+# Hands-On Exercise: Refactoring 
 
 ## Part 1: Add a New Integration Method
 
@@ -15,7 +16,7 @@ Refactor the code to enable addition of new integration methods without having t
 
 ### Prerequisites
 * A [GitHub](https://github.com) account
-* A fork of the [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) repository in your account (covered in Git Workflows exercise)
+* A fork of the {{ hands-on-repo-link }} repository in your account (covered in Git Workflows exercise)
 	- The files relevant to this exercise are:
 		- Header files: `Double.H`, `heat.H`
 		- Source file: `args.C`, `crankn.C`, `exact.C`, `ftcs.C`, `heat.C`, `upwind15.C`, `utils.C`
@@ -161,7 +162,7 @@ Refactor a poorly structured code to a cleaner, more reusable version.
 ## Prerequisites
 
 * A [GitHub](https://github.com) account
-* A fork of the [{{ hands-on-repo }}]({{ site.github-url }}/{{ hands-on-repo }}) repository in your account (covered in Git Workflows exercise)
+* A fork of the {{ hands-on-repo-link }} repository in your account (covered in Git Workflows exercise)
 	- The files relevant to this exercise are:
 		- Header files: `Double.H`, `heat.H`
 		- Source file: `heatAll.C`
