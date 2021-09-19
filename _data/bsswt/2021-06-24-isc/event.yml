@@ -1,0 +1,11 @@
+title: "Better Scientific Software"
+title-type: "tutorial"
+#title-url:
+date: 2021-06-24
+end-date: 2021-06-25
+time: 2:00 pm - 6:00 pm CET
+venue: "ISC High Performance"
+venue-type: "conference"
+venue-url: https://www.isc-hpc.com/
+location: "online"
+presenter-ids: [bernhold, adubey64, pagrubel, rinkug, frobnitzem]
