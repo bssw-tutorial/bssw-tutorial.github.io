@@ -1,0 +1,5 @@
+{% assign headings = headings | push: "Description" %}
+
+A thorough and robust testing regime is central to the productive development, evolution, and maintenance of quality, trustworthy scientific software. Continuous integration, though much discussed, is just one element of such a testing regime. Most project teams feel that they could (and should) do a “better job” of testing. In many cases, designing and implementing a strong testing strategy can seem so daunting that it is hard to know where to start.
+
+In this tutorial, which is aimed at those with beginner to intermediate levels of comfort with testing and continuous integration, we will briefly review the multiple motivations for testing, and the different types of tests that address them. We’ll discuss some strategies for testing complex software systems, and how continuous integration testing fits into the larger picture. Accompanying hands-on activities, available for self-study, will demonstrate how to get started with a very simple level of CI testing.
