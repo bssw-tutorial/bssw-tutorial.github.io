@@ -40,6 +40,7 @@ plugins:
   - jekyll-last-modified-at
   - jekyll-pluralize
   - jekyll-github-metadata
+  - jekyll-redirect-from
 #  - flexible_include # We do use this, but it is not a gem
 
 titles_from_headings:
@@ -92,17 +93,10 @@ exclude:
 future: true
 
 collections:
-  events:
-    output: true
   people:
     output: true
 
 defaults:
-  - scope:
-      path: ""
-      type: "events"
-    values:
-      layout: "bsswt"
   - scope:
       path: ""
       type: "people"
