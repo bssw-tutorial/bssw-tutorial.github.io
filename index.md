@@ -1,15 +1,22 @@
 ---
 layout: home
 ---
-{%- assign today = 'now' | date: "%s" -%}
+# The Better Scientific Software (BSSw) Tutorial
 
+The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.
+
+We first presented a version of this tutorial in 2016, and since then we have been working continually to refine and expand it.  We present it most often as part of conferences, but we are open to a wide range of venues, both in person (circumstances permitting) and online.  [Contact us](mailto:{{ site.email }}?subject=BSSw tutorial question) for more information.
+
+In the listings below, each tutorial event has its own page, providing details specific to that tutorial, including agenda, presentations, hands-on activities, and other resources.  Quick links are also provided to key tutorial artifacts, where available.
+
+{%- assign today = 'now' | date: "%s" -%}
 {%- assign scheduled = "" | split: "," -%}
 {%- assign planned = "" | split: "," -%}
 {%- assign past = "" | split: "," -%}
 {%- for t in site.data.tutorials -%}
     {%- assign my-event = site.data.bsswt[t.event-label].event -%}
     {%- assign when = my-event.date | date: "%s" -%}
-    {%- assign value = my-event.date | append: "," | append: t.event-label -%}<br>
+    {%- assign value = my-event.date | append: "," | append: t.event-label -%}
     {%- if when < today -%}
         {%- assign past = past | push: value -%}
     {%- elsif t.status == "scheduled" -%}
@@ -18,24 +25,6 @@ layout: home
         {%- assign planned = planned | push: value -%}
     {%- endif -%}
 {%- endfor -%}
-
-scheduled: {{ scheduled | inspect }}
-
-planned: {{ planned | inspect }}
-
-past: {{ past | inspect }}
-
-
-
-{% include upcoming-event event=my-event.date %}
-
-# The Better Scientific Software (BSSw) Tutorial
-
-The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.
-
-We first presented a version of this tutorial in 2016, and since then we have been working continually to refine and expand it.  We present it most often as part of conferences, but we are open to a wide range of venues, both in person (circumstances permitting) and online.  [Contact us](mailto:{{ site.email }}?subject=BSSw tutorial question) for more information.
-
-In the listings below, each tutorial event has its own page, providing details specific to that tutorial, including agenda, presentations, hands-on activities, and other resources.  Quick links are also provided to key tutorial artifacts, where available.
 
 {% comment %}
     SCHEDULED tutorials are those which have been accepted and we have specific dates.
