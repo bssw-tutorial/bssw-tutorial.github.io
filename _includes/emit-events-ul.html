@@ -1,19 +1,29 @@
 {% comment %}
-  emit-events-ul.html: generate and unordered list of tutorial events with such artifacts as are available
+  emit-events-ul.html: emit an unordered list of tutorial events
 
   Arguments:
     event-labels: array of event-labels to emit, in desired order
     highlight: highlight first entry in list by bolding it (optional, default: false)
+    artifacts: include list of artifacts available (optional, default: true)
 
   Global variables used:
     site.data.bsswt[*].event
     site.data.bsswt[*].artifacts
  {% endcomment %}
 
-{%- if include.highlight -%}
+ {%- comment -%}
+    Seems that the default filter doesn't work with truth values,
+    even though docs indicate it ought to.  Sigh.
+ {%- endcomment -%}
+{%- if include.highlight != nil -%}
   {%- assign first = include.highlight -%}
 {%- else -%}
   {%- assign first = false -%}
+{%- endif -%}
+{%- if include.artifacts != nil -%}
+  {%- assign artifacts = include.artifacts -%}
+{%- else -%}
+  {%- assign artifacts = true -%}
 {%- endif -%}
 {%- if include.event-labels.size > 0 -%}
 <ul>
@@ -21,8 +31,8 @@
     {%- assign my-event = site.data.bsswt[event-label].event -%}
     {%- assign my-artifacts = site.data.bsswt[event-label].artifacts -%}
     {% if my-event %}
-      <li style="margin-top: 1em">{% if first %}<strong>{% endif %}{{ my-event.date | date: "%F" }}: <a href="{{ event-label }}/">{{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}</a>{%if my-event.location %} ({{ my-event.location }}){% endif %}{% if first %}</strong>{%- assign first = false -%}{% endif %}</li>
-      {% if my-artifacts %}
+      <li style="margin-top: 1em">{% if first %}<strong>{% endif %}{{ my-event.date | date: "%F" }}: <a href="/{{ event-label }}/">{{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}</a>{%if my-event.location %} ({{ my-event.location }}){% endif %}{% if first %}</strong>{%- assign first = false -%}{% endif %}</li>
+      {% if my-artifacts and artifacts %}
       <ul>
         <li>{{ my-artifacts | size | pluralize: "Artifact:", "Artifacts:" }} {% include emit-artifacts.html artifacts=my-artifacts format="row" %}</li>
       </ul>

@@ -2,6 +2,19 @@
 layout: page
 ---
 ## List of Tutorial Staff
+{%- assign tutorials = "" | split: "," -%}
+{%- for t in site.data.tutorials -%}
+  {%- assign my-event = site.data.bsswt[t.event-label].event -%}
+  {%- assign when = my-event.date | date: "%s" -%}
+  {%- assign value = my-event.date | append: "," | append: t.event-label -%}
+  {%- assign tutorials = tutorials | push: value -%}
+{%- endfor -%}
+{% assign event-labels = "" | split: "," %}
+{% assign sorted = tutorials | sort | reverse %}
+{% for item in sorted %}
+  {% assign event-label = item | split: "," | last %}
+  {% assign event-labels = event-labels | push: event-label %}
+{% endfor %}
 
 *As presenters, unless noted.*
 
@@ -17,24 +30,25 @@ layout: page
     {% endif %}
   </li> 
 
-{% assign w = site.events | where: "presenter-ids", participant.github-id | sort: "date" | reverse %}
-{% assign x = site.events | where: "helper-ids", participant.github-id | sort: "date" | reverse %}
+  {%- assign presented-in = "" | split: "," -%}
+  {%- assign helped-in = "" | split: "," -%}
+  {% for event-label in event-labels %}
+    {%- assign my-event = site.data.bsswt[event-label].event -%}
+      {%- if my-event.presenter-ids contains participant.github-id -%}
+        {%- assign presented-in = presented-in | push: event-label -%}
+      {%- elsif my-event.helper-ids contains participant.github-id -%}
+      {%- assign helped-in = presented-in | push: event-label -%}
+    {%- endif -%}
+  {%- endfor -%}
 
-  <ul style="list-style: none">
-    {% if w != empty %}
-      {% for w2 in w %}
-      <li style="list-style: none"> 
-        <a href="{{ site.baseurl }}{{ w2.url }}">{{ w2.title }}{% if w2.title-type %} {{ w2.title-type }}{% endif %} @ {{ w2.venue }}{% if w2.venue-type %} {{ w2.venue-type }}{% endif %}</a> ({{ w2.date | date: "%F" }})</li>
-    {% endfor %}
-  {% endif %}
-  {% if x != empty %}
-      {% for x2 in x %}
-      <li style="list-style: none">
-        <a href="{{ site.baseurl }}{{ x2.url }}">{{ x2.title }}{% if x2.title-type %} {{ x2.title-type }}{% endif %} @ {{ x2.venue }}{% if x2.venue-type %} {{ x2.venue-type }}{% endif %}</a> ({{ x2.date | date: "%F" }}) <em>Helper</em></li>
-    {% endfor %}
-  {% endif %}
+  {%- if presented-in.size > 0 -%}
+    {% include emit-events-ul.html event-labels=presented-in artifacts=false %}
+  {%- endif -%}
 
-  </ul>
+  {%- if helped-in.size > 0 -%}
+  <p><strong>Helper:</strong></p>
+    {% include emit-events-ul.html event-labels=helped-in artifacts=false %}
+  {%- endif -%}
 
 {% endfor %}
 </ul>

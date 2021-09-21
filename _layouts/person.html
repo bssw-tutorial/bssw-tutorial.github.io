@@ -35,25 +35,38 @@ layout: default
     
   {{ content }}
 
-  {% assign w = site.events | where: "presenter-ids", page.github-id | sort: "date" | reverse %}
-  {% if w != empty %}
-    <p><strong>Presenter:</strong> </p>
+  {%- assign tutorials = "" | split: "," -%}
+  {%- for t in site.data.tutorials -%}
+    {%- assign my-event = site.data.bsswt[t.event-label].event -%}
+    {%- assign when = my-event.date | date: "%s" -%}
+    {%- assign value = my-event.date | append: "," | append: t.event-label -%}
+    {%- assign tutorials = tutorials | push: value -%}
+  {%- endfor -%}
+  {% assign event-labels = "" | split: "," %}
+  {% assign sorted = tutorials | sort | reverse %}
+  {% for item in sorted %}
+    {% assign event-label = item | split: "," | last %}
+    {% assign event-labels = event-labels | push: event-label %}
+  {% endfor %}
 
-    {% for w2 in w %}
-      <p>
-        <a href="{{ site.baseurl }}{{ w2.url }}">{{ w2.title }}{% if w2.title-type %} {{ w2.title-type }}{% endif %} @ {{ w2.venue }}{% if w2.venue-type %} {{ w2.venue-type }}{% endif %}</a> ({{ w2.date | date: "%F" }})
-      </p>
-    {% endfor %}  
-  {% endif %}  
+  {%- assign presented-in = "" | split: "," -%}
+  {%- assign helped-in = "" | split: "," -%}
+  {% for event-label in event-labels %}
+    {%- assign my-event = site.data.bsswt[event-label].event -%}
+      {%- if my-event.presenter-ids contains page.github-id -%}
+        {%- assign presented-in = presented-in | push: event-label -%}
+      {%- elsif my-event.helper-ids contains page.github-id -%}
+      {%- assign helped-in = presented-in | push: event-label -%}
+    {%- endif -%}
+  {%- endfor -%}
 
-  {% assign w = site.events | where: "helper-ids", page.github-id | sort: "date" | reverse %}
-  {% if w != empty %}
-    <p><strong>Helper:</strong> </p>
+  {%- if presented-in.size > 0 -%}
+  <p><strong>Presenter:</strong></p>
+    {% include emit-events-ul.html event-labels=presented-in artifacts=false %}
+  {%- endif -%}
 
-    {% for w2 in w %}
-      <p>
-        <a href="{{ site.baseurl }}{{ w2.url }}">{{ w2.title }}{% if w2.title-type %} {{ w2.title-type }}{% endif %} @ {{ w2.venue }}{% if w2.venue-type %} {{ w2.venue-type }}{% endif %}</a> ({{ w2.date | date: "%F" }})
-      </p>
-    {% endfor %}  
-  {% endif %}  
+  {%- if helped-in.size > 0 -%}
+  <p><strong>Helper:</strong></p>
+    {% include emit-events-ul.html event-labels=helped-in artifacts=false %}
+  {%- endif -%}
 </section>
