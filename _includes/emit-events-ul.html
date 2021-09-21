@@ -1,0 +1,33 @@
+{% comment %}
+  emit-events-ul.html: generate and unordered list of tutorial events with such artifacts as are available
+
+  Arguments:
+    event-labels: array of event-labels to emit, in desired order
+    highlight: highlight first entry in list by bolding it (optional, default: false)
+
+  Global variables used:
+    site.data.bsswt[*].event
+    site.data.bsswt[*].artifacts
+ {% endcomment %}
+
+{%- if include.highlight -%}
+  {%- assign first = include.highlight -%}
+{%- else -%}
+  {%- assign first = false -%}
+{%- endif -%}
+{%- if include.event-labels.size > 0 -%}
+<ul>
+  {% for event-label in include.event-labels %}
+    {%- assign my-event = site.data.bsswt[event-label].event -%}
+    {%- assign my-artifacts = site.data.bsswt[event-label].artifacts -%}
+    {% if my-event %}
+      <li style="margin-top: 1em">{% if first %}<strong>{% endif %}{{ my-event.date | date: "%F" }}: <a href="{{ event-label }}/">{{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}</a>{%if my-event.location %} ({{ my-event.location }}){% endif %}{% if first %}</strong>{%- assign first = false -%}{% endif %}</li>
+      {% if my-artifacts %}
+      <ul>
+        <li>{{ my-artifacts | size | pluralize: "Artifact:", "Artifacts:" }} {% include emit-artifacts.html artifacts=my-artifacts format="row" %}</li>
+      </ul>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</ul>
+{%- endif -%}

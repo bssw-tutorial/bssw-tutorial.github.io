@@ -1,10 +1,34 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 ---
 {%- assign today = 'now' | date: "%s" -%}
+
+{%- assign scheduled = "" | split: "," -%}
+{%- assign planned = "" | split: "," -%}
+{%- assign past = "" | split: "," -%}
+{%- for t in site.data.tutorials -%}
+    {%- assign my-event = site.data.bsswt[t.event-label].event -%}
+    {%- assign when = my-event.date | date: "%s" -%}
+    {%- assign value = my-event.date | append: "," | append: t.event-label -%}<br>
+    {%- if when < today -%}
+        {%- assign past = past | push: value -%}
+    {%- elsif t.status == "scheduled" -%}
+        {%- assign scheduled = scheduled | push: value -%}
+    {%- elsif t.status == "planned" -%}
+        {%- assign planned = planned | push: value -%}
+    {%- endif -%}
+{%- endfor -%}
+
+scheduled: {{ scheduled | inspect }}
+
+planned: {{ planned | inspect }}
+
+past: {{ past | inspect }}
+
+
+
+{% include upcoming-event event=my-event.date %}
+
 # The Better Scientific Software (BSSw) Tutorial
 
 The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.
@@ -13,70 +37,62 @@ We first presented a version of this tutorial in 2016, and since then we have be
 
 In the listings below, each tutorial event has its own page, providing details specific to that tutorial, including agenda, presentations, hands-on activities, and other resources.  Quick links are also provided to key tutorial artifacts, where available.
 
+{% comment %}
+    SCHEDULED tutorials are those which have been accepted and we have specific dates.
+    If we don't have any scheduled tutorials on the books, we want to point out that
+    some of our past tutorials have recordings available.
+{% endcomment %}
 ## Scheduled Tutorials
 
+{% if scheduled.size > 0 %}
 *Note: In most cases, participation in these tutorials requires registration with the hosting venue, and may require a fee.*
 
-<ul>
-{%- assign first = true -%}
-{% assign sequence = site.events | where: "status", "scheduled" | sort: "date" %}
-{% for event in sequence %}
-{%- assign when = event.date | date: "%s" -%}
-{% if when < today %}{% continue %}{% endif %}
-<li style="margin-top: 1em">{% if first %}<strong>{% endif %}{{ event.date | date: "%F" }}: <a href="{{ event.url }}">{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}</a>{%if event.location %} ({{ event.location }}){% endif %}{% if first %}</strong>{%- assign first = false -%}{% endif %}</li>
-{%- assign my-artifacts = site.data.bsswt[event.directory].artifacts -%}
-{% if my-artifacts %}
-    <ul>
-    <li>{{ my-artifacts | size | pluralize: "Artifact:", "Artifacts:" }} {% include emit-artifacts.html artifacts=my-artifacts format="row" %}</li>
-    </ul>
+  {% assign event-labels = "" | split: "," %}
+  {% assign sorted = scheduled | sort %}
+  {% for item in sorted %}
+    {% assign event-label = item | split: "," | last %}
+    {% assign event-labels = event-labels | push: event-label %}
+  {% endfor %}
+  {% include emit-events-ul.html event-labels=event-labels highlight=true %}
+{% else %}
+*We do not currently have any tutorials scheduled.  Check back periodically for updates.  Also, some of our [past tutorials](#past-tutorials) have recordings available.*
 {% endif %}
-{% endfor %}
-{% if first %}
-<li style="margin-top: 1em"><em>No events currently scheduled.</em></li>
-{% endif %}
-</ul>
 
+{% comment %}
+    PLANNED tutorials are those which have been accepted, but we don't know the exact dates yet.
+    If we don't have any planned tutorials, we'll just skip the entire section.
+{% endcomment %}
+
+{% assign event-labels = "" | split: "," %}
+{% assign sorted = planned | sort %}
+{% for item in sorted %}
+  {% assign event-label = item | split: "," | last %}
+  {% assign event-labels = event-labels | push: event-label %}
+{% endfor %}
+
+{% if event-labels.size > 0 %}
 ## Planned Tutorials
 
-*These events are confirmed, but dates have not yet been determined.  The dates shown are those for the hosting venue. Events will be updated as more information becomes available.*
+*These events are confirmed, but specific dates have not yet been determined.  The dates shown are those for the hosting venue. Once the presentation date is known, these events will move to the [Scheduled Tutorials](#scheduled-tutorials) section.*
 
-<ul>
-{%- assign first = true -%}
-{% assign sequence = site.events | where: "status", "planned" | sort: "date" %}
-{% for event in sequence %}
-<li style="margin-top: 1em">{{ event.date | date: "%F" }}: <a href="{{ event.url }}">{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}</a>{%if event.location %} ({{ event.location }}){% endif %}{%- assign first = false -%}</li>
-{%- assign my-artifacts = site.data.bsswt[event.directory].artifacts -%}
-{% if my-artifacts %}
-    <ul>
-    <li>{{ my-artifacts | size | pluralize: "Artifact:", "Artifacts:" }} {% include emit-artifacts.html artifacts=my-artifacts format="row" %}</li>
-    </ul>
+{% include emit-events-ul.html event-labels=event-labels %}
 {% endif %}
-{% endfor %}
-{% if first %}
-<li style="margin-top: 1em"><em>No events currently in planning.</em></li>
-{% endif %}
-</ul>
 
+{% comment %}
+    If there are no past tutorials on this site (unlikely), we'll just refer to the older listings
+    on the i-p.o web site.
+{% endcomment %}
 ## Past Tutorials
 
-<ul>
-{%- assign first = true -%}
-{% assign sequence = site.events | where: "status", "scheduled" | sort: "date" | reverse %}
-{% for event in sequence %}
-{%- assign when = event.date | date: "%s" -%}
-{% if when >= today %}{% continue %}{% endif %}
-<li style="margin-top: 1em">{{ event.date | date: "%F" }}: <a href="{{ event.url }}">{{ event.title }}{% if event.title-type %} {{ event.title-type }}{% endif %} @ {{ event.venue }}{% if event.venue-type %} {{ event.venue-type }}{% endif %}</a>{%if event.location %} ({{ event.location }}){% endif %}{%- assign first = false -%}</li>
-{%- assign my-artifacts = site.data.bsswt[event.directory].artifacts -%}
-{% if my-artifacts %}
-    <ul>
-    <li>{{ my-artifacts | size | pluralize: "Artifact:", "Artifacts:" }} {% include emit-artifacts.html artifacts=my-artifacts format="row" %}</li>
-    </ul>
+{% if past.size > 0 %}
+  {% assign event-labels = "" | split: "," %}
+  {% assign sorted = past | sort | reverse %}
+  {% for item in sorted %}
+    {% assign event-label = item | split: "," | last %}
+    {% assign event-labels = event-labels | push: event-label %}
+  {% endfor %}
+  {% include emit-events-ul.html event-labels=event-labels %}
 {% endif %}
-{% endfor %}
-{% if first %}
-<li style="margin-top: 1em"><em>No past events available.</em></li>
-{% endif %}
-</ul>
 
 See the IDEAS Productivity [Events](https://ideas-productivity.org/events/) page for tutorials prior to 2021 (as well as other IDEAS events, which may also be of interest).  For most past tutorials, the presentation slides have been archived and are linked from the Events page.
 
