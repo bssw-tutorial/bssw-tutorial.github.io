@@ -1,13 +1,14 @@
 Fixed Points,Duration,Time (CST),Module,Title,Presenter
 <!--skip-->,<!--skip-->,<!--right-->,<!--right-->,,
-8:30 AM,10,8:30 AM,0,intro,bernhold
-,20,8:40 AM,1,overview,pagrubel
-,30,9:00 AM,2,git-workflows,pagrubel
-,30,9:30 AM,3,agile,rinkug
+8:00 AM,10,8:00 AM,0,intro,bernhold
+,20,8:10 AM,1,overview,pagrubel
+,30,8:30 AM,2,git-workflows,pagrubel
+,30,9:00 AM,3,agile,rinkug
+,30,9:30 AM,4,design,bernhold
 10:00 AM,30,10:00 AM,,<em>Break</em>,
-10:30 AM,15,10:30 AM,4,agile-redux,rinkug
-,30,10:45 AM,5,design,bernhold
-,45,11:15 AM,6,reproducibility,bernhold
+10:30 AM,15,10:30 AM,5,agile-redux,rinkug
+,45,10:45 AM,6,reproducibility,bernhold
+,30,11:30 AM,,Hands-on & Discussion,
 12:00 PM,60,12:00 PM,,<em>Lunch</em>,
 1:00 PM,30,1:00 PM,7,testing-introduction2,jarrah42
 ,25,1:30 PM,8,continuous-integration,jarrah42
