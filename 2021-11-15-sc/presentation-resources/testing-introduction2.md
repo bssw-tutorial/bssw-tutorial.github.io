@@ -9,3 +9,7 @@
   * [Development Practices Survey Article](https://dx.doi.org/10.6084/m9.figshare.14188463.v1)
   * [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
   * CMake [add-test](https://cmake.org/cmake/help/latest/command/add_test.html) command documentation
+  * [Verification and Validation in Scientific Computing](https://doi.org/10.1017/CBO9780511760396)
+  * [Working Effectively with Legacy Code](https://doi.org/10.1007/978-3-540-27777-4_42)
+
+
