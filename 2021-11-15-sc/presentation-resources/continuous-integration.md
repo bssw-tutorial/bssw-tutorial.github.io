@@ -3,5 +3,9 @@
   * [Best practices for using Docker Hub for CI/CD](https://docs.docker.com/ci-cd/best-practices/)
   * [Exascale Computing Project CI documentation](https://ecp-ci.gitlab.io/)
   * [Github Actions](https://github.com/features/actions)
+  * [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
   * [Travis CI service](https://travis-ci.com)
   * [Codecov service](https://codecov.io)
+  * [Spack](https://spack.readthedocs.io)
+  * [Extreme-scale Scientific Software Stack (E4S)](https://e4s-project.github.io)
+  
