@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m11-refactoring1.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-02T13:06:56-04:00","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m11-refactoring1.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-02T13:17:09-04:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -189,7 +189,7 @@ update_solution()
 <p>But now we need to ensure that the dependency is satisfied no matter which updater is linked into the application.  So we need to add null implementations of <code class="highlighter-rouge">initialize_crankn</code> to the <code class="highlighter-rouge">ftcs.C</code> and <code class="highlighter-rouge">upwind15.C</code> files to satisfy that dependency. It is not necessary to generalize the name, but it is probably a good idea to add comments explaining why a do-nothing routine with a name that implies association with the Crank-Nicolson method appears in the file implementing the upwind scheme, for example.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void
-initialize_crankn(init n,
+initialize_crankn(int n,
 	Double alpha, Double dx, Double dt,
 	Double **cn_Amat)
 {
