@@ -119,7 +119,7 @@ But now we need to ensure that the dependency is satisfied no matter which updat
 
 ```
 void
-initialize_crankn(init n,
+initialize_crankn(int n,
 	Double alpha, Double dx, Double dt,
 	Double **cn_Amat)
 {
