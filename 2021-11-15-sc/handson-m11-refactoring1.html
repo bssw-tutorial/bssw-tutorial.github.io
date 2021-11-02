@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m11-refactoring1.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-10-28T16:55:52-04:00","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m11-refactoring1.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-02T13:06:56-04:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -163,17 +163,24 @@ cp heat.C.gcov heat-crankn.C.gcov
 
 <h4 id="carrying-out-the-refactoring">Carrying out the Refactoring</h4>
 
-<p><strong>Step 5.</strong> First, we need to define a new generalized interface to the updaters that will work for all of them, which we’ll call, simply <code class="highlighter-rouge">update_solution</code>.  So replace the original interface declarations (L64-80) with a single declaration, for <code class="highlighter-rouge">update_solution</code> that takes the union of the arguments required by the three updaters.</p>
+<p><strong>Step 5.</strong> First, we need to define a new generalized interface to the updaters that will work for all of them, which we’ll call <code class="highlighter-rouge">update_solution_do</code>.  So replace the original interface declarations (L64-80) with a single declaration, for <code class="highlighter-rouge">update_solution_do</code> that takes the union of the arguments required by the three updaters.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extern bool
-update_solution(int n,
+update_solution_do(int n,
 	Double *curr, Double const *last,
 	Double alpha, Double dx, Double dt,
 	Double const *cn_Amat,
 	Double bc_0, Double bc_1);
 </code></pre></div></div>
 
-<p>and remove the old implementation of <code class="highlighter-rouge">update_solution</code>.</p>
+<p>and change old implementation of <code class="highlighter-rouge">update_solution</code> to</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static bool
+update_solution()
+{
+  return update_solution_do(Nx, curr, last, alpha, dx, dt,cn_Amat, bc0, bc1);
+}
+</code></pre></div></div>
 
 <p><strong>Step 6.</strong> Next, we need to change the implementations of the updaters to use the new interface (variables in the interface which are not used in the update scheme can simply be ignored).  Since we’re going to end up with the same routine name in three different files, it might be helpful to our “future selves” to add comments to identify which finite-difference scheme each one implements, in case someone changes the names of the files.</p>
 
@@ -204,6 +211,19 @@ GCOV3 = $(SRC3:.C=.C.gcov) $(SRC3:.C=.gcda) $(SRC3:.C=.gcno) $(HDR:.H=.H.gcov)
 EXE1 = heat1
 EXE2 = heat2
 EXE3 = heat3
+%.o : %.C
+	$(CXX) -c $(CXXFLAGS) $(CPPFLAGS) $&lt; -o $@
+
+# Linking the final heat app
+heat1: $(OBJ1)
+	$(CXX) -o heat $(OBJ1) $(LDFLAGS) -lm
+
+heat2: $(OBJ2)
+	$(CXX) -o heat $(OBJ2) $(LDFLAGS) -lm
+
+heat3: $(OBJ3)
+	$(CXX) -o heat $(OBJ3) $(LDFLAGS) -lm
+
 </code></pre></div></div>
 
 <p>and build all three versions of the application by running</p>
