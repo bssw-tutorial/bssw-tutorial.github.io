@@ -147,13 +147,13 @@ EXE3 = heat3
 
 # Linking the final heat app
 heat1: $(OBJ1)
-	$(CXX) -o heat $(OBJ1) $(LDFLAGS) -lm
+	$(CXX) -o heat1 $(OBJ1) $(LDFLAGS) -lm
 
 heat2: $(OBJ2)
-	$(CXX) -o heat $(OBJ2) $(LDFLAGS) -lm
+	$(CXX) -o heat2 $(OBJ2) $(LDFLAGS) -lm
 
 heat3: $(OBJ3)
-	$(CXX) -o heat $(OBJ3) $(LDFLAGS) -lm
+	$(CXX) -o heat3 $(OBJ3) $(LDFLAGS) -lm
 
 ```
 
