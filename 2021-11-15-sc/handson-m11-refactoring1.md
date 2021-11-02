@@ -90,18 +90,26 @@ If you look at the implementations of the three updaters, in the files `ftcs.C`,
 
 #### Carrying out the Refactoring
 
-**Step 5.** First, we need to define a new generalized interface to the updaters that will work for all of them, which we'll call, simply `update_solution`.  So replace the original interface declarations (L64-80) with a single declaration, for `update_solution` that takes the union of the arguments required by the three updaters.
+**Step 5.** First, we need to define a new generalized interface to the updaters that will work for all of them, which we'll call `update_solution_do`.  So replace the original interface declarations (L64-80) with a single declaration, for `update_solution_do` that takes the union of the arguments required by the three updaters.
 
 ```
 extern bool
-update_solution(int n,
+update_solution_do(int n,
 	Double *curr, Double const *last,
 	Double alpha, Double dx, Double dt,
 	Double const *cn_Amat,
 	Double bc_0, Double bc_1);
 ```
 
-and remove the old implementation of `update_solution`.
+and change old implementation of `update_solution` to
+
+```
+static bool
+update_solution()
+{
+  return update_solution_do(Nx, curr, last, alpha, dx, dt,cn_Amat, bc0, bc1);
+}
+```
 
 **Step 6.** Next, we need to change the implementations of the updaters to use the new interface (variables in the interface which are not used in the update scheme can simply be ignored).  Since we're going to end up with the same routine name in three different files, it might be helpful to our "future selves" to add comments to identify which finite-difference scheme each one implements, in case someone changes the names of the files.
 
@@ -134,6 +142,19 @@ GCOV3 = $(SRC3:.C=.C.gcov) $(SRC3:.C=.gcda) $(SRC3:.C=.gcno) $(HDR:.H=.H.gcov)
 EXE1 = heat1
 EXE2 = heat2
 EXE3 = heat3
+%.o : %.C
+	$(CXX) -c $(CXXFLAGS) $(CPPFLAGS) $< -o $@
+
+# Linking the final heat app
+heat1: $(OBJ1)
+	$(CXX) -o heat $(OBJ1) $(LDFLAGS) -lm
+
+heat2: $(OBJ2)
+	$(CXX) -o heat $(OBJ2) $(LDFLAGS) -lm
+
+heat3: $(OBJ3)
+	$(CXX) -o heat $(OBJ3) $(LDFLAGS) -lm
+
 ```
 
 and build all three versions of the application by running 
