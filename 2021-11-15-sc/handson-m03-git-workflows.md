@@ -29,8 +29,8 @@ To fork a repo, create a branch and make a pull request
 The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  <your username>/{{ hands-on-repo-dir }} .
 
 **Step 2.** Clone the fork (on command line)
-  - Click on arrow next to code for path to clone. see [(clone example)](images/03-git-clone.png)   
-  - Copy path to clipboard (use path in command below). 
+  - Click on arrow next to code for path to clone. (If using ssh keys click on SSH to get the path.) see [(clone example)](images/03-git-clone.png)   
+  - Copy path to clipboard (use path in command below for https). 
 
 ```
    $git clone https://github.com/<your username>/{{ hands-on-repo-dir }}.git

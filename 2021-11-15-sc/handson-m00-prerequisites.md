@@ -11,7 +11,10 @@ layout: page
    - On the "Welcome to GitHub" page, scroll to the bottom and click on "Complete Setup"
    - Complete the email verification process
    - Login to GitHub with your new account
-   - Enable two factor authorization (or setup ssh keys in order to complete the gitworkflows exercise)
+   - Optional:
+      - Enable two factor authorization (2FA), or setup ssh keys, to use the command line to push to fork.
+        -  [Github 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication)
+        - [Github ssh keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
 2. If you don't have a **Codecov.io** account already, please set one up (used in **exercise 8, testing**)
    - Go to <https://codecov.io/>
