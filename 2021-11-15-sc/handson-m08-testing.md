@@ -11,8 +11,7 @@ layout: page
 
 ## Goals
 
-Implement a cmake build and test process for an example project.
-
+Use an example project to try out using test driven development to add new functionality to a project.
 
 ## Prerequisites
 
@@ -26,67 +25,104 @@ Implement a cmake build and test process for an example project.
 
 ## Background
 
-Projects should start as simple, small units that build up as
-development progresses.  Makefiles are a simple solution to store
-compilation rules, but lack advanced features other than
-those available by manually setting make-variables.
+Test driven development (TDD) is a software development methodology that uses testing to
+drive the development cycle, rather than writing tests as an afterthought. It is used
+widely by the software engineering community, but can take some practice to get familiar with, 
+particularly if more traditional approches have been used in the past.
 
-CMake enables cross-platform compatibility,
-external library detection, code generation,
-and configurable options.
-Cross-platform compatibility is achieved by
-associating attributes (e.g. `target_link_libraries`) with
-targets and features (e.g. `fortran_std_08`) with source files.
-CMake translates those attributes into
-build-flags and build programs instead of
-directly setting them.
-It also defaults to out-of-source
-compilation and has a rudimentary method
-for distributing libraries.
+CMake is a system for build automation, testing, packaging and installation of software 
+by using platform and a compiler-independent configuration files. CMake is not a build system, 
+but generates build files for an actual build system, such as Make. It enables cross-platform compatibility,
+external library detection, code generation, configurable options, and more. CMake can
+be used on projects of any size in order to employ best practice tools for
+software development from the very start.
 
-When the project is large enough
-to warrant these extra features,
-developers usually adopt automake
-or cmake to handle the additional build complexity.
-
-The example repository we have provided is just large enough
-to warrant this change.  There are seven C-source files,
-two headers, and about 80 lines of shell and makefile
-devoted to testing.
-
+CMake makes TDD easy to use, since it provides a built-in testing framework. The example repository we have 
+provided contains a `tdd-example` directory that we will be using to explore how to set up and use TDD on
+a sample code.
 
 ## Instructions
 
-**Step 1.** branch and confirm working build with make
+**Step 1.** Check that the code builds and runs
 
-When contemplating any changes, it's good practice to
-finish what you're doing and start a new branch.
+Change to the `tdd-example` directory by running the command:
 ```
-git status
-```
-
-If this shows changes, save them to a temporary branch.
-If not, skip these three commands:
-```
-git checkout -b working
-git commit -am "stashing some works in progress"
-git checkout main
+cd tdd-example
 ```
 
-Now that you're on a clean copy of the main branch, create
-a branch to write cmake changes into
+The `cmake` command is used to read the `CMakeLists.txt` configuration
+file and generate the appropriate build files. The only argument is a 
+path to the directory containing the configuration file:
 ```
-git checkout -b cmake
-make check
-make clean
-git status
+cmake .
 ```
-The last two commands should show that the repository is building
-with make, and then clean up.
-Git's status will let you know if you have any files that aren't under
-version control.  If so, they will show up in red, and
-you're free to delete or leave them there and ignore them.
 
+The `cmake` command will generate some output telling you what it is 
+doing which you can safely ignore unless something goes wrong:
+```
+-- The CXX compiler identification is AppleClang 12.0.0.12000032
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: .../git/hello-numerical-world/tdd-example
+```
+
+The code can be built using the command:
+```
+make
+```
+
+This should geneate output that looks something like:
+```
+Scanning dependencies of target heat
+[ 16%] Building CXX object CMakeFiles/heat.dir/args.C.o
+[ 33%] Building CXX object CMakeFiles/heat.dir/exact.C.o
+[ 50%] Building CXX object CMakeFiles/heat.dir/heat.C.o
+[ 66%] Building CXX object CMakeFiles/heat.dir/ftcs.C.o
+[ 83%] Building CXX object CMakeFiles/heat.dir/utils.C.o
+[100%] Linking CXX executable heat
+[100%] Built target heat
+```
+
+Finally, the code can be run with the following command: 
+```
+./heat alg=ftcs outi=0 maxt=-5e-8 ic="rand(0,0.2,2)"
+```
+
+The `alg=ftcs` argument
+tells the code to use the FTCS algorithm. The `outi=0` argument enables disables
+any output progress from being displayed. The `maxt=-5e-8` specifies the maximum
+simulation time in seconds. Lastly the `ic="rand(0,0.2,2)"` argument sets the
+initial condition to a random number.
+
+Assuming all goes well, you should see the following output:
+```
+    runame="heat_results"
+    alpha=0.2
+    lenx=1
+    dx=0.1
+    dt=0.004
+    maxt=-5e-08
+    bc0=0
+    bc1=1
+    ic="rand(0,0.2,2)"
+    alg="ftcs"
+    savi=0
+    save=0
+    outi=0
+    noout=0
+Stopped after 001490 iterations for threshold 2.46636e-15
+```
+This will also create a directory called `hear_results` that contains a number
+of output files. If you try running the code again without removing this directory,
+you will see the message:
+```
+An entry "heat_results" already exists
+```
 
 **Step 2.** create a CMakeLists.txt
 
