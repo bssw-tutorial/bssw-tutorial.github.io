@@ -285,7 +285,7 @@ Errors while running CTest
 
 This is expected, and a normal part of TDD!
 
-**Step 2: Make the test succeed
+**Step 2: Make the test succeed**
 
 In order to make the new test pass, we need to implement the new kernel. For this code, we
 need to add a few statements to the `heat.C` file.
@@ -375,7 +375,13 @@ Test project /home/tutorial/hello-numerical-world/tests
 Total Test time (real) =   0.13 sec
 ```
 
-Congratulations! You have successfully used TDD to add new functionality to your code.
+**Step 3: Refactor the code**
+
+Since this is a fairly simple example, refactoring is probably not necessary. However this
+is a useful point to look at the changes you have made and make sure they conform to the
+requirements of the project.
+
+<span style="font-size:larger;"><b>Congratulations! You have successfully used TDD to add new functionality to your code.</b></span>
 
 **Extra Credit** Add the `crankn` kernel to your code using the same process. Note,
 `crankn` requires additional arguments to be passed. You can study the code in the
@@ -387,8 +393,7 @@ for ideas of additional functionality that you could add using TDD.
 
 ## Next Steps
 
-There are many additional resources on how to use cmake's features.
-Here are a few useful 
+Here are a few useful resources on how to use cmake's features.
 
 * [CMake Tutorial Guide](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
 * [Template for exporting a shared library with cmake](https://github.com/frobnitzem/lib0)
