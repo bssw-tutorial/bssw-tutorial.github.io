@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m08-testing.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-05T10:51:38-04:00","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m08-testing.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-05T11:12:27-04:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -341,7 +341,7 @@ Errors while running CTest
 
 <p>This is expected, and a normal part of TDD!</p>
 
-<p>**Step 2: Make the test succeed</p>
+<p><strong>Step 2: Make the test succeed</strong></p>
 
 <p>In order to make the new test pass, we need to implement the new kernel. For this code, we
 need to add a few statements to the <code class="highlighter-rouge">heat.C</code> file.</p>
@@ -421,7 +421,13 @@ ctest
 Total Test time (real) =   0.13 sec
 </code></pre></div></div>
 
-<p>Congratulations! You have successfully used TDD to add new functionality to your code.</p>
+<p><strong>Step 3: Refactor the code</strong></p>
+
+<p>Since this is a fairly simple example, refactoring is probably not necessary. However this
+is a useful point to look at the changes you have made and make sure they conform to the
+requirements of the project.</p>
+
+<p><span style="font-size:larger;"><b>Congratulations! You have successfully used TDD to add new functionality to your code.</b></span></p>
 
 <p><strong>Extra Credit</strong> Add the <code class="highlighter-rouge">crankn</code> kernel to your code using the same process. Note,
 <code class="highlighter-rouge">crankn</code> requires additional arguments to be passed. You can study the code in the
@@ -432,8 +438,7 @@ for ideas of additional functionality that you could add using TDD.</p>
 
 <h2 id="next-steps">Next Steps</h2>
 
-<p>There are many additional resources on how to use cmake’s features.
-Here are a few useful</p>
+<p>Here are a few useful resources on how to use cmake’s features.</p>
 
 <ul>
   <li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake Tutorial Guide</a></li>
