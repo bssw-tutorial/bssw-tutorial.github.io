@@ -127,7 +127,7 @@ you will see the message:
 An entry "heat_results" already exists
 ```
 
-**Step 2: Provide a test script:
+**Step 2: Provide a test script:**
 
 To use TDD, we need to run some tests. For this code, our test is going to check if the 
 result is within an acceptable error bound once it reaches a steady state. There are many other
@@ -268,7 +268,7 @@ ctest
 
 Since there is no code implementing the upwind15 kernel, you should get an error:
 ```
-Test project /Users/gw6/Work/git/hello-numerical-world/tdd-example/tests
+Test project /home/tutorial/hello-numerical-world/tdd-example/tests
     Start 1: ftcs
 1/2 Test #1: ftcs .............................   Passed    0.44 sec
     Start 2: upwind15
