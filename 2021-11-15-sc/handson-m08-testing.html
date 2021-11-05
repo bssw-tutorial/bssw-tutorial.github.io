@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m08-testing.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-04T15:57:42-04:00","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m08-testing.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-05T10:49:53-04:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -70,7 +70,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   </header>
 
   <div class="post-content">
-    <h1 id="hands-on-exercise-testing-walk-through">Hands-On Exercise: Testing Walk-Through</h1>
+    <h1 id="hands-on-exercise-test-driven-development">Hands-On Exercise: Test Driven Development</h1>
 
 <h2 id="goals">Goals</h2>
 
@@ -112,9 +112,12 @@ software development from the very start.</p>
 provided contains a <code class="highlighter-rouge">tdd-example</code> directory that we will be using to explore how to set up and use TDD on
 a sample code.</p>
 
-<h2 id="instructions">Instructions</h2>
+<h2 id="setup-instructions">Setup Instructions</h2>
 
-<p><strong>Step 1.</strong> Check that the code builds and runs</p>
+<p>The following steps are for setting up testing for this code, which is usually only done once at the
+start of the project. Once the project has been set up for TDD, these can be skipped.</p>
+
+<p><strong>Step 1: Check that the code builds and runs</strong></p>
 
 <p>Change to the <code class="highlighter-rouge">tdd-example</code> directory by running the command:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd tdd-example
@@ -187,80 +190,46 @@ you will see the message:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>An entry "heat_results" already exists
 </code></pre></div></div>
 
-<p><strong>Step 2.</strong> create a CMakeLists.txt</p>
+<p>**Step 2: Provide a test script:</p>
 
-<p>Create a <code class="highlighter-rouge">CMakeLists.txt</code> file and type in the following:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 3.8)
+<p>To use TDD, we need to run some tests. For this code, our test is going to check if the 
+result is within an acceptable error bound once it reaches a steady state. There are many other
+kinds of tests that could be used, so this is just one example.</p>
 
-project(heat VERSION 0.1 LANGUAGES CXX)
+<p>For the purposes of this example, we have already written a test script that runs the code
+and then checks that the results are acceptable and returns a suitable exit code if it is. 
+The script is just a convenient way of doing this, there are many other ways that would also
+work.</p>
 
-add_executable(heat args.C
-                    crankn.C
-                    exact.C
-                    ftcs.C
-                    heat.C
-                    upwind15.C
-                    utils.C)
-target_compile_features(heat PUBLIC cxx_std_11)
-
-install(TARGETS heat DESTINATION bin)
+<p>To make sure that the script works, you can try running it manually using the command:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh check.sh ./heat ftcs
 </code></pre></div></div>
 
-<p>This file has two required elements at the top:</p>
-
-<ol>
-  <li>
-    <p><code class="highlighter-rouge">cmake_minimum_required</code> – setting the minimum cmake version required to understand this <code class="highlighter-rouge">CMakeLists.txt</code>.
-As you add cmake features, you should check when cmake introduced them.
-Obviously, you should increase the required version if the features are only available in newer cmake versions.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">project</code> – setting the <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_PROJECT_NAME.html"><code class="highlighter-rouge">${CMAKE_PROJECT_NAME}</code></a> and <a href="https://cmake.org/cmake/help/latest/variable/PROJECT-NAME_VERSION_MAJOR.html"><code class="highlighter-rouge">${HEAT_VERSION_MAJOR}</code></a>/MINOR/PATCH variables.</p>
-  </li>
-</ol>
-
-<p>The next three lines declare an executable target, <code class="highlighter-rouge">heat</code>, add a feature to it,
-and create a rule for installing it to <code class="highlighter-rouge">bin</code>.</p>
-
-<p><strong>Step 3.</strong> build with CMakeLists.txt</p>
-
-<p>For the purpose of building, it’s helpful to maintain a <code class="highlighter-rouge">build.sh</code> script that
-does the following,</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-
-<span class="nv">inst</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">/inst"</span>
-
-<span class="nb">mkdir</span> <span class="nt">-p</span> build
-<span class="nb">cd </span>build
-cmake <span class="nt">-DCMAKE_INSTALL_PREFIX</span><span class="o">=</span><span class="nv">$inst</span> ..
-make <span class="nt">-j</span>
-make <span class="nb">install</span>
+<p>This should generate similar output to what we’ve seen before, however the last line will
+indicate if the result was acceptable or not:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    runame="check_ftcs"
+    alpha=0.2
+    lenx=1
+    dx=0.1
+    dt=0.004
+    maxt=-5e-08
+    bc0=0
+    bc1=1
+    ic="rand(0,0.2,2)"
+    alg="ftcs"
+    savi=0
+    save=0
+    outi=0
+    noout=0
+Stopped after 001490 iterations for threshold 2.46636e-15
+Error = 0
 </code></pre></div></div>
 
-<p>These steps create a build subdirectory, run cmake, make, and make install from it.
-The install directory is set locally as well as <code class="highlighter-rouge">inst</code> within the source directory.
-This script lets you quickly build and install during development.</p>
+<hr />
+<p>Digging Deeper:</p>
 
-<p>Create and run the script above.  Try changing some of the cmake features,
-delete the <code class="highlighter-rouge">build</code> directory, re-run <code class="highlighter-rouge">build.sh</code>, and inspect the build results.</p>
-
-<p>An example of the kinds of features you can add to CMakeLists.txt
-is included in the <code class="highlighter-rouge">cmake_step1</code> subdirectory.  There, an include
-directory is added to the heat target, and a <code class="highlighter-rouge">configure_file</code>
-directive is used to make the version number accessible to the program.</p>
-
-<p>Although cmake can replace the <code class="highlighter-rouge">makefile</code>, an updated <code class="highlighter-rouge">makefile</code>
-is also provided in <code class="highlighter-rouge">cmake_step1</code> so that the version number
-is accessible to code compiled using the <code class="highlighter-rouge">makefile</code> route.
-Both compilation methods work at this point.</p>
-
-<p><strong>Step 4.</strong> adapt test script and check manually</p>
-
-<p>The <code class="highlighter-rouge">tests.mk</code> makefile runs <code class="highlighter-rouge">check.sh</code> when it tests that the
-steady-state solution to the heat equation is a straight-line.</p>
-
-<p>To understand this shell script better, we’ll re-code it in another
-language.  The file it’s looking at is output by a command like,
+<p>To understand this <code class="highlighter-rouge">check.sh</code> script better, lets look a bit
+deeper.  The file it’s looking at is output by a command like,
 <code class="highlighter-rouge">./heat runame=check outi=0 maxt=-5e-8 ic="rand(0,0.2,2)"</code>
 which creates <code class="highlighter-rouge">check/check_soln_final.curve</code>.  This file
 is formatted as follows:</p>
@@ -280,59 +249,10 @@ is formatted as follows:</p>
 </code></pre></div></div>
 
 <p><code class="highlighter-rouge">check.sh</code> has the job of comparing the two columns
-(x and u(x)) to determine whether they match. This
+(x and u(x) respectively) to determine whether they match. This
 happens to work because the right-boundary condition equals
 the material length.  Extending the checks will require
 re-coding this comparison.</p>
-
-<p>Rewrite <code class="highlighter-rouge">check.sh</code> using your favorite programming language,
-and call the result from <code class="highlighter-rouge">tests/testDriver.sh</code>.
-<code class="highlighter-rouge">testDriver.sh</code> should</p>
-
-<ol>
-  <li>
-    <p>accept a two arguments, the location of the <code class="highlighter-rouge">heat</code> program, and the
-name of the algorithm to run (ftcs, crankn, or upwind15)</p>
-  </li>
-  <li>
-    <p>run the heat program (to produce the output above)</p>
-  </li>
-  <li>
-    <p>run your comparison program</p>
-
-    <p>optionally report on the status of the test</p>
-  </li>
-  <li>
-    <p>delete all outputs so the test can be re-run without false errors</p>
-  </li>
-  <li>
-    <p>complete the shell script with <code class="highlighter-rouge">exit 0</code> for passing output
-and <code class="highlighter-rouge">exit 1</code> for failing tests.</p>
-  </li>
-</ol>
-
-<p>There is a solution using the <code class="highlighter-rouge">awk</code> scripting language
-in the <code class="highlighter-rouge">cmake_step2/tests</code> folder.  In this case,
-exit is not used because the last program’s exit code
-is used as the exit code of the entire shell script.</p>
-
-<p>For your own work, you might want to save your check’s return
-code to a shell variable, like</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
-
-status=0 # ok
-`dirname $0`/my_check check_$alg/check_${alg}_soln_final.curve || status=$?
-
-...
-exit $status
-</code></pre></div></div>
-
-<p>Of course, you should run your test driver manually – ensuring that
-it exits with 0 and 1 for good (and bad) output files, respectively.</p>
-
-<hr />
-<p>Digging Deeper:</p>
 
 <p>You can increase the sensitivity of the test by using a larger grid.
 This will provide more data points along the curve above.  Change
@@ -341,76 +261,174 @@ How does it affect the test accuracy?</p>
 
 <hr />
 
-<p><strong>Step 5.</strong> invoke test script during tests/CMakeLists.txt</p>
+<p><strong>Step 3: Create and configure the tests</strong></p>
 
-<p>Now that the <code class="highlighter-rouge">testDriver.sh</code> script is working, it’s time
-to declare some tests by using <a href="https://cmake.org/cmake/help/latest/command/enable_testing.html"><code class="highlighter-rouge">enable_testing()</code></a> and <a href="https://cmake.org/cmake/help/latest/command/add_test.html"><code class="highlighter-rouge">add_test</code></a>
-targets in the <code class="highlighter-rouge">CMakeLists.txt</code>.</p>
+<p>At this point we only have a script that runs a simple test. We 
+need to configure <code class="highlighter-rouge">CMake</code> so that it uses this script when we tell
+it to test the code. This is also a good starting point for setting
+up continuous integration.</p>
 
-<p>Rather than put these directly into the main CMakeLists.txt,
-you can use a modular approach.  Create <code class="highlighter-rouge">tests/CMakeLists.txt</code> with the following:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enable_testing()
-
-# define a function to simplify adding tests
-# (which consist of add_executable/target_link_libraries/add_test commands)
-function(do_test alg)
-  add_test(NAME ${alg}
-           COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/testDriver.sh $&lt;TARGET_FILE:heat&gt; ${alg})
-endfunction(do_test)
-
-do_test(ftcs)
-do_test(crankn)
-do_test(upwind15)
+<p>First, we need to create a directory to put our tests in, and then copy
+(or move) the test script into the directory:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir tests
+cp check.sh tests/check.sh
 </code></pre></div></div>
 
-<p>This enables testing, and adds all three tests.  The cmake
-function here is doing the repetetive work of calling <code class="highlighter-rouge">add_test</code>,
-so our cmake file can call it three times without repeating
-tedious details.</p>
+<p>Next we change into the <code class="highlighter-rouge">tests</code> directory and create a <code class="highlighter-rouge">CMake</code> configuration
+file to tell it about the tests. <code class="highlighter-rouge">CMake</code> uses the name <code class="highlighter-rouge">CMakeLists.txt</code> for
+its configuration files. You should be able to cut and past the following code
+to achieve this:</p>
 
-<p>Include this new file in the main <code class="highlighter-rouge">CMakeLists.txt</code>
-by adding the line: <code class="highlighter-rouge">add_subdirectory(tests)</code>.</p>
-
-<p>All set! You can now run <code class="highlighter-rouge">ctest</code> from the <code class="highlighter-rouge">build/tests</code>
-subdirectory to run all the tests.</p>
-
-<p>In fact, you can run tests every time you build by adding those
-steps to the build.sh file:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
-
-cmake -DCMAKE_INSTALL_PREFIX=$inst ..
-make -j
-(cd tests &amp;&amp; ctest)
-make install
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd tests
+cat &gt; CMakeLists.txt &lt;&lt;EOF
+enable_testing()
+add_test(NAME ftcs COMMAND check.sh $&lt;TARGET_FILE:heat&gt; ftcs)
+add_test(NAME upwind15 COMMAND check.sh $&lt;TARGET_FILE:heat&gt; upwind15)
+EOF
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">cmake_step2</code> subdirectory shows how to
-add an option to disable building the tests.</p>
+<p>The text between the first and second <code class="highlighter-rouge">EOF</code>s is what should go into the <code class="highlighter-rouge">CMakeLists.txt</code> file:</p>
 
-<p><strong>Extra Credit</strong> Add an OpenMP compile flag to your build.</p>
+<ul>
+  <li>The <code class="highlighter-rouge">enable_testing()</code> line just tells <code class="highlighter-rouge">CMake</code> to include the ability to run tests.</li>
+  <li>The first <code class="highlighter-rouge">add_test()</code> line adds a test for the existing FTCS kernel. This is optional, but it will make sure
+that our tests cover as much code as possible.</li>
+  <li>The second <code class="highlighter-rouge">add_test()</code> line is adding a test for the new kernel (which doesn’t exist yet.)</li>
+</ul>
 
-<p>First, modify <code class="highlighter-rouge">heat.C</code> to <code class="highlighter-rouge">#include &lt;omp.h&gt;</code> at the top.
-Next, have the <code class="highlighter-rouge">main</code> function print the current number
-of processors:</p>
+<p><strong>Step 4: Enable the tests</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>printf("num_procs = %d\n", omp_get_num_procs());
+<p>As <code class="highlighter-rouge">CMake</code> is only a build system generator, when any of it’s configuration files are modified
+we need to tell it to re-read them and re-generate the build system files. This can happen
+automatically by just running the build, but in this case we’ve added some new files that it
+doesn’t know about, so we need to re-run the <code class="highlighter-rouge">cmake</code> command as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ..
+cmake -DBUILD_TESTS=ON .
+cd tests
 </code></pre></div></div>
 
-<p>This will only compile if the appropriate flags are passed
-during build and link steps.</p>
+<p>These commands will change to the parent directory containing the main configuration file,
+re-run the <code class="highlighter-rouge">cmake</code> command with tests enabled, and change back to the <code class="highlighter-rouge">tests</code> directory.</p>
 
-<p>Next, modify CMakeLists.txt to use
-<a href="https://cmake.org/cmake/help/latest/module/FindOpenMP.html">FindOpenMP</a>
-by adding the line <code class="highlighter-rouge">find_package(OpenMP 3.0 REQUIRED)</code>.
-Note that the Find(…) modules are run in cmake using <code class="highlighter-rouge">find_package</code>.</p>
+<p>The output will look similar to what was generated the first time the <code class="highlighter-rouge">cmake</code> command was run. If there
+are any errors, check the contents of the <code class="highlighter-rouge">CMakeLists.txt</code> file in the <code class="highlighter-rouge">tests</code> directory are correct.</p>
 
-<p>Last, show cmake that the <code class="highlighter-rouge">heat</code> target requires OpenMP by adding the line,
-<code class="highlighter-rouge">target_link_libraries(heat PUBLIC OpenMP::OpenMP_CXX)</code>.</p>
+<h2 id="using-tdd">Using TDD</h2>
 
-<p><strong>Extra Credit</strong> Adapt the code coverage test to cmake.</p>
+<p><strong>Step 1: Run the tests</strong></p>
 
-<p>Use the example <a href="https://github.com/codecov/example-cpp11-cmake">codecov with cmake</a>
-to add codecov functionality to your CMakeLists.txt.</p>
+<p>Once the setup is complete, you should be able to run the tests using the command (make sure you’re in the <code class="highlighter-rouge">tests</code>
+directory):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctest
+</code></pre></div></div>
+
+<p>Since there is no code implementing the upwind15 kernel, you should get an error:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Test project /Users/gw6/Work/git/hello-numerical-world/tdd-example/tests
+    Start 1: ftcs
+1/2 Test #1: ftcs .............................   Passed    0.44 sec
+    Start 2: upwind15
+2/2 Test #2: upwind15 .........................***Failed    0.01 sec
+
+50% tests passed, 1 tests failed out of 2
+
+Total Test time (real) =   0.46 sec
+
+The following tests FAILED:
+	  2 - upwind15 (Failed)
+Errors while running CTest
+</code></pre></div></div>
+
+<p>This is expected, and a normal part of TDD!</p>
+
+<p>**Step 2: Make the test succeed</p>
+
+<p>In order to make the new test pass, we need to implement the new kernel. For this code, we
+need to add a few statements to the <code class="highlighter-rouge">heat.C</code> file.</p>
+
+<p>First, change into the directory with the code:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ..
+</code></pre></div></div>
+
+<p>Edit <code class="highlighter-rouge">heat.C</code> with your favorite editor.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano heat.C
+</code></pre></div></div>
+
+<p>At line 68, add a prototype for the new kernel.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+extern bool
+update_solution_upwind15(int n,
+    Double *curr, Double const *last,
+    Double alpha, Double dx, Double dt,
+    Double bc_0, Double bc_1);
+</code></pre></div></div>
+
+<p>At (new) line 91, modify the assertion to verify the new kernel name.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     assert(strncmp(alg, "ftcs", 4)==0 || strncmp(alg, "upwind15", 8)==0);
+</code></pre></div></div>
+
+<p>At (new) line 133, modify the <code class="highlighter-rouge">if</code> statement to call the new kernel.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     if (!strcmp(alg, "ftcs"))
+         return update_solution_ftcs(Nx, curr, last, alpha, dx, dt, bc0, bc1);
+     else if (!strcmp(alg, "upwind15"))
+         return update_solution_upwind15(Nx, curr, last, alpha, dx, dt, bc0, bc1);
+</code></pre></div></div>
+
+<p>In addition to modifying <code class="highlighter-rouge">heat.C</code> to <em>call</em> the kernel, we also need to add it to
+the main <code class="highlighter-rouge">CMakeLists.txt</code> file to that it is included in the <em>build</em>.</p>
+
+<p>Edit <code class="highlighter-rouge">CMakeLists.txt</code> and add the kernel to the <code class="highlighter-rouge">add_executable</code> statement at line 11 as follows.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add_executable(heat args.C
+                    exact.C
+                    heat.C
+                    upwind15.C  #&lt;&lt;&lt; Add new kernel
+                    ftcs.C
+                    utils.C)
+</code></pre></div></div>
+
+<p>Now build the code with the new kernel included.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make
+</code></pre></div></div>
+
+<p>Assuming you did this correctly, you should see something like this.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/tutorial/hello-numerical-world/ttd-example
+Scanning dependencies of target heat
+[ 14%] Building CXX object CMakeFiles/heat.dir/heat.C.o
+[ 28%] Building CXX object CMakeFiles/heat.dir/upwind15.C.o
+[ 42%] Linking CXX executable heat
+[100%] Built target heat
+</code></pre></div></div>
+
+<p>If you get any compile errors, check that you added the code correctly to <code class="highlighter-rouge">heat.C</code>. If 
+<code class="highlighter-rouge">CMake</code> complains then check you added the kernel to the <code class="highlighter-rouge">CMakeLists.txt</code> correctly.</p>
+
+<p>That’s it! You’re now ready to run the tests using the following commands.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd tests
+ctest
+</code></pre></div></div>
+
+<p>At this point the tests should now all pass.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Test project /home/tutorial/hello-numerical-world/tests
+    Start 1: ftcs
+1/2 Test #1: ftcs .............................   Passed    0.23 sec
+    Start 2: upwind15
+2/2 Test #2: upwind15 .........................   Passed    0.03 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.13 sec
+</code></pre></div></div>
+
+<p>Congratulations! You have successfully used TDD to add new functionality to your code.</p>
+
+<p><strong>Extra Credit</strong> Add the <code class="highlighter-rouge">crankn</code> kernel to your code using the same process. Note,
+<code class="highlighter-rouge">crankn</code> requires additional arguments to be passed. You can study the code in the
+main directory to see what it needs.</p>
+
+<p><strong>Extra Credit</strong> Check out the original <a href="https://xsdk-project.github.io/MathPackagesTraining2020/lessons/hand_coded_heat/">ATPESC Hands-On Lesson</a>
+for ideas of additional functionality that you could add using TDD.</p>
 
 <h2 id="next-steps">Next Steps</h2>
 
@@ -427,12 +445,10 @@ Here are a few useful</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Hopefully this exercise has shown how easy it is to convert
-an executable project over to cmake and ctest.
-We created a <code class="highlighter-rouge">CMakeLists.txt</code>
-by filling our source files and compile features.
-Then extra features like including tests
-were added one by one.</p>
+<p>Hopefully this exercise has shown how easy it is to use TDD to
+add new functionality to your project
+We added tests to our build system and then used these tests
+to ensure that the code we added worked correctly.</p>
 
   </div>
 
