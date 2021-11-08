@@ -31,7 +31,7 @@ widely by the software engineering community, but can take some practice to get 
 particularly if more traditional approches have been used in the past.
 
 CMake is a system for build automation, testing, packaging and installation of software 
-by using platform and a compiler-independent configuration files. CMake is not a build system, 
+by using platform and compiler-independent configuration files. CMake is not a build system, 
 but generates build files for an actual build system, such as Make. It enables cross-platform compatibility,
 external library detection, code generation, configurable options, and more. CMake can
 be used on projects of any size in order to employ best practice tools for
@@ -120,7 +120,7 @@ Assuming all goes well, you should see the following output:
     noout=0
 Stopped after 001490 iterations for threshold 2.46636e-15
 ```
-This will also create a directory called `hear_results` that contains a number
+This will also create a directory called `heat_results` that contains a number
 of output files. If you try running the code again without removing this directory,
 you will see the message:
 ```
@@ -218,7 +218,7 @@ cp check.sh tests/check.sh
 
 Next we change into the `tests` directory and create a `CMake` configuration
 file to tell it about the tests. `CMake` uses the name `CMakeLists.txt` for
-its configuration files. You should be able to cut and past the following code
+its configuration files. You should be able to cut and paste the following code
 to achieve this:
 
 ```
