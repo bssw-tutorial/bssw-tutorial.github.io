@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m08-testing.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-08T18:49:31-05:00","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m08-testing.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-14T12:26:01-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -81,13 +81,13 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <ul>
   <li>Access to a software development environment for C++ language with cmake
     <ul>
-      <li>g++</li>
+      <li>a C++ compiler</li>
       <li>gnu make</li>
       <li>cmake</li>
       <li>git</li>
     </ul>
   </li>
-  <li>A fork of the hands-on-repo-link (to be defined) repository in your account (covered in Git Workflows exercise)
+  <li>A fork of the <a href="https://github.com/bssw-tutorial/hello-numerical-world-2021-11-15-sc">bssw-tutorial/hello-numerical-world-2021-11-15-sc</a> repository in your account (covered in Git Workflows exercise)
     <ul>
       <li>Your fork of the tutorial repository should be cloned where you have the software development environment above</li>
     </ul>
@@ -99,7 +99,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <p>Test driven development (TDD) is a software development methodology that uses testing to
 drive the development cycle, rather than writing tests as an afterthought. It is used
 widely by the software engineering community, but can take some practice to get familiar with, 
-particularly if more traditional approches have been used in the past.</p>
+particularly if more traditional approaches have been used in the past.</p>
 
 <p>CMake is a system for build automation, testing, packaging and installation of software 
 by using platform and compiler-independent configuration files. CMake is not a build system, 
@@ -226,7 +226,7 @@ Error = 0
 </code></pre></div></div>
 
 <hr />
-<p>Digging Deeper:</p>
+<p><strong>Digging Deeper:</strong></p>
 
 <p>To understand this <code class="highlighter-rouge">check.sh</code> script better, lets look a bit
 deeper.  The file it’s looking at is output by a command like,
