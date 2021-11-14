@@ -1,0 +1,3 @@
+{% assign headings = headings | push: "Other Software-Related Events at SC21" %}
+
+If you're interested in this tutorial, you might be interested in this list of other [software-related events](https://bssw.io/events/sc21-software-related-events) taking place in the SC21 conference.  And remember that since much of SC21's content will be available on-demand, you may be able to "catch up" with events that you miss.

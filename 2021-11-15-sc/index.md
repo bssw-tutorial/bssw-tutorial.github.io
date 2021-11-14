@@ -7,6 +7,6 @@ redirect_from:
 #         [description,acknowledgements]
 # A typical complete tutorial page would include: 
 #         [description,agenda,presentation-slides,how-to-participate,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
-sections: [description,agenda,presentation-slides,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
+sections: [description,agenda,presentation-slides,hands-on-exercises,related-events,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
 # Still outstanding: how-to-participate,
 ---
