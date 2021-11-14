@@ -16,7 +16,7 @@ Use an example project to try out using test driven development to add new funct
 ## Prerequisites
 
 * Access to a software development environment for C++ language with cmake
-  * g++
+  * a C++ compiler
   * gnu make
   * cmake
   * git
@@ -28,7 +28,7 @@ Use an example project to try out using test driven development to add new funct
 Test driven development (TDD) is a software development methodology that uses testing to
 drive the development cycle, rather than writing tests as an afterthought. It is used
 widely by the software engineering community, but can take some practice to get familiar with, 
-particularly if more traditional approches have been used in the past.
+particularly if more traditional approaches have been used in the past.
 
 CMake is a system for build automation, testing, packaging and installation of software 
 by using platform and compiler-independent configuration files. CMake is not a build system, 
@@ -164,9 +164,8 @@ Stopped after 001490 iterations for threshold 2.46636e-15
 Error = 0
 ```
 
-
 ---
-Digging Deeper:
+**Digging Deeper:**
 
 To understand this `check.sh` script better, lets look a bit
 deeper.  The file it's looking at is output by a command like,
