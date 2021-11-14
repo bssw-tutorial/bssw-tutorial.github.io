@@ -9,3 +9,4 @@ venue-type: "conference"
 #venue-url: https://sc21.supercomputing.org/
 location: "St. Louis, Missouri and online"
 presenter-ids: [bernhold, adubey64, pagrubel, rinkug, jarrah42]
+helper-ids: [frobnitzem]
