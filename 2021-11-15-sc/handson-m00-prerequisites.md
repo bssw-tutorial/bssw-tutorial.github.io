@@ -3,7 +3,7 @@ layout: page
 ---
 # Hands-On Exercise: Setting up the Prerequisites 
 
-1. If you don't have a **GitHub** account already, please set one up (used starting in **Agile Methodologies**)
+1. If you don't have a **GitHub** account already, please set one up (used throughout hands-on activities)
    - Go to <https://github.com>
    - Click the "Sign Up" button
    - Complete the signup form
@@ -22,7 +22,7 @@ layout: page
    - Choose "Sign up with GitHub"
    - On the  "Authorize Codecov" page, click to "Authorize codecov"  
 
-3. You'll need access to a development environment, supporting editing, compiling, and executing simple (C-like) C++ language code, and a git installation (used in **Test Drive Development**, **Continuous Integration**, and **Refactoring**)
+3. You'll need access to a development environment, supporting editing, compiling, and executing simple (C-like) C++ language code, and a git installation (used in **Test Drive Development** and **Refactoring**)
    - This may be available on your local system (especially Mac or Linux)
    - A remote development environment that you can access via ssh will also work fine.
    - cmake is used for some activities
