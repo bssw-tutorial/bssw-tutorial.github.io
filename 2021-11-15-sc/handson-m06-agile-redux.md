@@ -19,7 +19,7 @@ Create epic, story, and task issues for the refactoring exercises and track them
    - This exercise can be done entirely within the web interface of GitHub.com
 
 ## Background
-In the tutorial presentations, we will discuss the refactoring process.  In hands-on [exercise 11](../handson-m11-refactoring1.html), your task will be to actually refactor some code you've inherited.  But before we start on the code, we're going to make a plan in the form of GitHub issues that we can use to track the plan to completion.  You may want to read through that exercise before starting this one, to get a better feel for the assignments.  In the refactoring exercise, we encourage you to use the setup you'll create here (issues and project board) to track your progress.
+In the tutorial presentations, we will discuss the refactoring process.  In the [refactoring](../handson-m11-refactoring1.html) exercise, your task will be to actually refactor some code you've inherited.  But before we start on the code, we're going to make a plan in the form of GitHub issues that we can use to track the plan to completion.  You may want to read through that exercise before starting this one, to get a better feel for the assignments.  In the refactoring exercise, we encourage you to use the setup you'll create here (issues and project board) to track your progress.
 
 We're going to consider the refactoring effort to be at the level of an "epic", and break it down into several "stories", each consisting of several tasks.  In the usual definitions, epics are high-level objectives, stories should represent increments of value to the customer, and tasks are the step necessary to complete the story.
 
