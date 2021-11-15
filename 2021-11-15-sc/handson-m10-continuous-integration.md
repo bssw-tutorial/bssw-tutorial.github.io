@@ -33,7 +33,7 @@ A video walk-through of (most of) this exercise is available at: <https://youtu.
 
 ## Instructions
 
-You'll need to add a configuration file to your repository to signal GitHub's CI to take action.  The file must be placed inside the `.GitHub/actions` folder.  Note the leading `.`.  In unix-like operating systems, this is a hidden file, that won't be displayed in directory listings by default.  But on Windows and in the GitHub web interface, such files are displayed by default.
+You'll need to add a configuration file to your repository to signal GitHub's CI to take action.  The file must be placed inside the `.GitHub/workflows` folder.  Note the leading `.`.  In unix-like operating systems, this is a hidden file, that won't be displayed in directory listings by default.  But on Windows and in the GitHub web interface, such files are displayed by default.
 
 **Step 1.** Rather than type the file by hand, navigate to "Actions" on your GitHub project.  Then click "Skip this and set up a workflow yourself".  This brings you to an editor for `.GitHub/workflows/main.yml`.  Any filename will do, so we'll rename it `check.yml`.  Under the `jobs/build/steps` section, change the two run lines as follows:
 
