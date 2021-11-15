@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m10-continuous-integration.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-14T12:48:45-05:00","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m10-continuous-integration.html","@type":"WebPage","headline":"Better Scientific Software Tutorial","dateModified":"2021-11-14T20:31:37-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -101,7 +101,7 @@ Then we’ll visualize and track changes in code coverage as the code changes.</
 
 <h2 id="instructions">Instructions</h2>
 
-<p>You’ll need to add a configuration file to your repository to signal GitHub’s CI to take action.  The file must be placed inside the <code class="highlighter-rouge">.GitHub/actions</code> folder.  Note the leading <code class="highlighter-rouge">.</code>.  In unix-like operating systems, this is a hidden file, that won’t be displayed in directory listings by default.  But on Windows and in the GitHub web interface, such files are displayed by default.</p>
+<p>You’ll need to add a configuration file to your repository to signal GitHub’s CI to take action.  The file must be placed inside the <code class="highlighter-rouge">.GitHub/workflows</code> folder.  Note the leading <code class="highlighter-rouge">.</code>.  In unix-like operating systems, this is a hidden file, that won’t be displayed in directory listings by default.  But on Windows and in the GitHub web interface, such files are displayed by default.</p>
 
 <p><strong>Step 1.</strong> Rather than type the file by hand, navigate to “Actions” on your GitHub project.  Then click “Skip this and set up a workflow yourself”.  This brings you to an editor for <code class="highlighter-rouge">.GitHub/workflows/main.yml</code>.  Any filename will do, so we’ll rename it <code class="highlighter-rouge">check.yml</code>.  Under the <code class="highlighter-rouge">jobs/build/steps</code> section, change the two run lines as follows:</p>
 
