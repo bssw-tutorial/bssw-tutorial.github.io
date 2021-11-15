@@ -9,13 +9,13 @@ We first presented a version of this tutorial in 2016, and since then we have be
 
 In the listings below, each tutorial event has its own page, providing details specific to that tutorial, including agenda, presentations, hands-on activities, and other resources.  Quick links are also provided to key tutorial artifacts, where available.
 
-{%- assign today = 'now' | date: "%s" -%}
+{%- assign today = 'now' | date: "%s" | plus: 0 -%}
 {%- assign scheduled = "" | split: "," -%}
 {%- assign planned = "" | split: "," -%}
 {%- assign past = "" | split: "," -%}
 {%- for t in site.data.tutorials -%}
     {%- assign my-event = site.data.bsswt[t.event-label].event -%}
-    {%- assign when = my-event.date | date: "%s" -%}
+    {%- assign when = my-event.date | date: "%s" | plus: 86400 -%}
     {%- assign value = my-event.date | append: "," | append: t.event-label -%}
     {%- if when < today -%}
         {%- assign past = past | push: value -%}
