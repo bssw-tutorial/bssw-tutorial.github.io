@@ -29,6 +29,6 @@ The repository link will be published shortly before the event.  Please check ba
   * **[Git Workflows](../{{ page.event-label }}/handson-m03-git-workflows.html).** You'll fork our hello-numerical-world repository, create a feature branch, and make a pull request
   * **[Agile Methodologies](../{{ page.event-label }}/handson-m02-agile.html).**  You'll use GitHub issues and project boards to setup a simple "personal kanban" board.
   * **[Agile Redux](../{{ page.event-label }}/handson-m06-agile-redux.html).**  You'll create epic, story, and task issues for the refactoring task and track them on a kanban board
-  * **[Software Testing](../{{ page.event-label }}/handson-m08-testing.html).** You'll establish a simple continuous integration workflow and then refine it, adding code coverage assessment
+  * **[Software Testing](../{{ page.event-label }}/handson-m08-testing.html).** You'll use an example project to try out using test driven development to add new functionality to a project
   * **[Continuous Integration](../{{ page.event-label }}/handson-m10-continuous-integration.html).** You'll establish a simple continuous integration workflow and then refine it, adding code coverage assessment
   * **[Refactoring Scientific Software](../{{ page.event-label }}/handson-m11-refactoring1.html).**  You'll perform a small, well-defined refactoring exercise
