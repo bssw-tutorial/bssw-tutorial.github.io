@@ -8,6 +8,3 @@
   - label: Hands-On Code Repository
     format: GitHub
     gh-repo: bssw-tutorial/hello-numerical-world-2021-11-15-sc
-  - label: Program Page
-    format: SC21 Website
-    url: https://sc21.supercomputing.org/presentation/?id=tut139&sess=sess214
