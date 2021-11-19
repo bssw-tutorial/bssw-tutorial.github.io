@@ -1,13 +1,13 @@
 #artifacts:
-  - label: Program Page
-    format: SC21 Website
-    url: https://sc21.supercomputing.org/presentation/?id=tut139&sess=sess214
+  - label: Recordings
+    format: YouTube playlist
+    url: https://www.youtube.com/playlist?list=PLuWzStas9iWF7QJ2K6XycBGjn7vCeacWO
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.16556628
   - label: Hands-On Code Repository
     format: GitHub
     gh-repo: bssw-tutorial/hello-numerical-world-2021-11-15-sc
-  - label: Recordings
-    format: YouTube playlist
-    url: https://youtube.com/playlist?list=PLuWzStas9iWF-IFRk4pSCsdqvrzsmgb9G
+  - label: Program Page
+    format: SC21 Website
+    url: https://sc21.supercomputing.org/presentation/?id=tut139&sess=sess214
