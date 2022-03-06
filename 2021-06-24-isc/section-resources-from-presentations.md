@@ -31,7 +31,7 @@
   * [Git Flow (Driessen's Original Blog)](https://nvie.com/posts/a-successful-git-branching-model/)
       * [Git extensions](https://github.com/nvie/gitflow)
   * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html)
-  * [GitLab Flow](https://docs.gitlab.com/ee/workflow/gitlab_flow.html)
+  * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
   * [Trilinos](https://trilinos.github.io/)
   * [Open MPI](https://www.open-mpi.org)
   * [FleCSI](https://flecsi.github.io/flecsi)
@@ -79,7 +79,7 @@
 
 * Module 9: Testing Complex Applications
   * [Useful How-to resources on test and test suites on ideas-productivity.org](https://ideas-productivity.org/resources/howtos/)
-  * Related Articles: [1](https://ieeexplore.ieee.org/abstract/document/8449015), [2](https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2220)
+  * Related Articles: [1](https://ieeexplore.ieee.org/abstract/document/8449015), [2](https://doi.org/10.1002/spe.2220)
 
 * Module 10: Continuous Integration
   * [Exascale Computing Project CI documentation](https://ecp-ci.gitlab.io/)

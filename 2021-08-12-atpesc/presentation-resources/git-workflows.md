@@ -3,7 +3,7 @@
   * [Git Flow (Driessen's Original Blog)](https://nvie.com/posts/a-successful-git-branching-model/)
       * [Git extensions](https://github.com/nvie/gitflow)
   * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html)
-  * [GitLab Flow](https://docs.gitlab.com/ee/workflow/gitlab_flow.html)
+  * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
   * [Trilinos](https://trilinos.github.io/)
   * [Open MPI](https://www.open-mpi.org)
   * [FleCSI](https://flecsi.github.io/flecsi)
