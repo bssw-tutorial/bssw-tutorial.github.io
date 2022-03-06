@@ -24,6 +24,8 @@ Events often start as "planned" rather than "scheduled", meaning that the specif
 
 The site uses plugins that aren't blessed for GitHub Pages, and is rebuilt and deployed using the [Build and deploy jekyll site](https://github.com/bssw-tutorial/bssw-tutorial.github.io/actions/workflows/github-pages.yml) action.  This action is triggered by commits to be main, and can also be triggered manually (a `workflow_dispatch` trigger).
 
+You can track the progress of the action on the [Actions](https://github.com/bssw-tutorial/bssw-tutorial.github.io/actions) tab of the repository.
+
 It might be reasonable to automatically rebuild on a schedule to ensure that tutorials progress from the Scheduled list to the Past list, but at present, the events are infrequent enough that automating this seems to be overkill -- simpler just to remember to rebuild after the event.
 
 ## Repository Structure
