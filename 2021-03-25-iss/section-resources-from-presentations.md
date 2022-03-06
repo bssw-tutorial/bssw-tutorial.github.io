@@ -26,7 +26,7 @@
   * [Git Flow (Driessen's Original Blog)](https://nvie.com/posts/a-successful-git-branching-model/)
       * [Git extensions](https://github.com/nvie/gitflow)
   * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html)
-  * [GitLab Flow](https://docs.gitlab.com/ee/workflow/gitlab_flow.html)
+  * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
 * Module 4: Software Testing 1
   * Python Build and Test Framework: [pyscaffold.org](https://pyscaffold.org)
   * Build-Link-Test CMake Framework: [llnl-blt.readthedocs.io](https://llnl-blt.readthedocs.io)
