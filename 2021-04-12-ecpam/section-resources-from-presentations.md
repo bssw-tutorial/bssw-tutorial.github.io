@@ -23,7 +23,7 @@
   * [Development Practices Survey Article](https://dx.doi.org/10.6084/m9.figshare.14188463.v1)
 * Module 3: Software Testing 2
   * [Useful How-to resources on test and test suites on ideas-productivity.org](https://ideas-productivity.org/resources/howtos/)
-  * Related Articles: [1](https://ieeexplore.ieee.org/abstract/document/8449015), [2](https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2220)
+  * Related Articles: [1](https://ieeexplore.ieee.org/abstract/document/8449015), [2](https://doi.org/10.1002/spe.2220)
 * Module 4: Continuous Integration
   * [Exascale Computing Project CI documentation](https://ecp-ci.gitlab.io/)
   * [Travis CI service](https://travis-ci.com)
