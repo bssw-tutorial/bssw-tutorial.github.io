@@ -107,4 +107,16 @@ sections: [description,agenda,presentation-slides,hands-on-exercises,related-eve
 
 ### Transitioning to a Scheduled Event
 
-### Filling out the Event Page
+Once you have a firm day and time for the event, you will need to update the relevant directory names and metadata entries.  There is no particular minimum requirements for the event page content to make the transition from planned to scheduled.  Initially, this change is simply about where in the main page list the event appears.  You can add content to the event page at any time, following the guidance in [Filling Out the Event Page](#filling-out-the-event-page), below.
+
+1) In `_data/tutorials.csv` adjust the event label to reflect the actual event date, and change the status to `scheduled`. 
+
+2) In `_data/bsswt/` rename the event directory to reflect the actual event date (same as the event label, above).
+
+3) In `_data/bsswt/<event-label>/event.yml` update the metadata as appropriate.  If your event is on a single day, you can comment out the `end-date` key.  The `time` field is free-form.  Make sure to include the time zone along with the time.  Convention is to always use the natural time zone of the hosting venue.
+
+4) Rename the top level event directory to reflect the actual event date (same as the event label).
+
+5) In `<event-label>/index.md` update the `event-label` value to reflect the new event label.
+
+### Filling Out the Event Page

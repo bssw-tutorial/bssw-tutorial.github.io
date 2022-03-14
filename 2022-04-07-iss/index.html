@@ -3,20 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Hands-On Exercise 0: Setting up the Prerequisites | Better Scientific Software Tutorial</title>
+<title>Better Scientific Software Tutorial | Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.</title>
 <meta name="generator" content="Jekyll v4.0.1" />
-<meta property="og:title" content="Hands-On Exercise 0: Setting up the Prerequisites" />
+<meta property="og:title" content="Better Scientific Software Tutorial" />
 <meta name="author" content="IDEAS Productivity Project" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
 <meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
-<link rel="canonical" href="https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m00-prerequisites.html" />
-<meta property="og:url" content="https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m00-prerequisites.html" />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2022-04-07-iss/" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2022-04-07-iss/" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Hands-On Exercise 0: Setting up the Prerequisites" />
+<meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 0: Setting up the Prerequisites","dateModified":"2022-03-14T09:59:26-04:00","url":"https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m00-prerequisites.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","dateModified":"2022-03-14T09:59:26-04:00","url":"https://bssw-tutorial.github.io/2022-04-07-iss/","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -63,58 +63,71 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        
 
-  <header class="post-header">
-    <h1 class="post-title">Hands-On Exercise 0: Setting up the Prerequisites</h1>
-  </header>
 
-  <div class="post-content">
-    <ol>
-  <li>If you don’t have a <strong>GitHub</strong> account already, please set one up (used starting in <strong>exercise 2, agile</strong>)
-    <ul>
-      <li>Go to <a href="https://github.com">https://github.com</a></li>
-      <li>Click the “Sign Up” button</li>
-      <li>Complete the signup form</li>
-      <li>Verify your account, as requested</li>
-      <li>On the “Welcome to GitHub” page, scroll to the bottom and click on “Complete Setup”</li>
-      <li>Complete the email verification process</li>
-      <li>Login to GitHub with your new account</li>
-    </ul>
-  </li>
-  <li>If you don’t have a <strong>Codecov.io</strong> account already, please set one up (used in <strong>exercise 8, testing</strong>)
-    <ul>
-      <li>Go to <a href="https://codecov.io/">https://codecov.io/</a></li>
-      <li>Click the “Sign Up” button</li>
-      <li>Choose “Sign up with GitHub”</li>
-      <li>On the  “Authorize Codecov” page, click to “Authorize codecov”</li>
-    </ul>
-  </li>
-  <li>Though <strong>exercise 3</strong> can be completed entirely using the GitHub.com web interface, you might find it useful to get some experience with <code class="highlighter-rouge">git</code> on the command line in anticipation of later exercises (particularly during <strong>exercise 11, refactoring</strong>).
-    <ul>
-      <li>You may want to do this exercise on the same system you plan to use for <strong>refactoring</strong> exercises.</li>
-      <li>On Linux and Mac system, <code class="highlighter-rouge">git</code> should be available through your package manager if it is not already on your system.</li>
-      <li>On Windows systems, you have several options:
-        <ul>
-          <li><a href="https://gitforwindows.org/">https://gitforwindows.org/</a> is a command-line git client that can also work with the <a href="https://tortoisegit.org/">https://tortoisegit.org/</a> graphical interface (we’re not using TortoiseGit in these exercises, but it can be a convenient way to work with git on Windows systems).</li>
-          <li>Development platforms for Windows, such as  Cygwin or Msys2 also include git packages.  But these tend to be more work to install and configure so we don’t recommend them unless you need other tools that they provide too (i.e., a complete unix-like development environment).</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>You’ll need (access to) a development environment, supporting editing, compiling, and executing simple python, C++, or Fortran08 language code, and a git installation (used in <strong>exercise 8, testing</strong>)
-    <ul>
-      <li>This may be available on your local system (especially Mac or Linux)</li>
-      <li>A remote development environment that you can access via ssh will also work fine.</li>
-      <li>python3 virtual-environments (venv module) are used for the python example</li>
-      <li>cmake is used for C++ and Fortan examples</li>
-    </ul>
-  </li>
-</ol>
 
-  </div>
 
-</article>
+
+
+
+
+
+
+
+
+
+<h1 align="center">Better Scientific Software</h1>
+<p align="center">a tutorial presented at</p>
+<h2 align="center"><a href="https://sea.ucar.edu/conference/2022">Improving Scientific Software</a></h2>
+
+  <h3 align="center">on 
+    9:00 am - 11:20 am MDT, 1:20 pm - 3:40 pm MDT
+    Thursday 07 April 2022
+    
+  </h3>
+
+
+
+
+
+
+<hr>
+<p>This page provides detailed information specific to the tutorial event above. Expect updates to this page up to, and perhaps shortly after, the date of the tutorial. Pages for other tutorial events can be accessed from the <a href="/">main page</a> of this site.</p>
+
+<hr>
+
+
+  
+  
+  
+  
+  
+  <h2 id=on-this-page">On this Page</h2>
+
+<ul>
+
+<li><a href="#description">Description</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li></ul>
+
+
+
+
+<hr>
+<h2 id="description">Description</h2>
+
+<p>Producing scientific software is a challenge.  The high-performance modeling and simulation community, in particular, is dealing with the confluence of disruptive changes in computing architectures and new opportunities (and demands) for greatly improved simulation capabilities, especially through coupling physics and scales.  At the same time, computational science and engineering (CSE), as well as other areas of science, are experiencing increasing focus on scientific reproducibility and software quality.</p>
+
+<p>Computer architecture changes require new software design and implementation strategies, including significant refactoring of existing code. Reproducibility demands require more rigor across the entire software endeavor. Code coupling requires aggregate team interactions including integration of software processes and practices.  These challenges demand large investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential.</p>
+
+<p>This tutorial distills experience from members of the IDEAS Productivity project and the creators of the BSSw.io community website drawn from many scientific software projects over many years. The tutorial will provide information about software practices, processes, and tools explicitly tailored for CSE. Topics to be covered include: Agile methodologies and tools, software design and refactoring, testing and continuous integration, Git workflows for teams, and reproducibility. Material will be mostly at the beginner and intermediate levels. There will also be opportunities to discuss topics raised by the audience.</p>
+
+<hr>
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>This tutorial is produced by the <a href="https://ideas-productivity.org">IDEAS Productivity project</a>.</p>
+
+<p>This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.</p>
 
       </div>
     </main><footer class="site-footer h-card">
