@@ -8,5 +8,5 @@ venue: "Improving Scientific Software"
 venue-type: "conference"
 venue-url: https://sea.ucar.edu/conference/2022
 location: "online"
-#presenter-ids:
-#helper-ids: 
+presenter-ids: [bernhold, rinkug, pagrubel, frobnitzem]
+helper-ids: [adubey64, jarrah42]
