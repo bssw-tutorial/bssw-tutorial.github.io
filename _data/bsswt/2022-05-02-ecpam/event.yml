@@ -8,4 +8,5 @@ venue: "Exascale Computing Project Annual Meeting"
 venue-type: "meeting"
 venue-url: https://ecpannualmeeting.com/
 location: "online"
-#presenter-ids: [bernhold, pagrubel, jwillenbring]
+presenter-ids: [jarrah42, frobnitzem]
+helper-ids: [bernhold]
