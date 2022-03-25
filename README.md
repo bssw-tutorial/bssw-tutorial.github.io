@@ -165,3 +165,21 @@ If the automatic agenda is sufficient for your needs, you can set it up with the
 5) Since you know the staffing, you can also add it to `_data/bsswt/<event-label>/event.yml` in the `presenter-ids` and `helper-ids` variables.
 
 If you want to leverage the automatic agenda capability, but need to provide additional text along with the table, you can copy `_includes/section-agenda.md` to your `<event-label>/` directory and modify it.
+
+#### Presentation-Slides
+
+Our convention is to post the PDFs of the presentations to an archival service, like FigShare, and obtain a DOI for then to reference on the event page.  With FigShare, the DOI can be reserved once the record is started, well in advance of actual publication.  The DOI is captured in `_data/bsswt/<event-label>/artifacts.yml` with an entry of the form:
+
+```
+  - label: Presentation Slides
+    format: FigShare
+    doi: 10.6084/m9.figshare.16556628
+```
+
+The stock `section-presentation-slides.md` include file keys on an artifact entry labeled `Presentation Slides` and provides a link to the given DOI.  If the `Presentations Slides` artifact is not available, the stock version of the section will indicate that the presentations will be published shortly before the event.
+
+Best practice is to reserve the DOI early in the process (it is also needed for the citation information on the licensing slide included in all of the presentations), add it to `artifacts.yml`, confirm locally that it is properly formatted, and then comment out the artifact entry until the presentations are published.  When uncommented, you should observe the `Presentation Slides` artifact (with the event's entry on the main page as well as at the top of the event page), as well as the seeing the proper DOI in the `Presentation Slides` section.
+
+Best practice is to use the form of the DOI that always points to the latest version of the archival record.
+
+The stock section does not accommodate a version history.  That could be added via a local section include file (starting from `_includes/section-presentation-slides.md`).  It is not clear how useful it is to tutorial participants to track the version history.  This is a possible future enhancement.
