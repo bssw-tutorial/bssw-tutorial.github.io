@@ -7,4 +7,4 @@
   * The IDEAS [report](https://doi.org/10.2172/1606662)
   * [Write to the tutorial authors](mailto:bssw-tutorial@lists.mcs.anl.gov)
   * [Inclusive Naming Initiative](https://inclusivenaming.org/)
-  * Bssw.io resource on [Inclusive Naming](https://bssw.io/items/inclusive-naming-initiative)
+  * Bssw.io resource on [Inclusive Naming](https://bssw.io/items/inclusive-language-resources)
