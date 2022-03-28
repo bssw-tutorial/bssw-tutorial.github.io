@@ -5,6 +5,7 @@ The second session, 1:20pm-3:40pm MDT, will be more open-ended, depending on the
 * Gain some experience with hands-on activities the presentations (guided or independent); 
 * Deeper Q&A based on the presentations; or 
 * Discussion of experiences and challenges with software development faced by participants in their own projects.
+
 We will use Zoom breakout rooms to be able to accommodate multiple interests in so far as we can staff them.
 
 {%- assign my-agenda = site.data.bsswt[page.event-label].agenda -%}
