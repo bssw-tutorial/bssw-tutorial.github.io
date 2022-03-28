@@ -154,12 +154,12 @@ This is usually the funding acknowledgement.  There is a stock acknowledgment of
 
 #### Agenda
 
-While the agenda can be defined manually, there is now scripting that can render a properly structured spreadsheet in the usual form in which present an agenda.  The spreadsheet, in our Google Drive workspace, is setup with formulas to simplify calculating times for each module.  It also supports hiding columns.  Presentation titles use shorthand labels which are defined in a `_data/bsswt/<event-label>/presentations.yml` file.  Presenters use GitHub IDs, and corresponding information should be provided in the `_people/` directory for affiliations, etc. Details instructions in the use of the agenda spreadsheet template can be found in the `TUTORIAL-HOWTO` document in Google Drive.
+While the agenda can be defined manually, there is now scripting that can render a properly structured spreadsheet in the usual form in which present an agenda.  The spreadsheet, in our Google Drive workspace, is setup with formulas to simplify calculating times for each module.  It also supports hiding columns. Detailed instructions on the use of the agenda spreadsheet template can be found in [Using the Agenda Spreadsheet](https://github.com/bssw-tutorial/tutorial-management/using-the-agenda-spreadsheet.md)
 
 If the automatic agenda is sufficient for your needs, you can set it up with the following steps:
 
 1) Download the spreadsheet as a CSV (comma-separated variable) format file and move it into `_data/bsswt/<event-label>/agenda.csv`.
-2) Add the appropriate `_data/bsswt/<event-label>/presentations.yml` file to provide the full presentation titles.  This file only changes when new presentations are added or their titles change (in which case they should get a *new* label, since older tutorials will have used the older titles), so it is likely you can copy it from another recent event.
+2) Add the `_data/bsswt/<event-label>/presentations.yml` file to provide the full presentation titles.  This file is tracked in <https://github.com/bssw-tutorial/presentations/blob/main/presentations.yml> and should be keep up to date with new presentation labels or changes to titles there.
 3) Add the `agenda` section to the `sections` array in the `<event-label>/index.md` metadata.
 4) Make sure that all of your presenters have entries in the `_people/` folder.
 5) Since you know the staffing, you can also add it to `_data/bsswt/<event-label>/event.yml` in the `presenter-ids` and `helper-ids` variables.
