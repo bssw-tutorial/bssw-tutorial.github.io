@@ -3,20 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Hands-On Exercise 0: Setting up the Prerequisites | Better Scientific Software Tutorial</title>
+<title>Helpers | Better Scientific Software Tutorial</title>
 <meta name="generator" content="Jekyll v4.0.1" />
-<meta property="og:title" content="Hands-On Exercise 0: Setting up the Prerequisites" />
+<meta property="og:title" content="Helpers" />
 <meta name="author" content="IDEAS Productivity Project" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
 <meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
-<link rel="canonical" href="https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m00-prerequisites.html" />
-<meta property="og:url" content="https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m00-prerequisites.html" />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2022-07-31-atpesc/utilities.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2022-07-31-atpesc/utilities.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Hands-On Exercise 0: Setting up the Prerequisites" />
+<meta property="twitter:title" content="Helpers" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 0: Setting up the Prerequisites","dateModified":"2022-03-29T17:51:37-04:00","url":"https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m00-prerequisites.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Helpers","dateModified":"2022-03-29T17:51:37-04:00","url":"https://bssw-tutorial.github.io/2022-07-31-atpesc/utilities.html","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -66,51 +66,73 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Hands-On Exercise 0: Setting up the Prerequisites</h1>
+    <h1 class="post-title">Helpers</h1>
   </header>
 
   <div class="post-content">
-    <ol>
-  <li>If you don’t have a <strong>GitHub</strong> account already, please set one up (used starting in <strong>exercise 2, agile</strong>)
-    <ul>
-      <li>Go to <a href="https://github.com">https://github.com</a></li>
-      <li>Click the “Sign Up” button</li>
-      <li>Complete the signup form</li>
-      <li>Verify your account, as requested</li>
-      <li>On the “Welcome to GitHub” page, scroll to the bottom and click on “Complete Setup”</li>
-      <li>Complete the email verification process</li>
-      <li>Login to GitHub with your new account</li>
-    </ul>
-  </li>
-  <li>If you don’t have a <strong>Codecov.io</strong> account already, please set one up (used in <strong>exercise 8, testing</strong>)
-    <ul>
-      <li>Go to <a href="https://codecov.io/">https://codecov.io/</a></li>
-      <li>Click the “Sign Up” button</li>
-      <li>Choose “Sign up with GitHub”</li>
-      <li>On the  “Authorize Codecov” page, click to “Authorize codecov”</li>
-    </ul>
-  </li>
-  <li>Though <strong>exercise 3</strong> can be completed entirely using the GitHub.com web interface, you might find it useful to get some experience with <code class="highlighter-rouge">git</code> on the command line in anticipation of later exercises (particularly during <strong>exercise 11, refactoring</strong>).
-    <ul>
-      <li>You may want to do this exercise on the same system you plan to use for <strong>refactoring</strong> exercises.</li>
-      <li>On Linux and Mac system, <code class="highlighter-rouge">git</code> should be available through your package manager if it is not already on your system.</li>
-      <li>On Windows systems, you have several options:
-        <ul>
-          <li><a href="https://gitforwindows.org/">https://gitforwindows.org/</a> is a command-line git client that can also work with the <a href="https://tortoisegit.org/">https://tortoisegit.org/</a> graphical interface (we’re not using TortoiseGit in these exercises, but it can be a convenient way to work with git on Windows systems).</li>
-          <li>Development platforms for Windows, such as  Cygwin or Msys2 also include git packages.  But these tend to be more work to install and configure so we don’t recommend them unless you need other tools that they provide too (i.e., a complete unix-like development environment).</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>You’ll need (access to) a development environment, supporting editing, compiling, and executing simple python, C++, or Fortran08 language code, and a git installation (used in <strong>exercise 8, testing</strong>)
-    <ul>
-      <li>This may be available on your local system (especially Mac or Linux)</li>
-      <li>A remote development environment that you can access via ssh will also work fine.</li>
-      <li>python3 virtual-environments (venv module) are used for the python example</li>
-      <li>cmake is used for C++ and Fortan examples</li>
-    </ul>
-  </li>
-</ol>
+    
+<h2 id="create-issues-to-prepare-presentations">Create issues to prepare presentations</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+<h2 id="create-issues-to-record-presentations">Create issues to record presentations</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+<h2 id="renaming-presentation-pdfs-for-publication">Renaming presentation PDFs for publication</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>final-presentations/2022-07-31-atpesc
+
+
+</code></pre></div></div>
+
+<h2 id="data-for-figshare-record">Data for FigShare record</h2>
+
+<p>Title: Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school (2022)</p>
+
+<!-- note that we're not listing helpers here -->
+<p>Authors:</p>
+
+<p>Categories: Software Engineering</p>
+
+<p>Item type: Presentation</p>
+
+<p>Keywords:</p>
+
+<ul>
+  <li>software engineering</li>
+  <li>software productivity</li>
+  <li>software sustainability</li>
+  <li>software reliability</li>
+  <li>computational science and engineering software</li>
+  <li>scientific software</li>
+  <li>Better Scientific Software tutorial</li>
+</ul>
+
+<!-- Should include same description as event -->
+<p>Description: Presentations from the Software Productivity track at the 2021 Argonne Training Program for Extreme Scale Computing (ATPESC).</p>
+
+<!-- Should be generalized to use the same ack as the event -->
+<p>Funding: This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.</p>
+
+<!-- this will be localhost when testing locally.  Can we make it always be
+     the production URL? -->
+<p>References: https://bssw-tutorial.github.io/events/2022-07-31-atpesc.html</p>
+
+<p>License: CC BY 4.0</p>
+
+<h2 id="tagging-and-creating-release-of-presentations">Tagging and creating release of presentations</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>final-presentations/2022-07-31-atpesc
+zip <span class="nt">--update</span> 2022-07-31-atpesc.zip <span class="k">*</span>.pdf
+<span class="c"># git commit new presentations</span>
+git tag <span class="nt">-a</span> 2021-08-12-atpesc <span class="nt">-m</span> <span class="s2">"Software Productivity and Sustainability track at ATPESC 2021"</span>
+<span class="c"># Should be more systematic about this comment.</span>
+git push origin <span class="nt">--tags</span>
+gh release create 2021-08-12-atpesc <span class="nt">--title</span> <span class="s2">"2021-08-12 Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing (ATPESC) summer school"</span>
+<span class="c"># Asked for release notes and whether it is a prerelease.  Need to force those.</span>
+gh release upload 2021-08-12-atpesc 2021-08-12-atpesc.zip
+</code></pre></div></div>
 
   </div>
 
