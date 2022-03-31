@@ -1,6 +1,6 @@
-name: Check URLs
+name: Check All URLs
 
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: urls-checker
-      uses: urlstechie/urlchecker-action@0.2.3
+      uses: urlstechie/urlchecker-action@0.2.6
       with:
         # A comma-separated list of file types to cover in the URL checks
         file_types: .md
