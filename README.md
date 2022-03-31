@@ -154,7 +154,7 @@ This is usually the funding acknowledgement.  There is a stock acknowledgment of
 
 #### Agenda
 
-While the agenda can be defined manually, there is now scripting that can render a properly structured spreadsheet in the usual form in which present an agenda.  The spreadsheet, in our Google Drive workspace, is setup with formulas to simplify calculating times for each module.  It also supports hiding columns. Detailed instructions on the use of the agenda spreadsheet template can be found in [Using the Agenda Spreadsheet](https://github.com/bssw-tutorial/tutorial-management/using-the-agenda-spreadsheet.md)
+While the agenda can be defined manually, there is now scripting that can render a properly structured spreadsheet in the usual form in which present an agenda.  The spreadsheet, in our Google Drive workspace, is setup with formulas to simplify calculating times for each module.  It also supports hiding columns. Detailed instructions on the use of the agenda spreadsheet template can be found in [Using the Agenda Spreadsheet](https://github.com/bssw-tutorial/tutorial-management/blob/main/using-the-agenda-spreadsheet.md)
 
 If the automatic agenda is sufficient for your needs, you can set it up with the following steps:
 
