@@ -1,3 +1,3 @@
 ---
 
-This is a newly added file with a [bad link](https://https://impossible.fish/)
+This is a newly added file with a [good link](https://example.com/)
