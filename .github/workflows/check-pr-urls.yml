@@ -17,19 +17,10 @@ jobs:
     - run: |
         echo Added and modified file list: \`${{ steps.files.outputs.added_modified }}\'
 
-#    # Run URL checks
-#    - name: URLs-checker
-#      uses: urlstechie/urlchecker-action@0.0.26
-#      with:
-#        save: "urls.csv"
-#        # only include the changed files
-#        include_files: ${{ steps.files.outputs.added_modified }}
-#        print_all: true
-#        
-#    # In case of failure, upload results as artifacts
-#    - name: Archive URL checking results
-#      if: failure()
-#      uses: actions/upload-artifact@v2-preview
-#      with:
-#        name: urlchecker-results
-#        path: urls.csv
+    # Run URL checks
+    - name: URLs-checker
+      uses: urlstechie/urlchecker-action@0.0.26
+      with:
+        # only include the changed files
+        include_files: ${{ steps.files.outputs.added_modified }}
+        print_all: true
