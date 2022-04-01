@@ -17,11 +17,9 @@ jobs:
 
     # Run URL checks
     - name: URLs-checker
-      uses: urlstechie/urlchecker-action@0.0.26
+      uses: urlstechie/urlchecker-action@0.0.27
       with:
         # only include the changed files
         include_files: ${{ steps.files.outputs.added_modified }}
-        # Seems like urlchecker-action fails if there are no files for it to check.  So let's have it check everything in the PR.
-        # file_types: .md,.html
         exclude_urls: https://en.w,https://github.com/bssw-tutorial/presentations/blob/master,https://doi.org/10.1126/science.aah6168,https://doi.org/10.1002/spe.2220
         print_all: false
