@@ -14,8 +14,6 @@ jobs:
       uses: jitterbit/get-changed-files@v1
       with:
         format: 'csv'
-    - run: |
-        echo Added and modified file list: \`${{ steps.files.outputs.added_modified }}\'
 
     # Run URL checks
     - name: URLs-checker
@@ -23,4 +21,6 @@ jobs:
       with:
         # only include the changed files
         include_files: ${{ steps.files.outputs.added_modified }}
-        print_all: true
+        file_types: .md,.html
+        exclude_urls: https://en.w,https://github.com/bssw-tutorial/presentations/blob/master,https://doi.org/10.1126/science.aah6168,https://doi.org/10.1002/spe.2220
+        print_all: false
