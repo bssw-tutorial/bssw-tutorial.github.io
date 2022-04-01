@@ -15,11 +15,8 @@ jobs:
       with:
         format: 'csv'
     - run: |
-        mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
-        for added_modified_file in "${added_modified_files[@]}"; do
-          echo "Do something with this ${added_modified_file}."
-        done
-          
+        echo Added and modified file list: \`${{ steps.files.outputs.added_modified }}\'
+
 #    # Run URL checks
 #    - name: URLs-checker
 #      uses: urlstechie/urlchecker-action@0.0.26
