@@ -1,4 +1,4 @@
-name: Check PR URLs
+name: Check URLs in Changed Files
 
 on: [pull_request, push, workflow_dispatch]
 
