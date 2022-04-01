@@ -8,12 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:    
-    # If you want to use git instead of the API to find changed files
-    # Use something like https://github.com/actions/checkout#fetch-all-branches
     - uses: actions/checkout@v2
     
     - name: pr-files
-    - uses: jitterbit/get-changed-files@v1
+      uses: jitterbit/get-changed-files@v1
       with:
         format: 'csv'
     - run: |
@@ -22,19 +20,19 @@ jobs:
           echo "Do something with this ${added_modified_file}."
         done
           
-    # Run URL checks
-    - name: URLs-checker
-      uses: urlstechie/urlchecker-action@0.0.26
-      with:
-        save: "urls.csv"
-        # only include the changed files
-        include_files: ${{ steps.files.outputs.added_modified }}
-        print_all: true
-        
-    # In case of failure, upload results as artifacts
-    - name: Archive URL checking results
-      if: failure()
-      uses: actions/upload-artifact@v2-preview
-      with:
-        name: urlchecker-results
-        path: urls.csv
+#    # Run URL checks
+#    - name: URLs-checker
+#      uses: urlstechie/urlchecker-action@0.0.26
+#      with:
+#        save: "urls.csv"
+#        # only include the changed files
+#        include_files: ${{ steps.files.outputs.added_modified }}
+#        print_all: true
+#        
+#    # In case of failure, upload results as artifacts
+#    - name: Archive URL checking results
+#      if: failure()
+#      uses: actions/upload-artifact@v2-preview
+#      with:
+#        name: urlchecker-results
+#        path: urls.csv
