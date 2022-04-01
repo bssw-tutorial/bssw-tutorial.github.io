@@ -15,7 +15,7 @@ jobs:
       with:
         format: 'csv'
     - run: |
-        echo Added and modified file list: \`${{ steps.files.outputs.added_modified }}\'
+        echo Added and modified file list: \`${{ steps.pr-files.outputs.added_modified }}\'
 
 #    # Run URL checks
 #    - name: URLs-checker
@@ -23,7 +23,7 @@ jobs:
 #      with:
 #        save: "urls.csv"
 #        # only include the changed files
-#        include_files: ${{ steps.files.outputs.added_modified }}
+#        include_files: ${{ steps.pr-files.outputs.added_modified }}
 #        print_all: true
 #        
 #    # In case of failure, upload results as artifacts
