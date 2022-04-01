@@ -10,29 +10,16 @@ jobs:
     steps:    
     - uses: actions/checkout@v2
     
-    - name: pr-files
+    - id: files
       uses: jitterbit/get-changed-files@v1
       with:
         format: 'csv'
-    - run: |
-        mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
-        for added_modified_file in "${added_modified_files[@]}"; do
-          echo "Do something with this ${added_modified_file}."
-        done
-          
-#    # Run URL checks
-#    - name: URLs-checker
-#      uses: urlstechie/urlchecker-action@0.0.26
-#      with:
-#        save: "urls.csv"
-#        # only include the changed files
-#        include_files: ${{ steps.files.outputs.added_modified }}
-#        print_all: true
-#        
-#    # In case of failure, upload results as artifacts
-#    - name: Archive URL checking results
-#      if: failure()
-#      uses: actions/upload-artifact@v2-preview
-#      with:
-#        name: urlchecker-results
-#        path: urls.csv
+
+    # Run URL checks
+    - name: URLs-checker
+      uses: urlstechie/urlchecker-action@0.0.27
+      with:
+        # only include the changed files
+        include_files: ${{ steps.files.outputs.added_modified }}
+        exclude_urls: https://en.w,https://github.com/bssw-tutorial/presentations/blob/master,https://doi.org/10.1126/science.aah6168,https://doi.org/10.1002/spe.2220
+        print_all: false
