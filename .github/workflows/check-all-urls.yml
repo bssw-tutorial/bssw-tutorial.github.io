@@ -35,7 +35,7 @@ jobs:
         print_all: false
 
         # The timeout seconds to provide to requests, defaults to 5 seconds
-        timeout: 5
+        timeout: 7
 
         # How many times to retry a failed request (each is logged, defaults to 1)
         retry_count: 3
