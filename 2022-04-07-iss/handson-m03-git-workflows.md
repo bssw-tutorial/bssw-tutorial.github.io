@@ -9,7 +9,7 @@ layout: page
 {%- unless hands-on-repo-org -%}{%- assign hands-on-repo-org = "hands-on-repo-org (to be defined)" -%}{%- endunless -%}
 {%- unless hands-on-repo-dir -%}{%- assign hands-on-repo-dir = "hands-on-repo-dir (to be defined)" -%}{%- endunless -%}
 
-# Hands-On Exercise: Git Workflows 
+# Hands-On Exercise: Basic Git for Collaboration 
 
 ## Goals
 To fork a repo, create a branch and make a pull request
