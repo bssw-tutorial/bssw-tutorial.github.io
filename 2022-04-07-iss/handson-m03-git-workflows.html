@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
 <meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
-<link rel="canonical" href="https://bssw-tutorial.github.io/2021-11-15-sc/handson-m03-git-workflows.html" />
-<meta property="og:url" content="https://bssw-tutorial.github.io/2021-11-15-sc/handson-m03-git-workflows.html" />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2022-04-07-iss/handson-m03-git-workflows.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2022-04-07-iss/handson-m03-git-workflows.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","dateModified":"2022-04-03T21:35:59-04:00","url":"https://bssw-tutorial.github.io/2021-11-15-sc/handson-m03-git-workflows.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","dateModified":"2022-04-03T21:35:59-04:00","url":"https://bssw-tutorial.github.io/2022-04-07-iss/handson-m03-git-workflows.html","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -85,16 +85,16 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 </ul>
 
 <h2 id="instructions">Instructions</h2>
-<p><em>Note: The screen shots and instructions below refer to the generic hello-numerical-world repository.  For this event, you will use <strong><a href="https://github.com/bssw-tutorial/hello-numerical-world-2021-11-15-sc">bssw-tutorial/hello-numerical-world-2021-11-15-sc</a></strong> instead.</em></p>
+<p><em>Note: The screen shots and instructions below refer to the generic hello-numerical-world repository.  For this event, you will use <strong><a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-04-07-iss">bssw-tutorial/hello-numerical-world-2022-04-07-iss</a></strong> instead.</em></p>
 
 <p><strong>Step 1.</strong> Fork the tutorial repository: <a href="images/03-git-fork.png">(fork example)</a></p>
 <ul>
-  <li>In your browser, go to the repository that you want to fork: <a href="https://github.com/bssw-tutorial/hello-numerical-world-2021-11-15-sc">bssw-tutorial/hello-numerical-world-2021-11-15-sc</a></li>
+  <li>In your browser, go to the repository that you want to fork: <a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-04-07-iss">bssw-tutorial/hello-numerical-world-2022-04-07-iss</a></li>
   <li>Hit the fork button in the upper right corner</li>
   <li>Choose your personal account to fork into.</li>
 </ul>
 
-<p>The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  &lt;your username&gt;/hello-numerical-world-2021-11-15-sc .</p>
+<p>The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  &lt;your username&gt;/hello-numerical-world-2022-04-07-iss .</p>
 
 <p><strong>Step 2.</strong> Clone the fork (on command line)</p>
 <ul>
@@ -102,15 +102,15 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   <li>Copy path to clipboard (use path in command below for https).</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git clone https://github.com/&lt;your username&gt;/hello-numerical-world-2021-11-15-sc.git
-Cloning into 'hello-numerical-world-2021-11-15-sc' ...
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git clone https://github.com/&lt;your username&gt;/hello-numerical-world-2022-04-07-iss.git
+Cloning into 'hello-numerical-world-2022-04-07-iss' ...
 .
 .
 </code></pre></div></div>
 
 <p><strong>Step 3.</strong> Create branch</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $cd hello-numerical-world-2021-11-15-sc
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $cd hello-numerical-world-2022-04-07-iss
    $git checkout -b issue-1000
    Switched to a new branch 'issue-1000'
 </code></pre></div></div>
@@ -141,8 +141,8 @@ Cloning into 'hello-numerical-world-2021-11-15-sc' ...
 <p><strong>Step 5.</strong> Useful git commands to check repo</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git remote -vv
-   origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2021-11-15-sc.git (fetch)
-   origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2021-11-15-sc.git (push)
+   origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2022-04-07-iss.git (fetch)
+   origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2022-04-07-iss.git (push)
 
    $git branch
    * issue-1000
@@ -161,9 +161,9 @@ Cloning into 'hello-numerical-world-2021-11-15-sc' ...
    remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
    remote: 
    remote: Create a pull request for 'issue-1000' on GitHub by visiting:
-   remote:      https://github.com/&lt;your username&gt;/hello-numerical-world-2021-11-15-sc/pull/new/issue-1000
+   remote:      https://github.com/&lt;your username&gt;/hello-numerical-world-2022-04-07-iss/pull/new/issue-1000
    remote: 
-   To github.com:&lt;your username&gt;/hello-numerical-world-2021-11-15-sc.git
+   To github.com:&lt;your username&gt;/hello-numerical-world-2022-04-07-iss.git
     * [new branch]      issue-1000 -&gt; issue-1000
 </code></pre></div></div>
 

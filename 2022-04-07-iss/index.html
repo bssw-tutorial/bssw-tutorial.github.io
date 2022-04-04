@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","dateModified":"2022-04-01T12:00:04-04:00","url":"https://bssw-tutorial.github.io/2022-04-07-iss/","@type":"WebPage","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","dateModified":"2022-04-03T21:35:59-04:00","url":"https://bssw-tutorial.github.io/2022-04-07-iss/","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -104,9 +104,21 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <h2>Quick Links</h2>
 <ul>
-    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc4q3tuR2H60NMfBGid06niE2GToa-sl0zCFz4u87Az9PyNMg/viewform">Conference Registration</a> (deadline 2022-03-31)</li>
+    <li><a href="https://doi.org/10.6084/m9.figshare.19416767">Presentation Slides</a> (FigShare)</li><li><a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-04-07-iss">Hands-On Code Repository</a> (GitHub)</li>
 </ul>
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -132,7 +144,11 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <li><a href="#learning-objectives">Learning Objectives</a></li>
 <li><a href="#agenda">Agenda</a></li>
 <li><a href="#presentation-slides">Presentation Slides</a></li>
+<li><a href="#how-to-participate">How to Participate</a></li>
+<li><a href="#hands-on-exercises">Hands-On Exercises</a></li>
+<li><a href="#stay-in-touch">Stay in Touch</a></li>
 <li><a href="#resources-from-presentations">Resources from Presentations</a></li>
+<li><a href="#requested-citation">Requested Citation</a></li>
 <li><a href="#acknowledgements">Acknowledgements</a></li></ul>
 
 
@@ -177,8 +193,70 @@ The second session, 1:20pm-3:40pm MDT, will be more open-ended, depending on the
 <hr>
 <h2 id="presentation-slides">Presentation Slides</h2>
 
-<p>The presentations will be published shortly before the event.  Please check back.</p>
+<p>The latest version of the slides will always be available at <strong><a href="https://doi.org/10.6084/m9.figshare.19416767">https://doi.org/10.6084/m9.figshare.19416767</a></strong>.</p>
 
+<p>Note that these files may include additional slides that will not be discussed during the tutorial, but questions are welcome.</p>
+
+
+<hr>
+<h2 id="how-to-participate">How to Participate</h2>
+
+<ul>
+  <li>Please use Zoom chat or unmute to ask questions at any time.  We will respond in chat or verbally as opportunities permit.</li>
+  <li>
+    <p>We will be available during the break for Q&amp;A or further discussion.</p>
+  </li>
+  <li>We have an afternoon session for the tutorial which will allow you to try the hands-on activities, ask questions from the presentations or have discussion of experiences and challenges with software development faced by participants in their own projects.</li>
+</ul>
+
+<hr>
+<h2 id="hands-on-exercises">Hands-On Exercises</h2>
+<h3 id="introduction">Introduction</h3>
+
+<p>The hands-on exercises for this tutorial are based around a simple numerical model using the one-dimensional heat equation.
+ The example is described briefly in the repository’s <a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-04-07-iss#readme">README</a> file, and in greater detail in the ATPESC <a href="https://xsdk-project.github.io/MathPackagesTraining2020/lessons/hand_coded_heat/">Hands-On lesson</a>.  The ATPESC version focuses on the numerical aspects of the model.</p>
+
+<p>But for this tutorial, we’re focused on how to make the software better from a quality perspective, so <strong>you don’t need to understand the math to do these exercises</strong>.</p>
+
+<p>For the purposes of these hands-on exercises, you should imagine you’ve inherited an early version of the hello-numerical-world software from a colleague who’s left the project, and you’ve been assigned to get it into better shape so that it can be used in the next <a href="https://extremecomputingtraining.anl.gov/">ATPESC</a> summer school.</p>
+
+<p>The repository you’ll be working with is: <strong><a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-04-07-iss">bssw-tutorial/hello-numerical-world-2022-04-07-iss</a></strong>.</p>
+
+<p><em>Note: most of the screenshots will refer to the generic “hello-numerical-world” repository rather than the one specifically for this event.</em></p>
+
+<h3 id="list-of-hands-on-exercises">List of Hands-On Exercises</h3>
+<p><em>Note that not every presentation module has exercises (yet).</em></p>
+<ul>
+  <li><strong><a href="../2022-04-07-iss/handson-m00-prerequisites.html">Setting up the Prerequisites</a>.</strong> Setup the accounts needed for these exercises.</li>
+  <li><strong><a href="../2022-04-07-iss/handson-m02-agile.html">Agile Methodologies</a>.</strong>  You’ll use GitHub issues and project boards to setup a simple “personal kanban” board.</li>
+  <li><strong><a href="../2022-04-07-iss/handson-m03-git-workflows.html">Git Workflows</a>.</strong> You’ll fork our hello-numerical-world repository, create a feature branch, and make a pull request</li>
+  <li><strong><a href="../2022-04-07-iss/handson-m08-testing.html">Software Testing</a>.</strong> You’ll use an example project to try out using test driven development to add new functionality to a project</li>
+  <li><strong><a href="../2022-04-07-iss/handson-m11-refactoring1.html">Refactoring Scientific Software</a>.</strong>  You’ll perform a small, well-defined refactoring exercise</li>
+</ul>
+
+<p>There are also activities associated with a couple of modules that we didn’t have time to cover in this tutorial.  You are welcome to try them out too.</p>
+<ul>
+  <li><strong><a href="../2022-04-07-iss/handson-m06-agile-redux.html">Agile Redux</a>.</strong>  You’ll create epic, story, and task issues for the refactoring task and track them on a kanban board</li>
+  <li><strong><a href="../2022-04-07-iss/handson-m10-continuous-integration.html">Continuous Integration</a>.</strong> You’ll establish a simple continuous integration workflow and then refine it, adding code coverage assessment</li>
+</ul>
+
+<hr>
+<h2 id="stay-in-touch">Stay in Touch</h2>
+
+<ul>
+  <li>
+    <p>After the tutorial please feel free to email questions or feedback to the BSSw tutorial team at <a href="mailto:bssw-tutorial@lists.mcs.anl.gov">bssw-tutorial@lists.mcs.anl.gov</a>.</p>
+  </li>
+  <li>
+    <p>If you want to do the <a href="#hands-on-exercises">hands-on exercises</a>, we’re happy to provide feedback on your pull requests and issues, even after the end of the tutorial.</p>
+  </li>
+  <li>
+    <p>To find out about future events organized by the IDEAS Productivity Project, you can <a href="http://eepurl.com/cQCyJ5">subscribe to our mailing list</a> (usually ~2 messages/month).</p>
+  </li>
+  <li>
+    <p>For monthly updates on the Better Scientific Software site, subscribe to our <a href="https://bssw.io/pages/receive-our-email-digest">monthly digest</a>.</p>
+  </li>
+</ul>
 
 <hr>
 <h2 id="resources-from-presentations">Resources from Presentations</h2>
@@ -390,6 +468,16 @@ The second session, 1:20pm-3:40pm MDT, will be more open-ended, depending on the
     </ul>
   </li>
 </ul>
+
+
+<hr>
+<h2 id="requested-citation">Requested Citation</h2>
+
+<p>The requested citation the overall tutorial is:</p>
+
+<p>David E. Bernholdt, Rinku K. Gupta, Patricia A. Grubel, and David M. Rogers, Better Scientific Software tutorial, in Improving Scientific Software, online, 2022. DOI: <a href="https://doi.org/10.6084/m9.figshare.19416767">10.6084/m9.figshare.19416767</a>.</p>
+
+<p>Individual modules may be cited as <em>Speaker</em>, <em>Module Title</em>, in Better Scientific Software tutorial…</p>
 
 
 <hr>
