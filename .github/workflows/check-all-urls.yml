@@ -8,6 +8,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: Read exclude-urls list
+      id: exclude
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./.github/workflows/exclude-urls.txt
+    - name: Echo exclude-urls
+      run: echo "${{ steps.exclude.outputs.content }}"
+
     - name: urls-checker
       uses: urlstechie/urlchecker-action@0.0.27
       with:
