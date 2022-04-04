@@ -15,11 +15,21 @@ jobs:
       with:
         format: 'csv'
 
+    # We maintain the list of the URLs excluded from checking in a separate file so that we can use
+    # it in multiple workflows, while easily maintaining consistency.
+    - name: Read exclude-urls list
+      id: exclude
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./.github/workflows/exclude-urls.txt
+
     # Run URL checks
     - name: URLs-checker
       uses: urlstechie/urlchecker-action@0.0.27
       with:
         # only include the changed files
         include_files: ${{ steps.files.outputs.added_modified }}
-        exclude_urls: https://en.w,https://github.com/bssw-tutorial/presentations/blob/master,https://doi.org/10.1126/science.aah6168,https://doi.org/10.1002/spe.2220
+        exclude_urls: ${{ steps.exclude.outputs.content }}
+        timeout: 10
+        retry_count: 3
         print_all: false
