@@ -1,0 +1,11 @@
+        # This file gets included into workflow YAML files to provide common configuration for the
+        # urlchecker-action.  Indentation is important to the YML structure and must be maintained
+
+        # Notes on the excluded URLs...
+        # https://en.w is an incomplete snippet of output in handson-m03-git-workflows.md
+        # https://github.com/bssw-tutorial/presentations/blob/master is a fragment used to build complete URLs in utilities.md
+        # Other entries are URLs that regularly fail (usually timeouts), though we have reason to believe
+        # they're actually okay (that's why we prefer DOI URLs where they're available).
+        exclude_urls: https://en.w,https://github.com/bssw-tutorial/presentations/blob/master,https://doi.org/10.1002/spe.2220,https://doi.org/10.1126/science.aah6168,https://doi.org/10.2172/1481626,https://doi.org/10.2172/1606662
+        timeout: 10
+        retry_count: 3
