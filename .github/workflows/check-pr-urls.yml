@@ -29,6 +29,7 @@ jobs:
       with:
         # only include the changed files
         include_files: ${{ steps.files.outputs.added_modified }}
+        # Use common exclude list read in above
         exclude_urls: ${{ steps.exclude.outputs.content }}
         timeout: 10
         retry_count: 3
