@@ -17,19 +17,11 @@ jobs:
       with:
         path: ./.github/workflows/exclude-urls.txt
 
-    # Several workflows are using urlchecker-action, so we have refactored common configuration
-    # elements into a separate file to simplify maintenance.
-    - name: Read urlchecker common configuration
-      id: config
-      uses: juliangruber/read-file-action@v1
-      with:
-        path: ./.github/workflows/urlchecker-config.txt
-    - name: Echo urlchecker common configuration
-      run: echo "${{ steps.config.outputs.content }}"
-
-
     - name: urls-checker
       uses: urlstechie/urlchecker-action@0.0.27
       with:
-        # Use common configuration read in above
-        ${{ steps.config.outputs.content }}
+        # Use common exclude list read in above
+        ${{ steps.exclude.outputs.content }}
+        timeout: 10
+        retry_count: 3
+        print_all: false
