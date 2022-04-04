@@ -27,7 +27,7 @@ The repository link will be published shortly before the event.  Please check ba
 *Note that not every presentation module has exercises (yet).*
   * **[Setting up the Prerequisites](../{{ page.event-label }}/handson-m00-prerequisites.html).** Setup the accounts needed for these exercises.
   * **[Agile Methodologies](../{{ page.event-label }}/handson-m02-agile.html).**  You'll use GitHub issues and project boards to setup a simple "personal kanban" board.
-  * **[Git Workflows](../{{ page.event-label }}/handson-m03-git-workflows.html).** You'll fork our hello-numerical-world repository, create a feature branch, and make a pull request
+  * **[Basic Git for Collaboration](../{{ page.event-label }}/handson-m03-git-workflows.html).** You'll fork our hello-numerical-world repository, create a feature branch, and make a pull request
   * **[Software Testing](../{{ page.event-label }}/handson-m08-testing.html).** You'll use an example project to try out using test driven development to add new functionality to a project
   * **[Refactoring Scientific Software](../{{ page.event-label }}/handson-m11-refactoring1.html).**  You'll perform a small, well-defined refactoring exercise
 
