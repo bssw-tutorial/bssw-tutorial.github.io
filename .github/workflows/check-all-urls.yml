@@ -21,7 +21,7 @@ jobs:
       uses: urlstechie/urlchecker-action@0.0.27
       with:
         # Use common exclude list read in above
-        ${{ steps.exclude.outputs.content }}
+        exclude_urls: ${{ steps.exclude.outputs.content }}
         timeout: 10
         retry_count: 3
         print_all: false
