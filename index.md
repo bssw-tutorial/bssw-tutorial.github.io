@@ -9,14 +9,27 @@ We first presented a version of this tutorial in 2016, and since then we have be
 
 In the listings below, each tutorial event has its own page, providing details specific to that tutorial, including agenda, presentations, hands-on activities, and other resources.  Quick links are also provided to key tutorial artifacts, where available.
 
-{%- assign today = 'now' | date: "%s" | plus: 0 -%}
+{% comment %}
+  Break up events into three groups: scheduled, planned, and past.
+  The master list of tutorials (site.data.tutorials) indicates whether they are scheduled or planned.
+  The end date of scheduled tutorials (compared to date at build time) determines whether they are past.
+  Events that don't have an explicit end-date entry are assumed to occur in a single day, so use date entry instead.
+{% endcomment %}
+{%- assign today = 'now' | date: "%s" | plus: 0 -%}  
+{% comment %}today = {{ today }} = {{ today | date: "%Y-%m-%d" }}{% endcomment %}
 {%- assign scheduled = "" | split: "," -%}
 {%- assign planned = "" | split: "," -%}
 {%- assign past = "" | split: "," -%}
 {%- for t in site.data.tutorials -%}
     {%- assign my-event = site.data.bsswt[t.event-label].event -%}
-    {%- assign when = my-event.date | date: "%s" | plus: 86400 -%}
+    {%- if my-event.end-date -%}
+      {%- assign when = my-event.end-date | date: "%s" | plus: 86400 -%}
+    {%- else -%}
+       {%- assign when = my-event.date | date: "%s" | plus: 86400 -%}
+    {%- endif -%}
+    {% comment %} value is for sorting and is always based on *start* date {% endcomment %}
     {%- assign value = my-event.date | append: "," | append: t.event-label -%}
+    {%comment %}{{ t.event-label }} : when = {{ when | date: "%Y-%m-%d" }} = {{ when }}{% endcomment %}
     {%- if when < today -%}
         {%- assign past = past | push: value -%}
     {%- elsif t.status == "scheduled" -%}
