@@ -32,4 +32,4 @@ jobs:
       uses: urlstechie/urlchecker-action@0.0.27
       with:
         # Use common configuration read in above
-${{ steps.config.outputs.content }}
+        ${{ steps.config.outputs.content }}
