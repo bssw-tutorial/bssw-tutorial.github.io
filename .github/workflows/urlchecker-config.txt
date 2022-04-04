@@ -1,4 +1,4 @@
-        exclude_urls: https://en.w,https://github.com/bssw-tutorial/presentations/blob/master,https://doi.org/10.1002/spe.2220,https://doi.org/10.1126/science.aah6168,https://doi.org/10.2172/1481626,https://doi.org/10.2172/1606662
+exclude_urls: https://en.w,https://github.com/bssw-tutorial/presentations/blob/master,https://doi.org/10.1002/spe.2220,https://doi.org/10.1126/science.aah6168,https://doi.org/10.2172/1481626,https://doi.org/10.2172/1606662
         timeout: 10
         retry_count: 3
         print_all: false
