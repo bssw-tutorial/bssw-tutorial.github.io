@@ -25,7 +25,7 @@ jobs:
       with:
         path: ./.github/workflows/urlchecker-config.txt
     - name: Echo urlchecker common configuration
-      run: echo "${{ steps.package.outputs.content }}"
+      run: echo "${{ steps.config.outputs.content }}"
 
 
     - name: urls-checker
