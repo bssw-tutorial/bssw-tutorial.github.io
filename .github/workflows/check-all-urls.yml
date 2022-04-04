@@ -9,13 +9,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    # We maintain the list of the URLs excluded from checking in a separate file so that we can use
+    # it in multiple workflows, while easily maintaining consistency.
     - name: Read exclude-urls list
       id: exclude
       uses: juliangruber/read-file-action@v1
       with:
         path: ./.github/workflows/exclude-urls.txt
-    - name: Echo exclude-urls
-      run: echo "${{ steps.exclude.outputs.content }}"
 
     - name: urls-checker
       uses: urlstechie/urlchecker-action@0.0.27
@@ -23,12 +23,13 @@ jobs:
         # A comma-separated list of file types to cover in the URL checks
         file_types: .md
 
-        # Need to exclude a few things
+        # The excluded URLs are managed in a separate file. See above.
+        # Since we can't comment in that file (due to limitations of the process), some notes here...
         # https://en.w is an incomplete snippet of output in handson-m03-git-workflows.md
         # https://github.com/bssw-tutorial/presentations/blob/master is asigned to a variable used to build complete URLs in utilities.md
-        # https://doi.org/10.1126/science.aah6168 is a resource which consistently fails, probably due to response time.  As a DOI, it should be quite reliable.
-        # https://doi.org/10.1002/spe.2220 is a resource which consistently fails, probably due to response time.  As a DOI, it should be quite reliable
-        exclude_urls: https://en.w,https://github.com/bssw-tutorial/presentations/blob/master,https://doi.org/10.1126/science.aah6168,https://doi.org/10.1002/spe.2220
+        # Other entries are URLs that regularly fail (usually timeouts), though we have reason to believe
+        # they're actually okay (that's why we prefer DOI URLs where they're available).
+        exclude_urls: ${{ steps.exclude.outputs.content }}
         
         # Choose whether to include file with no URLs in the prints.
         print_all: false
