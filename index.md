@@ -16,20 +16,24 @@ In the listings below, each tutorial event has its own page, providing details s
   Events that don't have an explicit end-date entry are assumed to occur in a single day, so use date entry instead.
 {% endcomment %}
 {%- assign today = 'now' | date: "%s" | plus: 0 -%}  
-{% comment %}today = {{ today }} = {{ today | date: "%Y-%m-%d" }}{% endcomment %}
 {%- assign scheduled = "" | split: "," -%}
 {%- assign planned = "" | split: "," -%}
 {%- assign past = "" | split: "," -%}
 {%- for t in site.data.tutorials -%}
     {%- assign my-event = site.data.bsswt[t.event-label].event -%}
     {%- if my-event.end-date -%}
-      {%- assign when = my-event.end-date | date: "%s" | plus: 86400 -%}
+      {%- assign when = my-event.end-date | date: "%s" -%}
     {%- else -%}
-       {%- assign when = my-event.date | date: "%s" | plus: 86400 -%}
+       {%- assign when = my-event.date | date: "%s" -%}
     {%- endif -%}
+    {% comment %} 
+      The timestamp returned will be 12:00:00am UTC. We need to shift to 11:59:59pm AOE. 
+      So add 23:59:59 + 12:00:00 to it.  86400 seconder per day.
+    {% endcomment %}
+    {%- assign when = when | plus: 86399 | plus: 43200 -%}
+      
     {% comment %} value is for sorting and is always based on *start* date {% endcomment %}
     {%- assign value = my-event.date | append: "," | append: t.event-label -%}
-    {%comment %}{{ t.event-label }} : when = {{ when | date: "%Y-%m-%d" }} = {{ when }}{% endcomment %}
     {%- if when < today -%}
         {%- assign past = past | push: value -%}
     {%- elsif t.status == "scheduled" -%}
