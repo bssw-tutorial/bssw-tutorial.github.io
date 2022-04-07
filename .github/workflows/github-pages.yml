@@ -1,14 +1,15 @@
 name: Build and deploy jekyll site
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
-      # - source
-      # It is highly recommended that you only run this action on push to a
-      # specific branch, eg. master or source (if on *.github.io repo)
-  workflow_dispatch:
-  
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    #         m  h d M w
+    - cron:  '1 12 * * *' # 12:01 pm UTC = 12:01am AOE
+
 jobs:
   jekyll:
     runs-on: ubuntu-latest # can change this to ubuntu-latest if you prefer
