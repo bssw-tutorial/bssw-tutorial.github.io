@@ -119,3 +119,11 @@ github-url: https://github.com
 # Base URLs for watching and embedding YouTube videos
 youtube-watch-url: https://www.youtube.com/watch?v=
 youtube-embed-url: https://www.youtube.com/embed/
+
+# GH repository base URLs for tutorial development repos
+ghr-presentations: https://github.com/bssw-tutorial/presentations
+ghr-management: https://github.com/bssw-tutorial/tutorial-management
+ghr-handson: https://github.com/bssw-tutorial/hello-numerical-world
+
+# IDEAS Productivity project website URL
+ideas-url: https://ideas-productivity.org

@@ -8,5 +8,40 @@ venue: "Exascale Computing Project Annual Meeting"
 venue-type: "meeting"
 venue-url: https://ecpannualmeeting.com/
 location: "online"
+organizer-ids: [bernhold]
 presenter-ids: [jarrah42, frobnitzem]
 helper-ids: [bernhold]
+#
+# This is a standard collection of deadlines we've encountered historically
+# Add due dates where appropriate. Those without will be ignored
+# Responsible refers to the (set of) github ids that will be assigned to
+# generated issues. Usually these are organizer-ids, presenter-ids, or
+# helper-ids as set above.  "by-presentation" is a special value indicating
+# that responsibilities should be assigned based on the presenters liseted
+# in the agenda.
+#
+deadlines:
+  - label: internal-presentations
+    due: 2022-04-27
+    responsible: [by-presentation]
+  - label: internal-resource-links
+    due: 
+    responsible: [by-presentation]
+  - label: venue-initial-presentations
+    due: 
+    responsible: [organizer-ids]
+  - label: venue-final-presentations
+    due: 2022-04-28
+    responsible: [organizer-ids]
+  - label: internal-consents
+    due:
+    responsible: [presenter-ids, helper-ids]
+  - label: venue-consents
+    due: 
+    responsible: [organizer-ids]
+  - label: internal-recordings
+    due: 
+    responsible: [by-presentation]
+  - label: venue-recordings
+    due: 
+    responsible: [organizer-ids]
