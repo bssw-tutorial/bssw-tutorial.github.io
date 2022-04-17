@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Hands-On Exercise 11: Refactoring | Better Scientific Software Tutorial</title>
-<meta name="generator" content="Jekyll v4.0.1" />
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Hands-On Exercise 11: Refactoring" />
 <meta name="author" content="IDEAS Productivity Project" />
 <meta property="og:locale" content="en_US" />
@@ -13,10 +13,11 @@
 <link rel="canonical" href="https://bssw-tutorial.github.io/2021-06-24-isc/handson-m11-refactoring1.html" />
 <meta property="og:url" content="https://bssw-tutorial.github.io/2021-06-24-isc/handson-m11-refactoring1.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Hands-On Exercise 11: Refactoring" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 11: Refactoring","dateModified":"2022-04-07T19:49:26-04:00","url":"https://bssw-tutorial.github.io/2021-06-24-isc/handson-m11-refactoring1.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-17T11:40:25-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 11: Refactoring","url":"https://bssw-tutorial.github.io/2021-06-24-isc/handson-m11-refactoring1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -82,9 +83,9 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
     <ul>
       <li>The files relevant to this exercise are:
         <ul>
-          <li>Header files: <code class="highlighter-rouge">Double.H</code>, <code class="highlighter-rouge">heat.H</code></li>
-          <li>Source file: <code class="highlighter-rouge">args.C</code>, <code class="highlighter-rouge">crankn.C</code>, <code class="highlighter-rouge">exact.C</code>, <code class="highlighter-rouge">ftcs.C</code>, <code class="highlighter-rouge">heat.C</code>, <code class="highlighter-rouge">upwind15.C</code>, <code class="highlighter-rouge">utils.C</code></li>
-          <li>Build file: <code class="highlighter-rouge">makefile</code></li>
+          <li>Header files: <code class="language-plaintext highlighter-rouge">Double.H</code>, <code class="language-plaintext highlighter-rouge">heat.H</code></li>
+          <li>Source file: <code class="language-plaintext highlighter-rouge">args.C</code>, <code class="language-plaintext highlighter-rouge">crankn.C</code>, <code class="language-plaintext highlighter-rouge">exact.C</code>, <code class="language-plaintext highlighter-rouge">ftcs.C</code>, <code class="language-plaintext highlighter-rouge">heat.C</code>, <code class="language-plaintext highlighter-rouge">upwind15.C</code>, <code class="language-plaintext highlighter-rouge">utils.C</code></li>
+          <li>Build file: <code class="language-plaintext highlighter-rouge">makefile</code></li>
         </ul>
       </li>
     </ul>
@@ -101,14 +102,14 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <h3 id="instructions">Instructions</h3>
 
-<p>The code currently has three different finite-difference schemes to update the solution to the heat equation: <code class="highlighter-rouge">crankn</code> (Crank-Nicolson), <code class="highlighter-rouge">ftcs</code> (forward-time central-space), and <code class="highlighter-rouge">upwind15</code> (upwind).  We’d like the code to be more flexible so that other approaches can be added to update the solution without having to modify the main heat equation driver every time.  More specifically, the <code class="highlighter-rouge">update_solution</code> interface needs to be generalized.</p>
+<p>The code currently has three different finite-difference schemes to update the solution to the heat equation: <code class="language-plaintext highlighter-rouge">crankn</code> (Crank-Nicolson), <code class="language-plaintext highlighter-rouge">ftcs</code> (forward-time central-space), and <code class="language-plaintext highlighter-rouge">upwind15</code> (upwind).  We’d like the code to be more flexible so that other approaches can be added to update the solution without having to modify the main heat equation driver every time.  More specifically, the <code class="language-plaintext highlighter-rouge">update_solution</code> interface needs to be generalized.</p>
 
 <h4 id="baselining-the-existing-application">Baselining the Existing Application</h4>
 <p>All refactoring exercises should begin by checking the test coverage for the part of the code you’ll be working on and gathering baseline results with the original code.</p>
 
-<p><strong>Step 1.</strong> In your working copy of the repository, in the <code class="highlighter-rouge">makefile</code>, add the <code class="highlighter-rouge">-coverage</code> flag to the rules to generate object files and to link the final <code class="highlighter-rouge">heat</code> application.</p>
+<p><strong>Step 1.</strong> In your working copy of the repository, in the <code class="language-plaintext highlighter-rouge">makefile</code>, add the <code class="language-plaintext highlighter-rouge">-coverage</code> flag to the rules to generate object files and to link the final <code class="language-plaintext highlighter-rouge">heat</code> application.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Implicit rule for object files
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Implicit rule for object files
 %.o : %.C
 	$(CXX) -coverage -c $(CXXFLAGS) $(CPPFLAGS) $&lt; -o $@
 
@@ -117,26 +118,26 @@ heat: $(OBJ)
 	$(CXX) -coverage -o heat $(OBJ) $(LDFLAGS) -lm
 </code></pre></div></div>
 
-<p>then build the <code class="highlighter-rouge">heat</code> application by typing  <code class="highlighter-rouge">make</code>.</p>
+<p>then build the <code class="language-plaintext highlighter-rouge">heat</code> application by typing  <code class="language-plaintext highlighter-rouge">make</code>.</p>
 
 <p><strong>Step 2.</strong> Run</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heat runame="ftcs_results"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heat runame="ftcs_results"
 gcov heat.C
 cp heat.C.gcov heat-ftcs.C.gcov
 </code></pre></div></div>
 
-<p>and examine the resulting <code class="highlighter-rouge">heat-ftcs.C.gcov</code> file.  The output of gcov is a listing of the code annotated on the left with the following notations:</p>
+<p>and examine the resulting <code class="language-plaintext highlighter-rouge">heat-ftcs.C.gcov</code> file.  The output of gcov is a listing of the code annotated on the left with the following notations:</p>
 <ul>
   <li>a dash indicates a non-executable line,</li>
   <li>a number indicates the number of time the line was executed, and</li>
   <li>hash marks (“#####”) indicate that the line was <em>never</em> exercised.
-You’ll notice that the calls to the <code class="highlighter-rouge">update_solution_upwind15</code> and <code class="highlighter-rouge">update_solution_crankn</code> routines were never exercised.</li>
+You’ll notice that the calls to the <code class="language-plaintext highlighter-rouge">update_solution_upwind15</code> and <code class="language-plaintext highlighter-rouge">update_solution_crankn</code> routines were never exercised.</li>
 </ul>
 
 <p><strong>Step 3.</strong> Collect coverage and baseline results for the other update schemes.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heat alg="upwind15" runame="upwind_results"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heat alg="upwind15" runame="upwind_results"
 gcov heat.C
 cp heat.C.gcov heat-upwind15.C.gcov
 
@@ -153,17 +154,17 @@ cp heat.C.gcov heat-crankn.C.gcov
 
 <p><em>Note: This is admittedly a somewhat contrived scenario, but it has the virtue of being fairly localized and easy to explain.</em></p>
 
-<p><strong>Step 4.</strong> Open <code class="highlighter-rouge">heat.C</code> in an editor and locate the interface declarations: <code class="highlighter-rouge">update_solution_ftcs</code>, <code class="highlighter-rouge">update_solution_upwind15</code>, and <code class="highlighter-rouge">update_solution_crankn</code> (L64-80). Note that the three interfaces are similar, but not identical. Specifically, the Crank-Nicolson routine takes different arguments.</p>
+<p><strong>Step 4.</strong> Open <code class="language-plaintext highlighter-rouge">heat.C</code> in an editor and locate the interface declarations: <code class="language-plaintext highlighter-rouge">update_solution_ftcs</code>, <code class="language-plaintext highlighter-rouge">update_solution_upwind15</code>, and <code class="language-plaintext highlighter-rouge">update_solution_crankn</code> (L64-80). Note that the three interfaces are similar, but not identical. Specifically, the Crank-Nicolson routine takes different arguments.</p>
 
-<p>In <code class="highlighter-rouge">heat.C</code> find the <code class="highlighter-rouge">update_solution</code> routine that calls the three specific routines above (L143).  Note the branches based on string comparisons (slow, in performance-sensitive situations).</p>
+<p>In <code class="language-plaintext highlighter-rouge">heat.C</code> find the <code class="language-plaintext highlighter-rouge">update_solution</code> routine that calls the three specific routines above (L143).  Note the branches based on string comparisons (slow, in performance-sensitive situations).</p>
 
-<p>If you look at the implementations of the three updaters, in the files <code class="highlighter-rouge">ftcs.C</code>, <code class="highlighter-rouge">upwind15.C</code>, and <code class="highlighter-rouge">crankn.C</code>, you may notice that <code class="highlighter-rouge">crankn.C</code> also contains a second routine, <code class="highlighter-rouge">initialize_crankn</code>, with no analog in the other two files.  In the <code class="highlighter-rouge">initialize</code> routine in <code class="highlighter-rouge">heat.C</code> you can identify the call site for <code class="highlighter-rouge">initialize_crankn</code> (L106) and verify that there is no equivalent initialization step for the other two schemes.</p>
+<p>If you look at the implementations of the three updaters, in the files <code class="language-plaintext highlighter-rouge">ftcs.C</code>, <code class="language-plaintext highlighter-rouge">upwind15.C</code>, and <code class="language-plaintext highlighter-rouge">crankn.C</code>, you may notice that <code class="language-plaintext highlighter-rouge">crankn.C</code> also contains a second routine, <code class="language-plaintext highlighter-rouge">initialize_crankn</code>, with no analog in the other two files.  In the <code class="language-plaintext highlighter-rouge">initialize</code> routine in <code class="language-plaintext highlighter-rouge">heat.C</code> you can identify the call site for <code class="language-plaintext highlighter-rouge">initialize_crankn</code> (L106) and verify that there is no equivalent initialization step for the other two schemes.</p>
 
 <h4 id="carrying-out-the-refactoring">Carrying out the Refactoring</h4>
 
-<p><strong>Step 5.</strong> First, we need to define a new generalized interface to the updaters that will work for all of them, which we’ll call, simply <code class="highlighter-rouge">update_solution</code>.  So replace the original interface declarations (L64-80) with a single declaration, for <code class="highlighter-rouge">update_solution</code> that takes the union of the arguments required by the three updaters.</p>
+<p><strong>Step 5.</strong> First, we need to define a new generalized interface to the updaters that will work for all of them, which we’ll call, simply <code class="language-plaintext highlighter-rouge">update_solution</code>.  So replace the original interface declarations (L64-80) with a single declaration, for <code class="language-plaintext highlighter-rouge">update_solution</code> that takes the union of the arguments required by the three updaters.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extern bool
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extern bool
 update_solution(int n,
 	Double *curr, Double const *last,
 	Double alpha, Double dx, Double dt,
@@ -171,15 +172,15 @@ update_solution(int n,
 	Double bc_0, Double bc_1);
 </code></pre></div></div>
 
-<p>and remove the old implementation of <code class="highlighter-rouge">update_solution</code>.</p>
+<p>and remove the old implementation of <code class="language-plaintext highlighter-rouge">update_solution</code>.</p>
 
 <p><strong>Step 6.</strong> Next, we need to change the implementations of the updaters to use the new interface (variables in the interface which are not used in the update scheme can simply be ignored).  Since we’re going to end up with the same routine name in three different files, it might be helpful to our “future selves” to add comments to identify which finite-difference scheme each one implements, in case someone changes the names of the files.</p>
 
-<p><strong>Step 7.</strong> We also need to deal with <code class="highlighter-rouge">initialize_crankn</code>.  Since we’re not going to be passing arguments in at run time to select the finite-difference scheme, we need to get rid of the <code class="highlighter-rouge">if</code> test that protects its invocation in <code class="highlighter-rouge">heat.C</code>.</p>
+<p><strong>Step 7.</strong> We also need to deal with <code class="language-plaintext highlighter-rouge">initialize_crankn</code>.  Since we’re not going to be passing arguments in at run time to select the finite-difference scheme, we need to get rid of the <code class="language-plaintext highlighter-rouge">if</code> test that protects its invocation in <code class="language-plaintext highlighter-rouge">heat.C</code>.</p>
 
-<p>But now we need to ensure that the dependency is satisfied no matter which updater is linked into the application.  So we need to add null implementations of <code class="highlighter-rouge">initialize_crankn</code> to the <code class="highlighter-rouge">ftcs.C</code> and <code class="highlighter-rouge">upwind15.C</code> files to satisfy that dependency. It is not necessary to generalize the name, but it is probably a good idea to add comments explaining why a do-nothing routine with a name that implies association with the Crank-Nicolson method appears in the file implementing the upwind scheme, for example.</p>
+<p>But now we need to ensure that the dependency is satisfied no matter which updater is linked into the application.  So we need to add null implementations of <code class="language-plaintext highlighter-rouge">initialize_crankn</code> to the <code class="language-plaintext highlighter-rouge">ftcs.C</code> and <code class="language-plaintext highlighter-rouge">upwind15.C</code> files to satisfy that dependency. It is not necessary to generalize the name, but it is probably a good idea to add comments explaining why a do-nothing routine with a name that implies association with the Crank-Nicolson method appears in the file implementing the upwind scheme, for example.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void
 initialize_crankn(init n,
 	Double alpha, Double dx, Double dt,
 	Double **cn_Amat)
@@ -187,9 +188,9 @@ initialize_crankn(init n,
 }
 </code></pre></div></div>
 
-<p><strong>Step 8.</strong> Finally, we need to modify the <code class="highlighter-rouge">makefile</code> to generate three different versions of the executable by linking against the three different updaters. <em>Note: this solution is not elegant, but it is functional.</em></p>
+<p><strong>Step 8.</strong> Finally, we need to modify the <code class="language-plaintext highlighter-rouge">makefile</code> to generate three different versions of the executable by linking against the three different updaters. <em>Note: this solution is not elegant, but it is functional.</em></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HDR = Double.H
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HDR = Double.H
 SRC1 = heat.C utils.C args.C exact.C ftcs.C
 SRC2 = heat.C utils.C args.C exact.C upwind15.C
 SRC3 = heat.C utils.C args.C exact.C crankn.C
@@ -206,14 +207,14 @@ EXE3 = heat3
 
 <p>and build all three versions of the application by running</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make heat1 heat2 heat3
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make heat1 heat2 heat3
 </code></pre></div></div>
 
 <h3 id="verifying-your-work">Verifying Your Work</h3>
 
 <p><strong>Step 9.</strong> In this case, the changes that you’ve made to the code should not change the computed results at all.  Verify this by running the new codes and comparing against the baseline results that you collected earlier.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heat1 runame=“new_ftcs_results”
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./heat1 runame=“new_ftcs_results”
 ./heat2 runame=“new_upwind_results”
 ./heat3 runame=“new_crankn_results”
 </code></pre></div></div>
@@ -233,8 +234,8 @@ EXE3 = heat3
     <ul>
       <li>The files relevant to this exercise are:
         <ul>
-          <li>Header files: <code class="highlighter-rouge">Double.H</code>, <code class="highlighter-rouge">heat.H</code></li>
-          <li>Source file: <code class="highlighter-rouge">heatAll.C</code></li>
+          <li>Header files: <code class="language-plaintext highlighter-rouge">Double.H</code>, <code class="language-plaintext highlighter-rouge">heat.H</code></li>
+          <li>Source file: <code class="language-plaintext highlighter-rouge">heatAll.C</code></li>
         </ul>
       </li>
     </ul>
@@ -247,25 +248,25 @@ EXE3 = heat3
 </ul>
 
 <h3 id="background-1">Background</h3>
-<p>The code you worked with in <a href="#part-1-add-a-new-integration-method">Part 1</a> was reasonably well structured.  But it didn’t necessarily start out that way.  This exercise takes a step further back in time.  Suppose you’ve just inherited the code <code class="highlighter-rouge">heatAll.C</code> from a colleague who’s left the project.  You don’t even have a <code class="highlighter-rouge">makefile</code>! Your task is to take that original, poorly structured code into a cleaner, more reusable version.  The version of the heat equation code that you worked with in Part 1 is one possible solution to this task.  But the real point of this exercise is to go through the process yourself to decide how to restructure the code to get the results you (or your boss) want.</p>
+<p>The code you worked with in <a href="#part-1-add-a-new-integration-method">Part 1</a> was reasonably well structured.  But it didn’t necessarily start out that way.  This exercise takes a step further back in time.  Suppose you’ve just inherited the code <code class="language-plaintext highlighter-rouge">heatAll.C</code> from a colleague who’s left the project.  You don’t even have a <code class="language-plaintext highlighter-rouge">makefile</code>! Your task is to take that original, poorly structured code into a cleaner, more reusable version.  The version of the heat equation code that you worked with in Part 1 is one possible solution to this task.  But the real point of this exercise is to go through the process yourself to decide how to restructure the code to get the results you (or your boss) want.</p>
 
 <h3 id="instructions-1">Instructions</h3>
 
-<p><strong>Step 1.</strong> Create a new directory and copy <code class="highlighter-rouge">heatAll.C</code> into it. This will be your working area. Work in tandem with Part 1 to plan and track your work.</p>
+<p><strong>Step 1.</strong> Create a new directory and copy <code class="language-plaintext highlighter-rouge">heatAll.C</code> into it. This will be your working area. Work in tandem with Part 1 to plan and track your work.</p>
 
-<p><strong>Step 2.</strong> Create a <code class="highlighter-rouge">makefile</code> to build an executable from <code class="highlighter-rouge">heatAll.C</code>.  If you’re not that familiar with makefiles, you might want to adapt the one in the main directory.  In this case all of the code is in the single file <code class="highlighter-rouge">heatAll.C</code>. Add the <code class="highlighter-rouge">-coverage</code> flag you used in the previous exercise.</p>
+<p><strong>Step 2.</strong> Create a <code class="language-plaintext highlighter-rouge">makefile</code> to build an executable from <code class="language-plaintext highlighter-rouge">heatAll.C</code>.  If you’re not that familiar with makefiles, you might want to adapt the one in the main directory.  In this case all of the code is in the single file <code class="language-plaintext highlighter-rouge">heatAll.C</code>. Add the <code class="language-plaintext highlighter-rouge">-coverage</code> flag you used in the previous exercise.</p>
 
 <p><strong>Step 3.</strong> Run the executable with various permutations of input arguments, saving each output as a baseline for comparison until you have 100% coverage.</p>
 
 <p><strong>Step 4.</strong> Make a decision about how many files you wish to split the code into.</p>
 
-<p>A good rule of thumb is to start with a different file for each category of functions. An example would be to create an <code class="highlighter-rouge">integrate.C</code>, a <code class="highlighter-rouge">utils.C</code> and a <code class="highlighter-rouge">main.C</code> to which you copy from <code class="highlighter-rouge">heatAll.C</code> functions that belong in each category.</p>
+<p>A good rule of thumb is to start with a different file for each category of functions. An example would be to create an <code class="language-plaintext highlighter-rouge">integrate.C</code>, a <code class="language-plaintext highlighter-rouge">utils.C</code> and a <code class="language-plaintext highlighter-rouge">main.C</code> to which you copy from <code class="language-plaintext highlighter-rouge">heatAll.C</code> functions that belong in each category.</p>
 
-<p><strong>Step 5.</strong> Make a decision about which variable and constants you wish to have available globally and which you wish to keep local. Create <code class="highlighter-rouge">.H</code> files for global variables.</p>
+<p><strong>Step 5.</strong> Make a decision about which variable and constants you wish to have available globally and which you wish to keep local. Create <code class="language-plaintext highlighter-rouge">.H</code> files for global variables.</p>
 
-<p><strong>Step 6.</strong> In each of the new <code class="highlighter-rouge">.C</code> file add <code class="highlighter-rouge">extern</code> interfaces for functions that are not in the same file, and <code class="highlighter-rouge">include</code> statements for any header files you might wish to include.</p>
+<p><strong>Step 6.</strong> In each of the new <code class="language-plaintext highlighter-rouge">.C</code> file add <code class="language-plaintext highlighter-rouge">extern</code> interfaces for functions that are not in the same file, and <code class="language-plaintext highlighter-rouge">include</code> statements for any header files you might wish to include.</p>
 
-<p><strong>Step 7.</strong> In the <code class="highlighter-rouge">makefile</code> replace existing filenames with the ones you have just created.</p>
+<p><strong>Step 7.</strong> In the <code class="language-plaintext highlighter-rouge">makefile</code> replace existing filenames with the ones you have just created.</p>
 
 <p><strong>Step 8.</strong> Compile and execute the refactored code in all permutations used in step 3 and verify against the corresponding baselines. If you are happy with the modularity of your refactored code you are done. If you wish to further modularize repeat steps 3-8 until you have the achieved your refactoring objectives.</p>
 

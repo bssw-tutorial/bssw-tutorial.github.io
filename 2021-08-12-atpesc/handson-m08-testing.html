@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Hands-On Exercise 8: Testing Walk-Through | Better Scientific Software Tutorial</title>
-<meta name="generator" content="Jekyll v4.0.1" />
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Hands-On Exercise 8: Testing Walk-Through" />
 <meta name="author" content="IDEAS Productivity Project" />
 <meta property="og:locale" content="en_US" />
@@ -13,10 +13,11 @@
 <link rel="canonical" href="https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m08-testing.html" />
 <meta property="og:url" content="https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m08-testing.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Hands-On Exercise 8: Testing Walk-Through" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 8: Testing Walk-Through","dateModified":"2022-04-07T19:49:26-04:00","url":"https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m08-testing.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-17T11:40:25-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 8: Testing Walk-Through","url":"https://bssw-tutorial.github.io/2021-08-12-atpesc/handson-m08-testing.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -103,8 +104,8 @@ those available by manually setting make-variables.</p>
 external library detection, code generation,
 and configurable options.
 Cross-platform compatibility is achieved by
-associating attributes (e.g. <code class="highlighter-rouge">target_link_libraries</code>) with
-targets and features (e.g. <code class="highlighter-rouge">fortran_std_08</code>) with source files.
+associating attributes (e.g. <code class="language-plaintext highlighter-rouge">target_link_libraries</code>) with
+targets and features (e.g. <code class="language-plaintext highlighter-rouge">fortran_std_08</code>) with source files.
 CMake translates those attributes into
 build-flags and build programs instead of
 directly setting them.
@@ -128,19 +129,19 @@ devoted to testing.</p>
 
 <p>When contemplating any changes, it’s good practice to
 finish what you’re doing and start a new branch.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
 </code></pre></div></div>
 
 <p>If this shows changes, save them to a temporary branch.
 If not, skip these three commands:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b working
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b working
 git commit -am "stashing some works in progress"
 git checkout main
 </code></pre></div></div>
 
 <p>Now that you’re on a clean copy of the main branch, create
 a branch to write cmake changes into</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b cmake
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b cmake
 make check
 make clean
 git status
@@ -153,8 +154,8 @@ you’re free to delete or leave them there and ignore them.</p>
 
 <p><strong>Step 2.</strong> create a CMakeLists.txt</p>
 
-<p>Create a <code class="highlighter-rouge">CMakeLists.txt</code> file and type in the following:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 3.8)
+<p>Create a <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code> file and type in the following:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 3.8)
 
 project(heat VERSION 0.1 LANGUAGES CXX)
 
@@ -174,62 +175,62 @@ install(TARGETS heat DESTINATION bin)
 
 <ol>
   <li>
-    <p><code class="highlighter-rouge">cmake_minimum_required</code> – setting the minimum cmake version required to understand this <code class="highlighter-rouge">CMakeLists.txt</code>.
+    <p><code class="language-plaintext highlighter-rouge">cmake_minimum_required</code> – setting the minimum cmake version required to understand this <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>.
 As you add cmake features, you should check when cmake introduced them.
 Obviously, you should increase the required version if the features are only available in newer cmake versions.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">project</code> – setting the <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_PROJECT_NAME.html"><code class="highlighter-rouge">${CMAKE_PROJECT_NAME}</code></a> and <a href="https://cmake.org/cmake/help/latest/variable/PROJECT-NAME_VERSION_MAJOR.html"><code class="highlighter-rouge">${HEAT_VERSION_MAJOR}</code></a>/MINOR/PATCH variables.</p>
+    <p><code class="language-plaintext highlighter-rouge">project</code> – setting the <a href="https://cmake.org/cmake/help/latest/variable/CMAKE_PROJECT_NAME.html"><code class="language-plaintext highlighter-rouge">${CMAKE_PROJECT_NAME}</code></a> and <a href="https://cmake.org/cmake/help/latest/variable/PROJECT-NAME_VERSION_MAJOR.html"><code class="language-plaintext highlighter-rouge">${HEAT_VERSION_MAJOR}</code></a>/MINOR/PATCH variables.</p>
   </li>
 </ol>
 
-<p>The next three lines declare an executable target, <code class="highlighter-rouge">heat</code>, add a feature to it,
-and create a rule for installing it to <code class="highlighter-rouge">bin</code>.</p>
+<p>The next three lines declare an executable target, <code class="language-plaintext highlighter-rouge">heat</code>, add a feature to it,
+and create a rule for installing it to <code class="language-plaintext highlighter-rouge">bin</code>.</p>
 
 <p><strong>Step 3.</strong> build with CMakeLists.txt</p>
 
-<p>For the purpose of building, it’s helpful to maintain a <code class="highlighter-rouge">build.sh</code> script that
+<p>For the purpose of building, it’s helpful to maintain a <code class="language-plaintext highlighter-rouge">build.sh</code> script that
 does the following,</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
 
-<span class="nv">inst</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">/inst"</span>
+inst="$PWD/inst"
 
-<span class="nb">mkdir</span> <span class="nt">-p</span> build
-<span class="nb">cd </span>build
-cmake <span class="nt">-DCMAKE_INSTALL_PREFIX</span><span class="o">=</span><span class="nv">$inst</span> ..
-make <span class="nt">-j</span>
-make <span class="nb">install</span>
+mkdir -p build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=$inst ..
+make -j
+make install
 </code></pre></div></div>
 
 <p>These steps create a build subdirectory, run cmake, make, and make install from it.
-The install directory is set locally as well as <code class="highlighter-rouge">inst</code> within the source directory.
+The install directory is set locally as well as <code class="language-plaintext highlighter-rouge">inst</code> within the source directory.
 This script lets you quickly build and install during development.</p>
 
 <p>Create and run the script above.  Try changing some of the cmake features,
-delete the <code class="highlighter-rouge">build</code> directory, re-run <code class="highlighter-rouge">build.sh</code>, and inspect the build results.</p>
+delete the <code class="language-plaintext highlighter-rouge">build</code> directory, re-run <code class="language-plaintext highlighter-rouge">build.sh</code>, and inspect the build results.</p>
 
 <p>An example of the kinds of features you can add to CMakeLists.txt
-is included in the <code class="highlighter-rouge">cmake_step1</code> subdirectory.  There, an include
-directory is added to the heat target, and a <code class="highlighter-rouge">configure_file</code>
+is included in the <code class="language-plaintext highlighter-rouge">cmake_step1</code> subdirectory.  There, an include
+directory is added to the heat target, and a <code class="language-plaintext highlighter-rouge">configure_file</code>
 directive is used to make the version number accessible to the program.</p>
 
-<p>Although cmake can replace the <code class="highlighter-rouge">makefile</code>, an updated <code class="highlighter-rouge">makefile</code>
-is also provided in <code class="highlighter-rouge">cmake_step1</code> so that the version number
-is accessible to code compiled using the <code class="highlighter-rouge">makefile</code> route.
+<p>Although cmake can replace the <code class="language-plaintext highlighter-rouge">makefile</code>, an updated <code class="language-plaintext highlighter-rouge">makefile</code>
+is also provided in <code class="language-plaintext highlighter-rouge">cmake_step1</code> so that the version number
+is accessible to code compiled using the <code class="language-plaintext highlighter-rouge">makefile</code> route.
 Both compilation methods work at this point.</p>
 
 <p><strong>Step 4.</strong> adapt test script and check manually</p>
 
-<p>The <code class="highlighter-rouge">tests.mk</code> makefile runs <code class="highlighter-rouge">check.sh</code> when it tests that the
+<p>The <code class="language-plaintext highlighter-rouge">tests.mk</code> makefile runs <code class="language-plaintext highlighter-rouge">check.sh</code> when it tests that the
 steady-state solution to the heat equation is a straight-line.</p>
 
 <p>To understand this shell script better, we’ll re-code it in another
 language.  The file it’s looking at is output by a command like,
-<code class="highlighter-rouge">./heat runame=check outi=0 maxt=-5e-8 ic="rand(0,0.2,2)"</code>
-which creates <code class="highlighter-rouge">check/check_soln_final.curve</code>.  This file
+<code class="language-plaintext highlighter-rouge">./heat runame=check outi=0 maxt=-5e-8 ic="rand(0,0.2,2)"</code>
+which creates <code class="language-plaintext highlighter-rouge">check/check_soln_final.curve</code>.  This file
 is formatted as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Temperature
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Temperature
        0        0
      0.1      0.1
      0.2      0.2
@@ -243,19 +244,19 @@ is formatted as follows:</p>
        1        1
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">check.sh</code> has the job of comparing the two columns
+<p><code class="language-plaintext highlighter-rouge">check.sh</code> has the job of comparing the two columns
 (x and u(x)) to determine whether they match. This
 happens to work because the right-boundary condition equals
 the material length.  Extending the checks will require
 re-coding this comparison.</p>
 
-<p>Rewrite <code class="highlighter-rouge">check.sh</code> using your favorite programming language,
-and call the result from <code class="highlighter-rouge">tests/testDriver.sh</code>.
-<code class="highlighter-rouge">testDriver.sh</code> should</p>
+<p>Rewrite <code class="language-plaintext highlighter-rouge">check.sh</code> using your favorite programming language,
+and call the result from <code class="language-plaintext highlighter-rouge">tests/testDriver.sh</code>.
+<code class="language-plaintext highlighter-rouge">testDriver.sh</code> should</p>
 
 <ol>
   <li>
-    <p>accept a two arguments, the location of the <code class="highlighter-rouge">heat</code> program, and the
+    <p>accept a two arguments, the location of the <code class="language-plaintext highlighter-rouge">heat</code> program, and the
 name of the algorithm to run (ftcs, crankn, or upwind15)</p>
   </li>
   <li>
@@ -270,20 +271,20 @@ name of the algorithm to run (ftcs, crankn, or upwind15)</p>
     <p>delete all outputs so the test can be re-run without false errors</p>
   </li>
   <li>
-    <p>complete the shell script with <code class="highlighter-rouge">exit 0</code> for passing output
-and <code class="highlighter-rouge">exit 1</code> for failing tests.</p>
+    <p>complete the shell script with <code class="language-plaintext highlighter-rouge">exit 0</code> for passing output
+and <code class="language-plaintext highlighter-rouge">exit 1</code> for failing tests.</p>
   </li>
 </ol>
 
-<p>There is a solution using the <code class="highlighter-rouge">awk</code> scripting language
-in the <code class="highlighter-rouge">cmake_step2/tests</code> folder.  In this case,
+<p>There is a solution using the <code class="language-plaintext highlighter-rouge">awk</code> scripting language
+in the <code class="language-plaintext highlighter-rouge">cmake_step2/tests</code> folder.  In this case,
 exit is not used because the last program’s exit code
 is used as the exit code of the entire shell script.</p>
 
 <p>For your own work, you might want to save your check’s return
 code to a shell variable, like</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 
 status=0 # ok
 `dirname $0`/my_check check_$alg/check_${alg}_soln_final.curve || status=$?
@@ -307,13 +308,13 @@ How does it affect the test accuracy?</p>
 
 <p><strong>Step 5.</strong> invoke test script during tests/CMakeLists.txt</p>
 
-<p>Now that the <code class="highlighter-rouge">testDriver.sh</code> script is working, it’s time
-to declare some tests by using <a href="https://cmake.org/cmake/help/latest/command/enable_testing.html"><code class="highlighter-rouge">enable_testing()</code></a> and <a href="https://cmake.org/cmake/help/latest/command/add_test.html"><code class="highlighter-rouge">add_test</code></a>
-targets in the <code class="highlighter-rouge">CMakeLists.txt</code>.</p>
+<p>Now that the <code class="language-plaintext highlighter-rouge">testDriver.sh</code> script is working, it’s time
+to declare some tests by using <a href="https://cmake.org/cmake/help/latest/command/enable_testing.html"><code class="language-plaintext highlighter-rouge">enable_testing()</code></a> and <a href="https://cmake.org/cmake/help/latest/command/add_test.html"><code class="language-plaintext highlighter-rouge">add_test</code></a>
+targets in the <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>.</p>
 
 <p>Rather than put these directly into the main CMakeLists.txt,
-you can use a modular approach.  Create <code class="highlighter-rouge">tests/CMakeLists.txt</code> with the following:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enable_testing()
+you can use a modular approach.  Create <code class="language-plaintext highlighter-rouge">tests/CMakeLists.txt</code> with the following:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enable_testing()
 
 # define a function to simplify adding tests
 # (which consist of add_executable/target_link_libraries/add_test commands)
@@ -328,19 +329,19 @@ do_test(upwind15)
 </code></pre></div></div>
 
 <p>This enables testing, and adds all three tests.  The cmake
-function here is doing the repetetive work of calling <code class="highlighter-rouge">add_test</code>,
+function here is doing the repetetive work of calling <code class="language-plaintext highlighter-rouge">add_test</code>,
 so our cmake file can call it three times without repeating
 tedious details.</p>
 
-<p>Include this new file in the main <code class="highlighter-rouge">CMakeLists.txt</code>
-by adding the line: <code class="highlighter-rouge">add_subdirectory(tests)</code>.</p>
+<p>Include this new file in the main <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>
+by adding the line: <code class="language-plaintext highlighter-rouge">add_subdirectory(tests)</code>.</p>
 
-<p>All set! You can now run <code class="highlighter-rouge">ctest</code> from the <code class="highlighter-rouge">build/tests</code>
+<p>All set! You can now run <code class="language-plaintext highlighter-rouge">ctest</code> from the <code class="language-plaintext highlighter-rouge">build/tests</code>
 subdirectory to run all the tests.</p>
 
 <p>In fact, you can run tests every time you build by adding those
 steps to the build.sh file:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 
 cmake -DCMAKE_INSTALL_PREFIX=$inst ..
 make -j
@@ -348,16 +349,16 @@ make -j
 make install
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">cmake_step2</code> subdirectory shows how to
+<p>The <code class="language-plaintext highlighter-rouge">cmake_step2</code> subdirectory shows how to
 add an option to disable building the tests.</p>
 
 <p><strong>Extra Credit</strong> Add an OpenMP compile flag to your build.</p>
 
-<p>First, modify <code class="highlighter-rouge">heat.C</code> to <code class="highlighter-rouge">#include &lt;omp.h&gt;</code> at the top.
-Next, have the <code class="highlighter-rouge">main</code> function print the current number
+<p>First, modify <code class="language-plaintext highlighter-rouge">heat.C</code> to <code class="language-plaintext highlighter-rouge">#include &lt;omp.h&gt;</code> at the top.
+Next, have the <code class="language-plaintext highlighter-rouge">main</code> function print the current number
 of processors:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>printf("num_procs = %d\n", omp_get_num_procs());
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>printf("num_procs = %d\n", omp_get_num_procs());
 </code></pre></div></div>
 
 <p>This will only compile if the appropriate flags are passed
@@ -365,11 +366,11 @@ during build and link steps.</p>
 
 <p>Next, modify CMakeLists.txt to use
 <a href="https://cmake.org/cmake/help/latest/module/FindOpenMP.html">FindOpenMP</a>
-by adding the line <code class="highlighter-rouge">find_package(OpenMP 3.0 REQUIRED)</code>.
-Note that the Find(…) modules are run in cmake using <code class="highlighter-rouge">find_package</code>.</p>
+by adding the line <code class="language-plaintext highlighter-rouge">find_package(OpenMP 3.0 REQUIRED)</code>.
+Note that the Find(…) modules are run in cmake using <code class="language-plaintext highlighter-rouge">find_package</code>.</p>
 
-<p>Last, show cmake that the <code class="highlighter-rouge">heat</code> target requires OpenMP by adding the line,
-<code class="highlighter-rouge">target_link_libraries(heat PUBLIC OpenMP::OpenMP_CXX)</code>.</p>
+<p>Last, show cmake that the <code class="language-plaintext highlighter-rouge">heat</code> target requires OpenMP by adding the line,
+<code class="language-plaintext highlighter-rouge">target_link_libraries(heat PUBLIC OpenMP::OpenMP_CXX)</code>.</p>
 
 <p><strong>Extra Credit</strong> Adapt the code coverage test to cmake.</p>
 
@@ -393,7 +394,7 @@ Here are a few useful</p>
 
 <p>Hopefully this exercise has shown how easy it is to convert
 an executable project over to cmake and ctest.
-We created a <code class="highlighter-rouge">CMakeLists.txt</code>
+We created a <code class="language-plaintext highlighter-rouge">CMakeLists.txt</code>
 by filling our source files and compile features.
 Then extra features like including tests
 were added one by one.</p>

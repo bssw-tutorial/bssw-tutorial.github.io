@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Hands-On Exercise 8: Continuous Integration | Better Scientific Software Tutorial</title>
-<meta name="generator" content="Jekyll v4.0.1" />
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Hands-On Exercise 8: Continuous Integration" />
 <meta name="author" content="IDEAS Productivity Project" />
 <meta property="og:locale" content="en_US" />
@@ -13,10 +13,11 @@
 <link rel="canonical" href="https://bssw-tutorial.github.io/2021-03-25-iss/handson-m08-continuous-integration.html" />
 <meta property="og:url" content="https://bssw-tutorial.github.io/2021-03-25-iss/handson-m08-continuous-integration.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Hands-On Exercise 8: Continuous Integration" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 8: Continuous Integration","dateModified":"2022-04-07T19:49:26-04:00","url":"https://bssw-tutorial.github.io/2021-03-25-iss/handson-m08-continuous-integration.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-17T11:40:25-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 8: Continuous Integration","url":"https://bssw-tutorial.github.io/2021-03-25-iss/handson-m08-continuous-integration.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -93,14 +94,14 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p>A video walk-through of (most of) this exercise is available at: <a href="https://youtu.be/QE4RFp8lGiQ">https://youtu.be/QE4RFp8lGiQ</a></p>
 <ul>
-  <li>This video was created by Mark Miller (LLNL) for tutorial at ATPESC earlier this year.  Where he refers to the repository as <code class="highlighter-rouge">hello-numerical-world-atpesc-2020</code>, substitute <code class="highlighter-rouge">hello-numerical-world-sc20</code>.</li>
+  <li>This video was created by Mark Miller (LLNL) for tutorial at ATPESC earlier this year.  Where he refers to the repository as <code class="language-plaintext highlighter-rouge">hello-numerical-world-atpesc-2020</code>, substitute <code class="language-plaintext highlighter-rouge">hello-numerical-world-sc20</code>.</li>
 </ul>
 
 <h2 id="instructions">Instructions</h2>
 
-<p><strong>Step 1.</strong> You’ll need to add a configuration file to your repository to tell Travis CI what should be done when it is invoked.  The file must be named <code class="highlighter-rouge">.travis.yml</code>.  Note the leading <code class="highlighter-rouge">.</code>.  In unix-like operating systems, this is a hidden file, that won’t be displayed in directory listings by default.  But on Windows and in the GitHub web interface, such files are displayed by default.</p>
+<p><strong>Step 1.</strong> You’ll need to add a configuration file to your repository to tell Travis CI what should be done when it is invoked.  The file must be named <code class="language-plaintext highlighter-rouge">.travis.yml</code>.  Note the leading <code class="language-plaintext highlighter-rouge">.</code>.  In unix-like operating systems, this is a hidden file, that won’t be displayed in directory listings by default.  But on Windows and in the GitHub web interface, such files are displayed by default.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>language: c++
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>language: c++
 
 compiler:
   - gcc
@@ -113,11 +114,11 @@ script:
 
 <p><strong>Step 2.</strong> Next you need to create a pull request to add this change to the upstream repository.  Travis is triggered by pull requests (among other things)</p>
 
-<p>Once you create the pull request, you’ll see GitHub performing a couple of checks.  One it always does is to look for conflicts between your PR and the base branch from which it was forked in the upstream repository (in case there were changes upstream that you haven’t pulled into your fork yet).  And with the addition of the configuration file, the <code class="highlighter-rouge">make check</code> test is performed using the Travis CI service.  You’ll often notice a short lag from the moment you click “Create pull request” to the moment the that checks start running.  But if it hasn’t started running within about a minute, there’s a good chance that there’s a problem with your configuration file.</p>
+<p>Once you create the pull request, you’ll see GitHub performing a couple of checks.  One it always does is to look for conflicts between your PR and the base branch from which it was forked in the upstream repository (in case there were changes upstream that you haven’t pulled into your fork yet).  And with the addition of the configuration file, the <code class="language-plaintext highlighter-rouge">make check</code> test is performed using the Travis CI service.  You’ll often notice a short lag from the moment you click “Create pull request” to the moment the that checks start running.  But if it hasn’t started running within about a minute, there’s a good chance that there’s a problem with your configuration file.</p>
 
-<p>While the check is running, you will see a “Details” link that you can follow to drill into what’s happening.  The immediate result of clicking on that link is a screen from GitHub summarizing what’s happening.  At the bottom of the screen is a link “View more details on Travis CI”.  If you follow that link, you should see the output of the <code class="highlighter-rouge">make check</code> execution, which includes building the heat equation code, running it with a specific set of inputs, and comparing the results with a “golden” set of results that’s been deemed correct. If the check completes correctly on Travis (signaled by whatever script exiting with an exit code of 0), the pull request page will show that all checks passed, but will still provide a link to allow you to drill into the details.  Both GitHub and Travis keep logs from all these actions for some time.</p>
+<p>While the check is running, you will see a “Details” link that you can follow to drill into what’s happening.  The immediate result of clicking on that link is a screen from GitHub summarizing what’s happening.  At the bottom of the screen is a link “View more details on Travis CI”.  If you follow that link, you should see the output of the <code class="language-plaintext highlighter-rouge">make check</code> execution, which includes building the heat equation code, running it with a specific set of inputs, and comparing the results with a “golden” set of results that’s been deemed correct. If the check completes correctly on Travis (signaled by whatever script exiting with an exit code of 0), the pull request page will show that all checks passed, but will still provide a link to allow you to drill into the details.  Both GitHub and Travis keep logs from all these actions for some time.</p>
 
-<p>If the check fails, the pull request page will show that, and the “Details” link will continue to be available to help you debug the problem.  You can see this situation for yourself by modifying something in the repository to intentionally introduce an error.  For example, you could change the <code class="highlighter-rouge">script</code> in the <code class="highlighter-rouge">.travis.yml</code> file to something nonexistent (Travis is otherwise pretty resilient to errors in configuration files, at least simple ones).  Or you could introduce a syntax error into one of the code files so that the compilation fails.  Or you could change the math in the code or the parameters in the <code class="highlighter-rouge">check</code> target of the <code class="highlighter-rouge">makefile</code> so that the results don’t match the golden results.</p>
+<p>If the check fails, the pull request page will show that, and the “Details” link will continue to be available to help you debug the problem.  You can see this situation for yourself by modifying something in the repository to intentionally introduce an error.  For example, you could change the <code class="language-plaintext highlighter-rouge">script</code> in the <code class="language-plaintext highlighter-rouge">.travis.yml</code> file to something nonexistent (Travis is otherwise pretty resilient to errors in configuration files, at least simple ones).  Or you could introduce a syntax error into one of the code files so that the compilation fails.  Or you could change the math in the code or the parameters in the <code class="language-plaintext highlighter-rouge">check</code> target of the <code class="language-plaintext highlighter-rouge">makefile</code> so that the results don’t match the golden results.</p>
 
 <h3 id="a-couple-of-notes-about-github">A Couple of Notes about GitHub</h3>
 
@@ -131,9 +132,9 @@ script:
 
 <p><strong>Step 3.</strong> Login into your <a href="https://codecov.io">https://codecov.io</a> account and add your “hello-numerical-world-sc20” repository to your account.</p>
 
-<p><strong>Step 4.</strong> Edit <code class="highlighter-rouge">.travis.yml</code> to add code coverage to the build, and reporting the results to Codecov.io:</p>
+<p><strong>Step 4.</strong> Edit <code class="language-plaintext highlighter-rouge">.travis.yml</code> to add code coverage to the build, and reporting the results to Codecov.io:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>language: c++
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>language: c++
 
 compiler:
   - gcc
@@ -145,11 +146,11 @@ after_success:
   - bash &lt;(curl -s https://codecov.io/bash)
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">after_success</code> block will update the CodeCov.io site with the coverage information from the check that just completed.  This bit of magic is documented in the <a href="https://docs.codecov.io/docs">Quick Start</a> documentation on Codecov.io.  It is referred to as the “Codecov bash uploader”.</p>
+<p>The <code class="language-plaintext highlighter-rouge">after_success</code> block will update the CodeCov.io site with the coverage information from the check that just completed.  This bit of magic is documented in the <a href="https://docs.codecov.io/docs">Quick Start</a> documentation on Codecov.io.  It is referred to as the “Codecov bash uploader”.</p>
 
 <p>Once you commit this change, it is added to your outstanding pull request.  If you switch to the upstream repository and go to your pull request, you’ll see the results should now include code coverage information.  Note that the first time you upload to Codecov.io, it has no prior coverage information so it can’t provide information about the <em>change</em> in coverage represented by the update to the pull request.</p>
 
-<p><strong>Step 5.</strong> Increase the code coverage by replacing <code class="highlighter-rouge">check</code> with <code class="highlighter-rouge">check_all</code> in the <code class="highlighter-rouge">.travis.yml</code> file.  Observe the changes via the Codecov.io report.  You can also examine the Travis CI logs to see the change in the execution time for the <code class="highlighter-rouge">check</code> and <code class="highlighter-rouge">check_all</code> test suites.</p>
+<p><strong>Step 5.</strong> Increase the code coverage by replacing <code class="language-plaintext highlighter-rouge">check</code> with <code class="language-plaintext highlighter-rouge">check_all</code> in the <code class="language-plaintext highlighter-rouge">.travis.yml</code> file.  Observe the changes via the Codecov.io report.  You can also examine the Travis CI logs to see the change in the execution time for the <code class="language-plaintext highlighter-rouge">check</code> and <code class="language-plaintext highlighter-rouge">check_all</code> test suites.</p>
 
 <p><strong>Step 6.</strong> <em>Extra credit</em>: Make the CI test file if code coverage drops from the previous version. (Hint: read the <a href="https://docs.codecov.io/docs">codeco.io documentation</a>.)</p>
 

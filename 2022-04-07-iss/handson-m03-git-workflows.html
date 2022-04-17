@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Better Scientific Software Tutorial | Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.</title>
-<meta name="generator" content="Jekyll v4.0.1" />
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Better Scientific Software Tutorial" />
 <meta name="author" content="IDEAS Productivity Project" />
 <meta property="og:locale" content="en_US" />
@@ -13,10 +13,11 @@
 <link rel="canonical" href="https://bssw-tutorial.github.io/2022-04-07-iss/handson-m03-git-workflows.html" />
 <meta property="og:url" content="https://bssw-tutorial.github.io/2022-04-07-iss/handson-m03-git-workflows.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","dateModified":"2022-04-07T19:49:26-04:00","url":"https://bssw-tutorial.github.io/2022-04-07-iss/handson-m03-git-workflows.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-17T11:40:25-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-04-07-iss/handson-m03-git-workflows.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -79,7 +80,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <ul>
   <li>A <a href="https://github.com">GitHub</a> account
     <ul>
-      <li>This exercise can actually be completed entirely via the GitHub.com web interface (UI), but we recommend using a command-line <code class="highlighter-rouge">git</code> client if you’re interested in doing later exercises that can’t be completed through the web UI.</li>
+      <li>This exercise can actually be completed entirely via the GitHub.com web interface (UI), but we recommend using a command-line <code class="language-plaintext highlighter-rouge">git</code> client if you’re interested in doing later exercises that can’t be completed through the web UI.</li>
     </ul>
   </li>
 </ul>
@@ -102,7 +103,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   <li>Copy path to clipboard (use path in command below for https).</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git clone https://github.com/&lt;your username&gt;/hello-numerical-world-2022-04-07-iss.git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git clone https://github.com/&lt;your username&gt;/hello-numerical-world-2022-04-07-iss.git
 Cloning into 'hello-numerical-world-2022-04-07-iss' ...
 .
 .
@@ -110,14 +111,14 @@ Cloning into 'hello-numerical-world-2022-04-07-iss' ...
 
 <p><strong>Step 3.</strong> Create branch</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $cd hello-numerical-world-2022-04-07-iss
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $cd hello-numerical-world-2022-04-07-iss
    $git checkout -b issue-1000
    Switched to a new branch 'issue-1000'
 </code></pre></div></div>
 
 <p><strong>Step 4.</strong> Make Modification (use your favorite editor)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $vi README.md
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $vi README.md
    $ git diff
    diff --git a/README.md b/README.md
    index 3cd1a3c..b44c57e 100644
@@ -132,7 +133,7 @@ Cloning into 'hello-numerical-world-2022-04-07-iss' ...
    +To make the problem tractable for this lesson, we make some simplifying assumptions:
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ git add README.md 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ git add README.md 
    $ git commit -m "Replace ... with :"
    [issue-1000 2271b74] Replace ... with :
     1 file changed, 1 insertion(+), 1 deletion(-)
@@ -140,7 +141,7 @@ Cloning into 'hello-numerical-world-2022-04-07-iss' ...
 
 <p><strong>Step 5.</strong> Useful git commands to check repo</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git remote -vv
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git remote -vv
    origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2022-04-07-iss.git (fetch)
    origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2022-04-07-iss.git (push)
 
@@ -151,7 +152,7 @@ Cloning into 'hello-numerical-world-2022-04-07-iss' ...
 
 <p><strong>Step 6.</strong> Push change to fork</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ git push origin issue-1000
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ git push origin issue-1000
    Enumerating objects: 5, done.
    Counting objects: 100% (5/5), done.
    Delta compression using up to 8 threads

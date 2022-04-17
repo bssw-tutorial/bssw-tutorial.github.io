@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Hands-On Exercise 7c: Refactoring Part 2 | Better Scientific Software Tutorial</title>
-<meta name="generator" content="Jekyll v4.0.1" />
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Hands-On Exercise 7c: Refactoring Part 2" />
 <meta name="author" content="IDEAS Productivity Project" />
 <meta property="og:locale" content="en_US" />
@@ -13,10 +13,11 @@
 <link rel="canonical" href="https://bssw-tutorial.github.io/2021-06-24-isc/handson-m11-refactoring2.html" />
 <meta property="og:url" content="https://bssw-tutorial.github.io/2021-06-24-isc/handson-m11-refactoring2.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Hands-On Exercise 7c: Refactoring Part 2" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"IDEAS Productivity Project"},"description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 7c: Refactoring Part 2","dateModified":"2022-04-07T19:49:26-04:00","url":"https://bssw-tutorial.github.io/2021-06-24-isc/handson-m11-refactoring2.html","@type":"WebPage","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-17T11:40:25-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 7c: Refactoring Part 2","url":"https://bssw-tutorial.github.io/2021-06-24-isc/handson-m11-refactoring2.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -80,8 +81,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
     <ul>
       <li>The files relevant to this exercise are:
         <ul>
-          <li>Header files: <code class="highlighter-rouge">Double.H</code>, <code class="highlighter-rouge">heat.H</code></li>
-          <li>Source file: <code class="highlighter-rouge">heatAll.C</code></li>
+          <li>Header files: <code class="language-plaintext highlighter-rouge">Double.H</code>, <code class="language-plaintext highlighter-rouge">heat.H</code></li>
+          <li>Source file: <code class="language-plaintext highlighter-rouge">heatAll.C</code></li>
         </ul>
       </li>
     </ul>
@@ -94,25 +95,25 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 </ul>
 
 <h2 id="background">Background</h2>
-<p>The code you worked with in exercise 7b was reasonably well structured.  But it didn’t necessarily start out that way.  This exercise takes a step further back in time.  Suppose you’ve just inherited the code <code class="highlighter-rouge">heatAll.C</code> from a colleague who’s left the project.  You don’t even have a <code class="highlighter-rouge">makefile</code>! Your task is to take that original, poorly structured code into a cleaner, more reusable version.  The version of the heat equation code that you worked with in exercise 7a is one possible solution to this task.  But the real point of this exercise is to go through the process yourself to decide how to restructure the code to get the results you (or your boss) want.</p>
+<p>The code you worked with in exercise 7b was reasonably well structured.  But it didn’t necessarily start out that way.  This exercise takes a step further back in time.  Suppose you’ve just inherited the code <code class="language-plaintext highlighter-rouge">heatAll.C</code> from a colleague who’s left the project.  You don’t even have a <code class="language-plaintext highlighter-rouge">makefile</code>! Your task is to take that original, poorly structured code into a cleaner, more reusable version.  The version of the heat equation code that you worked with in exercise 7a is one possible solution to this task.  But the real point of this exercise is to go through the process yourself to decide how to restructure the code to get the results you (or your boss) want.</p>
 
 <h2 id="instructions">Instructions</h2>
 
-<p><strong>Step 1.</strong> Create a new directory and copy <code class="highlighter-rouge">heatAll.C</code> into it. This will be your working area. Work in tandem with exercise 7a to plan and track your work.</p>
+<p><strong>Step 1.</strong> Create a new directory and copy <code class="language-plaintext highlighter-rouge">heatAll.C</code> into it. This will be your working area. Work in tandem with exercise 7a to plan and track your work.</p>
 
-<p><strong>Step 2.</strong> Create a <code class="highlighter-rouge">makefile</code> to build an executable from <code class="highlighter-rouge">heatAll.C</code>.  If you’re not that familiar with makefiles, you might want to adapt the one in the main directory.  In this case all of the code is in the single file <code class="highlighter-rouge">heatAll.C</code>. Add the <code class="highlighter-rouge">-coverage</code> flag you used in the previous exercise.</p>
+<p><strong>Step 2.</strong> Create a <code class="language-plaintext highlighter-rouge">makefile</code> to build an executable from <code class="language-plaintext highlighter-rouge">heatAll.C</code>.  If you’re not that familiar with makefiles, you might want to adapt the one in the main directory.  In this case all of the code is in the single file <code class="language-plaintext highlighter-rouge">heatAll.C</code>. Add the <code class="language-plaintext highlighter-rouge">-coverage</code> flag you used in the previous exercise.</p>
 
 <p><strong>Step 3.</strong> Run the executable with various permutations of input arguments, saving each output as a baseline for comparison until you have 100% coverage.</p>
 
 <p><strong>Step 4.</strong> Make a decision about how many files you wish to split the code into.</p>
 
-<p>A good rule of thumb is to start with a different file for each category of functions. An example would be to create an <code class="highlighter-rouge">integrate.C</code>, a <code class="highlighter-rouge">utils.C</code> and a <code class="highlighter-rouge">main.C</code> to which you copy from <code class="highlighter-rouge">heatAll.C</code> functions that belong in each category.</p>
+<p>A good rule of thumb is to start with a different file for each category of functions. An example would be to create an <code class="language-plaintext highlighter-rouge">integrate.C</code>, a <code class="language-plaintext highlighter-rouge">utils.C</code> and a <code class="language-plaintext highlighter-rouge">main.C</code> to which you copy from <code class="language-plaintext highlighter-rouge">heatAll.C</code> functions that belong in each category.</p>
 
-<p><strong>Step 5.</strong> Make a decision about which variable and constants you wish to have available globally and which you wish to keep local. Create <code class="highlighter-rouge">.H</code> files for global variables.</p>
+<p><strong>Step 5.</strong> Make a decision about which variable and constants you wish to have available globally and which you wish to keep local. Create <code class="language-plaintext highlighter-rouge">.H</code> files for global variables.</p>
 
-<p><strong>Step 6.</strong> In each of the new <code class="highlighter-rouge">.C</code> file add <code class="highlighter-rouge">extern</code> interfaces for functions that are not in the same file, and <code class="highlighter-rouge">include</code> statements for any header files you might wish to include.</p>
+<p><strong>Step 6.</strong> In each of the new <code class="language-plaintext highlighter-rouge">.C</code> file add <code class="language-plaintext highlighter-rouge">extern</code> interfaces for functions that are not in the same file, and <code class="language-plaintext highlighter-rouge">include</code> statements for any header files you might wish to include.</p>
 
-<p><strong>Step 7.</strong> In the <code class="highlighter-rouge">makefile</code> replace existing filenames with the ones you have just created.</p>
+<p><strong>Step 7.</strong> In the <code class="language-plaintext highlighter-rouge">makefile</code> replace existing filenames with the ones you have just created.</p>
 
 <p><strong>Step 8.</strong> Compile and execute the refactored code in all permutations used in step 3 and verify against the corresponding baselines. If you are happy with the modularity of your refactored code you are done. If you wish to further modularize repeat steps 3-8 until you have the achieved your refactoring objectives.</p>
 
