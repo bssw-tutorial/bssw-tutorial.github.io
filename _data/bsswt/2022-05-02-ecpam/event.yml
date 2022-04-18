@@ -1,16 +1,50 @@
+#
+# Basic tutorial information
+#
 title: "Developing a Testing and Continuous Integration Strategy for your Team"
 title-type: "tutorial"
 #title-url:
+#
+# Presentation date and time.
+# end-date is optional for one-day events
+# time should include timezeone explicitly
+# We don't currently handle tutorials that occur at *different times* on multiple days
+#
 date: 2022-05-02
 #end-date:
 time: 2:30 pm - 4:00 pm EDT (UTC-4)
+#
+# Venue information
+#
 venue: "Exascale Computing Project Annual Meeting"
 venue-type: "meeting"
 venue-url: https://ecpannualmeeting.com/
 location: "online"
+#
+# Staffing information
+# organizer-ids will be assigned the issues that presenter-ids are not doing, basically
+#
 organizer-ids: [bernhold]
 presenter-ids: [jarrah42, frobnitzem]
 helper-ids: [bernhold]
+#
+# This is a more or less typical collection of artifacts for tutorials.
+# Comment out anything that isn't (yet) available.
+# If you want to list the conference registration page, comment it out
+# after registration closes or after the event, when it is no longer useful.
+#
+#artifacts:
+#  - label: Conference Registration
+#    url: 
+#  - label: Recordings
+#    format: YouTube playlist
+#    url: 
+#  - label: Presentation Slides
+#    format: FigShare
+#    doi: 10.6084/m9.figshare.19608927
+#  - label: Hands-On Code Repository
+#    format: GitHub
+#    gh-repo: 
 #
 # This is a standard collection of deadlines we've encountered historically
 # Add due dates where appropriate. Those without will be ignored
