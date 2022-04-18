@@ -97,9 +97,9 @@ EOF
 {{ description | strip_html | strip }}
 ```
 
-**Funding**
+**Funding** <!-- this field doesn't allow newlines, so get rid of them -->
 ```
-{{ funding | strip_html | strip }}
+{{ funding | strip_html | normalize_whitespace | strip }}
 ```
 
 **References**
