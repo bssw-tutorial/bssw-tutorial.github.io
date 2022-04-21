@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-18T12:02:42-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-21T14:49:12-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -137,45 +137,15 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <ol>
   <li>Post-acceptance finalization</li>
-  <li><a href="../utilities-preparation.html">Preparation</a></li>
+  <li><a href="./utilities-preparation.html">Preparation</a></li>
   <li>Publication of tutorial assets</li>
   <li>Delivering the tutorial</li>
   <li>Post-delivery</li>
 </ol>
 
-<h2 id="create-issues-to-prepare-presentations">Create issues to prepare presentations</h2>
+<hr />
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2022-05-02-ecpam <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"intro presentation due "</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; is due by "</span>
-
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2022-05-02-ecpam <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"overview-testing presentation due "</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview-testing.pptx&gt; is due by "</span>
-
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2022-05-02-ecpam <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"testing-introduction2 presentation due "</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-introduction2.pptx&gt; is due by "</span>
-
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2022-05-02-ecpam <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"testing-advanced presentation due "</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-advanced.pptx&gt; is due by "</span>
-
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2022-05-02-ecpam <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"continuous-integration presentation due "</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/continuous-integration.pptx&gt; is due by "</span>
-
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> 2022-05-02-ecpam <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"summary-testing presentation due "</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"The updated version of &lt;https://github.com/bssw-tutorial/presentations/blob/master/summary-testing.pptx&gt; is due by "</span>
-</code></pre></div></div>
+<p>Old stuff, in the process of being moved to child pages</p>
 
 <h2 id="create-issues-to-record-presentations">Create issues to record presentations</h2>
 
@@ -223,46 +193,6 @@ gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span
 <span class="nb">mv </span>summary-testing.pdf final-presentations/2022-05-02-ecpam/05-summary-testing.pdf
 
 </code></pre></div></div>
-
-<h2 id="data-for-figshare-record">Data for FigShare record</h2>
-
-<p>Title: Developing a Testing and Continuous Integration Strategy for your Team tutorial @ Exascale Computing Project Annual Meeting meeting (2022)</p>
-
-<!-- note that we're not listing helpers here -->
-<p>Authors:</p>
-
-<ul>
-  <li>Gregory R. Watson</li>
-  <li>David M. Rogers</li>
-</ul>
-
-<p>Categories: Software Engineering</p>
-
-<p>Item type: Presentation</p>
-
-<p>Keywords:</p>
-
-<ul>
-  <li>software engineering</li>
-  <li>software productivity</li>
-  <li>software sustainability</li>
-  <li>software reliability</li>
-  <li>computational science and engineering software</li>
-  <li>scientific software</li>
-  <li>Better Scientific Software tutorial</li>
-</ul>
-
-<!-- Should include same description as event -->
-<p>Description: Presentations from the Software Productivity track at the 2021 Argonne Training Program for Extreme Scale Computing (ATPESC).</p>
-
-<!-- Should be generalized to use the same ack as the event -->
-<p>Funding: This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.</p>
-
-<!-- this will be localhost when testing locally.  Can we make it always be
-     the production URL? -->
-<p>References: https://bssw-tutorial.github.io/events/2022-05-02-ecpam.html</p>
-
-<p>License: CC BY 4.0</p>
 
 <h2 id="tagging-and-creating-release-of-presentations">Tagging and creating release of presentations</h2>
 
