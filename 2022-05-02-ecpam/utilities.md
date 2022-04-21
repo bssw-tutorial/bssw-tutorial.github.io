@@ -34,25 +34,14 @@ layout: page
 ## Process
 
 1. Post-acceptance finalization
-2. [Preparation](../utilities-preparation.html)
+2. [Preparation](./utilities-preparation.html)
 3. Publication of tutorial assets
 4. Delivering the tutorial
 5. Post-delivery
 
+---
 
-## Create issues to prepare presentations
-
-{% assign gh = "gh issue create --repo bssw-tutorial/presentations --milestone " 
-    | append: event-label %}
-{% assign prepo = "https://github.com/bssw-tutorial/presentations/blob/master" %}
-
-```shell
-{% for p in presentation-order %}
-{{ gh }} \
-    --title "{{ p }} presentation due {{ site.data.bsswt[event-label].deadlines.presentations-internal }}" \
-    --assignee {{ presenter-order[forloop.index0] }} \
-    --body "The updated version of <{{ prepo }}/{{ p }}.pptx> is due by {{ site.data.bsswt[event-label].deadlines.presentations-internal }}"
-{% endfor %}```
+Old stuff, in the process of being moved to child pages
 
 ## Create issues to record presentations
 
@@ -82,48 +71,6 @@ mkdir {{ dest-dir }}
 mv {{ p }}.pdf {{ dest-dir }}/{{ mfill }}-{{ p }}.pdf
 {% endfor %}
 ```
-
-
-
-## Data for FigShare record
-
-Title: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.date | date: "(%Y)" }}
-
-<!-- note that we're not listing helpers here -->
-Authors:
-{% include extract-array-subset key="github-id" values=my-presenters source=site.people %}
-{% include set-name-affiliation-array people=extract_array_subset noaffil="true" %}
-{% if name_affiliation_array %}
-  {% for p in name_affiliation_array %}
-* {{ p }}
-  {%- endfor -%}
-{% endif %}
-
-Categories: Software Engineering
-
-Item type: Presentation
-
-Keywords:
-
-* software engineering
-* software productivity
-* software sustainability
-* software reliability
-* computational science and engineering software
-* scientific software
-* Better Scientific Software tutorial
-
-<!-- Should include same description as event -->
-Description: Presentations from the Software Productivity track at the 2021 Argonne Training Program for Extreme Scale Computing (ATPESC).
-
-<!-- Should be generalized to use the same ack as the event -->
-Funding: This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.
-
-<!-- this will be localhost when testing locally.  Can we make it always be
-     the production URL? -->
-References: {{ site.url }}/events/{{ event-label }}.html
-
-License: CC BY 4.0
 
 ## Tagging and creating release of presentations
 
