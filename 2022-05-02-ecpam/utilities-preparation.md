@@ -55,15 +55,20 @@ gh issue create \
     --title "{{ event-label }} build website" \
     --assignee "{{ my-organizers | array_to_sentence_string: '' }}" \
     --body-file - << EOF
-- [ ] description
-- [ ] agenda *requires \`_data/bsswt/{{ event-label }}/agenda.csv\`*
-- [ ] presentation-slides
-- [ ] how-to-participate
-- [ ] hands-on-exercises
-- [ ] stay-in-touch
-- [ ] resources-from-presentations
-- [ ] requested-citation
-- [ ] acknowledgments
+- Update event details
+  - [ ] artufacts: presentation doi
+  - [ ] artifacts: hands-on code repo
+- Update event page sections    
+  - [ ] description
+  - [ ] agenda *requires \`_data/bsswt/{{ event-label }}/agenda.csv\`*
+  - [ ] presentation-slides
+  - [ ] how-to-participate
+  - [ ] hands-on-exercises
+  - [ ] stay-in-touch
+  - [ ] resources-from-presentations
+  - [ ] requested-citation
+  - [ ] acknowledgments
+- [ ] Tag repository
 EOF
 
 ```
@@ -201,3 +206,29 @@ For intro (or equivalent): `{{ pnamafil }}`
 ### Event title
 
 `{{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}`
+
+## Scripting to tag tutorial repository
+
+{% capture description %}{{ my-event.date | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+
+```shell
+# In local working copy of bssw-tutorial/bssw-tutorial.github.io repository
+
+# Tag repo
+git tag -a {{ event-label}} -m "{{ description }}"
+git push origin --tags
+
+```
+
+## Scripting to remove tag 
+
+For when we have to update the repository.
+
+```shell
+# In local working copy of bssw-tutorial/bssw-tutorial.github.io repository
+
+# Delete local and remote tags
+git tag -d {{ event-label }}
+git push --delete origin {{ event-label }}
+
+```
