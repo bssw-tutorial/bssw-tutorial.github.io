@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hands-On Exercise: Agile Methodologies | Better Scientific Software Tutorial</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Hands-On Exercise: Agile Methodologies" />
+<meta name="author" content="IDEAS Productivity Project" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2022-05-02-ecpam/handson-m02-agile.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2022-05-02-ecpam/handson-m02-agile.html" />
+<meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hands-On Exercise: Agile Methodologies" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-30T16:22:54-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise: Agile Methodologies","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/handson-m02-agile.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133695134-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+</head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Better Scientific Software Tutorial</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Hands-On Exercise: Agile Methodologies</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="goals">Goals</h2>
+<p>Use GitHub issues and project boards to setup a simple “personal kanban” board</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+  <li>A <a href="https://github.com">GitHub</a> account
+    <ul>
+      <li>This exercise can be done entirely within the web interface of GitHub.com</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="background">Background</h2>
+<p>In Agile Methodologies lesson of the tutorial presentations, we discuss some approaches to project (and personal) management based on Agile principles.  In this exercise, we want to take some of the ideas from the presentation and show how they can be implemented in the GitHub.com platform.  GitHub.com is an easily (and freely) available platform that is widely used by software development teams.  It is just one of the many environments that can support these kinds of needs, so feel free to explore others and decide what best meets your needs. (And realize that your needs may well change over time.)</p>
+
+<h2 id="instructions">Instructions</h2>
+
+<h3 id="where-to-do-the-work">Where to Do the Work</h3>
+
+<p>This exercise comprises several different tasks that in the real world might have different targets.  The team policy document and the initiation checklist are most relevant for a multi-person team or research group.  The kanban board and associated issues might be used on a personal basis or for a project.  To simplify things for this exercise, we suggest using a freshly created repository in your GitHub area.   Once you understand the concepts and GitHub tools, you can implement the same ideas in other repositories as needed.  For a personal kanban board, you may want to keep it private, or be very selective in who you give access to (spouse or partner, supervisor, etc.).  But for purposes of this exercise, we encourage you to make the repository <strong>public</strong> so that we can view and provide feedback if requested.</p>
+
+<h3 id="creating-a-new-repository">Creating a New Repository</h3>
+
+<p><strong>Step 1.</strong> Login to your GitHub account.  There are two ways to create a new repository.  One is the “+” symbol on the upper right side of the screen.  The other is the green “New” button next to the word Repositories at the top of the left-hand navigation panel that lists your repositories and teams (if you don’t have any repositories yet, it may be an even more prominent green button labeled “Create repository”).</p>
+<ul>
+  <li>Enter a name for your repository.  For example, “Issues” or “Personal Kanban”.</li>
+  <li>As discussed above, we encourage you to make this repository <strong>public</strong>, though in real situations, there may be reasons to keep it private.</li>
+  <li>It is convenient to initialize the repository with a README, but don’t add a .gitignore file or a license (all of these can, of course, be added at any later time too)</li>
+  <li>Click “Create repository”</li>
+</ul>
+
+<p>If you’re not familiar with the GitHub web interface, you might want to take a few minutes now to explore your new repository.  Of course the only thing it contains is a <code class="language-plaintext highlighter-rouge">README.md</code> file, but you can check out the different functionality that GitHub provides, etc.</p>
+
+<h3 id="defining-a-team-policy">Defining a Team Policy</h3>
+
+<p>A best practice for collaborative communities (whether they’re collaborating on software or other things) is to set expectations for the behavior of people in the community towards each other.  These are often referred to as team policies or codes of conduct.  A team policy can be captured in a document in a shared repository or other collaborative space.</p>
+
+<p>Think about a code of conduct that would be appropriate for a project you’re involved in or your research group.  Some questions to consider include:</p>
+<ul>
+  <li>How do team <em>members</em> support the team?</li>
+  <li>How does the <em>team</em> support its members?
+You may want to explore codes of conduct used by other teams similar to yours.  For example, https://www.contributor-covenant.org/ is a widely used policy for open source software development projects.</li>
+</ul>
+
+<p>We’ll use GitHub’s web interface to capture the policy.  But remember that such policies should be living documents – be ready to revisit and update them to try to address negative situations that might not have been adequately dealt with, or to capture positive practices.</p>
+
+<p><strong>Step 2.</strong> In your repository, go to the “Code” tab.</p>
+<ul>
+  <li>Click the “Add file” button to create a new file for the policy.</li>
+  <li>Give the file an appropriate name, such as <code class="language-plaintext highlighter-rouge">CODE-OF-CONDUCT</code> or <code class="language-plaintext highlighter-rouge">TeamPolicy</code> (to use Markdown rather than plain text, add a <code class="language-plaintext highlighter-rouge">.md</code> suffix to the filenname).</li>
+  <li>In the text area, enter the text of your policy</li>
+  <li>The fields beneath the “Commit new file” heading will comprise the commit message for your new file.  It is a good practice to provide informative commit messages for all commits, but it is not required.</li>
+  <li>Click “Commit new file” to complete the commit.</li>
+</ul>
+
+<p>If you need to edit the file after you commit it, that’s also possible in the GitHub web interface.</p>
+<ul>
+  <li>Click on the file of interest in the Code tab’s file browser to view it.</li>
+  <li>On the top right margin of the text area, you will see several buttons.  Click the pencil icon to edit the file in the web interface.</li>
+</ul>
+
+<h3 id="the-basics-of-github-issues">The Basics of GitHub Issues</h3>
+
+<p>Issues, sometimes referred to as “tickets” or other terms, can be used for many things.  The term “issue” derives from the idea of using them to track problems users encounter with a code, and help manage their resolution.  But they can also be used to manage work on a project, in which case an issue might descript a task that needs to be done.</p>
+
+<p><strong>Step 3.</strong> In your repository, go to the “Issues” tab.  Think about a project you’re working on where you have a couple of tasks that need to be done.</p>
+<ul>
+  <li>Click the green “New issue” button near the top right of the screen
+    <ul>
+      <li>Give the issue a title that reflects the first task you need to do.  In the body, provide a short description of the task.  Click “Submit new issue”.</li>
+      <li>Repeat until you have two or three issues in your repository.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="an-initiation-checklist">An Initiation Checklist</h3>
+
+<p>Checklists are very useful tools, for example to on-board (or off-board) people into a project.   Think about some steps that would be useful for newcomers to a project you’re involved in.</p>
+
+<p>While you could create a separate issue for each checklist item, GitHub Flavored Markdown (the common name for the dialect of Markdown that GitHub understands) supports <strong>checklists</strong>, which are rendered with checkable boxes as the list markers.</p>
+<ul>
+  <li>The Markdown is <code class="language-plaintext highlighter-rouge">- [ ] item text</code> where the “-“ is the usual markup for an unordered list and spaces are required in the second, fourth, and sixth positions: <code class="language-plaintext highlighter-rouge">-2[4]6item text</code>.  The checklist can appear at any level of indentation.</li>
+  <li>When the checklist is rendered in the web user interface, items can be checked or unchecked with a click of the mouse.  Note that there is no audit trail for checklist actions (i.e. you don’t know who checked/unchecked them, or when it happened.)</li>
+</ul>
+
+<p><strong>Step 4.</strong> In the Issues tab, click on “New issue”.</p>
+<ul>
+  <li>Create an on-boarding checklist with at least two or three items on it.  Make sure to give it an informative title.</li>
+</ul>
+
+<p><strong>Step 5.</strong> Review your list of issues.  You should see both the task issues and the on-boarding issue.  View the on-boarding issue.  Note that the checklist is rendered as checkable boxes.  You can check and uncheck items to try it out.</p>
+
+<h3 id="kanban-board">Kanban Board</h3>
+
+<p>Select Projects tab
+Click New Project
+Use title 
+Team Kanban board
+Add these columns:
+Backlog, Ready, In progress, In review, Done.
+Click on +Add cards (upper right).
+Move each issue to the proper Kanban column</p>
+
+<h3 id="a-kanban-board">A Kanban Board</h3>
+
+<p>Next, we’re going to setup a simple kanban board that you can use to manage the project you’ve been creating issues for.</p>
+
+<p><strong>Step 6.</strong> Go to the Project tab in your repository and create a project.  We suggest calling it “Project Management”.  Provide a description if you like.  For the Template, select “Basic Kanban”.  Click “Create project”.  The result should be a project board with columns labeled “To do”, “In progress”, and “Done”.</p>
+<ul>
+  <li>The To do column starts out with three “notes”, which take up a lot of space.  You may want to give them a quick read and then delete them by clicking the ellipsis (three dots) menu and selecting “Delete Note” on each.</li>
+</ul>
+
+<p><strong>Step 7.</strong> Add the issues you have created to the project board by clicking the “+ Add cards” button on the top right of the project board, next to the filter widget.  The default search in the popup (“is:open”) should display the issues you’ve created.  One by one, drag each of them to the To do column of the project board.  Remember that creating new issues doesn’t automatically add them to the project board, you have to do this manually. (There are good reasons that this is the default behavior, and there are ways to change it, using automations built into the project board (more below) or GitHub Actions.)</p>
+<ul>
+  <li><em>Extra credit</em>: There is a way to add a new issue to a project board while you’re creating it, on the New issue screen.  Can you find it?</li>
+</ul>
+
+<p><strong>Step 8.</strong> Add an “In Review” column to your project board.</p>
+<ul>
+  <li>Click “+ Add column” to create the new column, and name it “In Review”.</li>
+  <li>Drag it between the “In Progress” and “Done” columns.</li>
+</ul>
+
+<p><strong>Step 9.</strong> Drag the issues to the appropriate columns on the board.</p>
+
+<p><strong>Step 10.</strong> Suppose you’ve finished a task.  Dragging it to the Done column indicates that, and scanning the Done column can give you reminders about the work you’ve completed when it comes time to report to your supervisor, for example.  But it is also useful to <em>close</em> tickets that are done so that, by default, they will no longer appear on the list of issues in the Issues tab or in searches there or on the project board.</p>
+<ul>
+  <li>To close an issue from the project board, click on its title to open a side panel on the right that shows a summary.  At the bottom of the summary are two large buttons.  One takes you to the full issue, which is convenient if you need to review it more carefully ot make more extensive revisions.  The other will close the issue.  You can click “Close issue” right there, without having to go to the full issue view to close it.  Notice that on the kanban board, the icon to the left of the issue title changes to include a check mark to indicate that it is done.</li>
+</ul>
+
+<p><strong>Step 11.</strong> Project board automations. GitHub offers a few built-in “automations” to help you manage project boards.  One of them is to automatically place newly-created issues in a particular column on the project board.  Another is to automatically move issues (also pull requests) to a particular column when they are closed.</p>
+<ul>
+  <li>Let’s start with the “To do” column. Access the automation menu, open the ellipsis (three dots) menu opposite the column title and selecting Manage automations.
+    <ul>
+      <li>Notice the first selection is the “preset” for the type of behavior you want the automation to use for that column.  You’ll notice that the default is “To do”, just like the column name.  But being able to select the preset in this way means that you’re not tied to a specific column name to get the automation behavior you want.  So you could call this column “Backlog” or something else and still give it the “To do” behavior.</li>
+      <li>The To do preset allows you to select behaviors for both new and reopened issues and pull requests.  You should select the behaviors that make the most sense for the way your project works.  Some considerations…
+        <ul>
+          <li>If you have multiple project boards for a single project, you may need more sophistication in directing new issues (pull requests) to different boards, in which case you probably need to investigate GitHub Actions (beyond the scope of this exercise).</li>
+          <li>A common occurrence is that someone inadvertently closes and issue and then will notice and immediately reopen it.  In such cases, you probably want the issue to stay in the column it was in when it was closed.  You can, of couse, manually drag those to To do or whatever column is appropriate.</li>
+          <li>If you have also setup a “Done” automation that moves closed issues to the Done column, the above scenario may become moot.  In which case you may actually prefer that reopened issues get moved to the To do column rather than getting lost among the things that really are done in the Done column.</li>
+          <li>For pull requests, in some projects, the protocol is to start with an issue and expect that each pull request will be directly associated with an issue.  In situations like that, you may prefer for new pull requests to be moved into the In progress column rather than To do.</li>
+        </ul>
+      </li>
+      <li>Once you’ve configured the automation as you want, click “Update automation”.  Note that you can always update or remove automations if you find that they’re not working well for you.</li>
+    </ul>
+  </li>
+  <li>Next. let’s open the Manage automations menu for the “Done” column.
+    <ul>
+      <li>In this case, we want the “Done” preset.  Select the behaviors you want for issues and pull requests that are marked as closed.  In our experience, all three of the available behaviors will make sense for many projects.</li>
+    </ul>
+  </li>
+  <li>Experiment with creating and closing issues to verify that the automation is behaving as you expect.  Try closing issues in different columns of the board.  Note that there may be a short lag between creating or closing the issue (pull request) and the automation moving it, so give it half a minute or so.</li>
+  <li><em>Extra credit</em>: In the discussion above, we mentioned a scenario where your project wants new <em>issues</em> to appear in the To do column, but new <em>pull requests</em> to appear in the In progress column.  How would you implement that with automations?</li>
+</ul>
+
+<p><em>Note: GitHub is not always completely self-consistent.  For example, the preset for an “In progress” column refers to other automations to do with approvals.  But we’ve never seen such presets in any of our work. Our guess is that perhaps they’re implementing additional features and parts may have “leaked” into their production environments.  Hopefully we’ll see the full functionality soon.</em></p>
+
+<h2 id="putting-it-into-practice">Putting it into Practice</h2>
+
+<p>You already know enough about the GitHub tools to put them to work in your project and/or your personal life (the concept of managing your own activities through a “personal kanban” approach). As you’ve seen, kanban is a lightweight process to get started with.  There are no hard and fast rules.  You can tailor your process to the needs of your particular project (or your own life). Also, if you forget to maintain your kanban board for a while, or get overwhelmed with other things, it is easy to resume and get yourself (or your team) back on track.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Better Scientific Software Tutorial</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">IDEAS Productivity Project</li><li><a class="u-email" href="mailto:IdeasProductivity@gmail.com">IdeasProductivity@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/bssw-tutorial"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bssw-tutorial</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting  high-performance computers.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

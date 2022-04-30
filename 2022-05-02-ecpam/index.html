@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-30T14:57:18-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-30T16:22:54-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -122,6 +122,21 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <h2 id=on-this-page">On this Page</h2>
 
 <ul>
@@ -129,6 +144,11 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <li><a href="#description">Description</a></li>
 <li><a href="#agenda">Agenda</a></li>
 <li><a href="#presentation-slides">Presentation Slides</a></li>
+<li><a href="#how-to-participate">How to Participate</a></li>
+<li><a href="#hands-on-exercises">Hands-On Exercises</a></li>
+<li><a href="#stay-in-touch">Stay in Touch</a></li>
+<li><a href="#related-events-at-the-ecp-annual-meeting-and-ecp-community-bof-days">Related Events at the ECP Annual Meeting and ECP Community BoF Days</a></li>
+<li><a href="#resources-from-presentations">Resources from Presentations</a></li>
 <li><a href="#requested-citation">Requested Citation</a></li>
 <li><a href="#acknowledgements">Acknowledgements</a></li></ul>
 
@@ -154,6 +174,238 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <p>The latest version of the slides will always be available at <strong><a href="https://doi.org/10.6084/m9.figshare.19608927">https://doi.org/10.6084/m9.figshare.19608927</a></strong>.</p>
 
 <p>Note that these files may include additional slides that will not be discussed during the tutorial, but questions are welcome.</p>
+
+
+<hr>
+<h2 id="how-to-participate">How to Participate</h2>
+
+<ul>
+  <li>Please use Zoom chat or unmute to ask questions at any time.  We will respond in chat or verbally as opportunities permit.</li>
+</ul>
+
+<hr>
+<h2 id="hands-on-exercises">Hands-On Exercises</h2>
+<h3 id="introduction">Introduction</h3>
+
+<p>The hands-on exercises for this tutorial are based around a simple numerical model using the one-dimensional heat equation.
+ The example is described briefly in the repository’s <a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-05-02-ecpam#readme">README</a> file, and in greater detail in the ATPESC <a href="https://xsdk-project.github.io/MathPackagesTraining2020/lessons/hand_coded_heat/">Hands-On lesson</a>.  The ATPESC version focuses on the numerical aspects of the model.</p>
+
+<p>But for this tutorial, we’re focused on how to make the software better from a quality perspective, so <strong>you don’t need to understand the math to do these exercises</strong>.</p>
+
+<p>For the purposes of these hands-on exercises, you should imagine you’ve inherited an early version of the hello-numerical-world software from a colleague who’s left the project, and you’ve been assigned to get it into better shape so that it can be used in the next <a href="https://extremecomputingtraining.anl.gov/">ATPESC</a> summer school.</p>
+
+<p>The repository you’ll be working with is: <strong><a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-05-02-ecpam">bssw-tutorial/hello-numerical-world-2022-05-02-ecpam</a></strong>.</p>
+
+<p><em>Note: most of the screenshots will refer to the generic “hello-numerical-world” repository rather than the one specifically for this event.</em></p>
+
+<h3 id="list-of-hands-on-exercises">List of Hands-On Exercises</h3>
+<p><em>Note that not every presentation module has exercises (yet).</em></p>
+<ul>
+  <li><strong><a href="../2022-05-02-ecpam/handson-m00-prerequisites.html">Setting up the Prerequisites</a>.</strong> Setup the accounts needed for these exercises.</li>
+  <li><strong><a href="../2022-05-02-ecpam/handson-m08-testing.html">Software Testing</a>.</strong> You’ll use an example project to try out using test driven development to add new functionality to a project</li>
+  <li><strong><a href="../2022-05-02-ecpam/handson-m10-continuous-integration.html">Continuous Integration</a>.</strong> You’ll establish a simple continuous integration workflow and then refine it, adding code coverage assessment</li>
+</ul>
+
+<p>There are also activities associated with a couple of modules that we didn’t have time to cover in this tutorial.  You are welcome to try them out too.</p>
+<ul>
+  <li><strong><a href="../2022-05-02-ecpam/handson-m02-agile.html">Agile Methodologies</a>.</strong>  You’ll use GitHub issues and project boards to setup a simple “personal kanban” board.</li>
+  <li><strong><a href="../2022-05-02-ecpam/handson-m03-git-workflows.html">Basic Git for Collaboration</a>.</strong> You’ll fork our hello-numerical-world repository, create a feature branch, and make a pull request</li>
+  <li><strong><a href="../2022-05-02-ecpam/handson-m06-agile-redux.html">Agile Redux</a>.</strong>  You’ll create epic, story, and task issues for the refactoring task and track them on a kanban board</li>
+  <li><strong><a href="../2022-05-02-ecpam/handson-m11-refactoring1.html">Refactoring Scientific Software</a>.</strong>  You’ll perform a small, well-defined refactoring exercise</li>
+</ul>
+
+<hr>
+<h2 id="stay-in-touch">Stay in Touch</h2>
+
+<ul>
+  <li>
+    <p>After the tutorial please feel free to email questions or feedback to the BSSw tutorial team at <a href="mailto:bssw-tutorial@lists.mcs.anl.gov">bssw-tutorial@lists.mcs.anl.gov</a>.</p>
+  </li>
+  <li>
+    <p>If you want to do the <a href="#hands-on-exercises">hands-on exercises</a>, we’re happy to provide feedback on your pull requests and issues, even after the end of the tutorial.</p>
+  </li>
+  <li>
+    <p>To find out about future events organized by the IDEAS Productivity Project, you can <a href="http://eepurl.com/cQCyJ5">subscribe to our mailing list</a> (usually ~2 messages/month).</p>
+  </li>
+  <li>
+    <p>For monthly updates on the Better Scientific Software site, subscribe to our <a href="https://bssw.io/pages/receive-our-email-digest">monthly digest</a>.</p>
+  </li>
+</ul>
+
+<hr>
+<h2 id="related-events-at-the-ecp-annual-meeting-and-ecp-community-bof-days">Related Events at the ECP Annual Meeting and ECP Community BoF Days</h2>
+
+<p>If you’re interested in this tutorial, you might be interested in these related events taking place at this week’s <a href="https://ecpannualmeeting.com/">ECP Annual Meeting</a> or next week’s <a href="https://www.exascaleproject.org/event/ecp-community-bof-days-2022/">ECP Community BoF Days</a>.</p>
+
+<h3>ECP Annual Meeting</h3>
+
+<p><em>The following links will be accessible only to those who <strong>have registered</strong> for the ECP Annual Meeting</em></p>
+
+<table>
+    <tr>
+        <td><strong>Day(s)</strong></td>
+        <td><strong>Time (EDT)</strong></td>
+        <td><strong>Event</strong></td>
+    </tr>
+    <tr>
+        <td>Mon-Fri</td>
+        <td>12:30pm-1:30pm</td>
+        <td>IDEAS Desk – informal conversations about developer productivity and software sustainability<br />
+        Room 125 in the <a href="https://whova.com/portal/webapp/ecpan_202205/Logistics">Gather.Town</a> Side Meetings area</td>
+    </tr>
+    <tr>
+        <td>Tue</td>
+        <td>1:00pm-3:00pm</td>
+        <td><a href="https://whova.com/portal/webapp/ecpan_202205/Agenda/2237024">Broader Engagement Initiative</a></td>
+    </tr>
+    <tr>
+        <td>Tue</td>
+        <td>4:00-6:00pm</td>
+        <td><a href="https://whova.com/portal/webapp/ecpan_202205/Agenda/2263086">AD, Hardware and Integration, and Facilities Poster Session</a><br />
+        Posters on the IDEAS project, BSSw.io resource site, and BSSw Fellowship</td>
+    </tr>
+    <tr>
+        <td>Wed</td>
+        <td>1:00pm-2:00pm</td>
+        <td><a href="https://whova.com/portal/webapp/ecpan_202205/Agenda/2237037">Best Practices #somycodewillseethefuture Breakout</a></td>
+    </tr>
+    <tr>
+        <td>Wed</td>
+        <td>1:00pm-3:00pm</td>
+        <td><a href="https://whova.com/portal/webapp/ecpan_202205/Agenda/2237038">Panel on Sustainability of ECP Software and Applications</a></td>
+    </tr>
+    <tr>
+        <td>Thu</td>
+        <td>1:00pm-3:00pm</td>
+        <td><a href="https://whova.com/portal/webapp/ecpan_202205/Agenda/2237053">What Can be Learned from Applying Team of Teams Principles to the ECP Projects PETSc, Trilinos, xSDK, and E4S?</a></td>
+    </tr>
+</table>
+
+<h3>ECP Community BoF Days</h3>
+
+<p><em>The ECP Community BoF Days are <strong>open to the public</strong>.  Registration is required.</em></p>
+
+<table>
+    <tr>
+        <td><strong>Day</strong></td>
+        <td><strong>Time (EDT)</strong></td>
+        <td><strong>Event</strong></td>
+    </tr>
+    <tr>
+        <td>Wed 11 May</td>
+        <td>3:00-4:30pm</td>
+        <td><a href="https://www.exascaleproject.org/event/ecp-community-bof-days-2022/">Fostering Software Sustainability, Productivity and Quality through BSSw.io</a></td>
+    </tr>
+</table>
+
+<hr>
+<h2 id="resources-from-presentations">Resources from Presentations</h2>
+
+<p><em>Links from the tutorial presentations are listed here for convenience</em></p>
+
+<ul>
+  <li>Module 0: Introduction and Setup
+  <!-- intro -->
+    <ul>
+      <li><a href="http://ideas-productivity.org">IDEAS Productivity Project</a>
+        <ul>
+          <li><a href="http://eepurl.com/cQCyJ5">IDEAS Productivity mailing list</a></li>
+        </ul>
+      </li>
+      <li><a href="https://bssw.io">Better Scientific Software</a> site
+        <ul>
+          <li><a href="https://bssw.io/pages/receive-our-email-digest">BSSw Digest</a></li>
+          <li><a href="https://bssw.io/items.rss">RSS Feed</a></li>
+        </ul>
+      </li>
+      <li>The IDEAS <a href="https://doi.org/10.2172/1606662">report</a></li>
+      <li><a href="mailto:bssw-tutorial@lists.mcs.anl.gov">Write to the tutorial authors</a></li>
+      <li><a href="https://inclusivenaming.org/">Inclusive Naming Initiative</a></li>
+      <li>Bssw.io resource on <a href="https://bssw.io/items/inclusive-language-resources">Inclusive Naming</a></li>
+    </ul>
+  </li>
+  <li>Module 1: Motivation and Overview
+  <!-- overview -->
+    <ul>
+      <li><a href="https://rateyourproject.org/">Rate Your Project Assesment Tool</a></li>
+      <li><a href="https://bssw-psip.github.io/ptc-catalog/catalog">Progress Tracking Card (PTC) Examples</a></li>
+      <li><a href="https://bssw.io/psip">Portability and Sustainability Improvement Planning</a></li>
+      <li><a href="https://bssw.io">Better Scientific Software (BSSw)</a></li>
+    </ul>
+  </li>
+  <li>Module 2: Software Testing Introduction
+  <!-- testing-introduction2 -->
+    <ul>
+      <li>Python Build and Test Framework: <a href="https://pyscaffold.org">pyscaffold.org</a></li>
+      <li>Build-Link-Test CMake Framework: <a href="https://llnl-blt.readthedocs.io">llnl-blt.readthedocs.io</a></li>
+      <li>Tutorials for code coverage: <a href="https://github.com/amklinv/morpheus">Online Tutorial</a>, <a href="https://github.com/jrdoneal/infrastructure">Another example</a></li>
+      <li><a href="https://github.com/bssw-tutorial/hello-numerical-world/tdd-example">Test drive development example</a></li>
+      <li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake Tutorial</a></li>
+      <li>CMake <a href="https://cmake.org/cmake/help/latest/command/add_test.html">add-test</a> command documentation</li>
+      <li><a href="https://doi.org/10.1017/CBO9780511760396">Verification and Validation in Scientific Computing</a></li>
+      <li><a href="https://doi.org/10.1007/978-3-540-27777-4_42">Working Effectively with Legacy Code</a></li>
+    </ul>
+  </li>
+  <li>Module 3: Testing Complex Software
+  <!-- testing-advanced -->
+    <ul>
+      <li><a href="https://ideas-productivity.org/resources/howtos/">Useful How-to resources on test and test suites on ideas-productivity.org</a></li>
+      <li>Related articles:
+        <ul>
+          <li><a href="https://ieeexplore.ieee.org/abstract/document/8449015">Methodology for Building Granular Testing in Multicomponent Scientific Software</a></li>
+          <li><a href="https://doi.org/10.1002/spe.2220">Ongoing verification of a multiphysics community code: FLASH</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Module 4: Continuous Integration
+  <!-- continuous-integration -->
+    <ul>
+      <li>Gitlab <a href="https://docs.gitlab.com/ee/ci/introduction/">CI/CD Concepts</a></li>
+      <li>CI testing examples
+        <ul>
+          <li><a href="https://doi.org/10.1002/spe.2220">Flash test</a></li>
+          <li><a href="https://github.com/buildtesters/buildtest/">Buildtest</a></li>
+          <li>[Nightly])(https://github.com/frobnitzem/nightly/)</li>
+          <li><a href="https://www.fluidnumerics.com/resources/cicd-in-the-cloud-for-hpc-applications">Fluid-numerics</a></li>
+        </ul>
+      </li>
+      <li><a href="https://ecp-ci.gitlab.io/">Exascale Computing Project CI documentation</a></li>
+      <li><a href="https://github.com/features/actions">Github Actions</a></li>
+      <li><a href="https://docs.gitlab.com/ee/ci/">GitLab CI/CD</a></li>
+      <li><a href="https://travis-ci.com">Travis CI service</a></li>
+      <li><a href="https://codecov.io">Codecov service</a></li>
+      <li><a href="https://spack.readthedocs.io">Spack</a></li>
+      <li><a href="https://e4s-project.github.io">Extreme-scale Scientific Software Stack (E4S)</a></li>
+      <li><a href="https://docs.docker.com/ci-cd/best-practices/">Best practices for using Docker Hub for CI/CD</a></li>
+    </ul>
+  </li>
+  <li>Module 5: Summary
+  <!-- summary -->
+    <ul>
+      <li><a href="https://bssw.io/psip">Productivity and Sustainability Improvement Planning</a>
+        <ul>
+          <li><a href="https://rateyourproject.org/">https://rateyourproject.org/</a></li>
+          <li><a href="https://bssw-psip.github.io/ptc-catalog/catalog">Progress Tracking Card Catalog</a></li>
+          <li><a href="https://bssw.io/">Better Scientific Software web site</a></li>
+        </ul>
+      </li>
+      <li><a href="mailto:bssw-tutorial@lists.mcs.anl.gov">Write to the tutorial authors</a></li>
+      <li><a href="https://bssw-tutorial.github.io">Tutorial Material Online</a></li>
+      <li><a href="https://ideas-productivity.org">IDEAS Productivity project</a>
+        <ul>
+          <li><a href="http://eepurl.com/cQCyJ5">mailing list</a></li>
+        </ul>
+      </li>
+      <li><a href="https://bssw.io">Better Scientific Software</a> site
+        <ul>
+          <li><a href="https://bssw.io/pages/receive-our-email-digest">BSSw Digest</a></li>
+          <li><a href="https://bssw.io/items.rss">RSS Feed</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 
 <hr>
