@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-30T17:14:17-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-30T17:24:29-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -107,15 +107,20 @@ EOF
     <span class="nt">--title</span> <span class="s2">"2022-05-02-ecpam build website"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
-- [ ] description
-- [ ] agenda *requires </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-05-02-ecpam/agenda.csv</span><span class="se">\`</span><span class="sh">*
-- [ ] presentation-slides
-- [ ] how-to-participate
-- [ ] hands-on-exercises
-- [ ] stay-in-touch
-- [ ] resources-from-presentations
-- [ ] requested-citation
-- [ ] acknowledgments
+- Update event details
+  - [ ] artufacts: presentation doi
+  - [ ] artifacts: hands-on code repo
+- Update event page sections    
+  - [ ] description
+  - [ ] agenda *requires </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-05-02-ecpam/agenda.csv</span><span class="se">\`</span><span class="sh">*
+  - [ ] presentation-slides
+  - [ ] how-to-participate
+  - [ ] hands-on-exercises
+  - [ ] stay-in-touch
+  - [ ] resources-from-presentations
+  - [ ] requested-citation
+  - [ ] acknowledgments
+- [ ] Tag repository
 </span><span class="no">EOF
 
 </span></code></pre></div></div>
@@ -290,6 +295,28 @@ This tutorial is produced by the IDEAS Productivity project. This work was suppo
 <h3 id="event-title">Event title</h3>
 
 <p><code class="language-plaintext highlighter-rouge">Developing a Testing and Continuous Integration Strategy for your Team tutorial @ Exascale Computing Project Annual Meeting meeting</code></p>
+
+<h2 id="scripting-to-tag-tutorial-repository">Scripting to tag tutorial repository</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># In local working copy of bssw-tutorial/bssw-tutorial.github.io repository</span>
+
+<span class="c"># Tag repo</span>
+git tag <span class="nt">-a</span> 2022-05-02-ecpam <span class="nt">-m</span> <span class="s2">"2022-05-02: Developing a Testing and Continuous Integration Strategy for your Team tutorial @ Exascale Computing Project Annual Meeting meeting"</span>
+git push origin <span class="nt">--tags</span>
+
+</code></pre></div></div>
+
+<h2 id="scripting-to-remove-tag">Scripting to remove tag</h2>
+
+<p>For when we have to update the repository.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># In local working copy of bssw-tutorial/bssw-tutorial.github.io repository</span>
+
+<span class="c"># Delete local and remote tags</span>
+git tag <span class="nt">-d</span> 2022-05-02-ecpam
+git push <span class="nt">--delete</span> origin 2022-05-02-ecpam
+
+</code></pre></div></div>
 
       </div>
     </main><footer class="site-footer h-card">
