@@ -94,14 +94,32 @@ cd {{ dest-dir }}
 git add *.pdf presentations.yml
 git commit -m "Capturing presentations for {{ event-label }}"
 git push
-git tag -a {{ event-label}} -m {{ description }}"
-git push origin --tags
 
 # Create archive
 zip --update {{ event-label }}.zip *.pdf
+
+# Tag repo
+git tag -a {{ event-label}} -m "{{ description }}"
+git push origin --tags
 
 # Create release and add zip archive
 gh release create {{ event-label }} --title "{{ description }}" --notes "{{ description }}"
 gh release upload {{ event-label }} {{ event-label }}.zip
 
+```
+
+## Scripting to remove tag and release
+
+For when we have to update the presentations.
+
+```shell
+# In local working copy of bssw-tutorial/presentations repository
+# Delete release (--yes overrides confirmation request)
+gh release delete {{ event-label }} --yes
+
+# Delete local and remote tags
+git tag -d {{ event-label }}
+git push --delete origin {{ event-label }}
+
+# Start over at "tag repo" step above to create new release
 ```
