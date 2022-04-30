@@ -129,16 +129,16 @@ gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ eve
 1. Login and navigate to the `My Data` tab in your FigShare account
 2. Click `Create a new item`. Complete the fields as below
 
-**Title** `{{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.date | date: "(%Y)" }}`
+**Title:** {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.date | date: "(%Y)" }}
     
-**Authors** <!-- note that we're not listing helpers here -->
+**Authors:** <!-- note that we're not listing helpers here -->
 {% if name_affiliation_array %}{% for p in name_affiliation_array %}`{{ p }}`{%- unless forloop.last -%}, {%- endunless -%}{%- endfor -%}{% endif %}
 
-**Categories** `Software Engineering`
+**Categories:** `Software Engineering`
 
-**Item type** `Presentation`
+**Item type:** `Presentation`
 
-**Keywords**
+**Keywords:**
 `software engineering`,
 `software productivity`,
 `software sustainability`,
@@ -147,22 +147,18 @@ gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ eve
 `scientific software`,
 `Better Scientific Software tutorial`
 
-**Description**
-```
+**Description:**
 {{ description | strip_html | strip }}
-```
 
-**Funding** <!-- this field doesn't allow newlines, so get rid of them -->
-```
+**Funding:** <!-- this field doesn't allow newlines, so get rid of them -->
 {{ funding | strip_html | normalize_whitespace | strip }}
-```
 
-**References**
+**References:**
 `{{ site.url }}/{{ event-label }}`, 
 {% if my-event.venue-url %}`{{ my-event.venue-url }}`, {% endif %}
 `{{ site.ideas-url }}`
 
-**License** `CC BY 4.0`
+**License:** `CC BY 4.0`
 
 ## Citation
 
