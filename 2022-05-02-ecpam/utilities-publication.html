@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-30T16:32:24-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities-publication.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-30T17:14:17-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities-publication.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -126,17 +126,34 @@ EOF
 git add <span class="k">*</span>.pdf presentations.yml
 git commit <span class="nt">-m</span> <span class="s2">"Capturing presentations for 2022-05-02-ecpam"</span>
 git push
-git tag <span class="nt">-a</span> 2022-05-02-ecpam <span class="nt">-m</span> 2022-05-02: Developing a Testing and Continuous Integration Strategy <span class="k">for </span>your Team tutorial @ Exascale Computing Project Annual Meeting meeting<span class="s2">"
-git push origin --tags
 
-# Create archive
-zip --update 2022-05-02-ecpam.zip *.pdf
+<span class="c"># Create archive</span>
+zip <span class="nt">--update</span> 2022-05-02-ecpam.zip <span class="k">*</span>.pdf
 
-# Create release and add zip archive
-gh release create 2022-05-02-ecpam --title "</span>2022-05-02: Developing a Testing and Continuous Integration Strategy <span class="k">for </span>your Team tutorial @ Exascale Computing Project Annual Meeting meeting<span class="s2">" --notes "</span>2022-05-02: Developing a Testing and Continuous Integration Strategy <span class="k">for </span>your Team tutorial @ Exascale Computing Project Annual Meeting meeting<span class="s2">"
+<span class="c"># Tag repo</span>
+git tag <span class="nt">-a</span> 2022-05-02-ecpam <span class="nt">-m</span> <span class="s2">"2022-05-02: Developing a Testing and Continuous Integration Strategy for your Team tutorial @ Exascale Computing Project Annual Meeting meeting"</span>
+git push origin <span class="nt">--tags</span>
+
+<span class="c"># Create release and add zip archive</span>
+gh release create 2022-05-02-ecpam <span class="nt">--title</span> <span class="s2">"2022-05-02: Developing a Testing and Continuous Integration Strategy for your Team tutorial @ Exascale Computing Project Annual Meeting meeting"</span> <span class="nt">--notes</span> <span class="s2">"2022-05-02: Developing a Testing and Continuous Integration Strategy for your Team tutorial @ Exascale Computing Project Annual Meeting meeting"</span>
 gh release upload 2022-05-02-ecpam 2022-05-02-ecpam.zip
 
-</span></code></pre></div></div>
+</code></pre></div></div>
+
+<h2 id="scripting-to-remove-tag-and-release">Scripting to remove tag and release</h2>
+
+<p>For when we have to update the presentations.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># In local working copy of bssw-tutorial/presentations repository</span>
+<span class="c"># Delete release (--yes overrides confirmation request)</span>
+gh release delete 2022-05-02-ecpam <span class="nt">--yes</span>
+
+<span class="c"># Delete local and remote tags</span>
+git tag <span class="nt">-d</span> 2022-05-02-ecpam
+git push <span class="nt">--delete</span> origin 2022-05-02-ecpam
+
+<span class="c"># Start over at "tag repo" step above to create new release</span>
+</code></pre></div></div>
 
       </div>
     </main><footer class="site-footer h-card">
