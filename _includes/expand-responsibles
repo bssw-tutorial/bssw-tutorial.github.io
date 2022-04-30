@@ -1,0 +1,38 @@
+{% comment %}
+  emit-responsibles: convert the responsible keywords in the deadlines structure to a list of GitHub IDs
+
+  arguments:
+    `responsible`: array of keywords for the responsible group(s)
+        Possible values include:
+        - `organizer-ids`
+        - `presenter-ids`
+        - `helper-ids`
+        - `by-presentation` special case that uses the presenters listed in the agenda
+    `ignore-undefined`: boolean whether to ignore or highlight when the needed arrays have
+        not been defined (optional, default = false)
+
+{% endcomment %}
+
+{% for r in include.responsible %}
+{% endfor %}
+
+{%- assign short = include.short | default: false -%}
+{%- assign noaffil = include.noaffil | default: false -%}
+
+{%- comment -%}
+  This method of construction is sloppy in that corner cases my result in leading or trailing spaces in the string.
+  So we capture it and strip off leading and trailing whitespace before emitting it.
+{%- endcomment -%}
+
+{%- capture n -%}
+{%- if include.person[0].firstname -%}{{ include.person[0].firstname | append: " " }}{%- endif -%}
+{%- if include.person[0].lastname -%}{{ include.person[0].lastname | append: " " }}{%- endif -%}
+{%- unless noaffil -%}
+  {%- if short -%}
+    {%- if include.person[0].short-affils -%}({{- include.person[0].short-affils | array_to_sentence_string }}){%- endif -%}
+  {%- else -%}
+    {%- if include.person[0].affiliations -%}({{- include.person[0].affiliations | array_to_sentence_string }}){%- endif -%}
+  {%- endif -%}
+{%- endunless -%}
+{%- endcapture -%}
+{{ n | strip }}

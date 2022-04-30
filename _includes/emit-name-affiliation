@@ -7,6 +7,7 @@
     `person`: record containing the person's information
     `short`: boolean indicating that short affiliation should be use (optional, default: false)
     `noaffil`: boolean indicating that only the name should be emitted (optional, default: false)
+    `noname`: boolean indicating that only the affiliation should be emitted (optional, default: false)
 
   Expected elements of person structure
     lastname (string)
@@ -22,6 +23,7 @@
 
 {%- assign short = include.short | default: false -%}
 {%- assign noaffil = include.noaffil | default: false -%}
+{%- assign noname = include.noname | default: false -%}
 
 {%- comment -%}
   This method of construction is sloppy in that corner cases my result in leading or trailing spaces in the string.
@@ -29,13 +31,15 @@
 {%- endcomment -%}
 
 {%- capture n -%}
-{%- if include.person[0].firstname -%}{{ include.person[0].firstname | append: " " }}{%- endif -%}
-{%- if include.person[0].lastname -%}{{ include.person[0].lastname | append: " " }}{%- endif -%}
+{%- unless noname -%}
+  {%- if include.person[0].firstname -%}{{ include.person[0].firstname | append: " " }}{%- endif -%}
+  {%- if include.person[0].lastname -%}{{ include.person[0].lastname | append: " " }}{%- endif -%}
+{%- endunless -%}
 {%- unless noaffil -%}
   {%- if short -%}
-    {%- if include.person[0].short-affils -%}({{- include.person[0].short-affils | array_to_sentence_string }}){%- endif -%}
+    {%- if include.person[0].short-affils -%}{%- unless noname -%}({%- endunless -%}{{- include.person[0].short-affils | array_to_sentence_string }}{%- unless noname -%}){%- endunless -%}{%- endif -%}
   {%- else -%}
-    {%- if include.person[0].affiliations -%}({{- include.person[0].affiliations | array_to_sentence_string }}){%- endif -%}
+    {%- if include.person[0].affiliations -%}{%- unless noname -%}({%- endunless -%}{{- include.person[0].affiliations | array_to_sentence_string }}{%- unless noname -%}){%- endunless -%}{%- endif -%}
   {%- endif -%}
 {%- endunless -%}
 {%- endcapture -%}

@@ -1,8 +1,13 @@
 ---
-layout: page
+layout: default
 ---
 {%- include set-event-label-from-path -%}
-{% assign my-artifacts = site.data.bsswt[event-label].artifacts %}
+{%- assign my-event = site.data.bsswt[event-label].event -%}
+{% if my-event.artifacts %}
+  {% assign my-artifacts = my-event.artifacts %}
+{% else %}
+  {% assign my-artifacts = site.data.bsswt[event-label].artifacts %}
+{% endif %}
 {% include key-artifact-shorthands artifacts=my-artifacts %}
 {% assign my-presentations = site.data.bsswt[event-label].presentations %}
 {% assign my-agenda = site.data.bsswt[event-label].agenda %}
@@ -10,14 +15,13 @@ layout: page
 {% assign my-organizers = site.data.bsswt[event-label].event.organizer-ids %}
 {% assign my-presenters = site.data.bsswt[event-label].event.presenter-ids %}
 {% assign my-helpers = site.data.bsswt[event-label].event.helper-ids %}
-{% assign my-event = site.data.bsswt[event-label].event %}
 {% assign my-deadlines = site.data.bsswt[event-label].event.deadlines %}
 
 [Home]({{ site.url }}) > [{{ event-label }}]({{ site.url }}/{{ event-label }}) > [utilities]({{ site.url }}/{{ event-label }}/utilities) > [preparation]({{ site.url }}/{{ event-label }}/utilities-preparation)
 
 # Help for Tutorial Preparation
 
-## Create issue for initial preparation (organizers)
+## Issues for organizers
 
 ```shell
 gh issue create \
@@ -36,9 +40,60 @@ gh issue create \
     - Update About Us slide (3) with presenters and helpers, including head-shots
     - Update Hands-On Activities slide (9) as appropriate
     - Update the We want to Interact with You slide (11) as appropriate
+
+Potentially useful reference information:
+* [Detailed inputs for FigShare record]({{ site.url }}{{ page.url }}#create-figshare-record-and-reserve-doi)
+* [Citation]({{ site.url }}/{{ event-label }}#requested-citation)
+* [Agenda]({{ site.url }}/{{ event-label }}#agenda) can be copy-pasted into PowerPoint
+* [Title slide details]({{ site.url }}{{ page.url }}#title-slide-details)
+
+EOF
+
+gh issue create \
+    --repo bssw-tutorial/tutorial-management \
+    --milestone "{{ event-label }}" \
+    --title "{{ event-label }} build website" \
+    --assignee "{{ my-organizers | array_to_sentence_string: '' }}" \
+    --body-file - << EOF
+- [ ] description
+- [ ] agenda *requires \`_data/bsswt/{{ event-label }}/agenda.csv\`*
+- [ ] presentation-slides
+- [ ] how-to-participate
+- [ ] hands-on-exercises
+- [ ] stay-in-touch
+- [ ] resources-from-presentations
+- [ ] requested-citation
+- [ ] acknowledgments
 EOF
 
 ```
+
+## Issues for presenters
+
+{% assign gh = "gh issue create --repo bssw-tutorial/presentations --milestone " 
+    | append: event-label %}
+{% assign prepo = "https://github.com/bssw-tutorial/presentations/blob/master" %}
+{% capture prews %}https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/{{ event-label }}/presentation-resources{% endcapture %}
+{% assign dp =  my-deadlines | find_exp: "d", "d.label == 'internal-presentations'" %}
+{% assign dr =  my-deadlines | find_exp: "d", "d.label == 'internal-resource-links'" %}
+
+```shell
+# Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}
+{% for p in presentation-order %}
+gh issue create --repo bssw-tutorial/presentations --milestone "{{ event-label }}" \
+    --title "Update {{ p }} presentation{% if dp.due %} by {{ dp.due }}{% endif %}" \
+    --assignee {{ presenter-order[forloop.index0] }} \
+    --body "Update <{{ prepo }}/{{ p }}.pptx>{% if dp.due %} by {{ dp.due }}{% endif %}"
+{% endfor %}
+# Update resources from presentations{% if dr.due %} by {{ dr.due }}{% endif %}
+{% for p in presentation-order %}
+gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ event-label }}" \
+    --title "Update {{ p }} resources{% if dr.due %} by {{ dr.due }}{% endif %}" \
+    --assignee {{ presenter-order[forloop.index0] }} \
+    --body "Update <{{ prews }}/{{ p }}.md>{% if dr.due %} by {{ dr.due }}{% endif %}"
+{% endfor %}```
+
+---
 
 ## Create FigShare record and reserve DOI
 
@@ -109,19 +164,44 @@ EOF
 
 **License** `CC BY 4.0`
 
----
+## Citation
 
-## Create issues for individual presentation updates
+See requested citation on [event page](./index.html#requested-citation)
 
-{% assign gh = "gh issue create --repo bssw-tutorial/presentations --milestone " 
-    | append: event-label %}
-{% assign prepo = "https://github.com/bssw-tutorial/presentations/blob/master" %}
-{% assign d =  my-deadlines | find_exp: "d", "d.label == 'internal-presentations'" %}
+## Title slide details
 
-```shell
-{% for p in presentation-order %}
-gh issue create --repo bssw-tutorial/presentations --milestone "{{ event-label }}" \
-    --title "Update {{ p }} presentation{% if d.due %} by {{ d.due }}{% endif %}" \
-    --assignee {{ presenter-order[forloop.index0] }} \
-    --body "Update <{{ prepo }}/{{ p }}.pptx>{% if d.due %} by {{ d.due }}{% endif %}"
-{% endfor %}```
+### Presenter information
+
+{% include extract-array-subset key="github-id" values=my-event.presenter-ids source=site.people %}
+{% include set-name-affiliation-array people=extract_array_subset noaffil=true %}
+{% capture pnamafil %}{% include array-to-sentence array=name_affiliation_array 
+  if_empty="<em>to be announced</em>" %}{% endcapture %}
+
+{% include extract-array-subset key="github-id" values=my-event.helper-ids source=site.people %}
+{% include set-name-affiliation-array people=extract_array_subset noaffil=true %}
+{% capture hnamafil %}{% include array-to-sentence array=name_affiliation_array %}{% endcapture %}
+
+For intro (or equivalent): `{{ pnamafil }}`
+{% if hnamafil %}<br>`with help from {{ hnamafil }}`{% endif %}
+
+{% include extract-array-subset key="github-id" values=presenter-order source=site.people %}
+{% include set-name-affiliation-array people=extract_array_subset noaffil=true %}
+{% assign presenters = name_affiliation_array %}
+{% include set-name-affiliation-array people=extract_array_subset noname=true %}
+{% assign affiliations = name_affiliation_array %}
+
+{%- assign pronouns = "" | split: "," -%}
+{%- for p in extract_array_subset -%}
+  {%- comment -%} If the person-id is not in people, skip it{%- endcomment -%}
+  {%- unless p[0] -%}{%- continue -%}{%- endunless -%}
+  {%- capture pafil -%}{{ p[0].pronouns | default: "*unknown*" }}{%- endcapture -%}
+  {%- assign pronouns = pronouns | push: pafil -%}
+{%- endfor -%}
+
+| **Presentation** | **Presenter** | **Pronouns** | **Affiliation** |
+{% for p in presentation-order %}| {{ p }} | `{{ presenters[forloop.index0] }}` | `{{ pronouns[forloop.index0] }}` | `{{ affiliations[forloop.index0] }}` |
+{% endfor %}
+
+### Event title
+
+`{{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}`

@@ -4,7 +4,11 @@
 {% assign my-presenters = my-event.presenter-ids %}
 {% include extract-array-subset key="github-id" values=my-presenters source=site.people %}
 {% include set-name-affiliation-array people=extract_array_subset noaffil="true" %}
-{%- assign my-artifacts = site.data.bsswt[page.event-label].artifacts -%}
+{% if site.data.bsswt[event-label].event.artifacts %}
+  {% assign my-artifacts = site.data.bsswt[event-label].event.artifacts %}
+{% else %}
+  {% assign my-artifacts = site.data.bsswt[event-label].artifacts %}
+{% endif %}
 {%- include key-artifact-shorthands artifacts=my-artifacts -%}
 
 {% if my-presenters and my-event.title and my-event.venue and my-event.location and my-event.date %}
