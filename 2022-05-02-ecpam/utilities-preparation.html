@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-21T14:49:12-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-04-30T14:57:18-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -64,19 +64,12 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title"></h1>
-  </header>
-
-  <div class="post-content">
-    
+        
 <p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2022-05-02-ecpam">2022-05-02-ecpam</a> &gt; <a href="https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities-preparation">preparation</a></p>
 
 <h1 id="help-for-tutorial-preparation">Help for Tutorial Preparation</h1>
 
-<h2 id="create-issue-for-initial-preparation-organizers">Create issue for initial preparation (organizers)</h2>
+<h2 id="issues-for-organizers">Issues for organizers</h2>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
     <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
@@ -99,9 +92,102 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
     - Update About Us slide (3) with presenters and helpers, including head-shots
     - Update Hands-On Activities slide (9) as appropriate
     - Update the We want to Interact with You slide (11) as appropriate
+
+Potentially useful reference information:
+* [Detailed inputs for FigShare record](https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities-preparation.html#create-figshare-record-and-reserve-doi)
+* [Citation](https://bssw-tutorial.github.io/2022-05-02-ecpam#requested-citation)
+* [Agenda](https://bssw-tutorial.github.io/2022-05-02-ecpam#agenda) can be copy-pasted into PowerPoint
+* [Title slide details](https://bssw-tutorial.github.io/2022-05-02-ecpam/utilities-preparation.html#title-slide-details)
+</span><span class="no">
+EOF
+
+</span>gh issue create <span class="se">\</span>
+    <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
+    <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"2022-05-02-ecpam build website"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] description
+- [ ] agenda *requires </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-05-02-ecpam/agenda.csv</span><span class="se">\`</span><span class="sh">*
+- [ ] presentation-slides
+- [ ] how-to-participate
+- [ ] hands-on-exercises
+- [ ] stay-in-touch
+- [ ] resources-from-presentations
+- [ ] requested-citation
+- [ ] acknowledgments
 </span><span class="no">EOF
 
 </span></code></pre></div></div>
+
+<h2 id="issues-for-presenters">Issues for presenters</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations by 2022-04-27</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update intro presentation by 2022-04-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; by 2022-04-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update overview-testing presentation by 2022-04-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview-testing.pptx&gt; by 2022-04-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update testing-introduction2 presentation by 2022-04-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-introduction2.pptx&gt; by 2022-04-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update testing-advanced presentation by 2022-04-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-advanced.pptx&gt; by 2022-04-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update continuous-integration presentation by 2022-04-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/continuous-integration.pptx&gt; by 2022-04-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update summary-testing presentation by 2022-04-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/summary-testing.pptx&gt; by 2022-04-27"</span>
+
+<span class="c"># Update resources from presentations by 2022-04-28</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update intro resources by 2022-04-28"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-02-ecpam/presentation-resources/intro.md&gt; by 2022-04-28"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update overview-testing resources by 2022-04-28"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-02-ecpam/presentation-resources/overview-testing.md&gt; by 2022-04-28"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update testing-introduction2 resources by 2022-04-28"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-02-ecpam/presentation-resources/testing-introduction2.md&gt; by 2022-04-28"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update testing-advanced resources by 2022-04-28"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-02-ecpam/presentation-resources/testing-advanced.md&gt; by 2022-04-28"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update continuous-integration resources by 2022-04-28"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-02-ecpam/presentation-resources/continuous-integration.md&gt; by 2022-04-28"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update summary-testing resources by 2022-04-28"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-02-ecpam/presentation-resources/summary-testing.md&gt; by 2022-04-28"</span>
+</code></pre></div></div>
+
+<hr />
 
 <h2 id="create-figshare-record-and-reserve-doi">Create FigShare record and reserve DOI</h2>
 
@@ -145,45 +231,67 @@ In this tutorial, which is aimed at those with beginner to intermediate levels o
 
 <p><strong>License</strong> <code class="language-plaintext highlighter-rouge">CC BY 4.0</code></p>
 
-<hr />
+<h2 id="citation">Citation</h2>
 
-<h2 id="create-issues-for-individual-presentation-updates">Create issues for individual presentation updates</h2>
+<p>See requested citation on <a href="./index.html#requested-citation">event page</a></p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Update intro presentation by 2022-04-27"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; by 2022-04-27"</span>
+<h2 id="title-slide-details">Title slide details</h2>
 
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Update overview-testing presentation by 2022-04-27"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview-testing.pptx&gt; by 2022-04-27"</span>
+<h3 id="presenter-information">Presenter information</h3>
 
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Update testing-introduction2 presentation by 2022-04-27"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-introduction2.pptx&gt; by 2022-04-27"</span>
+<p>For intro (or equivalent): <code class="language-plaintext highlighter-rouge">Gregory R. Watson and David M. Rogers</code>
+<br /><code class="language-plaintext highlighter-rouge">with help from </code></p>
 
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Update testing-advanced presentation by 2022-04-27"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-advanced.pptx&gt; by 2022-04-27"</span>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Presentation</strong></td>
+      <td><strong>Presenter</strong></td>
+      <td><strong>Pronouns</strong></td>
+      <td><strong>Affiliation</strong></td>
+    </tr>
+    <tr>
+      <td>intro</td>
+      <td><code class="language-plaintext highlighter-rouge">Gregory R. Watson</code></td>
+      <td><code class="language-plaintext highlighter-rouge">he/him</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Oak Ridge National Laboratory</code></td>
+    </tr>
+    <tr>
+      <td>overview-testing</td>
+      <td><code class="language-plaintext highlighter-rouge">Gregory R. Watson</code></td>
+      <td><code class="language-plaintext highlighter-rouge">he/him</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Oak Ridge National Laboratory</code></td>
+    </tr>
+    <tr>
+      <td>testing-introduction2</td>
+      <td><code class="language-plaintext highlighter-rouge">Gregory R. Watson</code></td>
+      <td><code class="language-plaintext highlighter-rouge">he/him</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Oak Ridge National Laboratory</code></td>
+    </tr>
+    <tr>
+      <td>testing-advanced</td>
+      <td><code class="language-plaintext highlighter-rouge">David M. Rogers</code></td>
+      <td><code class="language-plaintext highlighter-rouge">he/him</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Oak Ridge National Laboratory</code></td>
+    </tr>
+    <tr>
+      <td>continuous-integration</td>
+      <td><code class="language-plaintext highlighter-rouge">David M. Rogers</code></td>
+      <td><code class="language-plaintext highlighter-rouge">he/him</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Oak Ridge National Laboratory</code></td>
+    </tr>
+    <tr>
+      <td>summary-testing</td>
+      <td><code class="language-plaintext highlighter-rouge">David M. Rogers</code></td>
+      <td><code class="language-plaintext highlighter-rouge">he/him</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Oak Ridge National Laboratory</code></td>
+    </tr>
+  </tbody>
+</table>
 
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Update continuous-integration presentation by 2022-04-27"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/continuous-integration.pptx&gt; by 2022-04-27"</span>
+<h3 id="event-title">Event title</h3>
 
-gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-02-ecpam"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Update summary-testing presentation by 2022-04-27"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> frobnitzem <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/summary-testing.pptx&gt; by 2022-04-27"</span>
-</code></pre></div></div>
-
-  </div>
-
-</article>
+<p><code class="language-plaintext highlighter-rouge">Developing a Testing and Continuous Integration Strategy for your Team tutorial @ Exascale Computing Project Annual Meeting meeting</code></p>
 
       </div>
     </main><footer class="site-footer h-card">
