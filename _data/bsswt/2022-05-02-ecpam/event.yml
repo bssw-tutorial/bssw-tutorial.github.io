@@ -17,7 +17,7 @@ time: 2:30 pm - 4:00 pm EDT (UTC-4)
 # Venue information
 #
 venue: "Exascale Computing Project Annual Meeting"
-venue-type: "meeting"
+#venue-type: "meeting" # redundant with the venue name
 venue-url: https://ecpannualmeeting.com/
 location: "online"
 #
