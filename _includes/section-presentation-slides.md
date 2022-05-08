@@ -8,5 +8,5 @@ The latest version of the slides will always be available at **<{{ presentations
 
 Note that these files may include additional slides that will not be discussed during the tutorial, but questions are welcome.
 {% else %}
-The presentations will be published shortly before the event.  Please check back.
+*The presentations will be published shortly before the event.*
 {% endif %}
