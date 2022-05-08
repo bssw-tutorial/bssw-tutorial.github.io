@@ -33,9 +33,9 @@ presenter-ids: [adubey64, jarrah42]
 # If you want to list the conference registration page, comment it out
 # after registration closes or after the event, when it is no longer useful.
 #
-#artifacts:
-#  - label: Conference Registration
-#    url: https://www.isc-hpc.com/registration-2022.html
+artifacts:
+  - label: Conference Registration
+    url: https://www.isc-hpc.com/registration-2022.html
 #  - label: Recordings
 #    format: YouTube playlist
 #    url: 
