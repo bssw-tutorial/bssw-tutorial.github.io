@@ -2,7 +2,7 @@
   * [Toward a Compatible Reproducibility Taxonomy for Computational and Computing Sciences](https://doi.org/10.2172/1481626) *(updated 2022-03-31 with DOI link)*
   * [Reproducibility and Replicability in Science](https://doi.org/10.17226/25303) *(updated 2022-03-31 with DOI link)*
   * [Many Psychology Findings Not as Strong as Claimed](http://www.nytimes.com/2015/08/28/science/many-social-science-findings-not-as-strong-as-claimed-study-says.html)
-  * [The War Over Supercooled Water](https://physicstoday.scitation.org/do/10.1063/PT.6.1.20180822a/full/)
+  * [The War Over Supercooled Water](https://doi.org/10.1063/PT.6.1.20180822a)
   * [Researchers Find Bug in Python Script May Have Affected Hundreds of Studies]( https://arstechnica.com/information-technology/2019/10/chemists-discover-cross-platform-python-scripts-not-so-cross-platform/)
   * [National Science Foundation Data Management Plan Requirements](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
   * [SC21 Reproducibility Initiative](https://sc21.supercomputing.org/submit/reproducibility-initiative/)
