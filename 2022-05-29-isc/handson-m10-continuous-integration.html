@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Better Scientific Software Tutorial | Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Better Scientific Software Tutorial" />
+<meta name="author" content="IDEAS Productivity Project" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2022-05-29-isc/handson-m10-continuous-integration.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2022-05-29-isc/handson-m10-continuous-integration.html" />
+<meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Better Scientific Software Tutorial" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-05-08T17:41:21-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-29-isc/handson-m10-continuous-integration.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133695134-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+</head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Better Scientific Software Tutorial</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="hands-on-exercise-continuous-integration">Hands-On Exercise: Continuous Integration</h1>
+<h2 id="goals">Goals</h2>
+<p>You’ll establish a simple continuous integration workflow and then refine it, adding code coverage assessment.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+  <li>A <a href="https://GitHub.com">GitHub</a> account
+    <ul>
+      <li>This exercise can be done entirely within the web interface to GitHub and Codecov.</li>
+    </ul>
+  </li>
+  <li>A <a href="https://codecov.io">Codecov</a> account linked to your GitHub account</li>
+  <li>A fork of the <a href="https://github.com/"></a> repository in your account (covered in Git Workflows exercise)</li>
+</ul>
+
+<h2 id="background">Background</h2>
+
+<p>A core idea of continuous integration is that CI checks are triggered by changes to the code, usually making or updating pull requests.  In this exercise, we’re going to use the GitHub actions service, which provides execution environments and resources on demand to run such tests.</p>
+
+<p>Complementary to testing, code coverage tells you how many lines of the code are exercised in the tests executed.
+We’re also going to hook this CI check up to the Codecov.io service.
+Then we’ll visualize and track changes in code coverage as the code changes.</p>
+
+<p>A video walk-through of (most of) this exercise is available at: <a href="https://youtu.be/QE4RFp8lGiQ">https://youtu.be/QE4RFp8lGiQ</a></p>
+<ul>
+  <li>This video was created by Mark Miller (LLNL) for tutorial at ATPESC 2020.  Where he refers to the repository as <code class="language-plaintext highlighter-rouge">hello-numerical-world-atpesc-2020</code>, substitute <code class="language-plaintext highlighter-rouge">hands-on-repo-dir (to be defined)</code>.</li>
+  <li>The original exercise used Travis CI, which requires setting up an extra account. Below, we use GitHub’s built-in Action service instead.</li>
+</ul>
+
+<h2 id="instructions">Instructions</h2>
+
+<p>You’ll need to add a configuration file to your repository to signal GitHub’s CI to take action.  The file must be placed inside the <code class="language-plaintext highlighter-rouge">.GitHub/workflows</code> folder.  Note the leading <code class="language-plaintext highlighter-rouge">.</code>.  In unix-like operating systems, this is a hidden file, that won’t be displayed in directory listings by default.  But on Windows and in the GitHub web interface, such files are displayed by default.</p>
+
+<p><strong>Step 1.</strong> Rather than type the file by hand, navigate to “Actions” on your GitHub project.  Then click “Skip this and set up a workflow yourself”.  This brings you to an editor for <code class="language-plaintext highlighter-rouge">.GitHub/workflows/main.yml</code>.  Any filename will do, so we’ll rename it <code class="language-plaintext highlighter-rouge">check.yml</code>.  Under the <code class="language-plaintext highlighter-rouge">jobs/build/steps</code> section, change the two run lines as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+...
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build the project with code coverage flags.
+        run: make CXXFLAGS=--coverage LDFLAGS="--coverage -lm" check
+
+      - name: Upload results to codecov.io
+        run: bash &lt;(curl -s https://codecov.io/bash)
+</code></pre></div></div>
+
+<p>These bash-shell commands execute the make and codecov.io upload steps.</p>
+
+<p>The configuration file is written in the YAML markup language, which is pretty simple,
+but interprets indentation levels as nesting of data elements.</p>
+
+<p>The first section (not shown) sets the conditions for running the jobs listed next.
+The dashes before each line are interpreted as list elements.
+Values within each section that don’t start with <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">[</code>, or <code class="language-plaintext highlighter-rouge">{</code>
+are interpreted as strings (or numbers if numeric).
+Thus, an equivalent syntax for the steps section would be:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+'steps': [ {'uses': "actions/checkout@v2"}
+         , {'name': "Build the project with code coverage flags.",
+             'run': "make CXXFLAGS=--coverage LDFLAGS='--coverage -lm' check"}
+         , {'name': "Upload results to codecov.io",
+             'run': "bash &lt;(curl -s https://codecov.io/bash)"}
+         ]
+</code></pre></div></div>
+
+<p>jobs specify the command to execute when the job is triggered.
+It’s worthwhile to read the documentation on other keys that can go into <code class="language-plaintext highlighter-rouge">steps</code>.
+Those can do things like setting up conda environments for python much more
+easily than manually entering <code class="language-plaintext highlighter-rouge">run</code> commands.  GitHub’s examples can also help.</p>
+
+<p><strong>Step 2.</strong> Next you need to create a commit to add this file to your copy of the repository.
+GitHub’s editor has you typing into a document with a big, green `Start Commit’ button.</p>
+
+<p>Click that to bring up a dialogue box asking for a commit message and an optional comment.
+The commit message should be a one-line description of what was changed.</p>
+
+<p>You also have the option of committing directly to the main branch or starting a new branch.</p>
+
+<p>To show the full process, click the second radio button (Create a new branch for this commit and start a pull request).
+A random branch name is automatically created, which is fine.  Submit the form by pressing the green
+“Propose New File” button.</p>
+
+<p><strong>Step 3.</strong> Next you need to create a pull request to add this change to the upstream repository.
+These pull requests (PR-s) are part of the GitHub website - and are not present in the command-line git tool.
+In gitlab, they are called “Merge Requests” instead.</p>
+
+<p>In our case, GitHub has already created the pull-request, and you are now viewing it.
+All pull requests for a repository are available under its “Pull requests”
+navigation button.  Click <code class="language-plaintext highlighter-rouge">Merge pull request</code> at the bottom to merge the PR.</p>
+
+<p><strong>Step 4.</strong>  Observe test results</p>
+
+<p>Looking at this pull request, you’ll see it records GitHub performing a couple of checks.  One it always does is to look for conflicts between your PR and the base branch from which it was forked in the upstream repository (in case there were changes upstream that you haven’t pulled into your fork yet).</p>
+
+<p>With the addition of the configuration file, the tests in <code class="language-plaintext highlighter-rouge">check.yml</code> are performed.  You’ll often notice a short lag from the moment you click “Create pull request” to the moment the that checks start running.  Usually, this is shown by an orange icon saying <code class="language-plaintext highlighter-rouge">some checks in progress</code>.</p>
+
+<p>All the checks are visible from the repository’s <code class="language-plaintext highlighter-rouge">Actions</code> nav-bar.
+If your check yml has a syntax error, the editor would have told you so as you were typing.
+If it got through anyway, GitHub’s check action status will tell you that yaml syntax was the problem.</p>
+
+<p>After the test has completed, there’s a direct link to “Show all checks”
+The immediate result of clicking on that link is a screen from GitHub summarizing what’s happening.
+The left bar shows all the <code class="language-plaintext highlighter-rouge">jobs</code> defined in your <code class="language-plaintext highlighter-rouge">workflows/*.yml</code> files.  For each,
+the right bar can be expanded to show the text output from each job step.
+GitHub keeps logs of all these runs for some time.</p>
+
+<p>If the check fails, the pull request page will show that, and the “Details” link will continue to be available to help you debug the problem.  You can see this situation for yourself by modifying something in the repository to intentionally introduce an error.  For example, you could change the <code class="language-plaintext highlighter-rouge">make</code> command in the <code class="language-plaintext highlighter-rouge">check.yml</code> file to make something nonexistent.  Or you could introduce a syntax error into one of the code files so that the compilation fails.  Or you could change the math in the code or the parameters in the <code class="language-plaintext highlighter-rouge">check</code> target of the <code class="language-plaintext highlighter-rouge">makefile</code> so that the results don’t match the golden results.</p>
+
+<hr />
+<p>Note on Pull-requests::</p>
+
+<p>When creating pull-requests, you should look carefully at the target repository.
+In this tutorial, your repository was not created by a “fork” from an upstream
+repository.  So your pull-request went directly to your “main” branch.</p>
+
+<p>When you are contributing to an outside project, however,
+you have the option of sending your pull-request to any branch
+of your own or the <code class="language-plaintext highlighter-rouge">upstream</code> repository.</p>
+
+<p><strong>Things can be confusing if you’re not in the repository you think you are.</strong>
+Pull-requests can involve two separate repositories.  Check often when you’re working with pull requests.</p>
+
+<p>Second, until the pull request is merged upstream (or closed),
+further commits in your fork will be added to the existing pull request.
+(If you think you might need to have multiple pull requests active at the
+same time from your fork, you should create each of them on a separate branch within your fork.)</p>
+
+<hr />
+
+<h3 id="adding-code-coverage-tracking">Adding Code Coverage Tracking</h3>
+
+<p>As mentioned, understanding how much of the code you’re working with is covered by your testing is important for effective CI testing (really for <em>any</em> testing).  We’re going to add coverage analysis to the build process and send the results to the Codecov.io service, which will track them for us.</p>
+
+<p><strong>Step 5.</strong> Login into your <a href="https://codecov.io">https://codecov.io</a> account and add your “hello-numerical-world” repository to your account.</p>
+
+<p><strong>Step 6.</strong> Go to your repository’s Actions page and view the last action.  Click the top-right button to “Re-run jobs”.
+This will fire off the <code class="language-plaintext highlighter-rouge">make check</code> and codecov uploads again.</p>
+
+<p>This time, your codecov results will land on codecov.io.
+This bit of magic is documented in the <a href="https://docs.codecov.io/docs">Quick Start</a> documentation on Codecov.io.  It is referred to as the “Codecov bash uploader”.</p>
+
+<p>Note that the first time you upload to Codecov.io, it has no prior coverage information so it can’t
+provide information about the <em>change</em> in coverage represented by the update to the pull request.
+As you commit more changes to the code itself, each pull request should now contain a small codecov summary,
+including changes in coverage.</p>
+
+<p><strong>Step 7.</strong> Increase the code coverage by replacing <code class="language-plaintext highlighter-rouge">check</code> with <code class="language-plaintext highlighter-rouge">check_all</code> in the <code class="language-plaintext highlighter-rouge">check.yml</code> file.  Observe the changes via the Codecov.io report.  You can also examine the CI logs to see the change in the execution time for the <code class="language-plaintext highlighter-rouge">check</code> and <code class="language-plaintext highlighter-rouge">check_all</code> test suites.</p>
+
+<p><strong>Step 8.</strong> <em>Extra credit</em>: Make the CI test fail if code coverage drops from the previous version. (Hint: read the <a href="https://docs.codecov.io/docs">codeco.io documentation</a>.)  This failing tests will encourage contributors to your project to continually increase code coverage as they add code.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Better Scientific Software Tutorial</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">IDEAS Productivity Project</li><li><a class="u-email" href="mailto:IdeasProductivity@gmail.com">IdeasProductivity@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/bssw-tutorial"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bssw-tutorial</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting  high-performance computers.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
