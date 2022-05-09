@@ -42,10 +42,10 @@ gh issue create \
     - Update the We want to Interact with You slide (11) as appropriate
 
 Potentially useful reference information:
-* [Detailed inputs for FigShare record]({{ site.url }}{{ page.url }}#create-figshare-record-and-reserve-doi)
-* [Citation]({{ site.url }}/{{ event-label }}#requested-citation)
-* [Agenda]({{ site.url }}/{{ event-label }}#agenda) can be copy-pasted into PowerPoint
-* [Title slide details]({{ site.url }}{{ page.url }}#title-slide-details)
+* [Detailed inputs for FigShare record]({{ site.prod_url }}{{ page.url }}#create-figshare-record-and-reserve-doi)
+* [Citation]({{ site.prod_url }}/{{ event-label }}#requested-citation)
+* [Agenda]({{ site.prod_url }}/{{ event-label }}#agenda) can be copy-pasted into PowerPoint
+* [Title slide details]({{ site.prod_url }}{{ page.url }}#title-slide-details)
 
 EOF
 
@@ -56,18 +56,18 @@ gh issue create \
     --assignee "{{ my-organizers | array_to_sentence_string: '' }}" \
     --body-file - << EOF
 - Update event details
-  - [ ] artufacts: presentation doi
+  - [ ] artifacts: presentation doi
   - [ ] artifacts: hands-on code repo
 - Update event page sections    
   - [ ] description
-  - [ ] agenda *requires \`_data/bsswt/{{ event-label }}/agenda.csv\`*
-  - [ ] presentation-slides
+  - [x] agenda *requires \`_data/bsswt/{{ event-label }}/agenda.csv\`*
+  - [x] presentation-slides
   - [ ] how-to-participate
   - [ ] hands-on-exercises
   - [ ] stay-in-touch
   - [ ] resources-from-presentations
-  - [ ] requested-citation
-  - [ ] acknowledgments
+  - [x] requested-citation
+  - [x] acknowledgments
 - [ ] Tag repository
 EOF
 
@@ -82,6 +82,7 @@ EOF
 {% assign dp =  my-deadlines | find_exp: "d", "d.label == 'internal-presentations'" %}
 {% assign dr =  my-deadlines | find_exp: "d", "d.label == 'internal-resource-links'" %}
 
+{% if my-agenda %}
 ```shell
 # Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}
 {% for p in presentation-order %}
@@ -97,6 +98,9 @@ gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ eve
     --assignee {{ presenter-order[forloop.index0] }} \
     --body "Update <{{ prews }}/{{ p }}.md>{% if dr.due %} by {{ dr.due }}{% endif %}"
 {% endfor %}```
+{% else %}
+**Need `_data/bsswt/{{ event-label }}/agenda.csv`**
+{% endif %}
 
 ---
 
@@ -159,19 +163,23 @@ gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ eve
 {{ funding | strip_html | normalize_whitespace | strip }}
 
 **References:**
-`{{ site.url }}/{{ event-label }}`, 
+`{{ site.prod_url }}/{{ event-label }}`, 
 {% if my-event.venue-url %}`{{ my-event.venue-url }}`, {% endif %}
 `{{ site.ideas-url }}`
 
 **License:** `CC BY 4.0`
 
-## Citation
+## Citation for `license-master` slide
 
 See requested citation on [event page](./index.html#requested-citation)
 
 ## Title slide details
 
 ### Presenter information
+{% comment %}
+  We really ought to verify that we have all the needed data for this, but so many
+  distinct items go into this, it probably needs to be done in stages.
+{% endcomment %}
 
 {% include extract-array-subset key="github-id" values=my-event.presenter-ids source=site.people %}
 {% include set-name-affiliation-array people=extract_array_subset noaffil=true %}

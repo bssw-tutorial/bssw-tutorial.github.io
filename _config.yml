@@ -27,6 +27,10 @@ description: >- # this means to ignore newlines until "baseurl:"
   high-performance computers.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bssw-tutorial.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# This is not a normal Jekyll thing, but sometimes it is useful to reference the
+# production site URL even when we're serving locally for development purposes.
+# So prod_url should be set to the same thing as url.
+prod_url: "https://bssw-tutorial.github.io"
 markdown: kramdown
 #twitter_username: jekyllrb
 github_username:  bssw-tutorial
