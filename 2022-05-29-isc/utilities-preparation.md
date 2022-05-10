@@ -169,13 +169,19 @@ gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ eve
 
 **License:** `CC BY 4.0`
 
+---
+
 ## Citation for `license-master` slide
 
-See requested citation on [event page](./index.html#requested-citation)
+*See requested citation on [event page](./index.html#requested-citation)*
+
+---
 
 ## Title slide details
 
-### Presenter information
+*If you copy-paste from this page into PowerPoint, you will want to use the `copy-without-formatting`
+option to ensure that you get the font from the PPT template rather than the font from the web site.*
+
 {% comment %}
   We really ought to verify that we have all the needed data for this, but so many
   distinct items go into this, it probably needs to be done in stages.
@@ -188,10 +194,15 @@ See requested citation on [event page](./index.html#requested-citation)
 
 {% include extract-array-subset key="github-id" values=my-event.helper-ids source=site.people %}
 {% include set-name-affiliation-array people=extract_array_subset noaffil=true %}
-{% capture hnamafil %}{% include array-to-sentence array=name_affiliation_array %}{% endcapture %}
+{% capture hnamafil %}{% include array-to-sentence array=name_affiliation_array if_empty=nil %}{% endcapture %}
 
-For intro (or equivalent): `{{ pnamafil }}`
-{% if hnamafil %}<br>`with help from {{ hnamafil }}`{% endif %}
+{% comment %}
+  We're going to assume that the first presentation is the intro deck
+  that introduces the whole tutorial, and so should be treated separately.
+{% endcomment %}
+
+**People for `{{ presentation-order[0] }}.pptx` title slide:** {{ pnamafil }}
+{% if hnamafil != "" %}<br>with help from {{ hnamafil }}{% endif %}
 
 {% include extract-array-subset key="github-id" values=presenter-order source=site.people %}
 {% include set-name-affiliation-array people=extract_array_subset noaffil=true %}
@@ -208,12 +219,12 @@ For intro (or equivalent): `{{ pnamafil }}`
 {%- endfor -%}
 
 | **Presentation** | **Presenter** | **Pronouns** | **Affiliation** |
-{% for p in presentation-order %}| {{ p }} | `{{ presenters[forloop.index0] }}` | `{{ pronouns[forloop.index0] }}` | `{{ affiliations[forloop.index0] }}` |
+{% for p in presentation-order %}{% if forloop.first %}{% continue %}{% endif %}| `{{ p }}.pptx` | {{ presenters[forloop.index0] }} | {{ pronouns[forloop.index0] }} | {{ affiliations[forloop.index0] }} |
 {% endfor %}
 
-### Event title
+**Event title:** {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}
 
-`{{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}`
+---
 
 ## Scripting to tag tutorial repository
 
