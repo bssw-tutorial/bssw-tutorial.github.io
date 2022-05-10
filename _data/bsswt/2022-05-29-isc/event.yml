@@ -24,9 +24,9 @@ location: "Hamburg, Germany, and online"
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
 #
-organizer-ids: [bernhold]
+organizer-ids: [adubey64, bernhold]
 presenter-ids: [adubey64, jarrah42]
-#helper-ids: 
+helper-ids: 
 #
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.

@@ -1,0 +1,12 @@
+Fixed Points,Duration,Time (CEST),Module,Title,Presenter
+<!--skip-->,<!--skip-->,<!--right-->,<!--right-->,,
+2:00 PM,10,2:00 PM,0,intro,adubey64
+,20,2:10 PM,1,overview,adubey64
+,30,2:30 PM,2,agile,jarrah42
+,30,3:00 PM,3,git-workflows,jarrah42
+,30,3:30 PM,4,design,adubey64
+4:00 PM,30,4:00 PM,,<em>Break</em>,
+4:30 PM,30,4:30 PM,5,reproducibility,jarrah42
+,40,5:00 PM,6,testing-introduction2,jarrah42
+,20,5:40 PM,7,summary,adubey64
+6:00 PM,240,6:00 PM,,<em>Adjourn</em>,
