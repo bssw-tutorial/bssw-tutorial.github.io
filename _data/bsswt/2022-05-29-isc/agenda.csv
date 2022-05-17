@@ -7,6 +7,7 @@ Fixed Points,Duration,Time (CEST),Module,Title,Presenter
 ,30,3:30 PM,4,design,adubey64
 4:00 PM,30,4:00 PM,,<em>Break</em>,
 4:30 PM,30,4:30 PM,5,reproducibility,jarrah42
-,40,5:00 PM,6,testing-introduction2,jarrah42
-,20,5:40 PM,7,summary,adubey64
+,20,5:00 PM,6,testing-introduction3,jarrah42
+,20,5:20 PM,7,continuous-integration,jarrah42
+,20,5:40 PM,8,summary,adubey64
 6:00 PM,240,6:00 PM,,<em>Adjourn</em>,
