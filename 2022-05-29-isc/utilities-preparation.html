@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-05-10T15:25:00-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-29-isc/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-05-17T18:18:35-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-29-isc/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -88,7 +88,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 - [ ] Update </span><span class="se">\`</span><span class="sh">git-workflows.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">reproducibility.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
-- [ ] Update </span><span class="se">\`</span><span class="sh">testing-introduction2.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">testing-introduction3.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">continuous-integration.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">summary.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Additional updates to </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
     - Update About Us slide (3) with presenters and helpers, including head-shots
@@ -162,9 +163,14 @@ gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span
     <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/reproducibility.pptx&gt; by 2022-05-18"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-29-isc"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Update testing-introduction2 presentation by 2022-05-18"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update testing-introduction3 presentation by 2022-05-18"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-introduction2.pptx&gt; by 2022-05-18"</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-introduction3.pptx&gt; by 2022-05-18"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-29-isc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update continuous-integration presentation by 2022-05-18"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/continuous-integration.pptx&gt; by 2022-05-18"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-05-29-isc"</span> <span class="se">\</span>
     <span class="nt">--title</span> <span class="s2">"Update summary presentation by 2022-05-18"</span> <span class="se">\</span>
@@ -204,9 +210,14 @@ gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.githu
     <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-29-isc/presentation-resources/reproducibility.md&gt;"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-05-29-isc"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"Update testing-introduction2 resources"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update testing-introduction3 resources"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
-    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-29-isc/presentation-resources/testing-introduction2.md&gt;"</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-29-isc/presentation-resources/testing-introduction3.md&gt;"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-05-29-isc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update continuous-integration resources"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jarrah42 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-05-29-isc/presentation-resources/continuous-integration.md&gt;"</span>
 
 gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-05-29-isc"</span> <span class="se">\</span>
     <span class="nt">--title</span> <span class="s2">"Update summary resources"</span> <span class="se">\</span>
@@ -310,7 +321,13 @@ option to ensure that you get the font from the PPT template rather than the fon
       <td>Oak Ridge National Laboratory</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">testing-introduction2.pptx</code></td>
+      <td><code class="language-plaintext highlighter-rouge">testing-introduction3.pptx</code></td>
+      <td>Gregory R. Watson</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">continuous-integration.pptx</code></td>
       <td>Gregory R. Watson</td>
       <td>he/him</td>
       <td>Oak Ridge National Laboratory</td>
