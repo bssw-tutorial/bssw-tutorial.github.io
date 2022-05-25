@@ -68,7 +68,7 @@ gh issue create \
   - [ ] resources-from-presentations
   - [x] requested-citation
   - [x] acknowledgments
-- [ ] Tag repository
+- [ ] Tag website repository
 EOF
 
 ```
@@ -226,7 +226,7 @@ option to ensure that you get the font from the PPT template rather than the fon
 
 ---
 
-## Scripting to tag tutorial repository
+## Scripting to tag website repository
 
 {% capture description %}{{ my-event.date | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
 
