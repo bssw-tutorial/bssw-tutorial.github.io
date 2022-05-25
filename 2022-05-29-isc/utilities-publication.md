@@ -39,12 +39,12 @@ gh issue create \
 {% for p in presentation-order %}  - [ ] \`{{ p }}.pptx\`
 {% endfor %}- Generate PDFs of presentations
 {% for p in presentation-order %}  - [ ] \`{{ p }}.pptx\`
-{% endfor %}- [ ] Prepare release of presentation files (see <{{ site.prod_url }}{{ page.url }}#scripting-for-presentation-release)
+{% endfor %}- [ ] Prepare release of presentation files (see <{{ site.prod_url }}{{ page.url }}#scripting-for-presentation-release>)
 - [ ] Publish presentation files on FigShare
 - [ ] Update presentation DOI in \`_data/bsswt/{{ event-label }}/event.yml\`
 {% if dp.due %}- [ ] Upload presentation files to venue **by {{ dp.due }}**{% endif %}
 - Create hands-on code repository for event
-  - [ ] Use [bssw-tutorial/hello-numerical-world])(https://github.com/bssw-tutorial/hello-numerical-world) as a *template* to create **bssw-tutorial**/hello-numerical-world-{{ event-label }} (not in your personal space!)
+  - [ ] Create repository from template (see <{{ site.prod_url }}{{ page.url }}#scripting-to-create-hands-on-code-repository>)
   - [ ] Delete the `.github/workflows` directory
   - [ ] Update hands-on repo URL in \`_data/bsswt/{{ event-label }}/event.yml\`
 {% if dr.due %}- [ ] Upload recordings to venue **by {{ d.due }}**{% endif %}
@@ -122,4 +122,17 @@ git tag -d {{ event-label }}
 git push --delete origin {{ event-label }}
 
 # Start over at "tag repo" step above to create new release
+```
+---
+
+## Scripting to create hands-on code repository
+
+{% capture description %}Hands-on code repository for {{ my-event.date | date: "%F" }} {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+
+
+```
+gh repo create bssw-tutorial/hello-numerical-world-{{ event-label }} \
+  --public --template bssw-tutorial/hello-numerical-world \
+  --description "{{ description }}" \
+  --homepage {{ site.prod_url }}/{{ event-label}}/#hands-on-exercises
 ```
