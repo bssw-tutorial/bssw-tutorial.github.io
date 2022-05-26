@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-05-25T20:59:00-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-29-isc/utilities-publication.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-05-26T08:57:24-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-29-isc/utilities-publication.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -103,10 +103,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 - [ ] Publish presentation files on FigShare
 - [ ] Update presentation DOI in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-05-29-isc/event.yml</span><span class="se">\`</span><span class="sh">
 
-- Create hands-on code repository for event
-  - [ ] Create repository from template (see &lt;https://bssw-tutorial.github.io/2022-05-29-isc/utilities-publication.html#scripting-to-create-hands-on-code-repository&gt;)
-  - [ ] Delete the `.github/workflows` directory
-  - [ ] Update hands-on repo URL in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-05-29-isc/event.yml</span><span class="se">\`</span><span class="sh">
+- Create hands-on code repository for event (see &lt;https://bssw-tutorial.github.io/2022-05-29-isc/utilities-publication.html#scripting-to-create-hands-on-code-repository&gt;)
+- [ ] Update hands-on repo URL in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-05-29-isc/event.yml</span><span class="se">\`</span><span class="sh">
 </span><span class="no">
 EOF
 
@@ -167,10 +165,18 @@ git push <span class="nt">--delete</span> origin 2022-05-29-isc
 
 <h2 id="scripting-to-create-hands-on-code-repository">Scripting to create hands-on code repository</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh repo create bssw-tutorial/hello-numerical-world-2022-05-29-isc \
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># In a directory in which it is "safe" to clone a git repository...
+
+gh repo create bssw-tutorial/hello-numerical-world-2022-05-29-isc \
   --public --template bssw-tutorial/hello-numerical-world \
-  --description "Hands-on code repository for 2022-05-29 Better Scientific Software tutorial @ ISC High Performance conference" \
-  --homepage https://bssw-tutorial.github.io/2022-05-29-isc/#hands-on-exercises
+  --description "Hands-on code repository for 2022-05-29 Better Scientific Software tutorial @ ISC High Performance conference"
+
+git clone https://github.com/bssw-tutorial/hello-numerical-world-2022-05-29-isc
+cd hello-numerical-world-2022-05-29-isc
+git rm -r .github
+git commit -m "Removing development-related workflows from student repository"
+git push
+
 </code></pre></div></div>
 
       </div>
