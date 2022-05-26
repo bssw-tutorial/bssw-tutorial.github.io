@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-05-25T14:29:37-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-29-isc/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-05-25T20:59:00-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-29-isc/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -122,6 +122,18 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <h2 id=on-this-page">On this Page</h2>
 
 <ul>
@@ -129,6 +141,10 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <li><a href="#description">Description</a></li>
 <li><a href="#agenda">Agenda</a></li>
 <li><a href="#presentation-slides">Presentation Slides</a></li>
+<li><a href="#hands-on-exercises">Hands-On Exercises</a></li>
+<li><a href="#stay-in-touch">Stay in Touch</a></li>
+<li><a href="#other-software-related-events-at-isc221">Other Software-Related Events at ISC221</a></li>
+<li><a href="#resources-from-presentations">Resources from Presentations</a></li>
 <li><a href="#requested-citation">Requested Citation</a></li>
 <li><a href="#acknowledgements">Acknowledgements</a></li></ul>
 
@@ -154,6 +170,241 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <p>The latest version of the slides will always be available at <strong><a href="https://doi.org/10.6084/m9.figshare.19781752">https://doi.org/10.6084/m9.figshare.19781752</a></strong>.</p>
 
 <p>Note that these files may include additional slides that will not be discussed during the tutorial, but questions are welcome.</p>
+
+
+<hr>
+<h2 id="hands-on-exercises">Hands-On Exercises</h2>
+<h3 id="introduction">Introduction</h3>
+
+<p>The hands-on exercises for this tutorial are based around a simple numerical model using the one-dimensional heat equation.
+ The example is described briefly in the repository’s <a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-05-29-isc#readme">README</a> file, and in greater detail in the ATPESC <a href="https://xsdk-project.github.io/MathPackagesTraining2020/lessons/hand_coded_heat/">Hands-On lesson</a>.  The ATPESC version focuses on the numerical aspects of the model.</p>
+
+<p>But for this tutorial, we’re focused on how to make the software better from a quality perspective, so <strong>you don’t need to understand the math to do these exercises</strong>.</p>
+
+<p>For the purposes of these hands-on exercises, you should imagine you’ve inherited an early version of the hello-numerical-world software from a colleague who’s left the project, and you’ve been assigned to get it into better shape so that it can be used in the next <a href="https://extremecomputingtraining.anl.gov/">ATPESC</a> summer school.</p>
+
+<p>The repository you’ll be working with is: <strong><a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-05-29-isc">bssw-tutorial/hello-numerical-world-2022-05-29-isc</a></strong>.</p>
+
+<p><em>Note: most of the screenshots will refer to the generic “hello-numerical-world” repository rather than the one specifically for this event.</em></p>
+
+<h3 id="list-of-hands-on-exercises">List of Hands-On Exercises</h3>
+<p><em>Note that not every presentation module has exercises (yet).</em></p>
+<ul>
+  <li><strong><a href="../2022-05-29-isc/handson-m00-prerequisites.html">Setting up the Prerequisites</a>.</strong> Setup the accounts needed for these exercises.</li>
+  <li><strong><a href="../2022-05-29-isc/handson-m02-agile.html">Agile Methodologies</a>.</strong>  You’ll use GitHub issues and project boards to setup a simple “personal kanban” board.</li>
+  <li><strong><a href="../2022-05-29-isc/handson-m03-git-workflows.html">Basic Git for Collaboration</a>.</strong> You’ll fork our hello-numerical-world repository, create a feature branch, and make a pull request</li>
+  <li><strong><a href="../2022-05-29-isc/handson-m08-testing.html">Software Testing</a>.</strong> You’ll use an example project to try out using test driven development to add new functionality to a project</li>
+  <li><strong><a href="../2022-05-29-isc/handson-m10-continuous-integration.html">Continuous Integration</a>.</strong> You’ll establish a simple continuous integration workflow and then refine it, adding code coverage assessment</li>
+</ul>
+
+<p>There are also activities associated with a couple of modules that we didn’t have time to cover in this tutorial.  You are welcome to try them out too.</p>
+<ul>
+  <li><strong><a href="../2022-05-29-isc/handson-m06-agile-redux.html">Agile Redux</a>.</strong>  You’ll create epic, story, and task issues for the refactoring task and track them on a kanban board</li>
+  <li><strong><a href="../2022-05-29-isc/handson-m11-refactoring1.html">Refactoring Scientific Software</a>.</strong>  You’ll perform a small, well-defined refactoring exercise</li>
+</ul>
+
+<hr>
+<h2 id="stay-in-touch">Stay in Touch</h2>
+
+<ul>
+  <li>
+    <p>After the tutorial please feel free to email questions or feedback to the BSSw tutorial team at <a href="mailto:bssw-tutorial@lists.mcs.anl.gov">bssw-tutorial@lists.mcs.anl.gov</a>.</p>
+  </li>
+  <li>
+    <p>If you want to do the <a href="#hands-on-exercises">hands-on exercises</a>, we’re happy to provide feedback on your pull requests and issues, even after the end of the tutorial.</p>
+  </li>
+  <li>
+    <p>To find out about future events organized by the IDEAS Productivity Project, you can <a href="http://eepurl.com/cQCyJ5">subscribe to our mailing list</a> (usually ~2 messages/month).</p>
+  </li>
+  <li>
+    <p>For monthly updates on the Better Scientific Software site, subscribe to our <a href="https://bssw.io/pages/receive-our-email-digest">monthly digest</a>.</p>
+  </li>
+</ul>
+
+<hr>
+<h2 id="other-software-related-events-at-isc221">Other Software-Related Events at ISC221</h2>
+
+<p>If you’re interested in this tutorial, you might be interested in this list of other <a href="https://bssw.io/events/isc22-software-related-events">software-related events</a> taking place in the ISC22 conference.</p>
+
+<hr>
+<h2 id="resources-from-presentations">Resources from Presentations</h2>
+
+<p><em>Links from the tutorial presentations are listed here for convenience</em></p>
+
+<ul>
+  <li>Module 0: Introduction and Setup
+  <!-- intro -->
+    <ul>
+      <li><a href="http://ideas-productivity.org">IDEAS Productivity Project</a></li>
+      <li>The IDEAS <a href="https://doi.org/10.2172/1606662">report</a></li>
+      <li><a href="https://bssw.io">Better Scientific Software</a> site</li>
+      <li><a href="http://eepurl.com/cQCyJ5">IDEAS Productivity mailing list</a></li>
+      <li><a href="https://bssw.io/pages/receive-our-email-digest">BSSw Digest</a></li>
+      <li><a href="https://bssw.io/items.rss">RSS Feed</a></li>
+      <li><a href="https://inclusivenaming.org/">Inclusive Naming Initiative</a></li>
+      <li>Bssw.io resource on <a href="https://bssw.io/items/inclusive-language-resources">Inclusive Naming</a></li>
+      <li><a href="mailto:bssw-tutorial@lists.mcs.anl.gov">Write to the tutorial authors</a></li>
+    </ul>
+  </li>
+  <li>Module 1: Motivation and Overview of Best Practices in HPC Software Development
+  <!-- overview -->
+    <ul>
+      <li><a href="https://doi.org/10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a></li>
+      <li><a href="https://doi.org/10.1371/journal.pcbi.1005510">Good Enough Practices in Scientific Computing</a></li>
+      <li><a href="https://bestpractices.coreinfrastructure.org/en">Linux Foundation Core Infrastructure Initiative (CII) Best Practices</a> Badging Program</li>
+      <li><a href="https://rateyourproject.org/">Rate Your Project Assesment Tool</a></li>
+      <li><a href="https://bssw-psip.github.io/ptc-catalog/catalog">Progress Tracking Card (PTC) Examples</a></li>
+      <li><a href="https://bssw.io/psip">Portability and Sustainability Improvement Planning</a></li>
+      <li><a href="https://bssw.io">Better Scientific Software (BSSw)</a></li>
+    </ul>
+  </li>
+  <li>Module 2: Agile Methodologies
+  <!-- agile -->
+    <ul>
+      <li><a href="http://agilemanifesto.org/">Agile Manifesto</a></li>
+      <li><a href="http://www.personalkanban.com">Personal Kanban</a></li>
+      <li><a href="https://bssw.io/items/using-personal-kanban-for-productivity">Personal Kanban for productivity</a></li>
+      <li><a href="https://betterscientificsoftware.github.io/A-Team-Tools/">A-team tools for Agile practices</a></li>
+      <li>Books
+        <ul>
+          <li><a href="https://www.amazon.com/dp/1934356581/ref=cm_sw_r_cp_ep_dp_ClBABbNGS7ZKS">The Agile Samurai: How Agile Masters Deliver Great Software, by Jonathan Rasmusson</a></li>
+          <li><a href="https://www.amazon.com/dp/0143126563/ref=cm_sw_r_cp_ep_dp_apBABbT2YZMMK">Getting Things Done: The Art of Stress-Free Productivity, by David Allen</a></li>
+          <li><a href="https://www.amazon.com/dp/0735619670/ref=cm_sw_r_cp_ep_dp_CkBABbXJWS8KV">Code Complete: A Practical Handbook of Software Construction, by Steve McConnell</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Module 3: Git Workflows
+  <!-- git-workflows -->
+    <ul>
+      <li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Atlassian/BitBucket (Comparing Workflows)</a></li>
+      <li><a href="https://blog.codacy.com/how-to-code-review-in-a-pull-request/">How to code review in a Pull Request</a></li>
+      <li><a href="https://nvie.com/posts/a-successful-git-branching-model/">Git Flow (Driessen’s Original Blog)</a>
+        <ul>
+          <li><a href="https://github.com/nvie/gitflow">Git extensions</a></li>
+        </ul>
+      </li>
+      <li><a href="http://scottchacon.com/2011/08/31/github-flow.html">GitHub Flow</a></li>
+      <li><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab Flow</a></li>
+      <li><a href="https://trilinos.github.io/">Trilinos</a></li>
+      <li><a href="https://www.open-mpi.org">Open MPI</a></li>
+      <li><a href="https://flecsi.github.io/flecsi">FleCSI</a></li>
+    </ul>
+  </li>
+  <li>Module 4: Scientific Software Design
+  <!-- design -->
+    <ul>
+      <li>The <a href="https://www.exascaleproject.org/">Exascale Computing Project</a> (ECP)</li>
+      <li><a href="https://doi.org/10.6084/m9.figshare.13283714.v1">Findings from the ECP Performance Portability Panel Series</a></li>
+      <li><a href="https://bssw.io/blog_posts/performance-portability-and-the-exascale-computing-project">Performance Portability and the Exascale Computing Project</a></li>
+      <li><a href="https://www.exascaleproject.org/event/kokkos-class-series">Kokkos Lecture Series</a></li>
+      <li>Related paper: <a href="https://doi.org/10.1007/978-3-319-27308-2_19">A Design Proposal for a Next Generation Scientific Software Framework</a></li>
+      <li>Related webinar: <a href="https://bssw.io/events/webinar-software-design-for-longevity-with-performance-portability">Software Design for Longevity with Performance Portability</a></li>
+    </ul>
+  </li>
+  <li>Module 5: Improving Reproducibility Through Better Software Practices
+  <!-- reproducibility -->
+    <ul>
+      <li>Motivations and Background:
+        <ul>
+          <li><a href="https://doi.org/10.2172/1481626">Toward a Compatible Reproducibility Taxonomy for Computational and Computing Sciences</a></li>
+          <li><a href="https://doi.org/10.17226/25303">Reproducibility and Replicability in Science</a></li>
+          <li><a href="https://doi.org/10.1063/PT.6.1.20180822a">The War Over Supercooled Water</a></li>
+        </ul>
+      </li>
+      <li>Definitions, Guidelines, and Organizations:
+        <ul>
+          <li><a href="https://www.nsf.gov/bfa/dias/policy/dmp.jsp">National Science Foundation Data Management Plan Requirements</a></li>
+          <li><a href="https://doi.org/10.1038/sdata.2016.18">Findable, Accessible, Interoperable, Re-usable</a></li>
+          <li><a href="https://sc21.supercomputing.org/submit/reproducibility-initiative/">SC21 Reproducibility Initiative</a></li>
+          <li><a href="http://toms.acm.org/replicated-computational-results.cfm">ACM Transactions on Mathematical Software (TOMS)</a></li>
+          <li><a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current">ACM Artifact Review and Badging</a></li>
+          <li><a href="http://fursin.net/reproducibility.html">http://fursin.net/reproducibility.html</a></li>
+          <li><a href="https://www.niso.org/niso-io/2019/01/new-niso-project-badging-scheme-reproducibility-computational-and-computing"> National Information Standards Organization (NISO) on Reproducibility and Badging</a></li>
+        </ul>
+      </li>
+      <li>Helpful Tools
+        <ul>
+          <li><a href="http://fpanalysistools.org/">Floating Point Analysis Tools</a></li>
+          <li><a href="https://codeocean.com/">Code Ocean (Cloud platforms - publish and reproduce research code and data)</a></li>
+          <li>DOIs and hosting of data, code, documents:
+            <ul>
+              <li><a href="https://zenodo.org/">Zenodo</a></li>
+              <li><a href="https://figshare.com/">FigShare</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Other Resources:
+        <ul>
+          <li><a href="https://doi.org/10.1038/sdata.2016.18">The FAIR Guiding Principles for Scientific Data Management and Stewardship. Mark D. Wilkinson, et al. 2016</a></li>
+          <li><a href="https://gofair.us">https://gofair.us</a></li>
+          <li><a href="https://www.rd-alliance.org/groups/fair-research-software-fair4rs-wg">FAIR4RS</a></li>
+          <li><a href="http://dx.doi.org/10.1145/2743015">Editorial: ACM TOMS Replicated Computational Results Initiative. Michael A. Heroux. 2015</a></li>
+          <li><a href="https://doi.org/10.1126/science.aah6168">Enhancing Reproducibility for Computational Methods. Victoria Stodden, Marcia McNutt, David H. Bailey, Ewa Deelman, Yolanda Gil, Brooks Hanson, Michael A. Heroux, John P.A. Ioannidis, Michela Taufer Science (09 Dec 2016), pp. 1240-1241. DOI: 10.1126/science.aah6168</a></li>
+          <li><a href="https://betterscientificsoftware.github.io/Trust-Tools/">Simple experiments in reproducibility and technical trust by Mike Heroux and students (work in progress)</a></li>
+          <li><a href="https://doi.org/10.1145/103162.103163">What every scientist should know about floating-point arithmetic. David Goldberg.</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Module 6: Software Testing Introduction
+  <!-- testing-introduction2 -->
+    <ul>
+      <li>Python Build and Test Framework: <a href="https://pyscaffold.org">pyscaffold.org</a></li>
+      <li>Build-Link-Test CMake Framework: <a href="https://llnl-blt.readthedocs.io">llnl-blt.readthedocs.io</a></li>
+      <li>Tutorials for code coverage: <a href="https://github.com/amklinv/morpheus">Online Tutorial</a>, <a href="https://github.com/jrdoneal/infrastructure">Another example</a></li>
+      <li><a href="https://github.com/bssw-tutorial/hello-numerical-world/tree/main/tdd-example">Test drive development example</a></li>
+      <li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake Tutorial</a></li>
+      <li>CMake <a href="https://cmake.org/cmake/help/latest/command/add_test.html">add-test</a> command documentation</li>
+      <li><a href="https://doi.org/10.1017/CBO9780511760396">Verification and Validation in Scientific Computing</a></li>
+      <li><a href="https://isbndb.com/book/9780131177055">Working Effectively with Legacy Code</a></li>
+    </ul>
+  </li>
+  <li>Module 7: Continuous Integration
+  <!-- continuous-integration -->
+    <ul>
+      <li>Gitlab <a href="https://docs.gitlab.com/ee/ci/introduction/">CI/CD Concepts</a></li>
+    </ul>
+  </li>
+  <li>Module 8: Summary
+  <!-- summary -->
+    <ul>
+      <li>COVID-19 epidemiology saga
+        <ul>
+          <li><a href="https://doi.org/10.25561/77482">https://doi.org/10.25561/77482</a></li>
+          <li><a href="https://www.nicholaslewis.org/imperial-college-uk-covid-19-numbers-dont-seem-to-add-up/">https://www.nicholaslewis.org/imperial-college-uk-covid-19-numbers-dont-seem-to-add-up/</a></li>
+          <li><a href="https://www.nature.com/articles/d41586-020-01003-6">https://www.nature.com/articles/d41586-020-01003-6</a></li>
+          <li><a href="https://www.foxnews.com/world/imperial-college-britain-coronavirus-lockdown-buggy-mess-unreliable">https://www.foxnews.com/world/imperial-college-britain-coronavirus-lockdown-buggy-mess-unreliable</a></li>
+          <li><a href="https://www.telegraph.co.uk/technology/2020/05/16/coding-led-lockdown-totally-unreliable-buggy-mess-say-experts/">https://www.telegraph.co.uk/technology/2020/05/16/coding-led-lockdown-totally-unreliable-buggy-mess-say-experts/</a></li>
+          <li><a href="https://github.com/mrc-ide/covid-sim/">https://github.com/mrc-ide/covid-sim/</a></li>
+          <li><a href="https://philbull.wordpress.com/2020/05/10/why-you-can-ignore-reviews-of-scientific-code-by-commercial-software-developers/amp/">https://philbull.wordpress.com/2020/05/10/why-you-can-ignore-reviews-of-scientific-code-by-commercial-software-developers/amp/</a></li>
+          <li><a href="http://doi.org/10.5281/zenodo.3865491">http://doi.org/10.5281/zenodo.3865491</a></li>
+        </ul>
+      </li>
+      <li><a href="https://bssw.io/psip">Productivity and Sustainability Improvement Planning</a>
+        <ul>
+          <li><a href="https://rateyourproject.org/">https://rateyourproject.org/</a></li>
+          <li><a href="https://bssw-psip.github.io/ptc-catalog/catalog">Progress Tracking Card Catalog</a></li>
+          <li><a href="https://bssw.io/">Better Scientific Software web site</a></li>
+        </ul>
+      </li>
+      <li><a href="mailto:bssw-tutorial@lists.mcs.anl.gov">Write to the tutorial authors</a></li>
+      <li><a href="https://bssw-tutorial.github.io">Tutorial Material Online</a></li>
+      <li><a href="https://ideas-productivity.org">IDEAS Productivity project</a>
+        <ul>
+          <li><a href="http://eepurl.com/cQCyJ5">mailing list</a></li>
+        </ul>
+      </li>
+      <li><a href="https://bssw.io">Better Scientific Software</a> site
+        <ul>
+          <li><a href="https://bssw.io/pages/receive-our-email-digest">BSSw Digest</a></li>
+          <li><a href="https://bssw.io/items.rss">RSS Feed</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 
 <hr>
