@@ -43,10 +43,8 @@ gh issue create \
 - [ ] Publish presentation files on FigShare
 - [ ] Update presentation DOI in \`_data/bsswt/{{ event-label }}/event.yml\`
 {% if dp.due %}- [ ] Upload presentation files to venue **by {{ dp.due }}**{% endif %}
-- Create hands-on code repository for event
-  - [ ] Create repository from template (see <{{ site.prod_url }}{{ page.url }}#scripting-to-create-hands-on-code-repository>)
-  - [ ] Delete the `.github/workflows` directory
-  - [ ] Update hands-on repo URL in \`_data/bsswt/{{ event-label }}/event.yml\`
+- Create hands-on code repository for event (see <{{ site.prod_url }}{{ page.url }}#scripting-to-create-hands-on-code-repository>)
+- [ ] Update hands-on repo URL in \`_data/bsswt/{{ event-label }}/event.yml\`
 {% if dr.due %}- [ ] Upload recordings to venue **by {{ d.due }}**{% endif %}
 EOF
 
@@ -131,8 +129,16 @@ git push --delete origin {{ event-label }}
 
 
 ```
+# In a directory in which it is "safe" to clone a git repository...
+
 gh repo create bssw-tutorial/hello-numerical-world-{{ event-label }} \
   --public --template bssw-tutorial/hello-numerical-world \
-  --description "{{ description }}" \
-  --homepage {{ site.prod_url }}/{{ event-label}}/#hands-on-exercises
+  --description "{{ description }}"
+
+git clone {{ site.github-url }}/bssw-tutorial/hello-numerical-world-{{ event-label }}
+cd hello-numerical-world-{{ event-label }}
+git rm -r .github
+git commit -m "Removing development-related workflows from student repository"
+git push
+
 ```
