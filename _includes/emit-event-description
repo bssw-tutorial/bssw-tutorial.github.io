@@ -1,0 +1,17 @@
+{%- comment -%}
+  emit-event-description: use information in the passed event to
+  emit a standard sentence describing the event
+
+  argument:
+    `event`: data structure from event.yml
+    fields used:
+      title (required)
+      title-type (optional)
+      venue (required)
+      venue-type (optional)
+
+  approximate output:
+    Tutorial title @ Venue
+    Note: does not include date
+{%- endcomment -%}
+{{ include.event.title }}{% if include.event.title-type %} {{ include.event.title-type }}{% endif %} @ {{ include.event.venue }}{% if include.event.venue-type %} {{ include.event.venue-type }}{% endif %}
