@@ -28,7 +28,7 @@ In the listings below, each tutorial event has its own page, providing details s
     {%- endif -%}
     {% comment %} 
       The timestamp returned will be 12:00:00am UTC. We need to shift to 11:59:59pm AOE. 
-      So add 23:59:59 + 12:00:00 to it.  86400 seconder per day.
+      So add 23:59:59 + 12:00:00 to it.  86400 seconds per day.
     {% endcomment %}
     {%- assign when = when | plus: 86399 | plus: 43200 -%}
       
