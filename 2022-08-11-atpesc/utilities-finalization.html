@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-07-10T11:41:58-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-finalization.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-07-10T14:04:58-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-finalization.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -100,10 +100,10 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <h2 id="main-issue-for-post-acceptance-finalization">Main issue for post-acceptance finalization</h2>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
-  <span class="nt">--repo</span> bssw-tutorial-management <span class="se">\</span>
+  <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
   <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
   <span class="nt">--title</span> <span class="s2">"2022-08-11-atpesc post-acceptance finalization"</span> <span class="se">\</span>
-  <span class="nt">--assignee</span> <span class="s2">"adubey64  bernhold"</span> <span class="se">\</span>
+  <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
   <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
 - [ ] Add a milestone for the event to master-labels-milestones.json and synchronize repositories
 - Internal and external awareness
@@ -112,10 +112,12 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 - Plan development activities
   - [ ] Finalize plans for content development
   - [ ] Finalize plans for hands-on, including necessary development
+  - [ ] Set internal deadlines as needed
+  - [ ] Capture internal and venue deadlines in </span><span class="se">\`</span><span class="sh">deadines</span><span class="se">\`</span><span class="sh"> structure in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
 - [ ] Start building event page in the tutorial website
 - Plan staffing and agenda
-  - [ ] Finalize presenters, set `presenter-ids` in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
-  - [ ] Finalize helpers, set `helper-ids` in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
+  - [ ] Finalize presenters, set </span><span class="se">\`</span><span class="sh">presenter-ids</span><span class="se">\`</span><span class="sh"> in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
+  - [ ] Finalize helpers, set </span><span class="se">\`</span><span class="sh">helper-ids</span><span class="se">\`</span><span class="sh"> in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
   - [ ] Finalize agenda, add </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/agenda.csv</span><span class="se">\`</span><span class="sh"> and </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/presentations.yml</span><span class="se">\`</span><span class="sh">
 - [ ] Transition from planned to scheduled, if necessary
 </span><span class="no">
@@ -130,22 +132,76 @@ EOF
   <span class="nt">--milestone</span> <span class="s2">"Complete by 2022-08"</span> <span class="se">\</span>
   <span class="nt">--label</span> <span class="s2">"Outreach"</span> <span class="nt">--label</span> <span class="s2">"External Event"</span> <span class="se">\</span>
   <span class="nt">--title</span> <span class="s2">"Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school"</span> <span class="se">\</span>
-  <span class="nt">--assignee</span> <span class="s2">"adubey64  bernhold"</span> <span class="se">\</span>
+  <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
   <span class="nt">--body</span> <span class="s2">"To be held 8:30 am - 9:00 pm CDT (UTC-5) Thursday 11 August 2022"</span>
 
 </code></pre></div></div>
 
 <h2 id="issue-to-track-development-of-tutorial-web-page">Issue to track development of tutorial web page</h2>
 
-<h2 id="transition-from-planned-event-to-scheduled">Transition from planned event to scheduled</h2>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
+  <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="se">\</span>
+  <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+  <span class="nt">--title</span> <span class="s2">"2022-08-11-atpesc web page"</span> <span class="se">\</span>
+  <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
+  <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- Inital creation of event web page
+  - [x] Add event to </span><span class="se">\`</span><span class="sh">_data/tutorials.csv</span><span class="se">\`</span><span class="sh">
+  - [x] Create event data directory </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc</span><span class="se">\`</span><span class="sh">
+  - [x] Create event data file </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh"> as a copy of </span><span class="se">\`</span><span class="sh">_data/event-template.yml</span><span class="se">\`</span><span class="sh">
+  - [x] Add basic information to event data file
+  - [x] Create event directory </span><span class="se">\`</span><span class="sh">2022-08-11-atpesc</span><span class="se">\`</span><span class="sh">
+  - [x] Copy </span><span class="se">\`</span><span class="sh">index.md</span><span class="se">\`</span><span class="sh"> and </span><span class="se">\`</span><span class="sh">utilities*.md</span><span class="se">\`</span><span class="sh"> from previous event
+  - [ ] In </span><span class="se">\`</span><span class="sh">2022-08-11-atpesc/index.md</span><span class="se">\`</span><span class="sh"> update </span><span class="se">\`</span><span class="sh">event-label</span><span class="se">\`</span><span class="sh"> and </span><span class="se">\`</span><span class="sh">sections</span><span class="se">\`</span><span class="sh"> appropriately
+- [ ] Transition from planned to scheduled, if necessary
+- Data needed
+  - In </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
+    - [ ] Scheduled </span><span class="se">\`</span><span class="sh">date</span><span class="se">\`</span><span class="sh">, </span><span class="se">\`</span><span class="sh">end-date</span><span class="se">\`</span><span class="sh">, and </span><span class="se">\`</span><span class="sh">time</span><span class="se">\`</span><span class="sh">
+    - [x] </span><span class="se">\`</span><span class="sh">organizer-ids</span><span class="se">\`</span><span class="sh">
+    - [ ] </span><span class="se">\`</span><span class="sh">presenter-ids</span><span class="se">\`</span><span class="sh">, </span><span class="se">\`</span><span class="sh">helper-ids</span><span class="se">\`</span><span class="sh">
+    - In </span><span class="se">\`</span><span class="sh">artifacts</span><span class="se">\`</span><span class="sh">
+      - [ ] conference registration URL (if appropriate)
+      - [ ] doi
+      - [ ] hands-on code repository
+    - [ ] </span><span class="se">\`</span><span class="sh">deadlines</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/agenda.csv</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/presentations.yml</span><span class="se">\`</span><span class="sh">
+- Sections needed in </span><span class="se">\`</span><span class="sh">2022-08-11-atpesc/index.md</span><span class="se">\`</span><span class="sh">
+  - [x] description (usually local)
+  - [x] agenda
+  - [x] presentation-slides
+  - [ ] how-to-participate (usually local)
+  - [ ] hands-on-exercises (usually local)
+  - [ ] stay-in-touch
+  - [ ] related-events (local, if appropriate to context)
+  - [ ] resources-from-presentations
+  - [x] requested-citation
+  - [x] acknowledgments
+- Additional files needed in `2022-08-11-atpesc` directory
+  - [ ] Copy and update `presentation-resources` directory
+  - [ ] Copy and update `handson-*` files and `images` directory
+</span><span class="no">
+EOF
 
-<p>There are numerous places where changes are required to shift a an event from “planned” to “scheduled”.</p>
+</span></code></pre></div></div>
+
+<h2 id="transition-from-planned-event-to-scheduledthere-are-numerous-places-where-changes-are-required-to-shift-a-an-event-from-planned-to-scheduled">Transition from planned event to scheduledThere are numerous places where changes are required to shift a an event from “planned” to “scheduled”.</h2>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">_data/tutorials.csv</code> both date and status</li>
   <li><code class="language-plaintext highlighter-rouge">_data/bsswt/&lt;event-label&gt;</code> (event data directory) name change</li>
   <li><code class="language-plaintext highlighter-rouge">&lt;event-label&gt;</code> (event directory) name change</li>
   <li><code class="language-plaintext highlighter-rouge">&lt;event-label&gt;/index.md</code> change <code class="language-plaintext highlighter-rouge">event-label</code> in metadata</li>
+  <li>
+    <p>Update milestone definitions in <code class="language-plaintext highlighter-rouge">bssw-tutorial/tutorial-management repository/master-labels-milestones.json</code> and install the updated milestones in the tutorial working repositories (see <a href="#add-milestone-to-github-repositories">above</a>). <code class="language-plaintext highlighter-rouge">title</code> should be updated with the new event label.  A new <code class="language-plaintext highlighter-rouge">previousTitles</code> field should be added with the original event label. The <code class="language-plaintext highlighter-rouge">due_on</code> date should still be reasonable as long as the scheduled date is within the range of dates originally specified at the planned stage, but can be updated if preferred.</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">}</span><span class="err">,</span><span class="w"> </span><span class="p">{</span><span class="w">      
+     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-11-atpesc"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"previousTitles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"&lt;original-event-label&gt;"</span><span class="p">],</span><span class="w">
+     </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"due_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-12T07:59:59-0400"</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
 </ol>
 
 <h2 id="next-steps">Next steps</h2>
