@@ -1,6 +1,6 @@
 ---
 layout: bsswt-event-page
-event-label: 2022-07-31-atpesc
+event-label: 2022-08-11-atpesc
 # A typical initial tutorial page might include:
 #         [description,acknowledgments]
 # A typical complete tutorial page would include: 

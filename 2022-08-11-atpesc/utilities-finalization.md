@@ -207,6 +207,7 @@ There are numerous places where changes are required to shift a an event from "p
 1. `_data/tutorials.csv` both date and status
 2. `_data/bsswt/<event-label>` (event data directory) name change
 3. `<event-label>` (event directory) name change
+4. `<event-label>/index.md` change `event-label` in metadata
 
 ## Next steps
 
