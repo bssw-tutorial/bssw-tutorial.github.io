@@ -144,6 +144,8 @@ EOF
 ```
 {% endif %}
 
+---
+
 ## Awareness issues
 
 {% assign incomplete = false %}
@@ -199,6 +201,8 @@ gh issue create \
 
 ```
 {% endif %}
+
+---
 
 ## Issue to track development of tutorial web page
 
@@ -260,6 +264,8 @@ EOF
 ```
 {% endif %}
 
+---
+
 ## Transition from planned event to scheduled
 
 {%- if my-event.end-date -%}
@@ -288,6 +294,8 @@ There are numerous places where changes are required to shift a an event from "p
     ```
     {% endif %}
 
+---
+
 ## Next steps
 
-*Please proceed to [preparation](./utilities-preparation.md) once these steps are complete.*
+*Please proceed to [preparation](./utilities-preparation.html) once these steps are complete.*

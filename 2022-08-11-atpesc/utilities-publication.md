@@ -54,7 +54,7 @@ layout: default
 
 # Help for Publication of Tutorial Assets
 
-*Complete the [preparation](./utilities-preparation.md) steps before these.*
+*Complete the [preparation](./utilities-preparation.html) steps before these.*
 
 ## Issues for organizers
 
@@ -96,9 +96,11 @@ gh issue create \
 - [ ] Publish presentation files on FigShare
 - [ ] Update presentation DOI in \`_data/bsswt/{{ event-label }}/event.yml\`
 {% if dp.due %}- [ ] Upload presentation files to venue **by {{ dp.due }}**{% endif %}
+- [ ] Tag presentation repository
 - Create hands-on code repository for event (see <{{ site.prod_url }}{{ page.url }}#scripting-to-create-hands-on-code-repository>)
 - [ ] Update hands-on repo URL in \`_data/bsswt/{{ event-label }}/event.yml\`
 {% if dr.due %}- [ ] Upload recordings to venue **by {{ d.due }}**{% endif %}
+- [ ] Tag web site repository
 EOF
 
 ```
@@ -261,3 +263,52 @@ git push
 
 ```
 {% endif %}
+
+---
+
+## Scripting to tag website repository
+
+{% assign incomplete = false %}
+{% unless my-event.date %}
+  {% assign incomplete = true %}
+  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% include emit-error.html msg=msg %}
+{% endunless %}
+{% unless my-event.title %}
+  {% assign incomplete = true %}
+  {% capture msg %}`title` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% include emit-error.html msg=msg %}
+{% endunless %}
+{% unless my-event.venue %}
+  {% assign incomplete = true %}
+  {% capture msg %}`venue` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% include emit-error.html msg=msg %}
+{% endunless %}
+
+{% capture description %}{{ my-event.date | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+
+{% if incomplete %}
+  {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
+{% else %}
+```shell
+# In local working copy of bssw-tutorial/bssw-tutorial.github.io repository
+
+# Tag repo
+git tag -a {{ event-label}} -m "{{ description }}"
+git push origin --tags
+
+```
+{% endif %}
+
+## Scripting to remove tag 
+
+For when we have to update the repository.
+
+```shell
+# In local working copy of bssw-tutorial/bssw-tutorial.github.io repository
+
+# Delete local and remote tags
+git tag -d {{ event-label }}
+git push --delete origin {{ event-label }}
+
+```

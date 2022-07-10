@@ -54,7 +54,7 @@ layout: default
 
 # Help for Tutorial Preparation
 
-*Complete the [post-acceptance finalization](./utilities-finalization.md) steps before these.*
+*Complete the [post-acceptance finalization](./utilities-finalization.html) steps before these.*
 
 ## Issues for organizers
 
@@ -68,7 +68,7 @@ layout: default
   {% assign incomplete = true %}
   {% include emit-error.html msg="`ghr-presentations` not defined in file `_config.yml`" %}
 {% endunless %}
-{% unless presentation-order %}
+{% unless presentation-order and presentation-order.size > 0 %}
   {% assign incomplete = true %}
   {% capture msg %}`presentation-order` not defined. Check files `_data/bsswt/{{ event-label }}/agenda.csv` and `_data/bsswt/{{ event-label }}/presentations.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
@@ -85,7 +85,7 @@ layout: default
 gh issue create \
     --repo bssw-tutorial/tutorial-management \
     --milestone "{{ event-label }}" \
-    --title "{{ event-label }} initial preparation" \
+    --title "{{ event-label }} content preparation" \
     --assignee "{{ my-organizers | array_to_sentence_string: ',' | remove: ' ' }}" \
     --body-file - << EOF
 - [ ] Reserve DOI
@@ -95,38 +95,17 @@ gh issue create \
 - [ ] Update \`overview.pptx\` (or equivalent) with new agenda from \`agenda-master.pptx\` in <{{ site.ghr-presentations }}>
 {% for p in presentation-order %}- [ ] Update \`{{ p }}.pptx\` title and license slides; remove unneeded R&R numbers
 {% endfor %}- [ ] Additional updates to \`intro.pptx\`
-    - Update About Us slide (3) with presenters and helpers, including head-shots
-    - Update Hands-On Activities slide (9) as appropriate
-    - Update the We want to Interact with You slide (11) as appropriate
+    - Update *About Us* slide (3) with presenters and helpers, including head-shots
+    - Update *Hands-On Activities* slide (9) as appropriate
+    - Update the *We want to Interact with You* slide (11) as appropriate
+    - Add *Related Activities* slide as appropriate
+- [ ] Add issues needed for hands-on content development
 
 Potentially useful reference information:
 * [Detailed inputs for FigShare record]({{ site.prod_url }}{{ page.url }}#create-figshare-record-and-reserve-doi)
 * [Citation]({{ site.prod_url }}/{{ event-label }}#requested-citation)
 * [Agenda]({{ site.prod_url }}/{{ event-label }}#agenda) can be copy-pasted into PowerPoint
 * [Title slide details]({{ site.prod_url }}{{ page.url }}#title-slide-details)
-
-EOF
-
-gh issue create \
-    --repo bssw-tutorial/tutorial-management \
-    --milestone "{{ event-label }}" \
-    --title "{{ event-label }} build website" \
-    --assignee "{{ my-organizers | array_to_sentence_string: ',' | remove: ' ' }}" \
-    --body-file - << EOF
-- Update event details
-  - [ ] artifacts: presentation doi
-  - [ ] artifacts: hands-on code repo
-- Update event page sections    
-  - [ ] description
-  - [x] agenda *requires \`_data/bsswt/{{ event-label }}/agenda.csv\`*
-  - [x] presentation-slides
-  - [ ] how-to-participate
-  - [ ] hands-on-exercises
-  - [ ] stay-in-touch
-  - [ ] resources-from-presentations
-  - [x] requested-citation
-  - [x] acknowledgments
-- [ ] Tag website repository
 
 EOF
 
@@ -141,12 +120,12 @@ EOF
   {% capture msg %}`deadlines` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
-{% unless presentation-order %}
+{% unless presentation-order and presentation-order.size > 0 %}
   {% assign incomplete = true %}
   {% capture msg %}`presentation-order` not defined. Check files `_data/bsswt/{{ event-label }}/agenda.csv` and `_data/bsswt/{{ event-label }}/presentations.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
-{% unless presenter-order %}
+{% unless presenter-order and presenter-order.size > 0%}
   {% assign incomplete = true %}
   {% capture msg %}`presenter-order` not defined. Check files `_data/bsswt/{{ event-label }}/agenda.csv` and `_data/bsswt/{{ event-label }}/presentations.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
@@ -178,6 +157,10 @@ gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ eve
     --body "Update <{{ prews }}/{{ p }}.md>{% if dr.due %} by {{ dr.due }}{% endif %}"
 {% endfor %}```
 {% endif %}
+
+## Issues for hands-on content
+
+*To be defined*
 
 ---
 
@@ -324,6 +307,13 @@ option to ensure that you get the font from the PPT template rather than the fon
   that introduces the whole tutorial, and so should be treated separately.
 {% endcomment %}
 
+{% assign incomplete = false %}
+{% unless presentation-order and presentation-order.size > 0 %}
+  {% assign incomplete = true %}
+  {% capture msg %}`presentation-order` not defined. Check files `_data/bsswt/{{ event-label }}/agenda.csv` and `_data/bsswt/{{ event-label }}/presentations.yml`{% endcapture %}
+  {% include emit-error.html msg=msg %}
+{% endunless %}
+
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
 {% else %}
@@ -341,7 +331,7 @@ option to ensure that you get the font from the PPT template rather than the fon
   {% assign incomplete = true %}
   {% include emit-error.html msg="`people` collection not defined in directory `_people/`" %}
 {% endunless %}
-{% unless presentation-order %}
+{% unless presentation-order and presentation-order.size > 0 %}
   {% assign incomplete = true %}
   {% capture msg %}`presentation-order` not defined. Check files `_data/bsswt/{{ event-label }}/agenda.csv` and `_data/bsswt/{{ event-label }}/presentations.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
@@ -389,53 +379,6 @@ option to ensure that you get the font from the PPT template rather than the fon
 
 ---
 
-## Scripting to tag website repository
-
-{% assign incomplete = false %}
-{% unless my-event.date %}
-  {% assign incomplete = true %}
-  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
-  {% include emit-error.html msg=msg %}
-{% endunless %}
-{% unless my-event.title %}
-  {% assign incomplete = true %}
-  {% capture msg %}`title` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
-  {% include emit-error.html msg=msg %}
-{% endunless %}
-{% unless my-event.venue %}
-  {% assign incomplete = true %}
-  {% capture msg %}`venue` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
-  {% include emit-error.html msg=msg %}
-{% endunless %}
-
-{% capture description %}{{ my-event.date | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
-
-{% if incomplete %}
-  {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
-{% else %}
-```shell
-# In local working copy of bssw-tutorial/bssw-tutorial.github.io repository
-
-# Tag repo
-git tag -a {{ event-label}} -m "{{ description }}"
-git push origin --tags
-
-```
-{% endif %}
-
-## Scripting to remove tag 
-
-For when we have to update the repository.
-
-```shell
-# In local working copy of bssw-tutorial/bssw-tutorial.github.io repository
-
-# Delete local and remote tags
-git tag -d {{ event-label }}
-git push --delete origin {{ event-label }}
-
-```
-
 ## Next steps
 
-*Please proceed to [publication of tutorial assets](./utilities-publication.md) once these steps are complete.*
+*Please proceed to [publication of tutorial assets](./utilities-publication.html) once these steps are complete.*

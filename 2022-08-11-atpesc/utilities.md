@@ -52,6 +52,8 @@ layout: default
   {% include emit-warning.html msg=msg %}
 {% endunless %}
 
+my-presentations is {{ my-presentations | inspect }}<br>
+
 # Help for Tutorial Preparation and Delivery
 
 ## Process
