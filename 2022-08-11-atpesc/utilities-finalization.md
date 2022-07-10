@@ -202,6 +202,12 @@ gh issue create \
 
 ## Transition from planned event to scheduled
 
+There are numerous places where changes are required to shift a an event from "planned" to "scheduled".
+
+1. `_data/tutorials.csv` both date and status
+2. `_data/bsswt/<event-label>` (event data directory) name change
+3. `<event-label>` (event directory) name change
+
 ## Next steps
 
 *Please proceed to [preparation](./utilities-preparation.md) once these steps are complete.*
