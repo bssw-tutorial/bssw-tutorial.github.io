@@ -146,7 +146,7 @@ EOF
 {% for p in presentation-order %}
 gh issue create --repo bssw-tutorial/presentations --milestone "{{ event-label }}" \
     --title "Update {{ p }} presentation{% if dp.due %} by {{ dp.due }}{% endif %}" \
-    --assignee {{ presenter-order[forloop.index0] }} \
+    --assignee "{{ presenter-order[forloop.index0] }}" \
     --body "Update <{{ prepo }}/{{ p }}.pptx>{% if dp.due %} by {{ dp.due }}{% endif %}"
 {% endfor %}
 # Update resources from presentations{% if dr.due %} by {{ dr.due }}{% endif %}
