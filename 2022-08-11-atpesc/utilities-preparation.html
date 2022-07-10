@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-07-10T14:09:26-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-07-10T15:16:02-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -69,20 +69,16 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <p><font color="blue">WARNING: `artifacts` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml` (preferred) or `_data/bsswt/2022-08-11-atpesc/artifacts.yml`</font></p>
 
-<p><font color="blue">WARNING: `presentations` not defined. Check file `_data/bsswt/2022-08-11-atpesc/presentations.yml</font></p>
-
-<p><font color="blue">WARNING: `agenda` not defined. Check file `_data/bsswt/2022-08-11-atpesc/agenda.csv`</font></p>
-
 <h1 id="help-for-tutorial-preparation">Help for Tutorial Preparation</h1>
 
-<p><em>Complete the <a href="./utilities-finalization.md">post-acceptance finalization</a> steps before these.</em></p>
+<p><em>Complete the <a href="./utilities-finalization.html">post-acceptance finalization</a> steps before these.</em></p>
 
 <h2 id="issues-for-organizers">Issues for organizers</h2>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
     <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
     <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"2022-08-11-atpesc initial preparation"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"2022-08-11-atpesc content preparation"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
 - [ ] Reserve DOI
@@ -90,10 +86,20 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 - [ ] Update </span><span class="se">\`</span><span class="sh">license-master.pptx</span><span class="se">\`</span><span class="sh"> citation in &lt;https://github.com/bssw-tutorial/presentations&gt;
 - [ ] Update </span><span class="se">\`</span><span class="sh">agenda-master.pptx</span><span class="se">\`</span><span class="sh"> agenda in &lt;https://github.com/bssw-tutorial/presentations&gt;
 - [ ] Update </span><span class="se">\`</span><span class="sh">overview.pptx</span><span class="se">\`</span><span class="sh"> (or equivalent) with new agenda from </span><span class="se">\`</span><span class="sh">agenda-master.pptx</span><span class="se">\`</span><span class="sh"> in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Update </span><span class="se">\`</span><span class="sh">overview-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">design-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">licensing.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">spack.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">testing-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">lab-notebooks.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">computational-expts.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">mining-tools.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Additional updates to </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
-    - Update About Us slide (3) with presenters and helpers, including head-shots
-    - Update Hands-On Activities slide (9) as appropriate
-    - Update the We want to Interact with You slide (11) as appropriate
+    - Update *About Us* slide (3) with presenters and helpers, including head-shots
+    - Update *Hands-On Activities* slide (9) as appropriate
+    - Update the *We want to Interact with You* slide (11) as appropriate
+    - Add *Related Activities* slide as appropriate
+- [ ] Add issues needed for hands-on content development
 
 Potentially useful reference information:
 * [Detailed inputs for FigShare record](https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation.html#create-figshare-record-and-reserve-doi)
@@ -103,37 +109,98 @@ Potentially useful reference information:
 </span><span class="no">
 EOF
 
-</span>gh issue create <span class="se">\</span>
-    <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
-    <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"2022-08-11-atpesc build website"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
-    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
-- Update event details
-  - [ ] artifacts: presentation doi
-  - [ ] artifacts: hands-on code repo
-- Update event page sections    
-  - [ ] description
-  - [x] agenda *requires </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/agenda.csv</span><span class="se">\`</span><span class="sh">*
-  - [x] presentation-slides
-  - [ ] how-to-participate
-  - [ ] hands-on-exercises
-  - [ ] stay-in-touch
-  - [ ] resources-from-presentations
-  - [x] requested-citation
-  - [x] acknowledgments
-- [ ] Tag website repository
-</span><span class="no">
-EOF
-
 </span></code></pre></div></div>
 
 <h2 id="issues-for-presenters">Issues for presenters</h2>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations by 2022-07-27</span>
 
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update overview-a presentation by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> bernhold <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview-a.pptx&gt; by 2022-07-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update design-a presentation by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> adubey64 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/design-a.pptx&gt; by 2022-07-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update licensing presentation by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> bernhold <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/licensing.pptx&gt; by 2022-07-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update spack presentation by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> tgamblin <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/spack.pptx&gt; by 2022-07-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update testing-a presentation by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> adubey64 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-a.pptx&gt; by 2022-07-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update lab-notebooks presentation by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jared321 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/lab-notebooks.pptx&gt; by 2022-07-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update computational-expts presentation by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jared321, adubey64 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/computational-expts.pptx&gt; by 2022-07-27"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update mining-tools presentation by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> brnorris03 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/mining-tools.pptx&gt; by 2022-07-27"</span>
+
 <span class="c"># Update resources from presentations by 2022-08-05</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update overview-a resources by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> bernhold <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/overview-a.md&gt; by 2022-08-05"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update design-a resources by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> adubey64 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/design-a.md&gt; by 2022-08-05"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update licensing resources by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> bernhold <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/licensing.md&gt; by 2022-08-05"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update spack resources by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> tgamblin <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/spack.md&gt; by 2022-08-05"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update testing-a resources by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> adubey64 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/testing-a.md&gt; by 2022-08-05"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update lab-notebooks resources by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jared321 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/lab-notebooks.md&gt; by 2022-08-05"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update computational-expts resources by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> jared321, adubey64 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/computational-expts.md&gt; by 2022-08-05"</span>
+
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"Update mining-tools resources by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> brnorris03 <span class="se">\</span>
+    <span class="nt">--body</span> <span class="s2">"Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/mining-tools.md&gt; by 2022-08-05"</span>
 </code></pre></div></div>
+
+<h2 id="issues-for-hands-on-content">Issues for hands-on content</h2>
+
+<p><em>To be defined</em></p>
 
 <hr />
 
@@ -188,7 +255,7 @@ This tutorial is produced by the IDEAS Productivity project. This work was suppo
 <p><em>If you copy-paste from this page into PowerPoint, you will want to use the <code class="language-plaintext highlighter-rouge">copy-without-formatting</code>
 option to ensure that you get the font from the PPT template rather than the font from the web site.</em></p>
 
-<p><strong>People for <code class="language-plaintext highlighter-rouge">.pptx</code> title slide:</strong> David E. Bernholdt, Anshu Dubey, Todd Gamblin, Jared O’Neal, and Boyana R. Norris</p>
+<p><strong>People for <code class="language-plaintext highlighter-rouge">overview-a.pptx</code> title slide:</strong> David E. Bernholdt, Anshu Dubey, Todd Gamblin, Jared O’Neal, and Boyana R. Norris</p>
 
 <table>
   <tbody>
@@ -198,6 +265,48 @@ option to ensure that you get the font from the PPT template rather than the fon
       <td><strong>Pronouns</strong></td>
       <td><strong>Affiliation</strong></td>
     </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">design-a.pptx</code></td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">licensing.pptx</code></td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">spack.pptx</code></td>
+      <td>Todd Gamblin</td>
+      <td>he/him</td>
+      <td>Lawrence Livermore National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">testing-a.pptx</code></td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lab-notebooks.pptx</code></td>
+      <td>Jared O’Neal</td>
+      <td>he/him</td>
+      <td>Argonne National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">computational-expts.pptx</code></td>
+      <td>Boyana R. Norris</td>
+      <td>she/her</td>
+      <td>University of Oregon</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mining-tools.pptx</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
   </tbody>
 </table>
 
@@ -205,31 +314,9 @@ option to ensure that you get the font from the PPT template rather than the fon
 
 <hr />
 
-<h2 id="scripting-to-tag-website-repository">Scripting to tag website repository</h2>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># In local working copy of bssw-tutorial/bssw-tutorial.github.io repository</span>
-
-<span class="c"># Tag repo</span>
-git tag <span class="nt">-a</span> 2022-08-11-atpesc <span class="nt">-m</span> <span class="s2">"2022-08-11: Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school"</span>
-git push origin <span class="nt">--tags</span>
-
-</code></pre></div></div>
-
-<h2 id="scripting-to-remove-tag">Scripting to remove tag</h2>
-
-<p>For when we have to update the repository.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># In local working copy of bssw-tutorial/bssw-tutorial.github.io repository</span>
-
-<span class="c"># Delete local and remote tags</span>
-git tag <span class="nt">-d</span> 2022-08-11-atpesc
-git push <span class="nt">--delete</span> origin 2022-08-11-atpesc
-
-</code></pre></div></div>
-
 <h2 id="next-steps">Next steps</h2>
 
-<p><em>Please proceed to <a href="./utilities-publication.md">publication of tutorial assets</a> once these steps are complete.</em></p>
+<p><em>Please proceed to <a href="./utilities-publication.html">publication of tutorial assets</a> once these steps are complete.</em></p>
 
       </div>
     </main><footer class="site-footer h-card">
