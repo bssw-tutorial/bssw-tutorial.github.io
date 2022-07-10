@@ -86,7 +86,7 @@ gh issue create \
     --repo bssw-tutorial/tutorial-management \
     --milestone "{{ event-label }}" \
     --title "{{ event-label }} publication of assets" \
-    --assignee "{{ my-organizers | array_to_sentence_string: '' }}" \
+    --assignee "{{ my-organizers | array_to_sentence_string: ',' | remove: ' ' }}" \
     --body-file - << EOF
 - Quality control review of presentations (see <https://github.com/bssw-tutorial/presentations/blob/main/README.md#quality-control>)
 {% for p in presentation-order %}  - [ ] \`{{ p }}.pptx\`

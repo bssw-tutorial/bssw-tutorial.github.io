@@ -86,7 +86,7 @@ gh issue create \
     --repo bssw-tutorial/tutorial-management \
     --milestone "{{ event-label }}" \
     --title "{{ event-label }} initial preparation" \
-    --assignee "{{ my-organizers | array_to_sentence_string: '' }}" \
+    --assignee "{{ my-organizers | array_to_sentence_string: ',' | remove: ' ' }}" \
     --body-file - << EOF
 - [ ] Reserve DOI
 - [ ] In <{{ site.ghr-presentations }}/final-presentations/> create \`{{ event-label }}/doi.txt\` and record reserved DOI
@@ -111,7 +111,7 @@ gh issue create \
     --repo bssw-tutorial/tutorial-management \
     --milestone "{{ event-label }}" \
     --title "{{ event-label }} build website" \
-    --assignee "{{ my-organizers | array_to_sentence_string: '' }}" \
+    --assignee "{{ my-organizers | array_to_sentence_string: ',' | remove: ' ' }}" \
     --body-file - << EOF
 - Update event details
   - [ ] artifacts: presentation doi

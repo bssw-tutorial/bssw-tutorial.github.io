@@ -118,10 +118,10 @@ layout: default
 {% else %}
 ```shell
 gh issue create \
-  --repo bssw-tutorial-management \
+  --repo bssw-tutorial/tutorial-management \
   --milestone "{{ event-label }}" \
   --title "{{ event-label }} post-acceptance finalization" \
-  --assignee "{{ my-organizers | array_to_sentence_string: '' }}" \
+  --assignee "{{ my-organizers | array_to_sentence_string: ',' | remove: ' ' }}" \
   --body-file - << EOF
 - [ ] Add a milestone for the event to master-labels-milestones.json and synchronize repositories
 - Internal and external awareness
@@ -130,10 +130,12 @@ gh issue create \
 - Plan development activities
   - [ ] Finalize plans for content development
   - [ ] Finalize plans for hands-on, including necessary development
+  - [ ] Set internal deadlines as needed
+  - [ ] Capture internal and venue deadlines in \`deadines\` structure in \`_data/bsswt/{{ event-label }}/event.yml\`
 - [ ] Start building event page in the tutorial website
 - Plan staffing and agenda
-  - [ ] Finalize presenters, set `presenter-ids` in \`_data/bsswt/{{ event-label }}/event.yml\`
-  - [ ] Finalize helpers, set `helper-ids` in \`_data/bsswt/{{ event-label }}/event.yml\`
+  - [ ] Finalize presenters, set \`presenter-ids\` in \`_data/bsswt/{{ event-label }}/event.yml\`
+  - [ ] Finalize helpers, set \`helper-ids\` in \`_data/bsswt/{{ event-label }}/event.yml\`
   - [ ] Finalize agenda, add \`_data/bsswt/{{ event-label }}/agenda.csv\` and \`_data/bsswt/{{ event-label }}/presentations.yml\`
 - [ ] Transition from planned to scheduled, if necessary
 
@@ -192,7 +194,7 @@ gh issue create \
   --milestone "Complete by {{ ms-date | date: '%Y-%m' }}" \
   --label "Outreach" --label "External Event" \
   --title "{{ description }}" \
-  --assignee "{{ my-organizers | array_to_sentence_string: '' }}" \
+  --assignee "{{ my-organizers | array_to_sentence_string: ',' | remove: ' ' }}" \
   --body "{{ body }}"
 
 ```
@@ -200,7 +202,72 @@ gh issue create \
 
 ## Issue to track development of tutorial web page
 
+{% assign incomplete = false %}
+{% unless my-organizers %}
+  {% assign incomplete = true %}
+  {% capture msg %}`organizer-ids` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% include emit-error.html msg=msg %}
+{% endunless %}
+
+{% if incomplete %}
+  {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
+{% else %}
+```shell
+gh issue create \
+  --repo bssw-tutorial/bssw-tutorial.github.io \
+  --milestone "{{ event-label }}" \
+  --title "{{ event-label }} web page" \
+  --assignee "{{ my-organizers | array_to_sentence_string: ',' | remove: ' ' }}" \
+  --body-file - << EOF
+- Inital creation of event web page
+  - [x] Add event to \`_data/tutorials.csv\`
+  - [x] Create event data directory \`_data/bsswt/{{ event-label }}\`
+  - [x] Create event data file \`_data/bsswt/{{ event-label }}/event.yml\` as a copy of \`_data/event-template.yml\`
+  - [x] Add basic information to event data file
+  - [x] Create event directory \`{{ event-label }}\`
+  - [x] Copy \`index.md\` and \`utilities*.md\` from previous event
+  - [ ] In \`{{ event-label }}/index.md\` update \`event-label\` and \`sections\` appropriately
+- [ ] Transition from planned to scheduled, if necessary
+- Data needed
+  - In \`_data/bsswt/{{ event-label }}/event.yml\`
+    - [ ] Scheduled \`date\`, \`end-date\`, and \`time\`
+    - [x] \`organizer-ids\`
+    - [ ] \`presenter-ids\`, \`helper-ids\`
+    - In \`artifacts\`
+      - [ ] conference registration URL (if appropriate)
+      - [ ] doi
+      - [ ] hands-on code repository
+    - [ ] \`deadlines\`
+  - [ ] \`_data/bsswt/{{ event-label }}/agenda.csv\`
+  - [ ] \`_data/bsswt/{{ event-label }}/presentations.yml\`
+- Sections needed in \`{{ event-label }}/index.md\`
+  - [x] description (usually local)
+  - [x] agenda
+  - [x] presentation-slides
+  - [ ] how-to-participate (usually local)
+  - [ ] hands-on-exercises (usually local)
+  - [ ] stay-in-touch
+  - [ ] related-events (local, if appropriate to context)
+  - [ ] resources-from-presentations
+  - [x] requested-citation
+  - [x] acknowledgments
+- Additional files needed in `{{ event-label }}` directory
+  - [ ] Copy and update `presentation-resources` directory
+  - [ ] Copy and update `handson-*` files and `images` directory
+
+EOF
+
+```
+{% endif %}
+
 ## Transition from planned event to scheduled
+
+{%- if my-event.end-date -%}
+  {%- assign due = my-event.end-date | date: "%s" -%}
+{%- else -%}
+  {%- assign due = my-event.date | date: "%s" -%}
+{%- endif -%}
+{%- assign due = due | plus: 86399 | plus: 43200 -%}
 
 There are numerous places where changes are required to shift a an event from "planned" to "scheduled".
 
@@ -208,6 +275,18 @@ There are numerous places where changes are required to shift a an event from "p
 2. `_data/bsswt/<event-label>` (event data directory) name change
 3. `<event-label>` (event directory) name change
 4. `<event-label>/index.md` change `event-label` in metadata
+5. Update milestone definitions in `bssw-tutorial/tutorial-management repository/master-labels-milestones.json` and install the updated milestones in the tutorial working repositories (see [above](#add-milestone-to-github-repositories)). `title` should be updated with the new event label.  A new `previousTitles` field should be added with the original event label. The `due_on` date should still be reasonable as long as the scheduled date is within the range of dates originally specified at the planned stage, but can be updated if preferred.
+    {% if incomplete %}
+      {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
+    {% else %}
+    ```json
+      }, {      
+        "title": "{{ event-label }}",
+        "previousTitles": ["<original-event-label>"],
+        "state": "open",
+        "due_on": "{{ due | date: '%FT%T%z' }}"
+    ```
+    {% endif %}
 
 ## Next steps
 
