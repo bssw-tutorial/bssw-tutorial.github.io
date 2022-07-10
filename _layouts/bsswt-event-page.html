@@ -27,6 +27,8 @@ layout: default
 {% capture hnamafil %}{% include array-to-sentence array=name_affiliation_array 
     if_empty="<em>to be announced</em>" %}{% endcapture %}
 
+{% assign status = site.data.tutorials | find: "event-label", page.event-label %}
+
 <h1 align="center">{% if my-event.title-url %}<a href="{{ my-event.title-url }}">{{ my-event.title }}</a>{% else %}{{ my-event.title }}{% endif %}</h1>
 <p align="center">a {{ my-event.title-type }} presented at</p>
 <h2 align="center">{% if my-event.venue-url %}<a href="{{ my-event.venue-url }}">{{ my-event.venue }}</a>{% else %}{{ my-event.venue }}{% endif %}</h2>
@@ -36,6 +38,11 @@ layout: default
     {{ my-event.date | date: "%A %d %B %Y"}}
     {% if my-event.end-date %}- {{ my-event.end-date | date: "%A %d %B %Y"}}{% endif %}
   </h3>
+  {% if status.status == "planned" %}
+  <p align="center">
+    <em>Note: Exact day and time to be announced.</em>
+  </p>
+  {% endif %}
 {% endif %}
 
 {% if my-event.presenter-ids %}
