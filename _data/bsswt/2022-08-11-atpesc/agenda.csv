@@ -1,0 +1,16 @@
+Fixed Points,Duration,Time (CDT),Module,Title,Presenter
+<!--skip-->,<!--skip-->,<!--right-->,<!--right-->,,
+8:30 AM,45,8:30 AM,1,overview-a,bernhold
+,45,9:15 AM,2,design-a,adubey64
+10:00 AM,30,10:00 AM,,<em>Break</em>,
+10:30 AM,60,10:30 AM,3,licensing,bernhold
+,60,11:30 AM,4,spack,tgamblin
+12:30 PM,60,12:30 PM,,<em>Lunch</em>,
+1:30 PM,45,1:30 PM,5,testing-a,adubey64
+,45,2:15 PM,6,lab-notebooks,jared321
+3:00 PM,30,3:00 PM,,<em>Break</em>,
+3:30 PM,45,3:30 PM,7,computational-expts,"jared321, adubey64"
+,60,4:15 PM,8,mining-tools,brnorris03
+5:15 PM,45,5:15 PM,,<em>Dinner</em>,
+6:00 PM,180,6:00 PM,,<em><strong>Optional</strong> Evening Discussion/Hands-On Session</em>,all
+,660,9:00 PM,,<em>Adjourn</em>,
