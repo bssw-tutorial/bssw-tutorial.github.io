@@ -7,7 +7,10 @@
 
   table structure requirements:
     A column entitled `Title` containing the label of the presentation (referencing the presentations argument) 
-    A column entitled `Presenter` containing the github id of the presenter (referencing people argument)
+    A column entitled `Presenter` containing the github id of the presenter(s) (referencing people argument)
+      Multiple presenters are supported, separated by a comma
+      A special presenter "all" (lowercase) is recognized and rendered as "All".  This should only be used
+      with discussion sessions and the like, not with actual presentations.
 
   site variables used:
     `site.people`
@@ -52,11 +55,16 @@
         {%- case pair[0] -%}
           {%- when "Presenter" -%}
             {%- if pair[1] -%}
-                {%- assign presenter = pair[1] -%}
-                {%- include extract-array-subset key="github-id" values=presenter source=site.people -%}
+              {%- assign presenter = pair[1] -%}
+              {%- if presenter == "all" -%}
+                {%- assign pnamafil = "All" -%}
+              {%- else -%}
+                {%- assign presenters = presenter | remove: " " | split: "," -%}
+                {%- include extract-array-subset key="github-id" values=presenters source=site.people -%}
                 {%- include set-name-affiliation-array people=extract_array_subset short=true -%}
                 {%- capture pnamafil -%}{%- include array-to-sentence array=name_affiliation_array -%}{%- endcapture -%}
-                {{ td-open[forloop.index0] }}{{ pnamafil }}</td>
+               {%- endif -%}
+              {{ td-open[forloop.index0] }}{{ pnamafil }}</td>
             {%- else -%}
             {{ td-open[forloop.index0] }}</td>
             {%- endif -%}
@@ -75,4 +83,3 @@
       </tr>
   {%- endfor -%}
 </table>
-
