@@ -251,9 +251,9 @@ gh issue create \
   - [ ] resources-from-presentations
   - [x] requested-citation
   - [x] acknowledgments
-- Additional files needed in `{{ event-label }}` directory
-  - [ ] Copy and update `presentation-resources` directory
-  - [ ] Copy and update `handson-*` files and `images` directory
+- Additional files needed in \`{{ event-label }}\` directory
+  - [ ] Copy and update \`presentation-resources\` directory
+  - [ ] Copy and update \`handson-*\` files and \`images\` directory
 
 EOF
 
