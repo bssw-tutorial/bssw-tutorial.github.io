@@ -1,0 +1,56 @@
+{% comment %}
+  set-grouped-presentations: sets paired arrays containing the uniq presenter-ids 
+  and the corresponding list of presentations they're giving.  Presentations with 
+  multiple presenters are supported and are treated as distinct from the individuals.
+
+  arguments:
+    `presentations`: an array containing the presentation labels
+    `presenters`: an array containing the presenters of the above presentations, same order
+
+  outputs:
+    `grouped-presentations`: an array containing a comma-separated list of presentation labels
+    `grouped-presenters`: an arry containing the corresponding presenters.  Multiple presenters will be comma-separated.
+{% endcomment %}
+
+{% comment %}
+  We start by forming a single array with elements "<presenter id>::<presentation label>"
+{% endcomment %}
+{% assign a = "" | split:',' %}
+{% for p in include.presentations %}
+  {% capture i %}{{ include.presenters[forloop.index0] }}::{{ p }}{% endcapture %}
+  {% assign a = a | push: i %}
+{% endfor %}
+
+{% comment %}
+    Sort the list to group presenters together.  Uniq is gratuitous, really.
+{% endcomment %}
+{% assign b = a | sort | uniq %}
+
+{% assign grouped-presenters = "" | split: ',' %}
+{% assign grouped-presentations = "" | split: ',' %}
+{% assign previous-presenter = "" %}
+{% assign pres-list = "" %}
+
+{% for i in b %}
+  {% assign j = i | split: "::" %}
+  {% if j[0] != previous-presenter %}
+    {% unless forloop.first %}
+      {% assign grouped-presentations = grouped-presentations | push: pres-list %}
+    {% endunless %}
+    {% assign pres-list = j[1] %}
+    {% assign grouped-presenters = grouped-presenters | push: j[0] %}
+    {% assign previous-presenter = j[0] %}
+  {% else %}
+    {% assign pres-list = pres-list | append: "," | append: j[1] %}
+  {% endif %}
+{% endfor %}
+{% assign grouped-presentations = grouped-presentations | push: pres-list %}
+
+{% comment %} Clean up after ourselves {% endcomment %}
+{% assign a = nil %}
+{% assign p = nil %}
+{% assign i = nil %}
+{% assign b = nil %}
+{% assign previous-presenter = nil %}
+{% assign pres-list = nil %}
+{% assign j = nil %}

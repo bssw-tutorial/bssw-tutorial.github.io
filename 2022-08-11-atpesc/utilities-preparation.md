@@ -138,25 +138,43 @@ EOF
 {% assign dp =  my-deadlines | find_exp: "d", "d.label == 'internal-presentations'" %}
 {% assign dr =  my-deadlines | find_exp: "d", "d.label == 'internal-resource-links'" %}
 
+{% comment %} 
+  Reorganize the presenter/presentation arrays so that we can generate issues grouped by presenter
+{% endcomment %}
+{% include set-grouped-presentations presentations=presentation-order presenters=presenter-order %}
+
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
 {% else %}
 ```shell
 # Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}
-{% for p in presentation-order %}
+{%- for person in grouped-presenters -%}
+  {%- assign presentations = grouped-presentations[forloop.index0] | split: ',' %}
 gh issue create --repo bssw-tutorial/presentations --milestone "{{ event-label }}" \
-    --title "Update {{ p }} presentation{% if dp.due %} by {{ dp.due }}{% endif %}" \
-    --assignee "{{ presenter-order[forloop.index0] }}" \
-    --body "Update <{{ prepo }}/{{ p }}.pptx>{% if dp.due %} by {{ dp.due }}{% endif %}"
-{% endfor %}
-# Update resources from presentations{% if dr.due %} by {{ dr.due }}{% endif %}
-{% for p in presentation-order %}
+    --title "{{ person }}: Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}" \
+    --assignee "{{ person }}" \
+    --body-file - << EOF
+{%- for q in presentations %}
+- [ ] "Update <{{ prepo }}/{{ q }}.pptx>{% if dp.due %} by {{ dp.due }}{% endif %}"
+{%- endfor %}
+- [ ] "Remember to update <{{ prepo }}/presentations.yml if any titles change!"
+EOF
+{%- endfor %}
+
+# Update resources linked from presentations{% if dr.due %} by {{ dr.due }}{% endif %}
+{%- for person in grouped-presenters -%}
+  {%- assign presentations = grouped-presentations[forloop.index0] | split: ',' %}
 gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ event-label }}" \
-    --title "Update {{ p }} resources{% if dr.due %} by {{ dr.due }}{% endif %}" \
-    --assignee {{ presenter-order[forloop.index0] }} \
-    --body "Update <{{ prews }}/{{ p }}.md>{% if dr.due %} by {{ dr.due }}{% endif %}"
-{% endfor %}```
+    --title "{{ person }}: Update resource links{% if dp.due %} by {{ dr.due }}{% endif %}" \
+    --assignee "{{ person }}" \
+    --body-file - << EOF
+{%- for q in presentations %}
+- [ ] "Update <{{ prews }}/{{ q }}.md>{% if dr.due %} by {{ dr.due }}{% endif %}"
+{%- endfor %}
+EOF
+{%- endfor %}
 {% endif %}
+```
 
 ## Issues for hands-on content
 
