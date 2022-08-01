@@ -40,7 +40,8 @@ summary-testing: Summary
 #
 # Variants specifically for ATPESC
 #
-overview-a: Motivation and Overview of Best Practices in HPC Software Development (needs update)
+intro-a: Introduction
+overview-a: Motivation and Overview of Best Practices in HPC Software Development
 design-a: Scientific Software Design (needs update)
 spack: Introduction to Spack (needs update)
 testing-a: Software Testing (needs update)
