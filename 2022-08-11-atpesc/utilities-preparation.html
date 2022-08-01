@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-07-10T20:16:14-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-08-01T17:40:53-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -86,6 +86,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 - [ ] Update </span><span class="se">\`</span><span class="sh">license-master.pptx</span><span class="se">\`</span><span class="sh"> citation in &lt;https://github.com/bssw-tutorial/presentations&gt;
 - [ ] Update </span><span class="se">\`</span><span class="sh">agenda-master.pptx</span><span class="se">\`</span><span class="sh"> agenda in &lt;https://github.com/bssw-tutorial/presentations&gt;
 - [ ] Update </span><span class="se">\`</span><span class="sh">overview.pptx</span><span class="se">\`</span><span class="sh"> (or equivalent) with new agenda from </span><span class="se">\`</span><span class="sh">agenda-master.pptx</span><span class="se">\`</span><span class="sh"> in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Update </span><span class="se">\`</span><span class="sh">intro-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">overview-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">design-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">licensing.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
@@ -126,6 +127,7 @@ gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span
     <span class="nt">--title</span> <span class="s2">"bernhold: Update presentations by 2022-07-27"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro-a.pptx&gt; by 2022-07-27"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/licensing.pptx&gt; by 2022-07-27"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview-a.pptx&gt; by 2022-07-27"
 - [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
@@ -171,6 +173,7 @@ gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.githu
     <span class="nt">--title</span> <span class="s2">"bernhold: Update resource links by 2022-08-05"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/intro-a.md&gt; by 2022-08-05"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/licensing.md&gt; by 2022-08-05"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/overview-a.md&gt; by 2022-08-05"
 </span><span class="no">EOF
@@ -258,7 +261,7 @@ This tutorial is produced by the IDEAS Productivity project. This work was suppo
 <p><em>If you copy-paste from this page into PowerPoint, you will want to use the <code class="language-plaintext highlighter-rouge">copy-without-formatting</code>
 option to ensure that you get the font from the PPT template rather than the font from the web site.</em></p>
 
-<p><strong>People for <code class="language-plaintext highlighter-rouge">overview-a.pptx</code> title slide:</strong> David E. Bernholdt, Anshu Dubey, Todd Gamblin, Jared O’Neal, and Boyana R. Norris</p>
+<p><strong>People for <code class="language-plaintext highlighter-rouge">intro-a.pptx</code> title slide:</strong> David E. Bernholdt, Anshu Dubey, Todd Gamblin, Jared O’Neal, and Boyana R. Norris</p>
 
 <table>
   <tbody>
@@ -267,6 +270,12 @@ option to ensure that you get the font from the PPT template rather than the fon
       <td><strong>Presenter</strong></td>
       <td><strong>Pronouns</strong></td>
       <td><strong>Affiliation</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">overview-a.pptx</code></td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">design-a.pptx</code></td>
