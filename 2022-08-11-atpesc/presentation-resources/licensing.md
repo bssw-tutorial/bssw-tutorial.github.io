@@ -29,12 +29,12 @@
           - [Open Source Licenses and their Compatibility](https://janelia-flyem.github.io/licenses.html)
           - [Which Licenses May Not be Included within Apache Products?](https://www.apache.org/legal/resolved.html#category-x)
         - (Re-) Licensing considerations of various organizations
-          - [LLVM Contemplates Relicensing](https://lwn.net/Articles/701155/), [LLVM Relicensing Effort](https://llvm.org/foundation/relicensing/)
+          - [LLVM Contemplates Relicensing](https://lwn.net/Articles/701155/), [LLVM Relicensing Effort](https://foundation.llvm.org/docs/relicensing/)
           - HEP Software Foundation [licensing working group](https://hepsoftwarefoundation.org/activities/licensing.html), particularly:
             - <https://hepsoftwarefoundation.org/organization/2017/02/21/licensing.html>
             - <https://hepsoftwarefoundation.org/organization/2018/05/09/licensing.html> included this [Update on Software Licensing](https://indico.cern.ch/event/727095/contributions/2992610/attachments/1647248/2633145/HSF_Licensing_Intro_2018-05-09.pdf)
           - EasyBuild: [GPLv2 licensing is a big issue, consider relicensing to BSD](https://github.com/easybuilders/easybuild-framework/issues/335)
-          - [GEANT Intellectual Property Rights Policy](https://geant3plus.archive.geant.net/About/Documents/GN3_10_325GEANTIPRPolicyv1.2_30SEP11.pdf)
+          - [GEANT Intellectual Property Rights Policy](https://geant3plus.archive.geant.net/Documents/GN3_10_325GEANTIPRPolicyv1.2_30SEP11.pdf)
         - Patents in software licenses
           - [Why so little love for the patent grant in the MIT License?](https://opensource.com/article/18/3/patent-grant-mit-license)
           - [React’s New MIT License: The Circus Enters Its Third Ring](https://medium.com/@dwalsh.sdlr/reacts-new-mit-license-the-circus-enters-it-s-third-ring-2f1bf989a67f)
