@@ -45,6 +45,6 @@ overview-a: Motivation and Overview of Best Practices in HPC Software Developmen
 design-a: Scientific Software Design
 spack: "Spack: Package Management for HPC"
 testing-a: Software Testing and Verification
-lab-notebooks: A Journey Toward Lab Notebooks
+lab-notebooks: Lab Notebooks for Computational Mathematics, Sciences, & Engineering
 computational-expts: Managing Computational Experiments
 mining-tools: Understanding Your Software Development
