@@ -37,7 +37,7 @@ time: "8:30 am - 9:00 pm CDT (UTC-5)"
 venue: "Argonne Training Program on Extreme-Scale Computing"
 venue-type: "summer school"
 venue-url: https://extremecomputingtraining.anl.gov/
-location: "Q-Center, St. Charles, Illinois"
+location: "St. Charles, Illinois"
 #
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
