@@ -2,13 +2,14 @@
     key-artifact-shorthands: set shorthand variables based on the artifacts data structure
         Label                      Element Output Variable
         "Presentation Slides"      doi     presentations-doi
+                                   status  presentation-status
         "Hands-On Code Repository" gh-repo hands-on-repo
 
     arguments:
         `artifacts`: is a sequence containing artifact information
 
     outputs:
-        `presentations-doi`, `presentations-url`
+        `presentations-doi`, `presentations-url`, `presentations-status`
         `hands-on-repo`, `hands-on-repo-url`, `hands-on-repo-link`
         `hands-on-repo-org`, `hands-on-repo-dir`
 
@@ -22,15 +23,15 @@
             url: or yt-video-id: or gh-repo: or doi: (optional)
             note: (optional)
             format: (optional)
+            status: (only for doi, should be `reserved` or `published`)
     
       Note: does not check validity of data structure.
       For that use validate-artifact include
 {% endcomment %}
 
-
 {%- if include.artifacts -%}
     {%- for i in include.artifacts -%}
-        {%- if i.label == "Presentation Slides" -%}{%- assign presentations-doi = i.doi -%}{%- endif -%}
+        {%- if i.label == "Presentation Slides" -%}{%- assign presentations-doi = i.doi -%}{%- assign presentations-status = i.status -%}{%- endif -%}
         {%- if i.label == "Hands-On Code Repository" -%}{%- assign hands-on-repo = i.gh-repo -%}{%- endif -%}
     {%- endfor -%}
 {%- endif -%}

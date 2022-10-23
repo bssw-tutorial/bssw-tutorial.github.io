@@ -15,7 +15,9 @@
 The requested citation the overall tutorial is: 
 
 {{ name_affiliation_array | array_to_sentence_string }}, {{ my-event.title }} {{ my-event.title-type }}, in {{ my-event.venue }}, {{ my-event.location }}, {{ my-event.date | date: "%Y" }}. {% if presentations-doi %}DOI: [{{ presentations-doi }}]({{ presentations-url }}).{% endif %}
-
+{% if presentations-status == "reserved" %}
+*Note that the DOI will become active once the presentations are published.*
+{% endif %}
 Individual modules may be cited as *Speaker*, *Module Title*, in {{ my-event.title}} {{ my-event.title-type }}…
 {% else %}
 *The citation will be added once the presentation DOI is available.*
