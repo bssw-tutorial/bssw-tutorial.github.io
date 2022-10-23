@@ -1,12 +1,109 @@
+# Main data file for BSSw tutorial events
+#
+# Commentary notes indicate fields that are
+# required (plain text) and optional (bracketed text)
+# in the "planned" and "scheduled" states.
+#
+# Basic tutorial information
+#
+# Planned: title, [title-type], [title-url]
+# Scheduled: same
+#
 title: "Better Scientific Software"
 title-type: "tutorial"
-#title-url:
+title-url: https://sc22.supercomputing.org/presentation/?id=tut140&sess=sess218
+#
+# Presentation date and time.
+# end-date is optional for one-day events
+# time should include timezeone explicitly
+# We don't currently handle tutorials that occur at *different times* on multiple days
+#
+# Planned: date, [end-date], [time]
+#   Note: at the "planned" stage, end-date can be used with date to specify
+#   the range of dates in which the tutorial *could* take place.
+# Scheduled: date, [end-date], time
+#   Unless the tutorial occurs over multiple days, end-date is not
+#   needed for tutorials in the "scheduled" stage.
+#
 date: 2022-11-13
-end-date: 2022-11-14
-#time: 8:00 am - 5:00 pm CST
+#end-date: 
+time: "1:30 pm - 5:00 pm CST"
+#
+# Venue information
+#
+# Planned: venue, [venue-type], [venue-url], location
+# Scheduled: same
+#
 venue: "The International Conference for High-Performance Computing, Networking, Storage, and Analysis (SC22)"
 venue-type: "conference"
-#venue-url: https://sc22.supercomputing.org/
+venue-url: https://sc22.supercomputing.org/
 location: "Dallas, Texas"
-#presenter-ids: [bernhold, adubey64, pagrubel, rinkug, jarrah42]
-#helper-ids: [frobnitzem]
+#
+# Staffing information
+# organizer-ids will be assigned the issues that presenter-ids are not doing, basically
+#
+# Planned: organizer-ids, [presenter-ids], [helper-ids]
+# Scheduled: organizer-ids, presenter-ids, [helper-ids]
+#
+organizer-ids: [bernhold]
+presenter-ids: [bernhold, adubey64, pagrubel]
+helper-ids: 
+#
+# This is a more or less typical collection of artifacts for tutorials.
+# Comment out anything that isn't (yet) available.
+# If you want to list the conference registration page, comment it out
+# after registration closes or after the event, when it is no longer useful.
+#
+# Planned: [artifacts]
+# Scheduled: artifacts
+#   By the time of delivery, the doi should be set
+#
+artifacts:
+  - label: Conference Registration
+    url: https://sc22.supercomputing.org/attend/registration/
+#  - label: Recordings
+#    format: YouTube playlist
+#    url: 
+#  - label: Presentation Slides
+#    format: FigShare
+#    doi: 10.6084/m9.figshare.21384057
+#  - label: Hands-On Code Repository
+#    format: GitHub
+#    gh-repo: bssw-tutorial/hello-numerical-world-2022-08-11-atpesc
+#
+# This is a standard collection of deadlines we've encountered historically
+# Add due dates where appropriate. Those without will be ignored
+# Responsible refers to the (set of) github ids that will be assigned to
+# generated issues. Usually these are organizer-ids, presenter-ids, or
+# helper-ids as set above.  "by-presentation" is a special value indicating
+# that responsibilities should be assigned based on the presenters liseted
+# in the agenda.
+#
+# Planned: [deadlines]
+# Scheduled: deadlines
+#
+deadlines:
+  - label: internal-presentations
+    due: 2022-10-27
+    responsible: [by-presentation]
+  - label: internal-resource-links
+    due: 2022-11-04
+    responsible: [by-presentation]
+  - label: venue-initial-presentations
+    due: 2022-10-28
+    responsible: [organizer-ids]
+  - label: venue-final-presentations
+    due: 2022-11-13
+    responsible: [organizer-ids]
+  - label: internal-consents
+    due: 2022-08-04
+    responsible: [presenter-ids, helper-ids]
+  - label: venue-consents
+    due: 2022-08-05
+    responsible: [organizer-ids]
+  - label: internal-recordings
+    due: 
+    responsible: [by-presentation]
+  - label: venue-recordings
+    due: 
+    responsible: [organizer-ids]
