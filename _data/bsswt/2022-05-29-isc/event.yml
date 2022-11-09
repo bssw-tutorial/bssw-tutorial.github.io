@@ -34,8 +34,8 @@ helper-ids:
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
-  - label: Conference Registration
-    url: https://www.isc-hpc.com/registration-2022.html
+#  - label: Conference Registration
+#    url: https://www.isc-hpc.com/registration-2022.html
 #  - label: Recordings
 #    format: YouTube playlist
 #    url: 
