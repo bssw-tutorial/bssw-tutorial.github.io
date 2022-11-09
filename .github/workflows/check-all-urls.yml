@@ -33,7 +33,7 @@ jobs:
         path: ./.github/workflows/exclude-urls.txt
 
     - name: urls-checker
-      uses: urlstechie/urlchecker-action@0.0.27
+      uses: urlstechie/urlchecker-action@0.0.33
       with:
         # Use common exclude list read in above
         exclude_urls: ${{ steps.exclude.outputs.content }}
