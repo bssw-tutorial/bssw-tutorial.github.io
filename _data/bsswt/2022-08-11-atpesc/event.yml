@@ -61,9 +61,9 @@ helper-ids:
 artifacts:
 #  - label: Conference Registration
 #    url: 
-#  - label: Recordings
-#    format: YouTube playlist
-#    url: 
+  - label: Recordings
+    format: YouTube playlist
+    url: https://youtube.com/playlist?list=PLuWzStas9iWHlsWNBAZG63zHargIRIPE7
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.20416215

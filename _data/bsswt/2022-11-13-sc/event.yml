@@ -37,7 +37,7 @@ time: "1:30 pm - 5:00 pm CST"
 venue: "The International Conference for High-Performance Computing, Networking, Storage, and Analysis (SC22)"
 venue-type: "conference"
 venue-url: https://sc22.supercomputing.org/
-location: "Dallas, Texas"
+location: "Dallas, Texas, and online"
 #
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
@@ -61,8 +61,8 @@ helper-ids:
 #   By the time of delivery, the doi status should be "published""
 #
 artifacts:
-  - label: Conference Registration
-    url: https://sc22.supercomputing.org/attend/registration/
+#  - label: Conference Registration
+#    url: https://sc22.supercomputing.org/attend/registration/
 #  - label: Recordings
 #    format: YouTube playlist
 #    url: 

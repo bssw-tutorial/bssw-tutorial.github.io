@@ -37,8 +37,8 @@ artifacts:
 #  - label: Conference Registration
 #    url: 
   - label: Recordings
-    format: YouTube
-    url: https://www.youtube.com/watch?v=R1G8QR3YkdE
+    format: YouTube playlist
+    url: https://youtube.com/playlist?list=PLuWzStas9iWFiWGCw7rC8Y-rG4KtPa39I
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.19608927
