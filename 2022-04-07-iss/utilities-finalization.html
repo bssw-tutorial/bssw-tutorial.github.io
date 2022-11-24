@@ -10,14 +10,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
 <meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
-<link rel="canonical" href="https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-finalization.html" />
-<meta property="og:url" content="https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-finalization.html" />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2022-04-07-iss/utilities-finalization.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2022-04-07-iss/utilities-finalization.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-11-24T16:20:59-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-finalization.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-11-24T16:20:59-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-04-07-iss/utilities-finalization.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -65,7 +65,9 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         
-<p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2022-08-11-atpesc">2022-08-11-atpesc</a> &gt; <a href="https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-finalization">finalization</a></p>
+<p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2022-04-07-iss">2022-04-07-iss</a> &gt; <a href="https://bssw-tutorial.github.io/2022-04-07-iss/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2022-04-07-iss/utilities-finalization">finalization</a></p>
+
+<p><font color="blue">WARNING: `deadlines` not defined in file `_data/bsswt/2022-04-07-iss/event.yml`</font></p>
 
 <h1 id="help-for-post-acceptance-finalization-of-new-tutorial">Help for Post-Acceptance Finalization of New Tutorial</h1>
 
@@ -79,9 +81,9 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
     <p>Add the following to the <code class="language-plaintext highlighter-rouge">milestones</code> section of <code class="language-plaintext highlighter-rouge">master-labels-milestones.json</code></p>
 
     <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">}</span><span class="err">,</span><span class="w"> </span><span class="p">{</span><span class="w">      
-     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-11-atpesc"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-07-iss"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"due_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-12T07:59:59-0400"</span><span class="w">
+     </span><span class="nl">"due_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-08T07:59:59-0400"</span><span class="w">
 </span></code></pre></div>    </div>
   </li>
   <li>While editing the file, take a minute to update the state to <code class="language-plaintext highlighter-rouge">closed</code> for milestones for tutorials which have been completed (including any post-event follow-up)</li>
@@ -95,9 +97,9 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
   <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
-  <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
-  <span class="nt">--title</span> <span class="s2">"2022-08-11-atpesc post-acceptance finalization"</span> <span class="se">\</span>
-  <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
+  <span class="nt">--milestone</span> <span class="s2">"2022-04-07-iss"</span> <span class="se">\</span>
+  <span class="nt">--title</span> <span class="s2">"2022-04-07-iss post-acceptance finalization"</span> <span class="se">\</span>
+  <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
   <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
 - [ ] Add a milestone for the event to master-labels-milestones.json and synchronize repositories
 - Internal and external awareness
@@ -107,12 +109,12 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   - [ ] Finalize plans for content development
   - [ ] Finalize plans for hands-on, including necessary development
   - [ ] Set internal deadlines as needed
-  - [ ] Capture internal and venue deadlines in </span><span class="se">\`</span><span class="sh">deadines</span><span class="se">\`</span><span class="sh"> structure in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
+  - [ ] Capture internal and venue deadlines in </span><span class="se">\`</span><span class="sh">deadines</span><span class="se">\`</span><span class="sh"> structure in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss/event.yml</span><span class="se">\`</span><span class="sh">
 - [ ] Start building event page in the tutorial website
 - Plan staffing and agenda
-  - [ ] Finalize presenters, set </span><span class="se">\`</span><span class="sh">presenter-ids</span><span class="se">\`</span><span class="sh"> in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
-  - [ ] Finalize helpers, set </span><span class="se">\`</span><span class="sh">helper-ids</span><span class="se">\`</span><span class="sh"> in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
-  - [ ] Finalize agenda, add </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/agenda.csv</span><span class="se">\`</span><span class="sh"> and </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/presentations.yml</span><span class="se">\`</span><span class="sh">
+  - [ ] Finalize presenters, set </span><span class="se">\`</span><span class="sh">presenter-ids</span><span class="se">\`</span><span class="sh"> in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss/event.yml</span><span class="se">\`</span><span class="sh">
+  - [ ] Finalize helpers, set </span><span class="se">\`</span><span class="sh">helper-ids</span><span class="se">\`</span><span class="sh"> in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss/event.yml</span><span class="se">\`</span><span class="sh">
+  - [ ] Finalize agenda, add </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss/agenda.csv</span><span class="se">\`</span><span class="sh"> and </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss/presentations.yml</span><span class="se">\`</span><span class="sh">
 - [ ] Transition from planned to scheduled, if necessary
 </span><span class="no">
 EOF
@@ -125,11 +127,11 @@ EOF
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
   <span class="nt">--repo</span> ideas-productivity/project-management <span class="se">\</span>
-  <span class="nt">--milestone</span> <span class="s2">"Complete by 2022-08"</span> <span class="se">\</span>
+  <span class="nt">--milestone</span> <span class="s2">"Complete by 2022-04"</span> <span class="se">\</span>
   <span class="nt">--label</span> <span class="s2">"Outreach"</span> <span class="nt">--label</span> <span class="s2">"External Event"</span> <span class="se">\</span>
-  <span class="nt">--title</span> <span class="s2">"Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school"</span> <span class="se">\</span>
-  <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
-  <span class="nt">--body</span> <span class="s2">"To be held 8:30 am - 9:00 pm CDT (UTC-5) Thursday 11 August 2022"</span>
+  <span class="nt">--title</span> <span class="s2">"Better Scientific Software tutorial @ Improving Scientific Software conference"</span> <span class="se">\</span>
+  <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+  <span class="nt">--body</span> <span class="s2">"To be held 9:00 am - 11:20 am MDT (UTC-6), 1:20 pm - 3:40 pm MDT (UTC-6) Thursday 07 April 2022"</span>
 
 </code></pre></div></div>
 
@@ -139,21 +141,21 @@ EOF
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
   <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="se">\</span>
-  <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
-  <span class="nt">--title</span> <span class="s2">"2022-08-11-atpesc web page"</span> <span class="se">\</span>
-  <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
+  <span class="nt">--milestone</span> <span class="s2">"2022-04-07-iss"</span> <span class="se">\</span>
+  <span class="nt">--title</span> <span class="s2">"2022-04-07-iss web page"</span> <span class="se">\</span>
+  <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
   <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
 - Inital creation of event web page
   - [x] Add event to </span><span class="se">\`</span><span class="sh">_data/tutorials.csv</span><span class="se">\`</span><span class="sh">
-  - [x] Create event data directory </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc</span><span class="se">\`</span><span class="sh">
-  - [x] Create event data file </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh"> as a copy of </span><span class="se">\`</span><span class="sh">_data/event-template.yml</span><span class="se">\`</span><span class="sh">
+  - [x] Create event data directory </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss</span><span class="se">\`</span><span class="sh">
+  - [x] Create event data file </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss/event.yml</span><span class="se">\`</span><span class="sh"> as a copy of </span><span class="se">\`</span><span class="sh">_data/event-template.yml</span><span class="se">\`</span><span class="sh">
   - [x] Add basic information to event data file
-  - [x] Create event directory </span><span class="se">\`</span><span class="sh">2022-08-11-atpesc</span><span class="se">\`</span><span class="sh">
+  - [x] Create event directory </span><span class="se">\`</span><span class="sh">2022-04-07-iss</span><span class="se">\`</span><span class="sh">
   - [x] Copy </span><span class="se">\`</span><span class="sh">index.md</span><span class="se">\`</span><span class="sh"> and </span><span class="se">\`</span><span class="sh">utilities*.md</span><span class="se">\`</span><span class="sh"> from previous event
-  - [ ] In </span><span class="se">\`</span><span class="sh">2022-08-11-atpesc/index.md</span><span class="se">\`</span><span class="sh"> update </span><span class="se">\`</span><span class="sh">event-label</span><span class="se">\`</span><span class="sh"> and </span><span class="se">\`</span><span class="sh">sections</span><span class="se">\`</span><span class="sh"> appropriately
+  - [ ] In </span><span class="se">\`</span><span class="sh">2022-04-07-iss/index.md</span><span class="se">\`</span><span class="sh"> update </span><span class="se">\`</span><span class="sh">event-label</span><span class="se">\`</span><span class="sh"> and </span><span class="se">\`</span><span class="sh">sections</span><span class="se">\`</span><span class="sh"> appropriately
 - [ ] Transition from planned to scheduled, if necessary
 - Data needed
-  - In </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
+  - In </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss/event.yml</span><span class="se">\`</span><span class="sh">
     - [ ] Scheduled </span><span class="se">\`</span><span class="sh">date</span><span class="se">\`</span><span class="sh">, </span><span class="se">\`</span><span class="sh">end-date</span><span class="se">\`</span><span class="sh">, and </span><span class="se">\`</span><span class="sh">time</span><span class="se">\`</span><span class="sh">
     - [x] </span><span class="se">\`</span><span class="sh">organizer-ids</span><span class="se">\`</span><span class="sh">
     - [ ] </span><span class="se">\`</span><span class="sh">presenter-ids</span><span class="se">\`</span><span class="sh">, </span><span class="se">\`</span><span class="sh">helper-ids</span><span class="se">\`</span><span class="sh">
@@ -162,9 +164,9 @@ EOF
       - [ ] doi
       - [ ] hands-on code repository
     - [ ] </span><span class="se">\`</span><span class="sh">deadlines</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/agenda.csv</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/presentations.yml</span><span class="se">\`</span><span class="sh">
-- Sections needed in </span><span class="se">\`</span><span class="sh">2022-08-11-atpesc/index.md</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss/agenda.csv</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-04-07-iss/presentations.yml</span><span class="se">\`</span><span class="sh">
+- Sections needed in </span><span class="se">\`</span><span class="sh">2022-04-07-iss/index.md</span><span class="se">\`</span><span class="sh">
   - [x] description (usually local)
   - [x] agenda
   - [x] presentation-slides
@@ -175,7 +177,7 @@ EOF
   - [ ] resources-from-presentations
   - [x] requested-citation
   - [x] acknowledgments
-- Additional files needed in </span><span class="se">\`</span><span class="sh">2022-08-11-atpesc</span><span class="se">\`</span><span class="sh"> directory
+- Additional files needed in </span><span class="se">\`</span><span class="sh">2022-04-07-iss</span><span class="se">\`</span><span class="sh"> directory
   - [ ] Copy and update </span><span class="se">\`</span><span class="sh">presentation-resources</span><span class="se">\`</span><span class="sh"> directory
   - [ ] Copy and update </span><span class="se">\`</span><span class="sh">handson-*</span><span class="se">\`</span><span class="sh"> files and </span><span class="se">\`</span><span class="sh">images</span><span class="se">\`</span><span class="sh"> directory
 </span><span class="no">
@@ -196,10 +198,10 @@ EOF
     <p>Update milestone definitions in <code class="language-plaintext highlighter-rouge">bssw-tutorial/tutorial-management repository/master-labels-milestones.json</code> and install the updated milestones in the tutorial working repositories (see <a href="#add-milestone-to-github-repositories">above</a>). <code class="language-plaintext highlighter-rouge">title</code> should be updated with the new event label.  A new <code class="language-plaintext highlighter-rouge">previousTitles</code> field should be added with the original event label. The <code class="language-plaintext highlighter-rouge">due_on</code> date should still be reasonable as long as the scheduled date is within the range of dates originally specified at the planned stage, but can be updated if preferred.</p>
 
     <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">}</span><span class="err">,</span><span class="w"> </span><span class="p">{</span><span class="w">      
-     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-11-atpesc"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-07-iss"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"previousTitles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"&lt;original-event-label&gt;"</span><span class="p">],</span><span class="w">
      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"due_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-12T07:59:59-0400"</span><span class="w">
+     </span><span class="nl">"due_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-04-08T07:59:59-0400"</span><span class="w">
 </span></code></pre></div>    </div>
   </li>
 </ol>
