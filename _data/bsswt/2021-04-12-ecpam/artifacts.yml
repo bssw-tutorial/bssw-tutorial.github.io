@@ -1,4 +1,7 @@
 #artifacts:
+  - label: Recordings
+    format: Youtube playlist
+    url: https://youtube.com/playlist?list=PLuWzStas9iWFcaosbTcoVA0GN3qr2ZfSA
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.14376956
