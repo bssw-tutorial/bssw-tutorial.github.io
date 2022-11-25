@@ -10,14 +10,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
 <meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
-<link rel="canonical" href="https://bssw-tutorial.github.io/2022-04-07-iss/utilities-preparation.html" />
-<meta property="og:url" content="https://bssw-tutorial.github.io/2022-04-07-iss/utilities-preparation.html" />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2021-06-24-isc/utilities-preparation.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2021-06-24-isc/utilities-preparation.html" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-11-25T12:10:33-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-04-07-iss/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-11-25T12:10:33-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2021-06-24-isc/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -65,9 +65,9 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         
-<p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2022-04-07-iss">2022-04-07-iss</a> &gt; <a href="https://bssw-tutorial.github.io/2022-04-07-iss/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2022-04-07-iss/utilities-preparation">preparation</a></p>
+<p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2021-06-24-isc">2021-06-24-isc</a> &gt; <a href="https://bssw-tutorial.github.io/2021-06-24-isc/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2021-06-24-isc/utilities-preparation">preparation</a></p>
 
-<p><font color="blue">WARNING: `deadlines` not defined in file `_data/bsswt/2022-04-07-iss/event.yml`</font></p>
+<p><font color="blue">WARNING: `deadlines` not defined in file `_data/bsswt/2021-06-24-isc/event.yml`</font></p>
 
 <h1 id="help-for-tutorial-preparation">Help for Tutorial Preparation</h1>
 
@@ -77,23 +77,26 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
     <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
-    <span class="nt">--milestone</span> <span class="s2">"2022-04-07-iss"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"2022-04-07-iss content preparation"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+    <span class="nt">--milestone</span> <span class="s2">"2021-06-24-isc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"2021-06-24-isc content preparation"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
 - [ ] Reserve DOI
-- [ ] In &lt;https://github.com/bssw-tutorial/presentations/final-presentations/&gt; create </span><span class="se">\`</span><span class="sh">2022-04-07-iss/doi.txt</span><span class="se">\`</span><span class="sh"> and record reserved DOI
+- [ ] In &lt;https://github.com/bssw-tutorial/presentations/final-presentations/&gt; create </span><span class="se">\`</span><span class="sh">2021-06-24-isc/doi.txt</span><span class="se">\`</span><span class="sh"> and record reserved DOI
 - [ ] Update </span><span class="se">\`</span><span class="sh">license-master.pptx</span><span class="se">\`</span><span class="sh"> citation in &lt;https://github.com/bssw-tutorial/presentations&gt;
 - [ ] Update </span><span class="se">\`</span><span class="sh">agenda-master.pptx</span><span class="se">\`</span><span class="sh"> agenda in &lt;https://github.com/bssw-tutorial/presentations&gt;
 - [ ] Update </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">overview.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">agile.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">git-workflows.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
-- [ ] Update </span><span class="se">\`</span><span class="sh">testing-introduction2.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
-- [ ] Update </span><span class="se">\`</span><span class="sh">testing-advanced.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
-- [ ] Update </span><span class="se">\`</span><span class="sh">refactoring.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">reproducibility.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">agile-redux.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">testing-introduction.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">testing-walkthrough.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">testing-advanced.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">continuous-integration.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">refactoring.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Update </span><span class="se">\`</span><span class="sh">summary.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
 - [ ] Additional updates to </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
     - Update *About Us* slide (3) with presenters and helpers, including head-shots
@@ -104,10 +107,10 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 - [ ] Add issues needed for hands-on content development
 
 Potentially useful reference information:
-* [Detailed inputs for FigShare record](https://bssw-tutorial.github.io/2022-04-07-iss/utilities-preparation.html#create-figshare-record-and-reserve-doi)
-* [Citation](https://bssw-tutorial.github.io/2022-04-07-iss#requested-citation)
-* [Agenda](https://bssw-tutorial.github.io/2022-04-07-iss#agenda) can be copy-pasted into PowerPoint
-* [Title slide details](https://bssw-tutorial.github.io/2022-04-07-iss/utilities-preparation.html#title-slide-details)
+* [Detailed inputs for FigShare record](https://bssw-tutorial.github.io/2021-06-24-isc/utilities-preparation.html#create-figshare-record-and-reserve-doi)
+* [Citation](https://bssw-tutorial.github.io/2021-06-24-isc#requested-citation)
+* [Agenda](https://bssw-tutorial.github.io/2021-06-24-isc#agenda) can be copy-pasted into PowerPoint
+* [Title slide details](https://bssw-tutorial.github.io/2021-06-24-isc/utilities-preparation.html#title-slide-details)
 </span><span class="no">
 EOF
 
@@ -115,7 +118,7 @@ EOF
 
 <h2 id="issues-for-presenters">Issues for presenters</h2>
 
-<p><font color="red">ERROR: `deadlines` not defined in file `_data/bsswt/2022-04-07-iss/event.yml`</font></p>
+<p><font color="red">ERROR: `deadlines` not defined in file `_data/bsswt/2021-06-24-isc/event.yml`</font></p>
 
 <p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
 
@@ -134,10 +137,10 @@ EOF
   <li>Click <code class="language-plaintext highlighter-rouge">Create a new item</code>. Complete the fields as below</li>
 </ol>
 
-<p><strong>Title:</strong> Better Scientific Software tutorial @ Improving Scientific Software conference (2022)</p>
+<p><strong>Title:</strong> Better Scientific Software tutorial @ ISC High Performance conference (2021)</p>
 
 <p><strong>Authors:</strong> <!-- note that we're not listing helpers here -->
-<code class="language-plaintext highlighter-rouge">David E. Bernholdt</code>,<code class="language-plaintext highlighter-rouge">Rinku K. Gupta</code>,<code class="language-plaintext highlighter-rouge">Patricia A. Grubel</code>,<code class="language-plaintext highlighter-rouge">David M. Rogers</code></p>
+<code class="language-plaintext highlighter-rouge">David E. Bernholdt</code>,<code class="language-plaintext highlighter-rouge">Anshu Dubey</code>,<code class="language-plaintext highlighter-rouge">Patricia A. Grubel</code>,<code class="language-plaintext highlighter-rouge">Rinku K. Gupta</code>,<code class="language-plaintext highlighter-rouge">David M. Rogers</code></p>
 
 <p><strong>Categories:</strong> <code class="language-plaintext highlighter-rouge">Software Engineering</code></p>
 
@@ -153,18 +156,16 @@ EOF
 <code class="language-plaintext highlighter-rouge">Better Scientific Software tutorial</code></p>
 
 <p><strong>Description:</strong>
-Producing scientific software is a challenge.  The high-performance modeling and simulation community, in particular, is dealing with the confluence of disruptive changes in computing architectures and new opportunities (and demands) for greatly improved simulation capabilities, especially through coupling physics and scales.  At the same time, computational science and engineering (CSE), as well as other areas of science, are experiencing increasing focus on scientific reproducibility and software quality.</p>
+The computational science and engineering (CSE) community is in the midst of an extremely challenging period created by the confluence of disruptive changes in computing architectures, demand for greater scientific reproducibility, and new opportunities for greatly improved simulation capabilities, especially through coupling physics and scales.  Computer architecture changes require new software design and implementation strategies, including significant refactoring of existing code. Reproducibility demands require more rigor across the entire software endeavor. Code coupling requires aggregate team interactions including integration of software processes and practices.  These challenges demand large investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential.</p>
 
-<p>Computer architecture changes require new software design and implementation strategies, including significant refactoring of existing code. Reproducibility demands require more rigor across the entire software endeavor. Code coupling requires aggregate team interactions including integration of software processes and practices.  These challenges demand large investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential.</p>
-
-<p>This tutorial distills experience from members of the IDEAS Productivity project and the creators of the BSSw.io community website drawn from many scientific software projects over many years. The tutorial will provide information about software practices, processes, and tools explicitly tailored for CSE. Topics to be covered include: Agile methodologies and tools, software design and refactoring, testing and continuous integration, Git workflows for teams, and reproducibility. Material will be mostly at the beginner and intermediate levels. There will also be opportunities to discuss topics raised by the audience.</p>
+<p>This tutorial will provide information and hands-on experience with software practices, processes, and tools explicitly tailored for CSE.  Goals are improving the productivity of those who develop CSE software and increasing the sustainability of software artifacts.  We discuss practices that are relevant for projects of all sizes, with emphasis on small teams, and on aggregate teams composed of small teams.  Topics include software licensing, effective models, tools, and processes for small teams (including agile workflow management), reproducibility, and scientific software testing (including automated testing and continuous integration).</p>
 
 <p><strong>Funding:</strong> <!-- this field doesn't allow newlines, so get rid of them -->
 This tutorial is produced by the IDEAS Productivity project. This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.</p>
 
 <p><strong>References:</strong>
-<code class="language-plaintext highlighter-rouge">https://bssw-tutorial.github.io/2022-04-07-iss</code>, 
-<code class="language-plaintext highlighter-rouge">https://sea.ucar.edu/conference/2022</code>, 
+<code class="language-plaintext highlighter-rouge">https://bssw-tutorial.github.io/2021-06-24-isc</code>, 
+<code class="language-plaintext highlighter-rouge">https://www.isc-hpc.com/</code>, 
 <code class="language-plaintext highlighter-rouge">https://ideas-productivity.org</code></p>
 
 <p><strong>License:</strong> <code class="language-plaintext highlighter-rouge">CC BY 4.0</code></p>
@@ -182,8 +183,7 @@ This tutorial is produced by the IDEAS Productivity project. This work was suppo
 <p><em>If you copy-paste from this page into PowerPoint, you will want to use the <code class="language-plaintext highlighter-rouge">copy-without-formatting</code>
 option to ensure that you get the font from the PPT template rather than the font from the web site.</em></p>
 
-<p><strong>People for <code class="language-plaintext highlighter-rouge">intro.pptx</code> title slide:</strong> David E. Bernholdt, Rinku K. Gupta, Patricia A. Grubel, and David M. Rogers
-<br />with help from Anshu Dubey and Gregory R. Watson</p>
+<p><strong>People for <code class="language-plaintext highlighter-rouge">intro.pptx</code> title slide:</strong> David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers</p>
 
 <table>
   <tbody>
@@ -195,9 +195,9 @@ option to ensure that you get the font from the PPT template rather than the fon
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">overview.pptx</code></td>
-      <td>Rinku K. Gupta</td>
-      <td>she/her</td>
-      <td>Argonne National Laboratory</td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">agile.pptx</code></td>
@@ -207,13 +207,7 @@ option to ensure that you get the font from the PPT template rather than the fon
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">git-workflows.pptx</code></td>
-      <td>Patricia A. Grubel</td>
-      <td>she/her</td>
-      <td>Los Alamos National Laboratory</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">testing-introduction2.pptx</code></td>
-      <td>Rinku K. Gupta</td>
+      <td>Anshu Dubey</td>
       <td>she/her</td>
       <td>Argonne National Laboratory</td>
     </tr>
@@ -224,33 +218,57 @@ option to ensure that you get the font from the PPT template rather than the fon
       <td>Oak Ridge National Laboratory</td>
     </tr>
     <tr>
+      <td><code class="language-plaintext highlighter-rouge">reproducibility.pptx</code></td>
+      <td>Patricia A. Grubel</td>
+      <td>she/her</td>
+      <td>Los Alamos National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agile-redux.pptx</code></td>
+      <td>David M. Rogers</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">testing-introduction.pptx</code></td>
+      <td>David M. Rogers</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">testing-walkthrough.pptx</code></td>
+      <td>David M. Rogers</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">testing-advanced.pptx</code></td>
-      <td>Rinku K. Gupta</td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">continuous-integration.pptx</code></td>
+      <td>Anshu Dubey</td>
       <td>she/her</td>
       <td>Argonne National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">refactoring.pptx</code></td>
-      <td>David M. Rogers</td>
-      <td>he/him</td>
-      <td>Oak Ridge National Laboratory</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">reproducibility.pptx</code></td>
-      <td>David M. Rogers</td>
-      <td>he/him</td>
-      <td>Oak Ridge National Laboratory</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">summary.pptx</code></td>
-      <td>David M. Rogers</td>
-      <td>he/him</td>
-      <td>Oak Ridge National Laboratory</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
 
-<p><strong>Event title:</strong> Better Scientific Software tutorial @ Improving Scientific Software conference</p>
+<p><strong>Event title:</strong> Better Scientific Software tutorial @ ISC High Performance conference</p>
 
 <hr />
 

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Better Scientific Software Tutorial | Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Better Scientific Software Tutorial" />
+<meta name="author" content="IDEAS Productivity Project" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2021-06-24-isc/utilities-after.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2021-06-24-isc/utilities-after.html" />
+<meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Better Scientific Software Tutorial" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-11-25T12:10:33-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2021-06-24-isc/utilities-after.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133695134-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+</head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Better Scientific Software Tutorial</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2021-06-24-isc">2021-06-24-isc</a> &gt; <a href="https://bssw-tutorial.github.io/2021-06-24-isc/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2021-06-24-isc/utilities-after">post-delivery</a></p>
+
+<p><font color="blue">WARNING: `deadlines` not defined in file `_data/bsswt/2021-06-24-isc/event.yml`</font></p>
+
+<h1 id="help-for-post-delivery-follow-up">Help for Post-Delivery Follow-up</h1>
+
+<p><em>Complete the <a href="./utilities-publication.html">publication</a> steps and deliver the tutorial before these.</em></p>
+
+<h2 id="issues-for-organizers">Issues for organizers</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
+    <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
+    <span class="nt">--milestone</span> <span class="s2">"2021-06-24-isc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"2021-06-24-isc post-delivery folow-up"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- Collection and editing (if necessary) of recordings down to individual modules
+- [ ] </span><span class="se">\`</span><span class="sh">00-intro</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">01-overview</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">02-agile</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">03-git-workflows</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">04-design</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">05-reproducibility</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">06-agile-redux</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">07-testing-introduction</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">08-testing-walkthrough</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">09-testing-advanced</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">10-continuous-integration</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">11-refactoring</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">12-summary</span><span class="se">\`</span><span class="sh">
+- Upload recordings to YouTube (see &lt;https://bssw-tutorial.github.io/2021-06-24-isc/utilities-after.html#inputs-for-youtube-recordings-of-tutorial-modules&gt;)
+- [ ] </span><span class="se">\`</span><span class="sh">00-intro</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">01-overview</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">02-agile</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">03-git-workflows</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">04-design</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">05-reproducibility</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">06-agile-redux</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">07-testing-introduction</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">08-testing-walkthrough</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">09-testing-advanced</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">10-continuous-integration</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">11-refactoring</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">12-summary</span><span class="se">\`</span><span class="sh">
+- [ ] Create YouTube playlist for tutorial (see &lt;https://bssw-tutorial.github.io/2021-06-24-isc/utilities-after.html#input-for-youtube-playlist&gt;)
+- Add individual recordings to playlist
+- [ ] </span><span class="se">\`</span><span class="sh">00-intro</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">01-overview</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">02-agile</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">03-git-workflows</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">04-design</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">05-reproducibility</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">06-agile-redux</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">07-testing-introduction</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">08-testing-walkthrough</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">09-testing-advanced</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">10-continuous-integration</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">11-refactoring</span><span class="se">\`</span><span class="sh">
+- [ ] </span><span class="se">\`</span><span class="sh">12-summary</span><span class="se">\`</span><span class="sh">
+- [ ] Update recording artifact in </span><span class="se">\`</span><span class="sh">_data/bsswt/2021-06-24-isc/event.yml</span><span class="se">\`</span><span class="sh">
+</span><span class="no">EOF
+
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="inputs-for-youtube-recordings-of-tutorial-modules">Inputs for YouTube recordings of tutorial modules</h2>
+
+<h3 id="module-00-intro">Module 00-intro</h3>
+
+<p><strong>Title:</strong> Introduction and Setup</p>
+
+<p><strong>Description:</strong>
+This presentation by David E. Bernholdt (ORNL), is module 00 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-01-overview">Module 01-overview</h3>
+
+<p><strong>Title:</strong> Motivation and Overview of Best Practices in HPC Software Development</p>
+
+<p><strong>Description:</strong>
+This presentation by David E. Bernholdt (ORNL), is module 01 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-02-agile">Module 02-agile</h3>
+
+<p><strong>Title:</strong> Agile Methodologies</p>
+
+<p><strong>Description:</strong>
+This presentation by Patricia A. Grubel (LANL), is module 02 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-03-git-workflows">Module 03-git-workflows</h3>
+
+<p><strong>Title:</strong> Git Workflows</p>
+
+<p><strong>Description:</strong>
+This presentation by Anshu Dubey (ANL), is module 03 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-04-design">Module 04-design</h3>
+
+<p><strong>Title:</strong> Scientific Software Design</p>
+
+<p><strong>Description:</strong>
+This presentation by David E. Bernholdt (ORNL), is module 04 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-05-reproducibility">Module 05-reproducibility</h3>
+
+<p><strong>Title:</strong> Improving Reproducibility Through Better Software Practices</p>
+
+<p><strong>Description:</strong>
+This presentation by Patricia A. Grubel (LANL), is module 05 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-06-agile-redux">Module 06-agile-redux</h3>
+
+<p><strong>Title:</strong> Agile Methodologies Redux</p>
+
+<p><strong>Description:</strong>
+This presentation by David M. Rogers (ORNL), is module 06 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-07-testing-introduction">Module 07-testing-introduction</h3>
+
+<p><strong>Title:</strong> Software Testing Introduction</p>
+
+<p><strong>Description:</strong>
+This presentation by David M. Rogers (ORNL), is module 07 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-08-testing-walkthrough">Module 08-testing-walkthrough</h3>
+
+<p><strong>Title:</strong> Testing Walk-Through</p>
+
+<p><strong>Description:</strong>
+This presentation by David M. Rogers (ORNL), is module 08 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-09-testing-advanced">Module 09-testing-advanced</h3>
+
+<p><strong>Title:</strong> Testing Complex Software</p>
+
+<p><strong>Description:</strong>
+This presentation by Anshu Dubey (ANL), is module 09 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-10-continuous-integration">Module 10-continuous-integration</h3>
+
+<p><strong>Title:</strong> Continuous Integration</p>
+
+<p><strong>Description:</strong>
+This presentation by Anshu Dubey (ANL), is module 10 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-11-refactoring">Module 11-refactoring</h3>
+
+<p><strong>Title:</strong> Refactoring Scientific Software</p>
+
+<p><strong>Description:</strong>
+This presentation by , is module 11 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+<h3 id="module-12-summary">Module 12-summary</h3>
+
+<p><strong>Title:</strong> Summary</p>
+
+<p><strong>Description:</strong>
+This presentation by , is module 12 of…</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+<p>For further information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a>.</p>
+
+<p><strong>Tag:</strong> Better Scientific Software tutorial</p>
+
+<p><strong>Recording date:</strong> 2021-06-24</p>
+
+<hr />
+
+<h2 id="input-for-youtube-playlist">Input for Youtube playlist</h2>
+
+<p><strong>Title:</strong> 2021-06-24: Better Scientific Software tutorial @ ISC High Performance conference</p>
+
+<p><strong>Description:</strong></p>
+
+<p>For more information, visit <a href="https://bssw-tutorial.github.io/2021-06-24-isc">https://bssw-tutorial.github.io/2021-06-24-isc</a></p>
+
+<p>Tutorial Description</p>
+
+<p>The computational science and engineering (CSE) community is in the midst of an extremely challenging period created by the confluence of disruptive changes in computing architectures, demand for greater scientific reproducibility, and new opportunities for greatly improved simulation capabilities, especially through coupling physics and scales.  Computer architecture changes require new software design and implementation strategies, including significant refactoring of existing code. Reproducibility demands require more rigor across the entire software endeavor. Code coupling requires aggregate team interactions including integration of software processes and practices.  These challenges demand large investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential.</p>
+
+<p>This tutorial will provide information and hands-on experience with software practices, processes, and tools explicitly tailored for CSE.  Goals are improving the productivity of those who develop CSE software and increasing the sustainability of software artifacts.  We discuss practices that are relevant for projects of all sizes, with emphasis on small teams, and on aggregate teams composed of small teams.  Topics include software licensing, effective models, tools, and processes for small teams (including agile workflow management), reproducibility, and scientific software testing (including automated testing and continuous integration).</p>
+
+<p>Requested Citation</p>
+
+<p>David E. Bernholdt, Anshu Dubey, Patricia A. Grubel, Rinku K. Gupta, and David M. Rogers, Better Scientific Software tutorial, in ISC High Performance, online, 2021. DOI: <a href="https://doi.org/10.6084/m9.figshare.14642520">10.6084/m9.figshare.14642520</a>.</p>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Better Scientific Software Tutorial</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">IDEAS Productivity Project</li><li><a class="u-email" href="mailto:IdeasProductivity@gmail.com">IdeasProductivity@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/bssw-tutorial"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bssw-tutorial</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting  high-performance computers.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
