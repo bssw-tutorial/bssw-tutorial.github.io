@@ -9,3 +9,4 @@ venue-type: "conference"
 venue-url: https://www.isc-hpc.com/
 location: "online"
 presenter-ids: [bernhold, adubey64, pagrubel, rinkug, frobnitzem]
+organizer-ids: [adubey64]

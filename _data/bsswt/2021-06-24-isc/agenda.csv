@@ -1,0 +1,15 @@
+Fixed Points,Duration,Time (CDT),Module,Title,Presenter
+<!--skip-->,<!--skip-->,<!--right-->,<!--right-->,,
+1:30 PM,10,1:30 PM,0,intro,bernhold
+,10,1:40 PM,1,overview,bernhold
+,10,,2,agile,rgupta
+,10,,3,git-workflows,pagrubel
+,10,12:10 AM,4,design,adubey64
+,10,,5,reproducibility,bernhold
+,10,,6,agile-redux,rgupta
+,10,,7,testing-introduction,pagrubel
+,10,,8,testing-walkthrough,frobnitzem
+,10,,9,testing-advanced,frobnitzem
+,10,,10,continuous-integration,frobnitzem
+,10,,11,refactoring,adubey64
+,10,,12,summary,adubey64
