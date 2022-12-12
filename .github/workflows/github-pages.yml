@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest # can change this to ubuntu-latest if you prefer
     steps:
       - name: 📂 setup
-        uses: actions/checkout@v2
+        uses: actions/checkout@latest
 
         # include the lines below if you are using jekyll-last-modified-at
         # or if you would otherwise need to fetch the full commit history
@@ -23,12 +23,12 @@ jobs:
         # with:
         # fetch-depth: '0'
       - name: 💎 setup ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@latest
         with:
           ruby-version: 2.7 # can change this to 2.7 or whatever version you prefer
 
       - name: 🔨 install dependencies & build site
-        uses: limjh16/jekyll-action-ts@v2
+        uses: limjh16/jekyll-action-ts@latest
         with:
           enable_cache: true
           ### Enables caching. Similar to https://github.com/actions/cache.
