@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hands-On Exercise 7c: Refactoring Part 2 | Better Scientific Software Tutorial</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Hands-On Exercise 7c: Refactoring Part 2" />
+<meta name="author" content="IDEAS Productivity Project" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2020-11-10-sc/handson-m07c-refactoring2.html" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2020-11-10-sc/handson-m07c-refactoring2.html" />
+<meta property="og:site_name" content="Better Scientific Software Tutorial" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hands-On Exercise 7c: Refactoring Part 2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-12-30T15:02:57-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Hands-On Exercise 7c: Refactoring Part 2","url":"https://bssw-tutorial.github.io/2020-11-10-sc/handson-m07c-refactoring2.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133695134-2', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+<!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+</head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Better Scientific Software Tutorial</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home"><h1 class="page-heading">Hands-On Exercise 7c: Refactoring Part 2</h1><h2 id="goals">Goals</h2>
+<p>Refactor a poorly structured code to a cleaner, more reusable version.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+  <li>A <a href="https://github.com">GitHub</a> account</li>
+  <li>A fork of the <a href="https://github.com/betterscientificsoftware/hello-numerical-world-sc20">betterscientificsoftware/hello-numerical-world-sc20</a> repository in your account (covered in exercise 3)
+    <ul>
+      <li>The files relevant to this exercise are:
+        <ul>
+          <li>Header files: <code class="language-plaintext highlighter-rouge">Double.H</code>, <code class="language-plaintext highlighter-rouge">heat.H</code></li>
+          <li>Source file: <code class="language-plaintext highlighter-rouge">heatAll.C</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Access to a basic software development environment for C++ languge
+    <ul>
+      <li>Your fork of the tutorial repository should be cloned in this working environment (covered in exercise 3)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="background">Background</h2>
+<p>The code you worked with in exercise 7b was reasonably well structured.  But it didn’t necessarily start out that way.  This exercise takes a step further back in time.  Suppose you’ve just inherited the code <code class="language-plaintext highlighter-rouge">heatAll.C</code> from a colleague who’s left the project.  You don’t even have a <code class="language-plaintext highlighter-rouge">makefile</code>! Your task is to take that original, poorly structured code into a cleaner, more reusable version.  The version of the heat equation code that you worked with in exercise 7a is one possible solution to this task.  But the real point of this exercise is to go through the process yourself to decide how to restructure the code to get the results you (or your boss) want.</p>
+
+<h2 id="instructions">Instructions</h2>
+
+<p><strong>Step 1.</strong> Create a new directory and copy <code class="language-plaintext highlighter-rouge">heatAll.C</code> into it. This will be your working area. Work in tandem with exercise 7a to plan and track your work.</p>
+
+<p><strong>Step 2.</strong> Create a <code class="language-plaintext highlighter-rouge">makefile</code> to build an executable from <code class="language-plaintext highlighter-rouge">heatAll.C</code>.  If you’re not that familiar with makefiles, you might want to adapt the one in the main directory.  In this case all of the code is in the single file <code class="language-plaintext highlighter-rouge">heatAll.C</code>. Add the <code class="language-plaintext highlighter-rouge">-coverage</code> flag you used in the previous exercise.</p>
+
+<p><strong>Step 3.</strong> Run the executable with various permutations of input arguments, saving each output as a baseline for comparison until you have 100% coverage.</p>
+
+<p><strong>Step 4.</strong> Make a decision about how many files you wish to split the code into.</p>
+
+<p>A good rule of thumb is to start with a different file for each category of functions. An example would be to create an <code class="language-plaintext highlighter-rouge">integrate.C</code>, a <code class="language-plaintext highlighter-rouge">utils.C</code> and a <code class="language-plaintext highlighter-rouge">main.C</code> to which you copy from <code class="language-plaintext highlighter-rouge">heatAll.C</code> functions that belong in each category.</p>
+
+<p><strong>Step 5.</strong> Make a decision about which variable and constants you wish to have available globally and which you wish to keep local. Create <code class="language-plaintext highlighter-rouge">.H</code> files for global variables.</p>
+
+<p><strong>Step 6.</strong> In each of the new <code class="language-plaintext highlighter-rouge">.C</code> file add <code class="language-plaintext highlighter-rouge">extern</code> interfaces for functions that are not in the same file, and <code class="language-plaintext highlighter-rouge">include</code> statements for any header files you might wish to include.</p>
+
+<p><strong>Step 7.</strong> In the <code class="language-plaintext highlighter-rouge">makefile</code> replace existing filenames with the ones you have just created.</p>
+
+<p><strong>Step 8.</strong> Compile and execute the refactored code in all permutations used in step 3 and verify against the corresponding baselines. If you are happy with the modularity of your refactored code you are done. If you wish to further modularize repeat steps 3-8 until you have the achieved your refactoring objectives.</p>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Better Scientific Software Tutorial</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">IDEAS Productivity Project</li><li><a class="u-email" href="mailto:IdeasProductivity@gmail.com">IdeasProductivity@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/bssw-tutorial"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bssw-tutorial</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting  high-performance computers.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
