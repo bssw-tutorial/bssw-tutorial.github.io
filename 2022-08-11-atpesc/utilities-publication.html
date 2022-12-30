@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-12-30T15:02:57-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-publication.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-12-30T15:47:25-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-publication.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -67,87 +67,35 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
         
 <p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2022-08-11-atpesc">2022-08-11-atpesc</a> &gt; <a href="https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-publication">publication</a></p>
 
+<p><font color="blue">WARNING: `artifacts` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml` (preferred) or `_data/bsswt/2022-08-11-atpesc/artifacts.yml`</font></p>
+
+<p><font color="blue">WARNING: `organizer-ids` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+
+<p><font color="blue">WARNING: `presenter-ids` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+
+<p><font color="blue">WARNING: `deadlines` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+
 <h1 id="help-for-publication-of-tutorial-assets">Help for Publication of Tutorial Assets</h1>
 
 <p><em>Complete the <a href="./utilities-preparation.html">preparation</a> steps before these.</em></p>
 
 <h2 id="issues-for-organizers">Issues for organizers</h2>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
-    <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
-    <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"2022-08-11-atpesc publication of assets"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
-    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
-- Quality control review of presentations (see &lt;https://github.com/bssw-tutorial/presentations/blob/main/README.md#quality-control&gt;)
-  - [ ] </span><span class="se">\`</span><span class="sh">intro-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">overview-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">design-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">licensing.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">spack.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">testing-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">lab-notebooks.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">computational-expts.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">mining-tools.pptx</span><span class="se">\`</span><span class="sh">
-- Generate PDFs of presentations
-  - [ ] </span><span class="se">\`</span><span class="sh">intro-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">overview-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">design-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">licensing.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">spack.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">testing-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">lab-notebooks.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">computational-expts.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">mining-tools.pptx</span><span class="se">\`</span><span class="sh">
-- [ ] Prepare release of presentation files (see &lt;https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-publication.html#scripting-for-presentation-release&gt;)
-- [ ] Publish presentation files on FigShare
-- [ ] Update presentation DOI in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
+<p><font color="red">ERROR: `organizer-ids` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
 
-- [ ] Tag presentation repository
-- Create hands-on code repository for event (see &lt;https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-publication.html#scripting-to-create-hands-on-code-repository&gt;)
-- [ ] Update hands-on repo URL in </span><span class="se">\`</span><span class="sh">_data/bsswt/2022-08-11-atpesc/event.yml</span><span class="se">\`</span><span class="sh">
-
-- [ ] Tag web site repository
-</span><span class="no">EOF
-
-</span></code></pre></div></div>
+<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
 
 <hr />
 
 <h2 id="scripting-for-presentation-release">Scripting for presentation release</h2>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># In local working copy of bssw-tutorial/presentations repository</span>
-<span class="c"># Ensure destination directory exists and copy/move files there</span>
-<span class="nb">mkdir</span> <span class="nt">-p</span> final-presentations/2022-08-11-atpesc
-<span class="nb">cp </span>presentations.yml final-presentations/2022-08-11-atpesc
-<span class="nb">mv </span>intro-a.pdf final-presentations/2022-08-11-atpesc/01-intro-a.pdf
-<span class="nb">mv </span>overview-a.pdf final-presentations/2022-08-11-atpesc/02-overview-a.pdf
-<span class="nb">mv </span>design-a.pdf final-presentations/2022-08-11-atpesc/03-design-a.pdf
-<span class="nb">mv </span>licensing.pdf final-presentations/2022-08-11-atpesc/04-licensing.pdf
-<span class="nb">mv </span>spack.pdf final-presentations/2022-08-11-atpesc/05-spack.pdf
-<span class="nb">mv </span>testing-a.pdf final-presentations/2022-08-11-atpesc/06-testing-a.pdf
-<span class="nb">mv </span>lab-notebooks.pdf final-presentations/2022-08-11-atpesc/07-lab-notebooks.pdf
-<span class="nb">mv </span>computational-expts.pdf final-presentations/2022-08-11-atpesc/08-computational-expts.pdf
-<span class="nb">mv </span>mining-tools.pdf final-presentations/2022-08-11-atpesc/09-mining-tools.pdf
+<p><font color="red">ERROR: `title` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
 
-<span class="c"># Add and commit new files and tag repository</span>
-<span class="nb">cd </span>final-presentations/2022-08-11-atpesc
-git add <span class="k">*</span>.pdf presentations.yml
-git commit <span class="nt">-m</span> <span class="s2">"Capturing presentations for 2022-08-11-atpesc"</span>
-git push
+<p><font color="red">ERROR: `venue` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
 
-<span class="c"># Create archive</span>
-zip <span class="nt">--update</span> 2022-08-11-atpesc.zip <span class="k">*</span>.pdf
+<p><font color="red">ERROR: `date` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
 
-<span class="c"># Tag repo</span>
-git tag <span class="nt">-a</span> 2022-08-11-atpesc <span class="nt">-m</span> <span class="s2">"2022-08-11: Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school"</span>
-git push origin <span class="nt">--tags</span>
-
-<span class="c"># Create release and add zip archive</span>
-gh release create 2022-08-11-atpesc <span class="nt">--title</span> <span class="s2">"2022-08-11: Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school"</span> <span class="nt">--notes</span> <span class="s2">"2022-08-11: Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school"</span>
-gh release upload 2022-08-11-atpesc 2022-08-11-atpesc.zip
-
-</code></pre></div></div>
+<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
 
 <h2 id="scripting-to-remove-tag-and-release">Scripting to remove tag and release</h2>
 
@@ -167,31 +115,25 @@ git push <span class="nt">--delete</span> origin 2022-08-11-atpesc
 
 <h2 id="scripting-to-create-hands-on-code-repository">Scripting to create hands-on code repository</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># In a directory in which it is "safe" to clone a git repository...
+<p><font color="red">ERROR: `title` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
 
-gh repo create bssw-tutorial/hello-numerical-world-2022-08-11-atpesc \
-  --public --template bssw-tutorial/hello-numerical-world \
-  --description "Hands-on code repository for 2022-08-11 Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school"
+<p><font color="red">ERROR: `venue` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
 
-git clone https://github.com/bssw-tutorial/hello-numerical-world-2022-08-11-atpesc
-cd hello-numerical-world-2022-08-11-atpesc
-git rm -r .github
-git commit -m "Removing development-related workflows from student repository"
-git push
+<p><font color="red">ERROR: `date` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
 
-</code></pre></div></div>
+<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
 
 <hr />
 
 <h2 id="scripting-to-tag-website-repository">Scripting to tag website repository</h2>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># In local working copy of bssw-tutorial/bssw-tutorial.github.io repository</span>
+<p><font color="red">ERROR: `date` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
 
-<span class="c"># Tag repo</span>
-git tag <span class="nt">-a</span> 2022-08-11-atpesc <span class="nt">-m</span> <span class="s2">"2022-08-11: Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school"</span>
-git push origin <span class="nt">--tags</span>
+<p><font color="red">ERROR: `title` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
 
-</code></pre></div></div>
+<p><font color="red">ERROR: `venue` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+
+<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
 
 <h2 id="scripting-to-remove-tag">Scripting to remove tag</h2>
 
