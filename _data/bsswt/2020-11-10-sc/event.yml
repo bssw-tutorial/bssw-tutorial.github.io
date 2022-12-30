@@ -1,0 +1,107 @@
+# Main data file for BSSw tutorial events
+#
+# Commentary notes indicate fields that are
+# required (plain text) and optional (bracketed text)
+# in the "planned" and "scheduled" states.
+#
+# Basic tutorial information
+#
+# Planned: title, [title-type], [title-url]
+# Scheduled: same
+#
+title: "Better Scientific Software"
+title-type: "tutorial"
+title-url: https://sc20.supercomputing.org/presentation/?id=tut146&sess=sess275
+#
+# Presentation date and time.
+# end-date is optional for one-day events
+# time should include timezeone explicitly
+# We don't currently handle tutorials that occur at *different times* on multiple days
+#
+# Planned: date, [end-date], [time]
+#   Note: at the "planned" stage, end-date can be used with date to specify
+#   the range of dates in which the tutorial *could* take place.
+# Scheduled: date, [end-date], time
+#   Unless the tutorial occurs over multiple days, end-date is not
+#   needed for tutorials in the "scheduled" stage.
+#
+date: 2020-11-10
+#end-date: 
+time: "2:30 pm - 6:30 pm EST"
+#
+# Venue information
+#
+# Planned: venue, [venue-type], [venue-url], location
+# Scheduled: same
+#
+venue: "The International Conference for High-Performance Computing, Networking, Storage, and Analysis (SC20)"
+venue-type: "conference"
+venue-url: https://sc20.supercomputing.org/
+location: "online"
+#
+# Staffing information
+# organizer-ids will be assigned the issues that presenter-ids are not doing, basically
+#
+# Planned: organizer-ids, [presenter-ids], [helper-ids]
+# Scheduled: organizer-ids, presenter-ids, [helper-ids]
+#
+organizer-ids: [bernhold]
+presenter-ids: [bernhold, adubey64, pagrubel, rinkug]
+helper-ids: 
+#
+# This is a more or less typical collection of artifacts for tutorials.
+# Comment out anything that isn't (yet) available.
+# If you want to list the conference registration page, comment it out
+# after registration closes or after the event, when it is no longer useful.
+#
+# Planned: [artifacts]
+# Scheduled: artifacts
+#   By the time of delivery, the doi should be set
+#
+artifacts:
+#  - label: Recordings
+#    format: YouTube playlist
+#    url: 
+  - label: Presentation Slides
+    format: FigShare
+    doi: 10.6084/m9.figshare.12994376
+  - label: Hands-On Code Repository
+    format: GitHub
+    gh-repo: betterscientificsoftware/hello-numerical-world-sc20
+#
+# This is a standard collection of deadlines we've encountered historically
+# Add due dates where appropriate. Those without will be ignored
+# Responsible refers to the (set of) github ids that will be assigned to
+# generated issues. Usually these are organizer-ids, presenter-ids, or
+# helper-ids as set above.  "by-presentation" is a special value indicating
+# that responsibilities should be assigned based on the presenters liseted
+# in the agenda.
+#
+# Planned: [deadlines]
+# Scheduled: deadlines
+#
+deadlines:
+  - label: internal-presentations
+    due: 2022-05-18
+    responsible: [by-presentation]
+  - label: internal-resource-links
+    due: 
+    responsible: [by-presentation]
+  - label: venue-initial-presentations
+    due: 
+    responsible: [organizer-ids]
+  - label: venue-final-presentations
+    due: 2022-05-20
+    responsible: [organizer-ids]
+  - label: internal-consents
+    due:
+    responsible: [presenter-ids, helper-ids]
+  - label: venue-consents
+    due: 
+    responsible: [organizer-ids]
+  - label: internal-recordings
+    due: 
+    responsible: [by-presentation]
+  - label: venue-recordings
+    due: 
+    responsible: [organizer-ids]
