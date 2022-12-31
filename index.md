@@ -100,8 +100,6 @@ In the listings below, each tutorial event has its own page, providing details s
   {% include emit-events-ul.html event-labels=event-labels %}
 {% endif %}
 
-See the IDEAS Productivity [Events](https://ideas-productivity.org/events/) page for tutorials prior to 2021 (as well as other IDEAS events, which may also be of interest).  For most past tutorials, the presentation slides have been archived and are linked from the Events page.
-
 ## Acknowledgements
 
 The BSSw tutorial is produced by the [IDEAS Productivity project](https://ideas-productivity.org).
