@@ -9,9 +9,9 @@
 # Planned: title, [title-type], [title-url]
 # Scheduled: same
 #
-title: "Better Scientific Software"
+title: "CSE Collaboration through Software: Improving Productivity and Sustainability"
 title-type: "tutorial"
-#title-url:
+# title-url: 
 #
 # Presentation date and time.
 # end-date is optional for one-day events
@@ -25,19 +25,19 @@ title-type: "tutorial"
 #   Unless the tutorial occurs over multiple days, end-date is not
 #   needed for tutorials in the "scheduled" stage.
 #
-date: 2020-03-05
+date: 2017-02-28
 #end-date: 
-#time: "9:30 am - 4:45 pm CDT (UTC-5)"
+# time: "1:30 pm - 5:00 pm CST"
 #
 # Venue information
 #
 # Planned: venue, [venue-type], [venue-url], location
 # Scheduled: same
 #
-venue: "RF SciDAC"
-venue-type: "workshop"
-#venue-url: https://extremecomputingtraining.anl.gov/
-location: "Knoxville, Tennessee"
+venue: "SIAM Computational Science and Engineering (2017)"
+venue-type: "conference"
+venue-url: https://archive.siam.org/meetings/cse17/
+location: "Atlanta, Georgia"
 #
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
@@ -46,7 +46,7 @@ location: "Knoxville, Tennessee"
 # Scheduled: organizer-ids, presenter-ids, [helper-ids]
 #
 organizer-ids: [bernhold]
-presenter-ids: [bernhold]
+presenter-ids: [bernhold, adubey64, maheroux, amklinv, curfman]
 helper-ids: 
 #
 # This is a more or less typical collection of artifacts for tutorials.
@@ -56,14 +56,20 @@ helper-ids:
 #
 # Planned: [artifacts]
 # Scheduled: artifacts
-#   By the time of delivery, the doi should be set
+#   As soon as the doi is reserved, the doi status should be set to "reserved", 
+#   which will allow the citation to be generated (with a note that the slides are not yet published).
+#   By the time of delivery, the doi status should be "published""
 #
 artifacts:
+#  - label: Recordings
+#    format: YouTube playlist
+#    url: 
   - label: Presentation Slides
     format: FigShare
-    doi: 10.6084/m9.figshare.11918397
+    doi: 10.6084/m9.figshare.c.3704287
+    status: published
 #
-# This is a standard collection of deadlines we've encountered historically
+# This is a common set of deadlines we've encountered historically
 # Add due dates where appropriate. Those without will be ignored
 # Responsible refers to the (set of) github ids that will be assigned to
 # generated issues. Usually these are organizer-ids, presenter-ids, or
@@ -76,22 +82,22 @@ artifacts:
 #
 deadlines:
   - label: internal-presentations
-    due: 2022-07-27
+    due: 2022-10-27
     responsible: [by-presentation]
   - label: internal-resource-links
-    due: 2022-08-05
+    due: 2022-11-04
     responsible: [by-presentation]
   - label: venue-initial-presentations
-    due: 
+    due: 2022-10-28
     responsible: [organizer-ids]
   - label: venue-final-presentations
-    due: 
+    due: 2022-11-13
     responsible: [organizer-ids]
   - label: internal-consents
-    due:
+    due: 2022-08-04
     responsible: [presenter-ids, helper-ids]
   - label: venue-consents
-    due: 
+    due: 2022-08-05
     responsible: [organizer-ids]
   - label: internal-recordings
     due: 

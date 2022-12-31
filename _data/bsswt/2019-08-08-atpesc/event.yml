@@ -9,8 +9,8 @@
 # Planned: title, [title-type], [title-url]
 # Scheduled: same
 #
-title: "Better Scientific Software"
-title-type: "tutorial"
+title: "Software Productivity"
+title-type: "track"
 #title-url:
 #
 # Presentation date and time.
@@ -25,19 +25,19 @@ title-type: "tutorial"
 #   Unless the tutorial occurs over multiple days, end-date is not
 #   needed for tutorials in the "scheduled" stage.
 #
-date: 2020-03-05
+date: 2019-08-08
 #end-date: 
-#time: "9:30 am - 4:45 pm CDT (UTC-5)"
+#time: "8:30 am - 9:00 pm CDT (UTC-5)"
 #
 # Venue information
 #
 # Planned: venue, [venue-type], [venue-url], location
 # Scheduled: same
 #
-venue: "RF SciDAC"
-venue-type: "workshop"
-#venue-url: https://extremecomputingtraining.anl.gov/
-location: "Knoxville, Tennessee"
+venue: "Argonne Training Program on Extreme-Scale Computing"
+venue-type: "summer school"
+venue-url: https://extremecomputingtraining.anl.gov/
+location: "St. Charles, Illinois"
 #
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
@@ -45,8 +45,8 @@ location: "Knoxville, Tennessee"
 # Planned: organizer-ids, [presenter-ids], [helper-ids]
 # Scheduled: organizer-ids, presenter-ids, [helper-ids]
 #
-organizer-ids: [bernhold]
-presenter-ids: [bernhold]
+organizer-ids: [adubey64]
+presenter-ids: [adubey64, jared321, riley-katherine, jwillenbring]
 helper-ids: 
 #
 # This is a more or less typical collection of artifacts for tutorials.
@@ -61,7 +61,7 @@ helper-ids:
 artifacts:
   - label: Presentation Slides
     format: FigShare
-    doi: 10.6084/m9.figshare.11918397
+    doi: 10.6084/m9.figshare.21799727
 #
 # This is a standard collection of deadlines we've encountered historically
 # Add due dates where appropriate. Those without will be ignored

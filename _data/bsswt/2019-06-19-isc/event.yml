@@ -1,13 +1,5 @@
-# Main data file for BSSw tutorial events
-#
-# Commentary notes indicate fields that are
-# required (plain text) and optional (bracketed text)
-# in the "planned" and "scheduled" states.
 #
 # Basic tutorial information
-#
-# Planned: title, [title-type], [title-url]
-# Scheduled: same
 #
 title: "Better Scientific Software"
 title-type: "tutorial"
@@ -18,35 +10,22 @@ title-type: "tutorial"
 # time should include timezeone explicitly
 # We don't currently handle tutorials that occur at *different times* on multiple days
 #
-# Planned: date, [end-date], [time]
-#   Note: at the "planned" stage, end-date can be used with date to specify
-#   the range of dates in which the tutorial *could* take place.
-# Scheduled: date, [end-date], time
-#   Unless the tutorial occurs over multiple days, end-date is not
-#   needed for tutorials in the "scheduled" stage.
-#
-date: 2020-03-05
+date: 2019-06-19
 #end-date: 
-#time: "9:30 am - 4:45 pm CDT (UTC-5)"
+# time: 2:00 pm - 6:00 pm CEST (UTC+2)
 #
 # Venue information
 #
-# Planned: venue, [venue-type], [venue-url], location
-# Scheduled: same
-#
-venue: "RF SciDAC"
-venue-type: "workshop"
-#venue-url: https://extremecomputingtraining.anl.gov/
-location: "Knoxville, Tennessee"
+venue: "ISC High Performance"
+venue-type: "conference"
+venue-url: https://www.isc-hpc.com/
+location: "Frankfurt, Germany"
 #
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
 #
-# Planned: organizer-ids, [presenter-ids], [helper-ids]
-# Scheduled: organizer-ids, presenter-ids, [helper-ids]
-#
 organizer-ids: [bernhold]
-presenter-ids: [bernhold]
+presenter-ids: [bernhold, adubey64, jared321]
 helper-ids: 
 #
 # This is a more or less typical collection of artifacts for tutorials.
@@ -54,14 +33,10 @@ helper-ids:
 # If you want to list the conference registration page, comment it out
 # after registration closes or after the event, when it is no longer useful.
 #
-# Planned: [artifacts]
-# Scheduled: artifacts
-#   By the time of delivery, the doi should be set
-#
 artifacts:
   - label: Presentation Slides
     format: FigShare
-    doi: 10.6084/m9.figshare.11918397
+    doi: 10.6084/m9.figshare.8242859
 #
 # This is a standard collection of deadlines we've encountered historically
 # Add due dates where appropriate. Those without will be ignored
@@ -71,21 +46,18 @@ artifacts:
 # that responsibilities should be assigned based on the presenters liseted
 # in the agenda.
 #
-# Planned: [deadlines]
-# Scheduled: deadlines
-#
 deadlines:
   - label: internal-presentations
-    due: 2022-07-27
+    due: 2022-05-18
     responsible: [by-presentation]
   - label: internal-resource-links
-    due: 2022-08-05
+    due: 
     responsible: [by-presentation]
   - label: venue-initial-presentations
     due: 
     responsible: [organizer-ids]
   - label: venue-final-presentations
-    due: 
+    due: 2022-05-20
     responsible: [organizer-ids]
   - label: internal-consents
     due:
