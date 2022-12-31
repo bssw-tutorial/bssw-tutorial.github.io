@@ -59,6 +59,9 @@ helper-ids:
 #   By the time of delivery, the doi should be set
 #
 artifacts:
+  - label: Recordings
+    format: YouTube playlist
+    url: https://youtube.com/playlist?list=PLuWzStas9iWFE3iOWMcDgOcdejKcRp3Z2
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.21800054
