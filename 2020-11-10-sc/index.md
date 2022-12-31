@@ -9,5 +9,5 @@ event-label: 2020-11-10-sc
 # A typical complete tutorial page would include: 
 #         [description,agenda,presentation-slides,how-to-participate,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
 # Consider adding a related-events section if appropriate
-sections: [how-to-participate,stay-in-touch,presentation-slides,agenda,hands-on-exercises,supplementary-materials,resources-from-presentations,requested-citation,acknowledgments]
+sections: [description,how-to-participate,stay-in-touch,presentation-slides,agenda,hands-on-exercises,supplementary-materials,resources-from-presentations,requested-citation,acknowledgments]
 ---
