@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-12-30T15:59:08-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2022-12-30T19:39:46-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -67,31 +67,140 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
         
 <p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2022-08-11-atpesc">2022-08-11-atpesc</a> &gt; <a href="https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation">preparation</a></p>
 
-<p><font color="blue">WARNING: `artifacts` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml` (preferred) or `_data/bsswt/2022-08-11-atpesc/artifacts.yml`</font></p>
-
-<p><font color="blue">WARNING: `organizer-ids` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
-
-<p><font color="blue">WARNING: `presenter-ids` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
-
-<p><font color="blue">WARNING: `deadlines` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
-
 <h1 id="help-for-tutorial-preparation">Help for Tutorial Preparation</h1>
 
 <p><em>Complete the <a href="./utilities-finalization.html">post-acceptance finalization</a> steps before these.</em></p>
 
 <h2 id="issues-for-organizers">Issues for organizers</h2>
 
-<p><font color="red">ERROR: `organizer-ids` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
+    <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
+    <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"2022-08-11-atpesc content preparation"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"adubey64,bernhold"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] Reserve DOI
+- [ ] In &lt;https://github.com/bssw-tutorial/presentations/final-presentations/&gt; create </span><span class="se">\`</span><span class="sh">2022-08-11-atpesc/doi.txt</span><span class="se">\`</span><span class="sh"> and record reserved DOI
+- [ ] Update </span><span class="se">\`</span><span class="sh">license-master.pptx</span><span class="se">\`</span><span class="sh"> citation in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Update </span><span class="se">\`</span><span class="sh">agenda-master.pptx</span><span class="se">\`</span><span class="sh"> agenda in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Update </span><span class="se">\`</span><span class="sh">intro-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">overview-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">design-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">licensing.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">spack.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">testing-a.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">lab-notebooks.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">computational-expts.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">mining-tools.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Additional updates to </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
+    - Update *About Us* slide (3) with presenters and helpers, including head-shots
+    - Update *Hands-On Activities* slide (9) as appropriate
+    - Update the *We want to Interact with You* slide (11) as appropriate
+    - Add *Related Activities* slide as appropriate
+    - Add agenda from </span><span class="se">\`</span><span class="sh">agenda-master.pptx</span><span class="se">\`</span><span class="sh"> in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Add issues needed for hands-on content development
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
+Potentially useful reference information:
+* [Detailed inputs for FigShare record](https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation.html#create-figshare-record-and-reserve-doi)
+* [Citation](https://bssw-tutorial.github.io/2022-08-11-atpesc#requested-citation)
+* [Agenda](https://bssw-tutorial.github.io/2022-08-11-atpesc#agenda) can be copy-pasted into PowerPoint
+* [Title slide details](https://bssw-tutorial.github.io/2022-08-11-atpesc/utilities-preparation.html#title-slide-details)
+</span><span class="no">
+EOF
+
+</span></code></pre></div></div>
 
 <h2 id="issues-for-presenters">Issues for presenters</h2>
 
-<p><font color="red">ERROR: `deadlines` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations by 2022-07-27</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"adubey64: Update presentations by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/design-a.pptx&gt; by 2022-07-27"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-a.pptx&gt; by 2022-07-27"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"bernhold: Update presentations by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro-a.pptx&gt; by 2022-07-27"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/licensing.pptx&gt; by 2022-07-27"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview-a.pptx&gt; by 2022-07-27"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"brnorris03: Update presentations by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"brnorris03"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/mining-tools.pptx&gt; by 2022-07-27"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"jared321,adubey64: Update presentations by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"jared321,adubey64"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/computational-expts.pptx&gt; by 2022-07-27"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"jared321: Update presentations by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"jared321"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/lab-notebooks.pptx&gt; by 2022-07-27"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"tgamblin: Update presentations by 2022-07-27"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"tgamblin"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/spack.pptx&gt; by 2022-07-27"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
+</span><span class="c"># Update resources linked from presentations by 2022-08-05</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"adubey64: Update resource links by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/design-a.md&gt; by 2022-08-05"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/testing-a.md&gt; by 2022-08-05"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"bernhold: Update resource links by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/intro-a.md&gt; by 2022-08-05"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/licensing.md&gt; by 2022-08-05"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/overview-a.md&gt; by 2022-08-05"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"brnorris03: Update resource links by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"brnorris03"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/mining-tools.md&gt; by 2022-08-05"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"jared321,adubey64: Update resource links by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"jared321,adubey64"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/computational-expts.md&gt; by 2022-08-05"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"jared321: Update resource links by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"jared321"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/lab-notebooks.md&gt; by 2022-08-05"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2022-08-11-atpesc"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"tgamblin: Update resource links by 2022-08-05"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"tgamblin"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2022-08-11-atpesc/presentation-resources/spack.md&gt; by 2022-08-05"
+</span><span class="no">EOF
 
-<p>```</p>
+</span></code></pre></div></div>
 
 <h2 id="issues-for-hands-on-content">Issues for hands-on content</h2>
 
@@ -101,15 +210,41 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <h2 id="create-figshare-record-and-reserve-doi">Create FigShare record and reserve DOI</h2>
 
-<p><font color="red">ERROR: `presenter-ids` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+<ol>
+  <li>Login and navigate to the <code class="language-plaintext highlighter-rouge">My Data</code> tab in your FigShare account</li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Create a new item</code>. Complete the fields as below</li>
+</ol>
 
-<p><font color="red">ERROR: `title` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+<p><strong>Title:</strong> Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school (2022)</p>
 
-<p><font color="red">ERROR: `venue` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+<p><strong>Authors:</strong> <!-- note that we're not listing helpers here -->
+<code class="language-plaintext highlighter-rouge">David E. Bernholdt</code>,<code class="language-plaintext highlighter-rouge">Anshu Dubey</code>,<code class="language-plaintext highlighter-rouge">Todd Gamblin</code>,<code class="language-plaintext highlighter-rouge">Jared O'Neal</code>,<code class="language-plaintext highlighter-rouge">Boyana R. Norris</code></p>
 
-<p><font color="red">ERROR: `date` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
+<p><strong>Categories:</strong> <code class="language-plaintext highlighter-rouge">Software Engineering</code></p>
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
+<p><strong>Item type:</strong> <code class="language-plaintext highlighter-rouge">Presentation</code></p>
+
+<p><strong>Keywords:</strong>
+<code class="language-plaintext highlighter-rouge">software engineering</code>,
+<code class="language-plaintext highlighter-rouge">software productivity</code>,
+<code class="language-plaintext highlighter-rouge">software sustainability</code>,
+<code class="language-plaintext highlighter-rouge">software reliability</code>,
+<code class="language-plaintext highlighter-rouge">computational science and engineering software</code>,
+<code class="language-plaintext highlighter-rouge">scientific software</code>,
+<code class="language-plaintext highlighter-rouge">Better Scientific Software tutorial</code></p>
+
+<p><strong>Description:</strong>
+The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.</p>
+
+<p><strong>Funding:</strong> <!-- this field doesn't allow newlines, so get rid of them -->
+This tutorial is produced by the IDEAS Productivity project. This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.</p>
+
+<p><strong>References:</strong>
+<code class="language-plaintext highlighter-rouge">https://bssw-tutorial.github.io/2022-08-11-atpesc</code>, 
+<code class="language-plaintext highlighter-rouge">https://extremecomputingtraining.anl.gov/</code>, 
+<code class="language-plaintext highlighter-rouge">https://ideas-productivity.org</code></p>
+
+<p><strong>License:</strong> <code class="language-plaintext highlighter-rouge">CC BY 4.0</code></p>
 
 <hr />
 
@@ -124,9 +259,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <p><em>If you copy-paste from this page into PowerPoint, you will want to use the <code class="language-plaintext highlighter-rouge">copy-without-formatting</code>
 option to ensure that you get the font from the PPT template rather than the font from the web site.</em></p>
 
-<p><font color="red">ERROR: `presenter-ids` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
-
-<p><strong>People for <code class="language-plaintext highlighter-rouge">intro-a.pptx</code> title slide:</strong></p>
+<p><strong>People for <code class="language-plaintext highlighter-rouge">intro-a.pptx</code> title slide:</strong> David E. Bernholdt, Anshu Dubey, Todd Gamblin, Jared O’Neal, and Boyana R. Norris</p>
 
 <table>
   <tbody>
@@ -187,11 +320,7 @@ option to ensure that you get the font from the PPT template rather than the fon
   </tbody>
 </table>
 
-<p><font color="red">ERROR: `title` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
-
-<p><font color="red">ERROR: `venue` not defined in file `_data/bsswt/2022-08-11-atpesc/event.yml`</font></p>
-
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
+<p><strong>Event title:</strong> Software Productivity and Sustainability track @ Argonne Training Program on Extreme-Scale Computing summer school</p>
 
 <hr />
 
