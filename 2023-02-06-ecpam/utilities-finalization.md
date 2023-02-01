@@ -95,7 +95,7 @@ layout: default
       }, {      
         "title": "{{ event-label }}",
         "state": "open",
-        "due_on": "{{ due | date: '%FT%T%z' }}"
+        "due_on": "{{ due | date: '%FT%T%:z' }}"
     ```
     {% endif %}
 3. While editing the file, take a minute to update the state to `closed` for milestones for tutorials which have been completed (including any post-event follow-up)
