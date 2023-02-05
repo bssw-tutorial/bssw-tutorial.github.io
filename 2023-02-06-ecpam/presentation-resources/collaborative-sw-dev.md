@@ -1,0 +1,16 @@
+<!-- collaborative-sw-dev -->
+  * [Design Patterns for Git Workflows](https://docs.google.com/document/d/1uVQYI2cmNx09fDkHDA136yqDTqayhxqfvjFiuUue7wo/edit#heading=h.s9tckbspfqj8)
+  * [Git Flow (Driessen's Original Blog)](https://nvie.com/posts/a-successful-git-branching-model/)
+    * [Git extensions](https://github.com/nvie/gitflow)
+  * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html)
+  * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
+  * [Agile Manifesto](http://agilemanifesto.org/)
+  * [How to code review in a Pull Request](https://blog.codacy.com/how-to-code-review-in-a-pull-request/)
+  * [Investing in Code Reviews for Better Research Software](https://ideas-productivity.org/events/hpc-best-practices-webinars/#webinar068)
+  * [Testing and Code Review Practices in Research Software Development](https://ideas-productivity.org/events/hpc-best-practices-webinars/#webinar044)
+  * [Open Source Initiative](https://opensource.org/)
+  * <https://choosealicense.com/>
+  * [Introduction to Software Licensing](https://ideas-productivity.org/events/hpc-best-practices-webinars/#webinar024)
+  * [Trilinos](https://trilinos.github.io/)
+  * [Open MPI](https://www.open-mpi.org)
+  * [FleCSI](https://flecsi.github.io/flecsi)
