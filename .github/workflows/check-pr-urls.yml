@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:    
-    - uses: actions/checkout@v2.5.0
+    - uses: actions/checkout@v3
     
     - id: files
 #      uses: jitterbit/get-changed-files@v1 ### Hasn't been updated to Node16
