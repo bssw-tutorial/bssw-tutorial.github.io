@@ -189,7 +189,7 @@ mv {{ p }}.pdf {{ dest-dir }}/{{ mfill }}-{{ p }}.pdf
 {% endfor %}
 # Add and commit new files and tag repository
 cd {{ dest-dir }}
-git add *.pdf presentations.yml
+git add *.pdf presentations.yml doi.txt
 git commit -m "Capturing presentations for {{ event-label }}"
 git push
 
