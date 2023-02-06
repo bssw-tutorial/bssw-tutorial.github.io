@@ -34,15 +34,15 @@ presenter-ids: [bernhold, frobnitzem, jarrah42]
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
-  - label: Tutorial Registration
-    url: https://docs.google.com/forms/d/e/1FAIpQLSc8jf451DjE3l7iHuN_gIl4ACG_5ntCy9k7ErZSFPHGHVhjBw/viewform
+#  - label: Tutorial Registration
+#    url: https://docs.google.com/forms/d/e/1FAIpQLSc8jf451DjE3l7iHuN_gIl4ACG_5ntCy9k7ErZSFPHGHVhjBw/viewform
 # - label: Recordings
 #   format: YouTube playlist
 #   url: https://youtube.com/playlist?list=PLuWzStas9iWFiWGCw7rC8Y-rG4KtPa39I
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.21989507
-    status: reserved
+    status: published
 # - label: Hands-On Code Repository
 #   format: GitHub
 #   gh-repo: bssw-tutorial/hello-numerical-world-2022-05-02-ecpam
