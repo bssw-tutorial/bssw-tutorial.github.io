@@ -36,9 +36,9 @@ presenter-ids: [bernhold, frobnitzem, jarrah42]
 artifacts:
 #  - label: Tutorial Registration
 #    url: https://docs.google.com/forms/d/e/1FAIpQLSc8jf451DjE3l7iHuN_gIl4ACG_5ntCy9k7ErZSFPHGHVhjBw/viewform
-# - label: Recordings
-#   format: YouTube playlist
-#   url: https://youtube.com/playlist?list=PLuWzStas9iWFiWGCw7rC8Y-rG4KtPa39I
+  - label: Recording
+    format: YouTube recording
+    url: https://youtu.be/7G2jjJ403gY
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.21989507
