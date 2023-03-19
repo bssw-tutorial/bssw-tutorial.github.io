@@ -24,7 +24,7 @@ location: "Hamburg, Germany, and online"
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
 #
-organizer-ids: [adubey64]
+organizer-ids: [adubey64,bernhold]
 presenter-ids: [adubey64, frobnitzem]
 #helper-ids: [bernhold]
 #
