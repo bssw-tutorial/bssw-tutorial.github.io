@@ -248,11 +248,11 @@ gh issue create \
   - [ ] \`_data/bsswt/{{ event-label }}/presentations.yml\`
 - Sections needed in \`{{ event-label }}/index.md\`
   - [x] description (usually local)
-  - [x] agenda (okay if `agenda.csv` not present)
-  - [x] presentation-slides (okay if `Presentation Slides` artifact not set)
+  - [x] agenda (okay if \`agenda.csv\` not present)
+  - [x] presentation-slides (okay if \`Presentation Slides\` artifact not set)
   - [ ] how-to-participate (usually local)
   - [ ] hands-on-exercises (usually local)
-  - [ ] stay-in-touch (or `stay-in-touch-no-ho` if there is no hands-on)
+  - [ ] stay-in-touch (or stay-in-touch-no-ho if there is no hands-on)
   - [ ] related-events (local, if appropriate to context)
   - [ ] resources-from-presentations
   - [x] requested-citation (okay if details are not available)
