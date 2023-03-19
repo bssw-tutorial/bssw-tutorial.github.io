@@ -17,7 +17,7 @@ time: 9:00 am - 2:30 pm MDT (UTC-6)
 # Venue information
 #
 venue: "Improving Scientific Software"
-#venue-type: "conference" # redundant with the venue name
+venue-type: "conference"
 venue-url: https://sea.ucar.edu/conference/2023
 location: "Boulder, Colorado and online"
 #
