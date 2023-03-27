@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2023-03-19T15:00:41-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2023-04-18-iss/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2023-03-27T11:12:05-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2023-04-18-iss/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -67,29 +67,114 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
         
 <p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2023-04-18-iss">2023-04-18-iss</a> &gt; <a href="https://bssw-tutorial.github.io/2023-04-18-iss/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2023-04-18-iss/utilities-preparation">preparation</a></p>
 
-<p><font color="blue">WARNING: `presentations` not defined. Check file `_data/bsswt/2023-04-18-iss/presentations.yml</font></p>
-
-<p><font color="blue">WARNING: `agenda` not defined. Check file `_data/bsswt/2023-04-18-iss/agenda.csv`</font></p>
-
 <h1 id="help-for-tutorial-preparation">Help for Tutorial Preparation</h1>
 
 <p><em>Complete the <a href="./utilities-finalization.html">post-acceptance finalization</a> steps before these.</em></p>
 
 <h2 id="issues-for-organizers">Issues for organizers</h2>
 
-<p><font color="red">ERROR: `presentation-order` not defined. Check files `_data/bsswt/2023-04-18-iss/agenda.csv` and `_data/bsswt/2023-04-18-iss/presentations.yml`</font></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
+    <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
+    <span class="nt">--milestone</span> <span class="s2">"2023-04-18-iss"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"2023-04-18-iss content preparation"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\ </span>   
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] Reserve DOI
+- [ ] In &lt;https://github.com/bssw-tutorial/presentations/final-presentations/&gt; create </span><span class="se">\`</span><span class="sh">2023-04-18-iss/doi.txt</span><span class="se">\`</span><span class="sh"> and record reserved DOI
+- [ ] Update </span><span class="se">\`</span><span class="sh">license-master.pptx</span><span class="se">\`</span><span class="sh"> citation in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Update </span><span class="se">\`</span><span class="sh">agenda-master.pptx</span><span class="se">\`</span><span class="sh"> agenda in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Update </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">overview.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">refactoring.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">collaborative-sw-dev.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">packaging.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">testing-advanced.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">reproducibility.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">summary.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Additional updates to </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
+    - Update *About Us* slide (3) with presenters and helpers, including head-shots
+    - Update *Hands-On Activities* slide (9) as appropriate
+    - Update the *We want to Interact with You* slide (11) as appropriate
+    - Add *Related Activities* slide as appropriate
+    - Add agenda from </span><span class="se">\`</span><span class="sh">agenda-master.pptx</span><span class="se">\`</span><span class="sh"> in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Add issues needed for hands-on content development
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
+Potentially useful reference information:
+* [Detailed inputs for FigShare record](https://bssw-tutorial.github.io/2023-04-18-iss/utilities-preparation.html#create-figshare-record-and-reserve-doi)
+* [Citation](https://bssw-tutorial.github.io/2023-04-18-iss#requested-citation)
+* [Agenda](https://bssw-tutorial.github.io/2023-04-18-iss#agenda) can be copy-pasted into PowerPoint
+* [Title slide details](https://bssw-tutorial.github.io/2023-04-18-iss/utilities-preparation.html#title-slide-details)
+</span><span class="no">
+EOF
+
+</span></code></pre></div></div>
 
 <h2 id="issues-for-presenters">Issues for presenters</h2>
 
-<p><font color="red">ERROR: `presentation-order` not defined. Check files `_data/bsswt/2023-04-18-iss/agenda.csv` and `_data/bsswt/2023-04-18-iss/presentations.yml`</font></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations by 2023-04-12</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2023-04-18-iss"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"bernhold: Update presentations by 2023-04-12"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/design.pptx&gt; by 2023-04-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; by 2023-04-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview.pptx&gt; by 2023-04-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/refactoring.pptx&gt; by 2023-04-12"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2023-04-18-iss"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"frobnitzem: Update presentations by 2023-04-12"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"frobnitzem"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/packaging.pptx&gt; by 2023-04-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-advanced.pptx&gt; by 2023-04-12"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2023-04-18-iss"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"pagrubel: Update presentations by 2023-04-12"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"pagrubel"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/collaborative-sw-dev.pptx&gt; by 2023-04-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/reproducibility.pptx&gt; by 2023-04-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/summary.pptx&gt; by 2023-04-12"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
 
-<p><font color="red">ERROR: `presenter-order` not defined. Check files `_data/bsswt/2023-04-18-iss/agenda.csv` and `_data/bsswt/2023-04-18-iss/presentations.yml`</font></p>
+</span><span class="c"># Update resources linked from presentations by 2023-04-14</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2023-04-18-iss"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"bernhold: Update resource links by 2023-04-14"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-04-18-iss/presentation-resources/design.md&gt; by 2023-04-14"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-04-18-iss/presentation-resources/intro.md&gt; by 2023-04-14"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-04-18-iss/presentation-resources/overview.md&gt; by 2023-04-14"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-04-18-iss/presentation-resources/refactoring.md&gt; by 2023-04-14"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2023-04-18-iss"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"frobnitzem: Update resource links by 2023-04-14"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"frobnitzem"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-04-18-iss/presentation-resources/packaging.md&gt; by 2023-04-14"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-04-18-iss/presentation-resources/testing-advanced.md&gt; by 2023-04-14"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2023-04-18-iss"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"pagrubel: Update resource links by 2023-04-14"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"pagrubel"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-04-18-iss/presentation-resources/collaborative-sw-dev.md&gt; by 2023-04-14"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-04-18-iss/presentation-resources/reproducibility.md&gt; by 2023-04-14"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-04-18-iss/presentation-resources/summary.md&gt; by 2023-04-14"
+</span><span class="no">EOF
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
-
-<p>```</p>
+</span></code></pre></div></div>
 
 <h2 id="issues-for-hands-on-content">Issues for hands-on content</h2>
 
@@ -152,13 +237,66 @@ This tutorial is produced by the IDEAS Productivity project. This work was suppo
 <p><em>If you copy-paste from this page into PowerPoint, you will want to use the <code class="language-plaintext highlighter-rouge">copy-without-formatting</code>
 option to ensure that you get the font from the PPT template rather than the font from the web site.</em></p>
 
-<p><font color="red">ERROR: `presentation-order` not defined. Check files `_data/bsswt/2023-04-18-iss/agenda.csv` and `_data/bsswt/2023-04-18-iss/presentations.yml`</font></p>
+<p><strong>People for <code class="language-plaintext highlighter-rouge">intro.pptx</code> title slide:</strong> David E. Bernholdt, Patricia A. Grubel, and David M. Rogers</p>
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
-
-<p><font color="red">ERROR: `presentation-order` not defined. Check files `_data/bsswt/2023-04-18-iss/agenda.csv` and `_data/bsswt/2023-04-18-iss/presentations.yml`</font></p>
-
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Presentation</strong></td>
+      <td><strong>Presenter</strong></td>
+      <td><strong>Pronouns</strong></td>
+      <td><strong>Affiliation</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">overview.pptx</code></td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">design.pptx</code></td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">refactoring.pptx</code></td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">collaborative-sw-dev.pptx</code></td>
+      <td>Patricia A. Grubel</td>
+      <td>she/her</td>
+      <td>Los Alamos National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">packaging.pptx</code></td>
+      <td>David M. Rogers</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">testing-advanced.pptx</code></td>
+      <td>David M. Rogers</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">reproducibility.pptx</code></td>
+      <td>Patricia A. Grubel</td>
+      <td>she/her</td>
+      <td>Los Alamos National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">summary.pptx</code></td>
+      <td>Patricia A. Grubel</td>
+      <td>she/her</td>
+      <td>Los Alamos National Laboratory</td>
+    </tr>
+  </tbody>
+</table>
 
 <p><strong>Event title:</strong> Better Scientfic Software tutorial @ Improving Scientific Software conference</p>
 
