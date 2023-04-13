@@ -9,7 +9,7 @@
   * [Investing in Code Reviews for Better Research Software](https://ideas-productivity.org/events/hpc-best-practices-webinars/#webinar068)
   * [Testing and Code Review Practices in Research Software Development](https://ideas-productivity.org/events/hpc-best-practices-webinars/#webinar044)
   * [Open Source Initiative](https://opensource.org/)
-  * <https://choosealicense.com/>
+  * [Choose an Open Source License Tool](https://choosealicense.com/)
   * [Introduction to Software Licensing](https://ideas-productivity.org/events/hpc-best-practices-webinars/#webinar024)
   * [Trilinos](https://trilinos.github.io/)
   * [Open MPI](https://www.open-mpi.org)
