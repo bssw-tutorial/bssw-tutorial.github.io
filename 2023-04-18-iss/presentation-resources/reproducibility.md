@@ -8,7 +8,7 @@
   * Definitions, Guidelines, and Organizations:
     * [National Science Foundation Data Management Plan Requirements](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
     * [Findable, Accessible, Interoperable, Re-usable](https://doi.org/10.1038/sdata.2016.18)
-    * <https://gofair.us/>
+    * [FAIR Data Principles US](https://gofair.us/)
     * [SC22 Reproducibility Initiative](https://sc22.supercomputing.org/submit/reproducibility-initiative/)
     * [ACM Transactions on Mathematical Software (TOMS)](http://toms.acm.org/replicated-computational-results.cfm)
     * [ACM Artifact Review and Badging](https://www.acm.org/publications/policies/artifact-review-and-badging-current)
