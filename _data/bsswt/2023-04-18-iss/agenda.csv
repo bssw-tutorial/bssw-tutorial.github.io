@@ -1,14 +1,14 @@
-Fixed Points,Duration,Time (MDT),Title,Presenter,"NCAR ISS, Boulder CO"
-<!--skip-->,<!--skip-->,<!--right-->,,,
-9:00 AM,10,9:00 AM,intro,bernhold,
-,25,9:10 AM,overview,bernhold,
-,25,9:35 AM,design,bernhold,
-,30,10:00 AM,refactoring,bernhold,
-10:30 AM,30,10:30 AM,<em>Break</em>,,
-11:00 AM,40,11:00 AM,collaborative-sw-dev,pagrubel,
-,20,11:40 AM,packaging-short,frobnitzem,
-12:00 PM,60,12:00 PM,<em>Lunch break</em>,,
-1:00 PM,30,1:00 PM,testing-advanced-short,frobnitzem,
-,45,1:30 PM,reproducibility,pagrubel,
-,15,2:15 PM,summary,pagrubel,
-2:30 PM,0,2:30 PM,<em>Adjourn</em>,,
+Fixed Points,Duration,Time (MDT),Title,Presenter
+<!--skip-->,<!--skip-->,<!--right-->,,
+9:00 AM,10,9:00 AM,intro,bernhold
+,25,9:10 AM,overview,bernhold
+,25,9:35 AM,design,bernhold
+,30,10:00 AM,refactoring,bernhold
+10:30 AM,30,10:30 AM,<em>Break</em>,
+11:00 AM,40,11:00 AM,collaborative-sw-dev,pagrubel
+,20,11:40 AM,packaging-short,frobnitzem
+12:00 PM,60,12:00 PM,<em>Lunch break</em>,
+1:00 PM,30,1:00 PM,testing-advanced-short,frobnitzem
+,45,1:30 PM,reproducibility,pagrubel
+,15,2:15 PM,summary,pagrubel
+2:30 PM,0,2:30 PM,<em>Adjourn</em>,
