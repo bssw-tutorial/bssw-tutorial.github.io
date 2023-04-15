@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2023-04-13T18:16:23-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2023-04-18-iss/utilities-publication.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2023-04-15T17:06:44-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2023-04-18-iss/utilities-publication.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -86,8 +86,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   - [ ] </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">refactoring.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">collaborative-sw-dev.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">packaging.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">testing-advanced.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">packaging-short.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">testing-advanced-short.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">reproducibility.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">summary.pptx</span><span class="se">\`</span><span class="sh">
 - Generate PDFs of presentations
@@ -96,8 +96,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   - [ ] </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">refactoring.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">collaborative-sw-dev.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">packaging.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">testing-advanced.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">packaging-short.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">testing-advanced-short.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">reproducibility.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">summary.pptx</span><span class="se">\`</span><span class="sh">
 - [ ] Prepare release of presentation files (see &lt;https://bssw-tutorial.github.io/2023-04-18-iss/utilities-publication.html#scripting-for-presentation-release&gt;)
@@ -126,8 +126,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <span class="nb">mv </span>design.pdf final-presentations/2023-04-18-iss/03-design.pdf
 <span class="nb">mv </span>refactoring.pdf final-presentations/2023-04-18-iss/04-refactoring.pdf
 <span class="nb">mv </span>collaborative-sw-dev.pdf final-presentations/2023-04-18-iss/05-collaborative-sw-dev.pdf
-<span class="nb">mv </span>packaging.pdf final-presentations/2023-04-18-iss/06-packaging.pdf
-<span class="nb">mv </span>testing-advanced.pdf final-presentations/2023-04-18-iss/07-testing-advanced.pdf
+<span class="nb">mv </span>packaging-short.pdf final-presentations/2023-04-18-iss/06-packaging-short.pdf
+<span class="nb">mv </span>testing-advanced-short.pdf final-presentations/2023-04-18-iss/07-testing-advanced-short.pdf
 <span class="nb">mv </span>reproducibility.pdf final-presentations/2023-04-18-iss/08-reproducibility.pdf
 <span class="nb">mv </span>summary.pdf final-presentations/2023-04-18-iss/09-summary.pdf
 
@@ -141,11 +141,11 @@ git push
 zip <span class="nt">--update</span> 2023-04-18-iss.zip <span class="k">*</span>.pdf
 
 <span class="c"># Tag repo</span>
-git tag <span class="nt">-a</span> 2023-04-18-iss <span class="nt">-m</span> <span class="s2">"2023-04-18: Better Scientfic Software tutorial @ Improving Scientific Software conference"</span>
+git tag <span class="nt">-a</span> 2023-04-18-iss <span class="nt">-m</span> <span class="s2">"2023-04-18: Better Scientific Software tutorial @ Improving Scientific Software conference"</span>
 git push origin <span class="nt">--tags</span>
 
 <span class="c"># Create release and add zip archive</span>
-gh release create 2023-04-18-iss <span class="nt">--title</span> <span class="s2">"2023-04-18: Better Scientfic Software tutorial @ Improving Scientific Software conference"</span> <span class="nt">--notes</span> <span class="s2">"2023-04-18: Better Scientfic Software tutorial @ Improving Scientific Software conference"</span>
+gh release create 2023-04-18-iss <span class="nt">--title</span> <span class="s2">"2023-04-18: Better Scientific Software tutorial @ Improving Scientific Software conference"</span> <span class="nt">--notes</span> <span class="s2">"2023-04-18: Better Scientific Software tutorial @ Improving Scientific Software conference"</span>
 gh release upload 2023-04-18-iss 2023-04-18-iss.zip
 
 </code></pre></div></div>
@@ -172,7 +172,7 @@ git push <span class="nt">--delete</span> origin 2023-04-18-iss
 
 gh repo create bssw-tutorial/hello-numerical-world-2023-04-18-iss \
   --public --template bssw-tutorial/hello-numerical-world \
-  --description "Hands-on code repository for 2023-04-18 Better Scientfic Software tutorial @ Improving Scientific Software conference"
+  --description "Hands-on code repository for 2023-04-18 Better Scientific Software tutorial @ Improving Scientific Software conference"
 
 git clone https://github.com/bssw-tutorial/hello-numerical-world-2023-04-18-iss
 cd hello-numerical-world-2023-04-18-iss
@@ -189,7 +189,7 @@ git push
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># In local working copy of bssw-tutorial/bssw-tutorial.github.io repository</span>
 
 <span class="c"># Tag repo</span>
-git tag <span class="nt">-a</span> 2023-04-18-iss <span class="nt">-m</span> <span class="s2">"2023-04-18: Better Scientfic Software tutorial @ Improving Scientific Software conference"</span>
+git tag <span class="nt">-a</span> 2023-04-18-iss <span class="nt">-m</span> <span class="s2">"2023-04-18: Better Scientific Software tutorial @ Improving Scientific Software conference"</span>
 git push origin <span class="nt">--tags</span>
 
 </code></pre></div></div>
