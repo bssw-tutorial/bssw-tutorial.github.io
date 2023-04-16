@@ -10,4 +10,3 @@
   * [Better Scientific Software](https://bssw.io) site
     * [BSSw Digest](https://bssw.io/pages/receive-our-email-digest)
     * [BSSw RSS Feed](https://bssw.io/items.rss)
-  * [SC22 software-related events](https://bssw.io/events/sc22-software-related-events)
