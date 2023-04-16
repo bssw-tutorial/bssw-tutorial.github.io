@@ -9,5 +9,5 @@ event-label: 2023-05-21-isc
 # A typical complete tutorial page would include: 
 #         [description,agenda,presentation-slides,how-to-participate,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
 # Consider adding a related-events section if appropriate
-sections: [description,agenda,presentation-slides,stay-in-touch-no-ho,requested-citation,acknowledgments]
+sections: [description,agenda,presentation-slides,stay-in-touch-no-ho,resources-from-presentations,requested-citation,acknowledgments]
 ---
