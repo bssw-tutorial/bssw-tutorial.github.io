@@ -87,7 +87,7 @@ gh issue create \
     --milestone "{{ event-label }}" \
     --title "{{ event-label }} content preparation" \
     --assignee "{{ my-organizers | array_to_sentence_string: ',' | remove: ' ' }}" \
-    --label "event preparation" \    
+    --label "event preparation" \
     --body-file - << EOF
 - [ ] Reserve DOI
 - [ ] In <{{ site.ghr-presentations }}/final-presentations/> create \`{{ event-label }}/doi.txt\` and record reserved DOI
