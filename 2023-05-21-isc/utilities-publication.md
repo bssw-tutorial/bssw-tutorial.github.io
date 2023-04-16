@@ -94,10 +94,10 @@ gh issue create \
 {% endfor %}- Generate PDFs of presentations
 {% for p in presentation-order %}  - [ ] \`{{ p }}.pptx\`
 {% endfor %}- [ ] Prepare release of presentation files (see <{{ site.prod_url }}{{ page.url }}#scripting-for-presentation-release>)
+- [ ] Tag presentation repository
 - [ ] Publish presentation files on FigShare
 - [ ] Update presentation DOI in \`_data/bsswt/{{ event-label }}/event.yml\`
 {% if dp.due %}- [ ] Upload presentation files to venue **by {{ dp.due }}**{% endif %}
-- [ ] Tag presentation repository
 - Create hands-on code repository for event (see <{{ site.prod_url }}{{ page.url }}#scripting-to-create-hands-on-code-repository>)
 - [ ] Update hands-on repo URL in \`_data/bsswt/{{ event-label }}/event.yml\`
 {% if dr.due %}- [ ] Upload recordings to venue **by {{ d.due }}**{% endif %}

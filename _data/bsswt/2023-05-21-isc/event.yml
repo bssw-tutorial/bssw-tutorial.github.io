@@ -57,10 +57,10 @@ artifacts:
 #
 deadlines:
   - label: internal-presentations
-    due: 2023-05-08
+    due: 2023-04-28
     responsible: [by-presentation]
   - label: internal-resource-links
-    due: 2023-05-15
+    due: 2023-05-05
     responsible: [by-presentation]
   - label: venue-presentations-initial
     due: 2023-05-11
