@@ -34,8 +34,8 @@ presenter-ids: [bernhold, pagrubel, frobnitzem]
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
-  - label: Conference Registration
-    url: https://docs.google.com/forms/d/e/1FAIpQLSfvrcDWBEyVhL47gmJ1asVEexIsCw0TPiEJ2YEoDAjiNhLf9w/viewform
+#  - label: Conference Registration
+#    url: https://docs.google.com/forms/d/e 1FAIpQLSfvrcDWBEyVhL47gmJ1asVEexIsCw0TPiEJ2YEoDAjiNhLf9w/viewform
 #  - label: Recording
 #    format: YouTube recording
 #    url: https://youtu.be/7G2jjJ403gY
