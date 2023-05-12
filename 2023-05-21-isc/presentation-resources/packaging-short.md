@@ -9,6 +9,7 @@
   * <https://supercontainers.github.io/sc20-tutorial/02.docker/index.html>
   * <https://cloud.sylabs.io/builder>
   * [Article on CI team practices](https://bssw.io/blog_posts/bright-spots-team-experiences-implementing-continuous-integration)
+  * https://github.com/bssw-tutorial/simple-heateq
   * <https://pyscaffold.org/>
   * <https://python-poetry.org/docs/pyproject>
   * Fortran resources

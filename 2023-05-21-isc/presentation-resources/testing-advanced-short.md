@@ -1,6 +1,10 @@
 <!-- testing-advanced-short -->
   * [A Holistic Algorithmic Approach to Improving Accuracy, Robustness, and Computational  Efficiency for Atmospheric Dynamics](https://doi.org/10.1137/19M128435X)
   * [Useful How-to resources on test and test suites on ideas-productivity.org](https://ideas-productivity.org/resources/howtos/)
+  * Python Build and Test Framework: [pyscaffold.org](https://pyscaffold.org)
+  * Build-Link-Test CMake Framework: [llnl-blt.readthedocs.io](https://llnl-blt.readthedocs.io)
+  * https://github.com/bssw-tutorial/hello-numerical-world
+  * Tutorials for code coverage: [Online Tutorial](https://github.com/amklinv/morpheus), [Another example](https://github.com/jrdoneal/infrastructure)
   * [Lcov](http://ltp.sourceforge.net/coverage/lcov.php)
   * [CI/CD Introduction](https://docs.gitlab.com/ee/ci/introduction/)
   * [Joint Center for Satellite Data Assimilation (JEDI) documentation](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/)
