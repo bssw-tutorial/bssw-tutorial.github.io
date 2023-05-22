@@ -34,8 +34,8 @@ presenter-ids: [adubey64, frobnitzem]
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
-  - label: Conference Registration
-    url: https://www.isc-hpc.com/registration-2023.html
+#  - label: Conference Registration
+#    url: https://www.isc-hpc.com/registration-2023.html
 #  - label: Recording
 #    format: YouTube recording
 #    url: https://youtu.be/7G2jjJ403gY
