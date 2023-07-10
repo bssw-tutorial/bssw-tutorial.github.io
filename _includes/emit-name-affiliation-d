@@ -1,0 +1,42 @@
+{% comment %}
+  emit-name-affiliation-d: emit the name and affiliation from an array of people's records
+    example: "name1 (affiliations1), name2 {affiliations2), and name3 (affiliations3)"
+  Note: this version is intended for the new format people records that are in the event.yml files in the _data directory
+  rather than the old format of the separate people collection.
+  
+  arguments:
+    `people`: structure containing the people's information
+    `short`: boolean indicating that short affiliation should be use (optional, default: false)
+    `noaffil`: boolean indicating that only the name should be emitted (optional, default: false)
+    `noname`: boolean indicating that only the affiliation should be emitted (optional, default: false)
+
+  Expected elements of people structure
+    name (string)
+    affiliation (array) used if short==false
+    short-affil (array) used if short==true
+
+  Notes: 
+  * missing elements will be silently ignored
+
+  FIXME: why do we have to specify element 0 here?
+{% endcomment %}
+
+{%- assign short = include.short | default: false -%}
+{%- assign noaffil = include.noaffil | default: false -%}
+{%- assign noname = include.noname | default: false -%}
+
+{% assign name_affil = "" | split: "," %}
+{% for p in include.people %}
+  {% capture na %}{% unless noname %}{{ p.name }}{% endunless %}
+    {% unless noaffil %}
+    {% if short %}
+      {% if p.short-affil %}{% unless noname %} ({% endunless %}{{ p.short-affil }}{% unless noname %}){% endunless %}{% endif %}
+    {% else %}
+      {% if p.affiliation %}{% unless noname %} ({% endunless %}{{ p.affiliation }}{% unless noname %}){% endunless %}{% endif %}
+    {% endif %}
+    {% endunless %}
+  {% endcapture %}
+  {% assign na = na | normalize_whitespace | strip %}
+  {% assign name_affil = name_affil | push: na %}
+{% endfor %}
+{{ name_affil | array_to_sentence_string }}

@@ -1,0 +1,44 @@
+{% comment %}
+  set-name-affiliation-array-d: create an array with the name and affiliation from each person's record
+  Note: this version is intended for the new format people records that are in the event.yml files in the _data directory
+  rather than the old format of the separate people collection.
+
+  arguments:
+    `people`: an array of people records
+    `short`: boolean indicating that short affiliation should be use (optional, default: false)
+    `noaffil`: boolean indicating that only the name should be emitted (optional, default: false)
+    `noname`: boolean indicating that only the affiliation should be emitted (optional, default: false)
+
+  output:
+    name_affiliation_array
+
+  Expected elements of person structure
+  name (string)
+  affiliation (array) used if short==false
+  short-affil (array) used if short==true
+{% endcomment %}
+
+{%- assign short = include.short | default: false -%}
+{%- assign noaffil = include.noaffil | default: false -%}
+{%- assign noname = include.noname | default: false -%}
+
+{% assign name_affiliation_array = "" | split: "," %}
+{% for p in include.people %}
+  {% capture na %}{% unless noname %}{{ p.name }}{% endunless %}
+    {% unless noaffil %}
+    {% if short %}
+      {% if p.short-affil %}{% unless noname %} ({% endunless %}{{ p.short-affil }}{% unless noname %}){% endunless %}{% endif %}
+    {% else %}
+      {% if p.affiliation %}{% unless noname %} ({% endunless %}{{ p.affiliation }}{% unless noname %}){% endunless %}{% endif %}
+    {% endif %}
+    {% endunless %}
+  {% endcapture %}
+  {% assign na = na | normalize_whitespace | strip %}
+  {% assign name_affiliation_array = name_affiliation_array | push: na %}
+{% endfor %}
+
+{%- comment -%}Clean up internal variables{%- endcomment -%}
+{%- assign p = nil -%}
+{%- assign pafil = nil -%}
+{%- assign short = nil -%}
+{%- assign noaffil = nil -%}

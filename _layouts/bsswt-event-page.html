@@ -45,12 +45,28 @@ layout: default
   {% endif %}
 {% endif %}
 
-{% if my-event.presenter-ids %}
-<p style="text-indent: -5em; padding-left: 5em;"">{{ my-event.presenter-ids | size | pluralize: "Presenter:", "Presenters:" }} {{ pnamafil }}</p>
+{% comment %}
+  We have two sources of the staffing information.  The old way is to list just the github-ids in the event.yml file and use that to pull the
+  needed information from the _people collection.  The new way is to put all of the information on the people directly into the event.yml file.
+  This change was made to support the new Jekyll-based ideas-productivity.org website.
+
+  Here, we prefer the new way, but we'll use the old way if it is present.
+
+  If no presenter information is given, we emit a placeholder.  But helpers are optional, so we do nothing in the absence of helper information.
+{% endcomment %}
+
+{% if my-event.presenters %}
+<p style="text-indent: -5em; padding-left: 5em;">{{ my-event.presenters | size | pluralize: "Presenter: ", "Presenters: " }}{% include emit-name-affiliation-d people=my-event.presenters %}</p>
+{% elsif my-event.presenter-ids %}
+<p style="text-indent: -5em; padding-left: 5em;">{{ my-event.presenter-ids | size | pluralize: "Presenter:", "Presenters:" }} {{ pnamafil }}</p>
+{% else %}
+<p style="text-indent: -5em; padding-left: 5em;">Presenters: <em>to be announced</em></p>
 {% endif %}
 
-{% if my-event.helper-ids %}
-<p style="text-indent: -5em; padding-left: 5em;"">{{ my-event.helper-ids | size | pluralize: "Helper:", "Helpers:" }} {{ hnamafil }}</p>
+{% if my-event.helpers %}
+<p style="text-indent: -5em; padding-left: 5em;">{{ my-event.helpers | size | pluralize: "Helper: ", "Helpers: " }}{% include emit-name-affiliation-d people=my-event.helpers %}</p>
+{% elsif my-event.helper-ids %}
+<p style="text-indent: -5em; padding-left: 5em;">{{ my-event.helper-ids | size | pluralize: "Helper:", "Helpers:" }} {{ hnamafil }}</p>
 {% endif %}
 
 <hr>

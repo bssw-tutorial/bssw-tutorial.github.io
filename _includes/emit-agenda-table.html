@@ -4,6 +4,7 @@
   arguments:
     `agenda`: CSV table with agenda data
     `presentations`: associative array mapping shorthand labels for presentations to their titles
+    `presenters`: new-format presenter information as found in event.yml (optional)
 
   table structure requirements:
     A column entitled `Title` containing the label of the presentation (referencing the presentations argument) 
@@ -13,7 +14,7 @@
       with discussion sessions and the like, not with actual presentations.
 
   site variables used:
-    `site.people`
+    `site.people` (only for old-format staffing information; in the new format, all needed information is included in the event.yml in the presenters data structure)
 
 {% endcomment %}
 
@@ -60,9 +61,20 @@
                 {%- assign pnamafil = "All" -%}
               {%- else -%}
                 {%- assign presenters = presenter | remove: " " | split: "," -%}
-                {%- include extract-array-subset key="github-id" values=presenters source=site.people -%}
-                {%- include set-name-affiliation-array people=extract_array_subset short=true -%}
-                {%- capture pnamafil -%}{%- include array-to-sentence array=name_affiliation_array -%}{%- endcapture -%}
+                {% if include.presenters %}
+                  {% assign pnamafil = "Bogus" %}
+                  {%- assign na = "" | split: "," -%}
+                  {%- for i in presenters -%}
+                  {%- assign j = my-presenters-d | where_exp: "item", "item.github-id == i" -%}
+                  {%- capture k -%}{{ j[0].name }}{% if j[0].short-affil %} ({{ j[0].short-affil }}){% endif %}{%- endcapture -%}
+                  {%- assign na = na | push: k -%}
+                {%- endfor -%}
+                {%- assign pnamafil = na | array_to_sentence_string -%}
+                {% else %}
+                  {%- include extract-array-subset key="github-id" values=presenters source=site.people -%}
+                  {%- include set-name-affiliation-array people=extract_array_subset short=true -%}
+                  {%- capture pnamafil -%}{%- include array-to-sentence array=name_affiliation_array -%}{%- endcapture -%}
+                {% endif %}
                {%- endif -%}
               {{ td-open[forloop.index0] }}{{ pnamafil }}</td>
             {%- else -%}

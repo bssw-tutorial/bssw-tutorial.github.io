@@ -41,13 +41,49 @@ location: "Hamburg, Germany, and online"
 #
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
+# For presenters and helpers, we need more extensive information
+# - name
+# - affiliation
+# - short-affil
+# - pronouns
+# - github-id
 #
-# Planned: organizer-ids, [presenter-ids], [helper-ids]
-# Scheduled: organizer-ids, presenter-ids, [helper-ids]
+# Required information, by stage of tutorial preparations:
+#   Planned: organizer-ids ,[presenters], [helpers]
+#   Scheduled: organizer-ids, presenters, [helpers]
 #
-organizer-ids: [adubey64, bernhold]
-presenter-ids: [adubey64, jarrah42]
-helper-ids: 
+organizer-ids: [bernhold, adubey64]
+#
+presenters:
+  - name: Anshu Dubey
+    affiliation: Argonne National Laboratory
+    short-affil: affiliation
+    pronouns: she/her
+    github-id: adubey64
+  - name: Gregory R. Watson
+    affiliation: Oak Ridge National Laboratory
+    short-affil: ORNL
+    pronouns: he/him
+    github-id: jarrah42
+  - name: Patricia A. Grubel
+    affiliation: Los Alamos National Laboratory
+    short-affil: LANL
+    pronouns: she/her
+    github-id: pagrubel
+#
+helpers:
+  - name: Rinku Gupta
+    affiliation: Argonne National Laboratory
+    short-affil: ANL
+    pronouns: she/her
+    github-id: rinkug
+  - name: David M. Rogers
+    affiliation: Oak Ridge National Laboratory
+    short-affil: ORNL
+    pronouns: he/him
+    github-id: frobnitzem
+#
+description: "The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers."
 #
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.
@@ -59,17 +95,19 @@ helper-ids:
 #   By the time of delivery, the doi should be set
 #
 artifacts:
-  - label: Conference Registration
-    url: https://www.isc-hpc.com/registration-2022.html
+#  - label: Conference Registration
+#    url: https://www.isc-hpc.com/registration-2022.html
 #  - label: Recordings
 #    format: YouTube playlist
 #    url: 
-  - label: Presentation Slides
-    format: FigShare
-    doi: 10.6084/m9.figshare.19781752
-  - label: Hands-On Code Repository
-    format: GitHub
-    gh-repo: bssw-tutorial/hello-numerical-world-2022-05-29-isc
+#  - label: Presentation Slides
+#    format: FigShare
+#    doi: 10.6084/m9.figshare.19781752
+#    status: none
+# The only meaningful values of status are: reserved or published
+#  - label: Hands-On Code Repository
+#    format: GitHub
+#    gh-repo: bssw-tutorial/hello-numerical-world-2022-05-29-isc
 #
 # This is a standard collection of deadlines we've encountered historically
 # Add due dates where appropriate. Those without will be ignored
