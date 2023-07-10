@@ -15,7 +15,7 @@
 {% endif %}
 {%- include key-artifact-shorthands artifacts=my-artifacts -%}
 
-{% if my-presenters-d or my-presenter %}
+{% if my-presenters-d or my-presenters %}
   {% if my-event.venue and my-event.location and my-event.date and presentations-doi %}
 {{ name_affiliation_array | array_to_sentence_string }}, {{ my-event.title }} {{ my-event.title-type }}, in {{ my-event.venue }}, {{ my-event.location }}, {{ my-event.date | date: "%Y" }}. {% if presentations-doi %}DOI: [{{ presentations-doi }}]({{ presentations-url }}).{% endif %}
   {% else %}
