@@ -35,8 +35,8 @@ layout: default
 {% if my-event.date %}
   <h3 align="center">on 
     {% if my-event.time %}{{ my-event.time }}{% endif %}
-    {{ my-event.date | date: "%A %d %B %Y"}}
-    {% if my-event.end-date %}- {{ my-event.end-date | date: "%A %d %B %Y"}}{% endif %}
+    {{ my-event.date | date: "%A %-d %B %Y"}}
+    {% if my-event.end-date %}- {{ my-event.end-date | date: "%A %-d %B %Y"}}{% endif %}
   </h3>
   {% if status.status == "planned" %}
   <p align="center">
