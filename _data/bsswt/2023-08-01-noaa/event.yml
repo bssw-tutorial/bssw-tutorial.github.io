@@ -52,23 +52,23 @@ location: "Boulder, Colorado"
 #   Planned: organizer-ids ,[presenters], [helpers]
 #   Scheduled: organizer-ids, presenters, [helpers]
 #
-organizer-ids: [bernhold, adubey64, jarrah42]
+organizer-ids: [bernhold]
 #
 presenters:
   - name: David E. Bernholdt
     affiliation: Oak Ridge National Laboratory
     short-affil: ORNL
-    pronouns: ze/zir
+    pronouns: he/him
     github-id: bernhold
   - name: Anshu Dubey
     affiliation: Argonne National Laboratory
     short-affil: ANL
-    pronouns: they/their
+    pronouns: she/her
     github-id: adubey64
   - name: Patricia A. Grubel
     affiliation: Los Alamos National Laboratory
     short-affil: LANL
-    pronouns: we/weuns
+    pronouns: she/her
     github-id: pagrubel
 #
 # helpers:
