@@ -1,0 +1,160 @@
+# Main data file for BSSw tutorial events
+#
+# Commentary notes indicate fields that are
+# required (plain text) and optional (bracketed text)
+# in the "planned" and "scheduled" states.
+#
+# Basic tutorial information
+#
+# Planned: title, [title-type], [title-url]
+# Scheduled: same
+#
+title: "Better Scientific Software"
+title-type: "tutorial"
+#title-url: 
+#
+# Presentation date and time.
+# end-date is optional for one-day events
+# time should include timezeone explicitly
+# We don't currently handle tutorials that occur at *different times* on multiple days
+#
+# Planned: date, [end-date], [time]
+#   Note: at the "planned" stage, end-date can be used with date to specify
+#   the range of dates in which the tutorial *could* take place.
+# Scheduled: date, [end-date], time
+#   Unless the tutorial occurs over multiple days, end-date is not
+#   needed for tutorials in the "scheduled" stage.
+#
+date: 2023-11-12
+end-date: 2023-11-13
+#time: "8:30 am - 5:00 pm MST (UTC-7)"
+#
+# Venue information
+#
+# Planned: venue, [venue-type], [venue-url], location
+# Scheduled: same
+#
+venue: "The International Conference for High-Performance Computing, Networking, Storage, and Analysis (SC23)"
+venue-type: "conference"
+venue-url: https://sc23.supercomputing.org/
+location: "Denver, Colorado"
+#
+# Staffing information
+# organizer-ids will be assigned the issues that presenter-ids are not doing, basically
+# For presenters and helpers, we need more extensive information
+# - name
+# - affiliation
+# - short-affil
+# - pronouns
+# - github-id
+#
+# Required information, by stage of tutorial preparations:
+#   Planned: organizer-ids ,[presenters], [helpers]
+#   Scheduled: organizer-ids, presenters, [helpers]
+#
+organizer-ids: [bernhold,pagrubel]
+#
+presenters:
+  - name: David E. Bernholdt
+    affiliation: Oak Ridge National Laboratory
+    short-affil: ORNL
+    pronouns: he/him
+    github-id: bernhold
+  - name: Patricia A. Grubel
+    affiliation: Los Alamos National Laboratory
+    short-affil: LANL
+    pronouns: she/her
+    github-id: pagrubel
+  - name: David M. Rogers
+    affiliation: Oak Ridge National Laboratory
+    short-affil: ORNL
+    pronouns: he/him
+    github-id: frobnitzem
+  - name: Gregory R. Watson
+    affiliation: Oak Ridge National Laboratory
+    short-affil: ORNL
+    pronouns: he/him
+    github-id: jarrah42
+#
+# helpers:
+#   - name: Rinku Gupta
+#     affiliation: Argonne National Laboratory
+#     short-affil: ANL
+#     pronouns: she/her
+#     github-id: rinkug
+#
+description: "Producing scientific software is a challenge. The high-performance modeling and simulation community, in particular, faces the confluence of disruptive changes in computing architectures and new opportunities (and demands) for greatly improved simulation capabilities, especially through coupling physics and scales. Simultaneously, computational science and engineering (CSE), as well as other areas of science, are experiencing an increasing focus on scientific reproducibility and software quality. Code coupling requires aggregate team interactions including integration of software processes and practices. These challenges demand large investments in scientific software development and improved practices. Focusing on improved developer productivity and software sustainability is both urgent and essential. Attendees will learn about practices, processes, and tools to improve the productivity of those who develop CSE software, increase the sustainability of software artifacts, and enhance trustworthiness in their use. We will focus on aspects of scientific software development that are not adequately addressed by resources developed for industrial software engineering. Topics include the design, refactoring, and testing of complex scientific software systems; collaborative software development; and software packaging. The second half of this full-day tutorial will focus on reproducibility, and why and how to keep a lab notebook for computationally-based research"
+#
+# This is a more or less typical collection of artifacts for tutorials.
+# Comment out anything that isn't (yet) available.
+# If you want to list the conference registration page, comment it out
+# after registration closes or after the event, when it is no longer useful.
+#
+# Planned: [artifacts]
+# Scheduled: artifacts
+#   As soon as the doi is reserved, the doi status should be set to "reserved", 
+#   which will allow the citation to be generated (with a note that the slides are not yet published).
+#   By the time of delivery, the doi status should be "published""
+#
+artifacts:
+ - label: Conference Registration
+   url: https://sc23.supercomputing.org/attend/registration/
+#  - label: Recordings
+#    format: YouTube playlist
+#    url: 
+  # - label: Presentation Slides
+  #   format: FigShare
+  #   doi: 10.6084/m9.figshare.21384057
+  #   status: published
+#  - label: Hands-On Code Repository
+#    format: GitHub
+#    gh-repo: bssw-tutorial/hello-numerical-world-2022-08-11-atpesc
+#
+# This is a common set of deadlines we've encountered historically
+# Add due dates where appropriate. Those without will be ignored
+# Responsible refers to the (set of) github ids that will be assigned to
+# generated issues. Usually these are organizer-ids, presenter-ids, or
+# helper-ids as set above.  "by-presentation" is a special value indicating
+# that responsibilities should be assigned based on the presenters liseted
+# in the agenda.
+#
+# Planned: [deadlines]
+# Scheduled: deadlines
+#
+deadlines:
+  - label: internal-presentations
+    due: 2023-10-20
+    responsible: [by-presentation]
+  - label: internal-resource-links
+    due: 2023-10-25
+    responsible: [by-presentation]
+  - label: venue-initial-presentations
+    due: 2023-10-27
+    responsible: [organizer-ids]
+  - label: venue-final-presentations
+    due: 2023-11-11
+    responsible: [organizer-ids]
+  - label: internal-consents
+    due: 2023-07-14
+    responsible: [presenter-ids, helper-ids]
+  - label: venue-consents
+    due: 2023-07-21
+    responsible: [organizer-ids]
+  - label: internal-recordings
+    due: 
+    responsible: [by-presentation]
+  - label: venue-recordings
+    due: 
+    responsible: [organizer-ids]
+  - label: internal-final-program-info
+    due: 2023-08-02
+    responsible: [presenter-ids]
+  - label: venue-final-program-info
+    due: 2023-08-04
+    responsible: [organizer-ids]
+  - label: internal-financial-info
+    due: 2023-09-07
+    responsible: [presenter-ids]
+  - label: venue-financial-info
+    due: 2023-09-09
+    responsible: [organizer-ids]
