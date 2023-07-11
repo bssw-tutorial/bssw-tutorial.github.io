@@ -38,6 +38,7 @@ venue: "Argonne Training Program on Extreme-Scale Computing"
 venue-type: "summer school"
 venue-url: https://extremecomputingtraining.anl.gov/
 location: "St. Charles, Illinois"
+#
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
 # For presenters and helpers, we need more extensive information
@@ -64,6 +65,16 @@ presenters:
     short-affil: ORNL
     pronouns: he/him
     github-id: bernhold
+  # - name: Gregory Becker
+  #   affiliation: Lawrence Livermore National Laboratory
+  #   short-affil: LLNL
+  #   pronouns:
+  #   github-id:
+  - name: Jared O'Neal
+    affiliation: Argonne National Laboratory
+    short-affil: ANL
+    pronouns: he/him
+    github-id: jared123 
 #
 # helpers:
 #   - name: Rinku Gupta
