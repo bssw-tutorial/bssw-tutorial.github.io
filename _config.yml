@@ -97,16 +97,16 @@ exclude:
 # This is needed to generate output for future webinars
 future: true
 
-collections:
-  people:
-    output: true
+# collections:
+#   people:
+#     output: true
 
-defaults:
-  - scope:
-      path: ""
-      type: "people"
-    values:
-      layout: "person"
+# defaults:
+#   - scope:
+#       path: ""
+#       type: "people"
+#     values:
+#       layout: "person"
 
 # Useful for debugging and quality assurance
 # Note: setting strict_variables turns out not to be so useful
