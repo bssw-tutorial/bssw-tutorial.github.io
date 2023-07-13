@@ -25,8 +25,19 @@ location: "Hamburg, Germany, and online"
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
 #
 organizer-ids: [adubey64, bernhold]
-presenter-ids: [adubey64, jarrah42]
-helper-ids: 
+# presenter-ids: [adubey64, jarrah42]
+# helper-ids: 
+presenters:
+  - name: Anshu Dubey
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: adubey64
+  - name: Gregory R. Watson
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: jarrah42
 #
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.

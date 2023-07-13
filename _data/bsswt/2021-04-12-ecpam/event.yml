@@ -8,4 +8,20 @@ venue: "Exascale Computing Project Annual Meeting"
 #venue-type: "meeting" # redundant with the venue name
 venue-url: https://ecpannualmeeting.com/
 location: "online"
-presenter-ids: [bernhold, pagrubel, jwillenbring]
+# presenter-ids: [bernhold, pagrubel, jwillenbring]
+presenters:
+  - name: David E. Bernholdt
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: bernhold
+  - name: Patricia A.  Grubel
+    affiliation: "Los Alamos National Laboratory"
+    short-affil: "LANL"
+    pronouns: "she/her"
+    github-id: pagrubel
+  - name: James M.  Willenbring
+    affiliation: "Sandia National Laboratories"
+    short-affil: "SNL"
+    pronouns: "he/him"
+    github-id: jwillenbring

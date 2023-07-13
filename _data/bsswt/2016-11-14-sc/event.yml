@@ -46,8 +46,20 @@ location: "Salt Lake City, Utah"
 # Scheduled: organizer-ids, presenter-ids, [helper-ids]
 #
 organizer-ids: [bernhold]
-presenter-ids: [adubey64, amklinv]
-helper-ids: 
+# presenter-ids: [adubey64, amklinv]
+# helper-ids: 
+#
+presenters:
+  - name: Anshu Dubey
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: adubey64
+  - name: Alicia Klinvex
+    affiliation: "Sandia National Laboratories"
+    short-affil: "SNL"
+    pronouns: "she/her"
+    github-id: amklinv
 #
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.

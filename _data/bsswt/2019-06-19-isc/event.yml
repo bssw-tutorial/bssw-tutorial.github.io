@@ -25,8 +25,24 @@ location: "Frankfurt, Germany"
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
 #
 organizer-ids: [bernhold]
-presenter-ids: [bernhold, adubey64, jared321]
-helper-ids: 
+# presenter-ids: [bernhold, adubey64, jared321]
+# helper-ids: 
+presenters:
+  - name: David E. Bernholdt
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: bernhold
+  - name: Anshu Dubey
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: adubey64
+  - name: Jared O'Neal
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "he/him"
+    github-id: jared321
 #
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.

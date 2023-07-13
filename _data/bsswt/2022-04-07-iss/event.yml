@@ -8,6 +8,38 @@ venue: "Improving Scientific Software"
 venue-type: "conference"
 venue-url: https://sea.ucar.edu/conference/2022
 location: "online"
-presenter-ids: [bernhold, rinkug, pagrubel, frobnitzem]
-helper-ids: [adubey64, jarrah42]
+# presenter-ids: [bernhold, rinkug, pagrubel, frobnitzem]
+# helper-ids: [adubey64, jarrah42]
 organizer-ids: [bernhold]
+presenters:
+  - name: David E. Bernholdt
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: bernhold
+  - name: Rinku K. Gupta
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: rinkug
+  - name: Patricia A.  Grubel
+    affiliation: "Los Alamos National Laboratory"
+    short-affil: "LANL"
+    pronouns: "she/her"
+    github-id: pagrubel
+  - name: David M. Rogers
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: frobnitzem
+helpers:
+  - name: Anshu Dubey
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: adubey64
+  - name: Gregory R. Watson
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: jarrah42

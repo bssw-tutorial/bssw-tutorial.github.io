@@ -17,6 +17,9 @@ layout: default
 {%- assign my-agenda = site.data.bsswt[page.event-label].agenda -%}
 {% include set-presentation-order agenda=my-agenda presentations=my-presentations %}
 
+{%- assign my-presentations = site.data.bsswt[page.event-label].presentations -%}
+{%- assign my-presenters-d = site.data.bsswt[page.event-label].event.presenters -%}
+
 {% include extract-array-subset key="github-id" values=my-event.presenter-ids source=site.people %}
 {% include set-name-affiliation-array people=extract_array_subset %}
 {% capture pnamafil %}{% include array-to-sentence array=name_affiliation_array 

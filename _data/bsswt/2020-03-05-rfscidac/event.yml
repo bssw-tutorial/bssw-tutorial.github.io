@@ -46,8 +46,14 @@ location: "Knoxville, Tennessee"
 # Scheduled: organizer-ids, presenter-ids, [helper-ids]
 #
 organizer-ids: [bernhold]
-presenter-ids: [bernhold]
-helper-ids: 
+# presenter-ids: [bernhold]
+# helper-ids: 
+presenters:
+  - name: David E. Bernholdt
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: bernhold
 #
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.

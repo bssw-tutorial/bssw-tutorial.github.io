@@ -1,0 +1,98 @@
+  # People who have organized, presented, or helped with a BSSw tutorial.
+  #
+  # This file is *not* used directly in the construction of the website.
+  # It is simply a convenience for cutting and pasting people's information into
+  # the individual event.yml files.  We need the event.yml files to be self-contained so that we can also use them as events in the ideas-productivity.org
+  # website.
+  #
+  # Please maintain the entries in alphabetical order by last name.
+  
+  - name: David E. Bernholdt
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: bernhold
+
+  - name: Lois Curfman McInnes
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: curfman
+
+  - name: Anshu Dubey
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: adubey64
+
+  - name: Todd Gamblin
+    affiliation: "Lawrence Livermore National Laboratory"
+    short-affil: "LLNL"
+    pronouns: "he/him"
+    github-id: tgamblin
+
+  - name: Patricia A.  Grubel
+    affiliation: "Los Alamos National Laboratory"
+    short-affil: "LANL"
+    pronouns: "she/her"
+    github-id: pagrubel
+
+  - name: Rinku K. Gupta
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: rinkug
+
+  - name: Michael A. Heroux
+    affiliation: "Sandia National Laboratories"
+    short-affil: "SNL"
+    pronouns: "he/him"
+    github-id: maheroux
+
+  - name: Alicia Klinvex
+    affiliation: "Sandia National Laboratories"
+    short-affil: "SNL"
+    pronouns: "she/her"
+    github-id: amklinv
+
+  - name: Mark C. Miller
+    affiliation: "Lawrence Livermore National Laboratory"
+    short-affil: "LLNL"
+    pronouns: "he/him"
+    github-id: markmiller86
+
+  - name: Boyana R. Norris
+    affiliation: "University of Oregon"
+    short-affil: "UO"
+    pronouns: "she/her"
+    github-id: brnorris03
+
+  - name: Jared O'Neal
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "he/him"
+    github-id: jared321
+
+  - name: Katherine Riley
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: riley-katherine
+
+  - name: David M. Rogers
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: frobnitzem
+
+  - name: Gregory R. Watson
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: jarrah42
+
+  - name: James M.  Willenbring
+    affiliation: "Sandia National Laboratories"
+    short-affil: "SNL"
+    pronouns: "he/him"
+    github-id: jwillenbring

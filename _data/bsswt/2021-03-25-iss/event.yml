@@ -8,4 +8,25 @@ venue: "Improving Scientific Software"
 venue-type: "conference"
 venue-url: https://sea.ucar.edu/conference/2021
 location: "online"
-presenter-ids: [bernhold, adubey64, rinkug, frobnitzem]
+# presenter-ids: [bernhold, adubey64, rinkug, frobnitzem]
+presenters:
+  - name: David E. Bernholdt
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: bernhold
+  - name: Anshu Dubey
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: adubey64
+  - name: Rinku K. Gupta
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: rinkug
+  - name: David M. Rogers
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: frobnitzem

@@ -8,5 +8,31 @@ venue: "ISC High Performance"
 venue-type: "conference"
 venue-url: https://www.isc-hpc.com/
 location: "online"
-presenter-ids: [bernhold, adubey64, pagrubel, rinkug, frobnitzem]
+# presenter-ids: [bernhold, adubey64, pagrubel, rinkug, frobnitzem]
 organizer-ids: [adubey64]
+presenters:
+  - name: David E. Bernholdt
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: bernhold
+  - name: Anshu Dubey
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: adubey64
+  - name: Patricia A.  Grubel
+    affiliation: "Los Alamos National Laboratory"
+    short-affil: "LANL"
+    pronouns: "she/her"
+    github-id: pagrubel
+  - name: Rinku K. Gupta
+    affiliation: "Argonne National Laboratory"
+    short-affil: "ANL"
+    pronouns: "she/her"
+    github-id: rinkug
+  - name: David M. Rogers
+    affiliation: "Oak Ridge National Laboratory"
+    short-affil: "ORNL"
+    pronouns: "he/him"
+    github-id: frobnitzem
