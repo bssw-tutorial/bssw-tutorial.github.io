@@ -1,5 +1,12 @@
 # Main data file for BSSw tutorial events
 #
+# The following information is used for the ideas-productivity.org website only.
+# It is not used in the bssw-tutorials.github.io website.
+#
+type: Tutorial
+series: 
+  - "BSSw Tutorials"
+#
 # Commentary notes indicate fields that are
 # required (plain text) and optional (bracketed text)
 # in the "planned" and "scheduled" states.
@@ -39,51 +46,57 @@ venue-type: "conference"
 venue-url: https://www.isc-hpc.com/
 location: "Hamburg, Germany, and online"
 #
-# Staffing information
-# organizer-ids will be assigned the issues that presenter-ids are not doing, basically
-# For presenters and helpers, we need more extensive information
-# - name
-# - affiliation
-# - short-affil
-# - pronouns
-# - github-id
+# The following information is used for the ideas-productivity.org website only.
+# It is not used in the bssw-tutorials.github.io website.
 #
-# Required information, by stage of tutorial preparations:
+# These data are used to display a link in the event listing to connect it
+# to a parent event.  We only use parent events in cases where there are *multiple*
+# IDEAS-organized events taking place under the umbrella of a larger venue 
+# (i.e., a conference). If the tutorial is the only IDEAS event in the venue, 
+# we generally do not create an event for the parent.
+#
+# parent-event-file: ISC High Performance 2022
+# parent-event-name: 20220529-isc22-conference
+#
+# Staffing information
+#
+# Required and [optional] information, by stage of tutorial preparations:
 #   Planned: organizer-ids ,[presenters], [helpers]
 #   Scheduled: organizer-ids, presenters, [helpers]
 #
-organizer-ids: [bernhold, adubey64]
+# organizer-ids are github IDs.  At least one is required, more are allowed
+# issues for tasks not related to specific tutorial lessons are assigned to the organizers
+#
+organizer-ids: [example]
+#
+# Required information for presenters and helpers
+# - name
+#   affiliation
+#   short-affil
+#   pronouns
+#   github-id
 #
 presenters:
-  - name: Anshu Dubey
-    affiliation: Argonne National Laboratory
-    short-affil: affiliation
-    pronouns: she/her
-    github-id: adubey64
-  - name: Gregory R. Watson
-    affiliation: Oak Ridge National Laboratory
-    short-affil: ORNL
-    pronouns: he/him
-    github-id: jarrah42
-  - name: Patricia A. Grubel
-    affiliation: Los Alamos National Laboratory
-    short-affil: LANL
-    pronouns: she/her
-    github-id: pagrubel
+  - name: Firstname MI Lastname
+    affiliation: The Universe
+    short-affil: U
+    pronouns: ze/zir
+    github-id: example
 #
 helpers:
-  - name: Rinku Gupta
-    affiliation: Argonne National Laboratory
-    short-affil: ANL
-    pronouns: she/her
-    github-id: rinkug
-  - name: David M. Rogers
-    affiliation: Oak Ridge National Laboratory
-    short-affil: ORNL
-    pronouns: he/him
-    github-id: frobnitzem
+  - name: Firstname MI Lastname
+    affiliation: The Universe
+    short-affil: U
+    pronouns: ze/zir
+    github-id: example
 #
-description: "The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers."
+# Description (abstract) for the tutorial.
+#   Using the YAML literal modifier ("|") preserves the formatting, including blank lines.
+#   Note that the description text must be intended by 2 spaces!
+#
+description: |
+  The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.
+
 #
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.
