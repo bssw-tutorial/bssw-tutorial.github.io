@@ -1,0 +1,26 @@
+Day,Fixed Points,Duration,Time (CDT),Title,Presenter,Discussion included,
+,<!--skip-->,<!--skip-->,<!--right-->,,,<!--skip-->,<!--skip-->
+Tue 1 Aug,9:00 AM,10,9:00 AM,intro-a,,,Pat - willing
+Tue 1 Aug,,30,9:10 AM,overview-a,,,Pat - willing
+Tue 1 Aug,,60,9:40 AM,collaborative-sw-dev,,Pat,
+Tue 1 Aug,,15,10:40 AM,<em>Break</em>,,,
+Tue 1 Aug,,30,10:55 AM,collaborative-sw-dev,,30,
+Tue 1 Aug,,30,11:25 AM,packaging-pf,,,"30-min, focus on Python & Fortran"
+Tue 1 Aug,,95,11:55 AM,<em>Lunch</em>,,,
+Tue 1 Aug,,90,1:30 PM,design-a,,30,
+Tue 1 Aug,,30,3:00 PM,refactoring,,,
+Tue 1 Aug,,15,3:30 PM,<em>Break</em>,,,
+Tue 1 Aug,,75,3:45 PM,reproducibility,,15-30,Pat
+Tue 1 Aug,5:00 PM,,5:00 PM,<em>Adjourn</em>,,,
+,,,,,,,
+Wed 2 Aug,9:00 AM,60,9:00 AM,lab-notebooks,,15,
+Wed 2 Aug,,30,10:00 AM,computational-expts,,15,
+Wed 2 Aug,,15,10:30 AM,<em>Break</em>,,,
+Wed 2 Aug,,90,10:45 AM,testing-a,,30,
+Wed 2 Aug,,90,12:15 PM,<em>Lunch</em>,,,
+Wed 2 Aug,,60,1:45 PM,documentation,,15,
+Wed 2 Aug,,15,2:45 PM,<em>Break</em>,,,
+Wed 2 Aug,,60,3:00 PM,licensing-i,,,
+Wed 2 Aug,,15,4:00 PM,summary,,,
+Wed 2 Aug,,45,4:15 PM,General Discussion <em>(optional)</em>,all,,
+Wed 2 Aug,5:00 PM,,5:00 PM,<em>Adjourn</em>,,,
