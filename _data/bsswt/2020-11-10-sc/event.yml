@@ -70,6 +70,9 @@ presenters:
     pronouns: "she/her"
     github-id: rinkug
 #
+description: |
+  The computational science and engineering (CSE) community faces an extremely challenging period. Computer architecture changes require new software design and implementation strategies, including significant refactoring of existing code. Reproducibility demands require more rigor across the entire software endeavor. Code coupling requires aggregate team interactions including integration of software processes and practices.  These challenges demand large investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential. This tutorial will provide information on software practices, processes, and tools with the goals of improving the productivity of CSE software developers and increasing the sustainability of software artifacts.  Topics include agile methodologies, collaboration via git, scientific software design, testing, and refactoring, continuous integration, and reproducibility. Hands-on homework will be available to reinforce the presentations.
+
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.
 # If you want to list the conference registration page, comment it out

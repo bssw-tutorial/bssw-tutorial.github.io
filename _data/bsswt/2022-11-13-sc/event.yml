@@ -65,6 +65,11 @@ presenters:
     pronouns: "she/her"
     github-id: pagrubel
 #
+description: |
+  The computational science and engineering (CSE) community is in the midst of an extremely challenging period created by the confluence of disruptive changes in computing architectures, demand for greater scientific reproducibility, sustainability, and quality, and new opportunities for greatly improved simulation capabilities, especially through coupling physics and scales.  Computer architecture advances require new software design and implementation strategies, including significant refactoring of existing code. Reproducibility requires more rigor across the entire software endeavor. Code coupling requires aggregate team interactions including integration of software processes and practices.  These challenges demand large investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential.
+
+  This tutorial will provide information and hands-on experience with software practices, processes, and tools explicitly tailored for CSE and HPC.  Goals are improving the productivity of those who develop CSE software and increasing the sustainability of software artifacts.  We discuss practices that are relevant for projects of all sizes, with emphasis on small teams and teams of teams.  Topics include the software processes for (small) teams, including agile processes, collaboration via version control workflows, reproducibility, and scientific software design, refactoring, and testing (including test design strategies and continuous integration).
+
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.
 # If you want to list the conference registration page, comment it out

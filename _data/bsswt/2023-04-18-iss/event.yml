@@ -44,6 +44,13 @@ presenters:
     pronouns: "he/him"
     github-id: frobnitzem
 #
+description: |
+  Producing scientific software is a challenge.  The high-performance modeling and simulation community, in particular, is dealing with the confluence of disruptive changes in computing architectures and new opportunities (and demands) for greatly improved simulation capabilities, especially through coupling physics and scales.  At the same time, computational science and engineering (CSE), as well as other areas of science, are experiencing increasing focus on scientific reproducibility and software quality.
+
+  Computer architecture changes require new software design and implementation strategies, including significant refactoring of existing code. Reproducibility demands require more rigor across the entire software endeavor. Code coupling requires aggregate team interactions including integration of software processes and practices.  These challenges demand large investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential.
+
+  This half-day tutorial distills multi-project and multi-year experience from members of the IDEAS Productivity project and the creators of the BSSw.io community website. The tutorial will provide information about software practices, processes, and tools explicitly tailored for CSE. Topics to be covered include collaborative software development practices (Agile methodologies and tools, git workflows, peer code review), software design and refactoring, testing and continuous integration, and reproducibility. The material will be mostly at the beginner and intermediate levels. There will also be opportunities to discuss topics raised by the audience.
+
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.
 # If you want to list the conference registration page, comment it out

@@ -43,6 +43,11 @@ helpers:
     pronouns: "he/him"
     github-id: frobnitzem
 #
+description: |
+  Computational science and engineering (CSE) is in the midst of an extremely challenging period created by the confluence of disruptive changes in computing architectures, demand for greater scientific reproducibility, sustainability, and quality, and new opportunities for greatly improved simulation capabilities, especially through coupling physics and scales.  These challenges demand increased investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential.  Key practices include code refactoring, flexible and extensible design, thoughtful testing, attention to reproducibility at all stages, and effective collaboration around code.
+
+  This tutorial presents software practices, processes, and tools explicitly tailored for CSE and HPC.  Goals are improving the productivity of those who develop CSE software and increasing the sustainability of software artifacts. Topics include the software processes for (small) teams, including agile processes, collaboration via version control workflows, reproducibility, and scientific software design, refactoring, and testing.
+
 artifacts:
   - label: Recordings
     format: YouTube playlist

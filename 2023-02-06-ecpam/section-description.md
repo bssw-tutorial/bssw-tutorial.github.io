@@ -1,3 +1,0 @@
-{% assign headings = headings | push: "Description" %}
-
-As many ECP projects begin their transition from major development towards production science, this tutorial will offer key strategies to help projects improve their science. The tutorial will focus on testing strategies (design and selection in different contexts), reproducibility concerns and the creation of “lab notebook”-style documentation. These practices will provide you and your team detailed information about what to do and why. We’ll offer practical strategies, based on experience in a broad range of projects, that can help improve the effectiveness in going from software to science.

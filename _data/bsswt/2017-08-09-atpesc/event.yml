@@ -70,6 +70,8 @@ presenters:
     pronouns: "she/her"
     github-id: riley-katherine
 #
+description: "The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers."
+#
 # This is a more or less typical collection of artifacts for tutorials.
 # Comment out anything that isn't (yet) available.
 # If you want to list the conference registration page, comment it out
