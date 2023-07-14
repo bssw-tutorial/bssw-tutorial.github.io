@@ -65,11 +65,11 @@ presenters:
     short-affil: ORNL
     pronouns: he/him
     github-id: bernhold
-  # - name: Gregory Becker
-  #   affiliation: Lawrence Livermore National Laboratory
-  #   short-affil: LLNL
-  #   pronouns:
-  #   github-id:
+  - name: Greg Becker
+    affiliation: Lawrence Livermore National Laboratory
+    short-affil: LLNL
+    pronouns: he/him
+    github-id: becker33
   - name: Jared O'Neal
     affiliation: Argonne National Laboratory
     short-affil: ANL

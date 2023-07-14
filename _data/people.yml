@@ -13,6 +13,12 @@
     pronouns: "he/him"
     github-id: bernhold
 
+  - name: Greg Becker
+    affiliation: Lawrence Livermore National Laboratory
+    short-affil: LLNL
+    pronouns: he/him
+    github-id: becker33
+
   - name: Lois Curfman McInnes
     affiliation: "Argonne National Laboratory"
     short-affil: "ANL"
