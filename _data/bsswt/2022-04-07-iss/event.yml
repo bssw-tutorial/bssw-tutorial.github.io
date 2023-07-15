@@ -1,3 +1,11 @@
+#
+# The following information is used for the ideas-productivity.org website only.
+# It is not used in the bssw-tutorials.github.io website.
+#
+type: Tutorial
+series: 
+  - "BSSw Tutorials"
+#
 title: "Better Scientific Software"
 title-type: "tutorial"
 #title-url:
@@ -8,6 +16,19 @@ venue: "Improving Scientific Software"
 venue-type: "conference"
 venue-url: https://sea.ucar.edu/conference/2022
 location: "online"
+#
+# The following information is used for the ideas-productivity.org website only.
+# It is not used in the bssw-tutorials.github.io website.
+#
+# These data are used to display a link in the event listing to connect it
+# to a parent event.  We only use parent events in cases where there are *multiple*
+# IDEAS-organized events taking place under the umbrella of a larger venue 
+# (i.e., a conference). If the tutorial is the only IDEAS event in the venue, 
+# we generally do not create an event for the parent.
+#
+# parent-event-file: ISC High Performance 2022
+# parent-event-name: 20220529-isc22-conference
+#
 # presenter-ids: [bernhold, rinkug, pagrubel, frobnitzem]
 # helper-ids: [adubey64, jarrah42]
 organizer-ids: [bernhold]
