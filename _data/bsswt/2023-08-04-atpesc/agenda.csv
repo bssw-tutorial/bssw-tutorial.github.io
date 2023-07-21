@@ -1,0 +1,18 @@
+Fixed Points,Duration,Time (CDT),Title,Presenter
+<!--skip-->,<!--skip-->,<!--right-->,,
+8:30 AM,5,8:30 AM,intro-a,bernhold
+,40,8:35 AM,overview-a,bernhold
+,45,9:15 AM,design-a,adubey64
+10:00 AM,30,10:00 AM,<em>Break</em>,
+10:30 AM,60,10:30 AM,spack,becker33
+,60,11:30 AM,Spack Hands-On,becker33
+12:30 PM,60,12:30 PM,<em>Lunch</em>,
+1:30 PM,60,1:30 PM,testing-a,adubey64
+,30,2:30 PM,refactoring,adubey64
+,30,3:00 PM,<em>Break</em>,
+,45,3:30 PM,lab-notebooks,jared123
+,60,4:15 PM,computational-expts,"jared123,adubey64"
+,75,5:15 PM,licensing,bernhold
+6:30 PM,60,6:30 PM,<em>Dinner</em>,
+7:30 PM,120,7:30 PM,<em><strong>Optional</strong> Evening Discussion Session</em>,"adubey64,bernhold,jared123"
+9:30 PM,690,9:30 PM,<em>Adjourn</em>,
