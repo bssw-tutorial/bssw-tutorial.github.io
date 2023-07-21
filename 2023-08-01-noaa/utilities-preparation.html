@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2023-07-17T13:16:05-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2023-08-01-noaa/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2023-07-21T10:06:50-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2023-08-01-noaa/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -120,11 +120,76 @@ EOF
 
 <h2 id="issues-for-presenters">Issues for presenters</h2>
 
-<p><font color="red">ERROR: `presenter-order` not defined. Check files `_data/bsswt/2023-08-01-noaa/agenda.csv` and `_data/bsswt/2023-08-01-noaa/presentations.yml`</font></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations by 2023-07-26</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2023-08-01-noaa"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"adubey64: Update presentations by 2023-07-26"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/computational-expts.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/design-a.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/refactoring.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing-a.pptx&gt; by 2023-07-26"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2023-08-01-noaa"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"bernhold: Update presentations by 2023-07-26"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/documentation.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/lab-notebooks.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/licensing-i.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/packaging-pf.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/summary.pptx&gt; by 2023-07-26"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2023-08-01-noaa"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"pagrubel: Update presentations by 2023-07-26"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"pagrubel"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/collaborative-sw-dev.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro-a.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview-a.pptx&gt; by 2023-07-26"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/reproducibility.pptx&gt; by 2023-07-26"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
+</span><span class="c"># Update resources linked from presentations</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2023-08-01-noaa"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"adubey64: Update resource links by "</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/computational-expts.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/design-a.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/refactoring.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/testing-a.md&gt;"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2023-08-01-noaa"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"bernhold: Update resource links by "</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"bernhold"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/documentation.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/lab-notebooks.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/licensing-i.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/packaging-pf.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/summary.md&gt;"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2023-08-01-noaa"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"pagrubel: Update resource links by "</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"pagrubel"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/collaborative-sw-dev.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/intro-a.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/overview-a.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2023-08-01-noaa/presentation-resources/reproducibility.md&gt;"
+</span><span class="no">EOF
 
-<p>```</p>
+</span></code></pre></div></div>
 
 <h2 id="issues-for-hands-on-content">Issues for hands-on content</h2>
 
@@ -167,81 +232,81 @@ option to ensure that you get the font from the PPT template rather than the fon
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">overview-a.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>Patricia A. Grubel</td>
+      <td>she/her</td>
+      <td>Los Alamos National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">collaborative-sw-dev.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>Patricia A. Grubel</td>
+      <td>she/her</td>
+      <td>Los Alamos National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">collaborative-sw-dev.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>Patricia A. Grubel</td>
+      <td>she/her</td>
+      <td>Los Alamos National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">packaging-pf.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">design-a.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">refactoring.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">reproducibility.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>Patricia A. Grubel</td>
+      <td>she/her</td>
+      <td>Los Alamos National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">lab-notebooks.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">computational-expts.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">testing-a.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">documentation.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">licensing-i.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">summary.pptx</code></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>David E. Bernholdt</td>
+      <td>he/him</td>
+      <td>Oak Ridge National Laboratory</td>
     </tr>
   </tbody>
 </table>
