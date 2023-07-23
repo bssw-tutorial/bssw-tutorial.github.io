@@ -1,0 +1,10 @@
+<!-- git-workflows -->
+  * [Atlassian/BitBucket (Comparing Workflows)](https://www.atlassian.com/git/tutorials/comparing-workflows)
+  * [How to code review in a Pull Request](https://blog.codacy.com/how-to-code-review-in-a-pull-request/)
+  * [Git Flow (Driessen's Original Blog)](https://nvie.com/posts/a-successful-git-branching-model/)
+      * [Git extensions](https://github.com/nvie/gitflow)
+  * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html)
+  * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
+  * [Trilinos](https://trilinos.github.io/)
+  * [Open MPI](https://www.open-mpi.org)
+  * [FleCSI](https://flecsi.github.io/flecsi)
