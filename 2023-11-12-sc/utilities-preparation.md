@@ -164,7 +164,7 @@ EOF
 {%- for person in grouped-presenters -%}
   {%- assign presentations = grouped-presentations[forloop.index0] | split: ',' %}
 gh issue create --repo bssw-tutorial/presentations --milestone "{{ event-label }}" \
-    --title "{{ person }}: Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}" \
+    --title "{{ person }} for {{ event-label }}: Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}" \
     --assignee "{{ person }}" \
     --label "event preparation" \
     --body-file - << EOF
@@ -179,7 +179,7 @@ EOF
 {%- for person in grouped-presenters -%}
   {%- assign presentations = grouped-presentations[forloop.index0] | split: ',' %}
 gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ event-label }}" \
-    --title "{{ person }}: Update resource links{% if dp.due %} by {{ dr.due }}{% endif %}" \
+    --title "{{ person }} for {{ event-label }}: Update resource links{% if dp.due %} by {{ dr.due }}{% endif %}" \
     --assignee "{{ person }}" \
     --label "event preparation" \
     --body-file - << EOF
