@@ -104,14 +104,13 @@ gh issue create \
 - [ ] Reserve DOI
 - [ ] In <{{ site.ghr-presentations }}/final-presentations/> create \`{{ event-label }}/doi.txt\` and record reserved DOI
 - [ ] Update \`license-master.pptx\` citation in <{{ site.ghr-presentations }}>
-- [ ] Update \`agenda-master.pptx\` agenda in <{{ site.ghr-presentations }}>
 {% for p in presentation-order %}- [ ] Update \`{{ p }}.pptx\` title and license slides; remove unneeded R&R numbers
 {% endfor %}- [ ] Additional updates to \`intro.pptx\`
-    - Update *About Us* slide (3) with presenters and helpers, including head-shots
-    - Update *Hands-On Activities* slide (9) as appropriate
-    - Update the *We want to Interact with You* slide (11) as appropriate
-    - Add *Related Activities* slide as appropriate
-    - Add agenda from \`agenda-master.pptx\` in <{{ site.ghr-presentations }}>
+    - [ ] Update *About Us* slide (3) with presenters and helpers, including head-shots
+    - [ ] Update *Hands-On Activities* slide (9) as appropriate
+    - [ ] Update the *We want to Interact with You* slide (11) as appropriate
+    - [ ] Add *Related Activities* slide as appropriate
+    - [ ] Add agenda from <{{ site.prod_url }}/{{ event-label }}#agenda>
 - [ ] Add issues needed for hands-on content development
 
 Potentially useful reference information:
