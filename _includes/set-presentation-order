@@ -18,20 +18,26 @@
       If there is no `Module` column, or the numbering provided doesn't match with the number of presentation found,
       the presentations are automatically assigned module numbers in sequence, starting with 1.
     A column headed `Presenter` containing the github id of the presenter(s).  Multiple presenters are supported.
+    If the `Title` cell doesn't match a presentation label, the content of the corresponding `Presenter` cell will *not* be added to presenter-order.  This allows activities which don't correspond to a presentation (e.g., a hands-on activity) to have presenters which will appear in the agenda, but not be associated with presentations.
+    If the `Title` cell has the same label as the last presentation collected into presentation-order, it is not added again, nor is the corresponding `Presenter` cell added to presenter-order.  This allows a presentation to be interrupted by a break. (Note that this is a simple but probably not ideal solution, since it doesn't support any annotation in the agenda (e.g., "<em>(continued)</em>"). To support that, we'd need to change the logic for matching presentation labels so that labels could be a substring of the cell contents.  But then we would have to be very careful in specifying, for example, a hands-on related to a specific presentation to avoid triggering the substring match there.)
 
 {% endcomment %}
 
 {%- assign presentation-order = "" | split: "," -%}
 {%- assign module-order = "" | split: "," -%}
 {%- assign presenter-order = "" | split: "," -%}
+{%- assign collect-presenter = nil -%}
 {%- for row in include.agenda -%}
   {%- if forloop.first -%}{%- continue -%}{%- endif -%}
   {%- for pair in row -%}
     {%- assign cell = pair[1] -%}
     {%- case pair[0] -%}
       {%- when "Title" -%}
-        {%- if my-presentations[cell] -%}
-          {%- assign presentation-order = presentation-order | push: cell -%}
+        {%- if include.presentations[cell] -%}
+          {%- if cell != presentation-order.last -%}
+            {%- assign presentation-order = presentation-order | push: cell -%}
+            {%- assign collect-presenter = true -%}
+          {%- endif -%}
         {%- endif -%}
       {%- when "Module" -%}
         {%- if cell -%}
@@ -40,8 +46,9 @@
       {%- when "Presenter" -%}
         {%- if cell -%}
           {%- assign cellnospace = cell | remove: " " -%}
-          {%- unless cellnospace == "all" -%}
+          {%- unless cellnospace == "all" or collect-presenter == false-%}
             {%- assign presenter-order = presenter-order | push: cellnospace -%}
+            {%- assign collect-presenter = false -%}
           {%- endunless -%}
         {%- endif -%}
     {%- endcase -%}
