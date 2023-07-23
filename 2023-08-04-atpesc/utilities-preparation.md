@@ -198,18 +198,13 @@ EOF
 
 ## Create FigShare record and reserve DOI
 
-{%- capture f -%}section-description.md{%- endcapture -%}
-{% capture local %}{{ event-label }}/{{ f }}{% endcapture %}
-{% capture default %}_includes/{{ f }}{% endcapture %}
-{% capture local-exists %}{% file_exists {{ local }}  %}{% endcapture %}
-{% capture default-exists %}{% file_exists {{ default }} %}{% endcapture %}
-{%- if local-exists == "true" -%}
-  {%- capture description -%}{% include_relative {{ f }} %}{%- endcapture -%}
-{%- elsif default-exists == "true" -%}
-  {%- capture description -%}{% include {{ f }} %}{%- endcapture -%}
-{%- else -%}
-  {% capture description %}No file found for section description: "{{ local }}" or "{{ default }}"{% endcapture %}
-{%- endif -%}
+{% if my-event.description %}
+  {% capture description %}{{ my-event.description | remove: '"' }}{% endcapture %}
+{% else %}
+  {% capture description %}`description`` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+{% endif %}
+
+Debug: description: {{ description }}
 
 {%- capture f -%}section-acknowledgments.md{%- endcapture -%}
 {% capture local %}{{ event-label }}/{{ f }}{% endcapture %}
@@ -226,14 +221,10 @@ EOF
 
 
 {% assign incomplete = false %}
-{% unless my-presenters-d or my-presenters %}
+{% unless my-presenters-d %}
   {% assign incomplete = true %}
-  {% capture msg %}`presenters or presenter-ids` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`presenters`` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
-{% endunless %}
-{% unless site.people %}
-  {% assign incomplete = true %}
-  {% include emit-error.html msg="`people` collection not defined in directory `_people/`" %}
 {% endunless %}
 {% unless my-event.title %}
   {% assign incomplete = true %}
@@ -260,10 +251,7 @@ EOF
 {% endunless %}
 
 {% if my-presenters-d %}
-{% include set-name-affiliation-array-d people=my-presenters-d noaffil="true" %}
-{% else %}
-{% include extract-array-subset key="github-id" values=my-presenters source=site.people %}
-{% include set-name-affiliation-array people=extract_array_subset noaffil="true" %}
+  {% include set-name-affiliation-array-d people=my-presenters-d noaffil="true" %}
 {% endif %}
 
 
@@ -309,7 +297,7 @@ EOF
 
 ## Citation for `license-master` slide
 
-*See requested citation on [event page](./index.html#requested-citation)*
+{% include emit-citation.md %}
 
 ---
 
@@ -319,30 +307,21 @@ EOF
 option to ensure that you get the font from the PPT template rather than the font from the web site.*
 
 {% assign incomplete = false %}
-{% unless my-event.presenters or my-event.presenter-ids %}
+{% unless my-event.presenters %}
   {% assign incomplete = true %}
-  {% capture msg %}`presenters` or `presenter-ids` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`presenters` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
-{% endunless %}
-{% unless site.people %}
-  {% assign incomplete = true %}
-  {% include emit-error.html msg="`people` collection not defined in directory `_people/`" %}
 {% endunless %}
 
 {% if my-presenters-d %}
 {% include set-name-affiliation-array-d people=my-presenters-d noaffil="true" %}
-{% else %}
-{% include extract-array-subset key="github-id" values=my-presenters source=site.people %}
-{% include set-name-affiliation-array people=extract_array_subset noaffil="true" %}
 {% endif %}
-{% capture pnamafil %}{% include array-to-sentence array=name_affiliation_array 
+{% capture pnamafil %}{% include array-to-sentence array=name_affiliation_array
   if_empty="<em>to be announced</em>" %}{% endcapture %}
 
-{% if my-helpers-d-d %}
+{%- assign name_affiliation_array = nil -%}
+{% if my-helpers-d %}
 {% include set-name-affiliation-array-d people=my-helpers-d noaffil="true" %}
-{% else %}
-{% include extract-array-subset key="github-id" values=my-event.helper-ids source=site.people %}
-{% include set-name-affiliation-array people=extract_array_subset noaffil=true %}
 {% endif %}
 {% capture hnamafil %}{% include array-to-sentence array=name_affiliation_array if_empty=nil %}{% endcapture %}
 
@@ -371,16 +350,15 @@ option to ensure that you get the font from the PPT template rather than the fon
   {% capture msg %}`presenter-order` not defined. Check files `_data/bsswt/{{ event-label }}/agenda.csv` and `_data/bsswt/{{ event-label }}/presentations.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
-{% unless site.people %}
-  {% assign incomplete = true %}
-  {% include emit-error.html msg="`people` collection not defined in directory `_people/`" %}
-{% endunless %}
 {% unless presentation-order and presentation-order.size > 0 %}
   {% assign incomplete = true %}
   {% capture msg %}`presentation-order` not defined. Check files `_data/bsswt/{{ event-label }}/agenda.csv` and `_data/bsswt/{{ event-label }}/presentations.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 
+{% if incomplete %}
+  {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
+{% else %}
 {% if my-presenters-d %}
 | **Presentation** | **Presenter** | **Pronouns** | **Affiliation** |
   {% for pres in presentation-order %}{%- if forloop.first -%}{%- continue -%}{%- endif -%}
@@ -396,26 +374,7 @@ option to ensure that you get the font from the PPT template rather than the fon
       {%- endfor -%}
 | `{{ pres }}.pptx` | {{ n | array_to_sentence_string }} | {{ pro | array_to_sentence_string }} | {{ a | array_to_sentence_string }} |
   {% endfor %}
-{% elsif my-presenters %}
-  {% include extract-array-subset key="github-id" values=presenter-order source=site.people %}
-  {% include set-name-affiliation-array people=extract_array_subset noaffil=true %}
-  {% assign presenters = name_affiliation_array %}
-  {% include set-name-affiliation-array people=extract_array_subset noname=true %}
-  {% assign affiliations = name_affiliation_array %}
-  {%- assign pronouns = "" | split: "," -%}
-  {%- for p in extract_array_subset -%}
-    {%- comment -%} If the person-id is not in people, skip it{%- endcomment -%}
-    {%- unless p[0] -%}{%- continue -%}{%- endunless -%}
-    {%- capture pafil -%}{{ p[0].pronouns | default: "*not given*" }}{%- endcapture -%}
-    {%- assign pronouns = pronouns | push: pafil -%}
-  {%- endfor -%}
-  {% if incomplete %}
-    {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
-  {% else %}
-| **Presentation** | **Presenter** | **Pronouns** | **Affiliation** |
-    {% for p in presentation-order %}{% if forloop.first %}{% continue %}{% endif %}| `{{ p }}.pptx` | {{ presenters[forloop.index0] }} | {{ pronouns[forloop.index0] }} | {{ affiliations[forloop.index0] }} |
-    {% endfor %}
-  {% endif %}
+{% endif %}
 {% endif %}
 
 {% assign incomplete = false %}
