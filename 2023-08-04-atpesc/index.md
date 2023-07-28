@@ -7,7 +7,8 @@ event-label: 2023-08-04-atpesc
 # gracefully handle the absence of the information required to make those sections "event-ready".
 #
 # A typical complete tutorial page would include: 
-#         [description,agenda,presentation-slides,how-to-participate,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
+#         [description,agenda,presentation-slides,participate*,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
+# where `participate*` might be participate-inperson, participate-hybrid, or participate-online, as appropriate.  A custom local `section-participate.md` file will also work.
 # Consider adding a related-events section if appropriate
-sections: [description,agenda,presentation-slides,stay-in-touch-no-ho,resources-from-presentations,requested-citation,acknowledgments]
+sections: [description,agenda,presentation-slides,participate-inperson,stay-in-touch-no-ho,resources-from-presentations,requested-citation,acknowledgments]
 ---
