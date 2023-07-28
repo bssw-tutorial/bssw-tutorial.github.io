@@ -122,7 +122,7 @@ artifacts:
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.23796606
-    status: reserved
+    status: published
 # The only meaningful values of status are: reserved or published
 #  - label: Hands-On Code Repository
 #    format: GitHub
