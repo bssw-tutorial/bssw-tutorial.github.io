@@ -119,10 +119,10 @@ artifacts:
 #  - label: Recordings
 #    format: YouTube playlist
 #    url: 
-#  - label: Presentation Slides
-#    format: FigShare
-#    doi: 10.6084/m9.figshare.19781752
-#    status: reserved
+  - label: Presentation Slides
+    format: FigShare
+    doi: 10.6084/m9.figshare.23796606
+    status: reserved
 # The only meaningful values of status are: reserved or published
 #  - label: Hands-On Code Repository
 #    format: GitHub
