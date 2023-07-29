@@ -8,4 +8,3 @@
   * [Inclusive Naming Initiative](https://inclusivenaming.org/)
   * Bssw.io resource on [Inclusive Naming](https://bssw.io/items/inclusive-language-resources)
   * [Write to the tutorial authors](mailto:bssw-tutorial@lists.mcs.anl.gov)
-  * [ISC23 software-related events](https://bssw.io/events/isc23-software-related-events)
