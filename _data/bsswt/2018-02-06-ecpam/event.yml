@@ -5,8 +5,10 @@
 # It is not used in the bssw-tutorials.github.io website.
 #
 type: Tutorial
-series: 
+series:
   - "BSSw Tutorials"
+activities:
+  - ideas-ecp
 #
 title: "What All Codes Should Do: Overview of Best Practices in HPC Software Development"
 title-type: "tutorial"

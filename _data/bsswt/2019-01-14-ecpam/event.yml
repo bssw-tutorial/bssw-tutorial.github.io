@@ -5,8 +5,10 @@
 # It is not used in the bssw-tutorials.github.io website.
 #
 type: Tutorial
-series: 
+series:
   - "BSSw Tutorials"
+activities:
+  - ideas-ecp
 #
 title: "Better Scientific Software"
 title-type: "tutorial"

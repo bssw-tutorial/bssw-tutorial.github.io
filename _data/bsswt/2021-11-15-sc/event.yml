@@ -3,8 +3,10 @@
 # It is not used in the bssw-tutorials.github.io website.
 #
 type: Tutorial
-series: 
+series:
   - "BSSw Tutorials"
+activities:
+  - ideas-ecp
 #
 title: "Better Scientific Software"
 title-type: "tutorial"
@@ -26,8 +28,8 @@ location: "St. Louis, Missouri and online"
 # (i.e., a conference). If the tutorial is the only IDEAS event in the venue, 
 # we generally do not create an event for the parent.
 #
-# parent-event-file: ISC High Performance 2022
-# parent-event-name: 20220529-isc22-conference
+parent-event-file: SC21
+parent-event-name: 20211114-sc21-conference
 #
 # presenter-ids: [bernhold, adubey64, pagrubel, rinkug, jarrah42]
 # helper-ids: [frobnitzem]

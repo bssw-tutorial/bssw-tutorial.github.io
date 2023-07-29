@@ -4,8 +4,10 @@
 # It is not used in the bssw-tutorials.github.io website.
 #
 type: Tutorial
-series: 
+series:
   - "BSSw Tutorials"
+activities:
+  - ideas-ecp
 #
 # Basic tutorial information
 #
@@ -38,8 +40,8 @@ location: "Hamburg, Germany, and online"
 # (i.e., a conference). If the tutorial is the only IDEAS event in the venue, 
 # we generally do not create an event for the parent.
 #
-# parent-event-file: ISC High Performance 2022
-# parent-event-name: 20220529-isc22-conference
+parent-event-file: ISC High Performance 2023
+parent-event-name: 20230521-isc23-conference
 #
 # Staffing information
 # organizer-ids will be assigned the issues that presenter-ids are not doing, basically
