@@ -2,7 +2,7 @@
 layout: default
 ---
 {% include upcoming-event event=page.date %}
-{% include set-date-range full-time=false start=page.date end=page.end-date %}
+{% include set-date-range full-time=false start=page.date end=page.enddate %}
 
 {%- assign my-artifacts = site.data.bsswt[page.directory].artifacts -%}
 
@@ -23,7 +23,7 @@ layout: default
   <h3 align="center">on 
     {% if page.time %}{{ page.time }}{% endif %}
     {{ page.date | date: "%A %d %B %Y"}}
-    {% if page.end-date %}- {{ page.end-date | date: "%A %d %B %Y"}}{% endif %}
+    {% if page.enddate %}- {{ page.enddate | date: "%A %d %B %Y"}}{% endif %}
   </h3>
 {% endif %}
 

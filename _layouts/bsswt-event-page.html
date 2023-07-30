@@ -4,7 +4,7 @@ layout: default
 {%- assign my-event = site.data.bsswt[page.event-label].event -%}
 
 {% include upcoming-event event=my-event.date %}
-{% include set-date-range full-time=false start=my-event.date end=my-event.end-date %}
+{% include set-date-range full-time=false start=my-event.date end=my-event.enddate %}
 
 {% if my-event.artifacts %}
   {% assign my-artifacts = my-event.artifacts %}
@@ -39,7 +39,7 @@ layout: default
   <h3 align="center">on 
     {% if my-event.time %}{{ my-event.time }}{% endif %}
     {{ my-event.date | date: "%A %-d %B %Y"}}
-    {% if my-event.end-date %}- {{ my-event.end-date | date: "%A %-d %B %Y"}}{% endif %}
+    {% if my-event.enddate %}- {{ my-event.enddate | date: "%A %-d %B %Y"}}{% endif %}
   </h3>
   {% if status.status == "planned" %}
   <p align="center">

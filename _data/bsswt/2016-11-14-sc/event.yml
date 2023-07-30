@@ -25,19 +25,19 @@ title-type: "tutorial"
 # title-url: 
 #
 # Presentation date and time.
-# end-date is optional for one-day events
+# enddate is optional for one-day events
 # time should include timezeone explicitly
 # We don't currently handle tutorials that occur at *different times* on multiple days
 #
-# Planned: date, [end-date], [time]
-#   Note: at the "planned" stage, end-date can be used with date to specify
+# Planned: date, [enddate], [time]
+#   Note: at the "planned" stage, enddate can be used with date to specify
 #   the range of dates in which the tutorial *could* take place.
-# Scheduled: date, [end-date], time
-#   Unless the tutorial occurs over multiple days, end-date is not
+# Scheduled: date, [enddate], time
+#   Unless the tutorial occurs over multiple days, enddate is not
 #   needed for tutorials in the "scheduled" stage.
 #
 date: 2016-11-14
-#end-date: 
+#enddate: 
 # time: "1:30 pm - 5:00 pm CST"
 #
 # Venue information

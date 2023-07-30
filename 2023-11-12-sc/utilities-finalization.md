@@ -89,8 +89,8 @@ layout: default
   we add 84399 + 43200 seconds.
 {% endcomment %}
 
-{%- if my-event.end-date -%}
-  {%- assign due = my-event.end-date | date: "%s" -%}
+{%- if my-event.enddate -%}
+  {%- assign due = my-event.enddate | date: "%s" -%}
 {%- else -%}
   {%- assign due = my-event.date | date: "%s" -%}
 {%- endif -%}
@@ -189,8 +189,8 @@ EOF
   end date of the tutorial.  This is the same computation as we did above.
 {% endcomment %}
 
-{%- if my-event.end-date -%}
-  {%- assign ms-date = my-event.end-date | date: "%s" -%}
+{%- if my-event.enddate -%}
+  {%- assign ms-date = my-event.enddate | date: "%s" -%}
 {%- else -%}
   {%- assign ms-date = my-event.date | date: "%s" -%}
 {%- endif -%}
@@ -198,7 +198,7 @@ EOF
 
 {% capture description %}{% include emit-event-description event=my-event %}{% endcapture %}
 
-{% capture body %}To be held {% if my-event.time %}{{ my-event.time }} {% endif %}{{ my-event.date | date: "%A %d %B %Y"}}{% if my-event.end-date %} - {{ my-event.end-date | date: "%A %d %B %Y"}}{% endif %}{% endcapture %}
+{% capture body %}To be held {% if my-event.time %}{{ my-event.time }} {% endif %}{{ my-event.date | date: "%A %d %B %Y"}}{% if my-event.enddate %} - {{ my-event.enddate | date: "%A %d %B %Y"}}{% endif %}{% endcapture %}
 
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
@@ -248,7 +248,7 @@ gh issue create \
 - [ ] Transition from planned to scheduled, if necessary
 - Data needed
   - In \`_data/bsswt/{{ event-label }}/event.yml\`
-    - [ ] Scheduled \`date\`, \`end-date\`, and \`time\`
+    - [ ] Scheduled \`date\`, \`enddate\`, and \`time\`
     - [x] \`organizer-ids\`
     - [ ] \`presenters\`, \`helpers\`
     - In \`artifacts\`
@@ -282,8 +282,8 @@ EOF
 
 ## Transition from planned event to scheduled
 
-{% if my-event.end-date %}
-  {%- assign due = my-event.end-date | date: "%s" -%}
+{% if my-event.enddate %}
+  {%- assign due = my-event.enddate | date: "%s" -%}
 {%- else -%}
   {%- assign due = my-event.date | date: "%s" -%}
 {% endif %}

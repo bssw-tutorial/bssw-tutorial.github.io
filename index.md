@@ -13,7 +13,7 @@ In the listings below, each tutorial event has its own page, providing details s
   Break up events into three groups: scheduled, planned, and past.
   The master list of tutorials (site.data.tutorials) indicates whether they are scheduled or planned.
   The end date of scheduled tutorials (compared to date at build time) determines whether they are past.
-  Events that don't have an explicit end-date entry are assumed to occur in a single day, so use date entry instead.
+  Events that don't have an explicit enddate entry are assumed to occur in a single day, so use date entry instead.
 {% endcomment %}
 {%- assign today = 'now' | date: "%s" | plus: 0 -%}  
 {%- assign scheduled = "" | split: "," -%}
@@ -21,8 +21,8 @@ In the listings below, each tutorial event has its own page, providing details s
 {%- assign past = "" | split: "," -%}
 {%- for t in site.data.tutorials -%}
     {%- assign my-event = site.data.bsswt[t.event-label].event -%}
-    {%- if my-event.end-date -%}
-      {%- assign when = my-event.end-date | date: "%s" -%}
+    {%- if my-event.enddate -%}
+      {%- assign when = my-event.enddate | date: "%s" -%}
     {%- else -%}
        {%- assign when = my-event.date | date: "%s" -%}
     {%- endif -%}

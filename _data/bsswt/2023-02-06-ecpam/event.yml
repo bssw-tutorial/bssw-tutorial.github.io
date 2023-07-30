@@ -17,12 +17,12 @@ title-type: "tutorial"
 #title-url:
 #
 # Presentation date and time.
-# end-date is optional for one-day events
+# enddate is optional for one-day events
 # time should include timezeone explicitly
 # We don't currently handle tutorials that occur at *different times* on multiple days
 #
 date: 2023-02-06
-#end-date:
+#enddate:
 time: 3:00 pm - 6:15 pm EST (UTC-5)
 #
 # Venue information
