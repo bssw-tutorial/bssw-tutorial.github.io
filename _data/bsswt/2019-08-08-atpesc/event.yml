@@ -36,7 +36,7 @@ title-type: "track"
 #   Unless the tutorial occurs over multiple days, enddate is not
 #   needed for tutorials in the "scheduled" stage.
 #
-startdate: 2019-08-08
+startdate: "2019-08-08"
 #enddate: 
 #time: "8:30 am - 9:00 pm CDT (UTC-5)"
 #

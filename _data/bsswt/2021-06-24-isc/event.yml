@@ -13,8 +13,8 @@ parent-event-file: 20210624-isc21-conference
 title: "Better Scientific Software"
 title-type: "tutorial"
 #title-url:
-startdate: 2021-06-24
-enddate: 2021-06-25
+startdate: "2021-06-24"
+enddate: "2021-06-25"
 time: 2:00 pm - 6:00 pm CET
 venue: "ISC High Performance"
 venue-type: "conference"

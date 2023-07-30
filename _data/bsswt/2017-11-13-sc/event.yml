@@ -36,7 +36,7 @@ title-type: "tutorial"
 #   Unless the tutorial occurs over multiple days, enddate is not
 #   needed for tutorials in the "scheduled" stage.
 #
-startdate: 2017-11-13
+startdate: "2017-11-13"
 #enddate: 
 # time: "1:30 pm - 5:00 pm CST"
 #

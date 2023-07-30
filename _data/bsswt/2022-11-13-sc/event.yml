@@ -36,7 +36,7 @@ title-url: https://sc22.supercomputing.org/presentation/?id=tut140&sess=sess218
 #   Unless the tutorial occurs over multiple days, enddate is not
 #   needed for tutorials in the "scheduled" stage.
 #
-startdate: 2022-11-13
+startdate: "2022-11-13"
 #enddate: 
 time: "1:30 pm - 5:00 pm CST"
 #

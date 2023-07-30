@@ -42,7 +42,7 @@ title-type: "tutorial"
 #   Unless the tutorial occurs over multiple days, enddate is not
 #   needed for tutorials in the "scheduled" stage.
 #
-startdate: 2022-05-29
+startdate: "2022-05-29"
 #enddate: 
 time: 2:00 pm - 6:00 pm CEST (UTC+2)
 #

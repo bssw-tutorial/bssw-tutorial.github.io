@@ -13,7 +13,7 @@ parent-event-file: 20211114-sc21-conference
 title: "Better Scientific Software"
 title-type: "tutorial"
 #title-url:
-startdate: 2021-11-15
+startdate: "2021-11-15"
 #enddate:
 time: 8:00 am - 5:00 pm CST
 venue: "The International Conference for High-Performance Computing, Networking, Storage, and Analysis (SC21)"

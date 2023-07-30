@@ -21,7 +21,7 @@ title-type: "tutorial"
 # time should include timezeone explicitly
 # We don't currently handle tutorials that occur at *different times* on multiple days
 #
-startdate: 2022-05-02
+startdate: "2022-05-02"
 #enddate:
 time: 2:30 pm - 4:00 pm EDT (UTC-4)
 #

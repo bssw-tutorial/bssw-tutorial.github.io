@@ -36,8 +36,8 @@ title-type: "tutorial"
 #   Unless the tutorial occurs over multiple days, enddate is not
 #   needed for tutorials in the "scheduled" stage.
 #
-startdate: 2023-11-12
-enddate: 2023-11-13
+startdate: "2023-11-12"
+enddate: "2023-11-13"
 #time: "8:30 am - 5:00 pm MST (UTC-7)"
 #
 # Venue information

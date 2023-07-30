@@ -22,7 +22,7 @@ title-type: "tutorial"
 # time should include timezeone explicitly
 # We don't currently handle tutorials that occur at *different times* on multiple days
 #
-startdate: 2023-05-21
+startdate: "2023-05-21"
 #enddate:
 time: 2:00 pm - 6:00 pm CEST (UTC+2)
 #
