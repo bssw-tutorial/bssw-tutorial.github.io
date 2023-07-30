@@ -69,7 +69,7 @@ title: tutorial title, in quotes, e.g., "Better Scientific Software" (required)
 title-type: the label associated with the event, e.g., "tutorial" or "track" (required)
 title-url: a URL to link the tutorial title to, e.g., the conference program page (optional)
 date: the starting date of the conference (since we don't yet know the actual schedule), e.g., 2021-11-15 (required)
-end-date: the ending date of the conference (since we don't yet know the actual schedule) (optional)
+enddate: the ending date of the conference (since we don't yet know the actual schedule) (optional)
 venue: the name of the hosting venue (e.g., conference), in quotes, e.g., "The International Conference for High-Performance Computing, Networking, Storage, and Analysis (SC21)" (required)
 venue-type: the label associated with the venue, e.g., "conference" or "workshop" (optional)
 venue-url: A URL to linke the venue to, e.g., https://sc21.supercomputing.org/ (optional)
@@ -112,7 +112,7 @@ Once you have a firm day and time for the event, you will need to update the rel
 
 2) In `_data/bsswt/` rename the event directory to reflect the actual event date (same as the event label, above).
 
-3) In `_data/bsswt/<event-label>/event.yml` update the metadata as appropriate.  If your event is on a single day, you can comment out the `end-date` key.  The `time` field is free-form.  Make sure to include the time zone along with the time.  Convention is to always use the natural time zone of the hosting venue.
+3) In `_data/bsswt/<event-label>/event.yml` update the metadata as appropriate.  If your event is on a single day, you can comment out the `enddate` key.  The `time` field is free-form.  Make sure to include the time zone along with the time.  Convention is to always use the natural time zone of the hosting venue.
 
 4) Rename the top level event directory to reflect the actual event date (same as the event label).
 
