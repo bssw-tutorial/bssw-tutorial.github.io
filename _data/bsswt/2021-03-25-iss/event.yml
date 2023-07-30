@@ -52,9 +52,9 @@ description: |
   This half-day tutorial distills multi-project and multi-years experience from members of the IDEAS Productivity project and the creators of the BSSw.io community website. The tutorial will provide information about software practices, processes, and tools explicitly tailored for CSE. Topics to be covered include: Agile methodologies and tools, software design and refactoring, testing and continuous integration, Git workflows for teams, and reproducibility. Material will be mostly at the beginner and intermediate levels. There will also be opportunities to discuss topics raised by the audience.
 
 artifacts:
-  - label: Recordings
-    format: YouTube playlist
-    url: https://youtube.com/playlist?list=PLuWzStas9iWF-IFRk4pSCsdqvrzsmgb9G
+  - label: Playlist
+    format: YouTube
+    yt-playlist-id: PLuWzStas9iWF-IFRk4pSCsdqvrzsmgb9G
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.14256257

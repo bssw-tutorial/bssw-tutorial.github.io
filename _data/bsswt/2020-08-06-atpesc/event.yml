@@ -103,6 +103,9 @@ artifacts:
   # - label: Recordings
   #   format: YouTube playlist
   #   url: https://youtube.com/playlist?list=PLuWzStas9iWHlsWNBAZG63zHargIRIPE7
+  - label: Playlist
+    format: YouTube
+    yt-playlist-id: PLuWzStas9iWHlsWNBAZG63zHargIRIPE7
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.12719834

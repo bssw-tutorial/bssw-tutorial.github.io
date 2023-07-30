@@ -56,9 +56,9 @@ description: |
   This tutorial will provide information and hands-on experience with software practices, processes, and tools explicitly tailored for CSE.  Goals are improving the productivity of those who develop CSE software and increasing the sustainability of software artifacts.  We discuss practices that are relevant for projects of all sizes, with emphasis on small teams, and on aggregate teams composed of small teams.  Topics include software licensing, effective models, tools, and processes for small teams (including agile workflow management), reproducibility, and scientific software testing (including automated testing and continuous integration).
 
 artifacts:
-  - label: Recordings
-    format: YouTube playlist
-    url: https://youtube.com/playlist?list=PLuWzStas9iWH_mdBg4Ckqxlfqy3hfYgBa
+  - label: Playlist
+    format: YouTube
+    yt-playlist-id: PLuWzStas9iWH_mdBg4Ckqxlfqy3hfYgBa
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.14642520

@@ -95,9 +95,6 @@ description: |
 artifacts:
 #  - label: Conference Registration
 #    url: https://sc22.supercomputing.org/attend/registration/
-#  - label: Recordings
-#    format: YouTube playlist
-#    url: 
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.21384057

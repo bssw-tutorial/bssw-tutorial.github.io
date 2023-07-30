@@ -93,9 +93,9 @@ description: "The BSSw tutorial focuses on issues of developer productivity, sof
 #   By the time of delivery, the doi should be set
 #
 artifacts:
-  - label: Recordings
-    format: YouTube playlist
-    url: https://youtube.com/playlist?list=PLuWzStas9iWELbcA6TKf863kH2hCUz9gJ
+  - label: Playlist
+    format: YouTube
+    yt-playlist-id: PLuWzStas9iWELbcA6TKf863kH2hCUz9gJ
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.21799727

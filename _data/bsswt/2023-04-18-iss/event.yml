@@ -70,9 +70,9 @@ description: |
 artifacts:
 #  - label: Conference Registration
 #    url: https://docs.google.com/forms/d/e 1FAIpQLSfvrcDWBEyVhL47gmJ1asVEexIsCw0TPiEJ2YEoDAjiNhLf9w/viewform
-  - label: Recordings
-    format: YouTube playlist
-    url: https://youtube.com/playlist?list=PLuWzStas9iWEKdxtmt2EqRT9ulU4Eo_tv
+  - label: Playlist
+    format: YouTube
+    yt-playlist-id: PLuWzStas9iWEKdxtmt2EqRT9ulU4Eo_tv
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.22179748

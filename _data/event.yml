@@ -108,9 +108,9 @@ description: |
 artifacts:
 #  - label: Conference Registration
 #    url: https://www.isc-hpc.com/registration-2022.html
-#  - label: Recordings
-#    format: YouTube playlist
-#    url: 
+#  - label: Playlist
+#    format: YouTube
+#    yt-playlist-id: 
 #  - label: Presentation Slides
 #    format: FigShare
 #    doi: 10.6084/m9.figshare.19781752

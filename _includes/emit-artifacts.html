@@ -10,7 +10,7 @@
   arguments:
     `artifacts`: is a sequence containing the artifact information
     `format`: must be either "row" or "li" (optional, default: "row", anything other than "li" is interpreted as "row" )
-    `yt-url`: base URL to watch (not embed) a YouTube video (optional, default: site.youtube-watch-url)
+    `yt-url`: base URL to watch (not embed) a YouTube video (optional, default: site.youtube-watch-url or site.youtube-playlist-url, depending)
     `gh-url`: base URL for GitHub repositories (optional, default: site.github-url)
     `doi-url`: URL for the DOI resolver (optional, default: site.doi.resolver-url)
 
@@ -23,7 +23,7 @@
   Expected data structure
     artifacts:
       - label:
-        url: or yt-video-id: or gh-repo: or doi: (optional)
+        url: or yt-video-id: or yt-playlist-id: or gh-repo: or doi: (optional)
         note: (optional)
         format: (optional)
         status: (only for doi, should be `reserved` or `published`)
@@ -42,11 +42,12 @@
 {%- if i.status == "published" or i.status == nil -%}
   {%- unless row -%}<li>{%- endunless -%}
     {%- if i.yt-video-id -%}<a href="{{ include.yt-url | default: site.youtube-watch-url }}{{ i.yt-video-id }}">
+    {%- elsif i.yt-playlist-id -%}<a href="{{ include.yt-url | default: site.youtube-playlist-url }}{{ i.yt-playlist-id }}">
     {%- elsif i.gh-repo -%}<a href="{{ include.gh-url | default: site.github-url }}/{{ i.gh-repo }}">
     {%- elsif i.doi -%}<a href="{{ include.doi-url | default: site.doi-resolver-url }}/{{ i.doi }}">
     {%- elsif i.url -%}<a href="{{ i.url }}">{%- endif -%}
     {{ i.label }}
-    {%- if i.yt-video-id or i.gh-repo or i.doi or i.url -%}</a>{%- endif -%}
+    {%- if i.yt-video-id or i.yt-playlist-id or i.gh-repo or i.doi or i.url -%}</a>{%- endif -%}
     {%- if i.note %} {{ i.note }}{%- endif -%}
     {%- if i.format %} ({{ i.format }}){%- endif -%}
     {% if row -%}
