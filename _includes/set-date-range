@@ -23,9 +23,9 @@
 
     Note that %F is ISO 8601 YYYY-MM-DD, and %l is the hour without leading zeros
 
-    Known bugs:  There is some kind of strangeness in Jekyll where the `date` frontmatter
+    Known bugs:  There is some kind of strangeness in Jekyll where the `startdate` frontmatter
     element is parsed differently from (for example) `enddate`.  Specifically, it seems that
-    for the non-`date` date, the time zone specification is ignored and on parsing %Z will
+    for the non-`startdate` date, the time zone specification is ignored and on parsing %Z will
     come up empty.  For the time being, I'm leaving the logic here to handle different time
     zones, but in practice users should ensure that the `end` is specified in the local
     time zone.

@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-{% include upcoming-event event=page.date %}
-{% include set-date-range full-time=false start=page.date end=page.enddate %}
+{% include upcoming-event event=page.startdate %}
+{% include set-date-range full-time=false start=page.startdate end=page.enddate %}
 
 {%- assign my-artifacts = site.data.bsswt[page.directory].artifacts -%}
 
@@ -19,10 +19,10 @@ layout: default
 <h1 align="center">{% if page.title-url %}<a href="{{ page.title-url }}">{{ page.title }}</a>{% else %}{{ page.title }}{% endif %}</h1>
 <p align="center">a {{ page.title-type }} presented at</p>
 <h2 align="center">{% if page.venue-url %}<a href="{{ page.venue-url }}">{{ page.venue }}</a>{% else %}{{ page.venue }}{% endif %}</h2>
-{% if page.date %}
+{% if page.startdate %}
   <h3 align="center">on 
     {% if page.time %}{{ page.time }}{% endif %}
-    {{ page.date | date: "%A %d %B %Y"}}
+    {{ page.startdate | date: "%A %d %B %Y"}}
     {% if page.enddate %}- {{ page.enddate | date: "%A %d %B %Y"}}{% endif %}
   </h3>
 {% endif %}

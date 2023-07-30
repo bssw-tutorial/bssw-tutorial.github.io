@@ -77,7 +77,7 @@ gh issue create \
 
 {% assign dest-dir = "final-presentations/" | append: event-label %}
 
-{% capture description %}{{ my-event.date | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+{% capture description %}{{ my-event.startdate | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
 
 ```shell
 # In local working copy of bssw-tutorial/presentations repository

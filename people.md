@@ -5,8 +5,8 @@ layout: page
 {%- assign tutorials = "" | split: "," -%}
 {%- for t in site.data.tutorials -%}
   {%- assign my-event = site.data.bsswt[t.event-label].event -%}
-  {%- assign when = my-event.date | date: "%s" -%}
-  {%- assign value = my-event.date | append: "," | append: t.event-label -%}
+  {%- assign when = my-event.startdate | date: "%s" -%}
+  {%- assign value = my-event.startdate | append: "," | append: t.event-label -%}
   {%- assign tutorials = tutorials | push: value -%}
 {%- endfor -%}
 {% assign event-labels = "" | split: "," %}

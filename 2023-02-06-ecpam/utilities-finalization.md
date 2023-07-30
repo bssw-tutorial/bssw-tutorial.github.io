@@ -61,9 +61,9 @@ layout: default
 ## Add milestone to GitHub repositories
 
 {% assign incomplete = false %}
-{% unless my-event.date %}
+{% unless my-event.startdate %}
   {% assign incomplete = true %}
-  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`startdate` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 
@@ -80,7 +80,7 @@ layout: default
 {%- if my-event.enddate -%}
   {%- assign due = my-event.enddate | date: "%s" -%}
 {%- else -%}
-  {%- assign due = my-event.date | date: "%s" -%}
+  {%- assign due = my-event.startdate | date: "%s" -%}
 {%- endif -%}
 {%- assign due = due | plus: 86399 | plus: 43200 -%}
 
@@ -149,9 +149,9 @@ EOF
 ## Awareness issues
 
 {% assign incomplete = false %}
-{% unless my-event.date %}
+{% unless my-event.startdate %}
   {% assign incomplete = true %}
-  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`startdate` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 {% unless my-event.title %}
@@ -179,13 +179,13 @@ EOF
 {%- if my-event.enddate -%}
   {%- assign ms-date = my-event.enddate | date: "%s" -%}
 {%- else -%}
-  {%- assign ms-date = my-event.date | date: "%s" -%}
+  {%- assign ms-date = my-event.startdate | date: "%s" -%}
 {%- endif -%}
 {%- assign ms-date = ms-date | plus: 86399 | plus: 43200 -%}
 
 {% capture description %}{% include emit-event-description event=my-event %}{% endcapture %}
 
-{% capture body %}To be held {% if my-event.time %}{{ my-event.time }} {% endif %}{{ my-event.date | date: "%A %d %B %Y"}}{% if my-event.enddate %} - {{ my-event.enddate | date: "%A %d %B %Y"}}{% endif %}{% endcapture %}
+{% capture body %}To be held {% if my-event.time %}{{ my-event.time }} {% endif %}{{ my-event.startdate | date: "%A %d %B %Y"}}{% if my-event.enddate %} - {{ my-event.enddate | date: "%A %d %B %Y"}}{% endif %}{% endcapture %}
 
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
@@ -234,7 +234,7 @@ gh issue create \
 - [ ] Transition from planned to scheduled, if necessary
 - Data needed
   - In \`_data/bsswt/{{ event-label }}/event.yml\`
-    - [ ] Scheduled \`date\`, \`enddate\`, and \`time\`
+    - [ ] Scheduled \`startdate\`, \`enddate\`, and \`time\`
     - [x] \`organizer-ids\`
     - [ ] \`presenter-ids\`, \`helper-ids\`
     - In \`artifacts\`
@@ -271,7 +271,7 @@ EOF
 {%- if my-event.enddate -%}
   {%- assign due = my-event.enddate | date: "%s" -%}
 {%- else -%}
-  {%- assign due = my-event.date | date: "%s" -%}
+  {%- assign due = my-event.startdate | date: "%s" -%}
 {%- endif -%}
 {%- assign due = due | plus: 86399 | plus: 43200 -%}
 

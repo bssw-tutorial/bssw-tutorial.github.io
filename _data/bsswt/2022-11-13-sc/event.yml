@@ -29,14 +29,14 @@ title-url: https://sc22.supercomputing.org/presentation/?id=tut140&sess=sess218
 # time should include timezeone explicitly
 # We don't currently handle tutorials that occur at *different times* on multiple days
 #
-# Planned: date, [enddate], [time]
+# Planned: startdate, [enddate], [time]
 #   Note: at the "planned" stage, enddate can be used with date to specify
 #   the range of dates in which the tutorial *could* take place.
-# Scheduled: date, [enddate], time
+# Scheduled: startdate, [enddate], time
 #   Unless the tutorial occurs over multiple days, enddate is not
 #   needed for tutorials in the "scheduled" stage.
 #
-date: 2022-11-13
+startdate: 2022-11-13
 #enddate: 
 time: "1:30 pm - 5:00 pm CST"
 #

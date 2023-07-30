@@ -58,7 +58,7 @@ header_pages:
 
 # Default to simple ISO date without time.
 # Note that this default does *not* affect the page.last-modified-at version.  
-# That still needs to be passed to the `date` filter for formatting.
+# That still needs to be passed to the `startdate` filter for formatting.
 last-modified-at:
     date-format: '%F'
 

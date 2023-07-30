@@ -131,9 +131,9 @@ EOF
   {% capture msg %}`venue` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
-{% unless my-event.date %}
+{% unless my-event.startdate %}
   {% assign incomplete = true %}
-  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`startdate` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 {% unless presentation-order %}
@@ -165,7 +165,7 @@ For further information, visit <{{ site.prod_url }}/{{ event-label }}>.
 
 **Tag:** Better Scientific Software tutorial
 
-**Recording date:** {{ my-event.date | date: "%F" }}
+**Recording date:** {{ my-event.startdate | date: "%F" }}
 {% endfor %}
 
 
@@ -220,9 +220,9 @@ For further information, visit <{{ site.prod_url }}/{{ event-label }}>.
   {% capture msg %}`venue` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
-{% unless my-event.date %}
+{% unless my-event.startdate %}
   {% assign incomplete = true %}
-  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`startdate` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 {% unless site.prod_url %}
@@ -242,7 +242,7 @@ For further information, visit <{{ site.prod_url }}/{{ event-label }}>.
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
 {% else %}
 
-**Title:** {{ my-event.date | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}
+**Title:** {{ my-event.startdate | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}
     
 **Description:**
 

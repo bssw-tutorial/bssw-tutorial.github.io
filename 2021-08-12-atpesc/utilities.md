@@ -44,7 +44,7 @@ mv {{ p }}.pdf {{ dest-dir }}/{{ mfill }}-{{ p }}.pdf
 
 ## Data for FigShare record
 
-Title: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.date | date: "(%Y)" }}
+Title: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.startdate | date: "(%Y)" }}
 
 <!-- note that we're not listing helpers here -->
 Authors:

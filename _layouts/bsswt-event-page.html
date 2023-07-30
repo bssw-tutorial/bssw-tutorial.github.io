@@ -3,8 +3,8 @@ layout: default
 ---
 {%- assign my-event = site.data.bsswt[page.event-label].event -%}
 
-{% include upcoming-event event=my-event.date %}
-{% include set-date-range full-time=false start=my-event.date end=my-event.enddate %}
+{% include upcoming-event event=my-event.startdate %}
+{% include set-date-range full-time=false start=my-event.startdate end=my-event.enddate %}
 
 {% if my-event.artifacts %}
   {% assign my-artifacts = my-event.artifacts %}
@@ -35,10 +35,10 @@ layout: default
 <h1 align="center">{% if my-event.title-url %}<a href="{{ my-event.title-url }}">{{ my-event.title }}</a>{% else %}{{ my-event.title }}{% endif %}</h1>
 <p align="center">a {{ my-event.title-type }} presented at</p>
 <h2 align="center">{% if my-event.venue-url %}<a href="{{ my-event.venue-url }}">{{ my-event.venue }}</a>{% else %}{{ my-event.venue }}{% endif %}</h2>
-{% if my-event.date %}
+{% if my-event.startdate %}
   <h3 align="center">on 
     {% if my-event.time %}{{ my-event.time }}{% endif %}
-    {{ my-event.date | date: "%A %-d %B %Y"}}
+    {{ my-event.startdate | date: "%A %-d %B %Y"}}
     {% if my-event.enddate %}- {{ my-event.enddate | date: "%A %-d %B %Y"}}{% endif %}
   </h3>
   {% if status.status == "planned" %}

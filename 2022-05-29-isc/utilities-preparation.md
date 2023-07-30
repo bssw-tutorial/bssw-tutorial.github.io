@@ -138,7 +138,7 @@ gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ eve
 1. Login and navigate to the `My Data` tab in your FigShare account
 2. Click `Create a new item`. Complete the fields as below
 
-**Title:** {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.date | date: "(%Y)" }}
+**Title:** {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.startdate | date: "(%Y)" }}
     
 **Authors:** <!-- note that we're not listing helpers here -->
 {% if name_affiliation_array %}{% for p in name_affiliation_array %}`{{ p }}`{%- unless forloop.last -%}, {%- endunless -%}{%- endfor -%}{% endif %}
@@ -228,7 +228,7 @@ option to ensure that you get the font from the PPT template rather than the fon
 
 ## Scripting to tag website repository
 
-{% capture description %}{{ my-event.date | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+{% capture description %}{{ my-event.startdate | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
 
 ```shell
 # In local working copy of bssw-tutorial/bssw-tutorial.github.io repository

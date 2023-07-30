@@ -16,8 +16,8 @@
 {%- include key-artifact-shorthands artifacts=my-artifacts -%}
 
 {% if my-presenters-d or my-presenters %}
-  {% if my-event.venue and my-event.location and my-event.date and presentations-doi %}
-{{ name_affiliation_array | array_to_sentence_string }}, {{ my-event.title }} {{ my-event.title-type }}, in {{ my-event.venue }}, {{ my-event.location }}, {{ my-event.date | date: "%Y" }}. {% if presentations-doi %}DOI: [{{ presentations-doi }}]({{ presentations-url }}).{% endif %}
+  {% if my-event.venue and my-event.location and my-event.startdate and presentations-doi %}
+{{ name_affiliation_array | array_to_sentence_string }}, {{ my-event.title }} {{ my-event.title-type }}, in {{ my-event.venue }}, {{ my-event.location }}, {{ my-event.startdate | date: "%Y" }}. {% if presentations-doi %}DOI: [{{ presentations-doi }}]({{ presentations-url }}).{% endif %}
   {% else %}
 *Citation details not currently available.*
   {% endif %}

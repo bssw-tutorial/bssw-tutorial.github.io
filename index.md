@@ -24,7 +24,7 @@ In the listings below, each tutorial event has its own page, providing details s
     {%- if my-event.enddate -%}
       {%- assign when = my-event.enddate | date: "%s" -%}
     {%- else -%}
-       {%- assign when = my-event.date | date: "%s" -%}
+       {%- assign when = my-event.startdate | date: "%s" -%}
     {%- endif -%}
     {% comment %} 
       The timestamp returned will be 12:00:00am UTC. We need to shift to 11:59:59pm AOE. 
@@ -33,7 +33,7 @@ In the listings below, each tutorial event has its own page, providing details s
     {%- assign when = when | plus: 86399 | plus: 43200 -%}
       
     {% comment %} value is for sorting and is always based on *start* date {% endcomment %}
-    {%- assign value = my-event.date | append: "," | append: t.event-label -%}
+    {%- assign value = my-event.startdate | append: "," | append: t.event-label -%}
     {%- if when < today -%}
         {%- assign past = past | push: value -%}
     {%- elsif t.status == "scheduled" -%}

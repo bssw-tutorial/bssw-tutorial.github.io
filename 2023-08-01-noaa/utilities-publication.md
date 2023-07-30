@@ -168,9 +168,9 @@ gh issue create \
   {% capture msg %}`venue` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
-{% unless my-event.date %}
+{% unless my-event.startdate %}
   {% assign incomplete = true %}
-  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`startdate` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 {% unless presentation-order %}
@@ -186,7 +186,7 @@ gh issue create \
 
 {% assign dest-dir = "final-presentations/" | append: event-label %}
 
-{% capture description %}{{ my-event.date | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+{% capture description %}{{ my-event.startdate | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
 
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
@@ -251,13 +251,13 @@ git push --delete origin {{ event-label }}
   {% capture msg %}`venue` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
-{% unless my-event.date %}
+{% unless my-event.startdate %}
   {% assign incomplete = true %}
-  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`startdate` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 
-{% capture description %}Hands-on code repository for {{ my-event.date | date: "%F" }} {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+{% capture description %}Hands-on code repository for {{ my-event.startdate | date: "%F" }} {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
 
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
@@ -283,9 +283,9 @@ git push
 ## Scripting to tag website repository
 
 {% assign incomplete = false %}
-{% unless my-event.date %}
+{% unless my-event.startdate %}
   {% assign incomplete = true %}
-  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`startdate` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 {% unless my-event.title %}
@@ -299,7 +299,7 @@ git push
   {% include emit-error.html msg=msg %}
 {% endunless %}
 
-{% capture description %}{{ my-event.date | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+{% capture description %}{{ my-event.startdate | date: "%F" }}: {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
 
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}

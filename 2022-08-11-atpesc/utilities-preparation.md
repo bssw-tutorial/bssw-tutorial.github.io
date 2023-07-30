@@ -231,9 +231,9 @@ EOF
   {% capture msg %}`venue` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
-{% unless my-event.date %}
+{% unless my-event.startdate %}
   {% assign incomplete = true %}
-  {% capture msg %}`date` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
+  {% capture msg %}`startdate` not defined in file `_data/bsswt/{{ event-label }}/event.yml`{% endcapture %}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 {% unless site.prod_url %}
@@ -255,7 +255,7 @@ EOF
 1. Login and navigate to the `My Data` tab in your FigShare account
 2. Click `Create a new item`. Complete the fields as below
 
-**Title:** {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.date | date: "(%Y)" }}
+**Title:** {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %} {{ my-event.startdate | date: "(%Y)" }}
     
 **Authors:** <!-- note that we're not listing helpers here -->
 {% if name_affiliation_array %}{% for p in name_affiliation_array %}`{{ p }}`{%- unless forloop.last -%}, {%- endunless -%}{%- endfor -%}{% endif %}

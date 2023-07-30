@@ -68,7 +68,7 @@ This section will walk you through the lifecycle of a tutorial event.
 title: tutorial title, in quotes, e.g., "Better Scientific Software" (required)
 title-type: the label associated with the event, e.g., "tutorial" or "track" (required)
 title-url: a URL to link the tutorial title to, e.g., the conference program page (optional)
-date: the starting date of the conference (since we don't yet know the actual schedule), e.g., 2021-11-15 (required)
+startdate: the starting date of the conference (since we don't yet know the actual schedule), e.g., 2021-11-15 (required)
 enddate: the ending date of the conference (since we don't yet know the actual schedule) (optional)
 venue: the name of the hosting venue (e.g., conference), in quotes, e.g., "The International Conference for High-Performance Computing, Networking, Storage, and Analysis (SC21)" (required)
 venue-type: the label associated with the venue, e.g., "conference" or "workshop" (optional)
@@ -211,7 +211,7 @@ The stock `section-requested-citation.md` will usually suffice for this.  It con
 * `_data/bsswt/<event-label>/event.yml`
   - `title`
   - `title-type`
-  - `date`
+  - `startdate`
   - `venue`
   - `location`
   - `presenter-ids`
