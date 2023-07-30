@@ -124,7 +124,7 @@ github-url: https://github.com
 # Base URLs for watching and embedding YouTube videos and playlists
 youtube-watch-url: https://www.youtube.com/watch?v=
 youtube-playlist-url: https://youtube.com/playlist?list=
-youtube-embed-url: https://www.youtube.com/embed/
+youtube-embed-v-url: https://www.youtube.com/embed/
 youtube-embed-pl-url: https://www.youtube.com/embed/videoseries?list=
 
 # GH repository base URLs for tutorial development repos

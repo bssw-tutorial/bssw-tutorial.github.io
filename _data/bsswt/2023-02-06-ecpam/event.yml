@@ -67,8 +67,8 @@ artifacts:
 #  - label: Tutorial Registration
 #    url: https://docs.google.com/forms/d/e/1FAIpQLSc8jf451DjE3l7iHuN_gIl4ACG_5ntCy9k7ErZSFPHGHVhjBw/viewform
   - label: Recording
-    format: YouTube recording
-    url: https://youtu.be/7G2jjJ403gY
+    format: YouTube
+    yt-video-id: 7G2jjJ403gY
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.21989507
