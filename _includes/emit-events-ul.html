@@ -36,10 +36,29 @@
     {% endif %}
     {% if my-event %}
       <li style="margin-top: 1em">{% if first %}<strong>{% endif %}{{ my-event.startdate | date: "%F" }}: <a href="/{{ event-label }}/">{{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}</a>{%if my-event.location %} ({{ my-event.location }}){% endif %}{% if first %}</strong>{%- assign first = false -%}{% endif %}</li>
-      {% if my-artifacts and artifacts %}
-      <ul>
-        <li>{{ my-artifacts | size | pluralize: "Artifact:", "Artifacts:" }} {% include emit-artifacts.html artifacts=my-artifacts format="row" %}</li>
-      </ul>
+      {% if my-event.enddate %}
+        {% include upcoming-event event=my-event.enddate %}
+      {% elsif my-event.startdate %}
+        {% include upcoming-event event=my-event.startdate %}
+      {% else %}
+        {% assign upcoming = false %}
+      {% endif %}
+      {% if upcoming and my-event.registration-url %}
+        {% assign display-registration = true %}
+      {% else %}
+        {% assign display-registration = false %}
+      {% endif %}
+      {% if artifacts %}
+        {% if my-artifacts or display-registration %}
+        <ul>
+          {% if display-registration %}
+          <li><a href="{{ my-event.registration-url }}">Register for the event</a></li>
+          {% endif %}
+          {% if my-artifacts %}
+          <li>{{ my-artifacts | size | pluralize: "Artifact:", "Artifacts:" }} {% include emit-artifacts.html artifacts=my-artifacts format="row" %}</li>
+          {% endif %}
+        </ul>
+        {% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}

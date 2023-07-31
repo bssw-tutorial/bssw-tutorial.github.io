@@ -77,9 +77,24 @@ layout: default
 
 <hr>
 
-{% if my-artifacts %}
+{% if my-event.enddate %}
+  {% include upcoming-event event=my-event.enddate %}
+{% elsif my-event.startdate %}
+  {% include upcoming-event event=my-event.startdate %}
+{% else %}
+  {% assign upcoming = false %}
+{% endif %}
+{% if upcoming and my-event.registration-url %}
+  {% assign display-registration = true %}
+{% else %}
+  {% assign display-registration = false %}
+{% endif %}
+{% if my-artifacts or display-registration %}
 <h2>Quick Links</h2>
 <ul>
+    {% if display-registration %}
+    <li><a href="{{ my-event.registration-url }}">Register for the event</a></li>
+    {% endif %}
     {% include emit-artifacts.html artifacts=my-artifacts format="li" %}
 </ul>
 {% endif %}

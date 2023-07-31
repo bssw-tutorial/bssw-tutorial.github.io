@@ -56,6 +56,8 @@ venue-type: "conference"
 venue-url: https://www.isc-hpc.com/
 location: "Hamburg, Germany, and online"
 #
+# registration-url: 
+#
 # Staffing information
 #
 # Required and [optional] information, by stage of tutorial preparations:
@@ -106,8 +108,6 @@ description: |
 #   By the time of delivery, the doi should be set
 #
 artifacts:
-#  - label: Conference Registration
-#    url: https://www.isc-hpc.com/registration-2022.html
 #  - label: Playlist
 #    format: YouTube
 #    yt-playlist-id: 
