@@ -11,7 +11,7 @@ Fixed Points,Duration,Time (CDT),Title,Presenter
 ,30,2:30 PM,refactoring,adubey64
 3:00 PM,30,3:00 PM,<em>Break</em>,
 ,60,3:30 PM,lab-notebooks,jared123
-,15,4:30 PM,computational-expts,"jared123,adubey64"
+,15,4:30 PM,computational-expts,adubey64
 ,60,4:45 PM,reproducibility,bernhold
 ,15,5:45 PM,summary,bernhold
 ,30,6:00 PM,"<em>Q&A, including <em>your</em> software experiences and challenges</em>",all
