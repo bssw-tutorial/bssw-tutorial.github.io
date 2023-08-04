@@ -46,7 +46,9 @@ design-a: Scientific Software Design
 spack: "Spack: Package Management for HPC"
 testing-a: Software Testing and Verification
 lab-notebooks: Lab Notebooks for Computational Mathematics, Sciences, & Engineering
+lab-notebooks-a: Lab Notebooks for Computational Mathematics, Sciences, & Engineering
 computational-expts: Managing Computational Experiments
+computational-expts-a: Managing Computational Experiments
 mining-tools: Understanding Your Software Development
 #
 # New to SC22
