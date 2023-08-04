@@ -1,5 +1,6 @@
 <!-- intro-a -->
   * [IDEAS Productivity Project](http://ideas-productivity.org)
+  * [Spack project](https://spack.io/)
   * The IDEAS [report](https://doi.org/10.2172/1606662)
   * [Better Scientific Software](https://bssw.io) site
   * [IDEAS Productivity mailing list](http://eepurl.com/cQCyJ5)
