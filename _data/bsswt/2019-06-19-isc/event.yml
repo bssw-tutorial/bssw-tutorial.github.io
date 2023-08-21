@@ -10,7 +10,7 @@ series:
 activities:
   - "IDEAS-ECP"
 parent-event-name: ISC High Performance 2019
-parent-event-file: 20190619-isc19-conference
+parent-event-file: parentconf-2019-06-19-isc19
 #
 title: "Better Scientific Software"
 title-type: "tutorial"

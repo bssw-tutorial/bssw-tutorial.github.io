@@ -8,7 +8,7 @@ series:
 activities:
   - "IDEAS-ECP"
 parent-event-name: ISC High Performance 2021
-parent-event-file: 20210624-isc21-conference
+parent-event-file: parentconf-2021-06-24-isc21
 #
 title: "Better Scientific Software"
 title-type: "tutorial"
