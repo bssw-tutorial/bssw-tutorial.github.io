@@ -68,6 +68,8 @@ description: |
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2023-04-18-iss
 #  - label: Conference Registration
 #    url: https://docs.google.com/forms/d/e 1FAIpQLSfvrcDWBEyVhL47gmJ1asVEexIsCw0TPiEJ2YEoDAjiNhLf9w/viewform
   - label: Playlist

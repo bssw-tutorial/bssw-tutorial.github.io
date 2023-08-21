@@ -62,6 +62,8 @@ description: |
   This tutorial presents software practices, processes, and tools explicitly tailored for CSE and HPC.  Goals are improving the productivity of those who develop CSE software and increasing the sustainability of software artifacts. Topics include the software processes for (small) teams, including agile processes, collaboration via version control workflows, reproducibility, and scientific software design, refactoring, and testing.
 
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2021-11-15-sc
   - label: Playlist
     format: YouTube
     yt-playlist-id: PLuWzStas9iWF7QJ2K6XycBGjn7vCeacWO

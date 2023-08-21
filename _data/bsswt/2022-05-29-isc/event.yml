@@ -61,6 +61,8 @@ description: |
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2022-05-29-isc
 #  - label: Conference Registration
 #    url: https://www.isc-hpc.com/registration-2022.html
 #  - label: Recordings

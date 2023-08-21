@@ -78,6 +78,8 @@ description: "The BSSw tutorial focuses on issues of developer productivity, sof
 #   By the time of delivery, the doi should be set
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2020-03-05-rfscidac
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.11918397

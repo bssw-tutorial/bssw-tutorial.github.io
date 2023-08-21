@@ -98,6 +98,8 @@ presenters:
 #   By the time of delivery, the doi status should be "published""
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2017-02-28-cse
 #  - label: Recordings
 #    format: YouTube playlist
 #    url: 

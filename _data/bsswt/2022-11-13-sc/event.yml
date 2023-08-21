@@ -93,6 +93,8 @@ description: |
 #   By the time of delivery, the doi status should be "published""
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2022-11-13-sc
 #  - label: Conference Registration
 #    url: https://sc22.supercomputing.org/attend/registration/
   - label: Presentation Slides

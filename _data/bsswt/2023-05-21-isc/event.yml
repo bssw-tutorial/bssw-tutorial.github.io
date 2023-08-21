@@ -62,6 +62,8 @@ description: |
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2023-05-21-isc
 #  - label: Conference Registration
 #    url: https://www.isc-hpc.com/registration-2023.html
 #  - label: Recording

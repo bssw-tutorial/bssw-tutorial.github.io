@@ -47,6 +47,8 @@ presenters:
 description: "The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers."
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2021-08-12-atpesc
   - label: Playlist
     format: YouTube
     yt-playlist-id: PLuWzStas9iWH1gbVQ0MTjyhyEJHrIhMGG

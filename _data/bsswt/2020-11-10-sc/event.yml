@@ -94,6 +94,8 @@ description: |
 #   By the time of delivery, the doi should be set
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2020-11-10-sc
 #  - label: Recordings
 #    format: YouTube playlist
 #    url: 

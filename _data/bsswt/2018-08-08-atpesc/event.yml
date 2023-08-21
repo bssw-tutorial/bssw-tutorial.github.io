@@ -88,6 +88,8 @@ description: "The BSSw tutorial focuses on issues of developer productivity, sof
 #   By the time of delivery, the doi should be set
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2018-08-08-atpesc
   - label: Playlist
     format: YouTube
     yt-playlist-id: PLuWzStas9iWFifhvWo2kaFnt9-Mj4J3uA

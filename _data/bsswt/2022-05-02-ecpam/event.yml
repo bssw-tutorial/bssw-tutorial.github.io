@@ -61,6 +61,8 @@ description: |
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2022-05-02-ecpam
 #  - label: Conference Registration
 #    url: 
   - label: Playlist

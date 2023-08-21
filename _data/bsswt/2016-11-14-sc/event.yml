@@ -84,6 +84,8 @@ presenters:
 #   By the time of delivery, the doi status should be "published""
 #
 artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2016-11-14-sc
   - label: Presentation Slides
     format: FigShare
     doi: 10.6084/m9.figshare.4829431
