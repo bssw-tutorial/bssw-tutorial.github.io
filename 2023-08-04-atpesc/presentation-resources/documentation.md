@@ -10,9 +10,9 @@
     * [POD](https://en.wikipedia.org/wiki/Plain_Old_Documentation)
     * [TwinText](https://en.wikipedia.org/wiki/TwinText)
   * Flash-X documentation examples
-    * [User's guide](http://flash.uchicago.edu/site/flashcode/user_support/flash4_ug_4p4/)
-    * [API documentation](http://flash.uchicago.edu/site/flashcode/user_support/robodoc-FLASH4_4p6/)
-    * [Online reference](http://flash.uchicago.edu/site/flashcode/user_support/tips_arch.txt)
+    * [User's guide](https://flash-x.github.io/Flash-X-docs/#)
+    * [API documentation](https://flash-x.org/api/index.html)
+    * [Online reference](https://flash-x.org/pages/documentation/)
   * [Diataxis Framework](https://diataxis.fr/)
   * Markup languages
     * [Markdown](https://en.wikipedia.org/wiki/Markdown)

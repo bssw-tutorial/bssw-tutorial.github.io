@@ -21,7 +21,7 @@
   * <https://cristianadam.eu/20200113/speeding-up-c-plus-plus-github-actions-using-ccache/>
   * Hints from the front lines
     * <https://docs.gitlab.com/ee/user/project/pages/>
-    * <https://tomasfarias.dev/posts/sphinx-docs-with-poetry-and-github-pages/>
+    * <https://tomasfarias.dev/articles/sphinx-docs-with-poetry-and-github-pages/>
   * Good ideas and idioms from across developer spaces
     * [C++ object implementation "rule of 3"](https://en.cppreference.com/w/cpp/language/rule_of_three)
     * <https://jestjs.io/>
