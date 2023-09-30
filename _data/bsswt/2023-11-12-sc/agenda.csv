@@ -1,0 +1,18 @@
+Fixed Points,Duration,Time (MST),Title,Presenter,Notes
+<!--skip-->,<!--skip-->,<!--right-->,,,<!--skip-->
+8:30 AM,10,8:30 AM,intro,pagrubel,Introduction
+,25,8:40 AM,overview,pagrubel,Motivation and overview of best practices in HPC SW Dev.
+,25,9:05 AM,design,frobnitzem,Scientific Software Design
+,30,9:30 AM,refactoring,frobnitzem,Refactoring Scientific Software
+10:00 AM,30,10:00 AM,<em>Morning break</em>,,
+,30,10:30 AM,packaging,frobnitzem,Software Packaging
+,60,11:00 AM,collaborative-sw-dev,pagrubel,Collaborative Software Development
+12:00 PM,60,12:00 PM,<em>Lunch break</em>,,
+,75,1:00 PM,reproducibility,jarrah42,Improving Reproducibility Through Better Software Practices (more detail on SC artifacts)
+,30,2:15 PM,rep-workflows,jarrah42,NEW Reproducibility of workflows
+,15,2:45 PM,testing,bernhold,Software Testing and Verification
+3:00 PM,30,3:00 PM,<em>Afternoon break</em>,,
+,15,3:30 PM,testing,bernhold,Software Testing and Verification
+,60,3:45 PM,lab-notebooks,bernhold,"Lab Notebooks for Computational Mathematics, Sciences, & Engineering"
+,15,4:45 PM,summary,bernhold,
+5:00 PM,360,5:00 PM,<em>Adjourn</em>,,

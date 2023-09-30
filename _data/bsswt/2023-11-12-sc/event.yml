@@ -20,9 +20,9 @@ parent-event-file: parentconf-2023-11-12-sc23
 # Planned: title, [title-type], [title-url]
 # Scheduled: same
 #
-title: "Better Scientific Software"
+title: "Better Software for Reproducible Science"
 title-type: "tutorial"
-#title-url: 
+title-url: https://sc23.supercomputing.org/presentation/?id=tut147&sess=sess225
 #
 # Presentation date and time.
 # enddate is optional for one-day events
@@ -37,8 +37,8 @@ title-type: "tutorial"
 #   needed for tutorials in the "scheduled" stage.
 #
 startdate: "2023-11-12"
-enddate: "2023-11-13"
-#time: "8:30 am - 5:00 pm MST (UTC-7)"
+#enddate: "2023-11-132
+time: "8:30 am - 5:00 pm MST"
 #
 # Venue information
 #
@@ -65,7 +65,7 @@ registration-url: https://sc23.supercomputing.org/attend/registration/
 #   Planned: organizer-ids ,[presenters], [helpers]
 #   Scheduled: organizer-ids, presenters, [helpers]
 #
-organizer-ids: [bernhold,pagrubel]
+organizer-ids: [bernhold]
 #
 presenters:
   - name: David E. Bernholdt
@@ -149,10 +149,10 @@ deadlines:
     due: 2023-11-11
     responsible: [organizer-ids]
   - label: internal-consents
-    due: 2023-07-14
+    due: 
     responsible: [presenter-ids, helper-ids]
   - label: venue-consents
-    due: 2023-07-21
+    due: 
     responsible: [organizer-ids]
   - label: internal-recordings
     due: 
