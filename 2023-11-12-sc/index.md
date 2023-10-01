@@ -10,5 +10,5 @@ event-label: 2023-11-12-sc
 #         [description,agenda,presentation-slides,participate*,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
 # where `participate*` might be participate-inperson, participate-hybrid, or participate-online, as appropriate.  A custom local `section-participate.md` file will also work.
 # Consider adding a related-events section if appropriate
-sections: [description,agenda,presentation-slides,requested-citation,acknowledgments]
+sections: [description,agenda,presentation-slides,participate-inperson,stay-in-touch-no-ho,requested-citation,acknowledgments]
 ---
