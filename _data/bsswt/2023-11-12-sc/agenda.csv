@@ -2,7 +2,7 @@ Fixed Points,Duration,Time (MST),Title,Presenter,Notes
 <!--skip-->,<!--skip-->,<!--right-->,,,<!--skip-->
 8:30 AM,10,8:30 AM,intro,pagrubel,Introduction
 ,25,8:40 AM,overview,pagrubel,Motivation and overview of best practices in HPC SW Dev.
-,25,9:05 AM,design,frobnitzem,Scientific Software Design
+,25,9:05 AM,design-a,frobnitzem,Scientific Software Design
 ,30,9:30 AM,refactoring,frobnitzem,Refactoring Scientific Software
 10:00 AM,30,10:00 AM,<em>Morning break</em>,,
 ,30,10:30 AM,packaging,frobnitzem,Software Packaging
