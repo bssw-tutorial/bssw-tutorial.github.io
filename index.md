@@ -9,6 +9,10 @@ We first presented a version of this tutorial in 2016, and since then we have be
 
 In the listings below, each tutorial event has its own page, providing details specific to that tutorial, including agenda, presentations, hands-on activities, and other resources.  Quick links are also provided to key tutorial artifacts, where available.
 
+## Stability and persistence
+
+We consider the individual tutorial web pages to be archival.  Once a tutorial is over, we minimize further changes, though we will update pages if we find significant issues in the tutorial materials, or when we get additional artifacts (e.g., recordings are rarely available immediately).  We also periodically check the URLs in the "Resources from Presentations" sections of the pages and will attempt to provide alternative resources for links that are no longer available (we do not update the presentation slides).  This site is hosted on GitHub Pages.  Presentations are generally archived on FigShare, and recordings on YouTube.  We rely on these high-profile sites to provide a reasonable degree of persistence for the tutorial resources.
+
 {% comment %}
   Break up events into three groups: scheduled, planned, and past.
   The master list of tutorials (site.data.tutorials) indicates whether they are scheduled or planned.
