@@ -1,5 +1,5 @@
 <!-- testing-advanced -->
-  * [Useful How-to resources on test and test suites on ideas-productivity.org](https://ideas-productivity.org/resources/howtos/)
+  * [Useful resources on testing](https://bssw.io/items?topic=testing) (formerly linked to ~~ideas-productivity.org/resources/howtos/~~)
   * [CI/CD Introduction](https://docs.gitlab.com/ee/ci/introduction/)
   * [Team Experiences Implementing Continuous Integration](https://bssw.io/blog_posts/bright-spots-team-experiences-implementing-continuous-integration)
   * [Understanding the risk of script injections](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#understanding-the-risk-of-script-injections)

@@ -22,7 +22,7 @@
   * Tutorials for code coverage: [Online Tutorial](https://github.com/amklinv/morpheus), [Another example](https://github.com/jrdoneal/infrastructure)
   * [Development Practices Survey Article](https://dx.doi.org/10.6084/m9.figshare.14188463.v1)
 * Module 3: Software Testing 2
-  * [Useful How-to resources on test and test suites on ideas-productivity.org](https://ideas-productivity.org/resources/howtos/)
+  * [Useful resources on testing](https://bssw.io/items?topic=testing) (formerly linked to ~~ideas-productivity.org/resources/howtos/~~)
   * Related Articles: [1](https://ieeexplore.ieee.org/abstract/document/8449015), [2](https://doi.org/10.1002/spe.2220)
 * Module 4: Continuous Integration
   * [Exascale Computing Project CI documentation](https://ecp-ci.gitlab.io/)

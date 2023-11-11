@@ -1,6 +1,6 @@
 <!-- testing-advanced-short -->
   * [A Holistic Algorithmic Approach to Improving Accuracy, Robustness, and Computational  Efficiency for Atmospheric Dynamics](https://doi.org/10.1137/19M128435X)
-  * [Useful How-to resources on test and test suites on ideas-productivity.org](https://ideas-productivity.org/resources/howtos/)
+  * [Useful resources on testing](https://bssw.io/items?topic=testing) (formerly linked to ~~ideas-productivity.org/resources/howtos/~~)
   * [Lcov](http://ltp.sourceforge.net/coverage/lcov.php)
   * [CI/CD Introduction](https://docs.gitlab.com/ee/ci/introduction/)
   * [Joint Center for Satellite Data Assimilation (JEDI) documentation](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/)
