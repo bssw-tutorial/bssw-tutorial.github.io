@@ -14,8 +14,8 @@
       - <https://www.sigops.org/2021/how-are-award-winning-systems-research-artifacts-prepared-part-1/>
       - <https://www.sigops.org/2021/how-are-award-winning-systems-research-artifacts-prepared-part-2/>
     * [Github CSArtifacts Resources](https://github.com/csartifacts/resources)
-  * [ACM Reproducible Computational Results](hhttp://toms.acm.org/replicated-computational-results.cfm)
-  * [ACM Artifact Review and Badging](https://www.acm.org/publications/policies/artifact-review-and-badging)
+  * [ACM Reproducible Computational Results](http://toms.acm.org/replicated-computational-results.cfm)
+  * [ACM Artifact Review and Badging](https://www.acm.org/publications/policies/artifact-review-and-badging-current)
   * <http://fursin.net/reproducibility.html>
   * [ National Information Standards Organization (NISO) on Reproducibility and Badging](https://www.niso.org/niso-io/2019/01/new-niso-project-badging-scheme-reproducibility-computational-and-computing)
   * Helpful Tools
