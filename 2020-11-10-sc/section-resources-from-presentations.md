@@ -25,7 +25,7 @@
   * [Atlassian/BitBucket (Comparing Workflows)](https://www.atlassian.com/git/tutorials/comparing-workflows)
   * [Git Flow (Driessen's Original Blog)](https://nvie.com/posts/a-successful-git-branching-model/)
       * [Git extensions](https://github.com/nvie/gitflow)
-  * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html)
+  * [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) (previously linked to ~~http://scottchacon.com/2011/08/31/github-flow.html~~)
   * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
 * Module 4: Software Design
   * [Related Article](https://link.springer.com/chapter/10.1007/978-3-319-27308-2_19)
