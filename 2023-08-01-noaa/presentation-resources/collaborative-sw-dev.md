@@ -2,7 +2,7 @@
   * [Design Patterns for Git Workflows](https://docs.google.com/document/d/1uVQYI2cmNx09fDkHDA136yqDTqayhxqfvjFiuUue7wo/edit#heading=h.s9tckbspfqj8)
   * [Git Flow (Driessen's Original Blog)](https://nvie.com/posts/a-successful-git-branching-model/)
     * [Git extensions](https://github.com/nvie/gitflow)
-  * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html)
+  * [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) (previously linked to ~~http://scottchacon.com/2011/08/31/github-flow.html~~)
   * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
   * [Trilinos](https://trilinos.github.io/)
   * [Open MPI](https://www.open-mpi.org)
