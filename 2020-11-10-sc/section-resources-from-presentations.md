@@ -31,7 +31,7 @@
   * [Related Article](https://link.springer.com/chapter/10.1007/978-3-319-27308-2_19)
 * Module 5: Software Testing 1
   * Tutorials for code coverage: [Online Tutorial](https://github.com/amklinv/morpheus), [Another example](https://github.com/jrdoneal/infrastructure)
-  * [Useful How-to resources on test and test suites on ideas-productivity.org](https://ideas-productivity.org/resources/howtos/)
+  * [Useful resources on testing](https://bssw.io/items?topic=testing) (formerly linked to ~~ideas-productivity.org/resources/howtos/~~)
 * Module 6: Software Testing 2
   * [Related Articles:1](https://ieeexplore.ieee.org/abstract/document/8449015),[2](https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2220)
 * Module 7: Refactoring
