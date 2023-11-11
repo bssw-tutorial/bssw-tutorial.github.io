@@ -20,8 +20,8 @@
   * <https://fluid-run.readthedocs.io/en/latest/HowTo/setup_your_repo.html>
   * Container Build Examples
     * <https://fastapi.tiangolo.com/deployment/docker/#build-a-docker-image-for-fastapi>
-    <https://supercontainers.github.io/sc20-tutorial/02.docker/index.html>
-    <https://cloud.sylabs.io/builder>
+    * <https://supercontainers.github.io/sc20-tutorial/02.docker/index.html>
+    * <https://cloud.sylabs.io/builder>
   * [Article on CI team practices](https://bssw.io/blog_posts/bright-spots-team-experiences-implementing-continuous-integration)
   * <https://spack.readthedocs.io/en/latest/packaging_guide.html#dependency-specs>
   * DCA++
