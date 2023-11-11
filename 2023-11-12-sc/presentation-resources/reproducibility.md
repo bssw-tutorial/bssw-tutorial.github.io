@@ -7,9 +7,15 @@
   * [National Science Foundation Data Management Plan Requirements](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
   * [Findable, Accessible, Interoperable, Re-usable](https://doi.org/10.1038/sdata.2016.18)
   * [FAIR Data Principles US](https://gofair.us/)
-  * [SC23 Reproducibility Initiative](https://sc23.supercomputing.org/submit/reproducibility-initiative/)
-  * [ACM Transactions on Mathematical Software (TOMS)](http://toms.acm.org/replicated-computational-results.cfm)
-  * [ACM Artifact Review and Badging](https://www.acm.org/publications/policies/artifact-review-and-badging-current)
+  * SC Conference Reproducibility Initiative
+    * [HOWTO for AEC Submitters](https://docs.google.com/document/d/1pqzPtLVIvwLwJsZwCb2r7yzWMaifudHe1Xvn42T4CcA/edit)
+    * [Artifact Evaluation: Tips for Authors](https://blog.padhye.org/Artifact-Evaluation-Tips-for-Authors/)
+    * SIGOPS articles on award winning artifacts
+      - <https://www.sigops.org/2021/how-are-award-winning-systems-research-artifacts-prepared-part-1/>
+      - <https://www.sigops.org/2021/how-are-award-winning-systems-research-artifacts-prepared-part-2/>
+    * [Github CSArtifacts Resources](https://github.com/csartifacts/resources)
+  * [ACM Reproducible Computational Results](hhttp://toms.acm.org/replicated-computational-results.cfm)
+  * [ACM Artifact Review and Badging](https://www.acm.org/publications/policies/artifact-review-and-badging)
   * <http://fursin.net/reproducibility.html>
   * [ National Information Standards Organization (NISO) on Reproducibility and Badging](https://www.niso.org/niso-io/2019/01/new-niso-project-badging-scheme-reproducibility-computational-and-computing)
   * Helpful Tools

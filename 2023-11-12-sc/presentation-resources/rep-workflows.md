@@ -1,27 +1,55 @@
-<!-- reproducibility -->
-  * [Toward a Compatible Reproducibility Taxonomy for Computational and Computing Sciences](https://doi.org/10.2172/1481626)
-  * [Reproducibility and Replicability in Science](https://doi.org/10.17226/25303)
-  * [Many Psychology Findings Not As Strong As Claimed](http://www.nytimes.com/2015/08/28/science/many-social-science-findings-not-as-strong-as-claimed-study-says.html)
-  * [The War Over Supercooled Water](https://doi.org/10.1063/PT.6.1.20180822a)
-  * [Researchers find bug in Python Script may have affected hundreds of studies](https://arstechnica.com/information-technology/2019/10/chemists-discover-cross-platform-python-scripts-not-so-cross-platform/)
-  * [National Science Foundation Data Management Plan Requirements](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
-  * [Findable, Accessible, Interoperable, Re-usable](https://doi.org/10.1038/sdata.2016.18)
-  * [FAIR Data Principles US](https://gofair.us/)
-  * [SC23 Reproducibility Initiative](https://sc23.supercomputing.org/submit/reproducibility-initiative/)
-  * [ACM Transactions on Mathematical Software (TOMS)](http://toms.acm.org/replicated-computational-results.cfm)
-  * [ACM Artifact Review and Badging](https://www.acm.org/publications/policies/artifact-review-and-badging-current)
-  * <http://fursin.net/reproducibility.html>
-  * [ National Information Standards Organization (NISO) on Reproducibility and Badging](https://www.niso.org/niso-io/2019/01/new-niso-project-badging-scheme-reproducibility-computational-and-computing)
-  * Helpful Tools
-     * [Floating Point Analysis Tools](http://fpanalysistools.org/)
-     * [Code Ocean (Cloud platforms - publish and reproduce research code and data)](https://codeocean.com/)
-     * DOIs and hosting of data, code, documents:
-       - [Zenodo](https://zenodo.org/)
-       - [FigShare](https://figshare.com/)
-  * Other Resources:
-    * [The FAIR Guiding Principles for Scientific Data Management and Stewardship. Mark D. Wilkinson, et al. 2016](https://doi.org/10.1038/sdata.2016.18)
-    * [FAIR4RS](https://www.rd-alliance.org/groups/fair-research-software-fair4rs-wg)
-    * [Editorial: ACM TOMS Replicated Computational Results Initiative. Michael A. Heroux. 2015](http://dx.doi.org/10.1145/2743015)
-    * [Enhancing Reproducibility for Computational Methods](https://doi.org/10.1126/science.aah6168)
-    * [Simple experiments in reproducibility and technical trust by Mike Heroux and students](https://betterscientificsoftware.github.io/Trust-Tools/) (work in progress)
-    * [What every scientist should know about floating-point arithmetic. David Goldberg.](https://doi.org/10.1145/103162.103163)
+<!-- rep-workflows -->
+  * Improving Max-Min scheduling Algorithm for Reducing the Makespan of Workflow Execution in the Cloud. DOI:[10.5120/ijca2017915684](https://doi.org/10.5120/ijca2017915684). 
+  * Example workflow systems: <https://s.apache.org/existing-workflow-systems>
+  * Workflow repositories and registries
+    * <https://nf-co.re>
+    * <https://workflowhub.eu>
+    * <https://zenodo.org>
+  * Common scientific workflow patterns
+    * High-performance simulation and modeling: <https://doi.org/10.1007/978-3-031-23606-8_9>
+    * High-performance AI: <https://www.analyticsvidhya.com/blog/2022/02/a-comprehensive-guide-on-hyperparameter-tuning-and-its-techniques/>
+    * Scientific data lifecycle: <https://www.nersc.gov/assets/NERSC-10/Workflows-Archetypes-White-Paper-v1.0.pdf>
+    * Real-time XFEL Data Analysis at SLAC and NERSC: <https://doi.org/10.48550/arXiv.2106.11469>
+    * Hybrid: <https://doi.org/10.3389/fonc.2019.00984>
+  * <https://opencontainers.org/>
+  * Containers and the Truth between HPC & Cloud System Software Convergence. 2021. DOI:[10.2172/1859696](https://doi.org/10.2172/1859696)
+  * Other resources
+    * Workflow systems
+      * AiiDA: <https://www.aiida.net>
+      * BEE: <https://github.com/lanl/BEE>
+      * COMPSs: <https://compss.bsc.es>
+      * Covalent: <https://www.covalent.xyz>
+      * Cromwell: <http://cromwell.readthedocs.io>
+      * FireWorks: <https://materialsproject.github.io/fireworks>
+      * Galaxy: <https://galaxyproject.org>
+      * Maesto: <https://maestrowf.readthedocs.io>
+      * Nextflow: <https://www.nextflow.io>
+      * Pegasus: <https://pegasus.isi.edu>
+      * Snakemake: <https://snakemake.github.io>
+      * Swift: <http://swift-lang.org/Swift-T>
+      * Taskvine: <https://ccl.cse.nd.edu/software/taskvine>
+    * Containers
+      * Apptainer (singularity) <https://apptainer.org>
+      * Charliecloud: <https://hpc.github.io/charliecloud>
+      * Docker: <https://docker.com>
+      * Podman: <https://podman.io>
+      * Sarus: <https://sarus.readthedocs.io/en/stable>
+      * Shifter: <https://shifter.readthedocs.io/en/latest>
+    * Workflow repositories
+      * @nf-core (Nextflow) <https://nf-co.re>
+      * Snakemake workflow catalog <https://snakemake.github.io/snakemake-workflow-catalog>
+    * Metadata frameworks
+      * Common workflow language <https://www.commonwl.org>
+      * Workflow RO-Crate <https://w3id.org/workflowhub/workflow-ro-crate/1.0>
+      * Bioschemas Profiles <https://bioschemas.org/profiles>
+    * Workflow repositories
+      * WorkflowHub <https://workflowhub.eu>
+      * Dockstore <https://dockstore.org>
+    * Data repositories
+      * Zenodo <https://zenodo.org>
+      * Dataverse <https://dataverse.org>
+    * Dynamic Provisioning and Execution of HPC Workflows Using Pythonm doi: 10.1109/PyHPC.2016.005.
+    * Characterization of scientific workflows, doi:[10.1109/WORKS.2008.4723958](https://doi.org/10.1109/WORKS.2008.4723958).
+    * Real-Time XFEL Data Analysis at SLAC and NERSC: a Trial Run of Nascent Exascale Experimental Data Analysis,
+     [10.48550/arXiv.2106.11469](https://doi.org/10.48550/arXiv.2106.11469).
+    * Containers and the Truth between HPC & Cloud System Software Convergence, DOI:[10.2172/1859696](https://doi.org/10.2172/1859696).
