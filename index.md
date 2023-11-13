@@ -3,11 +3,11 @@ layout: home
 ---
 # The Better Scientific Software (BSSw) Tutorial
 
-The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.
+The BSSw tutorial focuses on issues of developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.  In selecting topics for our tutorials, we try to emphasize topics for which few other training resources are available which speak to the particular experiences of developers of scientific software.
 
 We first presented a version of this tutorial in 2016, and since then we have been working continually to refine and expand it.  We present it most often as part of conferences, but we are open to a wide range of venues, both in person (circumstances permitting) and online.  [Contact us](mailto:{{ site.email }}?subject=BSSw tutorial question) for more information.
 
-In the listings below, each tutorial event has its own page, providing details specific to that tutorial, including agenda, presentations, hands-on activities, and other resources.  Quick links are also provided to key tutorial artifacts, where available.
+In the listings below, each tutorial event has its own page, providing details specific to that tutorial, including the agenda, presentations, hands-on activities, and other resources.  Quick links are also provided to key tutorial artifacts, where available.
 
 ## Stability and persistence
 
