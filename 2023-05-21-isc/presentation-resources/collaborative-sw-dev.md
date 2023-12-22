@@ -3,7 +3,7 @@
   * [Git Flow (Driessen's Original Blog)](https://nvie.com/posts/a-successful-git-branching-model/)
     * [Git extensions](https://github.com/nvie/gitflow)
   * [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) (previously linked to ~~scottchacon.com/2011/08/31/github-flow.html~~)
-  * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
+  * [GitLab Flow](https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/) (previously linked to ~~docs.gitlab.com/ee/topics/gitlab_flow.html~~)
   * [Agile Manifesto](http://agilemanifesto.org/)
   * [How to code review in a Pull Request](https://blog.codacy.com/how-to-code-review-in-a-pull-request/)
   * [Investing in Code Reviews for Better Research Software](https://ideas-productivity.org/events/hpc-best-practices-webinars/#webinar068)

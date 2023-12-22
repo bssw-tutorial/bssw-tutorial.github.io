@@ -26,7 +26,7 @@
   * [Git Flow (Driessen's Original Blog)](https://nvie.com/posts/a-successful-git-branching-model/)
       * [Git extensions](https://github.com/nvie/gitflow)
   * [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) (previously linked to ~~scottchacon.com/2011/08/31/github-flow.html~~)
-  * [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
+  * [GitLab Flow](https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/) (previously linked to ~~docs.gitlab.com/ee/topics/gitlab_flow.html~~)
 * Module 4: Software Design
   * [Related Article](https://link.springer.com/chapter/10.1007/978-3-319-27308-2_19)
 * Module 5: Software Testing 1
