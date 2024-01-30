@@ -1,6 +1,6 @@
 #/bin/bash
 #
-# event-to-collection.sh source-dir dest-dir
+# bsswt-to-ipo.sh source-dir dest-dir
 #
 # Convert an event.yml from the bssw-tutorial website into 
 # a bsswt-*.md for the ideas-productivity website.
