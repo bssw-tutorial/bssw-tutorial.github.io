@@ -10,14 +10,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
 <meta property="og:description" content="Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers." />
-<link rel="canonical" href="https://bssw-tutorial.github.io/2018-06-24-isc/" />
-<meta property="og:url" content="https://bssw-tutorial.github.io/2018-06-24-isc/" />
+<link rel="canonical" href="https://bssw-tutorial.github.io/2024-05-12-isc/" />
+<meta property="og:url" content="https://bssw-tutorial.github.io/2024-05-12-isc/" />
 <meta property="og:site_name" content="Better Scientific Software Tutorial" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2024-02-25T20:24:32-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2018-06-24-isc/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2024-02-25T20:24:32-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2024-05-12-isc/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -80,13 +80,13 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 
 
-<h1 align="center">Better Scientific Software</h1>
+<h1 align="center"><a href="https://app.swapcard.com/widget/event/isc-high-performance-2024/planning/UGxhbm5pbmdfMTgyNTYzNw==">Better Scientific Software</a></h1>
 <p align="center">a tutorial presented at</p>
 <h2 align="center"><a href="https://www.isc-hpc.com/">ISC High Performance</a></h2>
 
   <h3 align="center">on 
-    
-    Sunday 24 June 2018
+    2:00 pm - 6:00 pm CEST
+    Sunday 12 May 2024
     
   </h3>
   
@@ -95,9 +95,9 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 
 
-<p style="text-indent: -5em; padding-left: 5em;">Presenters: 
+<p style="text-indent: -5em; padding-left: 5em;">Presenter: 
 
-Anshu Dubey (Argonne National Laboratory) and Michael A. Heroux (Sandia National Laboratories)
+Anshu Dubey (Argonne National Laboratory)
 </p>
 
 
@@ -116,9 +116,20 @@ Anshu Dubey (Argonne National Laboratory) and Michael A. Heroux (Sandia National
 <h2>Quick Links</h2>
 <ul>
     
-    <li><a href="https://doi.org/10.6084/m9.figshare.c.4147148">Presentation Slides</a> (FigShare)</li>
+    <li><a href="https://www.isc-hpc.com/registration-2024.html">Register for the event</a></li>
+    
+    
 </ul>
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -135,7 +146,10 @@ Anshu Dubey (Argonne National Laboratory) and Michael A. Heroux (Sandia National
 <ul>
 
 <li><a href="#description">Description</a></li>
+<li><a href="#agenda">Agenda</a></li>
 <li><a href="#presentation-slides">Presentation Slides</a></li>
+<li><a href="#how-to-participate">How to Participate</a></li>
+<li><a href="#stay-in-touch">Stay in Touch</a></li>
 <li><a href="#requested-citation">Requested Citation</a></li>
 <li><a href="#acknowledgements">Acknowledgements</a></li></ul>
 
@@ -145,25 +159,56 @@ Anshu Dubey (Argonne National Laboratory) and Michael A. Heroux (Sandia National
 <hr>
 <h2 id="description">Description</h2>
 
-<p>The computational science and engineering (CSE) community is in the midst of an extremely challenging period created by the confluence of disruptive changes in computing architectures, demand for greater scientific reproducibility, and new opportunities for greatly improved simulation capabilities, especially through coupling physics and scales.  Computer architecture changes require new software design and implementation strategies, including significant refactoring of existing code. Reproducibility demands require more rigor across the entire software endeavor. Code coupling requires aggregate team interactions including integration of software processes and practices.  These challenges demand large investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential.</p>
+<p>The computational science and engineering (CSE) community is in the midst of an extremely challenging period created by the confluence of disruptive changes in computing architectures, demand for greater scientific reproducibility, and new opportunities for greatly improved simulation capabilities, especially through coupling physics and scales.  Computer architecture changes require new software design and implementation strategies, including significant refactoring of existing code. Reproducibility demands require more rigor across the entire software endeavor and for running computational experiments.  These challenges demand large investments in scientific software development and improved practices.  Focusing on improved developer productivity and software sustainability is both urgent and essential.</p>
 
-<p>This tutorial will provide information and hands-on experience with software practices, processes, and tools explicitly tailored for CSE.  Goals are improving the productivity of those who develop CSE software and increasing the sustainability of software artifacts.  We discuss practices that are relevant for projects of all sizes, with emphasis on small teams, and on aggregate teams composed of small teams.  Topics include software licensing, effective models, tools, and processes for small teams (including agile workflow management), reproducibility, and scientific software testing and verification (including automated testing and continuous integration).</p>
+<p>This tutorial will provide information and illustrative use cases of software practices, processes, and tools explicitly tailored for CSE.  Goals are improving the productivity of those who develop CSE software and increasing the quality and sustainability of software artifacts.  We discuss practices that are relevant for projects of all sizes, with emphasis on complex workflows and reproducible science.  Topics include software design, refactoring, software testing (including automated testing, legacy code testing, and continuous integration), and methodologies for running reproducible computational experiments.</p>
+
+
+<hr>
+<h2 id="agenda">Agenda</h2>
+
+<p><em>The agenda will be added once it is finalized.</em></p>
 
 
 <hr>
 <h2 id="presentation-slides">Presentation Slides</h2>
 
-<p>The latest version of the slides will always be available at <strong><a href="https://doi.org/10.6084/m9.figshare.c.4147148">https://doi.org/10.6084/m9.figshare.c.4147148</a></strong>.</p>
+<p><em>The presentations will be published shortly before the event.</em></p>
 
-<p>Note that these files may include additional slides that will not be discussed during the tutorial, but questions are welcome.</p>
 
+<hr>
+<h2 id="how-to-participate">How to Participate</h2>
+
+<ul>
+  <li>
+    <p>We want to interact with you! We find these tutorials most interesting and informative (for everyone) if you ask questions and share experiences! We learn too!</p>
+  </li>
+  <li>
+    <p>Please raise your hand at any time to ask a question</p>
+  </li>
+</ul>
+
+<hr>
+<h2 id="stay-in-touch">Stay in Touch</h2>
+
+<ul>
+  <li>
+    <p>After the tutorial please feel free to email questions or feedback to the BSSw tutorial team at <a href="mailto:bssw-tutorial@lists.mcs.anl.gov">bssw-tutorial@lists.mcs.anl.gov</a>.</p>
+  </li>
+  <li>
+    <p>To find out about future events organized by the IDEAS Productivity Project, you can <a href="http://eepurl.com/cQCyJ5">subscribe to our mailing list</a> (usually ~2 messages/month).</p>
+  </li>
+  <li>
+    <p>For monthly updates on the Better Scientific Software site, subscribe to our <a href="https://bssw.io/pages/receive-our-email-digest">monthly digest</a>.</p>
+  </li>
+</ul>
 
 <hr>
 <h2 id="requested-citation">Requested Citation</h2>
 
 <p>The requested citation the overall tutorial is:</p>
 
-<p>Anshu Dubey and Michael A. Heroux, Better Scientific Software tutorial, in ISC High Performance, Frankfurt, Germany, 2018. DOI: <a href="https://doi.org/10.6084/m9.figshare.c.4147148">10.6084/m9.figshare.c.4147148</a>.</p>
+<p><em>Citation details not currently available.</em></p>
 
 <p>Individual modules may be cited as <em>Speaker</em>, <em>Module Title</em>, in Better Scientific Software tutorial…</p>
 
