@@ -1,0 +1,11 @@
+Fixed Points,Duration,Time (CEST),Title,Presenter
+<!--skip-->,<!--skip-->,<!--right-->,,
+2:00 PM,5,2:00 PM,intro-a,adubey64
+,15,2:05 PM,overview-a,adubey64
+,30,2:20 PM,design-a,adubey64
+,40,2:50 PM,testing-a,adubey64
+,30,3:30 PM,refactoring,adubey64
+4:00 PM,30,4:00 PM,<em>Break</em>,
+4:30 PM,45,4:30 PM,lab-notebooks,adubey64
+,45,5:15 PM,documentation,adubey64
+6:00 PM,240,6:00 PM,<em>Adjourn</em>,
