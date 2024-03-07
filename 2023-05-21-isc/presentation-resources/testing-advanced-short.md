@@ -5,7 +5,7 @@
   * Build-Link-Test CMake Framework: [llnl-blt.readthedocs.io](https://llnl-blt.readthedocs.io)
   * https://github.com/bssw-tutorial/hello-numerical-world
   * Tutorials for code coverage: [Online Tutorial](https://github.com/amklinv/morpheus), [Another example](https://github.com/jrdoneal/infrastructure)
-  * [Lcov](http://ltp.sourceforge.net/coverage/lcov.php)
+  * [Lcov](https://github.com/linux-test-project/lcov) (formerly linked to ~~ltp.sourceforge.net/coverage/lcov.php~~)
   * [CI/CD Introduction](https://docs.gitlab.com/ee/ci/introduction/)
   * [Joint Center for Satellite Data Assimilation (JEDI) documentation](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/)
     * [Singularity containers](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/1.3.0/using/jedi_environment/singularity.html)
