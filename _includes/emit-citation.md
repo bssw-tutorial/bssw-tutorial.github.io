@@ -17,7 +17,13 @@
 
 {% if my-presenters-d or my-presenters %}
   {% if my-event.venue and my-event.location and my-event.startdate and presentations-doi %}
-{{ name_affiliation_array | array_to_sentence_string }}, {{ my-event.title }} {{ my-event.title-type }}, in {{ my-event.venue }}, {{ my-event.location }}, {{ my-event.startdate | date: "%Y" }}. {% if presentations-doi %}DOI: [{{ presentations-doi }}]({{ presentations-url }}).{% endif %}
+{{ name_affiliation_array | array_to_sentence_string }}, {{ my-event.title }} {{ my-event.title-type }}, in {{ my-event.venue }}, {{ my-event.location }}, {{ my-event.startdate | date: "%Y" }}. {% if presentations-doi %}
+{%- if presentations-status == "reserved" %}
+DOI: {{ presentations-doi }}.
+{% else %}
+DOI: [{{ presentations-doi }}]({{ presentations-url }}).
+{% endif %}
+{% endif %}
   {% else %}
 *Citation details not currently available.*
   {% endif %}

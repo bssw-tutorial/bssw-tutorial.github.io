@@ -5,7 +5,9 @@
 
 {% if presentations-doi %}
 {% if presentations-status == "reserved" %}
-The slides *will be* published at **<{{ presentations-url }}>**.
+The slides *will be* published at {{ presentations-url }}.
+
+*Note that the DOI will become active once the presentations are published.*
 {% else %}
 The latest version of the slides will always be available at **<{{ presentations-url }}>**. 
 
