@@ -54,7 +54,7 @@
           {% if display-registration %}
           <li><a href="{{ my-event.registration-url }}">Register for the event</a></li>
           {% endif %}
-          {% assign my-artifacts-size-no-bsswt = my-artifacts | where_exp: "i", "i.bsswt-event-label == nil" | size %}
+          {% assign my-artifacts-size-no-bsswt = my-artifacts | where_exp: "i", "i.bsswt-event-label == nil" | where_exp: "i", "i.status != 'reserved'" | size %}
           {% if my-artifacts-size-no-bsswt  > 0 %}
           <li>{{ my-artifacts-size-no-bsswt | pluralize: "Artifact:", "Artifacts:" }} {% include emit-artifacts.html artifacts=my-artifacts format="row" %}</li>
           {% endif %}
