@@ -47,7 +47,7 @@
   * [The War Over Supercooled Water](https://doi.org/10.1063/PT.6.1.20180822a)
   * [Researchers Find Bug in Python Script May Have Affected Hundreds of Studies]( https://arstechnica.com/information-technology/2019/10/chemists-discover-cross-platform-python-scripts-not-so-cross-platform/)
   * [The FAIR Guiding Principles for Scientific Data Management and Stewardship. Mark D. Wilkinson, et al. 2016](https://doi.org/10.1038/sdata.2016.18)
-  * [FAIR4RS](https://www.rd-alliance.org/groups/fair-research-software-fair4rs-wg)
+  * [FAIR4RS](https://www.rd-alliance.org/groups/fair-for-research-software-fair4rs-wg/forum/) (previously linked to ~~www.rd-alliance.org/groups/fair-research-software-fair4rs-wg~~)
   * [National Science Foundation Data Management Plan Requirements](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
   * [SC21 Reproducibility Initiative](https://sc21.supercomputing.org/submit/reproducibility-initiative/)
   * [ACM Transactions on Mathematical Software (TOMS)](http://toms.acm.org/replicated-computational-results.cfm)

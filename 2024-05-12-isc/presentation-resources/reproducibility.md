@@ -26,7 +26,7 @@
        - [FigShare](https://figshare.com/)
   * Other Resources:
     * [The FAIR Guiding Principles for Scientific Data Management and Stewardship. Mark D. Wilkinson, et al. 2016](https://doi.org/10.1038/sdata.2016.18)
-    * [FAIR4RS](https://www.rd-alliance.org/groups/fair-research-software-fair4rs-wg)
+    * [FAIR4RS](https://www.rd-alliance.org/groups/fair-for-research-software-fair4rs-wg/forum/) (previously linked to ~~www.rd-alliance.org/groups/fair-research-software-fair4rs-wg~~)
     * [Editorial: ACM TOMS Replicated Computational Results Initiative. Michael A. Heroux. 2015](http://dx.doi.org/10.1145/2743015)
     * [Enhancing Reproducibility for Computational Methods](https://doi.org/10.1126/science.aah6168)
     * [Simple experiments in reproducibility and technical trust by Mike Heroux and students](https://betterscientificsoftware.github.io/Trust-Tools/) (work in progress)
