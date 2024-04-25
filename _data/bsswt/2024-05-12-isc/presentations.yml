@@ -62,7 +62,7 @@ testing-advanced-short: "Testing and Continuous Integration"
 packaging-short: "Software Packaging - Condensed Version"
 #
 packaging-pf: "Software Packaging"
-documentation: "Documenting your Software"
+documentation: "Documentation"
 #
 # Intersect versions
 #
