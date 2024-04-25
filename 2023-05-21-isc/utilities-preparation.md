@@ -200,7 +200,7 @@ EOF
   {% capture description %}No file found for section description: "{{ local }}" or "{{ default }}"{% endcapture %}
 {%- endif -%}
 
-{%- capture f -%}section-acknowledgments.md{%- endcapture -%}
+{%- capture f -%}section-acknowledgments-ecp.md{%- endcapture -%}
 {% capture local %}{{ event-label }}/{{ f }}{% endcapture %}
 {% capture default %}_includes/{{ f }}{% endcapture %}
 {% capture local-exists %}{% file_exists {{ local }}  %}{% endcapture %}
@@ -210,7 +210,7 @@ EOF
 {%- elsif default-exists == "true" -%}
   {%- capture funding -%}{% include {{ f }} %}{%- endcapture -%}
 {%- else -%}
-  {% capture funding %}No file found for section acknowledgments: "{{ local }}" or "{{ default }}"{% endcapture %}
+  {% capture funding %}No file found for section acknowledgments-ecp: "{{ local }}" or "{{ default }}"{% endcapture %}
 {%- endif -%}
 
 

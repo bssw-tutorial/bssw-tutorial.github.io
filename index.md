@@ -110,4 +110,6 @@ The BSSw tutorial is produced by the [IDEAS Productivity project](https://ideas-
 
 This work was supported by the U.S. Department of Energy Office of Science, Office of Advanced Scientific Computing Research (ASCR), and by the Exascale Computing Project (17-SC-20-SC), a collaborative effort of the U.S. Department of Energy Office of Science and the National Nuclear Security Administration.
 
+This work was supported by the U.S. Department of Energy, Office of Science, Office of Advanced Scientific Computing Research, Next-Generation Scientific Software Technologies (NGSST) program.
+
 *Built {{ page.last_modified_at | date: '%F' }} from commit [{{ site.github.build_revision | truncate: 7, "" }}]({{ site.github.repository_url }}/commit/{{ site.github.build_revision }})*

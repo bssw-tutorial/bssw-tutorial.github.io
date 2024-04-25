@@ -67,7 +67,7 @@ gh issue create \
   - [ ] stay-in-touch
   - [ ] resources-from-presentations
   - [ ] requested-citation
-  - [ ] acknowledgments
+  - [ ] acknowledgments-ecp
 - [ ] Tag repository
 EOF
 
@@ -118,7 +118,7 @@ gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ eve
   {% capture description %}No file found for section description: "{{ local }}" or "{{ default }}"{% endcapture %}
 {%- endif -%}
 
-{%- capture f -%}section-acknowledgments.md{%- endcapture -%}
+{%- capture f -%}section-acknowledgments-ecp.md{%- endcapture -%}
 {% capture local %}{{ event-label }}/{{ f }}{% endcapture %}
 {% capture default %}_includes/{{ f }}{% endcapture %}
 {% capture local-exists %}{% file_exists {{ local }}  %}{% endcapture %}
@@ -128,7 +128,7 @@ gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ eve
 {%- elsif default-exists == "true" -%}
   {%- capture funding -%}{% include {{ f }} %}{%- endcapture -%}
 {%- else -%}
-  {% capture funding %}No file found for section acknowledgments: "{{ local }}" or "{{ default }}"{% endcapture %}
+  {% capture funding %}No file found for section acknowledgments-ecp: "{{ local }}" or "{{ default }}"{% endcapture %}
 {%- endif -%}
 
 1. Login and navigate to the `My Data` tab in your FigShare account

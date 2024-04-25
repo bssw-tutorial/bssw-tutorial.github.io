@@ -268,7 +268,7 @@ gh issue create \
   - [ ] related-events (local, if appropriate to context)
   - [ ] resources-from-presentations
   - [x] requested-citation (okay if details are not available)
-  - [x] acknowledgments (always okay)
+  - [x] acknowledgments-ecp (always okay)
 - Additional files needed in \`{{ event-label }}\` directory
   - [ ] Copy and update \`presentation-resources\` directory
   - [ ] Copy and update \`handson-*\` files and \`images\` directory

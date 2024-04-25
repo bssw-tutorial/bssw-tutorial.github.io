@@ -254,7 +254,7 @@ gh issue create \
   - [ ] related-events (local, if appropriate to context)
   - [ ] resources-from-presentations
   - [x] requested-citation
-  - [x] acknowledgments
+  - [x] acknowledgments-ecp
 - Additional files needed in \`{{ event-label }}\` directory
   - [ ] Copy and update \`presentation-resources\` directory
   - [ ] Copy and update \`handson-*\` files and \`images\` directory

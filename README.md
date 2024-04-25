@@ -85,10 +85,10 @@ location: the geographic local or the event, in quotes, e.g., "St. Louis, Missou
 layout: bsswt-event-page
 event-label: 2021-11-15-sc
 # A typical initial tutorial page might include:
-#         [description,acknowledgments]
+#         [description,acknowledgments-ecp]
 # A typical complete tutorial page would include: 
-#         [description,agenda,presentation-slides,how-to-participate,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
-sections: [description,agenda,presentation-slides,hands-on-exercises,related-events,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
+#         [description,agenda,presentation-slides,how-to-participate,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments-ecp]
+sections: [description,agenda,presentation-slides,hands-on-exercises,related-events,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments-ecp]
 ---
 ```
 
@@ -127,10 +127,10 @@ Building out the contents of the page for a tutorial event can be carried out in
 layout: bsswt-event-page
 event-label: 2021-11-15-sc
 # A typical initial tutorial page might include:
-#         [description,acknowledgments]
+#         [description,acknowledgments-ecp]
 # A typical complete tutorial page would include: 
-#         [description,agenda,presentation-slides,how-to-participate,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
-sections: [description,agenda,presentation-slides,hands-on-exercises,related-events,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments]
+#         [description,agenda,presentation-slides,how-to-participate,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments-ecp]
+sections: [description,agenda,presentation-slides,hands-on-exercises,related-events,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments-ecp]
 ---
 ```
 
@@ -150,7 +150,7 @@ This is usually the abstract or description of the tutorial, but can be whatever
 
 #### Acknowledgments
 
-This is usually the funding acknowledgement.  There is a stock acknowledgment of ECP support that should suffice for all but the earliest tutorials.  The `acknowledgments` section is usually included on the event page from the start (even at the Planned stage).
+This is usually the funding acknowledgement.  There is a stock acknowledgment of ECP support that should suffice for all but the earliest tutorials.  The `acknowledgments-ecp` section is usually included on the event page from the start (even at the Planned stage).
 
 #### Agenda
 
