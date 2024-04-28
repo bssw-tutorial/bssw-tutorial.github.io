@@ -7,7 +7,7 @@
   * Resources -- Execution Environments
     * [ATPESC 2022 Laboratory Environment BSSw Tutorial](https://www.youtube.com/watch?v=14UwpmvA56k)
       * [Example Repo](https://www.youtube.com/watch?v=14UwpmvA56k)
-    * [Lab Notebooks for Computational Mathematics, Sciences & Engineering](https://ideas-productivity.org/events/hpc-best-practices-webinars/#webinar070)
+    * [Lab Notebooks for Computational Mathematics, Sciences & Engineering](https://ideas-productivity.org/events/hpcbp-070-labnotebooks) (previously linked to ~~ideas-productivity.org/events/hpc-best-practices-webinars/#webinar070~~)
     * [Popper](https://www.exascaleproject.org/event/popper/)
     * [FlashKit](https://github.com/GWU-CFD/FlashKit)
     * [Code Ocean](https://codeocean.com/)
