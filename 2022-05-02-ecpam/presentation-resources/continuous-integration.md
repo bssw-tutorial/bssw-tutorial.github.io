@@ -4,7 +4,7 @@
     * [Flash test](https://doi.org/10.1002/spe.2220)
     * [Buildtest](https://github.com/buildtesters/buildtest/)
     * [Nightly](https://github.com/frobnitzem/nightly/)
-    * ~~[Fluid-numerics](https://www.fluidnumerics.com/resources/cicd-in-the-cloud-for-hpc-applications)~~
+    * ~~www.fluidnumerics.com/resources/cicd-in-the-cloud-for-hpc-applications~~
   * [Exascale Computing Project CI documentation](https://ecp-ci.gitlab.io/)
   * [Github Actions](https://github.com/features/actions)
   * [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
