@@ -1,0 +1,10 @@
+Fixed Points,Duration,Time (CEST),Title,Presenter,Time (EDT),Time (CDT),
+<!--skip-->,<!--skip-->,<!--right-->,,,<!--skip-->,<!--skip-->,<!--skip-->
+1:30 PM,5,1:30 PM,intro-a,jarrah42,7:30 AM,6:30 AM,
+,40,1:35 PM,reproducibility,jarrah42,7:35 AM,6:35 AM,
+,45,2:15 PM,testing-a,jarrah42,8:15 AM,7:15 AM,
+3:00 PM,30,3:00 PM,<em>Afternoon break</em>,,9:00 AM,8:00 AM,
+,60,3:30 PM,computational-expts-a,adubey64,9:30 AM,8:30 AM,
+,30,4:30 PM,rep-workflows,jarrah42,10:30 AM,9:30 AM,
+5:00 PM,210,5:00 PM,<em>Adjourn</em>,,11:00 AM,10:00 AM,
+,,,,,6:00,7:00,Time difference
