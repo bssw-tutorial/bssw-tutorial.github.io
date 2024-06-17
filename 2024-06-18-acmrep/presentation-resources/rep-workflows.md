@@ -5,6 +5,10 @@
     * <https://nf-co.re>
     * <https://workflowhub.eu>
     * <https://zenodo.org>
+  * Data/Code Combinator
+    * [DVC](https://dvc.org)
+    * [Weights & Biases](https://wandb.ai)
+    * [huggingface.co](https://huggingface.co)
   * Common scientific workflow patterns
     * High-performance simulation and modeling: <https://doi.org/10.1007/978-3-031-23606-8_9>
     * High-performance AI: <https://www.analyticsvidhya.com/blog/2022/02/a-comprehensive-guide-on-hyperparameter-tuning-and-its-techniques/>
@@ -48,7 +52,7 @@
     * Data repositories
       * Zenodo <https://zenodo.org>
       * Dataverse <https://dataverse.org>
-    * Dynamic Provisioning and Execution of HPC Workflows Using Pythonm doi: 10.1109/PyHPC.2016.005.
+    * Dynamic Provisioning and Execution of HPC Workflows Using Pythonm doi:[10.1109/PyHPC.2016.005](https://doi.org/10.1109/PyHPC.2016.005).
     * Characterization of scientific workflows, doi:[10.1109/WORKS.2008.4723958](https://doi.org/10.1109/WORKS.2008.4723958).
     * Real-Time XFEL Data Analysis at SLAC and NERSC: a Trial Run of Nascent Exascale Experimental Data Analysis,
      [10.48550/arXiv.2106.11469](https://doi.org/10.48550/arXiv.2106.11469).
