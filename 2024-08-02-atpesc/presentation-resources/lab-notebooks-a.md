@@ -1,0 +1,15 @@
+<!-- lab-notebooks -->
+  * [European Southern Observatory](https://www.eso.org/public/)
+  * [HPC and the Lab Manager](https://bssw.io/blog_posts/hpc-and-the-lab-manager)
+  * [What All Codes Should Do (ATPESC 2019)](https://www.youtube.com/watch?v=EaMCBLY1JPo&list=PLGj2a3KTwhRYIJydH7OSAOET4sz3gwmIC&index=4)
+  * [Writing the Laboratory Notebook](https://files.eric.ed.gov/fulltext/ED344734.pdf)
+  * [DIKW pyramid](https://en.wikipedia.org/wiki/DIKW_pyramid)
+  * [How to pick an electronic notebook](https://doi.org/10.1038/d41586-018-05895-3)
+  * Resources -- Execution Environments
+  * [BSSw article by Jean Shuler](https://bssw.io/items/executable-environments-for-software-data-and-publication)
+  * [Popper](https://www.exascaleproject.org/event/popper/) by [Ivo Jimenez](https://bssw.io/fellows/ivo-jimenez)
+  * [Code Ocean](https://codeocean.com/)
+  * [Weight & Biases](https://wandb.ai/site)
+  * [Multiphase Simulations](https://github.com/akashdhruv/Multiphase-Simulations)
+  * [FlashKit](https://github.com/GWU-CFD/FlashKit)
+  * [Computational Lab Environment Example](https://github.com/bssw-tutorial/lab-environment-2022-08-11-atpesc)
