@@ -1,0 +1,16 @@
+Fixed Points,Duration,Time (CDT),Title,Presenter,Notes
+<!--skip-->,<!--skip-->,<!--right-->,,,<!--skip-->
+8:30 AM,5,8:30 AM,intro-a,bernhold,
+,40,8:35 AM,overview-a,bernhold,
+,45,9:15 AM,design,adubey64,
+10:00 AM,30,10:00 AM,<em>Break</em>,,Break times are actually flexible if needed
+10:30 AM,60,10:30 AM,spack,tgamblin,
+,60,11:30 AM,Spack Hands-On,tgamblin,
+12:30 PM,60,12:30 PM,<em>Lunch</em>,,
+1:30 PM,60,1:30 PM,testing-a,adubey64,
+,30,2:30 PM,refactoring,adubey64,
+3:00 PM,30,3:00 PM,<em>Break</em>,,Break times are actually flexible if needed
+,60,3:30 PM,licensing-i,"bernhold,tgamblin",
+,60,4:30 PM,reproducibility,bernhold,
+,60,5:30 PM,lab-notebooks-a,jared123,
+6:30 PM,60,6:30 PM,<em>Adjourn</em>,,
