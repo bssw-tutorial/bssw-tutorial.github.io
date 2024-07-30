@@ -18,7 +18,7 @@ startdate: "2022-04-07"
 time: 9:00 am - 11:20 am and 1:20 pm - 3:40 pm MDT (UTC-6)
 venue: "Improving Scientific Software"
 venue-type: "conference"
-venue-url: https://sea.ucar.edu/conference/2022
+#venue-url: https://sea.ucar.edu/conference/2022
 location: "online"
 #
 # presenter-ids: [bernhold, rinkug, pagrubel, frobnitzem]

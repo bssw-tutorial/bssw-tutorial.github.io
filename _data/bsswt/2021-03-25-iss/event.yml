@@ -18,7 +18,7 @@ startdate: "2021-03-25"
 time: 1:00 pm - 4:00 pm MDT
 venue: "Improving Scientific Software"
 venue-type: "conference"
-venue-url: https://sea.ucar.edu/conference/2021
+#venue-url: https://sea.ucar.edu/conference/2021
 location: "online"
 #
 # presenter-ids: [bernhold, adubey64, rinkug, frobnitzem]
