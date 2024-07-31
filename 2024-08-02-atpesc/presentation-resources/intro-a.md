@@ -1,6 +1,7 @@
 <!-- intro-a -->
+  * [Consortium for the Advancement of Scientific Software (CASS)](https://cass.community/)
   * [IDEAS Productivity](https://ideas-productivity.org)
-  * [CORSA](https://corsa.center)
+  * [Spack](https://spack.io)
   * [Better Scientific Software](https://bssw.io) site
   * [BSSw Digest](https://bssw.io/pages/receive-our-email-digest)
   * [BSSw RSS Feed](https://bssw.io/items.rss)
