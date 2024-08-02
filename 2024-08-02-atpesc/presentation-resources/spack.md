@@ -7,6 +7,8 @@
   * [Spack Release Notes](https://github.com/spack/spack/releases)
   * [Spack Twitter](https://x.com/spackpm)
   * [Extreme Scale Scientific Software Stack](https://e4s.io/) (E4S)
+  * Find available packages at <https://packages.spack.io>
+  * See available builds at <https://cache.spack.io>
 
   * Other package management tools (HPC and otherwise)
     * [Easybuild](http://hpcugent.github.io/easybuild/)
