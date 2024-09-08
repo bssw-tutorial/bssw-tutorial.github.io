@@ -29,7 +29,7 @@
           - [Open Source Licenses and their Compatibility](https://janelia-flyem.github.io/licenses.html)
           - [Which Licenses May Not be Included within Apache Products?](https://www.apache.org/legal/resolved.html#category-x)
         - (Re-) Licensing considerations of various organizations
-          - [LLVM Contemplates Relicensing](https://lwn.net/Articles/701155/), [LLVM Relicensing Effort](https://foundation.llvm.org/docs/relicensing/)
+          - [LLVM Contemplates Relicensing](https://lwn.net/Articles/701155/), [LLVM Relicensing Effort](https://foundation.llvm.org/community-health-infrastructure)
           - HEP Software Foundation [licensing working group](https://hepsoftwarefoundation.org/activities/licensing.html), particularly:
             - <https://hepsoftwarefoundation.org/organization/2017/02/21/licensing.html>
             - <https://hepsoftwarefoundation.org/organization/2018/05/09/licensing.html> included this [Update on Software Licensing](https://indico.cern.ch/event/727095/contributions/2992610/attachments/1647248/2633145/HSF_Licensing_Intro_2018-05-09.pdf)
