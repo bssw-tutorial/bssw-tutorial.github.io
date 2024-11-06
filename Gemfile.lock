@@ -10,16 +10,19 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    eventmachine (1.2.7-x64-mingw32)
     faraday (2.12.0)
       faraday-net_http (>= 2.0, < 3.4)
       json
       logger
     faraday-net_http (3.3.0)
       net-http
-    ffi (1.17.0)
+    ffi (1.17.0-x64-mingw-ucrt)
+    ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
-    google-protobuf (4.28.2)
+    google-protobuf (4.28.3-x64-mingw-ucrt)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.28.3-x86_64-linux)
       bigdecimal
       rake (>= 13)
     http_parser.rb (0.8.0)
@@ -59,7 +62,7 @@ GEM
       jekyll (>= 3.3, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.7.2)
+    json (2.8.1)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -86,12 +89,13 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
-    rexml (3.3.8)
+    rexml (3.3.9)
     rouge (4.4.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.79.4)
-      google-protobuf (~> 4.27)
-      rake (>= 13)
+    sass-embedded (1.80.6-x64-mingw-ucrt)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.80.6-x86_64-linux-gnu)
+      google-protobuf (~> 4.28)
     sawyer (0.9.2)
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
@@ -104,12 +108,11 @@ GEM
       tzinfo (>= 1.0.0)
     unicode-display_width (2.6.0)
     uri (0.13.1)
-    wdm (0.1.1)
-    webrick (1.8.2)
+    wdm (0.2.0)
+    webrick (1.9.0)
 
 PLATFORMS
   x64-mingw-ucrt
-  x64-mingw32
   x86_64-linux
 
 DEPENDENCIES
@@ -123,8 +126,8 @@ DEPENDENCIES
   minima (~> 2.5)
   tzinfo (~> 1.2)
   tzinfo-data
-  wdm (~> 0.1.1)
+  wdm (~> 0.1)
   webrick (~> 1.8)
 
 BUNDLED WITH
-   2.2.15
+   2.5.22

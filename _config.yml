@@ -42,7 +42,7 @@ plugins:
   - jekyll-feed
   - jekyll-titles-from-headings
   - jekyll-last-modified-at
-  - jekyll-pluralize
+#  - liquid_pluralize # Do not use jekyll-pluralize -- outdated
   - jekyll-github-metadata
   - jekyll-redirect-from
 #  - flexible_include # We do use this, but it is not a gem
