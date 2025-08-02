@@ -1,0 +1,164 @@
+# Main data file for BSSw tutorial events
+#
+# The following information is used for the ideas-productivity.org website only.
+# It is not used in the bssw-tutorials.github.io website.
+#
+type: Tutorial
+series:
+  - "BSSw Tutorials"
+activities:
+  - "PESO"
+  - "RAPIDS"
+parent-event-name: SC25
+parent-event-file: parentconf-2025-11-16-sc25
+#
+# Commentary notes indicate fields that are
+# required (plain text) and optional (bracketed text)
+# in the "planned" and "scheduled" states.
+#
+# Basic tutorial information
+#
+# Planned: title, [title-type], [title-url]
+# Scheduled: same
+#
+title: "Better Software for Reproducible Science"
+title-type: "tutorial"
+#title-url: https://sc23.conference-program.com/presentation/?id=tut147&sess=sess225
+#
+# Presentation date and time.
+# enddate is optional for one-day events
+# time should include timezeone explicitly
+# We don't currently handle tutorials that occur at *different times* on multiple days
+#
+# Planned: startdate, [enddate], [time]
+#   Note: at the "planned" stage, enddate can be used with date to specify
+#   the range of dates in which the tutorial *could* take place.
+# Scheduled: startdate, [enddate], time
+#   Unless the tutorial occurs over multiple days, enddate is not
+#   needed for tutorials in the "scheduled" stage.
+#
+startdate: "2025-11-16"
+#enddate: "2023-11-132
+time: "8:30 am - 12:00 pm CST"
+#
+# Venue information
+#
+# Planned: venue, [venue-type], [venue-url], location
+# Scheduled: same
+#
+venue: "The International Conference for High-Performance Computing, Networking, Storage, and Analysis (SC25)"
+venue-type: "conference"
+venue-url: https://sc25.supercomputing.org/
+location: "St. Louis, Missouri"
+#
+registration-url: https://sc25.supercomputing.org/attend/registration/
+#
+# Staffing information
+# organizer-ids will be assigned the issues that presenter-ids are not doing, basically
+# For presenters and helpers, we need more extensive information
+# - name
+# - affiliation
+# - short-affil
+# - pronouns
+# - github-id
+#
+# Required information, by stage of tutorial preparations:
+#   Planned: organizer-ids ,[presenters], [helpers]
+#   Scheduled: organizer-ids, presenters, [helpers]
+#
+organizer-ids: [bernhold,adubey64]
+#
+presenters:
+  - name: David E. Bernholdt
+    affiliation: Oak Ridge National Laboratory
+    short-affil: ORNL
+    pronouns: he/him
+    github-id: bernhold
+  - name: Anshu Dubey
+    affiliation: Argonne National Laboratory
+    short-affil: ANL
+    pronouns: she/her
+    github-id: adubey64
+#
+# helpers:
+#   - name: Rinku Gupta
+#     affiliation: Argonne National Laboratory
+#     short-affil: ANL
+#     pronouns: she/her
+#     github-id: rinkug
+#
+description: |
+  Producing scientific software is a challenge.  The high-performance modeling and simulation community, in particular, faces the confluence of disruptive changes in computing architectures and new opportunities (and demands) for greatly improved simulation capabilities, especially through coupling physics and scales.  Simultaneously, computational science and engineering (CSE), as well as other areas of science, are experiencing an increasing focus on scientific reproducibility and software quality.  Large language models (LLMs), can significantly increase developer productivity through judicious off-loading of tasks. However, models can hallucinate, therefore it is important to have a good methodology to get the most benefit out of this approach.
+
+  In this tutorial, attendees will learn about practices, processes, and tools to improve the productivity of those who develop CSE software, increase the sustainability of software artifacts, and enhance trustworthiness in their use. We will focus on aspects of scientific software development that are not adequately addressed by resources developed for industrial software engineering, offering a strategy for the responsible use of LLMs to enhance developer productivity in the context of scientific software development, incorporating testing strategies for the generated code, and discussing reproducibility considerations in the development and use of scientific software.
+#
+# This is a more or less typical collection of artifacts for tutorials.
+# Comment out anything that isn't (yet) available.
+# If you want to list the conference registration page, comment it out
+# after registration closes or after the event, when it is no longer useful.
+#
+# Planned: [artifacts]
+# Scheduled: artifacts
+#   As soon as the doi is reserved, the doi status should be set to "reserved", 
+#   which will allow the citation to be generated (with a note that the slides are not yet published).
+#   By the time of delivery, the doi status should be "published""
+#
+artifacts:
+  - label: Tutorial Webpage
+    bsswt-event-label: 2025-11-16-sc
+  # - label: Presentation Slides
+  #   format: FigShare
+  #   doi: 10.6084/m9.figshare.24226105
+  #   status: published
+#  - label: Hands-On Code Repository
+#    format: GitHub
+#    gh-repo: bssw-tutorial/hello-numerical-world-2022-08-11-atpesc
+#
+# This is a common set of deadlines we've encountered historically
+# Add due dates where appropriate. Those without will be ignored
+# Responsible refers to the (set of) github ids that will be assigned to
+# generated issues. Usually these are organizer-ids, presenter-ids, or
+# helper-ids as set above.  "by-presentation" is a special value indicating
+# that responsibilities should be assigned based on the presenters liseted
+# in the agenda.
+#
+# Planned: [deadlines]
+# Scheduled: deadlines
+#
+deadlines:
+  - label: internal-presentations
+    due: 2025-10-22
+    responsible: [by-presentation]
+  - label: internal-resource-links
+    due: 2025-10-28
+    responsible: [by-presentation]
+  - label: venue-initial-presentations
+    due: 2025-10-27
+    responsible: [organizer-ids]
+  - label: venue-final-presentations
+    due: 2025-11-16-sc
+    responsible: [organizer-ids]
+  - label: internal-consents
+    due: 
+    responsible: [presenter-ids, helper-ids]
+  - label: venue-consents
+    due: 
+    responsible: [organizer-ids]
+  - label: internal-recordings
+    due: 
+    responsible: [by-presentation]
+  - label: venue-recordings
+    due: 
+    responsible: [organizer-ids]
+  - label: internal-final-program-info
+    due: 
+    responsible: [presenter-ids]
+  - label: venue-final-program-info
+    due: 2025-08-04
+    responsible: [organizer-ids]
+  - label: internal-financial-info
+    due: 
+    responsible: [presenter-ids]
+  - label: venue-financial-info
+    due: 2025-08-04
+    responsible: [organizer-ids]

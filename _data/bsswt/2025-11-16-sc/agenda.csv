@@ -1,0 +1,8 @@
+Fixed Points,Duration,Time (CST),Title,Presenter,Notes
+<!--skip-->,<!--skip-->,<!--right-->,,,<!--skip-->
+8:30 AM,15,8:30 AM,intro,bernhold,Introduction + LLM setup + C/Fortran setup
+,30,8:45 AM,overview,bernhold,Motivation and overview of best practices in HPC SW Dev.
+,45,9:15 AM,repro-notebooks,bernhold,Improving Reproducibility Through Better Software Practices + Lab Notebooks
+10:00 AM,30,10:00 AM,<em>Morning break</em>,,
+,90,10:30 AM,dev-test-llm,adubey64,Software Development with LLMs
+12:00 PM,180,12:00 PM,<em>Adjourn</em>,,
