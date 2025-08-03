@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-08-02T17:36:20-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2025-08-08-atpesc/utilities-publication.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-08-03T12:45:55-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2025-08-08-atpesc/utilities-publication.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -80,20 +80,18 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
     <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
 - Quality control review of presentations (see &lt;https://github.com/bssw-tutorial/presentations/blob/main/README.md#quality-control&gt;)
-  - [ ] </span><span class="se">\`</span><span class="sh">intro-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">overview-a.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">overview.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">spack.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">testing-a.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">refactoring.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">licensing-i.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">repro-notebooks.pptx</span><span class="se">\`</span><span class="sh">
 - Generate PDFs of presentations
-  - [ ] </span><span class="se">\`</span><span class="sh">intro-a.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">overview-a.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">overview.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">spack.pptx</span><span class="se">\`</span><span class="sh">
-  - [ ] </span><span class="se">\`</span><span class="sh">testing-a.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">refactoring.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">licensing-i.pptx</span><span class="se">\`</span><span class="sh">
   - [ ] </span><span class="se">\`</span><span class="sh">repro-notebooks.pptx</span><span class="se">\`</span><span class="sh">
@@ -118,14 +116,13 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <span class="c"># Ensure destination directory exists and copy/move files there</span>
 <span class="nb">mkdir</span> <span class="nt">-p</span> final-presentations/2025-08-08-atpesc
 <span class="nb">cp </span>presentations.yml final-presentations/2025-08-08-atpesc
-<span class="nb">mv </span>intro-a.pdf final-presentations/2025-08-08-atpesc/01-intro-a.pdf
-<span class="nb">mv </span>overview-a.pdf final-presentations/2025-08-08-atpesc/02-overview-a.pdf
+<span class="nb">mv </span>intro.pdf final-presentations/2025-08-08-atpesc/01-intro.pdf
+<span class="nb">mv </span>overview.pdf final-presentations/2025-08-08-atpesc/02-overview.pdf
 <span class="nb">mv </span>design.pdf final-presentations/2025-08-08-atpesc/03-design.pdf
 <span class="nb">mv </span>spack.pdf final-presentations/2025-08-08-atpesc/04-spack.pdf
-<span class="nb">mv </span>testing-a.pdf final-presentations/2025-08-08-atpesc/05-testing-a.pdf
-<span class="nb">mv </span>refactoring.pdf final-presentations/2025-08-08-atpesc/06-refactoring.pdf
-<span class="nb">mv </span>licensing-i.pdf final-presentations/2025-08-08-atpesc/07-licensing-i.pdf
-<span class="nb">mv </span>repro-notebooks.pdf final-presentations/2025-08-08-atpesc/08-repro-notebooks.pdf
+<span class="nb">mv </span>refactoring.pdf final-presentations/2025-08-08-atpesc/05-refactoring.pdf
+<span class="nb">mv </span>licensing-i.pdf final-presentations/2025-08-08-atpesc/06-licensing-i.pdf
+<span class="nb">mv </span>repro-notebooks.pdf final-presentations/2025-08-08-atpesc/07-repro-notebooks.pdf
 
 <span class="c"># Add and commit new files and tag repository</span>
 <span class="nb">cd </span>final-presentations/2025-08-08-atpesc
