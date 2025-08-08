@@ -1,4 +1,5 @@
 <!-- testing-a -->
+  * [LLM prompts for TDD](https://tinyurl.com/yfxtf89t)
   * [CI introduction](https://docs.gitlab.com/ee/ci/introduction/)
   * [Useful resources on testing](https://bssw.io/items?topic=testing)
   * [Lcov](https://github.com/linux-test-project/lcov)
