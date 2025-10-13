@@ -34,3 +34,6 @@ gem "webrick", "~> 1.8"
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1", :install_if => Gem.win_platform?
 
+# Added due to capabilities being moved from Ruby stdlib to gems
+gem "fiddle"
+gem "faraday-retry"
