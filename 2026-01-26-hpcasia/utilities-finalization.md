@@ -128,14 +128,21 @@ layout: default
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
 {% else %}
-```shell
+{% comment %}
+  Convention is to provide bash version of commands, broken into the command itself and the body, which
+  is presented as a here document.  From this, it is straightforward to translate the bash code into
+  the corresponding powershell code.
+{% endcomment %}
+{% capture issuecommandbash -%}
 gh issue create \
   --repo bssw-tutorial/tutorial-management \
   --milestone "{{ event-label }}" \
   --title "{{ event-label }} post-acceptance finalization" \
   --assignee "{{ my-organizers | join: ',' | remove: ' ' }}" \
   --label "event preparation" \
-  --body-file - << EOF
+  --body-file -
+{%- endcapture %}
+{% capture issuebodybash -%}
 - [ ] Add a milestone for the event to master-labels-milestones.json and synchronize repositories
 - Internal and external awareness
   - [ ] Add issue the ideas-productivity/project-management
@@ -151,10 +158,25 @@ gh issue create \
   - [ ] Finalize helpers, set \`helpers\` in \`_data/bsswt/{{ event-label }}/event.yml\`
   - [ ] Finalize agenda, add \`_data/bsswt/{{ event-label }}/agenda.csv\` and \`_data/bsswt/{{ event-label }}/presentations.yml\`
 - [ ] Transition from planned to scheduled, if necessary
+{%- endcapture %}
 
+### Bash version
+
+```shell
+{{ issuecommandbash }} << EOF
+{{ issuebodybash }}
 EOF
-
 ```
+
+### Powershell version
+
+```powershell
+$issueBody = @"
+{{ issuebodybash | replace: "\`", "``" }}
+"@
+$issuebody | {{ issuecommandbash | replace: "\", "`" }}
+```
+
 {% endif %}
 
 ---
@@ -203,7 +225,7 @@ EOF
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
 {% else %}
-```shell
+{% capture issuecommandbash -%}
 gh issue create \
   --repo ideas-productivity/project-management \
   --milestone "Complete by {{ ms-date | date: '%Y-%m' }}" \
@@ -211,8 +233,21 @@ gh issue create \
   --title "{{ description }}" \
   --assignee "{{ my-organizers | join: ',' | remove: ' ' }}" \
   --body "{{ body }}"
+{%- endcapture %}
 
+### Bash version
+
+```shell
+{{ issuecommandbash }}
+EOF
 ```
+
+### Powershell version
+
+```powershell
+{{ issuecommandbash | replace: "\", "`" }}
+```
+
 {% endif %}
 
 ---
@@ -229,14 +264,16 @@ gh issue create \
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
 {% else %}
-```shell
+{% capture issuecommandbash -%}
 gh issue create \
   --repo bssw-tutorial/bssw-tutorial.github.io \
   --milestone "{{ event-label }}" \
   --title "{{ event-label }} web page" \
   --assignee "{{ my-organizers | join: ',' | remove: ' ' }}" \
   --label "event preparation" \
-  --body-file - << EOF
+  --body-file -
+{%- endcapture %}
+{% capture issuebodybash -%}
 - Inital creation of event web page
   - [x] Add event to \`_data/tutorials.csv\`
   - [x] Create event data directory \`_data/bsswt/{{ event-label }}\`
@@ -262,9 +299,9 @@ gh issue create \
   - [x] description (usually local)
   - [x] agenda (okay if \`agenda.csv\` not present)
   - [x] presentation-slides (okay if \`Presentation Slides\` artifact not set)
-  - [ ] how-to-participate (usually local)
+  - [x] how-to-participate (usually local)
   - [ ] hands-on-exercises (usually local)
-  - [ ] stay-in-touch (or stay-in-touch-no-ho if there is no hands-on)
+  - [x] stay-in-touch (or stay-in-touch-no-ho if there is no hands-on)
   - [ ] related-events (local, if appropriate to context)
   - [ ] resources-from-presentations
   - [x] requested-citation (okay if details are not available)
@@ -272,10 +309,25 @@ gh issue create \
 - Additional files needed in \`{{ event-label }}\` directory
   - [ ] Copy and update \`presentation-resources\` directory
   - [ ] Copy and update \`handson-*\` files and \`images\` directory
+{%- endcapture %}
 
+### Bash version
+
+```shell
+{{ issuecommandbash }} << EOF
+{{ issuebodybash }}
 EOF
-
 ```
+
+### Powershell version
+
+```powershell
+$issueBody = @"
+{{ issuebodybash | replace: "\`", "``" }}
+"@
+$issuebody | {{ issuecommandbash | replace: "\", "`" }}
+```
+
 {% endif %}
 
 ---
