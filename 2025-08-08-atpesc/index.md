@@ -10,5 +10,5 @@ event-label: 2025-08-08-atpesc
 #         [description,agenda,presentation-slides,participate*,hands-on-exercises,stay-in-touch,resources-from-presentations,requested-citation,acknowledgments-ecp]
 # where `participate*` might be participate-inperson, participate-hybrid, or participate-online, as appropriate.  A custom local `section-participate.md` file will also work.
 # Consider adding a related-events section if appropriate
-sections: [description,agenda,presentation-slides,participate-inperson,stay-in-touch-no-ho,resources-from-presentations,requested-citation,acknowledgments-ecp-ngsst]
+sections: [description,agenda,presentation-slides,participate-inperson,stay-in-touch-no-ho,resources-from-presentations,requested-citation,acknowledgments-cass-ngsst-scidac-ecp]
 ---
