@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-10-19T15:15:27-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-finalization.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-10-19T18:30:01-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-finalization.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -96,6 +96,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <h2 id="main-issue-for-post-acceptance-finalization">Main issue for post-acceptance finalization</h2>
 
+<h3 id="bash-version">Bash version</h3>
+
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
   <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
   <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
@@ -118,14 +120,42 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   - [ ] Finalize helpers, set </span><span class="se">\`</span><span class="sh">helpers</span><span class="se">\`</span><span class="sh"> in </span><span class="se">\`</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/event.yml</span><span class="se">\`</span><span class="sh">
   - [ ] Finalize agenda, add </span><span class="se">\`</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/agenda.csv</span><span class="se">\`</span><span class="sh"> and </span><span class="se">\`</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/presentations.yml</span><span class="se">\`</span><span class="sh">
 - [ ] Transition from planned to scheduled, if necessary
-</span><span class="no">
-EOF
+</span><span class="no">EOF
+</span></code></pre></div></div>
 
+<h3 id="powershell-version">Powershell version</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$issueBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@"
+- [ ] Add a milestone for the event to master-labels-milestones.json and synchronize repositories
+- Internal and external awareness
+  - [ ] Add issue the ideas-productivity/project-management
+  - [ ] Add to main page and Events pages of &lt;https://ideas-productivity.org/&gt;, if appropriate
+- Plan development activities
+  - [ ] Finalize plans for content development
+  - [ ] Finalize plans for hands-on, including necessary development
+  - [ ] Set internal deadlines as needed
+  - [ ] Capture internal and venue deadlines in </span><span class="se">``</span><span class="sh">deadines</span><span class="se">``</span><span class="sh"> structure in </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/event.yml</span><span class="se">``</span><span class="sh">
+- [ ] Start building event page in the tutorial website
+- Plan staffing and agenda
+  - [ ] Finalize presenters, set </span><span class="se">``</span><span class="sh">presenters</span><span class="se">``</span><span class="sh"> in </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/event.yml</span><span class="se">``</span><span class="sh">
+  - [ ] Finalize helpers, set </span><span class="se">``</span><span class="sh">helpers</span><span class="se">``</span><span class="sh"> in </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/event.yml</span><span class="se">``</span><span class="sh">
+  - [ ] Finalize agenda, add </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/agenda.csv</span><span class="se">``</span><span class="sh"> and </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/presentations.yml</span><span class="se">``</span><span class="sh">
+- [ ] Transition from planned to scheduled, if necessary
+"@</span><span class="w">
+</span><span class="nv">$issuebody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gh</span><span class="w"> </span><span class="nx">issue</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--repo</span><span class="w"> </span><span class="nx">bssw-tutorial/tutorial-management</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--milestone</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--title</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia post-acceptance finalization"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--assignee</span><span class="w"> </span><span class="s2">"bernhold,adubey64"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--label</span><span class="w"> </span><span class="s2">"event preparation"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--body-file</span><span class="w"> </span><span class="o">-</span><span class="w">
 </span></code></pre></div></div>
 
 <hr />
 
 <h2 id="awareness-issues">Awareness issues</h2>
+
+<h3 id="bash-version-1">Bash version</h3>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
   <span class="nt">--repo</span> ideas-productivity/project-management <span class="se">\</span>
@@ -134,12 +164,25 @@ EOF
   <span class="nt">--title</span> <span class="s2">"Better Software for Science with High-Performance Computing tutorial @ SupercomputingAsia 2026 (SCA 2026)/The International Conference on High Performance Computing in Asia-Pacific Region 2026 (HPCAsia 2026) conference"</span> <span class="se">\</span>
   <span class="nt">--assignee</span> <span class="s2">"bernhold,adubey64"</span> <span class="se">\</span>
   <span class="nt">--body</span> <span class="s2">"To be held 9:30 am - 4:30 pm JST Monday 26 January 2026"</span>
-
+EOF
 </code></pre></div></div>
+
+<h3 id="powershell-version-1">Powershell version</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gh</span><span class="w"> </span><span class="nx">issue</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--repo</span><span class="w"> </span><span class="nx">ideas-productivity/project-management</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--milestone</span><span class="w"> </span><span class="s2">"Complete by 2026-01"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--label</span><span class="w"> </span><span class="s2">"Outreach"</span><span class="w"> </span><span class="nt">--label</span><span class="w"> </span><span class="s2">"External Event"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--title</span><span class="w"> </span><span class="s2">"Better Software for Science with High-Performance Computing tutorial @ SupercomputingAsia 2026 (SCA 2026)/The International Conference on High Performance Computing in Asia-Pacific Region 2026 (HPCAsia 2026) conference"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--assignee</span><span class="w"> </span><span class="s2">"bernhold,adubey64"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--body</span><span class="w"> </span><span class="s2">"To be held 9:30 am - 4:30 pm JST Monday 26 January 2026"</span><span class="w">
+</span></code></pre></div></div>
 
 <hr />
 
 <h2 id="issue-to-track-development-of-tutorial-web-page">Issue to track development of tutorial web page</h2>
+
+<h3 id="bash-version-2">Bash version</h3>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
   <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="se">\</span>
@@ -173,9 +216,9 @@ EOF
   - [x] description (usually local)
   - [x] agenda (okay if </span><span class="se">\`</span><span class="sh">agenda.csv</span><span class="se">\`</span><span class="sh"> not present)
   - [x] presentation-slides (okay if </span><span class="se">\`</span><span class="sh">Presentation Slides</span><span class="se">\`</span><span class="sh"> artifact not set)
-  - [ ] how-to-participate (usually local)
+  - [x] how-to-participate (usually local)
   - [ ] hands-on-exercises (usually local)
-  - [ ] stay-in-touch (or stay-in-touch-no-ho if there is no hands-on)
+  - [x] stay-in-touch (or stay-in-touch-no-ho if there is no hands-on)
   - [ ] related-events (local, if appropriate to context)
   - [ ] resources-from-presentations
   - [x] requested-citation (okay if details are not available)
@@ -183,9 +226,55 @@ EOF
 - Additional files needed in </span><span class="se">\`</span><span class="sh">2026-01-26-hpcasia</span><span class="se">\`</span><span class="sh"> directory
   - [ ] Copy and update </span><span class="se">\`</span><span class="sh">presentation-resources</span><span class="se">\`</span><span class="sh"> directory
   - [ ] Copy and update </span><span class="se">\`</span><span class="sh">handson-*</span><span class="se">\`</span><span class="sh"> files and </span><span class="se">\`</span><span class="sh">images</span><span class="se">\`</span><span class="sh"> directory
-</span><span class="no">
-EOF
+</span><span class="no">EOF
+</span></code></pre></div></div>
 
+<h3 id="powershell-version-2">Powershell version</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$issueBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@"
+- Inital creation of event web page
+  - [x] Add event to </span><span class="se">``</span><span class="sh">_data/tutorials.csv</span><span class="se">``</span><span class="sh">
+  - [x] Create event data directory </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia</span><span class="se">``</span><span class="sh">
+  - [x] Create event data file </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/event.yml</span><span class="se">``</span><span class="sh"> as a copy of </span><span class="se">``</span><span class="sh">_data/event-template.yml</span><span class="se">``</span><span class="sh">
+  - [x] Add basic information to event data file
+  - [x] Create event directory </span><span class="se">``</span><span class="sh">2026-01-26-hpcasia</span><span class="se">``</span><span class="sh">
+  - [x] Copy </span><span class="se">``</span><span class="sh">index.md</span><span class="se">``</span><span class="sh"> and </span><span class="se">``</span><span class="sh">utilities*.md</span><span class="se">``</span><span class="sh"> from previous event
+  - [ ] In </span><span class="se">``</span><span class="sh">2026-01-26-hpcasia/index.md</span><span class="se">``</span><span class="sh"> update </span><span class="se">``</span><span class="sh">event-label</span><span class="se">``</span><span class="sh"> and </span><span class="se">``</span><span class="sh">sections</span><span class="se">``</span><span class="sh"> appropriately
+- [ ] Transition from planned to scheduled, if necessary
+- Data needed
+  - In </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/event.yml</span><span class="se">``</span><span class="sh">
+    - [ ] Scheduled </span><span class="se">``</span><span class="sh">startdate</span><span class="se">``</span><span class="sh">, </span><span class="se">``</span><span class="sh">enddate</span><span class="se">``</span><span class="sh">, and </span><span class="se">``</span><span class="sh">time</span><span class="se">``</span><span class="sh">
+    - [x] </span><span class="se">``</span><span class="sh">organizer-ids</span><span class="se">``</span><span class="sh">
+    - [ ] </span><span class="se">``</span><span class="sh">presenters</span><span class="se">``</span><span class="sh">, </span><span class="se">``</span><span class="sh">helpers</span><span class="se">``</span><span class="sh">
+    - In </span><span class="se">``</span><span class="sh">artifacts</span><span class="se">``</span><span class="sh">
+      - [ ] conference registration URL (if appropriate)
+      - [ ] doi
+      - [ ] hands-on code repository
+    - [ ] </span><span class="se">``</span><span class="sh">deadlines</span><span class="se">``</span><span class="sh">
+  - [ ] </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/agenda.csv</span><span class="se">``</span><span class="sh">
+  - [ ] </span><span class="se">``</span><span class="sh">_data/bsswt/2026-01-26-hpcasia/presentations.yml</span><span class="se">``</span><span class="sh">
+- Sections needed in </span><span class="se">``</span><span class="sh">2026-01-26-hpcasia/index.md</span><span class="se">``</span><span class="sh">
+  - [x] description (usually local)
+  - [x] agenda (okay if </span><span class="se">``</span><span class="sh">agenda.csv</span><span class="se">``</span><span class="sh"> not present)
+  - [x] presentation-slides (okay if </span><span class="se">``</span><span class="sh">Presentation Slides</span><span class="se">``</span><span class="sh"> artifact not set)
+  - [x] how-to-participate (usually local)
+  - [ ] hands-on-exercises (usually local)
+  - [x] stay-in-touch (or stay-in-touch-no-ho if there is no hands-on)
+  - [ ] related-events (local, if appropriate to context)
+  - [ ] resources-from-presentations
+  - [x] requested-citation (okay if details are not available)
+  - [x] acknowledgments-ecp (always okay)
+- Additional files needed in </span><span class="se">``</span><span class="sh">2026-01-26-hpcasia</span><span class="se">``</span><span class="sh"> directory
+  - [ ] Copy and update </span><span class="se">``</span><span class="sh">presentation-resources</span><span class="se">``</span><span class="sh"> directory
+  - [ ] Copy and update </span><span class="se">``</span><span class="sh">handson-*</span><span class="se">``</span><span class="sh"> files and </span><span class="se">``</span><span class="sh">images</span><span class="se">``</span><span class="sh"> directory
+"@</span><span class="w">
+</span><span class="nv">$issuebody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gh</span><span class="w"> </span><span class="nx">issue</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--repo</span><span class="w"> </span><span class="nx">bssw-tutorial/bssw-tutorial.github.io</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--milestone</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--title</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia web page"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--assignee</span><span class="w"> </span><span class="s2">"bernhold,adubey64"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--label</span><span class="w"> </span><span class="s2">"event preparation"</span><span class="w"> </span><span class="se">`
+</span><span class="w">  </span><span class="nt">--body-file</span><span class="w"> </span><span class="o">-</span><span class="w">
 </span></code></pre></div></div>
 
 <hr />
