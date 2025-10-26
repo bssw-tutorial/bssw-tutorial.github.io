@@ -22,13 +22,13 @@ If you wish to participate in the hands-on activities, we strongly encourage you
 
 *It is important that you do this preparation with enough lead time that we can assist you if necessary **before SC25 starts**.  **We will not be able to provide any support for CodeScribe usage issues during the tutorial itself**.*
 
-1. You will need API access to an LLM tool. This is a level beyond the web interface and it incurs an extra charge on some platforms. However many institutionally-supported LLMs offer API access at no additional cost.  Participants will be responsible for any additional costs incurred. The instructor will be using [ChatGPT](https://chatgpt.com/), but any comparable LLM should work.  CodeScribe also supports the freely downloadable Llama model: <???>
+1. You will need API access to an LLM tool. This is a level beyond the web interface and it incurs an extra charge on some platforms. However many institutionally-supported LLMs offer API access at no additional cost.  Participants will be responsible for any additional costs incurred. The instructor will be using [ChatGPT](https://chatgpt.com/), but any comparable LLM should work.  CodeScribe also supports the freely downloadable Llama model: Codellama 7B 2023 release.
 
 2. CodeScribe is a Python code, so you will need a working Python installation on a system that you will be able to access during the tutorial (remote access is fine).
 
 3. Download and install CodeScribe from <https://github.com/adubey64/CodeScribe>
   a. Installation instructions are provided in the README file: <https://github.com/adubey64/CodeScribe?tab=readme-ov-file#installation>
-  b. You are encouraged to watch the two tutorials on the installation and use of CodeScribe in this Box folder: <https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u>.  They are 19 minutes and 11 minutes long, respectively.
+  b. You are encouraged to watch the two tutorials on the installation and use of CodeScribe in this Box folder: <https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u>.  They are 19 minutes and 11 minutes long, respectively. The tutorials were prepared before "generate" command was added to the tool, so there is no mention of it in either tutorial, but it works like the "translate" command.
 
 4. You will need to integrate your CodeScribe installation with your the API of your LLM of choice. It may be necessary for participants to add support for their custom models to CodeScribe. They should look at the file <https://github.com/adubey64/CodeScribe/blob/development/code_scribe/lib/_llm.py>, copy the class most closely resembling the target model and create a PR. With enough lead time we will try our best to help make it work.
 
