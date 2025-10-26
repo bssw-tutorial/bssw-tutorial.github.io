@@ -6,7 +6,7 @@
 
 ### Introduction
 
-The hands-on activities for this {{ my-event.title-type | default: "event" }} are involve the use of a large language model (LLM) to generate tests and code according to specifications (prompts) you will develop.  Participation in these activities is encouraged, but not required.  After interested participants have been given some time to try the exercise on their own, the instructor will review their prompts and the resulting code with the class and these materials will be made available to all participants.
+The hands-on activity for this {{ my-event.title-type | default: "event" }} involves the use of a large language model (LLM) to generate tests and code according to specifications (prompts) you will develop.  Participation in these activities is encouraged, but not required.  After interested participants have been given some time to try the exercise on their own, the instructor will review their prompts and the resulting code with the class and these materials will be made available to all participants.
 
 You can participate in the hands-on section in two modes: using the LLM's **web interface**, or using **CodeScribe**, a tool that enables using chat-completion through the API interface of the LLM. The main objectives of the hands-on can met by using the web interface. The advantage of using CodeScribe is to get exposure to the chat-completion technique, and getting to know a tool that can be very handy for writing code.
 
