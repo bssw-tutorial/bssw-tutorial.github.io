@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-10-25T17:29:35-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2025-11-16-sc/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-11-01T14:59:12-04:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2025-11-16-sc/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -205,44 +205,62 @@ David E. Bernholdt (Oak Ridge National Laboratory) and Anshu Dubey (Argonne Nati
 <h2 id="hands-on-activities">Hands-On Activities</h2>
 <h3 id="introduction">Introduction</h3>
 
-<p>The hands-on activities for this tutorial are involve the use of a large language model (LLM) to generate tests and code according to specifications (prompts) you will develop.  Participation in these activities is encouraged, but not required.  After interested participants have been given some time to try the exercise on their own, the instructor will review their prompts and code with the class and these materials will be made available to all participants.</p>
+<p>The hands-on activity for this tutorial involves the use of a large language model (LLM) to generate tests and code according to specifications (prompts) you will develop.  Participation in these activities is encouraged, but not required.  After interested participants have been given some time to try the exercise on their own, the instructor will review their prompts and the resulting code with the class and these materials will be made available to all participants.</p>
 
-<p>Attendees can participate in the hands-on section in two modes: using the LLM’s <strong>web interface</strong>, or using <strong>CodeScribe</strong>, a tool that enables using chat-completion through the API interface of the LLM. The main objectives of the hands-on can met by using the web interface. The advantage of using CodeScribe is to get exposure to the chat-completion technique, and getting to know a tool that can be very handy for writing code.</p>
+<p>You can participate in the hands-on section in two modes: using the LLM’s <strong>web interface</strong>, or using <strong>CodeScribe</strong>, a tool that enables using chat-completion through the API interface of the LLM. The main objectives of the hands-on can be met by using the web interface. The advantage of using CodeScribe is to get exposure to the chat-completion technique, and getting to know a tool that can be very handy for writing code.</p>
+
+<p>The instructor will work in the C language, but a surface understanding of the language will suffice to follow the explanations. For your own work, you can prompt the LLM to generate code in the language of your choice. Evaluation of the generated code (and revising the prompt accordingly) will be part of the hands-on activity.  For the purposes of the tutorial, inspection of the code will suffice to gauge its appropriateness, but if you wish to more rigorously validate the generated code, you will need to be able to access an environment to build and run it either locally or remotely.</p>
 
 <h3 id="advance-preparation">Advance preparation</h3>
 
-<p>If you wish to participate in the hands-on activities, we strongly encourage you to do a bit of preparation <strong>before the tutorial starts</strong>.  This is especially true if you want to use CodeScribe, which may require some advance interaction with the tool developers to integrate new LLM APIs.</p>
+<p>If you wish to participate in the hands-on activities, we strongly encourage you to do a bit of preparation <strong>before you leave for St. Louis</strong>.  This is especially true if you want to use CodeScribe, which may require some advance interaction with the tool developers to integrate new LLM APIs.</p>
 
 <h4 id="preparation-for-using-the-llm-web-interface">Preparation for using the LLM <strong>web interface</strong></h4>
 
 <ol>
-  <li>You will need access to an LLM chat tool.  The instructor will be using <a href="https://chatgpt.com/">ChatGPT</a>, but any comparable LLM, including institutionally-supported tools, should work.</li>
+  <li>
+    <p>You will need access to an LLM chat tool.  The instructor will be using <a href="https://chatgpt.com/">ChatGPT</a>, but any comparable LLM, including institutionally-supported tools, should work.</p>
+  </li>
+  <li>
+    <p>(OPTIONAL) If you wish to build and run the code generated by the LLM, you will need access (local or remote) to an appropriate environment.  As stated above, you can use whatever language you prefer for your hands-on activity.  The instructor will work in C.</p>
+  </li>
 </ol>
 
 <h4 id="preparation-for-using-codescribe">Preparation for using <strong>CodeScribe</strong></h4>
 
-<p><em>It is important that you do this preparation with enough lead time that we can assist you if necessary <strong>before SC25 starts</strong>.  <strong>We will not be able to provide any support for CodeScribe usage issues during the tutorial itself</strong>.</em></p>
+<p><em>It is important that you do this preparation with enough lead time that we can assist you if necessary <strong>before SC25 starts</strong>.  <strong>We will not be able to provide any support for CodeScribe setup issues during the tutorial itself</strong>.</em></p>
 
 <ol>
   <li>
-    <p>You will need API access to an LLM tool. This is a level beyond the web interface and it incurs an extra charge on some platforms. However many institutionally-supported LLMs offer API access at no additional cost.  Participants will be responsible for any additional costs incurred. The instructor will be using <a href="https://chatgpt.com/">ChatGPT</a>, but any comparable LLM should work.  CodeScribe also supports the freely downloadable Llama model: &lt;???&gt;</p>
+    <p>You will need API access to an LLM tool. This is a level beyond the web interface and it incurs an extra charge on some platforms. However many institutionally-supported LLMs offer API access at no additional cost.  You will be responsible for any additional costs incurred. The instructor will be using <a href="https://chatgpt.com/">ChatGPT</a>, but any comparable LLM should work.  CodeScribe also supports several freely downloadable models which can be run locally:</p>
+
+    <ul>
+      <li><a href="https://huggingface.co/google/gemma-2-2b-it">https://huggingface.co/google/gemma-2-2b-it</a></li>
+      <li><a href="https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct">https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct</a></li>
+      <li><a href="https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/tree/main">https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/tree/main</a></li>
+    </ul>
+
+    <p>The first two models are smaller and may be faster on laptops. Download instructions can be found here: <a href="https://huggingface.co/docs/hub/en/models-downloading">https://huggingface.co/docs/hub/en/models-downloading</a>.  Note that if you’re downloading Hugging Face models using their CLI, they will be downloaded to their cache folder (<code class="language-plaintext highlighter-rouge">~/.cache/huggingface/hub/&lt;model-name&gt;/snapshots/&lt;sha1&gt;</code> or your operating system’s equivalent).  If you use <code class="language-plaintext highlighter-rouge">git clone</code> you can put the models wherever you want.</p>
   </li>
   <li>
-    <p>CodeScribe is a Python code, so you will need a working Python installation on a system that you will be able to access during the tutorial (remote access is fine).</p>
+    <p>CodeScribe is a Python code, so you will need a working Python installation on a system that you will be able to access (local or remote) during the tutorial.</p>
   </li>
   <li>
     <p>Download and install CodeScribe from <a href="https://github.com/adubey64/CodeScribe">https://github.com/adubey64/CodeScribe</a>
   a. Installation instructions are provided in the README file: <a href="https://github.com/adubey64/CodeScribe?tab=readme-ov-file#installation">https://github.com/adubey64/CodeScribe?tab=readme-ov-file#installation</a>
-  b. You are encouraged to watch the two tutorials on the installation and use of CodeScribe in this Box folder: <a href="https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u">https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u</a>.  They are 19 minutes and 11 minutes long, respectively.</p>
+  b. You are encouraged to watch the two tutorials on the installation and use of CodeScribe in this Box folder: <a href="https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u">https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u</a>.  They are 19 minutes and 11 minutes long, respectively. The tutorials were prepared before “generate” command was added to the tool, so there is no mention of it in either tutorial, but it works like the “translate” command.</p>
   </li>
   <li>
-    <p>You will need to integrate your CodeScribe installation with your the API of your LLM of choice. It may be necessary for participants to add support for their custom models to CodeScribe. They should look at the file <a href="https://github.com/adubey64/CodeScribe/blob/development/code_scribe/lib/_llm.py">https://github.com/adubey64/CodeScribe/blob/development/code_scribe/lib/_llm.py</a>, copy the class most closely resembling the target model and create a PR. With enough lead time we will try our best to help make it work.</p>
+    <p>You will need to integrate your CodeScribe installation with the API of your LLM of choice.  Basic instructions are provided in the README file: <a href="https://github.com/adubey64/CodeScribe?tab=readme-ov-file#integrating-llm-of-choice">https://github.com/adubey64/CodeScribe?tab=readme-ov-file#integrating-llm-of-choice</a>. It may be necessary for you to add support for your particular model to CodeScribe. You should look at the file <a href="https://github.com/adubey64/CodeScribe/blob/development/code_scribe/lib/_llm.py">https://github.com/adubey64/CodeScribe/blob/development/code_scribe/lib/_llm.py</a>, copy the class most closely resembling the target model and create a pull request in our repository. With enough lead time we will try our best to help make it work.</p>
+  </li>
+  <li>
+    <p>(OPTIONAL) If you wish to build and run the code generated by the LLM, you will need access (local or remote) to an appropriate environment.  As stated above, you can use whatever language you prefer for your hands-on activity.  The instructor will work in C.</p>
   </li>
 </ol>
 
 <h3 id="during-the-tutorial">During the tutorial</h3>
 
-<p>At an appropriate point in the tutorial, we will make available the prompts the instructor used and the generated code for your reference.  Links will be provided here.</p>
+<p>During the tutorial, we will make available the prompts the instructor used and the generated code for your reference.  Links will be provided here.</p>
 
 <hr>
 <h2 id="other-software-related-events-at-sc25">Other Software-Related Events at SC25</h2>
