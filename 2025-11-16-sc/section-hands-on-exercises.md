@@ -32,7 +32,7 @@ If you wish to participate in the hands-on activities, we strongly encourage you
     - <https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct>
     - <https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/tree/main>
 
-    The first two models are smaller and may be faster on laptops. Download instructions can be found here: <https://huggingface.co/docs/hub/en/models-downloading>.  Note that if you're downloading Hugging Face models using their CLI, they will be downloaded to their cache folder (`~/.cache/huggingface/hub/` or your operating system's equivalent).  If you use `git clone` you can put the models wherever you want.
+    The first two models are smaller and may be faster on laptops. Download instructions can be found here: <https://huggingface.co/docs/hub/en/models-downloading>.  Note that if you're downloading Hugging Face models using their CLI, they will be downloaded to their cache folder (`~/.cache/huggingface/hub/<model-name>/snapshots/<sha1>` or your operating system's equivalent).  If you use `git clone` you can put the models wherever you want.
 
 2. CodeScribe is a Python code, so you will need a working Python installation on a system that you will be able to access (local or remote) during the tutorial.
 
