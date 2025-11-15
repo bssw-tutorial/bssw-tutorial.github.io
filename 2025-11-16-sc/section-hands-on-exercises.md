@@ -46,4 +46,26 @@ If you wish to participate in the hands-on activities, we strongly encourage you
 
 ### During the tutorial
 
-During the tutorial, we will make available the prompts the instructor used and the generated code for your reference.  Links will be provided here.
+#### Prompts
+
+We'll make the prompts the instructor used somewhat later -- we *really* want to encourage you to try to create the prompts on your own rather than just copying and pasting ours.
+
+#### Generated code
+
+The full set of generated code, along with the Makefile and some test inputs and outputs can be downloaded as a [ZIP file](hands-on/generated_code.zip).
+
+The individual files are:
+
+* [constants.h](hands-on/constants.h)
+* [inputs](hands-on/inputs)
+* [main.c](hands-on/main.c)
+* [Makefile](hands-on/Makefile)
+* [mesh.c](hands-on/mesh.c)
+* [mesh.h](hands-on/mesh.h)
+* [move_particles.c](hands-on/move_particles.c)
+* [particles.c](hands-on/particles.c)
+* [test_input](hands-on/test_input)
+* [test_sample](hands-on/test_sample)
+* [verify_mesh.c](hands-on/verify_mesh.c)
+* [verify_movement.c](hands-on/verify_movement.c)
+* [verify_particles.c](hands-on/verify_particles.c)
