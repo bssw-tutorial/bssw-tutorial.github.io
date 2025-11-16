@@ -46,11 +46,15 @@ If you wish to participate in the hands-on activities, we strongly encourage you
 
 ### During the tutorial
 
+{% comment %}
 The "working document" in which the instructor will build up the example is available at: <https://bit.ly/47UG9u8>
+{% endcomment %}
 
 #### Prompts
 
-We'll make the prompts the instructor used somewhat later -- we *really* want to encourage you to try to create the prompts on your own rather than just copying and pasting ours.
+We provide the instructor's prompts as examples, but to really get the most out of this hands-on exercise, you really should develop your own set of prompts, not just paste ours into your LLM.
+
+* [prompts.toml](hands-on/prompt.toml)
 
 #### Generated code
 
