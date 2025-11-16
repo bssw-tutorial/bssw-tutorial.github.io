@@ -46,6 +46,8 @@ If you wish to participate in the hands-on activities, we strongly encourage you
 
 ### During the tutorial
 
+The "working document" in which the instructor will build up the example is available at: <https://bit.ly/47UG9u8>
+
 #### Prompts
 
 We'll make the prompts the instructor used somewhat later -- we *really* want to encourage you to try to create the prompts on your own rather than just copying and pasting ours.
