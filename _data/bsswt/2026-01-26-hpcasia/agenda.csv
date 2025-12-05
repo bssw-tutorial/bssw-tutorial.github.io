@@ -1,0 +1,14 @@
+Fixed Points,Duration,Time (JST),Title,Presenter,Notes
+<!--skip-->,<!--skip-->,<!--right-->,,,<!--skip-->
+9:30 AM,15,9:30 AM,intro,adubey64,
+,30,9:45 AM,overview,adubey64,
+,30,10:15 AM,codescribe,akashdhruv,new module
+10:45 AM,30,10:45 AM,<em>Morning break</em>,,
+,35,11:15 AM,design,adubey64,
+,40,11:50 AM,testing,adubey64,
+12:30 PM,60,12:30 PM,<em>Lunch break</em>,,
+1:30 PM,30,1:30 PM,Refactoring ,adubey64,
+,45,2:00 PM,repro-notebooks,akashdhruv,
+2:45 PM,30,2:45 PM,<em>Afternoon break</em>,,
+,75,3:15 PM,Hands on coding tasks with LLMs,"akashdhruv, adubey64",
+4:30 PM,280,4:30 PM,<em>Adjourn</em>,,
