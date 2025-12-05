@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-11-16T12:50:30-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-12-05T15:59:13-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -66,29 +66,91 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
         
 <p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2026-01-26-hpcasia">2026-01-26-hpcasia</a> &gt; <a href="https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation">preparation</a></p>
 
-<p><font color="blue">WARNING: `presentations` not defined. Check file `_data/bsswt/2026-01-26-hpcasia/presentations.yml</font></p>
-
-<p><font color="blue">WARNING: `agenda` not defined. Check file `_data/bsswt/2026-01-26-hpcasia/agenda.csv`</font></p>
-
 <h1 id="help-for-tutorial-preparation">Help for Tutorial Preparation</h1>
 
 <p><em>Complete the <a href="./utilities-finalization.html">post-acceptance finalization</a> steps before these.</em></p>
 
 <h2 id="issues-for-organizers">Issues for organizers</h2>
 
-<p><font color="red">ERROR: `presentation-order` not defined. Check files `_data/bsswt/2026-01-26-hpcasia/agenda.csv` and `_data/bsswt/2026-01-26-hpcasia/presentations.yml`</font></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
+    <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
+    <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"2026-01-26-hpcasia content preparation"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"bernhold,adubey64"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] Reserve DOI
+- [ ] In &lt;https://github.com/bssw-tutorial/presentations/final-presentations/&gt; create </span><span class="se">\`</span><span class="sh">2026-01-26-hpcasia/doi.txt</span><span class="se">\`</span><span class="sh"> and record reserved DOI
+- [ ] Update </span><span class="se">\`</span><span class="sh">license-master.pptx</span><span class="se">\`</span><span class="sh"> citation in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Update </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">overview.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">codescribe.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">testing.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">\`</span><span class="sh">repro-notebooks.pptx</span><span class="se">\`</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Additional updates to </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
+    - [ ] Update *About Us* slide (3) with presenters and helpers, including head-shots
+    - [ ] Update *Hands-On Activities* slide (9) as appropriate
+    - [ ] Update the *We want to Interact with You* slide (11) as appropriate
+    - [ ] Add *Related Activities* slide as appropriate
+    - [ ] Add agenda from &lt;https://bssw-tutorial.github.io/2026-01-26-hpcasia#agenda&gt;
+- [ ] Add issues needed for hands-on content development
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
+Potentially useful reference information:
+* [Detailed inputs for FigShare record](https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation.html#create-figshare-record-and-reserve-doi)
+* [Citation](https://bssw-tutorial.github.io/2026-01-26-hpcasia#requested-citation)
+* [Agenda](https://bssw-tutorial.github.io/2026-01-26-hpcasia#agenda) can be copy-pasted into PowerPoint
+* [Title slide details](https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation.html#title-slide-details)
+</span><span class="no">
+EOF
+
+</span></code></pre></div></div>
 
 <h2 id="issues-for-presenters">Issues for presenters</h2>
 
-<p><font color="red">ERROR: `presentation-order` not defined. Check files `_data/bsswt/2026-01-26-hpcasia/agenda.csv` and `_data/bsswt/2026-01-26-hpcasia/presentations.yml`</font></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"adubey64 for 2026-01-26-hpcasia: Update presentations"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/design.pptx&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview.pptx&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing.pptx&gt;"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"akashdhruv for 2026-01-26-hpcasia: Update presentations"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"akashdhruv"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/codescribe.pptx&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/repro-notebooks.pptx&gt;"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
 
-<p><font color="red">ERROR: `presenter-order` not defined. Check files `_data/bsswt/2026-01-26-hpcasia/agenda.csv` and `_data/bsswt/2026-01-26-hpcasia/presentations.yml`</font></p>
+</span><span class="c"># Update resources linked from presentations</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"adubey64 for 2026-01-26-hpcasia: Update resource links"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/design.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/intro.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/overview.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/testing.md&gt;"
+</span><span class="no">EOF
+</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"akashdhruv for 2026-01-26-hpcasia: Update resource links"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"akashdhruv"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/codescribe.md&gt;"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/repro-notebooks.md&gt;"
+</span><span class="no">EOF
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
-
-<p>```</p>
+</span></code></pre></div></div>
 
 <h2 id="issues-for-hands-on-content">Issues for hands-on content</h2>
 
@@ -157,13 +219,48 @@ This tutorial is produced by the IDEAS Productivity project. This work was suppo
 <p><em>If you copy-paste from this page into PowerPoint, you will want to use the <code class="language-plaintext highlighter-rouge">copy-without-formatting</code>
 option to ensure that you get the font from the PPT template rather than the font from the web site.</em></p>
 
-<p><font color="red">ERROR: `presentation-order` not defined. Check files `_data/bsswt/2026-01-26-hpcasia/agenda.csv` and `_data/bsswt/2026-01-26-hpcasia/presentations.yml`</font></p>
+<p><strong>People for <code class="language-plaintext highlighter-rouge">intro.pptx</code> title slide:</strong> Anshu Dubey and Akash Dhruv</p>
 
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceding messages.</font></p>
-
-<p><font color="red">ERROR: `presentation-order` not defined. Check files `_data/bsswt/2026-01-26-hpcasia/agenda.csv` and `_data/bsswt/2026-01-26-hpcasia/presentations.yml`</font></p>
-
-<p><font color="red">ERROR: Cannot generate due to missing information. See preceeding messages.</font></p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Presentation</strong></td>
+      <td><strong>Presenter</strong></td>
+      <td><strong>Pronouns</strong></td>
+      <td><strong>Affiliation</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">overview.pptx</code></td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">codescribe.pptx</code></td>
+      <td>Akash Dhruv</td>
+      <td>he/him</td>
+      <td>Argonne National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">design.pptx</code></td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">testing.pptx</code></td>
+      <td>Anshu Dubey</td>
+      <td>she/her</td>
+      <td>Argonne National Laboratory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">repro-notebooks.pptx</code></td>
+      <td>Akash Dhruv</td>
+      <td>he/him</td>
+      <td>Argonne National Laboratory</td>
+    </tr>
+  </tbody>
+</table>
 
 <p><strong>Event title:</strong> Better Software for Science with High-Performance Computing tutorial @ SupercomputingAsia 2026 (SCA 2026)/The International Conference on High Performance Computing in Asia-Pacific Region 2026 (HPCAsia 2026) conference</p>
 

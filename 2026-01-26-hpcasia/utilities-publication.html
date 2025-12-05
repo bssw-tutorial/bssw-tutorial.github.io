@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-11-16T12:50:30-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-publication.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-12-05T15:59:13-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-publication.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -66,10 +66,6 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
         
 <p><a href="https://bssw-tutorial.github.io">Home</a> &gt; <a href="https://bssw-tutorial.github.io/2026-01-26-hpcasia">2026-01-26-hpcasia</a> &gt; <a href="https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities">utilities</a> &gt; <a href="https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-publication">publication</a></p>
 
-<p><font color="blue">WARNING: `presentations` not defined. Check file `_data/bsswt/2026-01-26-hpcasia/presentations.yml</font></p>
-
-<p><font color="blue">WARNING: `agenda` not defined. Check file `_data/bsswt/2026-01-26-hpcasia/agenda.csv`</font></p>
-
 <h1 id="help-for-publication-of-tutorial-assets">Help for Publication of Tutorial Assets</h1>
 
 <p><em>Complete the <a href="./utilities-preparation.html">preparation</a> steps before these.</em></p>
@@ -84,7 +80,19 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
     <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
 - Quality control review of presentations (see &lt;https://github.com/bssw-tutorial/presentations/blob/main/README.md#quality-control&gt;)
+  - [ ] </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">overview.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">codescribe.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">testing.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">repro-notebooks.pptx</span><span class="se">\`</span><span class="sh">
 - Generate PDFs of presentations
+  - [ ] </span><span class="se">\`</span><span class="sh">intro.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">overview.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">codescribe.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">design.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">testing.pptx</span><span class="se">\`</span><span class="sh">
+  - [ ] </span><span class="se">\`</span><span class="sh">repro-notebooks.pptx</span><span class="se">\`</span><span class="sh">
 - [ ] Prepare release of presentation files (see &lt;https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-publication.html#scripting-for-presentation-release&gt;)
 - [ ] Tag presentation repository
 - [ ] Publish presentation files on FigShare
@@ -106,6 +114,12 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 <span class="c"># Ensure destination directory exists and copy/move files there</span>
 <span class="nb">mkdir</span> <span class="nt">-p</span> final-presentations/2026-01-26-hpcasia
 <span class="nb">cp </span>presentations.yml final-presentations/2026-01-26-hpcasia
+<span class="nb">mv </span>intro.pdf final-presentations/2026-01-26-hpcasia/01-intro.pdf
+<span class="nb">mv </span>overview.pdf final-presentations/2026-01-26-hpcasia/02-overview.pdf
+<span class="nb">mv </span>codescribe.pdf final-presentations/2026-01-26-hpcasia/03-codescribe.pdf
+<span class="nb">mv </span>design.pdf final-presentations/2026-01-26-hpcasia/04-design.pdf
+<span class="nb">mv </span>testing.pdf final-presentations/2026-01-26-hpcasia/05-testing.pdf
+<span class="nb">mv </span>repro-notebooks.pdf final-presentations/2026-01-26-hpcasia/06-repro-notebooks.pdf
 
 <span class="c"># Add and commit new files and tag repository</span>
 <span class="nb">cd </span>final-presentations/2026-01-26-hpcasia
