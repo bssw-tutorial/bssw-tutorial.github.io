@@ -128,16 +128,16 @@ artifacts:
 #
 deadlines:
   - label: internal-presentations
-    due: 
+    due: 2026-01-12
     responsible: [by-presentation]
   - label: internal-resource-links
-    due: 
+    due: 2026-01-19
     responsible: [by-presentation]
   - label: venue-initial-presentations
     due: 
     responsible: [organizer-ids]
   - label: venue-final-presentations
-    due: 
+    due: 2026-01-24
     responsible: [organizer-ids]
   - label: internal-consents
     due: 
