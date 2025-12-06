@@ -93,14 +93,21 @@ layout: default
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
 {% else %}
-```shell
+{% comment %}
+  Convention is to provide bash version of commands, broken into the command itself and the body, which
+  is presented as a here document.  From this, it is straightforward to translate the bash code into
+  the corresponding powershell code.
+{% endcomment %}
+{% capture issuecommandbash -%}
 gh issue create \
     --repo bssw-tutorial/tutorial-management \
     --milestone "{{ event-label }}" \
     --title "{{ event-label }} publication of assets" \
     --assignee "{{ my-organizers | join: ',' | remove: ' ' }}" \
     --label "event preparation" \
-    --body-file - << EOF
+    --body-file -
+{%- endcapture %}
+{% capture issuebodybash -%}
 - Quality control review of presentations (see <https://github.com/bssw-tutorial/presentations/blob/main/README.md#quality-control>)
 {% for p in presentation-order %}  - [ ] \`{{ p }}.pptx\`
 {% endfor %}- Generate PDFs of presentations
@@ -114,9 +121,25 @@ gh issue create \
 - [ ] Update hands-on repo URL in \`_data/bsswt/{{ event-label }}/event.yml\`
 {% if dr.due %}- [ ] Upload recordings to venue **by {{ d.due }}**{% endif %}
 - [ ] Tag web site repository
-EOF
+{%- endcapture %}
 
+### Bash version
+
+```shell
+{{ issuecommandbash }} << EOF
+{{ issuebodybash }}
+EOF
 ```
+
+### Powershell version
+
+```powershell
+$issueBody = @"
+{{ issuebodybash | replace: "\`", "``" }}
+"@
+$issuebody | {{ issuecommandbash | replace: "\", "`" }}
+```
+
 {% endif %}
 
 

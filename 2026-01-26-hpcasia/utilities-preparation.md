@@ -93,14 +93,21 @@ layout: default
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
 {% else %}
-```shell
+{% comment %}
+  Convention is to provide bash version of commands, broken into the command itself and the body, which
+  is presented as a here document.  From this, it is straightforward to translate the bash code into
+  the corresponding powershell code.
+{% endcomment %}
+{% capture issuecommandbash -%}
 gh issue create \
     --repo bssw-tutorial/tutorial-management \
     --milestone "{{ event-label }}" \
     --title "{{ event-label }} content preparation" \
     --assignee "{{ my-organizers | join: ',' | remove: ' ' }}" \
     --label "event preparation" \
-    --body-file - << EOF
+    --body-file - 
+{%- endcapture %}
+{% capture issuebodybash -%}
 - [ ] Reserve DOI
 - [ ] In <{{ site.ghr-presentations }}/final-presentations/> create \`{{ event-label }}/doi.txt\` and record reserved DOI
 - [ ] Update \`license-master.pptx\` citation in <{{ site.ghr-presentations }}>
@@ -118,10 +125,24 @@ Potentially useful reference information:
 * [Citation]({{ site.prod_url }}/{{ event-label }}#requested-citation)
 * [Agenda]({{ site.prod_url }}/{{ event-label }}#agenda) can be copy-pasted into PowerPoint
 * [Title slide details]({{ site.prod_url }}{{ page.url }}#title-slide-details)
+{%- endcapture %}
+### Bash version
 
+```shell
+{{ issuecommandbash }} << EOF
+{{ issuebodybash }}
 EOF
-
 ```
+
+### Powershell version
+
+```powershell
+$issueBody = @"
+{{ issuebodybash | replace: "\`", "``" }}
+"@
+$issuebody | {{ issuecommandbash | replace: "\", "`" }}
+```
+
 {% endif %}
 
 ## Issues for presenters
@@ -158,37 +179,70 @@ EOF
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}
 {% else %}
-```shell
-# Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}
 {%- for person in grouped-presenters -%}
   {%- assign presentations = grouped-presentations[forloop.index0] | split: ',' %}
+{% capture issuecommandbash_p -%}
 gh issue create --repo bssw-tutorial/presentations --milestone "{{ event-label }}" \
     --title "{{ person }} for {{ event-label }}: Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}" \
     --assignee "{{ person }}" \
     --label "event preparation" \
-    --body-file - << EOF
+    --body-file -
+{%- endcapture %}
+{% capture issuebodybash_p -%}
 {%- for q in presentations %}
 - [ ] "Update <{{ prepo }}/{{ q }}.pptx>{% if dp.due %} by {{ dp.due }}{% endif %}"
 {%- endfor %}
 - [ ] "Remember to update <{{ prepo }}/presentations.yml if any titles change!"
-EOF
-{%- endfor %}
+{%- endcapture %}
 
-# Update resources linked from presentations{% if dr.due %} by {{ dr.due }}{% endif %}
-{%- for person in grouped-presenters -%}
-  {%- assign presentations = grouped-presentations[forloop.index0] | split: ',' %}
+{% capture issuecommandbash_rl -%}
 gh issue create --repo bssw-tutorial/bssw-tutorial.github.io --milestone "{{ event-label }}" \
     --title "{{ person }} for {{ event-label }}: Update resource links{% if dp.due %} by {{ dr.due }}{% endif %}" \
     --assignee "{{ person }}" \
     --label "event preparation" \
-    --body-file - << EOF
+    --body-file -
+{%- endcapture %}
+{% capture issuebodybash_rl -%}
 {%- for q in presentations %}
 - [ ] "Update <{{ prews }}/{{ q }}.md>{% if dr.due %} by {{ dr.due }}{% endif %}"
 {%- endfor %}
+{%- endcapture %}
+
+### {{ person }} -- bash version
+
+```shell
+# Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}
+{{ issuecommandbash_p }} << EOF
+{{ issuebodybash_p }}
 EOF
-{%- endfor %}
-{% endif %}
 ```
+
+```shell
+# Update resources linked from presentations{% if dp.due %} by {{ dp.due }}{% endif %}
+{{ issuecommandbash_rl }} << EOF
+{{ issuebodybash_rl }}
+EOF
+```
+
+### {{ person }} -- powershell version
+
+```powershell
+# Update presentations{% if dp.due %} by {{ dp.due }}{% endif %}
+$issueBody = @"
+{{ issuebodybash_p | replace: "\`", "``" }}
+"@
+$issuebody | {{ issuecommandbash_p | replace: "\", "`" }}
+```
+
+```powershell
+# Update resources linked from presentations{% if dp.due %} by {{ dp.due }}{% endif %}
+$issueBody = @"
+{{ issuebodybash_rl | replace: "\`", "``" }}
+"@
+$issuebody | {{ issuecommandbash_rl | replace: "\", "`" }}
+```
+{%- endfor %}{% comment %}closes `for person`{% endcomment %}
+{% endif %}
 
 ## Issues for hands-on content
 
