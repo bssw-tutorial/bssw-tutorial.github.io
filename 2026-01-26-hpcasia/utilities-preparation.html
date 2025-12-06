@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-12-05T16:03:56-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-12-05T20:36:44-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -72,6 +72,8 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <h2 id="issues-for-organizers">Issues for organizers</h2>
 
+<h3 id="bash-version">Bash version</h3>
+
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh issue create <span class="se">\</span>
     <span class="nt">--repo</span> bssw-tutorial/tutorial-management <span class="se">\</span>
     <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
@@ -101,12 +103,47 @@ Potentially useful reference information:
 * [Citation](https://bssw-tutorial.github.io/2026-01-26-hpcasia#requested-citation)
 * [Agenda](https://bssw-tutorial.github.io/2026-01-26-hpcasia#agenda) can be copy-pasted into PowerPoint
 * [Title slide details](https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation.html#title-slide-details)
-</span><span class="no">
-EOF
+</span><span class="no">EOF
+</span></code></pre></div></div>
 
+<h3 id="powershell-version">Powershell version</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$issueBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@"
+- [ ] Reserve DOI
+- [ ] In &lt;https://github.com/bssw-tutorial/presentations/final-presentations/&gt; create </span><span class="se">``</span><span class="sh">2026-01-26-hpcasia/doi.txt</span><span class="se">``</span><span class="sh"> and record reserved DOI
+- [ ] Update </span><span class="se">``</span><span class="sh">license-master.pptx</span><span class="se">``</span><span class="sh"> citation in &lt;https://github.com/bssw-tutorial/presentations&gt;
+- [ ] Update </span><span class="se">``</span><span class="sh">intro.pptx</span><span class="se">``</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">``</span><span class="sh">overview.pptx</span><span class="se">``</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">``</span><span class="sh">codescribe.pptx</span><span class="se">``</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">``</span><span class="sh">design.pptx</span><span class="se">``</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">``</span><span class="sh">testing.pptx</span><span class="se">``</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Update </span><span class="se">``</span><span class="sh">repro-notebooks.pptx</span><span class="se">``</span><span class="sh"> title and license slides; remove unneeded R&amp;R numbers
+- [ ] Additional updates to </span><span class="se">``</span><span class="sh">intro.pptx</span><span class="se">``</span><span class="sh">
+    - [ ] Update *About Us* slide (3) with presenters and helpers, including head-shots
+    - [ ] Update *Hands-On Activities* slide (9) as appropriate
+    - [ ] Update the *We want to Interact with You* slide (11) as appropriate
+    - [ ] Add *Related Activities* slide as appropriate
+    - [ ] Add agenda from &lt;https://bssw-tutorial.github.io/2026-01-26-hpcasia#agenda&gt;
+- [ ] Add issues needed for hands-on content development
+
+Potentially useful reference information:
+* [Detailed inputs for FigShare record](https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation.html#create-figshare-record-and-reserve-doi)
+* [Citation](https://bssw-tutorial.github.io/2026-01-26-hpcasia#requested-citation)
+* [Agenda](https://bssw-tutorial.github.io/2026-01-26-hpcasia#agenda) can be copy-pasted into PowerPoint
+* [Title slide details](https://bssw-tutorial.github.io/2026-01-26-hpcasia/utilities-preparation.html#title-slide-details)
+"@</span><span class="w">
+</span><span class="nv">$issuebody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gh</span><span class="w"> </span><span class="nx">issue</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--repo</span><span class="w"> </span><span class="nx">bssw-tutorial/tutorial-management</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--milestone</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--title</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia content preparation"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--assignee</span><span class="w"> </span><span class="s2">"bernhold,adubey64"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--label</span><span class="w"> </span><span class="s2">"event preparation"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--body-file</span><span class="w"> </span><span class="o">-</span><span class="w">
 </span></code></pre></div></div>
 
 <h2 id="issues-for-presenters">Issues for presenters</h2>
+
+<h3 id="adubey64--bash-version">adubey64 – bash version</h3>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations by 2026-01-12</span>
 gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
@@ -114,42 +151,116 @@ gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span
     <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
     <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+
 - [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/design.pptx&gt; by 2026-01-12"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; by 2026-01-12"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview.pptx&gt; by 2026-01-12"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing.pptx&gt; by 2026-01-12"
 - [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
 </span><span class="no">EOF
-</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
-    <span class="nt">--title</span> <span class="s2">"akashdhruv for 2026-01-26-hpcasia: Update presentations by 2026-01-12"</span> <span class="se">\</span>
-    <span class="nt">--assignee</span> <span class="s2">"akashdhruv"</span> <span class="se">\</span>
-    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
-    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
-- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/codescribe.pptx&gt; by 2026-01-12"
-- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/repro-notebooks.pptx&gt; by 2026-01-12"
-- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
-</span><span class="no">EOF
+</span></code></pre></div></div>
 
-</span><span class="c"># Update resources linked from presentations by 2026-01-19</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update resources linked from presentations by 2026-01-12</span>
 gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
     <span class="nt">--title</span> <span class="s2">"adubey64 for 2026-01-26-hpcasia: Update resource links by 2026-01-19"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> <span class="s2">"adubey64"</span> <span class="se">\</span>
     <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+
 - [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/design.md&gt; by 2026-01-19"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/intro.md&gt; by 2026-01-19"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/overview.md&gt; by 2026-01-19"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/testing.md&gt; by 2026-01-19"
 </span><span class="no">EOF
-</span>gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
+</span></code></pre></div></div>
+
+<h3 id="adubey64--powershell-version">adubey64 – powershell version</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations by 2026-01-12</span><span class="w">
+</span><span class="nv">$issueBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@"
+
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/design.pptx&gt; by 2026-01-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/intro.pptx&gt; by 2026-01-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/overview.pptx&gt; by 2026-01-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/testing.pptx&gt; by 2026-01-12"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+"@</span><span class="w">
+</span><span class="nv">$issuebody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gh</span><span class="w"> </span><span class="nx">issue</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="nt">--repo</span><span class="w"> </span><span class="nx">bssw-tutorial/presentations</span><span class="w"> </span><span class="nt">--milestone</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--title</span><span class="w"> </span><span class="s2">"adubey64 for 2026-01-26-hpcasia: Update presentations by 2026-01-12"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--assignee</span><span class="w"> </span><span class="s2">"adubey64"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--label</span><span class="w"> </span><span class="s2">"event preparation"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--body-file</span><span class="w"> </span><span class="o">-</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update resources linked from presentations by 2026-01-12</span><span class="w">
+</span><span class="nv">$issueBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@"
+
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/design.md&gt; by 2026-01-19"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/intro.md&gt; by 2026-01-19"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/overview.md&gt; by 2026-01-19"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/testing.md&gt; by 2026-01-19"
+"@</span><span class="w">
+</span><span class="nv">$issuebody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gh</span><span class="w"> </span><span class="nx">issue</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="nt">--repo</span><span class="w"> </span><span class="nx">bssw-tutorial/bssw-tutorial.github.io</span><span class="w"> </span><span class="nt">--milestone</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--title</span><span class="w"> </span><span class="s2">"adubey64 for 2026-01-26-hpcasia: Update resource links by 2026-01-19"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--assignee</span><span class="w"> </span><span class="s2">"adubey64"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--label</span><span class="w"> </span><span class="s2">"event preparation"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--body-file</span><span class="w"> </span><span class="o">-</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="akashdhruv--bash-version">akashdhruv – bash version</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations by 2026-01-12</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/presentations <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
+    <span class="nt">--title</span> <span class="s2">"akashdhruv for 2026-01-26-hpcasia: Update presentations by 2026-01-12"</span> <span class="se">\</span>
+    <span class="nt">--assignee</span> <span class="s2">"akashdhruv"</span> <span class="se">\</span>
+    <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
+    <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/codescribe.pptx&gt; by 2026-01-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/repro-notebooks.pptx&gt; by 2026-01-12"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update resources linked from presentations by 2026-01-12</span>
+gh issue create <span class="nt">--repo</span> bssw-tutorial/bssw-tutorial.github.io <span class="nt">--milestone</span> <span class="s2">"2026-01-26-hpcasia"</span> <span class="se">\</span>
     <span class="nt">--title</span> <span class="s2">"akashdhruv for 2026-01-26-hpcasia: Update resource links by 2026-01-19"</span> <span class="se">\</span>
     <span class="nt">--assignee</span> <span class="s2">"akashdhruv"</span> <span class="se">\</span>
     <span class="nt">--label</span> <span class="s2">"event preparation"</span> <span class="se">\</span>
     <span class="nt">--body-file</span> - <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+
 - [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/codescribe.md&gt; by 2026-01-19"
 - [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/repro-notebooks.md&gt; by 2026-01-19"
 </span><span class="no">EOF
+</span></code></pre></div></div>
 
+<h3 id="akashdhruv--powershell-version">akashdhruv – powershell version</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update presentations by 2026-01-12</span><span class="w">
+</span><span class="nv">$issueBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@"
+
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/codescribe.pptx&gt; by 2026-01-12"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/presentations/blob/master/repro-notebooks.pptx&gt; by 2026-01-12"
+- [ ] "Remember to update &lt;https://github.com/bssw-tutorial/presentations/blob/master/presentations.yml if any titles change!"
+"@</span><span class="w">
+</span><span class="nv">$issuebody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gh</span><span class="w"> </span><span class="nx">issue</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="nt">--repo</span><span class="w"> </span><span class="nx">bssw-tutorial/presentations</span><span class="w"> </span><span class="nt">--milestone</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--title</span><span class="w"> </span><span class="s2">"akashdhruv for 2026-01-26-hpcasia: Update presentations by 2026-01-12"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--assignee</span><span class="w"> </span><span class="s2">"akashdhruv"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--label</span><span class="w"> </span><span class="s2">"event preparation"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--body-file</span><span class="w"> </span><span class="o">-</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update resources linked from presentations by 2026-01-12</span><span class="w">
+</span><span class="nv">$issueBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@"
+
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/codescribe.md&gt; by 2026-01-19"
+- [ ] "Update &lt;https://github.com/bssw-tutorial/bssw-tutorial.github.io/tree/main/2026-01-26-hpcasia/presentation-resources/repro-notebooks.md&gt; by 2026-01-19"
+"@</span><span class="w">
+</span><span class="nv">$issuebody</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gh</span><span class="w"> </span><span class="nx">issue</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="nt">--repo</span><span class="w"> </span><span class="nx">bssw-tutorial/bssw-tutorial.github.io</span><span class="w"> </span><span class="nt">--milestone</span><span class="w"> </span><span class="s2">"2026-01-26-hpcasia"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--title</span><span class="w"> </span><span class="s2">"akashdhruv for 2026-01-26-hpcasia: Update resource links by 2026-01-19"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--assignee</span><span class="w"> </span><span class="s2">"akashdhruv"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--label</span><span class="w"> </span><span class="s2">"event preparation"</span><span class="w"> </span><span class="se">`
+</span><span class="w">    </span><span class="nt">--body-file</span><span class="w"> </span><span class="o">-</span><span class="w">
 </span></code></pre></div></div>
 
 <h2 id="issues-for-hands-on-content">Issues for hands-on content</h2>
