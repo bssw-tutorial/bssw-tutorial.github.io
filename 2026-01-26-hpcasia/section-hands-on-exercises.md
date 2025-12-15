@@ -12,7 +12,7 @@ You can participate in the hands-on section in two modes: using the LLM’s **we
 
 The instructors will work in Fortran, C, and C++, but only a surface-level understanding of these languages is required to follow the explanations. For your code generation work, you may prompt the LLM to generate code in the language of your choice. Evaluating the generated code (and revising the prompt accordingly) will be part of the hands-on activity. For the purposes of the tutorial, inspecting the code will be sufficient to gauge its appropriateness. However, if you wish to more rigorously validate the generated code, you will need access to an environment in which you can build and run it, either locally or remotely.
 
-The code translation portion is specific to Fortran, C, and C++. In this case, seed prompts will be provided, and you may choose to use the example in the CodeScribe tutorial repository linked below or create your own Fortran example. If you decide to attempt code translation using your own example, please ensure that the code builds successfully and that you have checks (tests) in place to verify correctness. Keep any customized examples minimal to ensure that you obtain meaningful results during the hands-on exercise, and then apply the workflow to more complex problems later. Do not start with a complex problem.
+The code translation portion is specific to Fortran, C, and C++. In this case, seed prompts will be provided, and you may choose to use the example in the CodeScribe tutorial repository (<https://github.com/akashdhruv/codescribe-tutorial>) or create your own Fortran example. If you decide to attempt code translation using your own example, please ensure that the code builds successfully and that you have checks (tests) in place to verify correctness. Keep any customized examples minimal to ensure that you obtain meaningful results during the hands-on exercise, and then apply the workflow to more complex problems later. Do not start with a complex problem.
 
 ### Advance preparation
 
@@ -39,9 +39,10 @@ If you wish to participate in the hands-on activities, we strongly encourage you
 1. CodeScribe is written in Python, so you will need a working Python installation on a system that you can access (local or remote) during the tutorial.
 
 1. Download and install CodeScribe from <https://github.com/akashdhruv/CodeScribe>
-   a. Installation instructions are provided in the README file: <https://github.com/akashdhruv/CodeScribe?tab=readme-ov-file#installation>
-   b. You are encouraged to watch the tutorials on installing and using CodeScribe in this Box folder: <https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u>. These tutorials were prepared specifically for the code translation portion.
-   c. For code generation and update features, you may refer to the tutorial repository: <https://github.com/akashdhruv/codescribe-tutorial>, which provides minimal examples.
+
+   - Installation instructions are provided in the README file: <https://github.com/akashdhruv/CodeScribe?tab=readme-ov-file#installation>
+   - You are encouraged to watch the tutorials on installing and using CodeScribe in this Box folder: <https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u>. These tutorials were prepared specifically for the code translation portion.
+   - For instructions on using code generation and update features, you may refer to the tutorial repository: <https://github.com/akashdhruv/codescribe-tutorial>, which provides minimal examples.
 
 1. You will need to integrate your CodeScribe installation with the API of your chosen LLM. Basic instructions are provided in the README file: <https://github.com/akashdhruv/CodeScribe?tab=readme-ov-file#integrating-llm-of-choice>. You may need to add support for your specific model in CodeScribe. To do so, examine the file <https://github.com/akashdhruv/CodeScribe/blob/development/code_scribe/lib/_llm.py>, copy the class that most closely resembles your target model, and create a pull request in the repository. With sufficient lead time, we will do our best to help make this work. You may also file issues on the CodeScribe repository to request assistance with adding support for a specific LLM.
 
@@ -59,7 +60,7 @@ We provide the instructor’s prompts as examples, but to get the most out of th
 
 - [prompts.toml](hands-on/prompt.toml)
 
-The **CodeScribe Tutorial Repo** (<https://github.com/akashdhruv/codescribe-tutorial>) also contains a `prompts` directory with prompts for code translation and minimal examples for code generation.
+The tutorial repository (<https://github.com/akashdhruv/codescribe-tutorial>) also contains a `prompts` directory with prompts for code translation and minimal examples for code generation.
 
 #### Generated code
 
@@ -81,4 +82,4 @@ The individual files are:
 - [verify_movement.c](hands-on/verify_movement.c)
 - [verify_particles.c](hands-on/verify_particles.c)
 
-The tutorial repository also contains the source files used for the code translation example.
+The tutorial repository (<https://github.com/akashdhruv/codescribe-tutorial>) contains the source files used for the code translation example.

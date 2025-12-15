@@ -24,7 +24,7 @@ sections:
   # - related-events
   - hands-on-exercises
   - stay-in-touch-no-ho
-  # - resources-from-presentations
+  - resources-from-presentations
   - requested-citation
   # - acknowledgments-ecp
   # - acknowledgments-cass-ngsst-ecp
