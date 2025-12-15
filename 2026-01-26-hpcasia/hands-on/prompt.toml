@@ -1,0 +1,222 @@
+[[chat]]
+role = "user"
+content = """
+You are a code generator for a practice code to be written in C
+First I will ask you to generated some code for helper functions, after
+I have those tt every step I will explain what I want implemented, and I want you to 
+tell me what you understood the specification to be. Do not generated code until 
+I tell you to do s.
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+I am ready. Please give me the details """
+
+
+[[chat]]
+role = "user"
+content = """
+We are writing code in C
+
+Create a header file constants.h that defines several int constants
+LOW =1 1 lower end
+HIGH = 2 upper end
+INTERIOR = 3 
+MDIM =  3 the maximum possible dimensionality
+IAXIS  =1  x axis
+JAXIS  =2  y axis
+KAXIS  =3  z  axis
+BLOCK = 4 identity of the block
+PERIODIC =10 -- periodic boundary condition
+REFLECTIVE  = 11 -- reflective boundary condition
+OUTFLOW  = 12  outflow boundary condition
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+
+[[chat]]
+role = "user"
+content = """
+Write a routine to create  a cartesian mesh in two or three dimensions that is divided into
+blocks. It should be written as a routine which includes constants.h
+Its inputs are 
+int NDIM – dimensionality of the mesh
+int NX - number of data points along each dimension
+float lbnd  - lower bound of coordinates along each dimension
+float ubnd - upper bound of coordinates along each dimension
+int nblk - number of blocks into which the mesh is divided
+boundaries[NDIM] - boundary conditions along each dimension provided as strings
+Its outputs are:
+float domainbnds[NDIM][HIGH] coordinates of the lower left corner
+and upper right corner of the domain
+int domainbc[NDIM] boundary conditions along each dimension
+    where strings are converted to the corresponding constants from constanst.h
+a list of blocks where for each block there is 
+int blkID – unique identity of the block, blocks should be numbered  in lexicographic order
+float bbnd[NDIM][HIGH] – coordinates of the lower left corner and upper right corner of each block
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+
+[[chat]]
+role = "user"
+content = """
+Write a function “getBlkID”  that is given coordinates of a point in
+float pos[NDIM] and the list of blocks returned by the routine
+createMesh, and returns int blkID that is the block on which the
+point resides. If the point is outside the physical domain it returns a -1. 
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+
+[[chat]]
+role = "user"
+content = """
+In a separate file write a test program that will create this mesh The program
+should prompt user to provide  values of all inputs for createMesh in this order 
+NDIM 
+NX 
+lbnd in one line 
+ubnd in one line 
+nblk 
+boundaries[1] … boundaries[NDIM] in one line
+
+It should first print out all the values that it read
+After the mesh is created it should print all the information about each block in one line
+
+Also create a makefile to build the program using gcc
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+[[chat]]
+role = "user"
+content = """
+Write a routine createLattice to create a lattice of particles on the mesh
+Its inputs are:
+int NDIM  – dimensionality of the mesh
+int npart – number of particles
+list of blocks  – returned by routine createMesh
+float domainbnds[NDIM][HIGH] – returned by createMesh
+Its output is:
+Data structure for particles where for each particle there is
+int blkID – the block of the mesh on which the particle resides – 
+                 this can be determined using function getBlkID
+float coords[NDIM] the position of the particle
+"""
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+
+[[chat]]
+role = "user"
+content = """
+Augment the test for mesh creation to also create a lattice of particles.
+After creating the mesh, the test should prompt user to provide the number of particles
+in the lattice before it prints the mesh information.
+After the lattice is created it should first print all the blocks information, one block in each line,
+and then print all the particles information, one particle in each line. 
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+[[chat]]
+role = "user"
+content = """
+Write a function check_particle  that confirms that a particle is associated with the right block
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+
+[[chat]]
+role = "user"
+content = """
+Now we are done with all the helper functions. I want to write a routine that randomly moves
+particles physically in the domain. Particles may move from one block to another, and some particles may even
+cross the physical  boundaries.  After each need to update the position coordinates of the particle, and the
+block ID that it is now associate with. If the returned value of new block is -1, then the particle has to
+handle boundary conditions. Particle may not be outside the boundary for every axis. 
+If for  any dimension it is still within the boundary we do not need to change the position
+along that dimension. First we assume only PERIODIC boundary conditions for which its new position is
+L + pos[d] if it outside on the LOW side and L-pos[d] if it outside on the HIGH side where
+L  = domainbnds[d][HIGH] - domainbnds[d][LOW]
+Do not write code yet, first explain what you understand are the specifications, and what is your design.
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+
+[[chat]]
+role = "user"
+content = """
+Code it, and augment the test to call the routine to also verify that each particle is
+associated with the correct block after every move. The test should prompt the user to input the number of
+move steps, it should call the move routine for each step and then verify that the particle is in the
+correctly associated block.
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+
+[[chat]]
+role = "user"
+content = """
+Next I want to refactor the code so that I can specify different methods for moving the particles.
+It can be done by adding a function that takes in the current position and returns the
+updated position for each particle. I would like to be able to swap implementations of
+this function to try various methods of moving the particles. 
+"""
+
+
+[[chat]]
+role = "assistant"
+content = """
+"""
+
+[[chat]]
+role = "user"
+content = """
+In the next step I would like to update handling of boundary conditions so that
+OUTFLOW and REFLECTIVE boundary conditions are also handled. 
+For any dimension where it is outside the boundary and the
+boundary condition is OUTFLOW along that dimension, the particle is leaving the domain, and it
+should be removed from the list, here boundary conditions along other dimensions don't matter.
+For any dimension where the particle is outside the boundary and the boundary condition is
+REFLECTIVE its new position is 2*domainbnds[d][e] - pos[d] where d is the dimension,
+and e is LOW or HIGH depending on which side of the domain the particle is outside.
+
+[[chat]]
+role = "assistant"
+content = """
+"""

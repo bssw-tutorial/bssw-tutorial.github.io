@@ -22,6 +22,7 @@ sections:
   # - participate-hybrid
   # - participate-online
   # - related-events
+  - hands-on-exercises
   - stay-in-touch-no-ho
   # - resources-from-presentations
   - requested-citation
