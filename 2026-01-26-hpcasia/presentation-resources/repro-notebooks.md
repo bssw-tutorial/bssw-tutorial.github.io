@@ -1,0 +1,32 @@
+<!-- reproducibility -->
+  * [Toward a Compatible Reproducibility Taxonomy for Computational and Computing Sciences](https://doi.org/10.2172/1481626)
+  * [Reproducibility and Replicability in Science](https://doi.org/10.17226/25303)
+  * [Many Psychology Findings Not As Strong As Claimed](http://www.nytimes.com/2015/08/28/science/many-social-science-findings-not-as-strong-as-claimed-study-says.html)
+  * [The War Over Supercooled Water](https://doi.org/10.1063/PT.6.1.20180822a)
+  * [Researchers find bug in Python Script may have affected hundreds of studies](https://arstechnica.com/information-technology/2019/10/chemists-discover-cross-platform-python-scripts-not-so-cross-platform/)
+  * [National Science Foundation Data Management Plan Requirements](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
+  * [Introducing the FAIR Principles for research software](https://doi.org/10.1038/s41597-022-01710-x)
+  * [FAIR Principles for Data](https://gofair.us/)
+  * [ACM Reproducible Computational Results](http://toms.acm.org/replicated-computational-results.cfm)
+  * [ACM Artifact Review and Badging](https://www.acm.org/publications/policies/artifact-review-and-badging-current)
+  * <http://fursin.net/reproducibility.html>
+  * [ National Information Standards Organization (NISO) on Reproducibility and Badging](https://www.niso.org/niso-io/2019/01/new-niso-project-badging-scheme-reproducibility-computational-and-computing)
+  * [HPC and the Lab Manager](https://bssw.io/blog_posts/hpc-and-the-lab-manager)
+  * [Writing the Laboratory Notebook](https://files.eric.ed.gov/fulltext/ED344734.pdf)
+  * [DIKW pyramid](https://en.wikipedia.org/wiki/DIKW_pyramid)
+  * [Laboratory Notebook Example](https://arxiv.org/pdf/2308.15637)
+  * Helpful Tools
+     * [Floating Point Analysis Tools](http://fpanalysistools.org/)
+     * [Code Ocean (Cloud platforms - publish and reproduce research code and data)](https://codeocean.com/)
+     * DOIs and hosting of data, code, documents:
+       - [Zenodo](https://zenodo.org/)
+       - [FigShare](https://figshare.com/)
+     * [Jobrunner](https://github.com/Lab-Notebooks/Jobrunner)
+  * Other Resources:
+    * [The FAIR Guiding Principles for Scientific Data Management and Stewardship. Mark D. Wilkinson, et al. 2016](https://doi.org/10.1038/sdata.2016.18)
+    * [FAIR4RS](https://www.rd-alliance.org/groups/fair-for-research-software-fair4rs-wg/forum/) (previously linked to ~~www.rd-alliance.org/groups/fair-research-software-fair4rs-wg~~)
+    * [Editorial: ACM TOMS Replicated Computational Results Initiative. Michael A. Heroux. 2015](http://dx.doi.org/10.1145/2743015)
+    * [Enhancing Reproducibility for Computational Methods](https://doi.org/10.1126/science.aah6168)
+    * [Simple experiments in reproducibility and technical trust by Mike Heroux and students](https://betterscientificsoftware.github.io/Trust-Tools/) (work in progress)
+    * [What every scientist should know about floating-point arithmetic. David Goldberg.](https://doi.org/10.1145/103162.103163)
+  * [Jupyter4Science: Better Practices for Using Jupyter Notebooks for Science](https://bssw.io/items/jupyter4science-better-practices-for-using-jupyter-notebooks-for-science) by [Nicole Brewer](https://bssw.io/fellows/nicole-brewer)
