@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-12-06T15:19:47-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-12-15T18:13:40-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2026-01-26-hpcasia/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -140,6 +140,12 @@ Anshu Dubey (Argonne National Laboratory) and Akash Dhruv (Argonne National Labo
   
   
   
+  
+  
+  
+  
+  
+  
   <h2 id=on-this-page">On this Page</h2>
 
 <ul>
@@ -148,7 +154,9 @@ Anshu Dubey (Argonne National Laboratory) and Akash Dhruv (Argonne National Labo
 <li><a href="#agenda">Agenda</a></li>
 <li><a href="#presentation-slides">Presentation Slides</a></li>
 <li><a href="#how-to-participate">How to Participate</a></li>
+<li><a href="#hands-on-activities">Hands-On Activities</a></li>
 <li><a href="#stay-in-touch">Stay in Touch</a></li>
+<li><a href="#resources-from-presentations">Resources from Presentations</a></li>
 <li><a href="#requested-citation">Requested Citation</a></li>
 <li><a href="#acknowledgements">Acknowledgements</a></li></ul>
 
@@ -198,6 +206,105 @@ Anshu Dubey (Argonne National Laboratory) and Akash Dhruv (Argonne National Labo
 </ul>
 
 <hr>
+<h2 id="hands-on-activities">Hands-On Activities</h2>
+<h3 id="introduction">Introduction</h3>
+
+<p>The hands-on activity for this tutorial involves using a large language model (LLM) for code translation and generation based on specifications (prompts) that you will develop. Participation in these activities is encouraged but not required. After interested participants have had time to try the exercises on their own, the instructor will review their prompts and the resulting code with the class, and these materials will be made available to all participants.</p>
+
+<p>You can participate in the hands-on section in two modes: using the LLM’s <strong>web interface</strong>, or using <strong>CodeScribe</strong>, a tool that enables chat-completion through the LLM’s API interface. The code generation objective of the hands-on can be met using the web interface; however, for code translation you will need to do some advance preparation to use <strong>CodeScribe</strong>. The advantage of using CodeScribe is gaining exposure to the chat-completion technique and becoming familiar with a tool that can be very useful for writing and maintaining code.</p>
+
+<p>The instructors will work in Fortran, C, and C++, but only a surface-level understanding of these languages is required to follow the explanations. For your code generation work, you may prompt the LLM to generate code in the language of your choice. Evaluating the generated code (and revising the prompt accordingly) will be part of the hands-on activity. For the purposes of the tutorial, inspecting the code will be sufficient to gauge its appropriateness. However, if you wish to more rigorously validate the generated code, you will need access to an environment in which you can build and run it, either locally or remotely.</p>
+
+<p>The code translation portion is specific to Fortran, C, and C++. In this case, seed prompts will be provided, and you may choose to use the example in the CodeScribe tutorial repository (<a href="https://github.com/akashdhruv/codescribe-tutorial">https://github.com/akashdhruv/codescribe-tutorial</a>) or create your own Fortran example. If you decide to attempt code translation using your own example, please ensure that the code builds successfully and that you have checks (tests) in place to verify correctness. Keep any customized examples minimal to ensure that you obtain meaningful results during the hands-on exercise, and then apply the workflow to more complex problems later. Do not start with a complex problem.</p>
+
+<h3 id="advance-preparation">Advance preparation</h3>
+
+<p>If you wish to participate in the hands-on activities, we strongly encourage you to do some preparation <strong>before you leave for Osaka</strong>. This is especially important if you plan to use CodeScribe, which may require advance interaction with the tool developers to integrate new LLM APIs.</p>
+
+<h4 id="preparation-for-using-the-llm-web-interface">Preparation for using the LLM <strong>web interface</strong></h4>
+
+<ol>
+  <li>
+    <p>You will need access to an LLM chat tool. The instructors will be using <a href="https://chatgpt.com/">ChatGPT</a>, but any comparable LLM, including institutionally supported tools, should work.</p>
+  </li>
+  <li>
+    <p>(OPTIONAL) If you wish to build and run the code generated by the LLM, you will need access (local or remote) to an appropriate environment. As stated above, you may use any language you prefer for your hands-on activity. The instructors will work in Fortran, C, and C++.</p>
+  </li>
+</ol>
+
+<h4 id="preparation-for-using-codescribe">Preparation for using <strong>CodeScribe</strong></h4>
+
+<p><em>It is important that you complete this preparation with enough lead time that we can assist you if necessary <strong>before HPC Asia starts</strong>. <strong>We will not be able to provide support for CodeScribe setup issues during the tutorial itself</strong>.</em></p>
+
+<ol>
+  <li>
+    <p>You will need API access to an LLM. This goes beyond the web interface and may incur an additional charge on some platforms. However, many institutionally supported LLMs offer API access at no additional cost. You will be responsible for any additional costs incurred. The instructors will be using <a href="https://chatgpt.com/">ChatGPT</a>, but any comparable LLM should work. CodeScribe also supports several freely downloadable models that can be run locally:</p>
+
+    <ul>
+      <li><a href="https://huggingface.co/google/gemma-2-2b-it">https://huggingface.co/google/gemma-2-2b-it</a></li>
+      <li><a href="https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct">https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct</a></li>
+      <li><a href="https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/tree/main">https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/tree/main</a></li>
+    </ul>
+
+    <p>The first two models are smaller and may run faster on laptops. Download instructions can be found here: <a href="https://huggingface.co/docs/hub/en/models-downloading">https://huggingface.co/docs/hub/en/models-downloading</a>. Note that if you download Hugging Face models using their CLI, they will be placed in the cache directory (<code class="language-plaintext highlighter-rouge">~/.cache/huggingface/hub/&lt;model-name&gt;/snapshots/&lt;sha1&gt;</code>) or your operating system’s equivalent). If you use <code class="language-plaintext highlighter-rouge">git clone</code>, you may place the models wherever you prefer.</p>
+  </li>
+  <li>
+    <p>CodeScribe is written in Python, so you will need a working Python installation on a system that you can access (local or remote) during the tutorial.</p>
+  </li>
+  <li>
+    <p>Download and install CodeScribe from <a href="https://github.com/akashdhruv/CodeScribe">https://github.com/akashdhruv/CodeScribe</a></p>
+
+    <ul>
+      <li>Installation instructions are provided in the README file: <a href="https://github.com/akashdhruv/CodeScribe?tab=readme-ov-file#installation">https://github.com/akashdhruv/CodeScribe?tab=readme-ov-file#installation</a></li>
+      <li>You are encouraged to watch the tutorials on installing and using CodeScribe in this Box folder: <a href="https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u">https://anl.app.box.com/folder/336154643880?s=zv3zdbphqprdz8rjh1c84xpeqd8yg32u</a>. These tutorials were prepared specifically for the code translation portion.</li>
+      <li>For instructions on using code generation and update features, you may refer to the tutorial repository: <a href="https://github.com/akashdhruv/codescribe-tutorial">https://github.com/akashdhruv/codescribe-tutorial</a>, which provides minimal examples.</li>
+    </ul>
+  </li>
+  <li>
+    <p>You will need to integrate your CodeScribe installation with the API of your chosen LLM. Basic instructions are provided in the README file: <a href="https://github.com/akashdhruv/CodeScribe?tab=readme-ov-file#integrating-llm-of-choice">https://github.com/akashdhruv/CodeScribe?tab=readme-ov-file#integrating-llm-of-choice</a>. You may need to add support for your specific model in CodeScribe. To do so, examine the file <a href="https://github.com/akashdhruv/CodeScribe/blob/development/code_scribe/lib/_llm.py">https://github.com/akashdhruv/CodeScribe/blob/development/code_scribe/lib/_llm.py</a>, copy the class that most closely resembles your target model, and create a pull request in the repository. With sufficient lead time, we will do our best to help make this work. You may also file issues on the CodeScribe repository to request assistance with adding support for a specific LLM.</p>
+  </li>
+  <li>
+    <p>(OPTIONAL) If you wish to build and run the code generated by the LLM, you will need access (local or remote) to an appropriate environment. As stated above, you may use any language you prefer for your hands-on activity. The instructors will work in Fortran, C, and C++.</p>
+  </li>
+</ol>
+
+<h3 id="during-the-tutorial">During the tutorial</h3>
+
+<h4 id="prompts">Prompts</h4>
+
+<p>We provide the instructor’s prompts as examples, but to get the most out of this hands-on exercise, you should develop your own set of prompts rather than simply pasting ours into your LLM.</p>
+
+<ul>
+  <li><a href="hands-on/prompt.toml">prompts.toml</a></li>
+</ul>
+
+<p>The tutorial repository (<a href="https://github.com/akashdhruv/codescribe-tutorial">https://github.com/akashdhruv/codescribe-tutorial</a>) also contains a <code class="language-plaintext highlighter-rouge">prompts</code> directory with prompts for code translation and minimal examples for code generation.</p>
+
+<h4 id="generated-code">Generated code</h4>
+
+<p>The full set of generated code, along with the Makefile and example test inputs and outputs, can be downloaded as a <a href="hands-on/generated_code.zip">ZIP file</a>.</p>
+
+<p>The individual files are:</p>
+
+<ul>
+  <li><a href="hands-on/constants.h">constants.h</a></li>
+  <li><a href="hands-on/inputs">inputs</a></li>
+  <li><a href="hands-on/main.c">main.c</a></li>
+  <li><a href="hands-on/Makefile">Makefile</a></li>
+  <li><a href="hands-on/mesh.c">mesh.c</a></li>
+  <li><a href="hands-on/mesh.h">mesh.h</a></li>
+  <li><a href="hands-on/move_particles.c">move_particles.c</a></li>
+  <li><a href="hands-on/particles.c">particles.c</a></li>
+  <li><a href="hands-on/test_input">test_input</a></li>
+  <li><a href="hands-on/test_sample">test_sample</a></li>
+  <li><a href="hands-on/verify_mesh.c">verify_mesh.c</a></li>
+  <li><a href="hands-on/verify_movement.c">verify_movement.c</a></li>
+  <li><a href="hands-on/verify_particles.c">verify_particles.c</a></li>
+</ul>
+
+<p>The tutorial repository (<a href="https://github.com/akashdhruv/codescribe-tutorial">https://github.com/akashdhruv/codescribe-tutorial</a>) contains the source files used for the code translation example.</p>
+
+<hr>
 <h2 id="stay-in-touch">Stay in Touch</h2>
 
 <ul>
@@ -211,6 +318,146 @@ Anshu Dubey (Argonne National Laboratory) and Akash Dhruv (Argonne National Labo
     <p>For monthly updates on the Better Scientific Software site, subscribe to our <a href="https://bssw.io/pages/receive-our-email-digest">monthly digest</a>.</p>
   </li>
 </ul>
+
+<hr>
+<h2 id="resources-from-presentations">Resources from Presentations</h2>
+
+<p><em>Links from the tutorial presentations are listed here for convenience</em></p>
+
+<ul>
+  <li>Module 1: Introduction
+  <!-- intro -->
+    <ul>
+      <li><a href="https://cass.community/">Consortium for the Advancement of Scientific Software (CASS)</a></li>
+      <li><a href="https://pesoproject.org/">PESO Project</a></li>
+      <li><a href="https://rapids.lbl.gov/">RAPIDS Project</a></li>
+      <li><a href="https://spack.io/">Spack</a></li>
+      <li><a href="http://ideas-productivity.org">IDEAS Productivity Project</a></li>
+      <li><a href="https://bssw.io">Better Scientific Software</a> site</li>
+      <li><a href="https://bssw.io/pages/receive-our-email-digest">BSSw Digest</a></li>
+      <li><a href="https://bssw.io/items.rss">RSS Feed</a></li>
+      <li><a href="mailto:bssw-tutorial@lists.mcs.anl.gov">Write to the tutorial authors</a></li>
+      <li><a href="https://bssw-tutorial.github.io/2026-01-26-hpcasia/#hands-on-activities">Setup instructions for hands-on activities</a></li>
+    </ul>
+  </li>
+  <li>Module 2: Motivation and Overview of Best Practices in HPC Software Development
+  <!-- overview -->
+    <ul>
+      <li>COVID-19 epidemiology saga
+        <ul>
+          <li><a href="https://doi.org/10.25561/77482">https://doi.org/10.25561/77482</a></li>
+          <li><a href="https://www.nicholaslewis.org/imperial-college-uk-covid-19-numbers-dont-seem-to-add-up/">https://www.nicholaslewis.org/imperial-college-uk-covid-19-numbers-dont-seem-to-add-up/</a></li>
+          <li><a href="https://www.nature.com/articles/d41586-020-01003-6">https://www.nature.com/articles/d41586-020-01003-6</a></li>
+          <li><a href="https://www.foxnews.com/world/imperial-college-britain-coronavirus-lockdown-buggy-mess-unreliable">https://www.foxnews.com/world/imperial-college-britain-coronavirus-lockdown-buggy-mess-unreliable</a></li>
+          <li><a href="https://www.telegraph.co.uk/technology/2020/05/16/coding-led-lockdown-totally-unreliable-buggy-mess-say-experts/">https://www.telegraph.co.uk/technology/2020/05/16/coding-led-lockdown-totally-unreliable-buggy-mess-say-experts/</a></li>
+          <li><a href="https://github.com/mrc-ide/covid-sim/">https://github.com/mrc-ide/covid-sim/</a></li>
+          <li><a href="https://philbull.wordpress.com/2020/05/10/why-you-can-ignore-reviews-of-scientific-code-by-commercial-software-developers/amp/">https://philbull.wordpress.com/2020/05/10/why-you-can-ignore-reviews-of-scientific-code-by-commercial-software-developers/amp/</a></li>
+          <li><a href="http://doi.org/10.5281/zenodo.3865491">http://doi.org/10.5281/zenodo.3865491</a></li>
+        </ul>
+      </li>
+      <li><a href="https://doi.org/10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a></li>
+      <li><a href="https://doi.org/10.1371/journal.pcbi.1005510">Good Enough Practices in Scientific Computing</a></li>
+      <li><a href="https://www.bestpractices.dev/en">OpenSSF Best Practices Badge Program</a></li>
+      <li><a href="https://doi.org/10.1109/MCSE.2023.3259259">Good Practices for High-Quality Scientific Computing</a></li>
+      <li><a href="https://rateyourproject.org/">Rate Your Project Assesment Tool</a></li>
+      <li><a href="https://bssw-psip.github.io/ptc-catalog/catalog">Progress Tracking Card (PTC) Examples</a></li>
+      <li><a href="https://bssw.io/psip">Productivity and Sustainability Improvement Planning</a></li>
+      <li><a href="https://bssw.io">Better Scientific Software (BSSw)</a></li>
+    </ul>
+  </li>
+  <li>Module 3: Code Translation from Fortran to C++ using CodeScribe
+  <!-- codescribe -->
+    <ul>
+      <li><a href="https://arxiv.org/pdf/2308.15637">CodeScribe Paper</a></li>
+      <li><a href="https://github.com/akashdhruv/CodeScribe">CodeScribe Repository</a></li>
+      <li><a href="https://github.com/akashdhruv/codescribe-tutorial">CodeScribe Tutorial Repo</a></li>
+      <li><a href="https://anl.app.box.com/s/zv3zdbphqprdz8rjh1c84xpeqd8yg32u">CodeScribe Video Tutorials</a></li>
+    </ul>
+  </li>
+  <li>Module 4: Scientific Software Design
+  <!-- design -->
+    <ul>
+      <li><a href="https://enterprisersproject.com/article/2020/6/technical-debt-explained-plain-english">https://enterprisersproject.com/article/2020/6/technical-debt-explained-plain-english</a></li>
+      <li>Code generation example
+        <ul>
+          <li><a href="https://github.com/Flash-X/Flash-X/blob/ylee/try_pushTile_spark/source/physics/Hydro/HydroMain/Spark/Hydro_interface.ini">https://github.com/Flash-X/Flash-X/blob/ylee/try_pushTile_spark/source/physics/Hydro/HydroMain/Spark/Hydro_interface.ini</a></li>
+          <li><em>This link will work only if you have access to the Flash-X code repository. Please email flash-x@lists.cels.anl.gov with your github username to get access</em></li>
+        </ul>
+      </li>
+      <li>References
+        <ul>
+          <li>Dubey Anshu, “Insights from the software design of a multiphysics multicomponent scientific code” Computing in Science &amp; Engineering, 2021. DOI:<a href="https://doi.org/10.1109/MCSE.2021.3069343">10.1109/MCSE.2021.3069343</a></li>
+          <li>Dubey, Anshu, et al. “Flash-X: A multiphysics simulation software instrument.” SoftwareX 19 (2022): 101168. DOI:<a href="https://doi.org/10.1016/j.softx.2022.101168">10.1016/j.softx.2022.101168</a></li>
+          <li>Rudi, Johann, et al. “CG-Kit: Code Generation Toolkit for Performant and Maintainable Variants of Source Code Applied to Flash-X Hydrodynamics Simulations.” arXiv preprint <a href="https://arxiv.org/abs/2401.03378">arXiv:2401.03378</a> (2024).</li>
+          <li>O’Neal, Jared, et al. “Domain-specific runtime to orchestrate computation on heterogeneous platforms.” European Conference on Parallel Processing. Cham: Springer International Publishing, 2021. DOI:<a href="https://doi.org/10.1007/978-3-031-06156-1_13">10.1007/978-3-031-06156-1_13</a></li>
+          <li>Dubey, Anshu, et al. “A tool and a methodology to use macros for abstracting variations in code for different computational demands.” Future Generation Computer Systems (2023). DOI:<a href="https://doi.org/10.1016/j.future.2023.07.014">10.1016/j.future.2023.07.014</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Module 5: Software Testing and Verification
+  <!-- testing-a -->
+    <ul>
+      <li><a href="https://tinyurl.com/yfxtf89t">LLM prompts for TDD</a></li>
+      <li><a href="https://docs.gitlab.com/ee/ci/introduction/">CI introduction</a></li>
+      <li><a href="https://bssw.io/items?topic=testing">Useful resources on testing</a></li>
+      <li><a href="https://github.com/linux-test-project/lcov">Lcov</a></li>
+      <li>Additional resources:
+        <ul>
+          <li><a href="https://doi.org/10.1017/CBO9780511760396">Verification and Validation in Scientific Computing</a></li>
+          <li><a href="https://isbndb.com/book/9780131177055">Working Effectively with Legacy Code</a></li>
+          <li><a href="https://doi.org/10.1002/spe.2220">Ongoing verification of a multiphysics community code: FLASH</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Module 6: Improving Reproducibility Through Better Software Practices
+  <!-- reproducibility -->
+    <ul>
+      <li><a href="https://doi.org/10.2172/1481626">Toward a Compatible Reproducibility Taxonomy for Computational and Computing Sciences</a></li>
+      <li><a href="https://doi.org/10.17226/25303">Reproducibility and Replicability in Science</a></li>
+      <li><a href="http://www.nytimes.com/2015/08/28/science/many-social-science-findings-not-as-strong-as-claimed-study-says.html">Many Psychology Findings Not As Strong As Claimed</a></li>
+      <li><a href="https://doi.org/10.1063/PT.6.1.20180822a">The War Over Supercooled Water</a></li>
+      <li><a href="https://arstechnica.com/information-technology/2019/10/chemists-discover-cross-platform-python-scripts-not-so-cross-platform/">Researchers find bug in Python Script may have affected hundreds of studies</a></li>
+      <li><a href="https://www.nsf.gov/bfa/dias/policy/dmp.jsp">National Science Foundation Data Management Plan Requirements</a></li>
+      <li><a href="https://doi.org/10.1038/s41597-022-01710-x">Introducing the FAIR Principles for research software</a></li>
+      <li><a href="https://gofair.us/">FAIR Principles for Data</a></li>
+      <li><a href="http://toms.acm.org/replicated-computational-results.cfm">ACM Reproducible Computational Results</a></li>
+      <li><a href="https://www.acm.org/publications/policies/artifact-review-and-badging-current">ACM Artifact Review and Badging</a></li>
+      <li><a href="http://fursin.net/reproducibility.html">http://fursin.net/reproducibility.html</a></li>
+      <li><a href="https://www.niso.org/niso-io/2019/01/new-niso-project-badging-scheme-reproducibility-computational-and-computing"> National Information Standards Organization (NISO) on Reproducibility and Badging</a></li>
+      <li><a href="https://bssw.io/blog_posts/hpc-and-the-lab-manager">HPC and the Lab Manager</a></li>
+      <li><a href="https://files.eric.ed.gov/fulltext/ED344734.pdf">Writing the Laboratory Notebook</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/DIKW_pyramid">DIKW pyramid</a></li>
+      <li><a href="https://arxiv.org/pdf/2308.15637">Laboratory Notebook Example</a></li>
+      <li>Helpful Tools
+        <ul>
+          <li><a href="http://fpanalysistools.org/">Floating Point Analysis Tools</a></li>
+          <li><a href="https://codeocean.com/">Code Ocean (Cloud platforms - publish and reproduce research code and data)</a></li>
+          <li>DOIs and hosting of data, code, documents:
+            <ul>
+              <li><a href="https://zenodo.org/">Zenodo</a></li>
+              <li><a href="https://figshare.com/">FigShare</a></li>
+            </ul>
+          </li>
+          <li><a href="https://github.com/Lab-Notebooks/Jobrunner">Jobrunner</a></li>
+        </ul>
+      </li>
+      <li>Other Resources:
+        <ul>
+          <li><a href="https://doi.org/10.1038/sdata.2016.18">The FAIR Guiding Principles for Scientific Data Management and Stewardship. Mark D. Wilkinson, et al. 2016</a></li>
+          <li><a href="https://www.rd-alliance.org/groups/fair-for-research-software-fair4rs-wg/forum/">FAIR4RS</a> (previously linked to <del>www.rd-alliance.org/groups/fair-research-software-fair4rs-wg</del>)</li>
+          <li><a href="http://dx.doi.org/10.1145/2743015">Editorial: ACM TOMS Replicated Computational Results Initiative. Michael A. Heroux. 2015</a></li>
+          <li><a href="https://doi.org/10.1126/science.aah6168">Enhancing Reproducibility for Computational Methods</a></li>
+          <li><a href="https://betterscientificsoftware.github.io/Trust-Tools/">Simple experiments in reproducibility and technical trust by Mike Heroux and students</a> (work in progress)</li>
+          <li><a href="https://doi.org/10.1145/103162.103163">What every scientist should know about floating-point arithmetic. David Goldberg.</a></li>
+        </ul>
+      </li>
+      <li><a href="https://bssw.io/items/jupyter4science-better-practices-for-using-jupyter-notebooks-for-science">Jupyter4Science: Better Practices for Using Jupyter Notebooks for Science</a> by <a href="https://bssw.io/fellows/nicole-brewer">Nicole Brewer</a></li>
+    </ul>
+  </li>
+</ul>
+
 
 <hr>
 <h2 id="requested-citation">Requested Citation</h2>
