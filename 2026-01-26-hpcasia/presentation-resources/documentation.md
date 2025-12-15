@@ -12,7 +12,7 @@
   * Flash-X documentation examples
     * [User's guide](https://flash-x.github.io/Flash-X-docs/#)
     * [API documentation](https://flash-x.org/api/index.html)
-    * [Online reference](https://flash-x.org/pages/documentation/)
+    * [Online reference](https://flash-x.org/pages/source/)
   * [Diataxis Framework](https://diataxis.fr/)
   * [Fortran tools](https://fortranwiki.org/fortran/show/Tools)
   * Markup languages
