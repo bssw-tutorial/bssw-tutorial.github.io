@@ -16,6 +16,7 @@ event-label: 2026-01-26-hpcasia
 #
 sections: 
   - description
+  - presenters
   - agenda
   - presentation-slides
   - participate-inperson
