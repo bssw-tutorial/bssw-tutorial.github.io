@@ -171,7 +171,7 @@ If you want to leverage the automatic agenda capability, but need to provide add
 Our convention is to post the PDFs of the presentations to an archival service, like FigShare, and obtain a DOI for then to reference on the event page.  With FigShare, the DOI can be reserved once the record is started, well in advance of actual publication.  The DOI is captured in `_data/bsswt/<event-label>/artifacts.yml` with an entry of the form:
 
 ```yml
-  - label: Presentation Slides
+  - label: Slides
     format: FigShare
     doi: 10.6084/m9.figshare.16556628
 ```
@@ -216,7 +216,7 @@ The stock `section-requested-citation.md` will usually suffice for this.  It con
   - `location`
   - `presenter-ids`
 * `_data/bsswt/<event-label>/artifacts.yml`
-  - `label: Presentation Slides`
+  - `label: Slides`
 
 If the required information is not set, it will display "To be announced".
 
@@ -229,4 +229,4 @@ The `section-hands-on-exercises.md` file is currently specific to the event.  It
 
 The `section-hands-on-exercises.md` file should then be modified so that the hands-on activities follow the agenda order.  Hands-ons for modules that are not being presented can be removed from the file or can be listed separately as things to try even though they weren't presented.
 
-Various files for the hands-ons need the `_data/bsswt/artifacts.yml` file have a `label: Hands-On Code Repository` entry.
+Various files for the hands-ons need the `_data/bsswt/artifacts.yml` file have a `label: Hands-on repository` entry.

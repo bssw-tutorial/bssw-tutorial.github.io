@@ -65,17 +65,17 @@ description: |
   This tutorial distills experience from members of the IDEAS Productivity project and the creators of the BSSw.io community website drawn from many scientific software projects over many years. The tutorial will provide information about software practices, processes, and tools explicitly tailored for CSE. Topics to be covered include: Agile methodologies and tools, software design and refactoring, testing and continuous integration, Git workflows for teams, and reproducibility. Material will be mostly at the beginner and intermediate levels. There will also be opportunities to discuss topics raised by the audience.
 
 artifacts:
-  - label: Tutorial Webpage
+  - label: Tutorial webpage
     bsswt-event-label: 2022-04-07-iss
-#  - label: Conference Registration
+#  - label: Conference registration
 #    format: deadline 2022-03-31
 #    url: https://docs.google.com/forms/d/e/1FAIpQLSc4q3tuR2H60NMfBGid06niE2GToa-sl0zCFz4u87Az9PyNMg/viewform
   - label: Playlist
     format: YouTube
     yt-playlist-id: PLuWzStas9iWExOVGGLCUl-N38mxQXSl87
-  - label: Presentation Slides
+  - label: Slides
     format: FigShare
     doi: 10.6084/m9.figshare.19416767
-  - label: Hands-On Code Repository
+  - label: Hands-on repository
     format: GitHub
     gh-repo: bssw-tutorial/hello-numerical-world-2022-04-07-iss

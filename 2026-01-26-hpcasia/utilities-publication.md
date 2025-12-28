@@ -280,7 +280,7 @@ git push --delete origin {{ event-label }}
   {% include emit-error.html msg=msg %}
 {% endunless %}
 
-{% capture description %}Hands-on code repository for {{ my-event.startdate | date: "%F" }} {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+{% capture description %}Hands-on repository for {{ my-event.startdate | date: "%F" }} {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
 
 {% if incomplete %}
   {% include emit-error.html msg="Cannot generate due to missing information. See preceeding messages." %}

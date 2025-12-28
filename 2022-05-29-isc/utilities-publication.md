@@ -125,7 +125,7 @@ git push --delete origin {{ event-label }}
 
 ## Scripting to create hands-on code repository
 
-{% capture description %}Hands-on code repository for {{ my-event.startdate | date: "%F" }} {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
+{% capture description %}Hands-on repository for {{ my-event.startdate | date: "%F" }} {{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}{% endcapture %}
 
 
 ```

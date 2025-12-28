@@ -99,9 +99,9 @@ description: |
 #   By the time of delivery, the doi status should be "published""
 #
 artifacts:
-  - label: Tutorial Webpage
+  - label: Tutorial webpage
     bsswt-event-label: 2017-11-13-sc
-  - label: Presentation Slides
+  - label: Slides
     format: FigShare
     doi: 10.6084/m9.figshare.c.3928039
     status: published

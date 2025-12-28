@@ -61,17 +61,17 @@ description: |
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
-  - label: Tutorial Webpage
+  - label: Tutorial webpage
     bsswt-event-label: 2022-05-02-ecpam
-#  - label: Conference Registration
+#  - label: Conference registration
 #    url: 
   - label: Playlist
     format: YouTube
     yt-playlist-id: PLuWzStas9iWFiWGCw7rC8Y-rG4KtPa39I
-  - label: Presentation Slides
+  - label: Slides
     format: FigShare
     doi: 10.6084/m9.figshare.19608927
-  - label: Hands-On Code Repository
+  - label: Hands-on repository
     format: GitHub
     gh-repo: bssw-tutorial/hello-numerical-world-2022-05-02-ecpam
 #

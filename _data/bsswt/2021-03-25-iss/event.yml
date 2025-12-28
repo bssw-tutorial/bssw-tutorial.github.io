@@ -52,14 +52,14 @@ description: |
   This half-day tutorial distills multi-project and multi-years experience from members of the IDEAS Productivity project and the creators of the BSSw.io community website. The tutorial will provide information about software practices, processes, and tools explicitly tailored for CSE. Topics to be covered include: Agile methodologies and tools, software design and refactoring, testing and continuous integration, Git workflows for teams, and reproducibility. Material will be mostly at the beginner and intermediate levels. There will also be opportunities to discuss topics raised by the audience.
 
 artifacts:
-  - label: Tutorial Webpage
+  - label: Tutorial webpage
     bsswt-event-label: 2021-03-25-iss
   - label: Playlist
     format: YouTube
     yt-playlist-id: PLuWzStas9iWF-IFRk4pSCsdqvrzsmgb9G
-  - label: Presentation Slides
+  - label: Slides
     format: FigShare
     doi: 10.6084/m9.figshare.14256257
-  - label: Hands-On Code Repository
+  - label: Hands-on repository
     format: GitHub
     gh-repo: bssw-tutorial/hello-numerical-world-2021-03-iss

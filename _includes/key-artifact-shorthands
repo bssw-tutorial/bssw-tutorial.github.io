@@ -1,9 +1,9 @@
 {% comment %}
     key-artifact-shorthands: set shorthand variables based on the artifacts data structure
         Label                      Element Output Variable
-        "Presentation Slides"      doi     presentations-doi
+        "Slides"      doi     presentations-doi
                                    status  presentation-status
-        "Hands-On Code Repository" gh-repo hands-on-repo
+        "Hands-on repository" gh-repo hands-on-repo
 
     arguments:
         `artifacts`: is a sequence containing artifact information
@@ -31,8 +31,8 @@
 
 {%- if include.artifacts -%}
     {%- for i in include.artifacts -%}
-        {%- if i.label == "Presentation Slides" -%}{%- assign presentations-doi = i.doi -%}{%- assign presentations-status = i.status -%}{%- endif -%}
-        {%- if i.label == "Hands-On Code Repository" -%}{%- assign hands-on-repo = i.gh-repo -%}{%- endif -%}
+        {%- if i.label == "Slides" -%}{%- assign presentations-doi = i.doi -%}{%- assign presentations-status = i.status -%}{%- endif -%}
+        {%- if i.label == "Hands-on repository" -%}{%- assign hands-on-repo = i.gh-repo -%}{%- endif -%}
     {%- endfor -%}
 {%- endif -%}
 

@@ -71,9 +71,9 @@ description: |
 # after registration closes or after the event, when it is no longer useful.
 #
 artifacts:
-  - label: Tutorial Webpage
+  - label: Tutorial webpage
     bsswt-event-label: 2018-02-06-ecpam
-  - label: Presentation Slides
+  - label: Slides
     format: FigShare
     doi: 10.6084/m9.figshare.21799772
 #
