@@ -2,7 +2,7 @@
 layout: page
 ---
 {%- include set-event-label-from-path -%}
-{%- assign my-artifacts = site.data.bsswt[event-label].artifacts -%}
+{%- assign my-artifacts = site.data.bsswt[event-label].event.artifacts -%}
 {%- include key-artifact-shorthands artifacts=my-artifacts -%}
 
 {%- unless hands-on-repo-link -%}{%- assign hands-on-repo-link = "hands-on-repo-link (to be defined)" -%}{%- endunless -%}

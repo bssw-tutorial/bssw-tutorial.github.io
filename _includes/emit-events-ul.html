@@ -32,7 +32,7 @@
     {% if my-event.artifacts %}
       {% assign my-artifacts = my-event.artifacts %}
     {% else %}
-      {% assign my-artifacts = site.data.bsswt[event-label].artifacts %}
+      {% assign my-artifacts = site.data.bsswt[event-label].event.artifacts %}
     {% endif %}
     {% if my-event %}
       <li style="margin-top: 1em">{% if first %}<strong>{% endif %}{{ my-event.startdate | date: "%F" }}: <a href="/{{ event-label }}/">{{ my-event.title }}{% if my-event.title-type %} {{ my-event.title-type }}{% endif %} @ {{ my-event.venue }}{% if my-event.venue-type %} {{ my-event.venue-type }}{% endif %}</a>{%if my-event.location %} ({{ my-event.location }}){% endif %}{% if first %}</strong>{%- assign first = false -%}{% endif %}</li>

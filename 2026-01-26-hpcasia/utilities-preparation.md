@@ -6,7 +6,7 @@ layout: default
 {% if my-event.artifacts %}
   {% assign my-artifacts = my-event.artifacts %}
 {% else %}
-  {% assign my-artifacts = site.data.bsswt[event-label].artifacts %}
+  {% assign my-artifacts = site.data.bsswt[event-label].event.artifacts %}
 {% endif %}
 {% include key-artifact-shorthands artifacts=my-artifacts %}
 {% assign my-presentations = site.data.bsswt[event-label].presentations %}

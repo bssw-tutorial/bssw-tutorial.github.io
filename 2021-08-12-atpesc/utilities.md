@@ -5,7 +5,7 @@ layout: page
 
 {%- include set-event-label-from-path -%}
 
-{% assign my-artifacts = site.data.bsswt[event-label].artifacts %}
+{% assign my-artifacts = site.data.bsswt[event-label].event.artifacts %}
 {% include key-artifact-shorthands artifacts=my-artifacts %}
 {% assign my-presentations = site.data.bsswt[event-label].presentations %}
 {% assign my-agenda = site.data.bsswt[event-label].agenda %}
