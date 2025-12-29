@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Better Scientific Software Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-12-28T16:58:29-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-29-isc/handson-m03-git-workflows.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"IDEAS Productivity Project"},"dateModified":"2025-12-28T19:28:46-05:00","description":"Tutorial materials focusing on developer productivity, software sustainability, and reproducibility in scientific research software, particularly targeting high-performance computers.","headline":"Better Scientific Software Tutorial","url":"https://bssw-tutorial.github.io/2022-05-29-isc/handson-m03-git-workflows.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://bssw-tutorial.github.io/feed.xml" title="Better Scientific Software Tutorial" /><script>
 if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
@@ -85,16 +85,16 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 </ul>
 
 <h2 id="instructions">Instructions</h2>
-<p><em>Note: The screen shots and instructions below refer to the generic hello-numerical-world repository.  For this event, you will use <strong>hands-on-repo-link (to be defined)</strong> instead.</em></p>
+<p><em>Note: The screen shots and instructions below refer to the generic hello-numerical-world repository.  For this event, you will use <strong><a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-05-29-isc">bssw-tutorial/hello-numerical-world-2022-05-29-isc</a></strong> instead.</em></p>
 
 <p><strong>Step 1.</strong> Fork the tutorial repository: <a href="images/03-git-fork.png">(fork example)</a></p>
 <ul>
-  <li>In your browser, go to the repository that you want to fork: hands-on-repo-link (to be defined)</li>
+  <li>In your browser, go to the repository that you want to fork: <a href="https://github.com/bssw-tutorial/hello-numerical-world-2022-05-29-isc">bssw-tutorial/hello-numerical-world-2022-05-29-isc</a></li>
   <li>Hit the fork button in the upper right corner</li>
   <li>Choose your personal account to fork into.</li>
 </ul>
 
-<p>The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  &lt;your username&gt;/hands-on-repo-dir (to be defined) .</p>
+<p>The fork you have created lives in your personal area in GitHub, but has the same base name (and the same contents) as the original repository, e.g.,  &lt;your username&gt;/hello-numerical-world-2022-05-29-isc .</p>
 
 <p><strong>Step 2.</strong> Clone the fork (on command line)</p>
 <ul>
@@ -102,15 +102,15 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   <li>Copy path to clipboard (use path in command below for https).</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git clone https://github.com/&lt;your username&gt;/hands-on-repo-dir (to be defined).git
-Cloning into 'hands-on-repo-dir (to be defined)' ...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git clone https://github.com/&lt;your username&gt;/hello-numerical-world-2022-05-29-isc.git
+Cloning into 'hello-numerical-world-2022-05-29-isc' ...
 .
 .
 </code></pre></div></div>
 
 <p><strong>Step 3.</strong> Create branch</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $cd hands-on-repo-dir (to be defined)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $cd hello-numerical-world-2022-05-29-isc
    $git checkout -b issue-1000
    Switched to a new branch 'issue-1000'
 </code></pre></div></div>
@@ -141,8 +141,8 @@ Cloning into 'hands-on-repo-dir (to be defined)' ...
 <p><strong>Step 5.</strong> Useful git commands to check repo</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $git remote -vv
-   origin	https://github.com/&lt;your username&gt;/hands-on-repo-dir (to be defined).git (fetch)
-   origin	https://github.com/&lt;your username&gt;/hands-on-repo-dir (to be defined).git (push)
+   origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2022-05-29-isc.git (fetch)
+   origin	https://github.com/&lt;your username&gt;/hello-numerical-world-2022-05-29-isc.git (push)
 
    $git branch
    * issue-1000
@@ -161,9 +161,9 @@ Cloning into 'hands-on-repo-dir (to be defined)' ...
    remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
    remote: 
    remote: Create a pull request for 'issue-1000' on GitHub by visiting:
-   remote:      https://github.com/&lt;your username&gt;/hands-on-repo-dir (to be defined)/pull/new/issue-1000
+   remote:      https://github.com/&lt;your username&gt;/hello-numerical-world-2022-05-29-isc/pull/new/issue-1000
    remote: 
-   To github.com:&lt;your username&gt;/hands-on-repo-dir (to be defined).git
+   To github.com:&lt;your username&gt;/hello-numerical-world-2022-05-29-isc.git
     * [new branch]      issue-1000 -&gt; issue-1000
 </code></pre></div></div>
 
