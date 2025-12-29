@@ -104,7 +104,7 @@ artifacts:
     doi: 10.6084/m9.figshare.12994376
   - label: Hands-on repository
     format: GitHub
-    gh-repo: betterscientificsoftware/hello-numerical-world-sc20
+    url: https://github.com/betterscientificsoftware/hello-numerical-world-sc20
 #
 # This is a standard collection of deadlines we've encountered historically
 # Add due dates where appropriate. Those without will be ignored

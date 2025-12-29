@@ -113,7 +113,7 @@ artifacts:
     doi: 10.6084/m9.figshare.12719834
   - label: Hands-on repository
     format: GitHub
-    gh-repo: betterscientificsoftware/hello-numerical-world-atpesc-2020
+    url: https://github.com/betterscientificsoftware/hello-numerical-world-atpesc-2020
 #
 # This is a standard collection of deadlines we've encountered historically
 # Add due dates where appropriate. Those without will be ignored

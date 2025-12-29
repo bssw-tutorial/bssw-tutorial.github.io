@@ -118,7 +118,7 @@ artifacts:
 # The only meaningful values of status are: reserved or published
 #  - label: Hands-on repository
 #    format: GitHub
-#    gh-repo: bssw-tutorial/hello-numerical-world-2022-05-29-isc
+#    url: https://github.com/bssw-tutorial/hello-numerical-world-2022-05-29-isc
 #
 # This is a standard collection of deadlines we've encountered historically
 # Add due dates where appropriate. Those without will be ignored

@@ -57,4 +57,4 @@ artifacts:
     doi: 10.6084/m9.figshare.15130590
   - label: Hands-on repository
     format: GitHub
-    gh-repo: bssw-tutorial/hello-numerical-world-2021-08-12-atpesc
+    url: https://github.com/bssw-tutorial/hello-numerical-world-2021-08-12-atpesc

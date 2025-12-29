@@ -62,5 +62,4 @@ artifacts:
     doi: 10.6084/m9.figshare.14256257
   - label: Hands-on repository
     format: GitHub
-    gh-repo: bssw-tutorial/hello-numerical-world-2021-03-iss
     url: https://github.com/bssw-tutorial/hello-numerical-world-2021-03-iss
