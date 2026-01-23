@@ -14,14 +14,14 @@
   * [HPC and the Lab Manager](https://bssw.io/blog_posts/hpc-and-the-lab-manager)
   * [Writing the Laboratory Notebook](https://files.eric.ed.gov/fulltext/ED344734.pdf)
   * [DIKW pyramid](https://en.wikipedia.org/wiki/DIKW_pyramid)
-  * [Laboratory Notebook Example](https://arxiv.org/pdf/2308.15637)
+  * [Managing Software Provenance to Enhance Reproducibility in Computational Research](https://doi.org/10.1109/MCSE.2023.3314288)
+  * [Jobrunner](https://github.com/Lab-Notebooks/Jobrunner)
   * Helpful Tools
      * [Floating Point Analysis Tools](http://fpanalysistools.org/)
      * [Code Ocean (Cloud platforms - publish and reproduce research code and data)](https://codeocean.com/)
      * DOIs and hosting of data, code, documents:
        - [Zenodo](https://zenodo.org/)
        - [FigShare](https://figshare.com/)
-     * [Jobrunner](https://github.com/Lab-Notebooks/Jobrunner)
   * Other Resources:
     * [The FAIR Guiding Principles for Scientific Data Management and Stewardship. Mark D. Wilkinson, et al. 2016](https://doi.org/10.1038/sdata.2016.18)
     * [FAIR4RS](https://www.rd-alliance.org/groups/fair-for-research-software-fair4rs-wg/forum/) (previously linked to ~~www.rd-alliance.org/groups/fair-research-software-fair4rs-wg~~)
