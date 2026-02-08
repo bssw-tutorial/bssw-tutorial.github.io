@@ -1,6 +1,6 @@
 <!-- computational-expts -->
   * [Ivo Jimenez](https://bssw.io/fellows/ivo-jimenez)
-  * [Popper](https://www.exascaleproject.org/event/popper/)
+  * [Popper](https://ideas-productivity.org/events/hpcbp-019-popper) (formerly linked to ~~www.exascaleproject.org/event/popper/~~)
   * [FlashKit](https://github.com/GWU-CFD/FlashKit)
   * [Computational Lab Environment Example](https://github.com/bssw-tutorial/lab-environment-2022-08-11-atpesc)
   * Dubey A, Calder AC, Daley C, et al. Pragmatic optimizations for better scientific utilization of large supercomputers. The International Journal of High Performance Computing Applications. 2013;27(3):360-373. doi:[10.1177/1094342012464404](https://doi.org/10.1177/1094342012464404)

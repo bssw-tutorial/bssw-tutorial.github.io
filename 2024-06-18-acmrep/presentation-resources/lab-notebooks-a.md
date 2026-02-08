@@ -7,7 +7,7 @@
   * [How to pick an electronic notebook](https://doi.org/10.1038/d41586-018-05895-3)
   * Resources -- Execution Environments
   * [BSSw article by Jean Shuler](https://bssw.io/items/executable-environments-for-software-data-and-publication)
-  * [Popper](https://www.exascaleproject.org/event/popper/) by [Ivo Jimenez](https://bssw.io/fellows/ivo-jimenez)
+  * [Popper](https://ideas-productivity.org/events/hpcbp-019-popper) (formerly linked to ~~www.exascaleproject.org/event/popper/~~) by [Ivo Jimenez](https://bssw.io/fellows/ivo-jimenez)
   * [Code Ocean](https://codeocean.com/)
   * [Weight & Biases](https://wandb.ai/site)
   * [Multiphase Simulations](https://github.com/akashdhruv/Multiphase-Simulations)
