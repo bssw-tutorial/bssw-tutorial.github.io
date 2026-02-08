@@ -31,7 +31,7 @@
       * Pegasus: <https://pegasus.isi.edu>
       * Snakemake: <https://snakemake.github.io>
       * Swift: <http://swift-lang.org/Swift-T>
-      * Taskvine: <https://ccl.cse.nd.edu/software/taskvine>
+      * Taskvine: <https://ccl.cse.nd.edu/softwares/taskvine/>
     * Containers
       * Apptainer (singularity) <https://apptainer.org>
       * Charliecloud: <https://hpc.github.io/charliecloud>
