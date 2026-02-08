@@ -12,6 +12,6 @@
     * [Homebrew](http://brew.sh/), LinuxBrew
     * [Macports](https://www.macports.org/)
     * [Gentoo](https://gentoo.org/)
-    * [Easybuild](http://hpcugent.github.io/easybuild/)
+    * [Easybuild](https://easybuild.io/)
     * [Conda](https://conda.io/)/Mamba
   * [Spack Twitter](https://twitter.com/spackpm)
