@@ -11,7 +11,7 @@
   * See available builds at <https://cache.spack.io>
 
   * Other package management tools (HPC and otherwise)
-    * [Easybuild](http://hpcugent.github.io/easybuild/)
+    * [Easybuild](https://easybuild.io/)
     * Functional Package Managers
       * [Nix](https://nixos.org/)
       * [Guix](https://www.gnu.org/s/guix/)

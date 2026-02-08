@@ -1,6 +1,6 @@
 {% assign headings = headings | push: "Related Events at the ECP Annual Meeting and ECP Community BoF Days" %}
 
-If you're interested in this tutorial, you might be interested in these related events taking place at this week's ECP Annual Meeting or next week's [ECP Community BoF Days](https://www.exascaleproject.org/event/ecp-community-bof-days-2022/).
+If you're interested in this tutorial, you might be interested in these related events taking place at this week's ECP Annual Meeting or next week's ECP Community BoF Days.
 
 <h3>ECP Annual Meeting</h3>
 
@@ -59,6 +59,6 @@ If you're interested in this tutorial, you might be interested in these related 
     <tr>
         <td>Wed 11 May</td>
         <td>3:00-4:30pm</td>
-        <td><a href="https://www.exascaleproject.org/event/ecp-community-bof-days-2022/">Fostering Software Sustainability, Productivity and Quality through BSSw.io</a></td>
+        <td>Fostering Software Sustainability, Productivity and Quality through BSSw.io</td>
     </tr>
 </table>
