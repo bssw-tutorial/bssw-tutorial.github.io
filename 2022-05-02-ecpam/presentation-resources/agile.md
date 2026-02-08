@@ -1,6 +1,6 @@
 <!-- agile -->
   * [Trilinos New Developer Checklist](https://github.com/trilinos/Trilinos/wiki/New-Trilinos-Developers)
-  * [xSDK Community policies](https://xsdk.info/policies/)
+  * [xSDK Community policies](https://github.com/xsdk-project/xsdk-community-policies/)
   * [Agile Manifesto](http://agilemanifesto.org/)
   * [Personal Kanban](http://www.personalkanban.com)
   * [Personal Kanban for productivity](https://bssw.io/items/using-personal-kanban-for-productivity)

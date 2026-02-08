@@ -6,6 +6,6 @@
   * [BSSw Digest](https://bssw.io/pages/receive-our-email-digest)
   * [BSSw RSS Feed](https://bssw.io/items.rss)
   * [Inclusive Naming Initiative](https://inclusivenaming.org/)
-  * Bssw.io resource on [Inclusive Naming](https://bssw.io/items/inclusive-language-resources)
+  * ~~Bssw.io resource on Inclusive Naming~~
   * [Write to the tutorial authors](mailto:bssw-tutorial@lists.mcs.anl.gov)
   * [SC22 software-related events](https://bssw.io/events/sc22-software-related-events)
