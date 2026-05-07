@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
 
       - name: Build the project with code coverage flags.
         run: make CXXFLAGS=--coverage LDFLAGS="--coverage -lm" check
@@ -69,7 +69,7 @@ Thus, an equivalent syntax for the steps section would be:
 
 ```
 
-'steps': [ {'uses': "actions/checkout@v2"}
+'steps': [ {'uses': "actions/checkout@v6"}
          , {'name': "Build the project with code coverage flags.",
              'run': "make CXXFLAGS=--coverage LDFLAGS='--coverage -lm' check"}
          , {'name': "Upload results to codecov.io",
