@@ -36,7 +36,7 @@
   * [Related Articles:1](https://ieeexplore.ieee.org/abstract/document/8449015),[2](https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2220)
 * Module 7: Refactoring
   * [heatAll.C](https://github.com/betterscientificsoftware/hello-numerical-world-atpesc-2020)
-  * [AMReX](https://amrex-codes.github.io/amrex/science.html)
+  * [AMReX](https://amrex-codes.github.io/)
   * [Related Article](https://link.springer.com/article/10.1007/s42979-020-0077-x)
 * Module 8: Continuous Integration
   * [Exascale Computing Project CI documentation](https://ecp-ci.gitlab.io/)

@@ -88,7 +88,7 @@
   * [Codecov service](https://codecov.io)
 
 * Module 11: Refactoring Scientific Software
-  * [AMReX](https://amrex-codes.github.io/amrex/science.html)
+  * [AMReX](https://amrex-codes.github.io/)
   * [Related Article](https://link.springer.com/article/10.1007/s42979-020-0077-x)
   * [Related Presentation](https://www.youtube.com/watch?v=ELkr8Ok_cMg)
 
