@@ -101,8 +101,8 @@ artifacts:
     bsswt-event-label: 2026-08-05-atpesc
   - label: Slides
     format: FigShare
-    # doi: 10.6084/m9.figshare.29816981
-    # status: published
+    doi: 10.6084/m9.figshare.33139910
+    status: reserved
 #
 # This is a standard collection of deadlines we've encountered historically
 # Add due dates where appropriate. Those without will be ignored
