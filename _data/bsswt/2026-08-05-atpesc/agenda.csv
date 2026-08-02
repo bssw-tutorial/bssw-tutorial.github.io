@@ -1,0 +1,11 @@
+Fixed Points,Duration,Time (CDT),Title,Presenter,Notes
+<!--skip-->,<!--skip-->,<!--right-->,,,<!--skip-->
+3:00 PM,5,3:00 PM,intro,bernhold,
+,25,3:05 PM,overview,bernhold,
+,30,3:30 PM,design,bernhold,
+4:00 PM,30,4:00 PM,<em>Break</em>,,Break times are actually flexible if needed
+,30,4:30 PM,testing,bernhold,
+,30,5:00 PM,refactoring,bernhold,
+,30,5:30 PM,repro-notebooks,bernhold,
+,30,6:00 PM,ai-discussion,bernhold,
+6:30 PM,,6:30 PM,<em>Adjourn</em>,,
