@@ -4,9 +4,9 @@
   * [Lcov](https://github.com/linux-test-project/lcov) (formerly linked to ~~ltp.sourceforge.net/coverage/lcov.php~~)
   * [CI/CD Introduction](https://docs.gitlab.com/ee/ci/introduction/)
   * [Joint Center for Satellite Data Assimilation (JEDI) documentation](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/)
-    * [Singularity containers](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/1.3.0/using/jedi_environment/singularity.html)
-    * [CharlieCloud containers](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/1.3.0/using/jedi_environment/charliecloud.html)
-    * [Vagrant virtual machines](https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/1.3.0/using/jedi_environment/vagrant.html)
+    * [Singularity containers](https://jcsda-jedi-docs.readthedocs-hosted.com/en/latest/using/jedi_environment/containers/singularity.html} (formerly linked to ~~jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/1.3.0/using/jedi_environment/singularity.html~~)
+    * ~~CharlieCloud containers~~ (formerly linked to ~~jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/1.3.0/using/jedi_environment/charliecloud.html~~)
+    * [Vagrant virtual machines](https://jcsda-jedi-docs.readthedocs-hosted.com/en/latest/using/jedi_environment/containers/vagrant.html} (formerly linked to ~~jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/1.3.0/using/jedi_environment/vagrant.html~~)
   * <https://github.com/CompFUSE/DCA>
   * <https://docs.docker.com/build/ci/>
   * <https://spack.readthedocs.io/en/latest/containers.html>

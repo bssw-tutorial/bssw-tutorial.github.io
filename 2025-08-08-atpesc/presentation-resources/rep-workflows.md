@@ -22,7 +22,7 @@
       * AiiDA: <https://www.aiida.net>
       * BEE: <https://github.com/lanl/BEE>
       * COMPSs: <https://compss.bsc.es>
-      * Covalent: <https://www.covalent.xyz>
+      * Covalent: <https://www.datarobot.com/product/covalent/> (previously linked to ~~www.covalent.xyz~~
       * Cromwell: <http://cromwell.readthedocs.io>
       * FireWorks: <https://materialsproject.github.io/fireworks>
       * Galaxy: <https://galaxyproject.org>
