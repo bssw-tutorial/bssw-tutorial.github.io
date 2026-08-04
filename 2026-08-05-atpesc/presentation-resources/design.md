@@ -1,8 +1,5 @@
 <!-- design -->
   * <https://enterprisersproject.com/article/2020/6/technical-debt-explained-plain-english>
-  * Code generation example
-    - <https://github.com/Flash-X/Flash-X/blob/ylee/try_pushTile_spark/source/physics/Hydro/HydroMain/Spark/Hydro_interface.ini>
-    * *This link will work only if you have access to the Flash-X code repository. Please email flash-x@lists.cels.anl.gov with your github username to get access*
   * References
     - Dubey Anshu, “Insights from the software design of a multiphysics multicomponent scientific code” Computing in Science & Engineering, 2021. DOI:[10.1109/MCSE.2021.3069343](https://doi.org/10.1109/MCSE.2021.3069343)
     - Dubey, Anshu, et al. "Flash-X: A multiphysics simulation software instrument." SoftwareX 19 (2022): 101168. DOI:[10.1016/j.softx.2022.101168](https://doi.org/10.1016/j.softx.2022.101168)

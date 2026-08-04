@@ -1,6 +1,6 @@
 <!-- intro -->
   * [Consortium for the Advancement of Scientific Software (CASS)](https://cass.community/)
-  * [RAPIDS Project](https://rapids.lbl.gov/)
+  * [PESO Project](https://pesoproject.org/)
   * [IDEAS Productivity Project](http://ideas-productivity.org)
   * [Better Scientific Software](https://bssw.io) site
   * [BSSw Digest](https://bssw.io/pages/receive-our-email-digest)
